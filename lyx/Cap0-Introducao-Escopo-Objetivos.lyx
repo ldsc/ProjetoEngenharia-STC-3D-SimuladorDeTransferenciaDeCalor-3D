@@ -873,11 +873,11 @@ DESENVOLVIMENTO DO SOFTWARE
 \begin_inset Newline newline
 \end_inset
 
-XXX
+SIMULADOR DE DIFUSÃO TÉRMICA
 \begin_inset Newline newline
 \end_inset
 
-TRABALHO DA DISCIPLINA PROGRAMAÇÃO PRÁTICA
+TRABALHO DE CONCLUSÃO DE CURSO
 \end_layout
 
 \begin_layout Standard
@@ -895,15 +895,7 @@ Versão 1:
 \begin_inset Newline newline
 \end_inset
 
-AUTORES
-\begin_inset Newline newline
-\end_inset
-
-Versão 2:
-\begin_inset Newline newline
-\end_inset
-
-AUTORES
+Nicholas de Almeida Pinto
 \begin_inset Newline newline
 \end_inset
 
@@ -936,7 +928,7 @@ MACAÉ - RJ
 \begin_inset Newline newline
 \end_inset
 
-Janeiro - 2015
+Agosto - 2021
 \end_layout
 
 \begin_layout Standard
@@ -996,7 +988,7 @@ status open
 
 
 \backslash
-lfoot{SeuNomeAqui} 
+lfoot{Nicholas de Almeida Pinto} 
 \backslash
 rfoot{
 \backslash
@@ -1030,17 +1022,6 @@ today ele vai colocar data no material impresso
 
 \end_layout
 
-\begin_layout Standard
-No presente projeto de engenharia desenvolve-se o software XXXX, um software
- aplicado a engenharia de petróleo e que utiliza o paradigma da orientação
- a objetos.
-\end_layout
-
-\begin_layout Itemize
-O primeiro parágrafo da introdução pode ser um super resumo do trabalho.
- A ideia é fazer um resumo do resumo.
-\end_layout
-
 \begin_layout Section
 Escopo do problema
 \begin_inset CommandInset label
@@ -1053,36 +1034,9 @@ name "sec:Escopo-do-Problema"
 \end_layout
 
 \begin_layout Standard
-Segundo o CREA/CONFEA um dos quesitos fundamentais que diferenciam a atuação
- de um tecnólogo da atuação de um engenheiro é a capacidade de desenvolver
- um projeto em engenharia; Neste trabalho, desenvolve-se um projeto em engenhari
-a de software aplicado a solução de um problema específico de engenharia
- de petróleo.
- Trabalhando-se com todo ciclo de um projeto, isto é, especificação, elaboração,
- análise, projeto, desenvolvimento, teste e documentação.
- 
-\end_layout
-
-\begin_layout Itemize
-ESTE MODELO TEM TEXTOS EXPLICATVOS QUE DEVEM SER ELIMINADOS DA VERSÃO FINAL.
- O OBJETIVO DE COLOCAR AS EXPLICAÇÕES É FACILITAR O ENTENDIMENTO DO QUE
- DEVE ENTRAR EM CADA SEÇÃO.
-\end_layout
-
-\begin_layout Itemize
-Definir o escopo do projeto de engenharia, a ideia geral do software, acentuar
- sua importância, usos e aplicações em engenharia [de petróleo].
-\end_layout
-
-\begin_layout Itemize
-Delimitar o assunto.
- Situá-lo no tempo e no espaço.
- Situá-lo em relação a outros softwares.
-\end_layout
-
-\begin_layout Itemize
-Neste capítulo podem entrar figuras que ilustram a ideia geral, o detalhamento
- será feito depois, na elaboração.
+No presente projeto de engenharia desenvolve-se o software Simulador de
+ difusão térmica, um software aplicado a engenharia de petróleo e que utiliza
+ o paradigma da orientação a objetos.
 \end_layout
 
 \begin_layout Section
@@ -1097,71 +1051,36 @@ name "sec:Objetivos"
 \end_layout
 
 \begin_layout Standard
+O objetivo deste projeto é desenvolver um software com a capacidade de simular
+ a transferência de calor de qualquer superfície/objeto criado pelo usuário,
+ programado em C++ com o paradigma orientado ao objeto.
+\end_layout
+
+\begin_layout Standard
+Tem a finalidade de resolver a transferência térmica em meio bidimensionais
+ de qualquer superfície criada pelo usuário, utilizando métodos numéricos
+ implícitos, baseado em diferenças finitas, com fronteiras seladas.
+\end_layout
+
+\begin_layout Standard
 Os objetivos deste projeto de engenharia são:
 \end_layout
 
 \begin_layout Itemize
-Objetivo geral:
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Descreva aqui o objetivo geral do projeto de engenharia, incluindo vínculos
- com engenharia de petróleo e com modelagem matemática computacional (ideia
- de lógica, algoritmos,...).
+Simulação da transferência de calor de qualquer superfície, permitindo o
+ estudo da evolução térmica de diferentes superfícies e materiais.
 \end_layout
 
 \begin_layout Itemize
-Desenvolver um projeto de engenharia de software para ...[.....descrever de forma
- clara, direta, objetiva, o objetivo geral do software].
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Objetivos específicos:
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Modelar física e matematicamente o problema.
+Programação em C++, utilizando o paradigma de orientação ao objeto, e pacotes
+ externos, permitindo modificações e adições no código fonte disponibilizado.
 \end_layout
 
 \begin_layout Itemize
-Modelagem estática do software (diagramas de caso de uso, de pacotes, de
- classes).
+Métodos numéricos: solução de equações diferenciais da conservação de energia
+ por meio de diferenças finitas, e desenvolvimento de algoritmo para resolver
+ qualquer problema de fronteira.
 \end_layout
 
-\begin_layout Itemize
-Modelagem dinâmica do software (desenvolver algoritmos e diagramas exemplificand
-o os fluxos de processamento).
-\end_layout
-
-\begin_layout Itemize
-Calcular XXX[.....descrever de forma clara, direta, objetiva, cada objetivo específic
-o, cada parte do software].
-\end_layout
-
-\begin_layout Itemize
-Calcular XXX[.....descrever de forma clara, direta, objetiva, cada objetivo específic
-o, cada parte do software].
-\end_layout
-
-\begin_layout Itemize
-Simular (realizar simulações para teste do software desenvolvido).
-\end_layout
-
-\begin_layout Itemize
-Implementar manual simplificado de uso do software.
-\end_layout
-
-\end_deeper
 \end_body
 \end_document
