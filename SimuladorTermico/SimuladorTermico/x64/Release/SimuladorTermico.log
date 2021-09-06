@@ -1,0 +1,80 @@
+﻿  CCell.cpp
+  CGnuplot.cpp
+  CGrid.cpp
+  CSimulator.cpp
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CSimulator.cpp(29,20): warning C4244: 'inicializando': conversão de 'time_t' para 'double', possível perda de dados
+  CThermal.cpp
+  CWindow.cpp
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(122,77): warning C4244: 'argumento': conversão de 'T' para 'T', possível perda de dados
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(122,57): warning C4244: 'argumento': conversão de 'T' para 'T', possível perda de dados
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(16,12): warning C4101: 'maxTemp': variável local não referenciada
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(16,21): warning C4101: 'minTemp': variável local não referenciada
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(162,11): warning C4244: 'inicializando': conversão de 'double' para 'int', possível perda de dados
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(175,52): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(175,49): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+  main.cpp
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: static class sf::RenderStates const sf::RenderStates::Default" (__imp_?Default@RenderStates@sf@@2V12@B)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: static class sf::Color const sf::Color::White" (__imp_?White@Color@sf@@2V12@B)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: void __cdecl sf::Transformable::setPosition(class sf::Vector2<float> const &)" (__imp_?setPosition@Transformable@sf@@QEAAXAEBV?$Vector2@M@2@@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: void __cdecl sf::View::setSize(class sf::Vector2<float> const &)" (__imp_?setSize@View@sf@@QEAAXAEBV?$Vector2@M@2@@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: void __cdecl sf::View::setCenter(class sf::Vector2<float> const &)" (__imp_?setCenter@View@sf@@QEAAXAEBV?$Vector2@M@2@@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: virtual class sf::Vector2<unsigned int> __cdecl sf::RenderWindow::getSize(void)const " (__imp_?getSize@RenderWindow@sf@@UEBA?AV?$Vector2@I@2@XZ)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: virtual __cdecl sf::RenderWindow::~RenderWindow(void)" (__imp_??1RenderWindow@sf@@UEAA@XZ)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: __cdecl sf::RenderWindow::RenderWindow(void)" (__imp_??0RenderWindow@sf@@QEAA@XZ)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: __cdecl sf::RenderWindow::RenderWindow(class sf::VideoMode,class sf::String const &,unsigned int,struct sf::ContextSettings const &)" (__imp_??0RenderWindow@sf@@QEAA@VVideoMode@1@AEBVString@1@IAEBUContextSettings@1@@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: __cdecl sf::Color::Color(unsigned char,unsigned char,unsigned char,unsigned char)" (__imp_??0Color@sf@@QEAA@EEEE@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: static class sf::Color const sf::Color::Black" (__imp_?Black@Color@sf@@2V12@B)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: void __cdecl sf::Window::display(void)" (__imp_?display@Window@sf@@QEAAXXZ)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: void __cdecl sf::Window::setFramerateLimit(unsigned int)" (__imp_?setFramerateLimit@Window@sf@@QEAAXI@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: void __cdecl sf::Window::setVerticalSyncEnabled(bool)" (__imp_?setVerticalSyncEnabled@Window@sf@@QEAAX_N@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: bool __cdecl sf::Window::pollEvent(class sf::Event &)" (__imp_?pollEvent@Window@sf@@QEAA_NAEAVEvent@2@@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: bool __cdecl sf::Window::isOpen(void)const " (__imp_?isOpen@Window@sf@@QEBA_NXZ)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: void __cdecl sf::Window::close(void)" (__imp_?close@Window@sf@@QEAAXXZ)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: void __cdecl sf::RenderTarget::draw(class sf::Drawable const &,class sf::RenderStates const &)" (__imp_?draw@RenderTarget@sf@@QEAAXAEBVDrawable@2@AEBVRenderStates@2@@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: class sf::Vector2<float> __cdecl sf::RenderTarget::mapPixelToCoords(class sf::Vector2<int> const &)const " (__imp_?mapPixelToCoords@RenderTarget@sf@@QEBA?AV?$Vector2@M@2@AEBV?$Vector2@H@2@@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: class sf::View const & __cdecl sf::RenderTarget::getView(void)const " (__imp_?getView@RenderTarget@sf@@QEBAAEBVView@2@XZ)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: void __cdecl sf::RenderTarget::setView(class sf::View const &)" (__imp_?setView@RenderTarget@sf@@QEAAXAEBVView@2@@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: void __cdecl sf::RenderTarget::clear(class sf::Color const &)" (__imp_?clear@RenderTarget@sf@@QEAAXAEBVColor@2@@Z)
+    Dica em símbolos que estão definidos e podem corresponder potencialmente a:
+      "__declspec(dllimport) public: void __cdecl std::basic_ios<char,struct std::char_traits<char> >::clear(int,bool)" (__imp_?clear@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: class sf::Texture const & __cdecl sf::RenderTexture::getTexture(void)const " (__imp_?getTexture@RenderTexture@sf@@QEBAAEBVTexture@2@XZ)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: void __cdecl sf::RenderTexture::display(void)" (__imp_?display@RenderTexture@sf@@QEAAXXZ)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: bool __cdecl sf::RenderTexture::create(unsigned int,unsigned int,struct sf::ContextSettings const &)" (__imp_?create@RenderTexture@sf@@QEAA_NIIAEBUContextSettings@2@@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: virtual __cdecl sf::RenderTexture::~RenderTexture(void)" (__imp_??1RenderTexture@sf@@UEAA@XZ)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: __cdecl sf::RenderTexture::RenderTexture(void)" (__imp_??0RenderTexture@sf@@QEAA@XZ)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: void __cdecl sf::Shape::setFillColor(class sf::Color const &)" (__imp_?setFillColor@Shape@sf@@QEAAXAEBVColor@2@@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: __cdecl sf::String::String(wchar_t const *)" (__imp_??0String@sf@@QEAA@PEB_W@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: void __cdecl sf::RectangleShape::setSize(class sf::Vector2<float> const &)" (__imp_?setSize@RectangleShape@sf@@QEAAXAEBV?$Vector2@M@2@@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: __cdecl sf::RectangleShape::RectangleShape(class sf::Vector2<float> const &)" (__imp_??0RectangleShape@sf@@QEAA@AEBV?$Vector2@M@1@@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: __cdecl sf::VideoMode::VideoMode(unsigned int,unsigned int,unsigned int)" (__imp_??0VideoMode@sf@@QEAA@III@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: void __cdecl sf::Sprite::setTexture(class sf::Texture const &,bool)" (__imp_?setTexture@Sprite@sf@@QEAAXAEBVTexture@2@_N@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: __cdecl sf::Sprite::Sprite(void)" (__imp_??0Sprite@sf@@QEAA@XZ)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: static class sf::Vector2<int> __cdecl sf::Mouse::getPosition(class sf::Window const &)" (__imp_?getPosition@Mouse@sf@@SA?AV?$Vector2@H@2@AEBVWindow@2@@Z)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: __cdecl sf::String::~String(void)" (__imp_??1String@sf@@QEAA@XZ)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: virtual __cdecl sf::RectangleShape::~RectangleShape(void)" (__imp_??1RectangleShape@sf@@UEAA@XZ)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "__declspec(dllimport) public: virtual __cdecl sf::Sprite::~Sprite(void)" (__imp_??1Sprite@sf@@UEAA@XZ)
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\x64\Release\SimuladorTermico.exe : fatal error LNK1120: 38 externo não resolvidos

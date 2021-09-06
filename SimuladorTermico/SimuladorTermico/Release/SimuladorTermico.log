@@ -1,0 +1,45 @@
+﻿  CCell.cpp
+  CGnuplot.cpp
+  CGrid.cpp
+  CSimulator.cpp
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CSimulator.cpp(29,20): warning C4244: 'inicializando': conversão de 'time_t' para 'double', possível perda de dados
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CSimulator.cpp(133,20): warning C4018: '<': incompatibilidade de signed/unsigned
+  CThermal.cpp
+  CWindow.cpp
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(122,77): warning C4244: 'argumento': conversão de 'T' para 'T', possível perda de dados
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(122,57): warning C4244: 'argumento': conversão de 'T' para 'T', possível perda de dados
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(16,12): warning C4101: 'maxTemp': variável local não referenciada
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(16,21): warning C4101: 'minTemp': variável local não referenciada
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(162,11): warning C4244: 'inicializando': conversão de 'double' para 'int', possível perda de dados
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(175,52): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(175,49): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(203,23): warning C4018: '<': incompatibilidade de signed/unsigned
+  main.cpp
+CWindow.obj : error LNK2001: símbolo externo não resolvido "public: static class sf::RenderStates const sf::RenderStates::Default" (?Default@RenderStates@sf@@2V12@B)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "public: static class sf::Color const sf::Color::White" (?White@Color@sf@@2V12@B)
+CWindow.obj : error LNK2001: símbolo externo não resolvido "public: static class sf::Color const sf::Color::Black" (?Black@Color@sf@@2V12@B)
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\Release\SimuladorTermico.exe : fatal error LNK1120: 3 externo não resolvidos

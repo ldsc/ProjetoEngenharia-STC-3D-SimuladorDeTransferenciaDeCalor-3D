@@ -1,10 +1,10 @@
-#include <iostream>
 #include "CWindow.hpp"
 
+// 1 px = 0.26 mm = 2.6*10.0e-4
+
 int main() {
-	CWindow window(100, 100);
-	// 1 px = 0.26 mm = 2.6*10.0e-4
+	CWindow window(300, 300);
 	window.Run();
-	 
+
 	return 0;
 }

@@ -46,6 +46,7 @@ public:
 	void update_Temp_nup1(int x, int y, double temp) { grid[x + y * width].temp_nup1 = temp; }
 
 	double maxTemp();
+	double minTemp();
 
 
 };

@@ -26,7 +26,6 @@ void CWindow::Run() {
     window.setVerticalSyncEnabled(false);
     window.setFramerateLimit(100);
 
-    //sf::RenderTexture canvas;
     canvas.create(width, height);
     canvas.clear(sf::Color::White);
 
@@ -103,7 +102,7 @@ void CWindow::Run() {
                     printMenu(recSize);
                     break;
                 case sf::Keyboard::O:
-                    studyCoordinates = sf::Mouse::getPosition(window); // window.mapPixelToCoords({ event.mouse.x, event.mouseButton.y });
+                    studyCoordinates = sf::Mouse::getPosition(window);
                     simulation.studyPosition(studyCoordinates, currentGrid);
                     pixelPaint.setFillColor(sf::Color::Black);
                     pixelPaint.setPosition((sf::Vector2f)studyCoordinates);
@@ -148,17 +147,6 @@ void CWindow::Run() {
             simulation.run();
             contador = -1;
             paint();
-            /*for (int i = 0; i < width; i++) {
-                for (int k = 0; k < height; k++) {
-                    if (!simulation.grid[currentGrid]->operator()(i, k)->active)
-                        pixelPaint.setFillColor(sf::Color::White);
-                    else
-                        pixelPaint.setFillColor(getRGB(simulation.grid[currentGrid]->operator()(i, k)->temp));
-                    pixelPaint.setPosition(sf::Vector2f (i,k));
-                    canvas.draw(pixelPaint);
-                    canvas.display();
-                }
-            }*/
         }
         contador++;
         window.clear(sf::Color(64, 64, 64));
@@ -168,7 +156,7 @@ void CWindow::Run() {
 }
 
 sf::Color CWindow::getRGB(double temp) {
-    double maxTemp = simulation.getTmax(); // simulation.maxTemp();
+    double maxTemp = simulation.getTmax();
     double minTemp = simulation.getTmin();
     int blue = 0;
     int n = (maxTemp - temp)*255/(maxTemp - minTemp);

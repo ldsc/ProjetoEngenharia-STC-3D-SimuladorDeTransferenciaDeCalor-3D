@@ -71,3 +71,10 @@ double CGrid::maxTemp() {
 		maxTemp = maxTemp < grid[i].temp ? grid[i].temp : maxTemp;
 	return maxTemp;
 }
+
+double CGrid::minTemp() {
+	double minTemp = 1000000;
+	for (int i = 0; i < width * height; i++)
+		minTemp = minTemp > grid[i].temp ? grid[i].temp : minTemp;
+	return minTemp;
+}
