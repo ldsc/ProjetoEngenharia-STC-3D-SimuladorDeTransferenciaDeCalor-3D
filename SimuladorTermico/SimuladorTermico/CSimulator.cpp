@@ -23,14 +23,17 @@ void CSimulator::resetGrid() {
 void CSimulator::run() {
 	double erro = 1;
 	int iter = 0;
+	int tid;
 	for (int i = 0; i < NGRIDS; i++)
 		grid[i]->startIteration();
 
 	double start_time = std::time(0);
-	#pragma omp parallel //private(tid) shared(grid) 
+	omp_set_num_threads(NGRIDS);
+	#pragma omp parallel private(tid)
 	{
-	for (int i = 0; i < NGRIDS; i++)
-		solverByGrid(i);
+		tid = omp_get_thread_num();
+		std::cout << "tid: " << tid << std::endl;
+		solverByGrid(tid);
 	}
 	saveStudy();
 

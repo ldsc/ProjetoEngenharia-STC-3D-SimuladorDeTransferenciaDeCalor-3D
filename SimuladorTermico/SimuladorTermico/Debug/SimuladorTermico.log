@@ -1,2 +1,4 @@
-﻿  main.cpp
+﻿  CSimulator.cpp
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CSimulator.cpp(30,20): warning C4244: 'inicializando': conversão de 'time_t' para 'double', possível perda de dados
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CSimulator.cpp(136,20): warning C4018: '<': incompatibilidade de signed/unsigned
   SimuladorTermico.vcxproj -> C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\Debug\SimuladorTermico.exe
