@@ -21,23 +21,16 @@ void CSimulator::resetGrid() {
 }
 
 void CSimulator::run() {
-	double erro = 1;
-	int iter = 0;
-	int tid;
-	for (int i = 0; i < NGRIDS; i++)
-		grid[i]->startIteration();
+	for (int g = 0; g < NGRIDS; g++)
+		run(g);
+}
 
-	double start_time = std::time(0);
-	omp_set_num_threads(NGRIDS);
-	#pragma omp parallel private(tid)
-	{
-		tid = omp_get_thread_num();
-		std::cout << "tid: " << tid << std::endl;
-		solverByGrid(tid);
-	}
-	saveStudy();
+void CSimulator::run(int g) {
+	grid[g]->startIteration();
 
-	std::cout << "Time: " << std::setw(5) << actual_time << " - duracao: " << std::time(0) - start_time << " seg" << "\r";
+	solverByGrid(g);
+	if (g == gridStudy)
+		saveStudy();
 }
 
 void CSimulator::solverByGrid(int g) {
@@ -109,6 +102,9 @@ void CSimulator::calculatePointIteration(int x, int y, int g) {
 
 void CSimulator::saveStudy() {
 	temperatureStudy.push_back(grid[gridStudy]->getTemp(positionStudy));
+}
+
+void CSimulator::updateActualTime() {
 	actual_time += delta_t;
 	timeStudy.push_back(actual_time);
 }

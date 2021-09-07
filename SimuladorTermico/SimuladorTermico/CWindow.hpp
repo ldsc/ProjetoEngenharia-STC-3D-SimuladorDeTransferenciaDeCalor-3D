@@ -5,6 +5,7 @@
 #include "CSimulator.hpp"
 #include <iostream>
 #include <windows.h>
+#include <omp.h>
 
 class CWindow {
 public:

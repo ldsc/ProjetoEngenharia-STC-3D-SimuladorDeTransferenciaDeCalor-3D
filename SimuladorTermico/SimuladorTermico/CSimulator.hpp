@@ -11,6 +11,7 @@
 
 class CSimulator {
 private:
+	bool parallel = true;
 	int NGRIDS = 4;
 	const double MIN_ERRO = 1.0e-1;
 	const int MAX_ITERATION = 39;
@@ -39,8 +40,10 @@ public:
 
 	/// --------- FUNCOES DO SOLVER ---------
 	void run();
+	void run(int g);
 	void solverByGrid(int g);
 	void calculatePointIteration(int  x, int y, int g);
+	void updateActualTime();
 
 	/// --------- FUNCOES PARA ESTUDO ---------
 	void saveStudy();
@@ -51,9 +54,12 @@ public:
 	/// --------- FUNCOES SET ---------
 	void set_ActualTemperature(double newTemperature);
 	void plusDelta_t() { delta_t += 0.5; }
-	void minusDelta_t() { delta_t += 0.5; }
+	void minusDelta_t() { delta_t += 0.5;}
+	void changeParallel() { parallel = parallel ? false : true; }
 
 	/// --------- FUNCOES GET ---------
+	int getNGRIDS() { return NGRIDS; }
+	bool getParallel() { return parallel; }
 	double maxTemp();
 	double minTemp();
 	double get_ActualTemperature() { return thermal.actualTemperature; }

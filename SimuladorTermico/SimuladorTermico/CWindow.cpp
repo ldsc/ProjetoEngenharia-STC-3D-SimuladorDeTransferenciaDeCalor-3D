@@ -113,6 +113,10 @@ void CWindow::Run() {
                     simulation.plot();
                     break;
                 case sf::Keyboard::F:
+                    simulation.changeParallel();
+                    printMenu(recSize);
+                    break;
+                case sf::Keyboard::S:
                     isSourceActive = isSourceActive ? false : true;
                     printMenu(recSize);
                     break;
@@ -144,10 +148,30 @@ void CWindow::Run() {
 		}// while pollEvent
         
         if (runningSimulator && contador >= -1) {
-            simulation.run();
-            contador = -1;
-            paint();
+
+            double start_time = std::time(0);
+            if (simulation.getParallel()) {
+                omp_set_num_threads(simulation.getNGRIDS()+1);
+                #pragma omp parallel
+                {
+                    if (omp_get_thread_num() == 0) {
+                        paint();
+                        contador = -1;
+                    }
+                    else {
+                        simulation.run(omp_get_thread_num()-1);
+                    }
+                }
+            }
+            else {
+                paint();
+                contador = -1;
+                simulation.run();
+            }
+            std::cout << "Time: " << std::setw(5) << simulation.get_time() << " - duracao: " << std::time(0) - start_time << " seg       " << "\r";
+            simulation.updateActualTime();
         }
+
         contador++;
         window.clear(sf::Color(64, 64, 64));
         window.draw(sprite);
@@ -215,6 +239,7 @@ void CWindow::printMenu(sf::Vector2f recSize) {
     std::cout << "Status: " << (runningSimulator ? "running" : "stoped") << std::endl;
     std::cout << "Source: " << (isSourceActive ? "yes" : "no") << std::endl;
     std::cout << "Perfil: " << currentGrid << std::endl;
+    std::cout << "Paralellism: " << (simulation.getParallel() ? "yes" : "no") << std::endl;
     std::cout << "---------------------------------" << std::endl;
     std::cout << "  P    - PAUSE/RUN" << std::endl;
     std::cout << "  O    - set observer point" << std::endl;
@@ -227,5 +252,7 @@ void CWindow::printMenu(sf::Vector2f recSize) {
     std::cout << "LCTRL  - decrease rectangle size" << std::endl;
     std::cout << "  >    - increase time delta" << std::endl;
     std::cout << "  <    - decrease time delta" << std::endl;
+    std::cout << "  S    - temperature source" << std::endl;
+    std::cout << "  F    - change parallelism" << std::endl;
     std::cout << "---------------------------------" << std::endl;
 }
