@@ -22,9 +22,6 @@ public:
 	CGrid(int _width, int _height, double temperature) {
 		resetSize(_width, _height, temperature);
 	}
-
-	CCell* operator () (int x, int y) { return &grid[y * width + x]; }
-	CCell* operator [] (int x) { return &grid[x]; }
 	void resetGrid(double temperature);
 	
 	void printGrid();
@@ -48,6 +45,8 @@ public:
 	double maxTemp();
 	double minTemp();
 
+	CCell* operator () (int x, int y) { return &grid[y * width + x]; }
+	CCell* operator [] (int x) { return &grid[x]; }
 
 };
 #endif
