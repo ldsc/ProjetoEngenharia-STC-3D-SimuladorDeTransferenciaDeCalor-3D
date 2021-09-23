@@ -157,6 +157,7 @@
     <ClCompile Include="CCell.cpp" />
     <ClCompile Include="CGnuplot.cpp" />
     <ClCompile Include="CGrid.cpp" />
+    <ClCompile Include="CMaterial.cpp" />
     <ClCompile Include="CSimulator.cpp" />
     <ClCompile Include="CThermal.cpp" />
     <ClCompile Include="CWindow.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="CCell.hpp" />
     <ClInclude Include="CGnuplot.hpp" />
     <ClInclude Include="CGrid.hpp" />
+    <ClInclude Include="CMaterial.hpp" />
     <ClInclude Include="CSimulator.hpp" />
     <ClInclude Include="CThermal.hpp" />
     <ClInclude Include="CWindow.hpp" />

@@ -24,7 +24,7 @@ void CGrid::resetGrid(double temperature) {
 	}
 }
 
-void CGrid::draw(sf::Vector2f pos, sf::Vector2f size, double _temperature, bool isSourceActive) {
+void CGrid::draw(sf::Vector2f pos, sf::Vector2f size, double _temperature, bool isSourceActive, CMaterial *_material) {
 
 	int start_x = (pos.x >= 0) ? ((int)pos.x) : 0;
 	int start_y = (pos.y >= 0) ? ((int)pos.y) : 0;
@@ -36,6 +36,7 @@ void CGrid::draw(sf::Vector2f pos, sf::Vector2f size, double _temperature, bool 
 			grid[k * width + i].active = true;
 			grid[k * width + i].temp = _temperature;
 			grid[k * width + i].source = isSourceActive;
+			grid[k * width + i].material = _material;
 		}
 	}
 }

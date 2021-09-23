@@ -15,9 +15,16 @@ void CSimulator::resetSize(int width, int height) {
 		grid[i] = new CGrid(width, height, thermal.ti);
 }
 
-void CSimulator::resetGrid() { 
+void CSimulator::resetGrid() {
 	for (int i = 0; i < NGRIDS; i++)
 		grid[i]->resetGrid(thermal.ti); 
+}
+
+void CSimulator::createListOfMaterials() {
+	materiais["aco"] = CMaterial(1, 100, 1600, 1);
+	materiais["cooper"] = CMaterial(1, 100, 1600, 2);
+	materiais["air"] = CMaterial(1, 100, 1600, 3);
+	materiais["water"] = CMaterial(1, 100, 1600, 4);
 }
 
 void CSimulator::run() {
@@ -48,38 +55,38 @@ void CSimulator::solverByGrid(int g) {
 }
 
 void CSimulator::calculatePointIteration(int x, int y, int g) {
-	if (!grid[g]->operator()(x,y)->active)
+	if (!(*grid[g])(x,y)->active)
 		return; 
-	if (grid[g]->operator()(x, y)->source)
+	if ((*grid[g])(x, y)->source)
 		return;
 	float n = 0;
 	double inf = .0, sup = .0, esq = .0, dir = .0, cima = .0, baixo =.0;
 
 	if (y - 1 > 0) {
-		if (grid[g]->operator()(x, y - 1)->active) {
+		if ((*grid[g])(x, y - 1)->active) {
 			n++;
-			inf = grid[g]->operator()(x, y - 1)->temp_nup1;
+			inf = (*grid[g])(x, y - 1)->temp_nup1;
 		}
 	}
 
 	if (y + 1 < grid[g]->getHeight()) {
-		if (grid[g]->operator()(x, y + 1)->active) {
+		if ((*grid[g])(x, y + 1)->active) {
 			n++;
-			sup = grid[g]->operator()(x, y + 1)->temp_nup1;
+			sup = (*grid[g])(x, y + 1)->temp_nup1;
 		}
 	}
 
 	if (x - 1 > 0) {
-		if (grid[g]->operator()(x - 1, y)->active) {
+		if ((*grid[g])(x - 1, y)->active) {
 			n++;
-			esq = grid[g]->operator()(x - 1, y)->temp_nup1;
+			esq = (*grid[g])(x - 1, y)->temp_nup1;
 		}
 	}
 
 	if (x + 1 < grid[g]->getWidth()) {
-		if (grid[g]->operator()(x + 1, y)->active) {
+		if ((*grid[g])(x + 1, y)->active) {
 			n++;
-			dir = grid[g]->operator()(x + 1, y)->temp_nup1;
+			dir = (*grid[g])(x + 1, y)->temp_nup1;
 		}
 	}
 
@@ -97,7 +104,7 @@ void CSimulator::calculatePointIteration(int x, int y, int g) {
 		}
 	}
 
-	grid[g]->operator()(x, y)->temp_nup1 = (constTermal * grid[g]->operator()(x, y)->temp + inf + sup + esq + dir + cima + baixo) / (n + constTermal);
+	(*grid[g])(x, y)->temp_nup1 = ((*grid[g])(x, y)->material->getThermalConst() * (*grid[g])(x, y)->temp + inf + sup + esq + dir + cima + baixo) / (n + (*grid[g])(x, y)->material->getThermalConst());
 }
 
 void CSimulator::saveStudy() {

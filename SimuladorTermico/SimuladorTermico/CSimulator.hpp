@@ -7,7 +7,7 @@
 #include <fstream>
 #include <iomanip>
 #include <omp.h>
-
+#include <map>
 
 class CSimulator {
 private:
@@ -18,8 +18,8 @@ private:
 	double delta_x = 2.6e-4, delta_t = 1.0e-0;
 
 	CThermal thermal;
-	double constTermal = thermal.constante() * delta_x / delta_t;
-	double constTermal2 = delta_x / (delta_t * thermal.difusividadeTermica());
+	//double constThermal = thermal.constante() * delta_x / delta_t;
+	//double constThermal2 = delta_x / (delta_t * thermal.difusividadeTermica());
 
 	double actual_time = 0.0;
 	int positionStudy = 0;
@@ -28,6 +28,7 @@ private:
 	std::vector<double> timeStudy;
 
 public:
+	std::map<std::string, CMaterial> materiais;
 	std::vector<CGrid*> grid;
 public:
 	/// --------- FUNCOES DE CRIACAO ---------
@@ -37,6 +38,8 @@ public:
 
 	void resetSize(int width, int height);
 	void resetGrid();
+
+	void createListOfMaterials();
 
 	/// --------- FUNCOES DO SOLVER ---------
 	void run();

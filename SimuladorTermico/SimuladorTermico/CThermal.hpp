@@ -9,7 +9,7 @@ public:
 	double Tmax = 1000, Tmin = 300;
 	double actualTemperature = 300;
 
-	double constante() { return rho * cp / k; }
-	double difusividadeTermica() { return 1153 * 10.0e-7; }
+	//double constante() { return rho * cp / k; }
+	//double difusividadeTermica() { return 1153 * 10.0e-7; }
 };
 #endif

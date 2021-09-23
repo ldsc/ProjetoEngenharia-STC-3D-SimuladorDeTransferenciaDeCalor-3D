@@ -16,33 +16,41 @@ void CWindow::Run() {
     double maxTemp, minTemp;
 
 	sf::Vector2f lastPos;
-    sf::Vector2f recSize(15, 15);
+    sf::Vector2f recSize(101, 101);
 
 	sf::RectangleShape brush(recSize);
     sf::RectangleShape pixelPaint(sf::Vector2f(1, 1));
 
-    sf::RenderWindow window(sf::VideoMode(width, height), L"Simulador de difusividade termica", sf::Style::Default);
+    sf::RenderWindow window(sf::VideoMode(width, height), L"Paint", sf::Style::Default);
+    sf::RenderWindow windowMaterial(sf::VideoMode(width, height), L"Material", sf::Style::Default);
 
-    window.setVerticalSyncEnabled(false);
+    window.setPosition(sf::Vector2i(500, 300));
+    //window.setVerticalSyncEnabled(false);
     window.setFramerateLimit(100);
+
+    windowMaterial.setPosition(sf::Vector2i(520+width, 300));
+    windowMaterial.setFramerateLimit(100);
 
     canvas.create(width, height);
     canvas.clear(sf::Color::White);
+    canvasMaterial.create(width, height);
+    canvasMaterial.clear(sf::Color::White);
 
     sprite.setTexture(canvas.getTexture(), true);
+    spriteMaterial.setTexture(canvasMaterial.getTexture(), true);
 
 	brush.setFillColor(sf::Color(255, 255, 0, 255));
 
     printMenu(recSize);
-	while (window.isOpen()) {
+	while (window.isOpen() && windowMaterial.isOpen()) {
 		sf::Event event;
 
-		while (window.pollEvent(event)) {
-			switch (event.type) {
-			case sf::Event::Closed:
-				window.close();
-				break;
-			case sf::Event::KeyPressed:
+        while (window.pollEvent(event)) {
+            switch (event.type) {
+            case sf::Event::Closed:
+                window.close();
+                break;
+            case sf::Event::KeyPressed:
                 switch (event.key.code) {
                 case sf::Keyboard::C:
                     canvas.clear(sf::Color::White);
@@ -62,7 +70,7 @@ void CWindow::Run() {
                     printMenu(recSize);
                     break;
                 case sf::Keyboard::PageUp:
-                    brush.setFillColor(sf::Color (255, 0, 0, 255));
+                    brush.setFillColor(sf::Color(255, 0, 0, 255));
                     simulation.set_ActualTemperature(simulation.getTmax());
                     printMenu(recSize);
                     break;
@@ -79,7 +87,7 @@ void CWindow::Run() {
                     break;
                 case sf::Keyboard::Down:
                     currentGrid--;
-                    if (currentGrid <0)currentGrid = 0;
+                    if (currentGrid < 0)currentGrid = 0;
                     paint();
                     printMenu(recSize);
                     break;
@@ -120,7 +128,14 @@ void CWindow::Run() {
                     isSourceActive = isSourceActive ? false : true;
                     printMenu(recSize);
                     break;
-                }
+                case sf::Keyboard::E:
+                    mat = 1;
+                    break;
+                case sf::Keyboard::Q:
+                    mat = 0;
+                    break;
+                
+            }
             case sf::Event::Resized: {
                 sf::View view(window.getView());
                 const sf::Vector2f size(window.getSize().x, window.getSize().y);
@@ -133,7 +148,7 @@ void CWindow::Run() {
                 if (event.mouseButton.button == sf::Mouse::Left) {
                     isDrawing = true;
                     lastPos = window.mapPixelToCoords({ event.mouseButton.x, event.mouseButton.y });
-                    simulation.grid[currentGrid]->draw(lastPos, recSize, simulation.get_ActualTemperature(), isSourceActive);
+                    simulation.grid[currentGrid]->draw(lastPos, recSize, simulation.get_ActualTemperature(), isSourceActive, new CMaterial(1, 100, 1600, mat));
 
                     brush.setPosition(lastPos);
                     canvas.draw(brush);
@@ -146,7 +161,15 @@ void CWindow::Run() {
                 break;
 			} // switch event type
 		}// while pollEvent
-        
+
+        while (windowMaterial.pollEvent(event)) {
+            switch (event.type) {
+            case sf::Event::Closed:
+                windowMaterial.close();
+                break;
+            }
+        }
+
         if (runningSimulator && contador >= -1) {
 
             double start_time = std::time(0);
@@ -156,6 +179,7 @@ void CWindow::Run() {
                 {
                     if (omp_get_thread_num() == 0) {
                         paint();
+                        paintMaterial();
                         contador = -1;
                     }
                     else {
@@ -176,6 +200,10 @@ void CWindow::Run() {
         window.clear(sf::Color(64, 64, 64));
         window.draw(sprite);
         window.display();
+
+        windowMaterial.clear(sf::Color(64, 64, 64));
+        windowMaterial.draw(spriteMaterial);
+        windowMaterial.display();
 	}// while is open
 }
 
@@ -199,6 +227,22 @@ void CWindow::paint() {
             pixelPaint.setPosition(sf::Vector2f(i, k));
             canvas.draw(pixelPaint);
             canvas.display();
+        }
+    }
+}
+
+void CWindow::paintMaterial() {
+    sf::RectangleShape pixelPaint(sf::Vector2f(1, 1));
+    for (int i = 0; i < width; i++) {
+        for (int k = 0; k < height; k++) {
+            if (!simulation.grid[currentGrid]->operator()(i, k)->active)
+                pixelPaint.setFillColor(sf::Color::White);
+            else
+                pixelPaint.setFillColor(colors[simulation.grid[currentGrid]->operator()(i, k)->material->getColor()]);
+           
+            pixelPaint.setPosition(sf::Vector2f(i, k));
+            canvasMaterial.draw(pixelPaint);
+            canvasMaterial.display();
         }
     }
 }

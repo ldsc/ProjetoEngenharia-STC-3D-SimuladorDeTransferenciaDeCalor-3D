@@ -1,3 +1,45 @@
-﻿  CSimulator.cpp
-C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CSimulator.cpp(132,20): warning C4018: '<': incompatibilidade de signed/unsigned
+﻿  CWindow.cpp
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(141,77): warning C4244: 'argumento': conversão de 'T' para 'T', possível perda de dados
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(141,57): warning C4244: 'argumento': conversão de 'T' para 'T', possível perda de dados
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(175,31): warning C4244: 'inicializando': conversão de 'time_t' para 'double', possível perda de dados
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(16,12): warning C4101: 'maxTemp': variável local não referenciada
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(16,21): warning C4101: 'minTemp': variável local não referenciada
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(214,11): warning C4244: 'inicializando': conversão de 'double' para 'int', possível perda de dados
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(227,52): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(227,49): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(243,52): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(243,49): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\SimuladorTermico\CWindow.cpp(271,23): warning C4018: '<': incompatibilidade de signed/unsigned
   SimuladorTermico.vcxproj -> C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\Debug\SimuladorTermico.exe

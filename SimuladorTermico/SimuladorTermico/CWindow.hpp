@@ -5,19 +5,32 @@
 #include "CSimulator.hpp"
 #include <iostream>
 #include <windows.h>
+#include <string>
 #include <omp.h>
 
 class CWindow {
 public:
-	CWindow( int _width, int _height);
+	CWindow(int _width, int _height);
 	void Run();
 	void printStudy();
 
 private: // variables
+	std::vector<std::string> list_materiais = { "aco", "ar" };
+	std::vector<sf::Color> colors{
+		sf::Color(100, 12, 50, 255),
+		sf::Color(12, 155, 10, 255),
+		sf::Color(10, 10, 10, 255),
+		sf::Color(0, 0, 255, 255)
+	};
+
+	int mat = 0;
 	int height, width;
 	sf::RenderWindow window;
+	sf::RenderWindow windowMaterial;
 	sf::RenderTexture canvas;
+	sf::RenderTexture canvasMaterial;
 	sf::Sprite sprite;
+	sf::Sprite spriteMaterial;
 	CSimulator simulation;
 	sf::Vector2i studyCoordinates;
 
@@ -32,6 +45,7 @@ private: // functions
 
 	void printMenu(sf::Vector2f recSize);
 	void paint();
+	void paintMaterial();
 };
 
 #endif
