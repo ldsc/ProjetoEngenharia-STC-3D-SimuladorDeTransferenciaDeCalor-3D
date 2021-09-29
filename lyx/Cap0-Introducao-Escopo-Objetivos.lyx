@@ -1051,15 +1051,16 @@ name "sec:Objetivos"
 \end_layout
 
 \begin_layout Standard
-O objetivo deste projeto é desenvolver um software com a capacidade de simular
- a transferência de calor de qualquer superfície/objeto criado pelo usuário,
- programado em C++ com o paradigma orientado ao objeto.
+O objetivo deste projeto é desenvolver um software capaz de simular a transferên
+cia de calor em qualquer superfície ou objeto, para materiais distintos,
+ com condutividade térmica variável e 3D, programado em C++ com o paradigma
+ orientado ao objeto e com interface amigável.
 \end_layout
 
 \begin_layout Standard
-Tem a finalidade de resolver a transferência térmica em meio bidimensionais
- de qualquer superfície criada pelo usuário, utilizando métodos numéricos
- implícitos, baseado em diferenças finitas, com fronteiras seladas.
+O software tem a finalidade de resolver problemas de transferência de calor
+ em meios tridimensionais, com perfis criados pelo usuário, utilizando métodos
+ numéricos baseados em diferenças finitas, com fronteiras seladas.
 \end_layout
 
 \begin_layout Standard

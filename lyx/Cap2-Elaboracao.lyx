@@ -356,30 +356,415 @@ Formulação teórica
 \end_layout
 
 \begin_layout Standard
-...coloque aqui texto explicando a formulação física-matemática, a descrição
- das equações que serão utilizadas...
+A equação da difusão de calor (Cap.
+ 2 Incropera####) pode ser estruturada a partir da Lei de Fourier.
+ A equação geral da difusão de calor em meios tridimensionais cartesianos
+ está na equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EquacaoGeralDifusaoTermica"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
-...aqui entram figuras, tabelas explicativas, equações a serem utilizadas no
- software...
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial^{2}T}{\partial x^{2}}+\frac{\partial^{2}T}{\partial y^{2}}+\frac{\partial^{2}T}{\partial z^{2}}=\frac{\rho c_{p}}{k}\frac{\partial T}{\partial t}\label{eq:EquacaoGeralDifusaoTermica}
+\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-...logo depois, com os dados levantados na análise de domínio, e esta formulação
- teórica, iremos identificar os pacotes, os assuntos com os quais iremos
- trabalhar...
+A qual pode ser modelada por diferenças finitas atrasadas BTCS, onde cada
+ derivada é representada abaixo:
 \end_layout
 
 \begin_layout Standard
-...
- no final da formulação teórica, indicar livros e artigos que tem mais informaçã
-o sobre o assunto...
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial^{2}T}{\partial x^{2}}=\frac{T_{i+1,j,k}^{n+1}-2T_{i,j,k}^{n+1}+T_{i-1,j,k}^{n+1}}{\Delta x}
+\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-...se vai usar modelos numéricos, colocar seção 3.3.x falando deles; no final
- citar/referenciar fontes...
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial^{2}T}{\partial y^{2}}=\frac{T_{i,j+1,k}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j-1,k}^{n+1}}{\Delta y}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial^{2}T}{\partial z^{2}}=\frac{T_{i,j,k+1}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j,k-1}^{n+1}}{\Delta z}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial T}{\partial t}=\frac{T_{i,j}^{n+1}-T_{i,j}^{n}}{\Delta t}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substituindo as diferenças finitas na equação geral:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{T_{i+1,j,k}^{n+1}-2T_{i,j,k}^{n+1}+T_{i-1,j,k}^{n+1}}{\Delta x}+\frac{T_{i,j+1,k}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j-1,k}^{n+1}}{\Delta y}+\frac{T_{i,j,k+1}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j,k-1}^{n+1}}{\Delta z}=\frac{\rho c_{p}}{k}\frac{T_{i,j,k}^{n+1}-T_{i,j,k}^{n}}{\Delta t}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde a malha é na superfície, mas não entre os perfis, e 
+\begin_inset Formula $\Delta x=\Delta y\neq\Delta z$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{T_{i+1,j,k}^{n+1}+T_{i,j+1,k}^{n+1}-4T_{i,j,k}^{n+1}+T_{i-1,j,k}^{n+1}+T_{i,j-1,k}^{n+1}}{\Delta x}+\frac{T_{i,j,k+1}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j,k-1}^{n+1}}{\Delta z}=\frac{\rho c_{p}}{k}\frac{T_{i,j,k}^{n+1}-T_{i,j,k}^{n}}{\Delta t}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Multiplicando pelo múltiplo comum:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\Delta z\left(T_{i+1,j,k}^{n+1}+T_{i,j+1,k}^{n+1}-4T_{i,j,k}^{n+1}+T_{i-1,j,k}^{n+1}+T_{i,j-1,k}^{n+1}\right)+\Delta x\left(T_{i,j,k+1}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j,k-1}^{n+1}\right)}{\Delta x\Delta z}=\frac{\rho c_{p}}{k}\frac{T_{i,j,k}^{n+1}-T_{i,j,k}^{n}}{\Delta t}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta z\left(T_{i+1,j,k}^{n+1}+T_{i,j+1,k}^{n+1}-4T_{i,j,k}^{n+1}+T_{i-1,j,k}^{n+1}+T_{i,j-1,k}^{n+1}\right)+\Delta x\left(T_{i,j,k+1}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j,k-1}^{n+1}\right)=\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}\left(T_{i,j,k}^{n+1}-T_{i,j,k}^{n}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta zT_{i+1,j,k}^{n+1}+\Delta zT_{i,j+1,k}^{n+1}-4\Delta zT_{i,j,k}^{n+1}+\Delta zT_{i-1,j,k}^{n+1}+\Delta zT_{i,j-1,k}^{n+1}+\Delta xT_{i,j,k+1}^{n+1}-2\Delta xT_{i,j,k}^{n+1}+\Delta xT_{i,j,k-1}^{n+1}=\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n+1}-\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+\Delta zT_{i+1,j,k}^{n+1}+\Delta zT_{i,j+1,k}^{n+1}+\Delta xT_{i,j,k+1}^{n+1}\\
++\Delta zT_{i-1,j,k}^{n+1}+\Delta zT_{i,j-1,k}^{n+1}+\Delta xT_{i,j,k-1}^{n+1}\\
+-\left(4\Delta z+2\Delta x+\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}\right)T_{i,j,k}^{n+1}\\
+=-\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n}
+\end{array}\label{eq:EquacaoGeralDiscretizada}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tomemos um tempo para analisar a equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EquacaoGeralDiscretizada"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ A primeira linha, são pontos de temperaturas localizadas posteriormente
+ ao estudado.
+ A segunda, são pontos anteriores ao estudado.
+ O termo em parênteses na terceira linha, é o coeficiente para o termo estudado,
+ e a última linha, na direita da igualdade, é a temperatura no ponto estudado,
+ mas no tempo anterior.
+\end_layout
+
+\begin_layout Standard
+Agora, é importante discretizar a condição de contorno de Neumann, onde
+ não há trocas com o meio externo, considerando que não há trocas com o
+ ponto anterior no eixo x:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial T}{\partial x}=\frac{T_{i,j,k}^{n+1}-T_{i-1,j,k}^{n+1}}{\Delta x}=0
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+logo,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T_{i-1,j,k}^{n+1}=T_{i,j,k}^{n+1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Todas as seis fronteiras possuem esse comportamento, então:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+T_{i-1,j,k}^{n+1}=T_{i,j,k}^{n+1}\\
+T_{i+1,j,k}^{n+1}=T_{i,j,k}^{n+1}\\
+T_{i,j-1,k}^{n+1}=T_{i,j,k}^{n+1}\\
+T_{i,j+1,k}^{n+1}=T_{i,j,k}^{n+1}\\
+T_{i,j,k-1}^{n+1}=T_{i,j,k}^{n+1}\\
+T_{i,j,k+1}^{n+1}=T_{i,j,k}^{n+1}
+\end{array}\label{eq:ModelagemFronteiras}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Voltamos agora para a equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EquacaoGeralDiscretizada"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, mas faremos um caso onde há fronteira do lado esquerdo no eixo x (caso
+ da primeira linha da equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ModelagemFronteiras"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+\Delta zT_{i+1,j,k}^{n+1}+\Delta zT_{i,j+1,k}^{n+1}+\Delta xT_{i,j,k+1}^{n+1}\\
++\underline{\Delta zT_{i,j,k}^{n+1}}+\Delta zT_{i,j-1,k}^{n+1}+\Delta xT_{i,j,k-1}^{n+1}\\
+-\left(4\Delta z+2\Delta x+\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}\right)T_{i,j,k}^{n+1}\\
+=-\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Arrumando a equação:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+\Delta zT_{i+1,j,k}^{n+1}+\Delta zT_{i,j+1,k}^{n+1}+\Delta xT_{i,j,k+1}^{n+1}\\
++\Delta zT_{i,j-1,k}^{n+1}+\Delta xT_{i,j,k-1}^{n+1}\\
+-\left(3\Delta z+2\Delta x+\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}\right)T_{i,j,k}^{n+1}\\
+=-\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n}
+\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos perceber que o termo 
+\shape italic
+i-1,j,k
+\shape default
+ sumiu da equação, e dimuiu o número 4 dentro do parênteses para 3, indicando
+ que o número 4 é diretamente relacionado ao número de fronteiras da superfície
+ xy, e o número 2, do eixo z.
+\end_layout
+
+\begin_layout Standard
+Isso quer dizer que, caso exista uma fronteira na dimensão x ou y, esse
+ termo deve ser anulado, e retirado 1 do total das 4 fronteiras e, caso
+ exista uma fronteira no sentido de z, deve ser retirado a quantidade de
+ fronteiras do total de 2.
+\end_layout
+
+\begin_layout Standard
+Podemos ir além, e provar o caso onde há fronteiras em todos os sentidos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+\Delta zT_{i1,j,k}^{n+1}+\Delta zT_{i,j1,k}^{n+1}+\Delta xT_{i,j,k1}^{n+1}\\
++\Delta zT_{i,j,k}^{n+1}+\Delta zT_{i,j1,k}^{n+1}+\Delta xT_{i,j,k1}^{n+1}\\
+-\left(4\Delta z+2\Delta x+\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}\right)T_{i,j,k}^{n+1}\\
+=-\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n}
+\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+resultando em
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+-\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n+1}=-\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T_{i,j,k}^{n+1}=T_{i,j,k}^{n}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ou seja, um ponto isolado no espaço não tem variação de temperatura.
+\end_layout
+
+\begin_layout Standard
+Variáveis iniciais do problema:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Delta x,\Delta z$
+\end_inset
+
+ - largura das células;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Delta t$
+\end_inset
+
+ - variação de tempo;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\rho$
+\end_inset
+
+ - massa específica;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $c_{p}$
+\end_inset
+
+ - capacidade calorífica a pressão constante;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k$
+\end_inset
+
+ - condutividade térmica do material.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n$
+\end_inset
+
+ - número de fronteiras do sistema.
 \end_layout
 
 \begin_layout Section

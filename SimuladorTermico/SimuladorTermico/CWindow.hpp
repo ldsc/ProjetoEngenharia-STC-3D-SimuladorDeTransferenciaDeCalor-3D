@@ -15,13 +15,6 @@ public:
 	void printStudy();
 
 private: // variables
-	std::vector<std::string> list_materiais = { "aco", "ar" };
-	std::vector<sf::Color> colors{
-		sf::Color(100, 12, 50, 255),
-		sf::Color(12, 155, 10, 255),
-		sf::Color(10, 10, 10, 255),
-		sf::Color(0, 0, 255, 255)
-	};
 
 	int mat = 0;
 	int height, width;
@@ -45,6 +38,7 @@ private: // functions
 
 	void printMenu(sf::Vector2f recSize);
 	void paint();
+	void paintStudyPoint();
 	void paintMaterial();
 };
 

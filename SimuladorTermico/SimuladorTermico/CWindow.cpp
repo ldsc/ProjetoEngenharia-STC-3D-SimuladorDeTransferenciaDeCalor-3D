@@ -56,6 +56,7 @@ void CWindow::Run() {
                     canvas.clear(sf::Color::White);
                     simulation.resetGrid();
                     canvas.display();
+                    paintMaterial();
                     break;
                 case sf::Keyboard::P:
                     runningSimulator = runningSimulator ? false : true;
@@ -84,12 +85,14 @@ void CWindow::Run() {
                     if (currentGrid > 3)currentGrid = 3;
                     paint();
                     printMenu(recSize);
+                    paintMaterial();
                     break;
                 case sf::Keyboard::Down:
                     currentGrid--;
                     if (currentGrid < 0)currentGrid = 0;
                     paint();
                     printMenu(recSize);
+                    paintMaterial();
                     break;
                 case sf::Keyboard::LShift:
                     recSize = case_LShift(recSize);
@@ -129,10 +132,12 @@ void CWindow::Run() {
                     printMenu(recSize);
                     break;
                 case sf::Keyboard::E:
-                    mat = 1;
+                    simulation.changeRightMaterial();
+                    printMenu(recSize);
                     break;
                 case sf::Keyboard::Q:
-                    mat = 0;
+                    simulation.changeLeftMaterial();
+                    printMenu(recSize);
                     break;
                 
             }
@@ -148,11 +153,12 @@ void CWindow::Run() {
                 if (event.mouseButton.button == sf::Mouse::Left) {
                     isDrawing = true;
                     lastPos = window.mapPixelToCoords({ event.mouseButton.x, event.mouseButton.y });
-                    simulation.grid[currentGrid]->draw(lastPos, recSize, simulation.get_ActualTemperature(), isSourceActive, new CMaterial(1, 100, 1600, mat));
+                    simulation.grid[currentGrid]->draw(lastPos, recSize, simulation.get_ActualTemperature(), isSourceActive, simulation.getActualMaterial());
 
                     brush.setPosition(lastPos);
                     canvas.draw(brush);
                     canvas.display();
+                    paintMaterial();
                 }
                 break;
             case sf::Event::MouseButtonReleased:
@@ -179,7 +185,7 @@ void CWindow::Run() {
                 {
                     if (omp_get_thread_num() == 0) {
                         paint();
-                        paintMaterial();
+                        paintStudyPoint();
                         contador = -1;
                     }
                     else {
@@ -231,6 +237,16 @@ void CWindow::paint() {
     }
 }
 
+void CWindow::paintStudyPoint() {
+    if (currentGrid == simulation.getStudyGrid()) {
+        sf::RectangleShape pixelPaint(sf::Vector2f(5, 5));
+        pixelPaint.setFillColor(sf::Color::Black);
+        pixelPaint.setPosition(simulation.getPositionStudyVector());
+        canvas.draw(pixelPaint);
+        canvas.display();
+    }
+}
+
 void CWindow::paintMaterial() {
     sf::RectangleShape pixelPaint(sf::Vector2f(1, 1));
     for (int i = 0; i < width; i++) {
@@ -238,7 +254,7 @@ void CWindow::paintMaterial() {
             if (!simulation.grid[currentGrid]->operator()(i, k)->active)
                 pixelPaint.setFillColor(sf::Color::White);
             else
-                pixelPaint.setFillColor(colors[simulation.grid[currentGrid]->operator()(i, k)->material->getColor()]);
+                pixelPaint.setFillColor(simulation.grid[currentGrid]->operator()(i, k)->material->getColor());
            
             pixelPaint.setPosition(sf::Vector2f(i, k));
             canvasMaterial.draw(pixelPaint);
@@ -284,6 +300,7 @@ void CWindow::printMenu(sf::Vector2f recSize) {
     std::cout << "Source: " << (isSourceActive ? "yes" : "no") << std::endl;
     std::cout << "Perfil: " << currentGrid << std::endl;
     std::cout << "Paralellism: " << (simulation.getParallel() ? "yes" : "no") << std::endl;
+    std::cout << "Material: " << simulation.getNameMaterial() << std::endl;
     std::cout << "---------------------------------" << std::endl;
     std::cout << "  P    - PAUSE/RUN" << std::endl;
     std::cout << "  O    - set observer point" << std::endl;

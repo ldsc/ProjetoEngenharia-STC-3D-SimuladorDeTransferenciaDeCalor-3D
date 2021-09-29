@@ -159,7 +159,6 @@
     <ClCompile Include="CGrid.cpp" />
     <ClCompile Include="CMaterial.cpp" />
     <ClCompile Include="CSimulator.cpp" />
-    <ClCompile Include="CThermal.cpp" />
     <ClCompile Include="CWindow.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -169,7 +168,6 @@
     <ClInclude Include="CGrid.hpp" />
     <ClInclude Include="CMaterial.hpp" />
     <ClInclude Include="CSimulator.hpp" />
-    <ClInclude Include="CThermal.hpp" />
     <ClInclude Include="CWindow.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

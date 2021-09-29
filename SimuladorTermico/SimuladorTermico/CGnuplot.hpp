@@ -14,10 +14,11 @@
 #endif
 
 class CGnuplot {
+private:
+	FILE* pipe;
 public:
-	CGnuplot() {}
-
-	static void plot(std::string name, std::string xlabel, std::string ylabel, std::string saveName);
-	static void semilog(std::string name, std::string xlabel, std::string ylabel, std::string saveName);
+	void plot(std::string name, std::string xlabel, std::string ylabel, std::string saveName);
+	void replot(std::string name);
+	void semilog(std::string name, std::string xlabel, std::string ylabel, std::string saveName);
 };
 #endif

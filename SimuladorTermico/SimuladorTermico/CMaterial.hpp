@@ -1,18 +1,21 @@
 #ifndef	CMATERIAL_HPP
 #define CMATERIAL_HPP
 #include <iostream>
+#include <string>
+#include <SFML/Graphics.hpp>
 
 class CMaterial {
 public:
 	CMaterial() {}
-	CMaterial(double _cp, double _k, double _rho, int _color) : cp{ _cp }, k{ _k }, rho{ _rho }, color{ _color } {startThermal(); } 
+	CMaterial(double _cp, double _k, double _rho, sf::Color _color, std::string _name) : cp{ _cp }, k{ _k }, rho{ _rho }, color{ _color }, name{ _name } { }
 	double getThermalConst(){ return rho * cp / k; }
-	int getColor() { return color; }
+	sf::Color getColor() { return color; }
+	std::string getName() { return name; };
 
 	double thermalConst;
-
-	void startThermal() { thermalConst = rho * cp / k; }
+	std::string name;
+	//void startThermal() { thermalConst = rho * cp / k; }
 	double cp, k, rho;
-	int color;
+	sf::Color color;
 };
 #endif
