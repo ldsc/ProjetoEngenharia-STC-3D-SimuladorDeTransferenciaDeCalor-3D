@@ -10,6 +10,7 @@
 class CSimulator {
 private:
 	bool parallel = true;
+	bool materialPropertiesStatus = true;
 	int NGRIDS = 4;
 	const double MIN_ERRO = 1.0e-1;
 	const int MAX_ITERATION = 39;
@@ -57,9 +58,12 @@ public:
 	void plot();
 	void replot();
 
+	void saveGrid(std::string nameFile);
+	void openGrid(std::string nameFile);
 
 	/// --------- FUNCOES SET ---------
 	void set_ActualTemperature(double newTemperature);
+	void changeMaterialPropertiesStatus();
 	void plusDelta_t() { delta_t += 0.5; }
 	void minusDelta_t() { delta_t += 0.5;}
 	void changeParallel() { parallel = parallel ? false : true; }
@@ -68,6 +72,7 @@ public:
 	int getNGRIDS() { return NGRIDS; }
 	int getStudyGrid() { return gridStudy; }
 	bool getParallel() { return parallel; }
+	bool getMaterialStatus() { return materialPropertiesStatus; }
 	double maxTemp();
 	double minTemp();
 	double get_ActualTemperature() { return actualTemperature; }

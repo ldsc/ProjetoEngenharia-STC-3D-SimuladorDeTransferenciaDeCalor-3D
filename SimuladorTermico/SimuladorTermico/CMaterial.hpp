@@ -6,16 +6,15 @@
 
 class CMaterial {
 public:
-	CMaterial() {}
-	CMaterial(double _cp, double _k, double _rho, sf::Color _color, std::string _name) : cp{ _cp }, k{ _k }, rho{ _rho }, color{ _color }, name{ _name } { }
-	double getThermalConst(){ return rho * cp / k; }
-	sf::Color getColor() { return color; }
-	std::string getName() { return name; };
+	CMaterial(std::string _name) : name{ _name } { }
+	double getThermalConst();
+	double getThermalConst(double T);
 
-	double thermalConst;
+	sf::Color getColor();// { return color; }
+	std::string getName() { return name; }
+	void setName(std::string _name) { name = _name; }
+
+private:
 	std::string name;
-	//void startThermal() { thermalConst = rho * cp / k; }
-	double cp, k, rho;
-	sf::Color color;
 };
 #endif

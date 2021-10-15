@@ -7,7 +7,7 @@ CWindow::CWindow(int _width, int _height) {
     RECT ConsoleRect;
     GetWindowRect(console, &ConsoleRect);
 
-    MoveWindow(console, ConsoleRect.left, ConsoleRect.top, 430, 450, TRUE);
+    MoveWindow(console, ConsoleRect.left, ConsoleRect.top, 450, 600, TRUE);
 }
 
 void CWindow::Run() {
@@ -24,11 +24,11 @@ void CWindow::Run() {
     sf::RenderWindow window(sf::VideoMode(width, height), L"Paint", sf::Style::Default);
     sf::RenderWindow windowMaterial(sf::VideoMode(width, height), L"Material", sf::Style::Default);
 
-    window.setPosition(sf::Vector2i(500, 300));
+    window.setPosition(sf::Vector2i(700, 300));
     //window.setVerticalSyncEnabled(false);
     window.setFramerateLimit(100);
 
-    windowMaterial.setPosition(sf::Vector2i(520+width, 300));
+    windowMaterial.setPosition(sf::Vector2i(710+width, 300));
     windowMaterial.setFramerateLimit(100);
 
     canvas.create(width, height);
@@ -123,11 +123,23 @@ void CWindow::Run() {
                 case sf::Keyboard::R:
                     simulation.plot();
                     break;
-                case sf::Keyboard::F:
+                case sf::Keyboard::V:
+                    simulation.changeMaterialPropertiesStatus();
+                    printMenu(recSize);
+                    break;
+                case sf::Keyboard::G:
                     simulation.changeParallel();
                     printMenu(recSize);
                     break;
                 case sf::Keyboard::S:
+                    simulation.saveGrid("teste.txt");
+                    break;
+                case sf::Keyboard::A:
+                    simulation.openGrid("teste.txt");
+                    canvas.draw(pixelPaint);
+                    canvas.display();
+                    break;
+                case sf::Keyboard::F:
                     isSourceActive = isSourceActive ? false : true;
                     printMenu(recSize);
                     break;
@@ -301,6 +313,7 @@ void CWindow::printMenu(sf::Vector2f recSize) {
     std::cout << "Perfil: " << currentGrid << std::endl;
     std::cout << "Paralellism: " << (simulation.getParallel() ? "yes" : "no") << std::endl;
     std::cout << "Material: " << simulation.getNameMaterial() << std::endl;
+    std::cout << "Propriedades variando: " << (simulation.getMaterialStatus() ? "yes" : "no") << std::endl;
     std::cout << "---------------------------------" << std::endl;
     std::cout << "  P    - PAUSE/RUN" << std::endl;
     std::cout << "  O    - set observer point" << std::endl;
@@ -313,7 +326,10 @@ void CWindow::printMenu(sf::Vector2f recSize) {
     std::cout << "LCTRL  - decrease rectangle size" << std::endl;
     std::cout << "  >    - increase time delta" << std::endl;
     std::cout << "  <    - decrease time delta" << std::endl;
-    std::cout << "  S    - temperature source" << std::endl;
-    std::cout << "  F    - change parallelism" << std::endl;
+    std::cout << "  F    - temperature source" << std::endl;
+    std::cout << "  G    - change parallelism" << std::endl;
+    std::cout << "  E    - next material" << std::endl;
+    std::cout << "  Q    - last material" << std::endl;
+    std::cout << "  V    - variable material properties" << std::endl;
     std::cout << "---------------------------------" << std::endl;
 }

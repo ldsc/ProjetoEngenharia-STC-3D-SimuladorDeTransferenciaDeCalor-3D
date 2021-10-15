@@ -4,7 +4,7 @@ CSimulator::CSimulator( double _delta_x, double _delta_t, double temperature_i) 
 	delta_x = _delta_x;
 	delta_t = _delta_t;
 	createListOfMaterials(); 
-	grafico = new CGnuplot;
+	//grafico = new CGnuplot;
 }
 
 void CSimulator::resetSize(int width, int height) {
@@ -19,11 +19,12 @@ void CSimulator::resetGrid() {
 }
 
 void CSimulator::createListOfMaterials() {
-	materiais.resize(4);
-	materiais[0] = new CMaterial(0.897, 230, 2.800, sf::Color(100, 12, 50, 255), "aluminio");
-	materiais[1] = new CMaterial(0.385, 200, 9.000, sf::Color(12, 155, 10, 255), "cooper");
-	materiais[2] = new CMaterial(2.060, 0.61, 1.000, sf::Color(100, 100, 100, 255), "air");
-	materiais[3] = new CMaterial(0.001, 0.026, 0.0012, sf::Color(0, 0, 255, 255), "water");
+	materiais.resize(5);
+	materiais[0] = new CMaterial("aluminum");
+	materiais[1] = new CMaterial("cooper");
+	materiais[2] = new CMaterial("iron");
+	materiais[3] = new CMaterial("magnesium");
+	materiais[4] = new CMaterial("nickel");
 }
 
 void CSimulator::run() {
@@ -62,6 +63,7 @@ void CSimulator::calculatePointIteration(int x, int y, int g) {
 	float n_x = 0;
 	float n_z = 0;
 	double inf = .0, sup = .0, esq = .0, dir = .0, cima = .0, baixo =.0;
+	double thermalConstant;
 
 	if (y - 1 > 0) {
 		if ((*grid[g])(x, y - 1)->active) {
@@ -105,7 +107,12 @@ void CSimulator::calculatePointIteration(int x, int y, int g) {
 		}
 	}
 
-	(*grid[g])(x, y)->temp_nup1 = ((*grid[g])(x, y)->material->getThermalConst() * (*grid[g])(x, y)->temp*delta_x*delta_z/delta_t + inf + sup + esq + dir + cima + baixo) / (n_x*delta_z + n_z*delta_x + (*grid[g])(x, y)->material->getThermalConst()*delta_x*delta_z/delta_t);
+	if (materialPropertiesStatus)
+		thermalConstant = (*grid[g])(x, y)->material->getThermalConst((*grid[g])(x, y)->temp_nup1);
+	else
+		thermalConstant = (*grid[g])(x, y)->material->getThermalConst();
+
+	(*grid[g])(x, y)->temp_nup1 = (thermalConstant * (*grid[g])(x, y)->temp*delta_x*delta_z/delta_t + inf + sup + esq + dir + cima + baixo) / (n_x*delta_z + n_z*delta_x + thermalConstant *delta_x*delta_z/delta_t);
 }
 
 void CSimulator::saveStudy() {
@@ -125,7 +132,7 @@ void CSimulator::changeRightMaterial() {
 
 void CSimulator::changeLeftMaterial() {
 	actualMaterial--;
-	if (actualMaterial == 0)
+	if (actualMaterial == -1)
 		actualMaterial = materiais.size()-1;
 }
 
@@ -136,7 +143,7 @@ void CSimulator::studyPosition(sf::Vector2i pos, int _gridStudy) {
 	timeStudy.clear();
 	positionStudyVector = (sf::Vector2f)pos;
 	positionStudy = (int)pos.x + (int)pos.y * grid[gridStudy]->getWidth();
-	std::cout << "posicao " << positionStudy << " - " << pos.x << " / " << pos.y << std::endl;
+	std::cout << "posicao " << positionStudy << " - " << pos.x << " / " << pos.y << " - T: " << (*grid[gridStudy])(pos.x, pos.y)->temp << " K" << std::endl;
 }
 
 void CSimulator::plot() {
@@ -164,12 +171,58 @@ void CSimulator::replot() {
 	grafico->replot(name + ".dat");
 }
 
+void CSimulator::saveGrid(std::string nameFile) {
+	std::ofstream file(nameFile);
+	int sizeGrid = grid[0]->getSize();
+	for (unsigned int g = 0; g < NGRIDS; g++) {
+		for (unsigned int i = 0; i < sizeGrid; i++) {
+			file << (*grid[g]).getTemp(i) << " ";
+			file << (*grid[g])[i]->active << " ";
+			file << (*grid[g])[i]->source << " ";
+			file << (*grid[g])[i]->material->getName() << "\n";
+		}
+	}
+	file.close();
+}
+
+void CSimulator::openGrid(std::string nameFile) {
+	std::ifstream file(nameFile);
+	std::string value, name;
+	int sizeGrid = grid[0]->getSize();
+	for (unsigned int g = 0; g < NGRIDS; g++) {
+		for (unsigned int i = 0; i < sizeGrid; i++) {
+			file >> value;
+			//std::cout << value;
+			(*grid[g])[i]->temp = std::stof(value);
+
+			file.get();	file >> value;
+			//std::cout << " - " << value;
+			(*grid[g])[i]->active = std::stoi(value);
+
+			file.get();	file >> value;
+			//std::cout << " - " << value;
+			(*grid[g])[i]->source = std::stoi(value);
+
+			file.get();	std::getline(file, value);
+			///std::cout << " - " << value;
+			(*grid[g])[i]->material->setName(name);
+
+			file.get();	std::getline(file, value);
+		}
+	}
+	file.close();
+}
+
 void CSimulator::set_ActualTemperature(double newTemperature) {
 	if (newTemperature > Tmax)
 		Tmax = newTemperature;
 	if (newTemperature < Tmin)
 		Tmin = newTemperature;
 	actualTemperature = newTemperature;
+}
+
+void CSimulator::changeMaterialPropertiesStatus() {
+	materialPropertiesStatus = materialPropertiesStatus ? false : true;
 }
 
 double CSimulator::maxTemp() {
