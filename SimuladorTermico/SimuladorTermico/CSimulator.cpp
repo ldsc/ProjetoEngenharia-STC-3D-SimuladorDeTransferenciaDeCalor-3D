@@ -20,25 +20,35 @@ void CSimulator::resetGrid() {
 
 void CSimulator::createListOfMaterials() {
 	materiais.resize(5);
-	materiais[0] = new CMaterial("aluminum");
-	materiais[1] = new CMaterial("cooper");
-	materiais[2] = new CMaterial("iron");
-	materiais[3] = new CMaterial("magnesium");
-	materiais[4] = new CMaterial("nickel");
+	materiais[0] = "aluminum";
+	materiais[1] = "cooper";
+	materiais[2] = "iron";
+	materiais[3] = "magnesium";
+	materiais[4] = "nickel";
 }
 
 void CSimulator::run() {
 	for (int g = 0; g < NGRIDS; g++)
 		run(g);
-	plot();
 }
 
 void CSimulator::run(int g) {
 	grid[g]->startIteration();
-
 	solverByGrid(g);
-	if (g == gridStudy)
-		saveStudy();
+}
+
+void CSimulator::run_otimization() {
+	for (int g=0;g<NGRIDS;g++)
+		grid[g]->startIteration();
+
+	omp_set_num_threads(MAX_THREADS); /// por seguranca, vou setar as threads para max-3
+	#pragma omp parallel
+	{
+	solverByThread(omp_get_thread_num());
+	}
+
+	for (int g = 0; g < NGRIDS; g++)
+		grid[g]->updateSolver();
 }
 
 void CSimulator::solverByGrid(int g) {
@@ -55,11 +65,30 @@ void CSimulator::solverByGrid(int g) {
 	grid[g]->updateSolver();
 }
 
-void CSimulator::calculatePointIteration(int x, int y, int g) {
+void CSimulator::solverByThread(int thread_num) {
+	double erro = 1, _erro;
+	int iter = 0;
+	int x, y;
+	while (erro > MIN_ERRO && iter <= MAX_ITERATION) {
+		for (int g = 0; g < NGRIDS; g++) {
+			for (int i = thread_num; i < grid[g]->getSize(); i+=MAX_THREADS) {
+				x = i % grid[g]->getWidth();
+				y = i / grid[g]->getWidth();
+
+				(*grid[g])(x, y)->temp_nu = (*grid[g])(x, y)->temp_nup1;
+				_erro = calculatePointIteration(x, y, g);
+				erro = erro < _erro ? _erro : erro;
+			}
+		}
+		iter++;
+	}
+}
+
+double CSimulator::calculatePointIteration(int x, int y, int g) {
 	if (!(*grid[g])(x,y)->active)
-		return; 
+		return 0.0; 
 	if ((*grid[g])(x, y)->source)
-		return;
+		return 0.0;
 	float n_x = 0;
 	float n_z = 0;
 	double inf = .0, sup = .0, esq = .0, dir = .0, cima = .0, baixo =.0;
@@ -96,14 +125,14 @@ void CSimulator::calculatePointIteration(int x, int y, int g) {
 	if ( g < NGRIDS-1) {
 		if (grid[g + 1]->operator()(x, y)->active) {
 			n_z++;
-			cima = grid[g + 1]->operator()(x, y)->temp_nup1*delta_x;
+			cima = (*grid[g + 1])(x, y)->temp_nup1*delta_x;
 		}
 	}
 
 	if (g > 0) {
 		if (grid[g - 1]->operator()(x, y)->active) {
 			n_z++;
-			baixo = grid[g - 1]->operator()(x, y)->temp_nup1 * delta_x;
+			baixo = (*grid[g - 1])(x, y)->temp_nup1 * delta_x;
 		}
 	}
 
@@ -113,6 +142,7 @@ void CSimulator::calculatePointIteration(int x, int y, int g) {
 		thermalConstant = (*grid[g])(x, y)->material->getThermalConst();
 
 	(*grid[g])(x, y)->temp_nup1 = (thermalConstant * (*grid[g])(x, y)->temp*delta_x*delta_z/delta_t + inf + sup + esq + dir + cima + baixo) / (n_x*delta_z + n_z*delta_x + thermalConstant *delta_x*delta_z/delta_t);
+	return (*grid[g])(x, y)->temp_nup1 - (*grid[g])(x, y)->temp_nu;
 }
 
 void CSimulator::saveStudy() {
@@ -143,7 +173,7 @@ void CSimulator::studyPosition(sf::Vector2i pos, int _gridStudy) {
 	timeStudy.clear();
 	positionStudyVector = (sf::Vector2f)pos;
 	positionStudy = (int)pos.x + (int)pos.y * grid[gridStudy]->getWidth();
-	std::cout << "posicao " << positionStudy << " - " << pos.x << " / " << pos.y << " - T: " << (*grid[gridStudy])(pos.x, pos.y)->temp << " K" << std::endl;
+	std::cout << "posicao " << positionStudy << " - " << pos.x << " / " << pos.y << " - T: " << (*grid[gridStudy])(pos.x, pos.y)->temp << " K - " << (*grid[gridStudy])(pos.x, pos.y)->material->getName() <<  std::endl;
 }
 
 void CSimulator::plot() {
@@ -154,7 +184,6 @@ void CSimulator::plot() {
 	outdata << "# time Temperature " << std::endl;
 	for (int i = 0; i < temperatureStudy.size(); i++)
 		outdata << timeStudy[i] << " " << temperatureStudy[i] << std::endl;
-
 	
 	grafico->plot(name+".dat", "time", "temperature", name);
 }
@@ -176,41 +205,35 @@ void CSimulator::saveGrid(std::string nameFile) {
 	int sizeGrid = grid[0]->getSize();
 	for (unsigned int g = 0; g < NGRIDS; g++) {
 		for (unsigned int i = 0; i < sizeGrid; i++) {
-			file << (*grid[g]).getTemp(i) << " ";
+			file << (*grid[g])[i]->temp << " ";
 			file << (*grid[g])[i]->active << " ";
 			file << (*grid[g])[i]->source << " ";
 			file << (*grid[g])[i]->material->getName() << "\n";
 		}
 	}
 	file.close();
+	std::cout << "Arquivo salvo!" << std::endl;
 }
 
 void CSimulator::openGrid(std::string nameFile) {
 	std::ifstream file(nameFile);
-	std::string value, name;
+	std::string value;
+	double temperatura;
+	int active, source;
 	int sizeGrid = grid[0]->getSize();
 	for (unsigned int g = 0; g < NGRIDS; g++) {
 		for (unsigned int i = 0; i < sizeGrid; i++) {
+
+			file >> value;	temperatura = std::stof(value);
+			file >> value; active = std::stoi(value);
+			file >> value; source = std::stoi(value);
 			file >> value;
-			//std::cout << value;
-			(*grid[g])[i]->temp = std::stof(value);
 
-			file.get();	file >> value;
-			//std::cout << " - " << value;
-			(*grid[g])[i]->active = std::stoi(value);
-
-			file.get();	file >> value;
-			//std::cout << " - " << value;
-			(*grid[g])[i]->source = std::stoi(value);
-
-			file.get();	std::getline(file, value);
-			///std::cout << " - " << value;
-			(*grid[g])[i]->material->setName(name);
-
-			file.get();	std::getline(file, value);
+			grid[g]->draw(i, temperatura, active, source, value);
 		}
 	}
 	file.close();
+	std::cout << "Arquivo carregado!" << std::endl;
 }
 
 void CSimulator::set_ActualTemperature(double newTemperature) {

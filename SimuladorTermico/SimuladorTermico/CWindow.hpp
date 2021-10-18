@@ -18,12 +18,10 @@ private: // variables
 
 	int mat = 0;
 	int height, width;
+	int distance_of_draws = 10;
 	sf::RenderWindow window;
-	sf::RenderWindow windowMaterial;
 	sf::RenderTexture canvas;
-	sf::RenderTexture canvasMaterial;
 	sf::Sprite sprite;
-	sf::Sprite spriteMaterial;
 	CSimulator simulation;
 	sf::Vector2i studyCoordinates;
 
@@ -39,7 +37,6 @@ private: // functions
 	void printMenu(sf::Vector2f recSize);
 	void paint();
 	void paintStudyPoint();
-	void paintMaterial();
 };
 
 #endif

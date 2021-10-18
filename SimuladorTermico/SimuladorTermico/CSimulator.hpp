@@ -9,12 +9,13 @@
 
 class CSimulator {
 private:
-	bool parallel = true;
+	int parallel = 0;
+	int MAX_THREADS = omp_get_max_threads()-1;
 	bool materialPropertiesStatus = true;
 	int NGRIDS = 4;
 	const double MIN_ERRO = 1.0e-1;
 	const int MAX_ITERATION = 39;
-	double delta_x = 2.6e-4, delta_t = 1.0e-0;
+	double delta_x = 2.6e-4, delta_t = 5.0e-1;
 	double delta_z = 0.5;
 
 	double Tmax = 1000, Tmin = 300;
@@ -26,7 +27,7 @@ private:
 	int actualMaterial = 0;
 	std::vector<double> temperatureStudy = { 0 };
 	std::vector<double> timeStudy = { 0 };
-	std::vector<CMaterial*> materiais;
+	std::vector<std::string> materiais;
 	sf::Vector2f positionStudyVector = sf::Vector2f(0,0);
 	CGnuplot *grafico;
 
@@ -34,7 +35,7 @@ public:
 	std::vector<CGrid*> grid;
 public:
 	/// --------- FUNCOES DE CRIACAO ---------
-	CSimulator() { createListOfMaterials(); plot(); grafico = new CGnuplot;	}
+	CSimulator() { createListOfMaterials(); grafico = new CGnuplot();	}
 
 	CSimulator( double _delta_x, double _delta_t, double temperature_i);
 
@@ -46,8 +47,10 @@ public:
 	/// --------- FUNCOES DO SOLVER ---------
 	void run();
 	void run(int g);
+	void run_otimization();
 	void solverByGrid(int g);
-	void calculatePointIteration(int  x, int y, int g);
+	void solverByThread(int thread_num);
+	double calculatePointIteration(int  x, int y, int g);
 	void updateActualTime();
 	void changeRightMaterial();
 	void changeLeftMaterial();
@@ -66,12 +69,12 @@ public:
 	void changeMaterialPropertiesStatus();
 	void plusDelta_t() { delta_t += 0.5; }
 	void minusDelta_t() { delta_t += 0.5;}
-	void changeParallel() { parallel = parallel ? false : true; }
+	void changeParallel() { parallel = parallel + 1 > 2 ? 0 : parallel + 1; }
 
 	/// --------- FUNCOES GET ---------
 	int getNGRIDS() { return NGRIDS; }
 	int getStudyGrid() { return gridStudy; }
-	bool getParallel() { return parallel; }
+	int getParallel() { return parallel; }
 	bool getMaterialStatus() { return materialPropertiesStatus; }
 	double maxTemp();
 	double minTemp();
@@ -85,10 +88,9 @@ public:
 
 	sf::Vector2f getPositionStudyVector() { return positionStudyVector; }
 
-	CMaterial* getActualMaterial() { return materiais[actualMaterial]; }
+	std::string getActualMaterial() { return materiais[actualMaterial]; }
 
 	std::vector<double> getTemperatureStudy() { return temperatureStudy; }
 	std::vector<double> getTimeStudy() { return timeStudy; }
-	std::string getNameMaterial() { return materiais[actualMaterial]->getName(); }
 };
 #endif

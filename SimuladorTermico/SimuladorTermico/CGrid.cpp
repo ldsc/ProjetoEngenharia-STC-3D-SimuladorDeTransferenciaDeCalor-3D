@@ -19,12 +19,15 @@ void CGrid::resetSize(int _width, int _height, double temperature) {
 void CGrid::resetGrid(double temperature) {
 	for (int i = 0; i < width * height; i++) {
 		grid[i].active = false;
+		grid[i].active = false;
+		grid[i].source = false;
 		grid[i].temp = temperature;
 		grid[i].temp_nup1 = temperature;
+		grid[i].material = new CMaterial("ar");
 	}
 }
 
-void CGrid::draw(sf::Vector2f pos, sf::Vector2f size, double _temperature, bool isSourceActive, CMaterial *_material) {
+void CGrid::draw(sf::Vector2f pos, sf::Vector2f size, double _temperature, bool isSourceActive, std::string _material) {
 
 	int start_x = (pos.x >= 0) ? ((int)pos.x) : 0;
 	int start_y = (pos.y >= 0) ? ((int)pos.y) : 0;
@@ -36,9 +39,16 @@ void CGrid::draw(sf::Vector2f pos, sf::Vector2f size, double _temperature, bool 
 			grid[k * width + i].active = true;
 			grid[k * width + i].temp = _temperature;
 			grid[k * width + i].source = isSourceActive;
-			grid[k * width + i].material = _material;
+			grid[k * width + i].material = new CMaterial(_material);
 		}
 	}
+}
+
+void CGrid::draw(int x, double _temperature, bool active, bool isSource, std::string _material) {
+	grid[x].temp = _temperature;
+	grid[x].active = active;
+	grid[x].source = isSource;
+	grid[x].material = new CMaterial(_material);
 }
 
 void CGrid::updateIteration() {

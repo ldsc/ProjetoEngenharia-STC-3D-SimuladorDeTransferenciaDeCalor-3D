@@ -21,28 +21,23 @@ void CWindow::Run() {
 	sf::RectangleShape brush(recSize);
     sf::RectangleShape pixelPaint(sf::Vector2f(1, 1));
 
-    sf::RenderWindow window(sf::VideoMode(width, height), L"Paint", sf::Style::Default);
-    sf::RenderWindow windowMaterial(sf::VideoMode(width, height), L"Material", sf::Style::Default);
+    sf::RenderWindow window(sf::VideoMode(width*2+ distance_of_draws, height), L"Paint", sf::Style::Default);
 
     window.setPosition(sf::Vector2i(700, 300));
     //window.setVerticalSyncEnabled(false);
     window.setFramerateLimit(100);
 
-    windowMaterial.setPosition(sf::Vector2i(710+width, 300));
-    windowMaterial.setFramerateLimit(100);
 
-    canvas.create(width, height);
+    canvas.create(width*2+10, height);
     canvas.clear(sf::Color::White);
-    canvasMaterial.create(width, height);
-    canvasMaterial.clear(sf::Color::White);
 
     sprite.setTexture(canvas.getTexture(), true);
-    spriteMaterial.setTexture(canvasMaterial.getTexture(), true);
 
 	brush.setFillColor(sf::Color(255, 255, 0, 255));
 
     printMenu(recSize);
-	while (window.isOpen() && windowMaterial.isOpen()) {
+    paint();
+	while (window.isOpen()) {
 		sf::Event event;
 
         while (window.pollEvent(event)) {
@@ -56,7 +51,6 @@ void CWindow::Run() {
                     canvas.clear(sf::Color::White);
                     simulation.resetGrid();
                     canvas.display();
-                    paintMaterial();
                     break;
                 case sf::Keyboard::P:
                     runningSimulator = runningSimulator ? false : true;
@@ -85,14 +79,12 @@ void CWindow::Run() {
                     if (currentGrid > 3)currentGrid = 3;
                     paint();
                     printMenu(recSize);
-                    paintMaterial();
                     break;
                 case sf::Keyboard::Down:
                     currentGrid--;
                     if (currentGrid < 0)currentGrid = 0;
                     paint();
                     printMenu(recSize);
-                    paintMaterial();
                     break;
                 case sf::Keyboard::LShift:
                     recSize = case_LShift(recSize);
@@ -136,8 +128,7 @@ void CWindow::Run() {
                     break;
                 case sf::Keyboard::A:
                     simulation.openGrid("teste.txt");
-                    canvas.draw(pixelPaint);
-                    canvas.display();
+                    paint();
                     break;
                 case sf::Keyboard::F:
                     isSourceActive = isSourceActive ? false : true;
@@ -167,10 +158,7 @@ void CWindow::Run() {
                     lastPos = window.mapPixelToCoords({ event.mouseButton.x, event.mouseButton.y });
                     simulation.grid[currentGrid]->draw(lastPos, recSize, simulation.get_ActualTemperature(), isSourceActive, simulation.getActualMaterial());
 
-                    brush.setPosition(lastPos);
-                    canvas.draw(brush);
-                    canvas.display();
-                    paintMaterial();
+                    paint();
                 }
                 break;
             case sf::Event::MouseButtonReleased:
@@ -180,36 +168,25 @@ void CWindow::Run() {
 			} // switch event type
 		}// while pollEvent
 
-        while (windowMaterial.pollEvent(event)) {
-            switch (event.type) {
-            case sf::Event::Closed:
-                windowMaterial.close();
-                break;
-            }
-        }
-
         if (runningSimulator && contador >= -1) {
 
             double start_time = std::time(0);
-            if (simulation.getParallel()) {
-                omp_set_num_threads(simulation.getNGRIDS()+1);
+
+            if (simulation.getParallel() == 0) {
+                simulation.run_otimization();
+            }
+            else if (simulation.getParallel()==1) {
+                omp_set_num_threads(simulation.getNGRIDS());
                 #pragma omp parallel
                 {
-                    if (omp_get_thread_num() == 0) {
-                        paint();
-                        paintStudyPoint();
-                        contador = -1;
-                    }
-                    else {
-                        simulation.run(omp_get_thread_num()-1);
-                    }
+                    simulation.run(omp_get_thread_num());
                 }
             }
             else {
-                paint();
-                contador = -1;
                 simulation.run();
             }
+            paint();
+            contador = -1;
             std::cout << "Time: " << std::setw(5) << simulation.get_time() << " - duracao: " << std::time(0) - start_time << " seg       " << "\r";
             simulation.updateActualTime();
         }
@@ -218,10 +195,6 @@ void CWindow::Run() {
         window.clear(sf::Color(64, 64, 64));
         window.draw(sprite);
         window.display();
-
-        windowMaterial.clear(sf::Color(64, 64, 64));
-        windowMaterial.draw(spriteMaterial);
-        windowMaterial.display();
 	}// while is open
 }
 
@@ -244,34 +217,37 @@ void CWindow::paint() {
                 pixelPaint.setFillColor(getRGB(simulation.grid[currentGrid]->operator()(i, k)->temp));
             pixelPaint.setPosition(sf::Vector2f(i, k));
             canvas.draw(pixelPaint);
-            canvas.display();
         }
     }
-}
-
-void CWindow::paintStudyPoint() {
-    if (currentGrid == simulation.getStudyGrid()) {
-        sf::RectangleShape pixelPaint(sf::Vector2f(5, 5));
-        pixelPaint.setFillColor(sf::Color::Black);
-        pixelPaint.setPosition(simulation.getPositionStudyVector());
-        canvas.draw(pixelPaint);
-        canvas.display();
-    }
-}
-
-void CWindow::paintMaterial() {
-    sf::RectangleShape pixelPaint(sf::Vector2f(1, 1));
     for (int i = 0; i < width; i++) {
         for (int k = 0; k < height; k++) {
             if (!simulation.grid[currentGrid]->operator()(i, k)->active)
                 pixelPaint.setFillColor(sf::Color::White);
             else
                 pixelPaint.setFillColor(simulation.grid[currentGrid]->operator()(i, k)->material->getColor());
-           
-            pixelPaint.setPosition(sf::Vector2f(i, k));
-            canvasMaterial.draw(pixelPaint);
-            canvasMaterial.display();
+            pixelPaint.setPosition(sf::Vector2f(i+width+ distance_of_draws, k));
+            canvas.draw(pixelPaint);
         }
+    }
+    sf::RectangleShape delimiter(sf::Vector2f(2, height));
+    delimiter.setFillColor(sf::Color::Black);
+    delimiter.setPosition(sf::Vector2f(width, 0));
+    canvas.draw(delimiter);
+    delimiter.setPosition(sf::Vector2f(width+distance_of_draws-2, 0));
+    canvas.draw(delimiter);
+
+    canvas.display();
+
+    paintStudyPoint();
+}
+
+void CWindow::paintStudyPoint() {
+    if (currentGrid == simulation.getStudyGrid()) {
+        sf::RectangleShape pixelPaint(sf::Vector2f(3, 3));
+        pixelPaint.setFillColor(sf::Color::Black);
+        pixelPaint.setPosition(simulation.getPositionStudyVector());
+        canvas.draw(pixelPaint);
+        canvas.display();
     }
 }
 
@@ -311,8 +287,8 @@ void CWindow::printMenu(sf::Vector2f recSize) {
     std::cout << "Status: " << (runningSimulator ? "running" : "stoped") << std::endl;
     std::cout << "Source: " << (isSourceActive ? "yes" : "no") << std::endl;
     std::cout << "Perfil: " << currentGrid << std::endl;
-    std::cout << "Paralellism: " << (simulation.getParallel() ? "yes" : "no") << std::endl;
-    std::cout << "Material: " << simulation.getNameMaterial() << std::endl;
+    std::cout << "Paralellism: " << simulation.getParallel() << std::endl;
+    std::cout << "Material: " << simulation.getActualMaterial() << std::endl;
     std::cout << "Propriedades variando: " << (simulation.getMaterialStatus() ? "yes" : "no") << std::endl;
     std::cout << "---------------------------------" << std::endl;
     std::cout << "  P    - PAUSE/RUN" << std::endl;

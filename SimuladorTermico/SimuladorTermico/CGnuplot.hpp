@@ -17,6 +17,7 @@ class CGnuplot {
 private:
 	FILE* pipe;
 public:
+	CGnuplot() {}
 	void plot(std::string name, std::string xlabel, std::string ylabel, std::string saveName);
 	void replot(std::string name);
 	void semilog(std::string name, std::string xlabel, std::string ylabel, std::string saveName);

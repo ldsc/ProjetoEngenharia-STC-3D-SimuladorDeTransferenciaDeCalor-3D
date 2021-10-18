@@ -10,7 +10,7 @@ public:
 	double getThermalConst();
 	double getThermalConst(double T);
 
-	sf::Color getColor();// { return color; }
+	sf::Color getColor();
 	std::string getName() { return name; }
 	void setName(std::string _name) { name = _name; }
 

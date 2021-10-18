@@ -71,4 +71,6 @@ sf::Color CMaterial::getColor() {
 		return sf::Color(0, 0, 255, 255);
 	else if (name == "nickel")
 		return sf::Color(100, 0, 255, 255);
+	else
+		return sf::Color::White;
 }

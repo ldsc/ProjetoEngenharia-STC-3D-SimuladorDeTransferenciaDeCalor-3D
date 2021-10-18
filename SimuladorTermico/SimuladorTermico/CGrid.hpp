@@ -28,7 +28,9 @@ public:
 	void printGrid();
 	void resetSize(int _width, int _height, double temperature);
 
-	void draw(sf::Vector2f pos, sf::Vector2f size, double temperature, bool isSourceActive, CMaterial *_material);
+	void draw(sf::Vector2f pos, sf::Vector2f size, double temperature, bool isSourceActive, std::string _material);
+	void draw(int x, double temperature, bool active, bool isSource, std::string _material);
+
 	int getSize() { return width * height; }
 
 	void updateIteration();
