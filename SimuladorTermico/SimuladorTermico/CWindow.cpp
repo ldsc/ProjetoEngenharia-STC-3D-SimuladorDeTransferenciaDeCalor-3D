@@ -2,6 +2,9 @@
 CWindow::CWindow(int _width, int _height) {
 	height = _height; width = _width;
 	simulation.resetSize(width, height);
+    font.loadFromFile("arial.ttf");
+    recSize.x = 101;
+    recSize.y = 101;
 
     HWND console = GetConsoleWindow();
     RECT ConsoleRect;
@@ -16,27 +19,27 @@ void CWindow::Run() {
     double maxTemp, minTemp;
 
 	sf::Vector2f lastPos;
-    sf::Vector2f recSize(101, 101);
 
 	sf::RectangleShape brush(recSize);
     sf::RectangleShape pixelPaint(sf::Vector2f(1, 1));
 
-    sf::RenderWindow window(sf::VideoMode(width*2+ distance_of_draws, height), L"Paint", sf::Style::Default);
+    sf::RenderWindow window(sf::VideoMode(width*2+ distance_of_draws, height*2+ distance_of_draws), L"Paint", sf::Style::Default);
 
     window.setPosition(sf::Vector2i(700, 300));
     //window.setVerticalSyncEnabled(false);
     window.setFramerateLimit(100);
 
 
-    canvas.create(width*2+10, height);
+    canvas.create(width*2+distance_of_draws, height*2+ distance_of_draws);
     canvas.clear(sf::Color::White);
 
     sprite.setTexture(canvas.getTexture(), true);
 
 	brush.setFillColor(sf::Color(255, 255, 0, 255));
 
-    printMenu(recSize);
-    paint();
+    printMenu(recSize); paint_menu(); paint_menu();
+    paint_design();
+    paint_shortcuts();
 	while (window.isOpen()) {
 		sf::Event event;
 
@@ -54,7 +57,7 @@ void CWindow::Run() {
                     break;
                 case sf::Keyboard::P:
                     runningSimulator = runningSimulator ? false : true;
-                    printMenu(recSize);
+                    printMenu(recSize); paint_menu(); paint_menu();
                     break;
                 case sf::Keyboard::T:
                     std::cout << "Digite a nova temperatura: ";
@@ -62,47 +65,47 @@ void CWindow::Run() {
                     std::cin >> temperature;
                     simulation.set_ActualTemperature(temperature);
                     brush.setFillColor(getRGB(temperature));
-                    printMenu(recSize);
+                    printMenu(recSize); paint_menu();
                     break;
                 case sf::Keyboard::PageUp:
                     brush.setFillColor(sf::Color(255, 0, 0, 255));
                     simulation.set_ActualTemperature(simulation.getTmax());
-                    printMenu(recSize);
+                    printMenu(recSize); paint_menu();
                     break;
                 case sf::Keyboard::PageDown:
                     brush.setFillColor(sf::Color(255, 255, 0, 255));
                     simulation.set_ActualTemperature(simulation.getTmin());
-                    printMenu(recSize);
+                    printMenu(recSize); paint_menu();
                     break;
                 case sf::Keyboard::Up:
                     currentGrid++;
                     if (currentGrid > 3)currentGrid = 3;
-                    paint();
-                    printMenu(recSize);
+                    paint_results();
+                    printMenu(recSize); paint_menu();
                     break;
                 case sf::Keyboard::Down:
                     currentGrid--;
                     if (currentGrid < 0)currentGrid = 0;
-                    paint();
-                    printMenu(recSize);
+                    paint_results();
+                    printMenu(recSize); paint_menu();
                     break;
                 case sf::Keyboard::LShift:
                     recSize = case_LShift(recSize);
                     brush.setSize(recSize);
-                    printMenu(recSize);
+                    printMenu(recSize); paint_menu();
                     break;
                 case sf::Keyboard::LControl:
                     recSize = case_LCtrl(recSize);
                     brush.setSize(recSize);
-                    printMenu(recSize);
+                    printMenu(recSize); paint_menu();
                     break;
                 case sf::Keyboard::Comma:
                     simulation.minusDelta_t();
-                    printMenu(recSize);
+                    printMenu(recSize); paint_menu();
                     break;
                 case sf::Keyboard::Period:
                     simulation.plusDelta_t();
-                    printMenu(recSize);
+                    printMenu(recSize); paint_menu();
                     break;
                 case sf::Keyboard::O:
                     studyCoordinates = sf::Mouse::getPosition(window);
@@ -117,30 +120,30 @@ void CWindow::Run() {
                     break;
                 case sf::Keyboard::V:
                     simulation.changeMaterialPropertiesStatus();
-                    printMenu(recSize);
+                    printMenu(recSize); paint_menu();
                     break;
                 case sf::Keyboard::G:
                     simulation.changeParallel();
-                    printMenu(recSize);
+                    printMenu(recSize); paint_menu();
                     break;
                 case sf::Keyboard::S:
                     simulation.saveGrid("teste.txt");
                     break;
                 case sf::Keyboard::A:
                     simulation.openGrid("teste.txt");
-                    paint();
+                    paint_results();
                     break;
                 case sf::Keyboard::F:
                     isSourceActive = isSourceActive ? false : true;
-                    printMenu(recSize);
+                    printMenu(recSize); paint_menu();
                     break;
                 case sf::Keyboard::E:
                     simulation.changeRightMaterial();
-                    printMenu(recSize);
+                    printMenu(recSize); paint_menu();
                     break;
                 case sf::Keyboard::Q:
                     simulation.changeLeftMaterial();
-                    printMenu(recSize);
+                    printMenu(recSize); paint_menu();
                     break;
                 
             }
@@ -158,7 +161,7 @@ void CWindow::Run() {
                     lastPos = window.mapPixelToCoords({ event.mouseButton.x, event.mouseButton.y });
                     simulation.grid[currentGrid]->draw(lastPos, recSize, simulation.get_ActualTemperature(), isSourceActive, simulation.getActualMaterial());
 
-                    paint();
+                    paint_results();
                 }
                 break;
             case sf::Event::MouseButtonReleased:
@@ -185,7 +188,7 @@ void CWindow::Run() {
             else {
                 simulation.run();
             }
-            paint();
+            paint_results();
             contador = -1;
             std::cout << "Time: " << std::setw(5) << simulation.get_time() << " - duracao: " << std::time(0) - start_time << " seg       " << "\r";
             simulation.updateActualTime();
@@ -207,7 +210,7 @@ sf::Color CWindow::getRGB(double temp) {
     return sf::Color(255, n, 0, 255);
 }
 
-void CWindow::paint() {
+void CWindow::paint_results() {
     sf::RectangleShape pixelPaint(sf::Vector2f(1, 1));
     for (int i = 0; i < width; i++) {
         for (int k = 0; k < height; k++) {
@@ -229,16 +232,101 @@ void CWindow::paint() {
             canvas.draw(pixelPaint);
         }
     }
+
+    canvas.display();
+    paintStudyPoint();
+}
+
+void CWindow::paint_design() {
     sf::RectangleShape delimiter(sf::Vector2f(2, height));
     delimiter.setFillColor(sf::Color::Black);
     delimiter.setPosition(sf::Vector2f(width, 0));
     canvas.draw(delimiter);
-    delimiter.setPosition(sf::Vector2f(width+distance_of_draws-2, 0));
+    delimiter.setPosition(sf::Vector2f(width + distance_of_draws - 2, 0));
     canvas.draw(delimiter);
+    delimiter.setSize(sf::Vector2f(width * 2 + distance_of_draws, 2));
+    delimiter.setPosition(sf::Vector2f(0, 0));
+    canvas.draw(delimiter);
+    delimiter.setPosition(sf::Vector2f(0, height));
+    canvas.draw(delimiter);
+    delimiter.setPosition(sf::Vector2f(0, height + distance_of_draws));
+    canvas.draw(delimiter);
+}
+
+void CWindow::paint_shortcuts() {
+    sf::Text text;
+    text.setFont(font);
+    text.setFillColor(sf::Color::Black);
+    text.setCharacterSize(20);
+
+    text.setString("######  Atalhos ######");
+    text.move(sf::Vector2f(5, height + distance_of_draws + 2));
+    canvas.draw(text);
+
+    int y;
+    y = draw_text("  O    - set observer point", 5, height + distance_of_draws + 2+20);
+    y = draw_text("  R    - plot observer point", 5, y);
+    y = draw_text("  C    - clear screen", 5, y);
+    y = draw_text("  T    - choose temperature", 5, y);
+    y = draw_text("PG UP  - temperature -> "+ std::to_string(simulation.getTmax()) + "K", 5, y);
+    y = draw_text("PG DN  - temperature -> "+ std::to_string(simulation.getTmin()) + "K", 5, y);
+    y = draw_text("LSHIFT - increase rectangle size", 5, y);
+    y = draw_text("LCTRL  - decrease rectangle size", 5, y);
+    y = draw_text("  >    - increase time delta", 5, y);
+    y = draw_text("  <    - decrease time delta", 5, y);
+    y = draw_text("  F    - temperature source", 5, y);
+    y = draw_text("  G    - change parallelism", 5, y);
+    y = draw_text("  E    - next material", 5, y);
+    y = draw_text("  Q    - last material", 5, y);
+    y = draw_text("  V    - variable material properties", 5, y);
 
     canvas.display();
+}
+void CWindow::paint_menu() {
+    /// clear menu
+    sf::RectangleShape delimiter(sf::Vector2f(width, height));
+    delimiter.setFillColor(sf::Color::White);
+    delimiter.setPosition(sf::Vector2f(width+distance_of_draws, height+distance_of_draws+2));
+    canvas.draw(delimiter);
 
-    paintStudyPoint();
+    sf::Text text;
+    text.setFont(font);
+    text.setFillColor(sf::Color::Black);
+    text.setCharacterSize(20);
+    int x = width + distance_of_draws + 10;
+    text.setString("######  Menu ######");
+    text.move(sf::Vector2f(x, height + distance_of_draws + 2));
+    canvas.draw(text);
+
+    int y;
+    y = draw_text("Temperatura atual: " + std::to_string(simulation.get_ActualTemperature()) + "K", x, height + distance_of_draws + 2 + 20);
+
+    y = draw_text("Intervalos de tempo (dt): " + std::to_string(simulation.get_delta_t()) + " s", x, y);
+     y = draw_text("Rectangle size (x,y): " + std::to_string(recSize.x * 0.026) + "," + std::to_string(recSize.y * 0.026) + " cm", x, y);
+     std::string _temp_text = (runningSimulator ? "running" : "stoped");
+     y = draw_text("Status: " + _temp_text, x, y);
+     _temp_text = (isSourceActive ? "yes" : "no");
+     y = draw_text("Source: " + _temp_text, x, y);
+     y = draw_text("Perfil: " + std::to_string(currentGrid), x, y);
+     y = draw_text("Paralellism: " + std::to_string(simulation.getParallel()), x, y);
+     y = draw_text("Material: " + simulation.getActualMaterial(), x, y);
+     (simulation.getMaterialStatus() ? "yes" : "no");
+     y = draw_text("Propriedades variando: " +_temp_text, x, y);
+
+    canvas.display();
+}
+
+int CWindow::draw_text(std::string _text, int start_x, int start_y) {
+    sf::Text text;
+    int character_size = 15;
+    text.setCharacterSize(character_size);
+    text.setFont(font);
+    text.setFillColor(sf::Color::Black);
+
+    text.move(sf::Vector2f(start_x, start_y));
+    text.setString(_text);
+    canvas.draw(text);
+    return start_y + character_size + 2;
 }
 
 void CWindow::paintStudyPoint() {

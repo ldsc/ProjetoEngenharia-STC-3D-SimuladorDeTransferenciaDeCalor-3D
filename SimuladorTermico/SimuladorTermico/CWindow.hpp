@@ -19,10 +19,12 @@ private: // variables
 	int mat = 0;
 	int height, width;
 	int distance_of_draws = 10;
+	sf::Font font; 
 	sf::RenderWindow window;
 	sf::RenderTexture canvas;
 	sf::Sprite sprite;
 	CSimulator simulation;
+	sf::Vector2f recSize;
 	sf::Vector2i studyCoordinates;
 
 	bool runningSimulator = false;
@@ -35,8 +37,12 @@ private: // functions
 	sf::Color getRGB(double temp);
 
 	void printMenu(sf::Vector2f recSize);
-	void paint();
+	void paint_results();
+	void paint_design();
+	void paint_shortcuts();
+	void paint_menu();
 	void paintStudyPoint();
+	int draw_text(std::string _text, int start_x, int start_y);
 };
 
 #endif

@@ -27,8 +27,8 @@ void CGrid::resetGrid(double temperature) {
 	}
 }
 
-void CGrid::draw(sf::Vector2f pos, sf::Vector2f size, double _temperature, bool isSourceActive, std::string _material) {
-
+void CGrid::draw(sf::Vector2f _pos, sf::Vector2f size, double _temperature, bool isSourceActive, std::string _material) {
+	sf::Vector2f pos = sf::Vector2f(_pos.x - size.x / 2, _pos.y - size.y/2);
 	int start_x = (pos.x >= 0) ? ((int)pos.x) : 0;
 	int start_y = (pos.y >= 0) ? ((int)pos.y) : 0;
 	int max_x = ((pos.x + (int)size.x) >= width) ? width : ((int)pos.x + (int)size.x);
