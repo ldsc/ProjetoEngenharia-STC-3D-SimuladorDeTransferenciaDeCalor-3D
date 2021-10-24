@@ -2,12 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QMouseEvent>
-#include <QKeyEvent>
-#include <QPainter>
-#include <iostream>
-#include <QImage>
-#include <QColor>
+#include <QMouseEvent>/// pegar acoes/posicao do mouse
+#include <QPainter> /// desenhar pixels
+#include <iostream> /// cout
+#include <QFileDialog>
+#include <QImage> /// desenhar pixels
+#include <QColor> /// escolher a cor dos pixels
 #include <string>
 
 #include "CSimuladorTemperatura.h"
@@ -37,12 +37,10 @@ private:
     int parallelType = 2;
     int size = 300;
     int currentGrid = 0;
-    int left_margin = 20, up_margin = 40;
     int space_between_draws = 50;
+    int left_margin = 20, up_margin = 40;
     int drawSize = 50;
-    bool isSource = false;
     bool runningSimulator = false;
-    std::string drawFormat = "circle";
     QPoint studyPoint = QPoint(0,0);
     int studyGrid;
     QVector<double> time, temperature;
@@ -65,5 +63,8 @@ private slots:
     void makePlot2();
     void makePlot3();
     void makePlot4();
+    void on_actionSave_triggered();
+    void on_actionOpen_triggered();
+    void on_actionNew_triggered();
 };
 #endif

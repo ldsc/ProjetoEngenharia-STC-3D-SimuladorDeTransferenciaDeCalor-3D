@@ -13,6 +13,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->plot2->addGraph();
     ui->plot3->addGraph();
     ui->plot4->addGraph();
+    ui->plot1->xAxis->setLabel("tempo (s)");
+    ui->plot1->yAxis->setLabel("temperatura (K)");
+    ui->plot2->xAxis->setLabel("eixo z (m)");
+    ui->plot2->yAxis->setLabel("temperatura (K)");
+    ui->plot3->xAxis->setLabel("eixo x (m)");
+    ui->plot3->yAxis->setLabel("temperatura (K)");
+    ui->plot4->xAxis->setLabel("eixo y (m)");
+    ui->plot4->yAxis->setLabel("temperatura (K)");
     start_buttons();
 }
 
@@ -26,6 +34,8 @@ void MainWindow::mousePressEvent(QMouseEvent *event) {
     if (event->buttons() == Qt::LeftButton){
         std::string actualMaterial = ui->material_comboBox->currentText().toStdString();
         double temperature = std::stod(ui->temperature_input->text().toStdString());
+        bool isSource = ui->checkBox_source->checkState();
+        std::string drawFormat = "circle";
         simulador->setActualTemperature(temperature); /// importante para atualizar Tmin/Tmax
 
         if (drawFormat =="circle")
@@ -207,3 +217,23 @@ void MainWindow::makePlot4(){
     ui->plot4->replot();
     ui->plot4->update();
 }
+
+void MainWindow::on_actionSave_triggered()
+{
+    QString file_name = QFileDialog::getSaveFileName(this, "Save a file", "C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//save", tr("Dados (*.dat)"));
+    simulador->saveGrid(file_name.toStdString());
+}
+
+
+void MainWindow::on_actionOpen_triggered()
+{
+    QString file_name = QFileDialog::getOpenFileName(this, "Open a file", "C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//save", tr("Dados (*.dat)"));
+    simulador->openGrid(file_name.toStdString());
+}
+
+void MainWindow::on_actionNew_triggered()
+{
+    simulador->resetGrid();
+    update();
+}
+

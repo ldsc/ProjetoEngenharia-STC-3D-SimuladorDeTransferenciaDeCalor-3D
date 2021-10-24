@@ -151,7 +151,6 @@ void CSimuladorTemperatura::saveGrid(std::string nameFile) {
         }
     }
     file.close();
-    std::cout << "Arquivo salvo!" << std::endl;
 }
 
 void CSimuladorTemperatura::openGrid(std::string nameFile) {
@@ -172,7 +171,6 @@ void CSimuladorTemperatura::openGrid(std::string nameFile) {
         }
     }
     file.close();
-    std::cout << "Arquivo carregado!" << std::endl;
 }
 
 void CSimuladorTemperatura::setActualTemperature(double newTemperature) {
