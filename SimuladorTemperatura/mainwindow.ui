@@ -57,7 +57,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>470</x>
       <y>370</y>
       <width>191</width>
       <height>51</height>
@@ -150,8 +150,8 @@ border-color: rgba(255, 255, 255, 0);</string>
    <widget class="QTextBrowser" name="textBrowser_3">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>480</y>
+      <x>0</x>
+      <y>530</y>
       <width>491</width>
       <height>41</height>
      </rect>
@@ -213,7 +213,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
    </widget>
-   <widget class="QCustomPlot" name="plot1_2" native="true">
+   <widget class="QCustomPlot" name="plot2" native="true">
     <property name="geometry">
      <rect>
       <x>1130</x>
@@ -223,7 +223,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
    </widget>
-   <widget class="QCustomPlot" name="plot1_3" native="true">
+   <widget class="QCustomPlot" name="plot3" native="true">
     <property name="geometry">
      <rect>
       <x>710</x>
@@ -233,7 +233,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
    </widget>
-   <widget class="QCustomPlot" name="plot1_4" native="true">
+   <widget class="QCustomPlot" name="plot4" native="true">
     <property name="geometry">
      <rect>
       <x>1130</x>

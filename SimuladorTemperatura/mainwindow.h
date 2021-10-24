@@ -43,6 +43,8 @@ private:
     bool isSource = false;
     bool runningSimulator = false;
     std::string drawFormat = "circle";
+    QPoint studyPoint = QPoint(0,0);
+    int studyGrid;
     QVector<double> time, temperature;
 
 protected:
@@ -60,5 +62,8 @@ private slots:
     void on_gridUpButton_clicked();
 
     void makePlot1();
+    void makePlot2();
+    void makePlot3();
+    void makePlot4();
 };
 #endif

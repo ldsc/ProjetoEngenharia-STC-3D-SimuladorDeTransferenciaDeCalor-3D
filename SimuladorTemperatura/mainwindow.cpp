@@ -10,28 +10,36 @@ MainWindow::MainWindow(QWidget *parent)
     timerId = startTimer(200);
 
     ui->plot1->addGraph();
+    ui->plot2->addGraph();
+    ui->plot3->addGraph();
+    ui->plot4->addGraph();
     start_buttons();
 }
 
-MainWindow::~MainWindow() { delete ui; }
+MainWindow::~MainWindow() {
+    delete mImage;
+    delete simulador;
+    delete ui;
+}
 
 void MainWindow::mousePressEvent(QMouseEvent *event) {
     if (event->buttons() == Qt::LeftButton){
         std::string actualMaterial = ui->material_comboBox->currentText().toStdString();
         double temperature = std::stod(ui->temperature_input->text().toStdString());
-        simulador->set_ActualTemperature(temperature); /// importante para atualizar Tmin/Tmax
+        simulador->setActualTemperature(temperature); /// importante para atualizar Tmin/Tmax
 
         if (drawFormat =="circle")
             simulador->grid[currentGrid]->draw_cir(event->pos().x()-left_margin, event->pos().y()-up_margin, drawSize, temperature, isSource, actualMaterial);
         else
             simulador->grid[currentGrid]->draw_rec(event->pos().x()-left_margin, event->pos().y()-up_margin, drawSize, temperature, isSource, actualMaterial);
-        update();
     }
     else if (event->buttons() == Qt::RightButton){
-        simulador->studyPosition(event->pos().x()-left_margin, event->pos().y()-up_margin, currentGrid);
+        studyPoint = QPoint(event->pos().x()-left_margin, event->pos().y()-up_margin);
+        studyGrid = currentGrid;
         time.clear();
         temperature.clear();
     }
+    update();
 }
 
 void MainWindow::start_buttons(){
@@ -67,6 +75,12 @@ void MainWindow::paintEvent(QPaintEvent *e) {
                 mImage->setPixelColor(i,k, calcRGB(simulador->grid[currentGrid]->operator()(i, k)->temp));
         }
     }
+
+    for(int i = 0; i < size; i++){
+        mImage->setPixelColor(i,studyPoint.y(), QColor::fromRgb(0,0,0));
+        mImage->setPixelColor(studyPoint.x(), i, QColor::fromRgb(0,0,0));
+    }
+
     /// second draw
     for (int i = 0; i < size; i++){
         for (int k = 0; k < size; k++){
@@ -89,17 +103,22 @@ QColor MainWindow::calcRGB(double temperatura){
 void MainWindow::runSimulator(){
     time_t start_time = std::time(0);
     std::string type = ui->parallel_comboBox->currentText().toStdString();
-    std::string result = "Time: " + std::to_string(simulador->get_time()) + " - duracao do solver: " + std::to_string(std::time(0) - start_time) + " seg";
     if(type == "Sem paralelismo")
         simulador->run_sem_paralelismo();
     if(type=="Paralelismo por grid")
         simulador->run_paralelismo_por_grid();
     if(type=="Paralelismo total")
         simulador->run_paralelismo_total();
+    time.append((time.size()+1)*simulador->getDelta_t());
+
+    std::string result = "Time: " + std::to_string(time[time.size()-1]) + " - duracao do solver: " + std::to_string(std::time(0) - start_time) + " seg";
     ui->textBrowser_3->setText(QString::fromStdString(result));
-    simulador->updateActualTime();
+
     update();
     makePlot1();
+    makePlot2();
+    makePlot3();
+    makePlot4();
 }
 
 void MainWindow::timerEvent(QTimerEvent *e){
@@ -107,7 +126,6 @@ void MainWindow::timerEvent(QTimerEvent *e){
     if (runningSimulator){
         runSimulator();
     }
-
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -136,8 +154,7 @@ void MainWindow::on_gridUpButton_clicked()
 }
 
 void MainWindow::makePlot1(){
-    time.append(simulador->getLastTimeStudy());
-    temperature.append(simulador->getLastTemperatureStudy());
+    temperature.append(simulador->grid[studyGrid]->operator()(studyPoint.x(), studyPoint.y())->temp);
 
     ui->plot1->graph(0)->setData(time,temperature);
     ui->plot1->xAxis->setRange(time[0], time[time.size()-1]+1);
@@ -146,3 +163,47 @@ void MainWindow::makePlot1(){
     ui->plot1->update();
 }
 
+void MainWindow::makePlot2(){
+    QVector<double> temperature_z(simulador->getNGRIDS());
+    QVector<double> labor_z(simulador->getNGRIDS());
+    for (int i = 0; i < simulador->getNGRIDS(); i++){
+        labor_z[i] = simulador->getDelta_z()*(i+1);
+        temperature_z[i] = simulador->grid[i]->operator()(studyPoint.x(), studyPoint.y())->temp;
+    }
+
+    ui->plot2->graph(0)->setData(labor_z,temperature_z);
+    ui->plot2->xAxis->setRange(labor_z[0], labor_z[labor_z.size()-1]);
+    ui->plot2->yAxis->setRange(simulador->getTmin()-50, simulador->getTmax()+50);
+    ui->plot2->replot();
+    ui->plot2->update();
+}
+
+void MainWindow::makePlot3(){
+    QVector<double> temperature_x(size);
+    QVector<double> labor_x(size);
+    for (int i = 0; i < size; i++){
+        labor_x[i] = simulador->getDelta_x()*(i+1);
+        temperature_x[i] = simulador->grid[studyGrid]->operator()(i, studyPoint.y())->temp;
+    }
+
+    ui->plot3->graph(0)->setData(labor_x,temperature_x);
+    ui->plot3->xAxis->setRange(labor_x[0], labor_x[size-1]);
+    ui->plot3->yAxis->setRange(simulador->getTmin()-50, simulador->getTmax()+50);
+    ui->plot3->replot();
+    ui->plot3->update();
+}
+
+void MainWindow::makePlot4(){
+    QVector<double> temperature_y(size);
+    QVector<double> labor_y(size);
+    for (int i = 0; i < size; i++){
+        labor_y[i] = simulador->getDelta_x()*(i+1);
+        temperature_y[i] = simulador->grid[studyGrid]->operator()(studyPoint.x(), i)->temp;
+    }
+
+    ui->plot4->graph(0)->setData(labor_y,temperature_y);
+    ui->plot4->xAxis->setRange(labor_y[0], labor_y[size-1]);
+    ui->plot4->yAxis->setRange(simulador->getTmin()-50, simulador->getTmax()+50);
+    ui->plot4->replot();
+    ui->plot4->update();
+}

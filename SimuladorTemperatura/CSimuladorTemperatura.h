@@ -24,13 +24,8 @@ private:
     double actualTemperature = 300;
 
     double actual_time = 0.0;
-    int positionStudy = 0;
-    int gridStudy = 0;
     std::string actualMaterial;
-    std::vector<double> temperatureStudy = { 0 };
-    std::vector<double> timeStudy = { 0 };
     std::vector<std::string> materiais;
-    QPoint positionStudyVector = QPoint(0,0);
 
 public:
     std::vector<CGrid*> grid;
@@ -50,21 +45,12 @@ public:
     void solverByGrid(int g);
     void solverByThread(int thread_num);
     double calculatePointIteration(int  x, int y, int g);
-    void updateActualTime();
-
-    /// --------- FUNCOES PARA ESTUDO ---------
-    void saveStudy();
-    void studyPosition(int x, int y, int _gridStudy);
-    void plot();
-    void replot();
-    double getLastTimeStudy();
-    double getLastTemperatureStudy();
 
     void saveGrid(std::string nameFile);
     void openGrid(std::string nameFile);
 
     /// --------- FUNCOES SET ---------
-    void set_ActualTemperature(double newTemperature);
+    void setActualTemperature(double newTemperature);
     void changeMaterialPropertiesStatus();
     void plusDelta_t() { delta_t += 0.5; }
     void minusDelta_t() { delta_t += 0.5;}
@@ -72,7 +58,6 @@ public:
 
     /// --------- FUNCOES GET ---------
     int getNGRIDS() { return NGRIDS; }
-    int getStudyGrid() { return gridStudy; }
     int getParallel() { return parallel; }
     bool getMaterialStatus() { return materialPropertiesStatus; }
     double maxTemp();
@@ -82,15 +67,13 @@ public:
     double getTmax() { return Tmax; }
     double getTmin() { return Tmin; }
 
-    double get_delta_t() { return delta_t; }
-    double get_time() { return actual_time; }
-
-    QPoint getPositionStudyVector() { return positionStudyVector; }
+    double getDelta_t() { return delta_t; }
+    double getDelta_x() { return delta_x; }
+    double getDelta_z() { return delta_z; }
+    double getTime() { return actual_time; }
 
     std::string getActualMaterial() { return actualMaterial; }
 
-    std::vector<double> getTemperatureStudy() { return temperatureStudy; }
-    std::vector<double> getTimeStudy() { return timeStudy; }
     std::vector<std::string> getMateriais() { return materiais; }
 };
 #endif

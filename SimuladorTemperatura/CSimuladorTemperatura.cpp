@@ -41,7 +41,6 @@ void CSimuladorTemperatura::run_paralelismo_total() {
     {
     solverByThread(omp_get_thread_num());
     }
-
     for (int g = 0; g < NGRIDS; g++)
         grid[g]->updateSolver();
 }
@@ -140,34 +139,6 @@ double CSimuladorTemperatura::calculatePointIteration(int x, int y, int g) {
     return (*grid[g])(x, y)->temp_nup1 - (*grid[g])(x, y)->temp_nu;
 }
 
-void CSimuladorTemperatura::saveStudy() {
-    temperatureStudy.push_back(grid[gridStudy]->getTemp(positionStudy));
-}
-
-void CSimuladorTemperatura::updateActualTime() {
-    actual_time += delta_t;
-    timeStudy.push_back(actual_time);
-    temperatureStudy.push_back(grid[gridStudy]->getTemp(positionStudy));
-}
-
-void CSimuladorTemperatura::studyPosition(int x, int y, int _gridStudy) {
-    actual_time = 0.0;
-    gridStudy = _gridStudy;
-    temperatureStudy.clear();
-    timeStudy.clear();
-    positionStudy = x + y * grid[gridStudy]->getWidth();
-    //std::cout << "posicao " << positionStudy << " - " << x << " / " << pos.y() << " - T: " << (*grid[gridStudy])(pos.x(), pos.y())->temp << " K - " << (*grid[gridStudy])(pos.x(), pos.y())->material->getName() <<  std::endl;
-}
-
-double CSimuladorTemperatura::getLastTimeStudy(){
-    return timeStudy[timeStudy.size()-1];
-}
-
-double CSimuladorTemperatura::getLastTemperatureStudy(){
-    return temperatureStudy[temperatureStudy.size()-1];
-}
-
-
 void CSimuladorTemperatura::saveGrid(std::string nameFile) {
     std::ofstream file(nameFile);
     int sizeGrid = grid[0]->getSize();
@@ -204,7 +175,7 @@ void CSimuladorTemperatura::openGrid(std::string nameFile) {
     std::cout << "Arquivo carregado!" << std::endl;
 }
 
-void CSimuladorTemperatura::set_ActualTemperature(double newTemperature) {
+void CSimuladorTemperatura::setActualTemperature(double newTemperature) {
     if (newTemperature > Tmax)
         Tmax = newTemperature;
     if (newTemperature < Tmin)
