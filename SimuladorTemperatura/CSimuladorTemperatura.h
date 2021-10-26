@@ -6,8 +6,9 @@
 #include <iomanip>
 #include <QPoint>
 #include "CMaterial.h"
-#include <math.h>
+#include <map>
 #include <omp.h>
+#include "CMaterialCorrelacao.h"
 
 class CSimuladorTemperatura {
 private:
@@ -21,11 +22,11 @@ private:
     double delta_z = 0.5;
 
     double Tmax = 1000, Tmin = 300;
-    double actualTemperature = 300;
 
+    double actualTemperature = 300;
     double actual_time = 0.0;
-    std::string actualMaterial;
-    std::vector<std::string> materiais;
+    std::map<std::string, CMaterial*> materiais;
+    std::vector<std::string> name_materiais;
 
 public:
     std::vector<CGrid*> grid;
@@ -72,8 +73,8 @@ public:
     double getDelta_z() { return delta_z; }
     double getTime() { return actual_time; }
 
-    std::string getActualMaterial() { return actualMaterial; }
+    CMaterial* getMaterial(std::string mat) { return materiais[mat]; }
 
-    std::vector<std::string> getMateriais() { return materiais; }
+    std::vector<std::string> getMateriais() { return name_materiais; }
 };
 #endif

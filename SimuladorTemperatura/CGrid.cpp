@@ -27,28 +27,28 @@ void CGrid::resetGrid(double temperature) {
     }
 }
 
-void CGrid::draw_rec(int x, int y, double size, double _temperature, bool isSourceActive, std::string _material) {
-    int start_x = (x - size / 2 >= 0) ? x : 0;
-    int start_y = (y - size / 2 >= 0) ? y : 0;
-    int max_x = ((x - size/2 + (int)size) >= width)  ? width  : ((int)x - size/2 + (int)size);
-    int max_y = ((y - size/2 + (int)size) >= height) ? height : ((int)y - size/2 + (int)size);
+void CGrid::draw_rec(int x, int y, double size, double _temperature, bool isSourceActive, CMaterial* _material) {
+    int start_x = (x - size / 2 >= 0) ? x - size / 2 : 0;
+    int start_y = (y - size / 2 >= 0) ? y - size / 2 : 0;
+    int max_x   = (x + size / 2 >= width)  ? width  : x - size/2 + size;
+    int max_y   = (y + size / 2 >= height) ? height : y - size/2 + size;
 
     for (int i = start_x; i < max_x; i++){
         for (int k = start_y; k < max_y; k++) {
             grid[k * width + i].active = true;
             grid[k * width + i].temp = _temperature;
             grid[k * width + i].source = isSourceActive;
-            grid[k * width + i].material = new CMaterial(_material);
+            grid[k * width + i].material = _material;
         }
     }
 }
 
-void CGrid::draw_cir(int x, int y, double radius, double _temperature, bool isSourceActive, std::string _material) {
+void CGrid::draw_cir(int x, int y, double radius, double _temperature, bool isSourceActive, CMaterial* _material) {
     /// vou montar um quadrado, e analisar se o cada ponto dessa regiao faz parte do circulo
     int start_x = (x - (int)radius >= 0) ? ((int)x - (int)radius) : 0;
     int start_y = (y - (int)radius >= 0) ? ((int)y - (int)radius) : 0;
-    int max_x = ((x + (int)radius) >= width)  ? width  : ((int)x + (int)radius);
-    int max_y = ((y + (int)radius) >= height) ? height : ((int)y + (int)radius);
+    int max_x   = (x + (int)radius >= width)  ? width  : ((int)x + (int)radius);
+    int max_y   = (y + (int)radius >= height) ? height : ((int)y + (int)radius);
 
     for (int i = start_x; i < max_x; i++) {
         for (int k = start_y; k < max_y; k++) {
@@ -56,7 +56,7 @@ void CGrid::draw_cir(int x, int y, double radius, double _temperature, bool isSo
                 grid[k * width + i].active = true;
                 grid[k * width + i].temp = _temperature;
                 grid[k * width + i].source = isSourceActive;
-                grid[k * width + i].material = new CMaterial(_material);
+                grid[k * width + i].material = _material;
             }
         }
     }
@@ -66,7 +66,10 @@ void CGrid::draw(int x, double _temperature, bool active, bool isSource, std::st
     grid[x].temp = _temperature;
     grid[x].active = active;
     grid[x].source = isSource;
-    grid[x].material = new CMaterial(_material);
+    if (active)
+        grid[x].material = new CMaterialCorrelacao(_material+".txt");
+    else
+        grid[x].material = new CMaterial("ar");
 }
 
 void CGrid::updateIteration() {

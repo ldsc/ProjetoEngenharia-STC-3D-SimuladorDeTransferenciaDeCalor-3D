@@ -12,8 +12,20 @@ void CSimuladorTemperatura::resetGrid() {
 }
 
 void CSimuladorTemperatura::createListOfMaterials() {
-    materiais = CMaterial::getMateriais();
-    actualMaterial = materiais[0];
+    materiais["aluminio_const"] = new CMaterialCorrelacao("aluminio_const.txt");
+    materiais["cobre_const"] = new CMaterialCorrelacao("cobre_const.txt");
+    materiais["ferro_const"] = new CMaterialCorrelacao("ferro_const.txt");
+    materiais["magnesio_const"] = new CMaterialCorrelacao("magnesio_const.txt");
+    materiais["niquel_const"] = new CMaterialCorrelacao("niquel_const.txt");
+
+    materiais["aluminio_correlacao"] = new CMaterialCorrelacao("aluminio_correlacao.txt");
+    materiais["cobre_correlacao"] = new CMaterialCorrelacao("cobre_correlacao.txt");
+    materiais["ferro_correlacao"] = new CMaterialCorrelacao("ferro_correlacao.txt");
+    materiais["magnesio_correlacao"] = new CMaterialCorrelacao("magnesio_correlacao.txt");
+    materiais["niquel_correlacao"] = new CMaterialCorrelacao("niquel_correlacao.txt");
+
+    for(auto const& imap: materiais)
+        name_materiais.push_back(imap.first);
 }
 
 void CSimuladorTemperatura::run_sem_paralelismo() {
@@ -130,10 +142,7 @@ double CSimuladorTemperatura::calculatePointIteration(int x, int y, int g) {
         }
     }
 
-    if (materialPropertiesStatus)
-        thermalConstant = (*grid[g])(x, y)->material->getThermalConst((*grid[g])(x, y)->temp_nup1);
-    else
-        thermalConstant = (*grid[g])(x, y)->material->getThermalConst();
+    thermalConstant = (*grid[g])(x, y)->material->getThermalConst((*grid[g])(x, y)->temp_nup1);
 
     (*grid[g])(x, y)->temp_nup1 = (thermalConstant * (*grid[g])(x, y)->temp*delta_x*delta_z/delta_t + inf + sup + esq + dir + cima + baixo) / (n_x*delta_z + n_z*delta_x + thermalConstant *delta_x*delta_z/delta_t);
     return (*grid[g])(x, y)->temp_nup1 - (*grid[g])(x, y)->temp_nu;
@@ -147,7 +156,10 @@ void CSimuladorTemperatura::saveGrid(std::string nameFile) {
             file << (*grid[g])[i]->temp << " ";
             file << (*grid[g])[i]->active << " ";
             file << (*grid[g])[i]->source << " ";
-            file << (*grid[g])[i]->material->getName() << "\n";
+            if (!(*grid[g])[i]->active)
+                file << "ar" << "\n";
+            else
+                file << (*grid[g])[i]->material->getName() << "\n";
         }
     }
     file.close();
@@ -161,7 +173,6 @@ void CSimuladorTemperatura::openGrid(std::string nameFile) {
     int sizeGrid = grid[0]->getSize();
     for (int g = 0; g < NGRIDS; g++) {
         for (int i = 0; i < sizeGrid; i++) {
-
             file >> value;	temperatura = std::stof(value);
             file >> value; active = std::stoi(value);
             file >> value; source = std::stoi(value);

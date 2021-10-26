@@ -35,13 +35,14 @@ void MainWindow::mousePressEvent(QMouseEvent *event) {
         std::string actualMaterial = ui->material_comboBox->currentText().toStdString();
         double temperature = std::stod(ui->temperature_input->text().toStdString());
         bool isSource = ui->checkBox_source->checkState();
-        std::string drawFormat = "circle";
+        std::string drawFormat = ui->drawFormat->currentText().toStdString();
+        int size = ui->horizontalSliderDrawSize->value();
         simulador->setActualTemperature(temperature); /// importante para atualizar Tmin/Tmax
 
-        if (drawFormat =="circle")
-            simulador->grid[currentGrid]->draw_cir(event->pos().x()-left_margin, event->pos().y()-up_margin, drawSize, temperature, isSource, actualMaterial);
+        if (drawFormat =="circulo")
+            simulador->grid[currentGrid]->draw_cir(event->pos().x()-left_margin, event->pos().y()-up_margin, size/2, temperature, isSource, simulador->getMaterial(actualMaterial));
         else
-            simulador->grid[currentGrid]->draw_rec(event->pos().x()-left_margin, event->pos().y()-up_margin, drawSize, temperature, isSource, actualMaterial);
+            simulador->grid[currentGrid]->draw_rec(event->pos().x()-left_margin, event->pos().y()-up_margin, size, temperature, isSource, simulador->getMaterial(actualMaterial));
     }
     else if (event->buttons() == Qt::RightButton){
         studyPoint = QPoint(event->pos().x()-left_margin, event->pos().y()-up_margin);
@@ -55,6 +56,10 @@ void MainWindow::mousePressEvent(QMouseEvent *event) {
 void MainWindow::start_buttons(){
     ui->textBrowser_2->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_3->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_4->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_5->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_6->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_7->setFrameStyle(QFrame::NoFrame);
     /// texto do grid
     ui->textGrid->setFrameStyle(QFrame::NoFrame);
     ui->textGrid->setText(QString::fromStdString(std::to_string(currentGrid)));
@@ -63,6 +68,14 @@ void MainWindow::start_buttons(){
     std::vector<std::string> materiais = simulador->getMateriais();
     for (unsigned int i = 0; i < materiais.size(); i++)
         ui->material_comboBox->addItem(QString::fromStdString(materiais[i]));
+
+    /// design para desenho
+    ui->drawFormat->addItem("circulo");
+    ui->drawFormat->addItem("quadrado");
+
+    ui->horizontalSliderDrawSize->setMinimum(2);
+    ui->horizontalSliderDrawSize->setMaximum(150);
+    ui->horizontalSliderDrawSize->setValue(50);
 
     /// lista de paralelismo
     ui->parallel_comboBox->addItem("Paralelismo total");

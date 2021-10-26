@@ -6,17 +6,18 @@
 
 class CMaterial {
 public:
-    CMaterial(std::string _name) : name{ _name } { }
-    double getThermalConst();
-    double getThermalConst(double T);
+    CMaterial(std::string _name) {name = _name;}
+    virtual double getThermalConst(double T) {return 0.0;}
 
-    QColor getColor();
-    static QColor getColor(std::string _name);
-    static std::vector<std::string> getMateriais();
-    std::string getName() { return name; }
-    void setName(std::string _name) { name = _name; }
+    virtual QColor getColor()       { return QColor(0,0,0); }
+    virtual std::string getName()   { return name; }
 
-private:
+protected:
     std::string name;
+    QColor color;
+
+    double C0_rho, C1_rho;
+    double C0_cp, C1_cp, C2_cp;
+    double C0_k, C1_k, C2_k;
 };
 #endif

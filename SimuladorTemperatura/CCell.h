@@ -12,7 +12,7 @@ public:
     double temp_nu = 0;
     double temp_nup1 = 0;
 
-    CMaterial *material = new CMaterial("ar");
+    CMaterial *material;
     friend std::ostream& operator << (std::ostream& os, const CCell& cell) { return os << cell.temp; }
 };
 #endif

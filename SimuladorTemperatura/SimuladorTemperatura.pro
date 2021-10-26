@@ -14,6 +14,7 @@ SOURCES += \
     CCell.cpp \
     CGrid.cpp \
     CMaterial.cpp \
+    CMaterialCorrelacao.cpp \
     CSimuladorTemperatura.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -23,6 +24,7 @@ HEADERS += \
     CCell.h \
     CGrid.h \
     CMaterial.h \
+    CMaterialCorrelacao.h \
     CSimuladorTemperatura.h \
     mainwindow.h \
     qcustomplot.h
