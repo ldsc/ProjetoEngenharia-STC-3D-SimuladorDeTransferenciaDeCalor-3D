@@ -24,6 +24,8 @@ void CSimuladorTemperatura::createListOfMaterials() {
     materiais["magnesio_correlacao"] = new CMaterialCorrelacao("magnesio_correlacao.txt");
     materiais["niquel_correlacao"] = new CMaterialCorrelacao("niquel_correlacao.txt");
 
+    materiais["cobre_interpolacao"] = new CMaterialInterpolacao("cobre_interp.txt");
+
     for(auto const& imap: materiais)
         name_materiais.push_back(imap.first);
 }
@@ -48,7 +50,7 @@ void CSimuladorTemperatura::run_paralelismo_total() {
     for (int g=0;g<NGRIDS;g++)
         grid[g]->startIteration();
 
-    omp_set_num_threads(MAX_THREADS); /// por seguranca, vou setar as threads para max-3
+    omp_set_num_threads(MAX_THREADS);
     #pragma omp parallel
     {
     solverByThread(omp_get_thread_num());

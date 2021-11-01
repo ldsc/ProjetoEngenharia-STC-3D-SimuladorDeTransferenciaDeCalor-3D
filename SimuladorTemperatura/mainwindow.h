@@ -38,7 +38,7 @@ private:
     int size = 300;
     int currentGrid = 0;
     int space_between_draws = 50;
-    int left_margin = 20, up_margin = 40;
+    int left_margin = 20, up_margin = 140;
     bool runningSimulator = false;
     QPoint studyPoint = QPoint(0,0);
     int studyGrid;

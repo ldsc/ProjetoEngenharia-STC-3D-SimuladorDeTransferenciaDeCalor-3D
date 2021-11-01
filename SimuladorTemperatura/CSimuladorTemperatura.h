@@ -9,17 +9,17 @@
 #include <map>
 #include <omp.h>
 #include "CMaterialCorrelacao.h"
+#include "CMaterialInterpolacao.h"
 
 class CSimuladorTemperatura {
 private:
-    int parallel = 0;
+    //int parallel = 0;
     int MAX_THREADS = omp_get_max_threads()-1;
     bool materialPropertiesStatus = true;
     int NGRIDS = 4;
     const double MIN_ERRO = 1.0e-1;
     const int MAX_ITERATION = 39;
-    double delta_x = 2.6e-4, delta_t = 5.0e-1;
-    double delta_z = 0.5;
+    double delta_x = 2.6e-4, delta_t = 5.0e-1, delta_z = 0.5;
 
     double Tmax = 1000, Tmin = 300;
 
@@ -53,13 +53,14 @@ public:
     /// --------- FUNCOES SET ---------
     void setActualTemperature(double newTemperature);
     void changeMaterialPropertiesStatus();
-    void plusDelta_t() { delta_t += 0.5; }
-    void minusDelta_t() { delta_t += 0.5;}
-    void changeParallel() { parallel = parallel + 1 > 2 ? 0 : parallel + 1; }
+    //void changeParallel() { parallel = parallel + 1 > 2 ? 0 : parallel + 1; }
+    void setDelta_t(double _delta_t) { delta_t = _delta_t; }
+    void setDelta_x(double _delta_x) { delta_x = _delta_x; }
+    void setDelta_z(double _delta_z) { delta_z = _delta_z; }
 
     /// --------- FUNCOES GET ---------
     int getNGRIDS() { return NGRIDS; }
-    int getParallel() { return parallel; }
+    //int getParallel() { return parallel; }
     bool getMaterialStatus() { return materialPropertiesStatus; }
     double maxTemp();
     double minTemp();

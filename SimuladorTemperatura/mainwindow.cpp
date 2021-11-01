@@ -3,6 +3,8 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
+    up_margin = 100;
+    //std::cout<<ui->widget->pos().y();
     simulador = new CSimuladorTemperatura();
     simulador->resetSize(size, size);
     ui->setupUi(this);
@@ -60,6 +62,10 @@ void MainWindow::start_buttons(){
     ui->textBrowser_5->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_6->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_7->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_8->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_9->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_10->setFrameStyle(QFrame::NoFrame);
+
     /// texto do grid
     ui->textGrid->setFrameStyle(QFrame::NoFrame);
     ui->textGrid->setText(QString::fromStdString(std::to_string(currentGrid)));
@@ -84,6 +90,10 @@ void MainWindow::start_buttons(){
 
     /// texto do imput de temperatura
     ui->temperature_input->setText(QString::fromStdString(std::to_string(simulador->get_ActualTemperature())));
+
+    ui->input_dt->setText(QString::fromStdString(std::to_string(simulador->getDelta_t())));
+    ui->input_dx->setText(QString::fromStdString(std::to_string(simulador->getDelta_x())));
+    ui->input_dz->setText(QString::fromStdString(std::to_string(simulador->getDelta_z())));
 }
 
 void MainWindow::paintEvent(QPaintEvent *e) {
@@ -99,9 +109,11 @@ void MainWindow::paintEvent(QPaintEvent *e) {
         }
     }
 
-    for(int i = 0; i < size; i++){
-        mImage->setPixelColor(i,studyPoint.y(), QColor::fromRgb(0,0,0));
-        mImage->setPixelColor(studyPoint.x(), i, QColor::fromRgb(0,0,0));
+    if ((studyPoint.x() >= 0 && studyPoint.x() < size) && (studyPoint.y() >= 0 || studyPoint.y() < size)){
+        for(int i = 0; i < size; i++){
+            mImage->setPixelColor(i,studyPoint.y(), QColor::fromRgb(0,0,0));
+            mImage->setPixelColor(studyPoint.x(), i, QColor::fromRgb(0,0,0));
+        }
     }
 
     /// second draw
@@ -124,6 +136,10 @@ QColor MainWindow::calcRGB(double temperatura){
 }
 
 void MainWindow::runSimulator(){
+    simulador->setDelta_t(std::stod(ui->input_dt->text().toStdString()));
+    simulador->setDelta_x(std::stod(ui->input_dx->text().toStdString()));
+    simulador->setDelta_z(std::stod(ui->input_dz->text().toStdString()));
+
     time_t start_time = std::time(0);
     std::string type = ui->parallel_comboBox->currentText().toStdString();
     if(type == "Sem paralelismo")

@@ -15,6 +15,9 @@ SOURCES += \
     CGrid.cpp \
     CMaterial.cpp \
     CMaterialCorrelacao.cpp \
+    CMaterialInterpolacao.cpp \
+    CReta.cpp \
+    CSegmentoReta.cpp \
     CSimuladorTemperatura.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -25,6 +28,9 @@ HEADERS += \
     CGrid.h \
     CMaterial.h \
     CMaterialCorrelacao.h \
+    CMaterialInterpolacao.h \
+    CReta.h \
+    CSegmentoReta.h \
     CSimuladorTemperatura.h \
     mainwindow.h \
     qcustomplot.h
