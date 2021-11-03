@@ -6,15 +6,16 @@ MainWindow::MainWindow(QWidget *parent)
     up_margin = 100;
     //std::cout<<ui->widget->pos().y();
     simulador = new CSimuladorTemperatura();
-    simulador->resetSize(size, size);
+    simulador->resetSize(size_x, size_y);
     ui->setupUi(this);
-    mImage = new QImage(size*2+space_between_draws, size,QImage::Format_ARGB32_Premultiplied);
+    mImage = new QImage(size_x*2+space_between_draws, size_y,QImage::Format_ARGB32_Premultiplied);
     timerId = startTimer(200);
 
     ui->plot1->addGraph();
     ui->plot2->addGraph();
     ui->plot3->addGraph();
     ui->plot4->addGraph();
+    ui->plot_MatProps->addGraph();
     ui->plot1->xAxis->setLabel("tempo (s)");
     ui->plot1->yAxis->setLabel("temperatura (K)");
     ui->plot2->xAxis->setLabel("eixo z (m)");
@@ -23,6 +24,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->plot3->yAxis->setLabel("temperatura (K)");
     ui->plot4->xAxis->setLabel("eixo y (m)");
     ui->plot4->yAxis->setLabel("temperatura (K)");
+    ui->plot_MatProps->xAxis->setLabel("Temperatura (K)");
+    ui->plot_MatProps->yAxis->setLabel("props");
+
+    for(unsigned int i = 0; i < simulador->getMateriais().size();i++)
+        ui->plot_MatProps->addGraph();
     start_buttons();
 }
 
@@ -47,10 +53,14 @@ void MainWindow::mousePressEvent(QMouseEvent *event) {
             simulador->grid[currentGrid]->draw_rec(event->pos().x()-left_margin, event->pos().y()-up_margin, size, temperature, isSource, simulador->getMaterial(actualMaterial));
     }
     else if (event->buttons() == Qt::RightButton){
-        studyPoint = QPoint(event->pos().x()-left_margin, event->pos().y()-up_margin);
-        studyGrid = currentGrid;
-        time.clear();
-        temperature.clear();
+        int x = event->pos().x()-left_margin;
+        int y = event->pos().y()-up_margin;
+        if (x >= 0 && x < size_x && y >= 0 && y < size_y){
+            studyPoint = QPoint(x, y);
+            studyGrid = currentGrid;
+            time.clear();
+            temperature.clear();
+        }
     }
     update();
 }
@@ -65,6 +75,9 @@ void MainWindow::start_buttons(){
     ui->textBrowser_8->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_9->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_10->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_11->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_12->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_13->setFrameStyle(QFrame::NoFrame);
 
     /// texto do grid
     ui->textGrid->setFrameStyle(QFrame::NoFrame);
@@ -94,14 +107,27 @@ void MainWindow::start_buttons(){
     ui->input_dt->setText(QString::fromStdString(std::to_string(simulador->getDelta_t())));
     ui->input_dx->setText(QString::fromStdString(std::to_string(simulador->getDelta_x())));
     ui->input_dz->setText(QString::fromStdString(std::to_string(simulador->getDelta_z())));
+
+    /// scroll com os materiais para o gráfico
+    checkboxes = new QWidget(ui->scrollArea);
+    layout = new QVBoxLayout(checkboxes);
+    myCheckbox.resize(materiais.size());
+    selectedMateriails.resize(materiais.size(), false);
+
+    for(unsigned int i = 0; i < materiais.size(); i++){
+        myCheckbox[i] = new QCheckBox(QString::fromStdString(materiais[i]), checkboxes);
+        layout->addWidget(myCheckbox[i]);
+    }
+    ui->scrollArea->setWidget(checkboxes);
+    makePlotMatProps();
 }
 
 void MainWindow::paintEvent(QPaintEvent *e) {
     QPainter painter(this);
 
     /// first draw
-    for (int i = 0; i < size; i++){
-        for (int k = 0; k < size; k++){
+    for (int i = 0; i < size_x; i++){
+        for (int k = 0; k < size_y; k++){
             if (!simulador->grid[currentGrid]->operator()(i, k)->active)
                 mImage->setPixelColor(i,k, QColor::fromRgb(255,255,255));
             else
@@ -109,20 +135,21 @@ void MainWindow::paintEvent(QPaintEvent *e) {
         }
     }
 
-    if ((studyPoint.x() >= 0 && studyPoint.x() < size) && (studyPoint.y() >= 0 || studyPoint.y() < size)){
-        for(int i = 0; i < size; i++){
+    if ((studyPoint.x() > 0 && studyPoint.x() < size_x) && (studyPoint.y() > 0 || studyPoint.y() < size_y)){
+        for(int i = 0; i < size_x; i++)
             mImage->setPixelColor(i,studyPoint.y(), QColor::fromRgb(0,0,0));
+        for(int i = 0; i < size_y; i++)
             mImage->setPixelColor(studyPoint.x(), i, QColor::fromRgb(0,0,0));
-        }
+
     }
 
     /// second draw
-    for (int i = 0; i < size; i++){
-        for (int k = 0; k < size; k++){
+    for (int i = 0; i < size_x; i++){
+        for (int k = 0; k < size_y; k++){
             if (!simulador->grid[currentGrid]->operator()(i, k)->active)
-                mImage->setPixelColor(i+size+space_between_draws,k, QColor::fromRgb(255,255,255));
+                mImage->setPixelColor(i+size_x+space_between_draws,k, QColor::fromRgb(255,255,255));
             else
-                mImage->setPixelColor(i+size+space_between_draws,k, simulador->grid[currentGrid]->operator()(i, k)->material->getColor());
+                mImage->setPixelColor(i+size_x+space_between_draws,k, simulador->grid[currentGrid]->operator()(i, k)->material->getColor());
         }
     }
     painter.drawImage(left_margin,up_margin, *mImage);
@@ -162,9 +189,9 @@ void MainWindow::runSimulator(){
 
 void MainWindow::timerEvent(QTimerEvent *e){
     Q_UNUSED(e);
-    if (runningSimulator){
+    if (runningSimulator)
         runSimulator();
-    }
+    makePlotMatProps();
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -218,51 +245,101 @@ void MainWindow::makePlot2(){
 }
 
 void MainWindow::makePlot3(){
-    QVector<double> temperature_x(size);
-    QVector<double> labor_x(size);
-    for (int i = 0; i < size; i++){
+    QVector<double> temperature_x(size_x);
+    QVector<double> labor_x(size_x);
+    for (int i = 0; i < size_x; i++){
         labor_x[i] = simulador->getDelta_x()*(i+1);
         temperature_x[i] = simulador->grid[studyGrid]->operator()(i, studyPoint.y())->temp;
     }
 
     ui->plot3->graph(0)->setData(labor_x,temperature_x);
-    ui->plot3->xAxis->setRange(labor_x[0], labor_x[size-1]);
+    ui->plot3->xAxis->setRange(labor_x[0], labor_x[size_x-1]);
     ui->plot3->yAxis->setRange(simulador->getTmin()-50, simulador->getTmax()+50);
     ui->plot3->replot();
     ui->plot3->update();
 }
 
 void MainWindow::makePlot4(){
-    QVector<double> temperature_y(size);
-    QVector<double> labor_y(size);
-    for (int i = 0; i < size; i++){
+    QVector<double> temperature_y(size_y);
+    QVector<double> labor_y(size_y);
+    for (int i = 0; i < size_y; i++){
         labor_y[i] = simulador->getDelta_x()*(i+1);
         temperature_y[i] = simulador->grid[studyGrid]->operator()(studyPoint.x(), i)->temp;
     }
 
     ui->plot4->graph(0)->setData(labor_y,temperature_y);
-    ui->plot4->xAxis->setRange(labor_y[0], labor_y[size-1]);
+    ui->plot4->xAxis->setRange(labor_y[0], labor_y[size_y-1]);
     ui->plot4->yAxis->setRange(simulador->getTmin()-50, simulador->getTmax()+50);
     ui->plot4->replot();
     ui->plot4->update();
 }
 
+void MainWindow::makePlotMatProps(){
+    bool changeState = checkChangeMaterialsState();
+    if (!changeState)
+        return;
+    int nPoints = 100;
+    QVector<double> props(nPoints);
+    QVector<double> temperature_x(nPoints);
+    std::vector<std::string> materiais = simulador->getMateriais();
+
+
+    double dT = (simulador->getTmax() - simulador->getTmin())/(nPoints-1);
+    for (unsigned int mat = 0; mat < materiais.size(); mat++){
+        if (selectedMateriails[mat]){
+            for (int i = 0; i < nPoints; i++){
+                temperature_x[i] = dT*i + simulador->getTmin();
+                props[i] = simulador->getProps(temperature_x[i], materiais[mat]);
+            }
+        ui->plot_MatProps->graph(mat)->setPen(QPen(simulador->getColor(materiais[mat])));
+        ui->plot_MatProps->graph(mat)->setData(temperature_x,props);
+        }else{
+            ui->plot_MatProps->graph(mat)->data()->clear();
+        }
+    }
+    ui->plot_MatProps->xAxis->setRange(temperature_x[0], temperature_x[nPoints-1]);
+    ui->plot_MatProps->yAxis->setRange(0, 600);
+
+    ui->plot_MatProps->replot();
+    ui->plot_MatProps->update();
+}
+
+bool MainWindow::checkChangeMaterialsState(){
+    bool change = false;
+    bool temp = false;
+    for (unsigned int i = 0; i<selectedMateriails.size(); i++){
+        temp = myCheckbox[i]->checkState();
+        if (!(selectedMateriails[i] == temp)){
+            change = true;
+            selectedMateriails[i] = temp;
+        }
+    }
+    return change;
+}
+
 void MainWindow::on_actionSave_triggered()
 {
     QString file_name = QFileDialog::getSaveFileName(this, "Save a file", "C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//save", tr("Dados (*.dat)"));
-    simulador->saveGrid(file_name.toStdString());
+    std::string txt = simulador->saveGrid(file_name.toStdString());
+    ui->textBrowser_3->setText(QString::fromStdString(txt));
 }
 
 
 void MainWindow::on_actionOpen_triggered()
 {
     QString file_name = QFileDialog::getOpenFileName(this, "Open a file", "C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//save", tr("Dados (*.dat)"));
-    simulador->openGrid(file_name.toStdString());
+    std::string txt = simulador->openGrid(file_name.toStdString());
+    ui->textBrowser_3->setText(QString::fromStdString(txt));
 }
 
 void MainWindow::on_actionNew_triggered()
 {
     simulador->resetGrid();
     update();
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    makePlotMatProps();
 }
 

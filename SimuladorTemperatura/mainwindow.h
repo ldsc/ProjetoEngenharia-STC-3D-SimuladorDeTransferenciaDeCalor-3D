@@ -30,19 +30,24 @@ private:
     QPoint m_mousePos;
     QPixmap pixmap;
     QImage *mImage;
-
+    QWidget* checkboxes;
+    QVBoxLayout* layout;
+    std::vector<QCheckBox*> myCheckbox;
     CSimuladorTemperatura *simulador;
 
     int timerId;
     int parallelType = 2;
-    int size = 300;
+    //int size = 300;
+    int size_x = 300, size_y = 480;
     int currentGrid = 0;
     int space_between_draws = 50;
     int left_margin = 20, up_margin = 140;
     bool runningSimulator = false;
-    QPoint studyPoint = QPoint(0,0);
+    QPoint studyPoint = QPoint(1,1);
     int studyGrid;
+    std::vector<bool> selectedMateriails;
     QVector<double> time, temperature;
+
 
 protected:
     void start_buttons();
@@ -62,8 +67,11 @@ private slots:
     void makePlot2();
     void makePlot3();
     void makePlot4();
+    void makePlotMatProps();
+    bool checkChangeMaterialsState();
     void on_actionSave_triggered();
     void on_actionOpen_triggered();
     void on_actionNew_triggered();
+    void on_pushButton_2_clicked();
 };
 #endif

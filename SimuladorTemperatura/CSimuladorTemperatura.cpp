@@ -150,7 +150,7 @@ double CSimuladorTemperatura::calculatePointIteration(int x, int y, int g) {
     return (*grid[g])(x, y)->temp_nup1 - (*grid[g])(x, y)->temp_nu;
 }
 
-void CSimuladorTemperatura::saveGrid(std::string nameFile) {
+std::string CSimuladorTemperatura::saveGrid(std::string nameFile) {
     std::ofstream file(nameFile);
     int sizeGrid = grid[0]->getSize();
     for (int g = 0; g < NGRIDS; g++) {
@@ -165,9 +165,10 @@ void CSimuladorTemperatura::saveGrid(std::string nameFile) {
         }
     }
     file.close();
+    return "Arquivo salvo!";
 }
 
-void CSimuladorTemperatura::openGrid(std::string nameFile) {
+std::string CSimuladorTemperatura::openGrid(std::string nameFile) {
     std::ifstream file(nameFile);
     std::string value;
     double temperatura;
@@ -184,6 +185,7 @@ void CSimuladorTemperatura::openGrid(std::string nameFile) {
         }
     }
     file.close();
+    return "Arquivo carregado!";
 }
 
 void CSimuladorTemperatura::setActualTemperature(double newTemperature) {
@@ -196,6 +198,14 @@ void CSimuladorTemperatura::setActualTemperature(double newTemperature) {
 
 void CSimuladorTemperatura::changeMaterialPropertiesStatus() {
     materialPropertiesStatus = materialPropertiesStatus ? false : true;
+}
+
+double CSimuladorTemperatura::getProps(double temperature, std::string material){
+    return materiais[material]->getThermalConst(temperature);
+}
+
+QColor CSimuladorTemperatura::getColor(std::string material){
+    return materiais[material]->getColor();
 }
 
 double CSimuladorTemperatura::maxTemp() {

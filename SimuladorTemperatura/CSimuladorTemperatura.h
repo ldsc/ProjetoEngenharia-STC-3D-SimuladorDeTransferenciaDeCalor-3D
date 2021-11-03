@@ -47,20 +47,20 @@ public:
     void solverByThread(int thread_num);
     double calculatePointIteration(int  x, int y, int g);
 
-    void saveGrid(std::string nameFile);
-    void openGrid(std::string nameFile);
+    std::string saveGrid(std::string nameFile);
+    std::string openGrid(std::string nameFile);
 
     /// --------- FUNCOES SET ---------
     void setActualTemperature(double newTemperature);
     void changeMaterialPropertiesStatus();
-    //void changeParallel() { parallel = parallel + 1 > 2 ? 0 : parallel + 1; }
     void setDelta_t(double _delta_t) { delta_t = _delta_t; }
     void setDelta_x(double _delta_x) { delta_x = _delta_x; }
     void setDelta_z(double _delta_z) { delta_z = _delta_z; }
 
     /// --------- FUNCOES GET ---------
+    double getProps(double temperature, std::string material);
+    QColor getColor(std::string material);
     int getNGRIDS() { return NGRIDS; }
-    //int getParallel() { return parallel; }
     bool getMaterialStatus() { return materialPropertiesStatus; }
     double maxTemp();
     double minTemp();
