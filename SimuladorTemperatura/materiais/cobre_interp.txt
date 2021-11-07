@@ -1,3 +1,4 @@
+interpolacao
 cobre_interp
 255 128 0 30
 7.262 7.925

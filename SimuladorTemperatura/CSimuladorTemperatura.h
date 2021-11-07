@@ -38,6 +38,7 @@ public:
     void resetGrid();
 
     void createListOfMaterials();
+    CMaterial* chooseMaterialType(std::string name);
 
     /// --------- FUNCOES DO SOLVER ---------
     void run_sem_paralelismo();

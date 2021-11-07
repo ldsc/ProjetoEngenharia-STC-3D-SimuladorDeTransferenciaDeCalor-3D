@@ -1,10 +1,5 @@
 #include "mainwindow.h"
-#include <iostream>
 #include <QApplication>
-
-#include "CMaterial.h"
-#include "CMaterialCorrelacao.h"
-#include "CMaterialInterpolacao.h"
 
 int main(int argc, char *argv[])
 {

@@ -3,13 +3,18 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
+    /*
+    QDir* dir = new QDir(QCoreApplication::applicationDirPath());
+    std::cout<<"diretorio: " << dir->dirName().toStdString()<<std::endl;
+    std::cout<<"diretorio: " << dir->homePath().toStdString()<<std::endl;
+    std::cout<<"diretorio: " << dir->path().toStdString()<<std::endl;
+    std::cout<<"diretorio: " << dir->absolutePath().toStdString()<<std::endl;*/
     up_margin = 100;
-    //std::cout<<ui->widget->pos().y();
     simulador = new CSimuladorTemperatura();
     simulador->resetSize(size_x, size_y);
     ui->setupUi(this);
     mImage = new QImage(size_x*2+space_between_draws, size_y,QImage::Format_ARGB32_Premultiplied);
-    timerId = startTimer(200);
+    timerId = startTimer(20);
 
     ui->plot1->addGraph();
     ui->plot2->addGraph();
@@ -25,7 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->plot4->xAxis->setLabel("eixo y (m)");
     ui->plot4->yAxis->setLabel("temperatura (K)");
     ui->plot_MatProps->xAxis->setLabel("Temperatura (K)");
-    ui->plot_MatProps->yAxis->setLabel("props");
+    ui->plot_MatProps->yAxis->setLabel("rho*cp/k");
 
     for(unsigned int i = 0; i < simulador->getMateriais().size();i++)
         ui->plot_MatProps->addGraph();
@@ -41,19 +46,19 @@ MainWindow::~MainWindow() {
 void MainWindow::mousePressEvent(QMouseEvent *event) {
     if (event->buttons() == Qt::LeftButton){
         std::string actualMaterial = ui->material_comboBox->currentText().toStdString();
-        double temperature = std::stod(ui->temperature_input->text().toStdString());
+        double temperature = ui->spinBox_Temperature->value();
         bool isSource = ui->checkBox_source->checkState();
-        std::string drawFormat = ui->drawFormat->currentText().toStdString();
+        //std::string drawFormat = ui->drawFormat->currentText().toStdString();
         int size = ui->horizontalSliderDrawSize->value();
         simulador->setActualTemperature(temperature); /// importante para atualizar Tmin/Tmax
 
         if (drawFormat =="circulo")
-            simulador->grid[currentGrid]->draw_cir(event->pos().x()-left_margin, event->pos().y()-up_margin, size/2, temperature, isSource, simulador->getMaterial(actualMaterial));
+            simulador->grid[currentGrid]->draw_cir(event->pos().x()-left_margin-size_x-space_between_draws, event->pos().y()-up_margin, size/2, temperature, isSource, simulador->getMaterial(actualMaterial));
         else
-            simulador->grid[currentGrid]->draw_rec(event->pos().x()-left_margin, event->pos().y()-up_margin, size, temperature, isSource, simulador->getMaterial(actualMaterial));
+            simulador->grid[currentGrid]->draw_rec(event->pos().x()-left_margin-size_x-space_between_draws, event->pos().y()-up_margin, size, temperature, isSource, simulador->getMaterial(actualMaterial));
     }
     else if (event->buttons() == Qt::RightButton){
-        int x = event->pos().x()-left_margin;
+        int x = event->pos().x()-left_margin-size_x-space_between_draws;
         int y = event->pos().y()-up_margin;
         if (x >= 0 && x < size_x && y >= 0 && y < size_y){
             studyPoint = QPoint(x, y);
@@ -65,8 +70,46 @@ void MainWindow::mousePressEvent(QMouseEvent *event) {
     update();
 }
 
+void MainWindow::printPosition(){
+    int x = QWidget::mapFromParent(QCursor::pos()).x() - left_margin-size_x-space_between_draws;
+    int y = QWidget::mapFromParent(QCursor::pos()).y() - up_margin;
+    QWidget::mapFromParent(QCursor::pos()).x();
+    std::string txt;
+    if ((x>0) && (x<size_x) && (y>0) && (y<size_y))
+        if (!simulador->grid[currentGrid]->operator()(x, y)->active)
+            txt = "(" + std::to_string(x) + ", " + std::to_string(y) + ")";
+        else
+            txt = "(" + std::to_string(x) + ", " + std::to_string(y) + ") - T: " +
+                    std::to_string(simulador->grid[currentGrid]->operator()(x, y)->temp) + "K - "+ simulador->grid[currentGrid]->operator()(x, y)->material->getName();
+    else
+        txt = "";
+
+    ui->textMousePosition->setText(QString::fromStdString(txt));
+}
+
 void MainWindow::start_buttons(){
-    ui->textBrowser_2->setFrameStyle(QFrame::NoFrame);
+    /// adicionar borda em widget
+    ui->widget_props->setStyleSheet("border-width: 1;"
+                                    "border-radius: 3;"
+                                    "border-style: solid;"
+                                    "border-color: rgb(10,10,10)");
+
+    ui->widget_simulator_deltas->setStyleSheet( "border-width: 1;"
+                                                "border-radius: 3;"
+                                                "border-style: solid;"
+                                                "border-color: rgb(10,10,10)");
+
+    ui->widget_drawStyles->setStyleSheet(       "border-width: 1;"
+                                                "border-radius: 3;"
+                                                "border-style: solid;"
+                                                "border-color: rgb(10,10,10)");
+
+    ui->widget_buttonCircle->setStyleSheet(     "border-width: 1;"
+                                                "border-radius: 3;"
+                                                "border-style: solid;"
+                                                "border-color: rgb(100,100,200)");
+
+    /// remover borda das caixas de texto
     ui->textBrowser_3->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_4->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_5->setFrameStyle(QFrame::NoFrame);
@@ -78,19 +121,28 @@ void MainWindow::start_buttons(){
     ui->textBrowser_11->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_12->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_13->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_14->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_15->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_16->setFrameStyle(QFrame::NoFrame);
+    ui->textMousePosition->setFrameStyle(QFrame::NoFrame);
+
+    /// spinBox temperatura
+    ui->spinBox_Temperature->setSingleStep(50);
+    ui->spinBox_Temperature->setMaximum(2000);
+    ui->spinBox_Temperature->setValue(300);
 
     /// texto do grid
     ui->textGrid->setFrameStyle(QFrame::NoFrame);
     ui->textGrid->setText(QString::fromStdString(std::to_string(currentGrid)));
+    QFont f = ui->textGrid->font();
+    f.setPixelSize(16);
+    ui->textGrid->setFont(f);
+    ui->textGrid->setAlignment(Qt::AlignCenter);
 
     /// lista de materiais
     std::vector<std::string> materiais = simulador->getMateriais();
     for (unsigned int i = 0; i < materiais.size(); i++)
         ui->material_comboBox->addItem(QString::fromStdString(materiais[i]));
-
-    /// design para desenho
-    ui->drawFormat->addItem("circulo");
-    ui->drawFormat->addItem("quadrado");
 
     ui->horizontalSliderDrawSize->setMinimum(2);
     ui->horizontalSliderDrawSize->setMaximum(150);
@@ -101,9 +153,6 @@ void MainWindow::start_buttons(){
     ui->parallel_comboBox->addItem("Sem paralelismo");
     ui->parallel_comboBox->addItem("Paralelismo por grid");
 
-    /// texto do imput de temperatura
-    ui->temperature_input->setText(QString::fromStdString(std::to_string(simulador->get_ActualTemperature())));
-
     ui->input_dt->setText(QString::fromStdString(std::to_string(simulador->getDelta_t())));
     ui->input_dx->setText(QString::fromStdString(std::to_string(simulador->getDelta_x())));
     ui->input_dz->setText(QString::fromStdString(std::to_string(simulador->getDelta_z())));
@@ -113,9 +162,12 @@ void MainWindow::start_buttons(){
     layout = new QVBoxLayout(checkboxes);
     myCheckbox.resize(materiais.size());
     selectedMateriails.resize(materiais.size(), false);
+    QString qss;
 
     for(unsigned int i = 0; i < materiais.size(); i++){
         myCheckbox[i] = new QCheckBox(QString::fromStdString(materiais[i]), checkboxes);
+        qss = QString("background-color: %1").arg(simulador->getColor(materiais[i]).name(QColor::HexArgb));
+        myCheckbox[i]->setStyleSheet(qss);
         layout->addWidget(myCheckbox[i]);
     }
     ui->scrollArea->setWidget(checkboxes);
@@ -129,17 +181,17 @@ void MainWindow::paintEvent(QPaintEvent *e) {
     for (int i = 0; i < size_x; i++){
         for (int k = 0; k < size_y; k++){
             if (!simulador->grid[currentGrid]->operator()(i, k)->active)
-                mImage->setPixelColor(i,k, QColor::fromRgb(255,255,255));
+                mImage->setPixelColor(i+size_x+space_between_draws,k, QColor::fromRgb(255,255,255));
             else
-                mImage->setPixelColor(i,k, calcRGB(simulador->grid[currentGrid]->operator()(i, k)->temp));
+                mImage->setPixelColor(i+size_x+space_between_draws,k, calcRGB(simulador->grid[currentGrid]->operator()(i, k)->temp));
         }
     }
 
     if ((studyPoint.x() > 0 && studyPoint.x() < size_x) && (studyPoint.y() > 0 || studyPoint.y() < size_y)){
         for(int i = 0; i < size_x; i++)
-            mImage->setPixelColor(i,studyPoint.y(), QColor::fromRgb(0,0,0));
+            mImage->setPixelColor(i+size_x+space_between_draws,studyPoint.y(), QColor::fromRgb(0,0,0));
         for(int i = 0; i < size_y; i++)
-            mImage->setPixelColor(studyPoint.x(), i, QColor::fromRgb(0,0,0));
+            mImage->setPixelColor(studyPoint.x()+size_x+space_between_draws, i, QColor::fromRgb(0,0,0));
 
     }
 
@@ -147,9 +199,9 @@ void MainWindow::paintEvent(QPaintEvent *e) {
     for (int i = 0; i < size_x; i++){
         for (int k = 0; k < size_y; k++){
             if (!simulador->grid[currentGrid]->operator()(i, k)->active)
-                mImage->setPixelColor(i+size_x+space_between_draws,k, QColor::fromRgb(255,255,255));
+                mImage->setPixelColor(i,k, QColor::fromRgb(255,255,255));
             else
-                mImage->setPixelColor(i+size_x+space_between_draws,k, simulador->grid[currentGrid]->operator()(i, k)->material->getColor());
+                mImage->setPixelColor(i,k, simulador->grid[currentGrid]->operator()(i, k)->material->getColor());
         }
     }
     painter.drawImage(left_margin,up_margin, *mImage);
@@ -192,6 +244,7 @@ void MainWindow::timerEvent(QTimerEvent *e){
     if (runningSimulator)
         runSimulator();
     makePlotMatProps();
+    printPosition();
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -206,6 +259,7 @@ void MainWindow::on_gridDownButton_clicked()
         currentGrid = 0;
     /// texto do grid
     ui->textGrid->setText(QString::fromStdString(std::to_string(currentGrid)));
+    ui->textGrid->setAlignment(Qt::AlignCenter);
     update();
 }
 
@@ -216,6 +270,7 @@ void MainWindow::on_gridUpButton_clicked()
         currentGrid = simulador->getNGRIDS()-1;
     /// texto do grid
     ui->textGrid->setText(QString::fromStdString(std::to_string(currentGrid)));
+    ui->textGrid->setAlignment(Qt::AlignCenter);
     update();
 }
 
@@ -282,7 +337,7 @@ void MainWindow::makePlotMatProps(){
     QVector<double> props(nPoints);
     QVector<double> temperature_x(nPoints);
     std::vector<std::string> materiais = simulador->getMateriais();
-
+    double max_props = 600;
 
     double dT = (simulador->getTmax() - simulador->getTmin())/(nPoints-1);
     for (unsigned int mat = 0; mat < materiais.size(); mat++){
@@ -293,12 +348,14 @@ void MainWindow::makePlotMatProps(){
             }
         ui->plot_MatProps->graph(mat)->setPen(QPen(simulador->getColor(materiais[mat])));
         ui->plot_MatProps->graph(mat)->setData(temperature_x,props);
+        for (int i = 0; i < nPoints; i++)
+            max_props = max_props < props[i]? props[i] : max_props; /// aqui ajusto o ylabel
         }else{
             ui->plot_MatProps->graph(mat)->data()->clear();
         }
     }
     ui->plot_MatProps->xAxis->setRange(temperature_x[0], temperature_x[nPoints-1]);
-    ui->plot_MatProps->yAxis->setRange(0, 600);
+    ui->plot_MatProps->yAxis->setRange(0, max_props);
 
     ui->plot_MatProps->replot();
     ui->plot_MatProps->update();
@@ -338,8 +395,71 @@ void MainWindow::on_actionNew_triggered()
     update();
 }
 
-void MainWindow::on_pushButton_2_clicked()
+
+void MainWindow::on_actionExport_pdf_triggered()
 {
-    makePlotMatProps();
+    QString file_name = QFileDialog::getSaveFileName(this, "Save report as", "C://Users", tr("Dados (*.pdf)"));
+    save_pdf(file_name);
+    ui->textBrowser_3->setText("pdf salvo!");
+}
+
+void MainWindow::save_pdf(QString file_name){
+
+    QPdfWriter writer(file_name);
+    writer.setPageSize(QPageSize::A4);
+    writer.setPageMargins(QMargins(30, 30, 30, 30));
+
+    QPrinter pdf;
+    pdf.setOutputFormat(QPrinter::PdfFormat);
+    pdf.setOutputFileName(file_name);
+
+    QPainter painterPDF(this);
+    if (!painterPDF.begin(&pdf)){         //Se não conseguir abrir o arquivo PDF ele não executa o resto.
+        qDebug()<<"Erro ao abrir PDF";
+        return;
+    }
+
+    //Retângulo azul.
+    /*
+    painter.setPen(Qt::blue);
+    QRect retangulo2(30, 160, 710.0, 20);
+    painter.drawRoundedRect(retangulo2, 2.0, 2.0);
+    QRect retangulo3(30, 470, 710.0, 20);
+    painter.drawRoundedRect(retangulo3, 2.0, 2.0);
+    QRect retangulo4(30, 550, 710.0, 20);
+    painter.drawRoundedRect(retangulo4, 2.0, 2.0);
+    //*/
+    painterPDF.setRenderHint(QPainter::LosslessImageRendering);
+    painterPDF.drawPixmap(40, 40, (size_x*2+space_between_draws)/2, size_y/2, QPixmap::fromImage(*mImage));
+}
+
+
+void MainWindow::on_buttonCircle_clicked()
+{
+
+    ui->widget_buttonCircle->setStyleSheet(     "border-width: 1;"
+                                                "border-radius: 3;"
+                                                "border-style: solid;"
+                                                "border-color: rgb(100,100,200)");
+    ui->widget_buttonSquare->setStyleSheet(     "border-width: 0;"
+                                                "border-radius: 3;"
+                                                "border-style: solid;"
+                                                "border-color: rgb(100,100,200)");
+    drawFormat = "circulo";
+}
+
+
+void MainWindow::on_buttonSquare_clicked()
+{
+    ui->widget_buttonSquare->setStyleSheet(     "border-width: 1;"
+                                                "border-radius: 3;"
+                                                "border-style: solid;"
+                                                "border-color: rgb(100,100,200)");
+    ui->widget_buttonCircle->setStyleSheet(     "border-width: 0;"
+                                                "border-radius: 3;"
+                                                "border-style: solid;"
+                                                "border-color: rgb(100,100,200)");
+    drawFormat = "quadrado";
+
 }
 

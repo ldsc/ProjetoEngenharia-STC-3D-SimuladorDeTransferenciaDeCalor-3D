@@ -1,17 +1,22 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-#include <QMouseEvent>/// pegar acoes/posicao do mouse
-#include <QPainter> /// desenhar pixels
-#include <iostream> /// cout
-#include <QFileDialog>
-#include <QImage> /// desenhar pixels
-#include <QColor> /// escolher a cor dos pixels
 #include <string>
+#include <iostream>
 
-#include "CSimuladorTemperatura.h"
+#include <QDir>                  ///< Biblioteca que permite acessar diretórios.
+#include <QImage>                /// desenhar pixels
+#include <QColor>                /// escolher a cor dos pixels
+#include <QPainter>              /// desenhar pixels
+#include <QPrinter>              ///< Biblioteca  que habilita a geração de pdf.
+#include <QPainter>              ///< Biblioteca que auxilia a geração do pdf.
+#include <QPdfWriter>
+#include <QMainWindow>
+#include <QMouseEvent>           /// pegar acoes/posicao do mouse
+#include <QFileDialog>
+
 #include "ui_mainwindow.h"
+#include "CSimuladorTemperatura.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -34,6 +39,7 @@ private:
     QVBoxLayout* layout;
     std::vector<QCheckBox*> myCheckbox;
     CSimuladorTemperatura *simulador;
+    std::string drawFormat = "circulo";
 
     int timerId;
     int parallelType = 2;
@@ -43,15 +49,15 @@ private:
     int space_between_draws = 50;
     int left_margin = 20, up_margin = 140;
     bool runningSimulator = false;
-    QPoint studyPoint = QPoint(1,1);
+    QPoint studyPoint = QPoint(0,0);
     int studyGrid;
     std::vector<bool> selectedMateriails;
     QVector<double> time, temperature;
 
-
 protected:
     void start_buttons();
     void mousePressEvent(QMouseEvent *event) override;
+    void printPosition();
     void paintEvent(QPaintEvent *e) override;
 
     QColor calcRGB(double temperatura);
@@ -72,6 +78,9 @@ private slots:
     void on_actionSave_triggered();
     void on_actionOpen_triggered();
     void on_actionNew_triggered();
-    void on_pushButton_2_clicked();
+    void on_actionExport_pdf_triggered();
+    void save_pdf(QString file_name);
+    void on_buttonCircle_clicked();
+    void on_buttonSquare_clicked();
 };
 #endif

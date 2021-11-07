@@ -12,22 +12,35 @@ void CSimuladorTemperatura::resetGrid() {
 }
 
 void CSimuladorTemperatura::createListOfMaterials() {
-    materiais["aluminio_const"] = new CMaterialCorrelacao("aluminio_const.txt");
-    materiais["cobre_const"] = new CMaterialCorrelacao("cobre_const.txt");
-    materiais["ferro_const"] = new CMaterialCorrelacao("ferro_const.txt");
-    materiais["magnesio_const"] = new CMaterialCorrelacao("magnesio_const.txt");
-    materiais["niquel_const"] = new CMaterialCorrelacao("niquel_const.txt");
 
-    materiais["aluminio_correlacao"] = new CMaterialCorrelacao("aluminio_correlacao.txt");
-    materiais["cobre_correlacao"] = new CMaterialCorrelacao("cobre_correlacao.txt");
-    materiais["ferro_correlacao"] = new CMaterialCorrelacao("ferro_correlacao.txt");
-    materiais["magnesio_correlacao"] = new CMaterialCorrelacao("magnesio_correlacao.txt");
-    materiais["niquel_correlacao"] = new CMaterialCorrelacao("niquel_correlacao.txt");
+    materiais["aluminio_const"] = chooseMaterialType("aluminio_const.txt");             //    new CMaterialCorrelacao("aluminio_const.txt");
+    materiais["cobre_const"] = chooseMaterialType("cobre_const.txt");                   // new CMaterialCorrelacao("cobre_const.txt");
+    materiais["ferro_const"] = chooseMaterialType("ferro_const.txt");                   // new CMaterialCorrelacao("ferro_const.txt");
+    materiais["magnesio_const"] = chooseMaterialType("magnesio_const.txt");             // new CMaterialCorrelacao("magnesio_const.txt");
+    materiais["niquel_const"] = chooseMaterialType("niquel_const.txt");                 // new CMaterialCorrelacao("niquel_const.txt");
+
+    materiais["aluminio_correlacao"] = chooseMaterialType("aluminio_correlacao.txt");   // new CMaterialCorrelacao("aluminio_correlacao.txt");
+    materiais["cobre_correlacao"] = chooseMaterialType("cobre_correlacao.txt");         // new CMaterialCorrelacao("cobre_correlacao.txt");
+    materiais["ferro_correlacao"] = chooseMaterialType("ferro_correlacao.txt");         // new CMaterialCorrelacao("ferro_correlacao.txt");
+    materiais["magnesio_correlacao"] = chooseMaterialType("magnesio_correlacao.txt");   // new CMaterialCorrelacao("magnesio_correlacao.txt");
+    materiais["niquel_correlacao"] = chooseMaterialType("niquel_correlacao.txt");       // new CMaterialCorrelacao("niquel_correlacao.txt");
 
     materiais["cobre_interpolacao"] = new CMaterialInterpolacao("cobre_interp.txt");
 
     for(auto const& imap: materiais)
         name_materiais.push_back(imap.first);
+}
+
+CMaterial* CSimuladorTemperatura::chooseMaterialType(std::string name){
+    std::ifstream file("C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//materiais//"+name);
+
+    std::string type;
+    std::getline(file, type);
+    file.close();
+    if (type == "correlacao")
+        return new CMaterialCorrelacao(name);
+    else
+        return new CMaterialInterpolacao(name);
 }
 
 void CSimuladorTemperatura::run_sem_paralelismo() {
@@ -155,13 +168,13 @@ std::string CSimuladorTemperatura::saveGrid(std::string nameFile) {
     int sizeGrid = grid[0]->getSize();
     for (int g = 0; g < NGRIDS; g++) {
         for (int i = 0; i < sizeGrid; i++) {
-            file << (*grid[g])[i]->temp << " ";
-            file << (*grid[g])[i]->active << " ";
-            file << (*grid[g])[i]->source << " ";
-            if (!(*grid[g])[i]->active)
-                file << "ar" << "\n";
-            else
+            if((*grid[g])[i]->active){
+                file << i << " " << g << " ";
+                file << (*grid[g])[i]->temp << " ";
+                file << (*grid[g])[i]->active << " ";
+                file << (*grid[g])[i]->source << " ";
                 file << (*grid[g])[i]->material->getName() << "\n";
+            }
         }
     }
     file.close();
@@ -169,21 +182,18 @@ std::string CSimuladorTemperatura::saveGrid(std::string nameFile) {
 }
 
 std::string CSimuladorTemperatura::openGrid(std::string nameFile) {
-    std::ifstream file(nameFile);
-    std::string value;
-    double temperatura;
-    int active, source;
-    int sizeGrid = grid[0]->getSize();
-    for (int g = 0; g < NGRIDS; g++) {
-        for (int i = 0; i < sizeGrid; i++) {
-            file >> value;	temperatura = std::stof(value);
-            file >> value; active = std::stoi(value);
-            file >> value; source = std::stoi(value);
-            file >> value;
+    resetGrid();
 
-            grid[g]->draw(i, temperatura, active, source, value);
-        }
-    }
+    std::ifstream file(nameFile);
+
+    std::string _name;
+    int i, g;
+    double _temperature;
+    int _active, _source;
+
+    while(file >> i >> g >> _temperature >> _active >> _source >> _name)
+            grid[g]->draw(i, _temperature, _active, _source, _name);
+
     file.close();
     return "Arquivo carregado!";
 }

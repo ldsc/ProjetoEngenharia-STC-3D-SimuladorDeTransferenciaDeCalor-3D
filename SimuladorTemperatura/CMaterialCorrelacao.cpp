@@ -7,6 +7,7 @@ CMaterialCorrelacao::CMaterialCorrelacao(std::string fileName){
     std::ifstream file("C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//materiais//"+fileName);
     if (file.is_open()){
         std::getline(file, name);
+        std::getline(file, name);
 
         file >> r; file >> g; file >> b; file >> alpha;
         color = QColor(r, g, b, alpha);
