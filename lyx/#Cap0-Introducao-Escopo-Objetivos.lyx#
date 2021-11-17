@@ -1085,11 +1085,10 @@ name "sec:Objetivos"
 O objetivo deste projeto são:
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Subsubsection*
 Objetivo geral:
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 desenvolver um software capaz de simular a transferência de calor em qualquer
  superfície ou objeto, para qualquer material.
@@ -1100,14 +1099,13 @@ facilitar o entendimento e ensinamento de transferência de calor, modelagem
  numérica, programação orientada ao objeto e paralelismo.
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
+\begin_layout Subsubsection*
 Objetivo específico
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-Simulação da transferência de calor de qualquer superfície.
+Simulação da transferência de calor de qualquer superfície, permitindo o
+ estudo da evolução térmica de diferentes superfícies e materiais.
 \end_layout
 
 \begin_layout Itemize
@@ -1121,26 +1119,5 @@ Métodos numéricos: solução de equações diferenciais da conservação de en
  qualquer problema de fronteira.
 \end_layout
 
-\begin_layout Itemize
-Modelagem física e matemática do problema.
-\end_layout
-
-\begin_layout Itemize
-Simulação com dados de materiais obtidos em laboratório
-\end_layout
-
-\begin_layout Itemize
-Programação com paralelismo
-\end_layout
-
-\begin_layout Itemize
-Gerar gráfico e interface de usuário com software externo.
-\end_layout
-
-\begin_layout Itemize
-Resolver métodos iterativos.
-\end_layout
-
-\end_deeper
 \end_body
 \end_document

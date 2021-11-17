@@ -48,7 +48,6 @@ void MainWindow::mousePressEvent(QMouseEvent *event) {
         std::string actualMaterial = ui->material_comboBox->currentText().toStdString();
         double temperature = ui->spinBox_Temperature->value();
         bool isSource = ui->checkBox_source->checkState();
-        //std::string drawFormat = ui->drawFormat->currentText().toStdString();
         int size = ui->horizontalSliderDrawSize->value();
         simulador->setActualTemperature(temperature); /// importante para atualizar Tmin/Tmax
 
@@ -105,9 +104,9 @@ void MainWindow::start_buttons(){
                                                 "border-color: rgb(10,10,10)");
 
     ui->widget_buttonCircle->setStyleSheet(     "border-width: 1;"
-                                                "border-radius: 3;"
+                                                "border-radius: 15;"
                                                 "border-style: solid;"
-                                                "border-color: rgb(100,100,200)");
+                                                "border-color: rgb(255,0,0)");
 
     /// remover borda das caixas de texto
     ui->textBrowser_3->setFrameStyle(QFrame::NoFrame);
@@ -176,36 +175,41 @@ void MainWindow::start_buttons(){
 
 void MainWindow::paintEvent(QPaintEvent *e) {
     QPainter painter(this);
+    *mImage = paint(currentGrid);
+    painter.drawImage(left_margin,up_margin, *mImage);
+    e->accept();
+}
+
+QImage MainWindow::paint(int grid) {
+    QImage img = QImage(size_x*2+space_between_draws, size_y,QImage::Format_ARGB32_Premultiplied);
 
     /// first draw
     for (int i = 0; i < size_x; i++){
         for (int k = 0; k < size_y; k++){
-            if (!simulador->grid[currentGrid]->operator()(i, k)->active)
-                mImage->setPixelColor(i+size_x+space_between_draws,k, QColor::fromRgb(255,255,255));
+            if (!simulador->grid[grid]->operator()(i, k)->active)
+                img.setPixelColor(i+size_x+space_between_draws,k, QColor::fromRgb(255,255,255));
             else
-                mImage->setPixelColor(i+size_x+space_between_draws,k, calcRGB(simulador->grid[currentGrid]->operator()(i, k)->temp));
+                img.setPixelColor(i+size_x+space_between_draws,k, calcRGB(simulador->grid[grid]->operator()(i, k)->temp));
         }
     }
 
-    if ((studyPoint.x() > 0 && studyPoint.x() < size_x) && (studyPoint.y() > 0 || studyPoint.y() < size_y)){
+    if ((studyPoint.x() > 0 && studyPoint.x() < size_x) && (studyPoint.y() > 0 || studyPoint.y() < size_y) && grid == studyGrid){
         for(int i = 0; i < size_x; i++)
-            mImage->setPixelColor(i+size_x+space_between_draws,studyPoint.y(), QColor::fromRgb(0,0,0));
+            img.setPixelColor(i+size_x+space_between_draws,studyPoint.y(), QColor::fromRgb(0,0,0));
         for(int i = 0; i < size_y; i++)
-            mImage->setPixelColor(studyPoint.x()+size_x+space_between_draws, i, QColor::fromRgb(0,0,0));
-
+            img.setPixelColor(studyPoint.x()+size_x+space_between_draws, i, QColor::fromRgb(0,0,0));
     }
 
     /// second draw
     for (int i = 0; i < size_x; i++){
         for (int k = 0; k < size_y; k++){
-            if (!simulador->grid[currentGrid]->operator()(i, k)->active)
-                mImage->setPixelColor(i,k, QColor::fromRgb(255,255,255));
+            if (!simulador->grid[grid]->operator()(i, k)->active)
+                img.setPixelColor(i,k, QColor::fromRgb(255,255,255));
             else
-                mImage->setPixelColor(i,k, simulador->grid[currentGrid]->operator()(i, k)->material->getColor());
+                img.setPixelColor(i,k, simulador->grid[grid]->operator()(i, k)->material->getColor());
         }
     }
-    painter.drawImage(left_margin,up_margin, *mImage);
-    e->accept();
+    return img;
 }
 
 QColor MainWindow::calcRGB(double temperatura){
@@ -403,6 +407,35 @@ void MainWindow::on_actionExport_pdf_triggered()
     ui->textBrowser_3->setText("pdf salvo!");
 }
 
+void MainWindow::on_buttonCircle_clicked()
+{
+
+    ui->widget_buttonCircle->setStyleSheet(     "border-width: 1;"
+                                                "border-radius: 15;"
+                                                "border-style: solid;"
+                                                "border-color: rgb(255,0,0)");
+    ui->widget_buttonSquare->setStyleSheet(     "border-width: 0;"
+                                                "border-radius: 0;"
+                                                "border-style: solid;"
+                                                "border-color: rgb(255,0,0)");
+    drawFormat = "circulo";
+}
+
+
+void MainWindow::on_buttonSquare_clicked()
+{
+    ui->widget_buttonSquare->setStyleSheet(     "border-width: 1;"
+                                                "border-radius: 0;"
+                                                "border-style: solid;"
+                                                "border-color: rgb(255,0,0)");
+    ui->widget_buttonCircle->setStyleSheet(     "border-width: 0;"
+                                                "border-radius: 15;"
+                                                "border-style: solid;"
+                                                "border-color: rgb(255,0,0)");
+    drawFormat = "quadrado";
+
+}
+
 void MainWindow::save_pdf(QString file_name){
 
     QPdfWriter writer(file_name);
@@ -419,47 +452,56 @@ void MainWindow::save_pdf(QString file_name){
         return;
     }
 
-    //Retângulo azul.
-    /*
-    painter.setPen(Qt::blue);
-    QRect retangulo2(30, 160, 710.0, 20);
-    painter.drawRoundedRect(retangulo2, 2.0, 2.0);
-    QRect retangulo3(30, 470, 710.0, 20);
-    painter.drawRoundedRect(retangulo3, 2.0, 2.0);
-    QRect retangulo4(30, 550, 710.0, 20);
-    painter.drawRoundedRect(retangulo4, 2.0, 2.0);
-    //*/
+    painterPDF.setFont(QFont("Arial", 8));
+    painterPDF.drawText(40,200, "==> PROPRIEDADES DO GRID <==");
+    painterPDF.drawText(40,220, "Delta x: " + QString::number(simulador->getDelta_x())+" m");
+    painterPDF.drawText(40,240, "Delta z: " + QString::number(simulador->getDelta_z())+" m");
+    painterPDF.drawText(40,260, "Delta t: " + QString::number(simulador->getDelta_t())+" s");
+
+    painterPDF.drawText(40,300, "Largura total horizontal: " + QString::number(simulador->getDelta_x()*size_x)+" m");
+    painterPDF.drawText(40,320, "Largura total vertical: " + QString::number(simulador->getDelta_x()*size_y)+" m");
+    painterPDF.drawText(40,340, "Largura total entre perfis (eixo z): " + QString::number(simulador->getDelta_z()*simulador->getNGRIDS())+" m");
+
+
+
+    painterPDF.drawText(400,200, "==> PROPRIEDADES DA SIMULAÇÃO <==");
+    painterPDF.drawText(400,220, "Temperatura máxima: " + QString::number(simulador->getTmax())+" K");
+    painterPDF.drawText(400,240, "Temperatura mínima: " + QString::number(simulador->getTmin())+" K");
+    painterPDF.drawText(400,260, "Tempo máximo: " + QString::number(time[time.size()-1])+" s");
+
+    painterPDF.drawText(400,300, "Tipo de paralelismo: " + ui->parallel_comboBox->currentText());
+    painterPDF.drawText(400,320, "Coordenada do ponto de estudo (x,y,z): " + QString::number(studyPoint.x()*simulador->getDelta_x())+","+QString::number(studyPoint.y()*simulador->getDelta_x())+","+QString::number(studyGrid*simulador->getDelta_z()));
+
+
+    /// print dos 4 desenhos
+    painterPDF.setPen(Qt::blue);
     painterPDF.setRenderHint(QPainter::LosslessImageRendering);
-    painterPDF.drawPixmap(40, 40, (size_x*2+space_between_draws)/2, size_y/2, QPixmap::fromImage(*mImage));
-}
+    int startDraw_x  = 40;
+    int startDraw_y  = 450;
+    int space_draw_x = 40;
+    int space_draw_y = 80;
+    int d = 5;
 
+    painterPDF.drawPixmap(startDraw_x, startDraw_y, (size_x*2+space_between_draws)/2, size_y/2, QPixmap::fromImage(paint(0)));
+    QRect retangulo1(startDraw_x-d, startDraw_y-d, (size_x*2+space_between_draws)/2+2*d, size_y/2+2*d);
+    painterPDF.drawRoundedRect(retangulo1, 2.0, 2.0);
 
-void MainWindow::on_buttonCircle_clicked()
-{
+    painterPDF.drawPixmap((size_x*2+space_between_draws)/2+startDraw_x+space_draw_x, startDraw_y, (size_x*2+space_between_draws)/2, size_y/2, QPixmap::fromImage(paint(1)));
+    QRect retangulo2((size_x*2+space_between_draws)/2+startDraw_x+space_draw_x-d, startDraw_y-d, (size_x*2+space_between_draws)/2+2*d, size_y/2+2*d);
+    painterPDF.drawRoundedRect(retangulo2, 2.0, 2.0);
 
-    ui->widget_buttonCircle->setStyleSheet(     "border-width: 1;"
-                                                "border-radius: 3;"
-                                                "border-style: solid;"
-                                                "border-color: rgb(100,100,200)");
-    ui->widget_buttonSquare->setStyleSheet(     "border-width: 0;"
-                                                "border-radius: 3;"
-                                                "border-style: solid;"
-                                                "border-color: rgb(100,100,200)");
-    drawFormat = "circulo";
-}
+    painterPDF.drawPixmap(startDraw_x, size_y/2+startDraw_y+space_draw_y, (size_x*2+space_between_draws)/2, size_y/2, QPixmap::fromImage(paint(2)));
+    QRect retangulo3(startDraw_x-d, size_y/2+startDraw_y+space_draw_y-d, (size_x*2+space_between_draws)/2+2*d, size_y/2+2*d);
+    painterPDF.drawRoundedRect(retangulo3, 2.0, 2.0);
 
+    painterPDF.drawPixmap((size_x*2+space_between_draws)/2+startDraw_x+space_draw_x, size_y/2+startDraw_y+space_draw_y, (size_x*2+space_between_draws)/2, size_y/2, QPixmap::fromImage(paint(3)));
+    QRect retangulo4((size_x*2+space_between_draws)/2+startDraw_x+space_draw_x-d, size_y/2+startDraw_y+space_draw_y-d, (size_x*2+space_between_draws)/2+2*d, size_y/2+2*d);
+    painterPDF.drawRoundedRect(retangulo4, 2.0, 2.0);
 
-void MainWindow::on_buttonSquare_clicked()
-{
-    ui->widget_buttonSquare->setStyleSheet(     "border-width: 1;"
-                                                "border-radius: 3;"
-                                                "border-style: solid;"
-                                                "border-color: rgb(100,100,200)");
-    ui->widget_buttonCircle->setStyleSheet(     "border-width: 0;"
-                                                "border-radius: 3;"
-                                                "border-style: solid;"
-                                                "border-color: rgb(100,100,200)");
-    drawFormat = "quadrado";
-
+    painterPDF.setFont(QFont("Arial", 8));
+    painterPDF.drawText(startDraw_x+size_x/2, startDraw_y-d-8, "Grid 1");
+    painterPDF.drawText(startDraw_x+space_draw_x+size_x+size_x/2+4*d, startDraw_y-d-8, "Grid 2");
+    painterPDF.drawText(startDraw_x+size_x/2, size_y/2+startDraw_y+space_draw_y-d-8, "Grid 3");
+    painterPDF.drawText(startDraw_x+space_draw_x+size_x+size_x/2+4*d, size_y/2+startDraw_y+space_draw_y-d-8, "Grid 4");
 }
 

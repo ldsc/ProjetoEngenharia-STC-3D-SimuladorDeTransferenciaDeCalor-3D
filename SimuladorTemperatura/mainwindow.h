@@ -59,6 +59,7 @@ protected:
     void mousePressEvent(QMouseEvent *event) override;
     void printPosition();
     void paintEvent(QPaintEvent *e) override;
+    QImage paint(int grid);
 
     QColor calcRGB(double temperatura);
     void runSimulator();
