@@ -50,6 +50,7 @@ public:
 
     std::string saveGrid(std::string nameFile);
     std::string openGrid(std::string nameFile);
+    std::string openMaterial(std::string nameFile);
 
     /// --------- FUNCOES SET ---------
     void setActualTemperature(double newTemperature);

@@ -17,7 +17,21 @@ CMaterialCorrelacao::CMaterialCorrelacao(std::string fileName){
         file >> C0_k;   file >> C1_k;   file >> C2_k;
     }
     else{
-        std::cout<<"can't open file!" << std::endl;
+        std::ifstream file(fileName);
+        if(file.is_open()){
+            std::getline(file, name);
+            std::getline(file, name);
+
+            file >> r; file >> g; file >> b; file >> alpha;
+            color = QColor(r, g, b, alpha);
+
+            file >> C0_rho; file >> C1_rho;
+            file >> C0_cp;  file >> C1_cp;  file >> C2_cp;
+            file >> C0_k;   file >> C1_k;   file >> C2_k;
+            std::cout<<"file open!"<<std::endl;
+        }
+        else
+            std::cout<<"can't open file!" << std::endl;
     }
 }
 

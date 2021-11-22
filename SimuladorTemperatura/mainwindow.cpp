@@ -156,13 +156,18 @@ void MainWindow::start_buttons(){
     ui->input_dx->setText(QString::fromStdString(std::to_string(simulador->getDelta_x())));
     ui->input_dz->setText(QString::fromStdString(std::to_string(simulador->getDelta_z())));
 
+    createWidgetProps();
+}
+
+void MainWindow::createWidgetProps(){
     /// scroll com os materiais para o gráfico
+    std::vector<std::string> materiais = simulador->getMateriais();
     checkboxes = new QWidget(ui->scrollArea);
     layout = new QVBoxLayout(checkboxes);
     myCheckbox.resize(materiais.size());
     selectedMateriails.resize(materiais.size(), false);
     QString qss;
-
+    std::cout<<"size: " << materiais.size();
     for(unsigned int i = 0; i < materiais.size(); i++){
         myCheckbox[i] = new QCheckBox(QString::fromStdString(materiais[i]), checkboxes);
         qss = QString("background-color: %1").arg(simulador->getColor(materiais[i]).name(QColor::HexArgb));
@@ -403,8 +408,17 @@ void MainWindow::on_actionNew_triggered()
 void MainWindow::on_actionExport_pdf_triggered()
 {
     QString file_name = QFileDialog::getSaveFileName(this, "Save report as", "C://Users", tr("Dados (*.pdf)"));
-    save_pdf(file_name);
-    ui->textBrowser_3->setText("pdf salvo!");
+    QString txt = save_pdf(file_name);
+    ui->textBrowser_3->setText(txt);
+}
+
+void MainWindow::on_actionImport_material_triggered() {
+    QString file_name = QFileDialog::getOpenFileName(this, "Open a file", "C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//materiais", tr("Dados (*.txt)"));
+    std::string name = simulador->openMaterial(file_name.toStdString());
+    ui->textBrowser_3->setText(QString::fromStdString("Material "+name+" carregado!"));
+    ui->material_comboBox->addItem(QString::fromStdString(name));
+
+    createWidgetProps();
 }
 
 void MainWindow::on_buttonCircle_clicked()
@@ -436,7 +450,7 @@ void MainWindow::on_buttonSquare_clicked()
 
 }
 
-void MainWindow::save_pdf(QString file_name){
+QString MainWindow::save_pdf(QString file_name){
 
     QPdfWriter writer(file_name);
     writer.setPageSize(QPageSize::A4);
@@ -447,10 +461,9 @@ void MainWindow::save_pdf(QString file_name){
     pdf.setOutputFileName(file_name);
 
     QPainter painterPDF(this);
-    if (!painterPDF.begin(&pdf)){         //Se não conseguir abrir o arquivo PDF ele não executa o resto.
-        qDebug()<<"Erro ao abrir PDF";
-        return;
-    }
+    if (!painterPDF.begin(&pdf))        //Se não conseguir abrir o arquivo PDF ele não executa o resto.
+        return "Erro ao abrir PDF";
+
 
     painterPDF.setFont(QFont("Arial", 8));
     painterPDF.drawText(40,200, "==> PROPRIEDADES DO GRID <==");
@@ -503,5 +516,29 @@ void MainWindow::save_pdf(QString file_name){
     painterPDF.drawText(startDraw_x+space_draw_x+size_x+size_x/2+4*d, startDraw_y-d-8, "Grid 2");
     painterPDF.drawText(startDraw_x+size_x/2, size_y/2+startDraw_y+space_draw_y-d-8, "Grid 3");
     painterPDF.drawText(startDraw_x+space_draw_x+size_x+size_x/2+4*d, size_y/2+startDraw_y+space_draw_y-d-8, "Grid 4");
+
+    writer.newPage();
+    pdf.newPage();
+
+    startDraw_y = 40;
+    painterPDF.drawPixmap(startDraw_x, startDraw_y, (size_x*2+space_between_draws)/2, size_y/2, ui->plot1->toPixmap());
+    QRect retangulo5(startDraw_x-d, startDraw_y-d, (size_x*2+space_between_draws)/2+2*d, size_y/2+2*d);
+    painterPDF.drawRoundedRect(retangulo5, 2.0, 2.0);
+
+    painterPDF.drawPixmap((size_x*2+space_between_draws)/2+startDraw_x+space_draw_x, startDraw_y, (size_x*2+space_between_draws)/2, size_y/2, ui->plot2->toPixmap());
+    QRect retangulo6((size_x*2+space_between_draws)/2+startDraw_x+space_draw_x-d, startDraw_y-d, (size_x*2+space_between_draws)/2+2*d, size_y/2+2*d);
+    painterPDF.drawRoundedRect(retangulo6, 2.0, 2.0);
+
+    painterPDF.drawPixmap(startDraw_x, size_y/2+startDraw_y+space_draw_y, (size_x*2+space_between_draws)/2, size_y/2, ui->plot3->toPixmap());
+    QRect retangulo7(startDraw_x-d, size_y/2+startDraw_y+space_draw_y-d, (size_x*2+space_between_draws)/2+2*d, size_y/2+2*d);
+    painterPDF.drawRoundedRect(retangulo7, 2.0, 2.0);
+
+    painterPDF.drawPixmap((size_x*2+space_between_draws)/2+startDraw_x+space_draw_x, size_y/2+startDraw_y+space_draw_y, (size_x*2+space_between_draws)/2, size_y/2, ui->plot4->toPixmap());
+    QRect retangulo8((size_x*2+space_between_draws)/2+startDraw_x+space_draw_x-d, size_y/2+startDraw_y+space_draw_y-d, (size_x*2+space_between_draws)/2+2*d, size_y/2+2*d);
+    painterPDF.drawRoundedRect(retangulo8, 2.0, 2.0);
+
+    painterPDF.drawPixmap(startDraw_x, size_y+startDraw_y+space_draw_y*2, (size_x*2+space_between_draws*2), size_y/2, ui->widget_props->grab());
+
+    return "PDF salvo!";
 }
 

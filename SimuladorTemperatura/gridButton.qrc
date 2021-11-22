@@ -8,5 +8,6 @@
         <file>fig/icon_pdf.png</file>
         <file>fig/circle.png</file>
         <file>fig/square.png</file>
+        <file>fig/new_mat.png</file>
     </qresource>
 </RCC>

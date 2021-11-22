@@ -788,6 +788,7 @@ p, li { white-space: pre-wrap; }
     <addaction name="actionSave"/>
     <addaction name="actionOpen"/>
     <addaction name="actionExport_pdf"/>
+    <addaction name="actionImport_material"/>
    </widget>
    <widget class="QMenu" name="menuHel">
     <property name="title">
@@ -831,6 +832,15 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="text">
     <string>Export pdf</string>
+   </property>
+  </action>
+  <action name="actionImport_material">
+   <property name="icon">
+    <iconset resource="gridButton.qrc">
+     <normaloff>:/fig/new_mat.png</normaloff>:/fig/new_mat.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import material</string>
    </property>
   </action>
  </widget>

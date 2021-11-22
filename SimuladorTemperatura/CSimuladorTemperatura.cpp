@@ -13,7 +13,7 @@ void CSimuladorTemperatura::resetGrid() {
 
 void CSimuladorTemperatura::createListOfMaterials() {
 
-    materiais["aluminio_const"] = chooseMaterialType("aluminio_const.txt");             //    new CMaterialCorrelacao("aluminio_const.txt");
+    materiais["aluminio_const"] = chooseMaterialType("aluminio_const.txt");             // new CMaterialCorrelacao("aluminio_const.txt");
     materiais["cobre_const"] = chooseMaterialType("cobre_const.txt");                   // new CMaterialCorrelacao("cobre_const.txt");
     materiais["ferro_const"] = chooseMaterialType("ferro_const.txt");                   // new CMaterialCorrelacao("ferro_const.txt");
     materiais["magnesio_const"] = chooseMaterialType("magnesio_const.txt");             // new CMaterialCorrelacao("magnesio_const.txt");
@@ -23,7 +23,7 @@ void CSimuladorTemperatura::createListOfMaterials() {
     materiais["cobre_correlacao"] = chooseMaterialType("cobre_correlacao.txt");         // new CMaterialCorrelacao("cobre_correlacao.txt");
     materiais["ferro_correlacao"] = chooseMaterialType("ferro_correlacao.txt");         // new CMaterialCorrelacao("ferro_correlacao.txt");
     materiais["magnesio_correlacao"] = chooseMaterialType("magnesio_correlacao.txt");   // new CMaterialCorrelacao("magnesio_correlacao.txt");
-    materiais["niquel_correlacao"] = chooseMaterialType("niquel_correlacao.txt");       // new CMaterialCorrelacao("niquel_correlacao.txt");
+    //materiais["niquel_correlacao"] = chooseMaterialType("niquel_correlacao.txt");       // new CMaterialCorrelacao("niquel_correlacao.txt");
 
     materiais["cobre_interpolacao"] = new CMaterialInterpolacao("cobre_interp.txt");
 
@@ -42,6 +42,25 @@ CMaterial* CSimuladorTemperatura::chooseMaterialType(std::string name){
     else
         return new CMaterialInterpolacao(name);
 }
+
+std::string CSimuladorTemperatura::openMaterial(std::string nameFile){
+    std::ifstream file(nameFile);
+
+    std::string type;
+    std::string name;
+    std::getline(file, type);
+    std::getline(file, name);
+    std::cout<<name<<std::endl;
+
+    file.close();
+    if (type == "correlacao")
+        materiais[name] = new CMaterialCorrelacao(nameFile);
+    else
+        materiais[name] = new CMaterialInterpolacao(nameFile);
+    name_materiais.push_back(name);
+    return name;
+}
+
 
 void CSimuladorTemperatura::run_sem_paralelismo() {
     for (int g = 0; g < NGRIDS; g++){

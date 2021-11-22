@@ -70,6 +70,8 @@ private slots:
     void on_gridDownButton_clicked();
     void on_gridUpButton_clicked();
 
+    void createWidgetProps();
+
     void makePlot1();
     void makePlot2();
     void makePlot3();
@@ -80,8 +82,9 @@ private slots:
     void on_actionOpen_triggered();
     void on_actionNew_triggered();
     void on_actionExport_pdf_triggered();
-    void save_pdf(QString file_name);
+    QString save_pdf(QString file_name);
     void on_buttonCircle_clicked();
     void on_buttonSquare_clicked();
+    void on_actionImport_material_triggered();
 };
 #endif
