@@ -2,6 +2,8 @@
 
 void CSimuladorTemperatura::resetSize(int width, int height) {
     grid.resize(NGRIDS);
+    this->width = width;
+    this->height = height;
     for (int i = 0; i < NGRIDS; i++)
         grid[i] = new CGrid(width, height, 0.0);
 }
@@ -41,6 +43,16 @@ CMaterial* CSimuladorTemperatura::chooseMaterialType(std::string name){
         return new CMaterialCorrelacao(name);
     else
         return new CMaterialInterpolacao(name);
+}
+
+void CSimuladorTemperatura::addGrid(){
+    NGRIDS++;
+    grid.push_back(new CGrid(width, height, 0.0));
+}
+
+void CSimuladorTemperatura::delGrid(int _grid){
+    NGRIDS--;
+    grid.erase(grid.begin()+_grid);
 }
 
 std::string CSimuladorTemperatura::openMaterial(std::string nameFile){
@@ -185,6 +197,7 @@ double CSimuladorTemperatura::calculatePointIteration(int x, int y, int g) {
 std::string CSimuladorTemperatura::saveGrid(std::string nameFile) {
     std::ofstream file(nameFile);
     int sizeGrid = grid[0]->getSize();
+    file << NGRIDS <<"\n";
     for (int g = 0; g < NGRIDS; g++) {
         for (int i = 0; i < sizeGrid; i++) {
             if((*grid[g])[i]->active){
@@ -201,7 +214,6 @@ std::string CSimuladorTemperatura::saveGrid(std::string nameFile) {
 }
 
 std::string CSimuladorTemperatura::openGrid(std::string nameFile) {
-    resetGrid();
 
     std::ifstream file(nameFile);
 
@@ -209,9 +221,16 @@ std::string CSimuladorTemperatura::openGrid(std::string nameFile) {
     int i, g;
     double _temperature;
     int _active, _source;
+    std::string _strGrids;
+    std::getline(file, _strGrids);
 
-    while(file >> i >> g >> _temperature >> _active >> _source >> _name)
+    NGRIDS = std::stoi(_strGrids);
+    grid.resize(NGRIDS);
+    for(int gg = 0; gg<NGRIDS; gg++)
+        grid[gg] = new CGrid(width, height, 0.0);
+    while(file >> i >> g >> _temperature >> _active >> _source >> _name){
             grid[g]->draw(i, _temperature, _active, _source, _name);
+    }
 
     file.close();
     return "Arquivo carregado!";

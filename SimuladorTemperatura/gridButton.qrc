@@ -9,5 +9,7 @@
         <file>fig/circle.png</file>
         <file>fig/square.png</file>
         <file>fig/new_mat.png</file>
+        <file>fig/icon_adicionar_camada.png</file>
+        <file>fig/icon_deletar_camada.png</file>
     </qresource>
 </RCC>

@@ -646,9 +646,9 @@ i-1,j,k
 
 \begin_layout Standard
 Isso quer dizer que, caso exista uma fronteira na dimensão x ou y, esse
- termo deve ser anulado (condição de fronteira), e retirado 1 do total das
- 4 fronteiras e, caso exista uma fronteira no sentido de z, deve ser retirado
- a quantidade de fronteiras do total de 2.
+ termo deve ser anulado, e retirado 1 do total das 4 fronteiras e, caso
+ exista uma fronteira no sentido de z, deve ser retirado a quantidade de
+ fronteiras do total de 2.
  Portanto, é definito duas novas variáveis para o problema, 
 \begin_inset Formula $nx$
 \end_inset

@@ -86,5 +86,7 @@ private slots:
     void on_buttonCircle_clicked();
     void on_buttonSquare_clicked();
     void on_actionImport_material_triggered();
+    void on_gridAddGrid_clicked();
+    void on_gridDelGrid_clicked();
 };
 #endif

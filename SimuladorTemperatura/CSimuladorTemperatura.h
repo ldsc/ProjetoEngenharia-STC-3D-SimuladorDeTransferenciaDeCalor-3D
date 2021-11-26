@@ -15,8 +15,9 @@ class CSimuladorTemperatura {
 private:
     //int parallel = 0;
     int MAX_THREADS = omp_get_max_threads()-1;
+    int width, height;
     bool materialPropertiesStatus = true;
-    int NGRIDS = 4;
+    int NGRIDS = 1;
     const double MIN_ERRO = 1.0e-1;
     const int MAX_ITERATION = 39;
     double delta_x = 2.6e-4, delta_t = 5.0e-1, delta_z = 0.5;
@@ -39,6 +40,9 @@ public:
 
     void createListOfMaterials();
     CMaterial* chooseMaterialType(std::string name);
+
+    void addGrid();
+    void delGrid(int _grid);
 
     /// --------- FUNCOES DO SOLVER ---------
     void run_sem_paralelismo();

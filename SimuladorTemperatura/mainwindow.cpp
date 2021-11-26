@@ -3,12 +3,6 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
-    /*
-    QDir* dir = new QDir(QCoreApplication::applicationDirPath());
-    std::cout<<"diretorio: " << dir->dirName().toStdString()<<std::endl;
-    std::cout<<"diretorio: " << dir->homePath().toStdString()<<std::endl;
-    std::cout<<"diretorio: " << dir->path().toStdString()<<std::endl;
-    std::cout<<"diretorio: " << dir->absolutePath().toStdString()<<std::endl;*/
     up_margin = 100;
     simulador = new CSimuladorTemperatura();
     simulador->resetSize(size_x, size_y);
@@ -167,7 +161,6 @@ void MainWindow::createWidgetProps(){
     myCheckbox.resize(materiais.size());
     selectedMateriails.resize(materiais.size(), false);
     QString qss;
-    std::cout<<"size: " << materiais.size();
     for(unsigned int i = 0; i < materiais.size(); i++){
         myCheckbox[i] = new QCheckBox(QString::fromStdString(materiais[i]), checkboxes);
         qss = QString("background-color: %1").arg(simulador->getColor(materiais[i]).name(QColor::HexArgb));
@@ -188,7 +181,7 @@ void MainWindow::paintEvent(QPaintEvent *e) {
 QImage MainWindow::paint(int grid) {
     QImage img = QImage(size_x*2+space_between_draws, size_y,QImage::Format_ARGB32_Premultiplied);
 
-    /// first draw
+    /// desenho da temperatura
     for (int i = 0; i < size_x; i++){
         for (int k = 0; k < size_y; k++){
             if (!simulador->grid[grid]->operator()(i, k)->active)
@@ -205,7 +198,7 @@ QImage MainWindow::paint(int grid) {
             img.setPixelColor(studyPoint.x()+size_x+space_between_draws, i, QColor::fromRgb(0,0,0));
     }
 
-    /// second draw
+    /// desenho dos materiais
     for (int i = 0; i < size_x; i++){
         for (int k = 0; k < size_y; k++){
             if (!simulador->grid[grid]->operator()(i, k)->active)
@@ -466,61 +459,35 @@ QString MainWindow::save_pdf(QString file_name){
 
 
     painterPDF.setFont(QFont("Arial", 8));
-    painterPDF.drawText(40,200, "==> PROPRIEDADES DO GRID <==");
-    painterPDF.drawText(40,220, "Delta x: " + QString::number(simulador->getDelta_x())+" m");
-    painterPDF.drawText(40,240, "Delta z: " + QString::number(simulador->getDelta_z())+" m");
-    painterPDF.drawText(40,260, "Delta t: " + QString::number(simulador->getDelta_t())+" s");
+    painterPDF.drawText(40,140, "==> PROPRIEDADES DO GRID <==");
+    painterPDF.drawText(40,160, "Delta x: " + QString::number(simulador->getDelta_x())+" m");
+    painterPDF.drawText(40,180, "Delta z: " + QString::number(simulador->getDelta_z())+" m");
+    painterPDF.drawText(40,200, "Delta t: " + QString::number(simulador->getDelta_t())+" s");
 
-    painterPDF.drawText(40,300, "Largura total horizontal: " + QString::number(simulador->getDelta_x()*size_x)+" m");
-    painterPDF.drawText(40,320, "Largura total vertical: " + QString::number(simulador->getDelta_x()*size_y)+" m");
-    painterPDF.drawText(40,340, "Largura total entre perfis (eixo z): " + QString::number(simulador->getDelta_z()*simulador->getNGRIDS())+" m");
+    painterPDF.drawText(40,240, "Largura total horizontal: " + QString::number(simulador->getDelta_x()*size_x)+" m");
+    painterPDF.drawText(40,260, "Largura total vertical: " + QString::number(simulador->getDelta_x()*size_y)+" m");
+    painterPDF.drawText(40,280, "Largura total entre perfis (eixo z): " + QString::number(simulador->getDelta_z()*simulador->getNGRIDS())+" m");
 
 
 
-    painterPDF.drawText(400,200, "==> PROPRIEDADES DA SIMULAÇÃO <==");
-    painterPDF.drawText(400,220, "Temperatura máxima: " + QString::number(simulador->getTmax())+" K");
-    painterPDF.drawText(400,240, "Temperatura mínima: " + QString::number(simulador->getTmin())+" K");
-    painterPDF.drawText(400,260, "Tempo máximo: " + QString::number(time[time.size()-1])+" s");
+    painterPDF.drawText(400,140, "==> PROPRIEDADES DA SIMULAÇÃO <==");
+    painterPDF.drawText(400,160, "Temperatura máxima: " + QString::number(simulador->getTmax())+" K");
+    painterPDF.drawText(400,180, "Temperatura mínima: " + QString::number(simulador->getTmin())+" K");
+    painterPDF.drawText(400,200, "Tempo máximo: " + QString::number(time[time.size()-1])+" s");
 
-    painterPDF.drawText(400,300, "Tipo de paralelismo: " + ui->parallel_comboBox->currentText());
-    painterPDF.drawText(400,320, "Coordenada do ponto de estudo (x,y,z): " + QString::number(studyPoint.x()*simulador->getDelta_x())+","+QString::number(studyPoint.y()*simulador->getDelta_x())+","+QString::number(studyGrid*simulador->getDelta_z()));
-
+    painterPDF.drawText(400,240, "Tipo de paralelismo: " + ui->parallel_comboBox->currentText());
+    painterPDF.drawText(400,260, "Coordenada do ponto de estudo (x,y,z): " + QString::number(studyPoint.x()*simulador->getDelta_x())+","+QString::number(studyPoint.y()*simulador->getDelta_x())+","+QString::number(studyGrid*simulador->getDelta_z()));
 
     /// print dos 4 desenhos
     painterPDF.setPen(Qt::blue);
     painterPDF.setRenderHint(QPainter::LosslessImageRendering);
     int startDraw_x  = 40;
-    int startDraw_y  = 450;
+    int startDraw_y  = 300;
     int space_draw_x = 40;
-    int space_draw_y = 80;
+    int space_draw_y = 30;
     int d = 5;
-
-    painterPDF.drawPixmap(startDraw_x, startDraw_y, (size_x*2+space_between_draws)/2, size_y/2, QPixmap::fromImage(paint(0)));
-    QRect retangulo1(startDraw_x-d, startDraw_y-d, (size_x*2+space_between_draws)/2+2*d, size_y/2+2*d);
-    painterPDF.drawRoundedRect(retangulo1, 2.0, 2.0);
-
-    painterPDF.drawPixmap((size_x*2+space_between_draws)/2+startDraw_x+space_draw_x, startDraw_y, (size_x*2+space_between_draws)/2, size_y/2, QPixmap::fromImage(paint(1)));
-    QRect retangulo2((size_x*2+space_between_draws)/2+startDraw_x+space_draw_x-d, startDraw_y-d, (size_x*2+space_between_draws)/2+2*d, size_y/2+2*d);
-    painterPDF.drawRoundedRect(retangulo2, 2.0, 2.0);
-
-    painterPDF.drawPixmap(startDraw_x, size_y/2+startDraw_y+space_draw_y, (size_x*2+space_between_draws)/2, size_y/2, QPixmap::fromImage(paint(2)));
-    QRect retangulo3(startDraw_x-d, size_y/2+startDraw_y+space_draw_y-d, (size_x*2+space_between_draws)/2+2*d, size_y/2+2*d);
-    painterPDF.drawRoundedRect(retangulo3, 2.0, 2.0);
-
-    painterPDF.drawPixmap((size_x*2+space_between_draws)/2+startDraw_x+space_draw_x, size_y/2+startDraw_y+space_draw_y, (size_x*2+space_between_draws)/2, size_y/2, QPixmap::fromImage(paint(3)));
-    QRect retangulo4((size_x*2+space_between_draws)/2+startDraw_x+space_draw_x-d, size_y/2+startDraw_y+space_draw_y-d, (size_x*2+space_between_draws)/2+2*d, size_y/2+2*d);
-    painterPDF.drawRoundedRect(retangulo4, 2.0, 2.0);
-
     painterPDF.setFont(QFont("Arial", 8));
-    painterPDF.drawText(startDraw_x+size_x/2, startDraw_y-d-8, "Grid 1");
-    painterPDF.drawText(startDraw_x+space_draw_x+size_x+size_x/2+4*d, startDraw_y-d-8, "Grid 2");
-    painterPDF.drawText(startDraw_x+size_x/2, size_y/2+startDraw_y+space_draw_y-d-8, "Grid 3");
-    painterPDF.drawText(startDraw_x+space_draw_x+size_x+size_x/2+4*d, size_y/2+startDraw_y+space_draw_y-d-8, "Grid 4");
 
-    writer.newPage();
-    pdf.newPage();
-
-    startDraw_y = 40;
     painterPDF.drawPixmap(startDraw_x, startDraw_y, (size_x*2+space_between_draws)/2, size_y/2, ui->plot1->toPixmap());
     QRect retangulo5(startDraw_x-d, startDraw_y-d, (size_x*2+space_between_draws)/2+2*d, size_y/2+2*d);
     painterPDF.drawRoundedRect(retangulo5, 2.0, 2.0);
@@ -539,6 +506,57 @@ QString MainWindow::save_pdf(QString file_name){
 
     painterPDF.drawPixmap(startDraw_x, size_y+startDraw_y+space_draw_y*2, (size_x*2+space_between_draws*2), size_y/2, ui->widget_props->grab());
 
+
+    startDraw_y = 100;
+    space_draw_y = 50;
+
+    for (int i = 0; i<simulador->getNGRIDS(); i++){
+        if (i%6 == 0){
+            startDraw_y = 100;
+            writer.newPage();
+            pdf.newPage();
+        }
+        if (i%2 == 0){
+            painterPDF.drawText(startDraw_x+size_x/2, startDraw_y-d-8, "Grid "+QString::number(i));
+            painterPDF.drawPixmap(startDraw_x, startDraw_y, (size_x*2+space_between_draws)/2, size_y/2, QPixmap::fromImage(paint(i)));
+            QRect retangulo1(startDraw_x-d, startDraw_y-d, (size_x*2+space_between_draws)/2+2*d, size_y/2+2*d);
+            painterPDF.drawRoundedRect(retangulo1, 2.0, 2.0);
+        }
+        else {
+            painterPDF.drawText(startDraw_x+space_draw_x+size_x+size_x/2+4*d, startDraw_y-d-8, "Grid "+QString::number(i));
+            painterPDF.drawPixmap((size_x*2+space_between_draws)/2+startDraw_x+space_draw_x, startDraw_y, (size_x*2+space_between_draws)/2, size_y/2, QPixmap::fromImage(paint(i)));
+            QRect retangulo2((size_x*2+space_between_draws)/2+startDraw_x+space_draw_x-d, startDraw_y-d, (size_x*2+space_between_draws)/2+2*d, size_y/2+2*d);
+            painterPDF.drawRoundedRect(retangulo2, 2.0, 2.0);
+            startDraw_y+=size_y/2+space_draw_y;
+        }
+    }
     return "PDF salvo!";
+}
+
+
+void MainWindow::on_gridAddGrid_clicked()
+{
+    simulador->addGrid();
+    currentGrid = simulador->getNGRIDS()-1;
+
+    /// texto do grid
+    ui->textGrid->setText(QString::fromStdString(std::to_string(currentGrid)));
+    ui->textGrid->setAlignment(Qt::AlignCenter);
+    update();
+
+}
+
+
+void MainWindow::on_gridDelGrid_clicked()
+{
+    if (simulador->getNGRIDS() > 1){
+        simulador->delGrid(currentGrid);
+        currentGrid = currentGrid==0? 0:currentGrid-1;
+    }
+
+    /// texto do grid
+    ui->textGrid->setText(QString::fromStdString(std::to_string(currentGrid)));
+    ui->textGrid->setAlignment(Qt::AlignCenter);
+    update();
 }
 
