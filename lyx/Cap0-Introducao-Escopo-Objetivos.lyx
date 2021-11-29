@@ -869,11 +869,11 @@ PROJETO ENGENHARIA
 \begin_inset Newline newline
 \end_inset
 
-DESENVOLVIMENTO DO SOFTWARE 
+SOFTWARE 
 \begin_inset Newline newline
 \end_inset
 
-SIMULADOR DE DIFUSÃO TÉRMICA
+SIMULADOR DE DIFUSÃO TÉRMICA 3D
 \begin_inset Newline newline
 \end_inset
 
@@ -1022,6 +1022,22 @@ today ele vai colocar data no material impresso
 
 \end_layout
 
+\begin_layout Standard
+No presente projeto de engenharia, desenvolveu-se o software Simulador de
+ difusão térmica em objetos 3D, com paradigma orientado ao objeto, com o
+ objetivo de implementar conceitos aprendidos nas disciplinas de fenômeno
+ dos transportes, modelagem numérica e programação.
+\end_layout
+
+\begin_layout Standard
+Dessa forma, a principal finalidade do simulador é fornecer o cálculo da
+ temperatura ao longo do tempo, em um objeto genérico, com propriedades
+ térmofísicas também inseridas pelo usuário.
+ Tornando-se uma ferramenta poderosa para o ensino de transferência de calor,
+ calculo numérico, programação orientada ao objeto, programação de multi-threads
+, e para o desenvolvimento de projetos de engenharia.
+\end_layout
+
 \begin_layout Section
 Escopo do problema
 \begin_inset CommandInset label
@@ -1034,9 +1050,24 @@ name "sec:Escopo-do-Problema"
 \end_layout
 
 \begin_layout Standard
-No presente projeto de engenharia desenvolve-se o software Simulador de
- difusão térmica, um software aplicado a engenharia de petróleo e que utiliza
- o paradigma da orientação a objetos.
+Troca de calor é um tema importantíssimo na indústria do Petróleo, sendo
+ estudado e aplicado em absolutamente todas as etapas.
+ Geólogos estudam a maturidade do óleo, engenheiros de reservatório estudam
+ mecanismos térmicos para produzir mais óleo, engenheiros de planta de plataform
+a buscam formas de minimizar a perda energética devido às trocas de calor
+ dos fluidos produzidos, engenheiros de refinaria buscam melhores controles
+ de temperatura nas destilarias, e engenheiros de logística, melhores materiais
+ para transportar o óleo/gás até o consumidor.
+ 
+\end_layout
+
+\begin_layout Standard
+É importantíssimo resolver os problemas de engenharia citados, para diversos
+ casos e situações, com alta precisão.
+ Portanto, o que se propõe é um simulador de difusão térmica, que consegue
+ resolver todos os casos possíveis, para qualquer temperatura, superfícies
+ ou volumes, e para qualquer material.
+ Tornando-se uma ferramenta prática para alunos e engenheiros.
 \end_layout
 
 \begin_layout Section
@@ -1051,24 +1082,32 @@ name "sec:Objetivos"
 \end_layout
 
 \begin_layout Standard
-O objetivo deste projeto é desenvolver um software com a capacidade de simular
- a transferência de calor de qualquer superfície/objeto criado pelo usuário,
- programado em C++ com o paradigma orientado ao objeto.
-\end_layout
-
-\begin_layout Standard
-Tem a finalidade de resolver a transferência térmica em meio bidimensionais
- de qualquer superfície criada pelo usuário, utilizando métodos numéricos
- implícitos, baseado em diferenças finitas, com fronteiras seladas.
-\end_layout
-
-\begin_layout Standard
-Os objetivos deste projeto de engenharia são:
+O objetivo deste projeto são:
 \end_layout
 
 \begin_layout Itemize
-Simulação da transferência de calor de qualquer superfície, permitindo o
- estudo da evolução térmica de diferentes superfícies e materiais.
+Objetivo geral:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+desenvolver um software capaz de simular a transferência de calor em qualquer
+ superfície ou objeto, para qualquer material.
+\end_layout
+
+\begin_layout Itemize
+facilitar o entendimento e ensinamento de transferência de calor, modelagem
+ numérica, programação orientada ao objeto e paralelismo.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Objetivo específico
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Simulação da transferência de calor de qualquer superfície.
 \end_layout
 
 \begin_layout Itemize
@@ -1082,5 +1121,26 @@ Métodos numéricos: solução de equações diferenciais da conservação de en
  qualquer problema de fronteira.
 \end_layout
 
+\begin_layout Itemize
+Modelagem física e matemática do problema.
+\end_layout
+
+\begin_layout Itemize
+Simulação com dados de materiais obtidos em laboratório
+\end_layout
+
+\begin_layout Itemize
+Programação com paralelismo
+\end_layout
+
+\begin_layout Itemize
+Gerar gráfico e interface de usuário com software externo.
+\end_layout
+
+\begin_layout Itemize
+Resolver métodos iterativos.
+\end_layout
+
+\end_deeper
 \end_body
 \end_document

@@ -1022,6 +1022,22 @@ today ele vai colocar data no material impresso
 
 \end_layout
 
+\begin_layout Standard
+No presente projeto de engenharia, desenvolveu-se o software Simulador de
+ difusão térmica em objetos 3D, com paradigma orientado ao objeto, com o
+ objetivo de implementar conceitos aprendidos nas disciplinas de fenômeno
+ dos transportes, modelagem numérica e programação.
+\end_layout
+
+\begin_layout Standard
+Dessa forma, a principal finalidade do simulador é fornecer o cálculo da
+ temperatura ao longo do tempo, em um objeto genérico, com propriedades
+ térmofísicas também inseridas pelo usuário.
+ Tornando-se uma ferramenta poderosa para o ensino de transferência de calor,
+ calculo numérico, programação orientada ao objeto, programação de multi-threads
+, e para o desenvolvimento de projetos de engenharia.
+\end_layout
+
 \begin_layout Section
 Escopo do problema
 \begin_inset CommandInset label
@@ -1034,42 +1050,24 @@ name "sec:Escopo-do-Problema"
 \end_layout
 
 \begin_layout Standard
-No presente projeto de engenharia desenvolve-se o software Simulador de
- difusão térmica, um software aplicado a engenharia de petróleo e que utiliza
- o paradigma da orientação a objetos.
-\end_layout
-
-\begin_layout Standard
-Segundo o CREA/CONFEA um dos quesitos fundamentais que diferenciam a atuação
- de um tecnólogo da atuação de um engenheiro é a capacidade de desenvolver
- um projeto em engenharia; Neste trabalho, desenvolve-se um projeto em engenhari
-a de software aplicado a solução de um problema específico de engenharia
- de petróleo.
- Trabalhando-se com todo ciclo de um projeto, isto é, especificação, elaboração,
- análise, projeto, desenvolvimento, teste e documentação.
+Troca de calor é um tema importantíssimo na indústria do Petróleo, sendo
+ estudado e aplicado em absolutamente todas as etapas.
+ Geólogos estudam a maturidade do óleo, engenheiros de reservatório estudam
+ mecanismos térmicos para produzir mais óleo, engenheiros de planta de plataform
+a buscam formas de minimizar a perda energética devido às trocas de calor
+ dos fluidos produzidos, engenheiros de refinaria buscam melhores controles
+ de temperatura nas destilarias, e engenheiros de logística, melhores materiais
+ para transportar o óleo/gás até o consumidor.
  
 \end_layout
 
-\begin_layout Itemize
-ESTE MODELO TEM TEXTOS EXPLICATVOS QUE DEVEM SER ELIMINADOS DA VERSÃO FINAL.
- O OBJETIVO DE COLOCAR AS EXPLICAÇÕES É FACILITAR O ENTENDIMENTO DO QUE
- DEVE ENTRAR EM CADA SEÇÃO.
-\end_layout
-
-\begin_layout Itemize
-Definir o escopo do projeto de engenharia, a ideia geral do software, acentuar
- sua importância, usos e aplicações em engenharia [de petróleo].
-\end_layout
-
-\begin_layout Itemize
-Delimitar o assunto.
- Situá-lo no tempo e no espaço.
- Situá-lo em relação a outros softwares.
-\end_layout
-
-\begin_layout Itemize
-Neste capítulo podem entrar figuras que ilustram a ideia geral, o detalhamento
- será feito depois, na elaboração.
+\begin_layout Standard
+É importantíssimo resolver os problemas de engenharia citados, para diversos
+ casos e situações, com alta precisão.
+ Portanto, o que se propõe é um simulador de difusão térmica, que consegue
+ resolver todos os casos possíveis, para qualquer temperatura, superfícies
+ ou volumes, e para qualquer material.
+ Tornando-se uma ferramenta prática para alunos e engenheiros.
 \end_layout
 
 \begin_layout Section
@@ -1084,19 +1082,25 @@ name "sec:Objetivos"
 \end_layout
 
 \begin_layout Standard
-O objetivo deste projeto é desenvolver um software com a capacidade de simular
- a transferência de calor de qualquer superfície/objeto criado pelo usuário,
- programado em C++ com o paradigma orientado ao objeto.
+O objetivo deste projeto são:
 \end_layout
 
-\begin_layout Standard
-Tem a finalidade de resolver a transferência térmica em meio bidimensionais
- de qualquer superfície criada pelo usuário, utilizando métodos numéricos
- implícitos, baseado em diferenças finitas, com fronteiras seladas.
+\begin_layout Subsubsection*
+Objetivo geral:
 \end_layout
 
-\begin_layout Standard
-Os objetivos deste projeto de engenharia são:
+\begin_layout Itemize
+desenvolver um software capaz de simular a transferência de calor em qualquer
+ superfície ou objeto, para qualquer material.
+\end_layout
+
+\begin_layout Itemize
+facilitar o entendimento e ensinamento de transferência de calor, modelagem
+ numérica, programação orientada ao objeto e paralelismo.
+\end_layout
+
+\begin_layout Subsubsection*
+Objetivo específico
 \end_layout
 
 \begin_layout Itemize

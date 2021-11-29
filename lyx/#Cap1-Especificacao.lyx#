@@ -403,11 +403,6 @@ qcustomplot
 para gerar os gráficos.
 \end_layout
 
-\begin_layout Standard
-Para calcular as propriedades termofísicas dos materiais, são utilizados
- três modelos: propriedades constantes, por correlação e por interpolação.
-\end_layout
-
 \begin_layout Subsection
 Requisitos funcionais
 \end_layout
@@ -488,8 +483,8 @@ RF-02
 \begin_inset Text
 
 \begin_layout Plain Layout
-O usuário deverá ter liberdade para escolher o material em cada ponto do
- objeto.
+O usuário deverá ter liberdade para escolher o material, suas propriedades
+ termofísicas e a forma que ela é calculada, em cada ponto do objeto.
  
 \end_layout
 
@@ -613,8 +608,7 @@ RF-05
 \begin_inset Text
 
 \begin_layout Plain Layout
-O usuário pode adicionar materiais no simulador, e escolhar a forma de calcular
- suas propriedades termofísicas: constante, correlação ou interpolação.
+O usuário deve ter tal liberdade para escolher xxx.
 \end_layout
 
 \end_inset
@@ -655,46 +649,6 @@ RF-06
 \begin_layout Plain Layout
 O usuário poderá escolher em qual ponto quer gerar gráficos para estudar
  a evolução da temperatura com o tempo.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11.5cm">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-RF-07
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-O usuário poderá comparar as propriedades termofísicas dos materiais..
- 
 \end_layout
 
 \end_inset
@@ -1024,8 +978,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/caso_uso_geral1.png
-	lyxscale 60
-	width 60text%
+	lyxscale 30
+	width 30text%
 
 \end_inset
 
@@ -1071,7 +1025,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-O caso de uso específico na Figura 
+O caso de uso específico mostrado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
@@ -1081,16 +1035,7 @@ noprefix "false"
 
 \end_inset
 
- mostra um cenário onde o usuário quer utilizar os valores da condutividade
- térmica obtidos em laboratório.
- Ele deve montar um arquivo .txt com esses valores (a forma de criar esse
- arquivo é descrito no Apêndice B), e carregar no simulador.
- 
-\end_layout
 
-\begin_layout Standard
-O usuário terá a liberdade de comparar seu material com outros padrões do
- simulador, e escolhe-lo para o desenho do objeto.
 \end_layout
 
 \begin_layout Standard
@@ -1103,8 +1048,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/caso_uso_especifico1.png
-	lyxscale 60
-	width 60text%
+	lyxscale 30
+	width 30text%
 
 \end_inset
 
@@ -1115,7 +1060,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de caso de uso específico
+Diagrama de caso de uso específico – Título
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
@@ -1133,6 +1078,22 @@ name "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Description
+Nota: 
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Não perca de vista a visão do todo; do projeto de engenharia como um todo.
+ Cada capítulo, cada seção, cada parágrafo deve se encaixar.
+ Este é um diferencial fundamental do engenheiro em relação ao técnico,
+ a capacidade de desenvolver projetos, de ver o todo e suas diferentes partes,
+ de modelar processos/sistemas/produtos de engenharia.
 \end_layout
 
 \end_body

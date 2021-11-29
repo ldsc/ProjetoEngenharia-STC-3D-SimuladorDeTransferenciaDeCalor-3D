@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>fig/icon_down.png</file>
+        <file>fig/icon_up.png</file>
+        <file>fig/icon_abrir.png</file>
+        <file>fig/icon_novo.png</file>
+        <file>fig/icon_salvar.png</file>
+        <file>fig/icon_pdf.png</file>
+        <file>fig/circle.png</file>
+        <file>fig/square.png</file>
+        <file>fig/new_mat.png</file>
+        <file>fig/icon_adicionar_camada.png</file>
+        <file>fig/icon_deletar_camada.png</file>
+        <file>fig/icon_eraser.png</file>
+    </qresource>
+</RCC>

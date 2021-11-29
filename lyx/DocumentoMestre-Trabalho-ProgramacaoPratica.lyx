@@ -152,6 +152,11 @@ filename "Cap2-Elaboracao.lyx"
 
 \begin_layout Standard
 \align block
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align block
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap3-AnaliseOrientadaAObjeto.lyx"
@@ -161,7 +166,7 @@ filename "Cap3-AnaliseOrientadaAObjeto.lyx"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align block
 \begin_inset CommandInset include
 LatexCommand include
@@ -172,7 +177,7 @@ filename "Cap4-Projeto.lyx"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align block
 \begin_inset Note Note
 status collapsed
@@ -194,7 +199,7 @@ o projeto orientado a objeto deixou de ser capítulo e virou uma seção dentro
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align block
 \begin_inset CommandInset include
 LatexCommand include
@@ -205,7 +210,7 @@ filename "Cap6-Implementacao.lyx"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align block
 \begin_inset CommandInset include
 LatexCommand include
@@ -216,11 +221,16 @@ filename "Cap7-Teste.lyx"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align block
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap8-Documentacao.lyx"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -265,11 +275,6 @@ status open
 \begin_layout Plain Layout
 os arquivos a seguir contém informações para ajudar quem esta fazendo o
  trabalho; você deve apagá-los.
-\end_layout
-
-\end_inset
-
-
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap-Apendice_A.lyx"
@@ -279,7 +284,7 @@ filename "Cap-Apendice_A.lyx"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align block
 \begin_inset CommandInset include
 LatexCommand include

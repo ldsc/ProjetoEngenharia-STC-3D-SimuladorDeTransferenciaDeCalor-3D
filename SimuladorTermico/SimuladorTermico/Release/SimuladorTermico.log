@@ -1,5 +1,0 @@
-﻿  main.cpp
-CWindow.obj : error LNK2001: símbolo externo não resolvido "public: static class sf::RenderStates const sf::RenderStates::Default" (?Default@RenderStates@sf@@2V12@B)
-CWindow.obj : error LNK2001: símbolo externo não resolvido "public: static class sf::Color const sf::Color::White" (?White@Color@sf@@2V12@B)
-CWindow.obj : error LNK2001: símbolo externo não resolvido "public: static class sf::Color const sf::Color::Black" (?Black@Color@sf@@2V12@B)
-C:\Users\nicholas\Desktop\ProjetoEngenharia\Projeto-TCC-SimuladorDifusaoTermica\SimuladorTermico\Release\SimuladorTermico.exe : fatal error LNK1120: 3 externo não resolvidos
