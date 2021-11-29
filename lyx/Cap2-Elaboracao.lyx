@@ -695,7 +695,7 @@ resultando em
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
--\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n+1}=-\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n}
+T_{i,j,k}^{n+1}=\frac{\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}}{\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}}T_{i,j,k}^{n}
 \end{equation}
 
 \end_inset
@@ -716,6 +716,36 @@ T_{i,j,k}^{n+1}=T_{i,j,k}^{n}
 
 \begin_layout Standard
 Ou seja, um ponto isolado no espaço não tem variação de temperatura.
+\end_layout
+
+\begin_layout Standard
+Portanto, para ser possível implementar a equação discretizada 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EquacaoGeralDiscretizada"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ em C++, será utilizado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+T_{i,j,k}^{n+1}=\left(nx\Delta z+nz\Delta x+\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}\right)^{-1}\left[\begin{array}{c}
+\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n}+\\
+\Delta zT_{i+1,j,k}^{n+1}+\Delta zT_{i,j+1,k}^{n+1}+\Delta xT_{i,j,k+1}^{n+1}\\
+\Delta zT_{i-1,j,k}^{n+1}+\Delta zT_{i,j-1,k}^{n+1}+\Delta xT_{i,j,k-1}^{n+1}]
+\end{array}+\right]\end{array}\label{eq:EquacaoDiscretizadaFinal}
+\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -786,8 +816,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../imagens/Diagrama de pacotes.png
-	lyxscale 25
-	width 25text%
+	lyxscale 75
+	width 75text%
 
 \end_inset
 

@@ -46,9 +46,9 @@ void MainWindow::mousePressEvent(QMouseEvent *event) {
         simulador->setActualTemperature(temperature); /// importante para atualizar Tmin/Tmax
 
         if (drawFormat =="circulo")
-            simulador->grid[currentGrid]->draw_cir(event->pos().x()-left_margin-size_x-space_between_draws, event->pos().y()-up_margin, size/2, temperature, isSource, simulador->getMaterial(actualMaterial));
+            simulador->grid[currentGrid]->draw_cir(event->pos().x()-left_margin-size_x-space_between_draws, event->pos().y()-up_margin, size/2, temperature, isSource, simulador->getMaterial(actualMaterial), eraserActivated);
         else
-            simulador->grid[currentGrid]->draw_rec(event->pos().x()-left_margin-size_x-space_between_draws, event->pos().y()-up_margin, size, temperature, isSource, simulador->getMaterial(actualMaterial));
+            simulador->grid[currentGrid]->draw_rec(event->pos().x()-left_margin-size_x-space_between_draws, event->pos().y()-up_margin, size, temperature, isSource, simulador->getMaterial(actualMaterial), eraserActivated);
     }
     else if (event->buttons() == Qt::RightButton){
         int x = event->pos().x()-left_margin-size_x-space_between_draws;
@@ -78,6 +78,11 @@ void MainWindow::printPosition(){
         txt = "";
 
     ui->textMousePosition->setText(QString::fromStdString(txt));
+}
+
+void MainWindow::printDrawSize(){
+    int size = ui->horizontalSliderDrawSize->value();
+    ui->textDrawSize->setText("Tamanho: "+QString::number(size) + " px/ "+QString::number(size*simulador->getDelta_x()) + " cm");
 }
 
 void MainWindow::start_buttons(){
@@ -115,9 +120,9 @@ void MainWindow::start_buttons(){
     ui->textBrowser_12->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_13->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_14->setFrameStyle(QFrame::NoFrame);
-    ui->textBrowser_15->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_16->setFrameStyle(QFrame::NoFrame);
     ui->textMousePosition->setFrameStyle(QFrame::NoFrame);
+    ui->textDrawSize->setFrameStyle(QFrame::NoFrame);
 
     /// spinBox temperatura
     ui->spinBox_Temperature->setSingleStep(50);
@@ -247,6 +252,7 @@ void MainWindow::timerEvent(QTimerEvent *e){
         runSimulator();
     makePlotMatProps();
     printPosition();
+    printDrawSize();
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -441,6 +447,25 @@ void MainWindow::on_buttonSquare_clicked()
                                                 "border-color: rgb(255,0,0)");
     drawFormat = "quadrado";
 
+}
+
+
+void MainWindow::on_buttonEraser_clicked()
+{
+    if (eraserActivated){
+        ui->widget_eraser->setStyleSheet("border-width: 0;"
+                                         "border-radius: 0;"
+                                         "border-style: solid;"
+                                         "border-color: rgb(255,0,0)");
+    eraserActivated = false;
+    }
+    else{
+        ui->widget_eraser->setStyleSheet("border-width: 1;"
+                                         "border-radius: 5;"
+                                         "border-style: solid;"
+                                         "border-color: rgb(255,170,100)");
+        eraserActivated = true;
+    }
 }
 
 QString MainWindow::save_pdf(QString file_name){

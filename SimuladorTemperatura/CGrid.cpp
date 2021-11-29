@@ -27,34 +27,36 @@ void CGrid::resetGrid(double temperature) {
     }
 }
 
-void CGrid::draw_rec(int x, int y, double size, double _temperature, bool isSourceActive, CMaterial* _material) {
+void CGrid::draw_rec(int x, int y, double size, double _temperature, bool isSourceActive, CMaterial* _material, bool eraser) {
     int start_x = (x - size / 2 >= 0) ? x - size / 2 : 0;
     int start_y = (y - size / 2 >= 0) ? y - size / 2 : 0;
     int max_x   = (x + size / 2 >= width)  ? width  : x - size/2 + size;
     int max_y   = (y + size / 2 >= height) ? height : y - size/2 + size;
+    double temperatura = eraser?0:_temperature;
 
     for (int i = start_x; i < max_x; i++){
         for (int k = start_y; k < max_y; k++) {
-            grid[k * width + i].active = true;
-            grid[k * width + i].temp = _temperature;
+            grid[k * width + i].active = !eraser;
+            grid[k * width + i].temp = temperatura;
             grid[k * width + i].source = isSourceActive;
             grid[k * width + i].material = _material;
         }
     }
 }
 
-void CGrid::draw_cir(int x, int y, double radius, double _temperature, bool isSourceActive, CMaterial* _material) {
+void CGrid::draw_cir(int x, int y, double radius, double _temperature, bool isSourceActive, CMaterial* _material, bool eraser) {
     /// vou montar um quadrado, e analisar se o cada ponto dessa regiao faz parte do circulo
     int start_x = (x - (int)radius >= 0) ? ((int)x - (int)radius) : 0;
     int start_y = (y - (int)radius >= 0) ? ((int)y - (int)radius) : 0;
     int max_x   = (x + (int)radius >= width)  ? width  : ((int)x + (int)radius);
     int max_y   = (y + (int)radius >= height) ? height : ((int)y + (int)radius);
+    double temperatura = eraser?0:_temperature;
 
     for (int i = start_x; i < max_x; i++) {
         for (int k = start_y; k < max_y; k++) {
             if (((i*1.0 - x) * (i*1.0 - x) + (k*1.0 - y) * (k*1.0 - y)) < radius * radius) {
-                grid[k * width + i].active = true;
-                grid[k * width + i].temp = _temperature;
+                grid[k * width + i].active = !eraser;
+                grid[k * width + i].temp = temperatura;
                 grid[k * width + i].source = isSourceActive;
                 grid[k * width + i].material = _material;
             }

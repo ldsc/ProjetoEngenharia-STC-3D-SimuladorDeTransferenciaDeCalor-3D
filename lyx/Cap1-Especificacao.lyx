@@ -1024,8 +1024,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/caso_uso_geral1.png
-	lyxscale 30
-	width 30text%
+	lyxscale 60
+	width 60text%
 
 \end_inset
 
@@ -1103,8 +1103,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/caso_uso_especifico1.png
-	lyxscale 30
-	width 30text%
+	lyxscale 60
+	width 60text%
 
 \end_inset
 

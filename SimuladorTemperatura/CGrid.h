@@ -28,8 +28,8 @@ public:
     void printGrid();
     void resetSize(int _width, int _height, double temperature);
 
-    void draw_rec(int x, int y, double size, double temperature, bool isSourceActive, CMaterial* _material);
-    void draw_cir(int x, int y, double size, double temperature, bool isSourceActive, CMaterial* _material);
+    void draw_rec(int x, int y, double size, double temperature, bool isSourceActive, CMaterial* _material, bool eraser);
+    void draw_cir(int x, int y, double size, double temperature, bool isSourceActive, CMaterial* _material, bool eraser);
     void draw(int x, double temperature, bool active, bool isSource, std::string _material);
 
     int getSize() { return width * height; }

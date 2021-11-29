@@ -11,5 +11,6 @@
         <file>fig/new_mat.png</file>
         <file>fig/icon_adicionar_camada.png</file>
         <file>fig/icon_deletar_camada.png</file>
+        <file>fig/icon_eraser.png</file>
     </qresource>
 </RCC>

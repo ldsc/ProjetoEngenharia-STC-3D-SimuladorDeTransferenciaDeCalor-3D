@@ -49,6 +49,7 @@ private:
     int space_between_draws = 50;
     int left_margin = 20, up_margin = 140;
     bool runningSimulator = false;
+    bool eraserActivated = false;
     QPoint studyPoint = QPoint(0,0);
     int studyGrid;
     std::vector<bool> selectedMateriails;
@@ -58,6 +59,7 @@ protected:
     void start_buttons();
     void mousePressEvent(QMouseEvent *event) override;
     void printPosition();
+    void printDrawSize();
     void paintEvent(QPaintEvent *e) override;
     QImage paint(int grid);
 
@@ -88,5 +90,6 @@ private slots:
     void on_actionImport_material_triggered();
     void on_gridAddGrid_clicked();
     void on_gridDelGrid_clicked();
+    void on_buttonEraser_clicked();
 };
 #endif
