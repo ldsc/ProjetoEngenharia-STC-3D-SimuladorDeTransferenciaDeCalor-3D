@@ -3,6 +3,8 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
+
+    QDir dir; std::cout << dir.absolutePath().toStdString()<<std::endl;
     up_margin = 100;
     simulador = new CSimuladorTemperatura();
     simulador->resetSize(size_x, size_y);
@@ -384,7 +386,8 @@ bool MainWindow::checkChangeMaterialsState(){
 
 void MainWindow::on_actionSave_triggered()
 {
-    QString file_name = QFileDialog::getSaveFileName(this, "Save a file", "C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//save", tr("Dados (*.dat)"));
+    QDir dir; QString path = dir.absolutePath();
+    QString file_name = QFileDialog::getSaveFileName(this, "Save a file", path+"//save", tr("Dados (*.dat)"));
     std::string txt = simulador->saveGrid(file_name.toStdString());
     ui->textBrowser_3->setText(QString::fromStdString(txt));
 }
@@ -392,7 +395,8 @@ void MainWindow::on_actionSave_triggered()
 
 void MainWindow::on_actionOpen_triggered()
 {
-    QString file_name = QFileDialog::getOpenFileName(this, "Open a file", "C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//save", tr("Dados (*.dat)"));
+    QDir dir; QString path = dir.absolutePath();
+    QString file_name = QFileDialog::getOpenFileName(this, "Open a file", path+"//save", tr("Dados (*.dat)"));
     std::string txt = simulador->openGrid(file_name.toStdString());
     ui->textBrowser_3->setText(QString::fromStdString(txt));
 }

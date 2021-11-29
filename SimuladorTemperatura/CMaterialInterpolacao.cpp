@@ -4,7 +4,8 @@ CMaterialInterpolacao::CMaterialInterpolacao(std::string fileName){
     std::string strTemporaria;
     int r, g, b, alpha;
 
-    std::ifstream file("C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//materiais//"+fileName);
+    QDir dir; std::string path = dir.absolutePath().toStdString();
+    std::ifstream file(path+"//materiais//"+fileName);
     if (file.is_open()){
         std::getline(file, strTemporaria);
         std::getline(file, name);

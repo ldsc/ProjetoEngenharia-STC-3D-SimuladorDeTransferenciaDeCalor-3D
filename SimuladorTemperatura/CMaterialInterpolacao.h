@@ -1,6 +1,7 @@
 #ifndef CMATERIALINTERPOLACAO_H
 #define CMATERIALINTERPOLACAO_H
 
+#include <QDir>
 #include <string>
 #include <vector>
 #include "CMaterial.h"

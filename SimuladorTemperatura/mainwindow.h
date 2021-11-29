@@ -43,7 +43,6 @@ private:
 
     int timerId;
     int parallelType = 2;
-    //int size = 300;
     int size_x = 300, size_y = 480;
     int currentGrid = 0;
     int space_between_draws = 50;

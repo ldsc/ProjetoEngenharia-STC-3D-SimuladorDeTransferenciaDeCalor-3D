@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <QColor>
+#include <QDir>
 
 #include "CMaterial.h"
 

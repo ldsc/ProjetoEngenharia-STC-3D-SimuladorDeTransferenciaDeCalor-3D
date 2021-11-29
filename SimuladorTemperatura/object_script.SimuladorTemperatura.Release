@@ -1,0 +1,14 @@
+release/CCell.o
+release/CGrid.o
+release/CMaterial.o
+release/CMaterialCorrelacao.o
+release/CMaterialInterpolacao.o
+release/CReta.o
+release/CSegmentoReta.o
+release/CSimuladorTemperatura.o
+release/main.o
+release/mainwindow.o
+release/qcustomplot.o
+release/qrc_gridButton.o
+release/moc_mainwindow.o
+release/moc_qcustomplot.o
