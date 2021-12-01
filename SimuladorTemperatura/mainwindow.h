@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include <QDir>                  ///< Biblioteca que permite acessar diretórios.
+#include <QDirIterator>
 #include <QImage>                /// desenhar pixels
 #include <QColor>                /// escolher a cor dos pixels
 #include <QPainter>              /// desenhar pixels

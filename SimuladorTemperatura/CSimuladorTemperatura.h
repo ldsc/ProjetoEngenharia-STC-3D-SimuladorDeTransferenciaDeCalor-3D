@@ -1,19 +1,23 @@
 #ifndef CSIMULADORTEMPERATURA_H
 #define CSIMULADORTEMPERATURA_H
 
-#include "CGrid.h"
+#include <map>
+#include <QDir>
+#include <omp.h>
+#include <QPoint>
 #include <fstream>
 #include <iomanip>
-#include <QPoint>
 #include "CMaterial.h"
-#include <map>
-#include <omp.h>
+#include <QDirIterator>
+
+#include "CGrid.h"
 #include "CMaterialCorrelacao.h"
 #include "CMaterialInterpolacao.h"
 
 class CSimuladorTemperatura {
 private:
     //int parallel = 0;
+    QDir dir;
     int MAX_THREADS = omp_get_max_threads()-1;
     int width, height;
     bool materialPropertiesStatus = true;

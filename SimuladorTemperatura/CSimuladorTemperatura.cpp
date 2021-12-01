@@ -14,27 +14,20 @@ void CSimuladorTemperatura::resetGrid() {
 }
 
 void CSimuladorTemperatura::createListOfMaterials() {
-
-    materiais["aluminio_const"] = chooseMaterialType("aluminio_const.txt");             // new CMaterialCorrelacao("aluminio_const.txt");
-    materiais["cobre_const"] = chooseMaterialType("cobre_const.txt");                   // new CMaterialCorrelacao("cobre_const.txt");
-    materiais["ferro_const"] = chooseMaterialType("ferro_const.txt");                   // new CMaterialCorrelacao("ferro_const.txt");
-    materiais["magnesio_const"] = chooseMaterialType("magnesio_const.txt");             // new CMaterialCorrelacao("magnesio_const.txt");
-    materiais["niquel_const"] = chooseMaterialType("niquel_const.txt");                 // new CMaterialCorrelacao("niquel_const.txt");
-
-    materiais["aluminio_correlacao"] = chooseMaterialType("aluminio_correlacao.txt");   // new CMaterialCorrelacao("aluminio_correlacao.txt");
-    materiais["cobre_correlacao"] = chooseMaterialType("cobre_correlacao.txt");         // new CMaterialCorrelacao("cobre_correlacao.txt");
-    materiais["ferro_correlacao"] = chooseMaterialType("ferro_correlacao.txt");         // new CMaterialCorrelacao("ferro_correlacao.txt");
-    materiais["magnesio_correlacao"] = chooseMaterialType("magnesio_correlacao.txt");   // new CMaterialCorrelacao("magnesio_correlacao.txt");
-    //materiais["niquel_correlacao"] = chooseMaterialType("niquel_correlacao.txt");       // new CMaterialCorrelacao("niquel_correlacao.txt");
-
-    materiais["cobre_interpolacao"] = new CMaterialInterpolacao("cobre_interp.txt");
-
+    ///*
+    std::string matName;
+    QDirIterator it(dir.absolutePath()+"//materiais", {"*.txt"}, QDir::Files, QDirIterator::Subdirectories);
+    while (it.hasNext()) {
+        it.next();
+        matName = it.fileName().toStdString();
+        materiais[matName] = chooseMaterialType(matName);
+    }
     for(auto const& imap: materiais)
         name_materiais.push_back(imap.first);
 }
 
 CMaterial* CSimuladorTemperatura::chooseMaterialType(std::string name){
-    std::ifstream file("C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//materiais//"+name);
+    std::ifstream file(dir.absolutePath().toStdString()+"/materiais//"+name);
 
     std::string type;
     std::getline(file, type);

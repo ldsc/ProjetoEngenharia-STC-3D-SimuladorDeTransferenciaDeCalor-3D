@@ -342,7 +342,7 @@ public:
         buttonEraser->setChecked(false);
         textDrawSize = new QTextBrowser(widget_drawStyles);
         textDrawSize->setObjectName(QString::fromUtf8("textDrawSize"));
-        textDrawSize->setGeometry(QRect(0, 60, 171, 31));
+        textDrawSize->setGeometry(QRect(0, 50, 171, 31));
         textDrawSize->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);\n"
 "border-color: rgba(255, 255, 255, 0);"));
         textMousePosition = new QTextBrowser(centralwidget);
@@ -459,7 +459,7 @@ public:
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">Formato</span></p></body></html>", nullptr));
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">Objeto</span></p></body></html>", nullptr));
         checkBox_source->setText(QCoreApplication::translate("MainWindow", "Fonte de Calor", nullptr));
         textBrowser_14->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"

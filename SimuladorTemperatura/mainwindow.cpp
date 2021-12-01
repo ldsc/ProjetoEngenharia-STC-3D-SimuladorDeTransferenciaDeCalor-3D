@@ -3,8 +3,6 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
-
-    QDir dir; std::cout << dir.absolutePath().toStdString()<<std::endl;
     up_margin = 100;
     simulador = new CSimuladorTemperatura();
     simulador->resetSize(size_x, size_y);
