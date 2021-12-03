@@ -24,7 +24,7 @@ private:
     int NGRIDS = 1;
     const double MIN_ERRO = 1.0e-1;
     const int MAX_ITERATION = 39;
-    double delta_x = 2.6e-4, delta_t = 5.0e-1, delta_z = 0.5;
+    double delta_x = 2.6e-4, delta_t = 5.0e-1, delta_z = 0.05;
 
     double Tmax = 1000, Tmin = 300;
 

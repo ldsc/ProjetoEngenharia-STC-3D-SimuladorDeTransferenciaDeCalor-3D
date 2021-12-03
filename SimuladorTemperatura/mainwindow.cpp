@@ -587,3 +587,7 @@ void MainWindow::on_gridDelGrid_clicked()
     update();
 }
 
+void MainWindow::on_button3D_clicked(){
+    C3D *newWindow = new C3D(simulador);
+    newWindow->show();
+}

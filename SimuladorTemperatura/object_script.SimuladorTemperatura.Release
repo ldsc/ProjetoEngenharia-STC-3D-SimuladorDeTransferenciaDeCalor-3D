@@ -1,3 +1,4 @@
+release/C3D.o
 release/CCell.o
 release/CGrid.o
 release/CMaterial.o
@@ -10,5 +11,6 @@ release/main.o
 release/mainwindow.o
 release/qcustomplot.o
 release/qrc_gridButton.o
+release/moc_C3D.o
 release/moc_mainwindow.o
 release/moc_qcustomplot.o

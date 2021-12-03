@@ -16,6 +16,7 @@
 #include <QMouseEvent>           /// pegar acoes/posicao do mouse
 #include <QFileDialog>
 
+#include "C3D.h"
 #include "ui_mainwindow.h"
 #include "CSimuladorTemperatura.h"
 
@@ -91,5 +92,6 @@ private slots:
     void on_gridAddGrid_clicked();
     void on_gridDelGrid_clicked();
     void on_buttonEraser_clicked();
+    void on_button3D_clicked();
 };
 #endif

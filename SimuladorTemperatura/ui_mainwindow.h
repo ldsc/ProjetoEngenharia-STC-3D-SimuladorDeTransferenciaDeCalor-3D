@@ -89,6 +89,7 @@ public:
     QTextBrowser *textMousePosition;
     QFrame *line_4;
     QFrame *line_5;
+    QPushButton *button3D;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuHel;
@@ -128,7 +129,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(30, 790, 441, 41));
+        pushButton->setGeometry(QRect(260, 790, 211, 41));
         pushButton->setAcceptDrops(false);
         pushButton->setCheckable(true);
         textBrowser_3 = new QTextBrowser(centralwidget);
@@ -359,6 +360,12 @@ public:
         line_5->setGeometry(QRect(10, 10, 1511, 21));
         line_5->setFrameShape(QFrame::HLine);
         line_5->setFrameShadow(QFrame::Sunken);
+        button3D = new QPushButton(centralwidget);
+        button3D->setObjectName(QString::fromUtf8("button3D"));
+        button3D->setEnabled(true);
+        button3D->setGeometry(QRect(20, 790, 211, 41));
+        button3D->setAcceptDrops(false);
+        button3D->setCheckable(false);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -479,6 +486,7 @@ public:
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
+        button3D->setText(QCoreApplication::translate("MainWindow", "3D", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuHel->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
     } // retranslateUi
