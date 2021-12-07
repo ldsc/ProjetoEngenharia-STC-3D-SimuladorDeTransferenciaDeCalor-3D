@@ -293,11 +293,6 @@ filename "Cap-Apendice_B.lyx"
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\align block
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap-Apendice_C-CriandoProjetoGithub.lyx"

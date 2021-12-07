@@ -9,12 +9,13 @@ C3D::C3D(CSimuladorTemperatura *_simulador, QWidget *parent)
     simulador = _simulador;
     size_x = 500;
     mImage = new QImage(size_x, size_y,QImage::Format_ARGB32_Premultiplied);
-    timerId = startTimer(60);
+    timerId = startTimer(0);
 
     createPoints();
     size = upperPoints.size();
     drawPoints_up.resize(size);
     drawPoints_down.resize(size);
+    update();
 }
 
 
@@ -38,21 +39,20 @@ void C3D::createPoints(){
             }
         }
     }
-
 }
 
 void C3D::keyPressEvent(QKeyEvent *event){
     if (event->key() == Qt::Key_Up){
-        margin_y-=10;
+        margin_y-=10.0f;
     }
     else if (event->key() == Qt::Key_Down){
-        margin_y+=10;
+        margin_y+=10.0f;
     }
     else if (event->key() == Qt::Key_Left){
-        margin_x-=10;
+        margin_x-=10.0f;
     }
     else if (event->key() == Qt::Key_Right){
-        margin_x+=10;
+        margin_x+=10.0f;
     }
     else if (event->key() == Qt::Key_PageUp){
         distance*=1.1;
@@ -60,16 +60,31 @@ void C3D::keyPressEvent(QKeyEvent *event){
     else if (event->key() == Qt::Key_PageDown){
         distance*=0.9;
     }
+    else if (event->key() == Qt::Key_W){
+        angle_x+=0.1;
+    }
+    else if (event->key() == Qt::Key_S){
+        angle_x-=0.1;
+    }
+    else if (event->key() == Qt::Key_D){
+        angle_y+=0.1;
+    }
+    else if (event->key() == Qt::Key_A){
+        angle_y-=0.1;
+    }
+    update();
 }
 
 void C3D::mousePressEvent(QMouseEvent *e){
     mousePos = e->pos();
     mousePress = true;
+    update();
 }
 void C3D::mouseReleaseEvent(QMouseEvent *e){
     angle_y-= (e->pos().x() - mousePos.x());
     angle_x-= (e->pos().y() - mousePos.y());
     mousePress = false;
+    update();
 }
 
 void C3D::mouseMoveEvent(QMouseEvent *e){
@@ -78,51 +93,63 @@ void C3D::mouseMoveEvent(QMouseEvent *e){
         angle_x+= (e->pos().y() - mousePos.y())/60.0;
         mousePos = e->pos();
     }
+    update();
+}
+
+void C3D::minimizeAngles(){
+    if(angle_x > 2.0f*PI)
+        angle_x = 0.0f;
+    if(angle_x < 0.0f)
+        angle_x = 2.0f*PI;
+
+    if(angle_y > 2.0f*PI)
+        angle_y = 0.0f;
+    if(angle_y < 0.0f)
+        angle_y = 2.0f*PI;
+
+    if(angle_z > 2.0f*PI)
+        angle_z = 0.0f;
+    if(angle_z < 0.0f)
+        angle_z = 2.0f*PI;
 }
 
 void C3D::paintEvent(QPaintEvent *e) {
 
     QPainter painter(this);
-    QVector<double> depth(size);
-    QVector<double> sort(size);
 
-    /// calcula os pontos considerando a rotacao
-    for(int i = 0; i < size; i++){
-        drawPoints_up[i] = rotate(upperPoints[i]);
-        drawPoints_down[i] = rotate(lowerPoints[i]);
-        depth[i] = drawPoints_up[i].z();
-        sort[i] = i;
-    }
-    /*
-    int min;
-    double temp;
-
-    /// ordeno os desenhos utilizando a profundidade
-    for(int i = 0; i < size; i++){
-        min = depth[i];
-        for(int j=i; j<size;j++){
-            if(depth[j]<min){
-                min = depth[j];
-                sort[i] = j;
-            }
-        }
-        temp = depth[i];
-        depth[i] = min;
-        depth[sort[i]] = temp;
-    }*/
-
+    minimizeAngles();
     /// desenha as retas
-    int i;
-    for(int k = 0; k < size; k++){
-        i = sort[k];
-        painter.setPen(QPen(color[i],2));
-        painter.drawLine(drawPoints_up[i].x(), drawPoints_up[i].y(), drawPoints_down[i].x(), drawPoints_down[i].y());
-        painter.setPen(QPen(QColor(50, 50, 50, 30),2));
-        painter.drawEllipse(drawPoints_up[i].x(), drawPoints_up[i].y(), 2, 2);
-        painter.setPen(QPen(QColor(50, 50, 50, 70),2));
-        painter.drawEllipse(drawPoints_down[i].x(), drawPoints_down[i].y(), 2, 2);
-    }
+    omp_set_num_threads(MAX_THREADS);
+    {
+        int thread = omp_get_thread_num();
+        int pos;
+        for(int i = thread; i < size; i+=MAX_THREADS){
+            if ((angle_x<PI/2.0 || angle_x>PI*3.0/2.0) && (angle_y<PI/2.0 || angle_y>PI*3.0/2.0))
+                pos = i;
+            else
+                pos = size-i-1;
 
+            drawPoints_up[pos] = rotate(upperPoints[pos]);
+            drawPoints_down[pos] = rotate(lowerPoints[pos]);
+            painter.setPen(QPen(color[pos],2));
+            painter.drawLine(drawPoints_up[pos].x(), drawPoints_up[pos].y(), drawPoints_down[pos].x(), drawPoints_down[pos].y());
+
+            /*
+            if ((angle_x<PI) && (angle_y>PI/2.0 || angle_y<PI*3.0/2.0)){
+                painter.setPen(QPen(QColor(70, 70, 70, 20),2));
+                painter.drawEllipse(drawPoints_up[pos].x(), drawPoints_up[pos].y(), 3, 3);
+                //painter.setPen(QPen(QColor(70, 70, 70, 50),2));
+                //painter.drawEllipse(drawPoints_down[pos].x(), drawPoints_down[pos].y(), 3, 3);
+            }
+            else{
+                painter.setPen(QPen(QColor(50, 50, 50, 70),2));
+                painter.drawEllipse(drawPoints_down[pos].x(), drawPoints_down[pos].y(), 3, 3);
+                //painter.setPen(QPen(QColor(50, 50, 50, 30),2));
+                //painter.drawEllipse(drawPoints_up[pos].x(), drawPoints_up[pos].y(), 3, 3);
+            }
+            */
+        }
+    }
     painter.drawImage(0,0, *mImage);
     e->accept();
 }
@@ -132,8 +159,10 @@ QColor C3D::getRGB(int z){
 }
 
 void C3D::timerEvent(QTimerEvent *e){
-    Q_UNUSED(e);
+    //angle_x-=0.05;
+    //angle_y+=0.05;
     update();
+    Q_UNUSED(e);
 }
 
 QVector3D C3D::rotate(QVector3D a){

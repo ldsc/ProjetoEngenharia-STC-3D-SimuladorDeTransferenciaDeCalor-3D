@@ -7,6 +7,7 @@
 #include <QVector>
 #include <math.h>
 #include <QMouseEvent>
+#include <omp.h>
 
 #include "CSimuladorTemperatura.h"
 
@@ -32,6 +33,7 @@ protected:
     void mouseReleaseEvent(QMouseEvent *e) override;
     void mouseMoveEvent(QMouseEvent *e) override;
 
+    void minimizeAngles();
     void createPoints();
 
 private:
@@ -50,6 +52,8 @@ private:
     int margin_y = 250;
     bool mousePress = false;
     int size;
+    int MAX_THREADS = omp_get_max_threads();
+    const float PI = 3.141592;
 
     QVector<QVector3D> drawPoints_up;
     QVector<QVector3D> drawPoints_down;
