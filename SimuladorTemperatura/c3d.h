@@ -20,7 +20,8 @@ class C3D : public QMainWindow
     Q_OBJECT
 
 public:
-    C3D(CSimuladorTemperatura *_simulador, QWidget *parent = nullptr);
+    C3D( QWidget *parent = nullptr);
+    C3D( CSimuladorTemperatura *simulador, QWidget *parent = nullptr);
     ~C3D();
 protected:
     void paintEvent(QPaintEvent *event) override;
@@ -35,12 +36,13 @@ protected:
 
     void minimizeAngles();
     void createPoints();
+    void createTriangles();
+
+    QVector<QVector3D> createCube(QVector3D point);
+    QVector3D produtoVetorial(QVector3D origem, QVector3D a, QVector3D b);
 
 private:
     QPoint mousePos;
-    QVector<QVector3D> upperPoints;
-    QVector<QVector3D> lowerPoints;
-    QVector<QColor> color;
     int timerId;
     QImage *mImage;
     int size_x, size_y;
@@ -54,10 +56,10 @@ private:
     int size;
     int MAX_THREADS = omp_get_max_threads();
     const float PI = 3.141592;
-
-    QVector<QVector3D> drawPoints_up;
-    QVector<QVector3D> drawPoints_down;
-
+    double dx = 1, dy = 1, dz = 2;
+    QVector<QVector<QVector3D>> cube;
+    QVector<QVector3D> drawCube;
+    QVector<QVector3D> triangles;
     CSimuladorTemperatura *simulador;
 
 };

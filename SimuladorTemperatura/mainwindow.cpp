@@ -573,7 +573,6 @@ void MainWindow::on_gridAddGrid_clicked()
 
 }
 
-
 void MainWindow::on_gridDelGrid_clicked()
 {
     if (simulador->getNGRIDS() > 1){
@@ -589,5 +588,6 @@ void MainWindow::on_gridDelGrid_clicked()
 
 void MainWindow::on_button3D_clicked(){
     C3D *newWindow = new C3D(simulador);
+    //C3D *newWindow = new C3D();
     newWindow->show();
 }

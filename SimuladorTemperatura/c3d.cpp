@@ -1,20 +1,47 @@
 #include "C3D.h"
-
-C3D::C3D(CSimuladorTemperatura *_simulador, QWidget *parent)
+C3D::C3D(QWidget *parent)
     : QMainWindow(parent)
 {
     //ui->setupUi(this);
     this->setFixedSize(800,800);
     this->adjustSize();
-    simulador = _simulador;
     size_x = 500;
     mImage = new QImage(size_x, size_y,QImage::Format_ARGB32_Premultiplied);
     timerId = startTimer(0);
 
-    createPoints();
-    size = upperPoints.size();
-    drawPoints_up.resize(size);
-    drawPoints_down.resize(size);
+    QVector3D point(0,0,0);
+    cube.push_back(createCube(point));
+
+    createTriangles();
+    drawCube.resize(8);
+    update();
+}
+
+C3D::C3D(CSimuladorTemperatura *_simulador, QWidget *parent)
+    : QMainWindow(parent)
+{
+    simulador = _simulador;
+    this->setFixedSize(800,800);
+    this->adjustSize();
+    size_x = 500;
+    mImage = new QImage(size_x, size_y,QImage::Format_ARGB32_Premultiplied);
+    timerId = startTimer(0);
+    std::cout<<"criando cubos"<<std::endl;
+    double dz = simulador->getDelta_z();
+    double dx = simulador->getDelta_x();
+    for(int g = 0; g<simulador->getNGRIDS(); g++){
+        for(int i = 0; i < simulador->grid[g]->getWidth(); i++){
+            for(int j = 0; j < simulador->grid[g]->getHeight(); j++){
+                if (simulador->grid[g]->operator()(i,j)->active){
+                    cube.push_back(createCube(QVector3D(i,j,(g+1)*dz/dx)));
+                }
+            }
+        }
+    }
+
+    std::cout<<"cubos criados"<<std::endl;
+    createTriangles();
+    drawCube.resize(8);
     update();
 }
 
@@ -24,21 +51,40 @@ C3D::~C3D()
     //delete ui;
 }
 
-void C3D::createPoints(){
-    double dz = simulador->getDelta_z();
-    double dx = simulador->getDelta_x();
+void C3D::createTriangles(){
+    triangles.resize(12);
+    triangles[0]  = QVector3D( 0,1,2);
+    triangles[1]  = QVector3D( 4,2,1);
 
-    for(int g = 0; g<simulador->getNGRIDS(); g++){
-        for(int i = 0; i < simulador->grid[g]->getWidth(); i++){
-            for(int j = 0; j < simulador->grid[g]->getHeight(); j++){
-                if (simulador->grid[g]->operator()(i,j)->active){
-                    upperPoints.push_back(QVector3D(i,j,(g+1)*(dz/dx)));
-                    lowerPoints.push_back(QVector3D(i,j,g*(dz/dx)));
-                    color.push_back(simulador->grid[g]->operator()(i,j)->material->getColor());
-                }
-            }
-        }
-    }
+    triangles[2]  = QVector3D( 1,5,4);
+    triangles[3]  = QVector3D( 7,4,5);
+
+    triangles[4]  = QVector3D( 6,3,2);
+    triangles[5]  = QVector3D( 0,2,3);
+
+    triangles[6]  = QVector3D( 4,7,2);
+    triangles[7]  = QVector3D( 6,2,7);
+
+    triangles[8]  = QVector3D( 6,7,3);
+    triangles[9]  = QVector3D( 5,3,7);
+
+    triangles[10] = QVector3D( 1,0,5);
+    triangles[11] = QVector3D( 3,5,0);
+}
+
+QVector<QVector3D> C3D::createCube(QVector3D point){
+    double x = point.x(), y = point.y(), z = point.z();
+
+    QVector<QVector3D> cube(8);
+    cube[0] = QVector3D( x-dx/2.0, y-dy/2.0, z-dz/2.0);
+    cube[1] = QVector3D( x+dx/2.0, y-dy/2.0, z-dz/2.0);
+    cube[2] = QVector3D( x-dx/2.0, y+dy/2.0, z-dz/2.0);
+    cube[3] = QVector3D( x-dx/2.0, y-dy/2.0, z+dz/2.0);
+    cube[4] = QVector3D( x+dx/2.0, y+dy/2.0, z-dz/2.0);
+    cube[5] = QVector3D( x+dx/2.0, y-dy/2.0, z+dz/2.0);
+    cube[6] = QVector3D( x-dx/2.0, y+dy/2.0, z+dz/2.0);
+    cube[7] = QVector3D( x+dx/2.0, y+dy/2.0, z+dz/2.0);
+    return cube;
 }
 
 void C3D::keyPressEvent(QKeyEvent *event){
@@ -116,38 +162,25 @@ void C3D::minimizeAngles(){
 void C3D::paintEvent(QPaintEvent *e) {
 
     QPainter painter(this);
+    QPolygon triangle;
 
     minimizeAngles();
-    /// desenha as retas
-    omp_set_num_threads(MAX_THREADS);
-    {
-        int thread = omp_get_thread_num();
-        int pos;
-        for(int i = thread; i < size; i+=MAX_THREADS){
-            if ((angle_x<PI/2.0 || angle_x>PI*3.0/2.0) && (angle_y<PI/2.0 || angle_y>PI*3.0/2.0))
-                pos = i;
-            else
-                pos = size-i-1;
 
-            drawPoints_up[pos] = rotate(upperPoints[pos]);
-            drawPoints_down[pos] = rotate(lowerPoints[pos]);
-            painter.setPen(QPen(color[pos],2));
-            painter.drawLine(drawPoints_up[pos].x(), drawPoints_up[pos].y(), drawPoints_down[pos].x(), drawPoints_down[pos].y());
+    int a, b, c;
+    painter.setPen(QPen(QColor(100, 100, 100, 100*0.8),2));
+    for(int cb = 0; cb < cube.size(); cb++){
+        for(int i = 0; i < 8; i++)
+            drawCube[i] = rotate(cube[cb][i]);
 
-            /*
-            if ((angle_x<PI) && (angle_y>PI/2.0 || angle_y<PI*3.0/2.0)){
-                painter.setPen(QPen(QColor(70, 70, 70, 20),2));
-                painter.drawEllipse(drawPoints_up[pos].x(), drawPoints_up[pos].y(), 3, 3);
-                //painter.setPen(QPen(QColor(70, 70, 70, 50),2));
-                //painter.drawEllipse(drawPoints_down[pos].x(), drawPoints_down[pos].y(), 3, 3);
+        for(int r = 0; r < 12; r++){
+            a = triangles[r].x();
+            b = triangles[r].y();
+            c = triangles[r].z();
+            if(produtoVetorial(drawCube[a], drawCube[b], drawCube[c]).z() > 0){
+                painter.drawLine(drawCube[a].x(), drawCube[a].y(), drawCube[b].x(), drawCube[b].y());
+                painter.drawLine(drawCube[a].x(), drawCube[a].y(), drawCube[c].x(), drawCube[c].y());
+                painter.drawLine(drawCube[c].x(), drawCube[c].y(), drawCube[b].x(), drawCube[b].y());
             }
-            else{
-                painter.setPen(QPen(QColor(50, 50, 50, 70),2));
-                painter.drawEllipse(drawPoints_down[pos].x(), drawPoints_down[pos].y(), 3, 3);
-                //painter.setPen(QPen(QColor(50, 50, 50, 30),2));
-                //painter.drawEllipse(drawPoints_up[pos].x(), drawPoints_up[pos].y(), 3, 3);
-            }
-            */
         }
     }
     painter.drawImage(0,0, *mImage);
@@ -188,6 +221,12 @@ QVector3D C3D::rotate(QVector3D a){
                 result[i]+=A[j]*rotation[i][j];
 
     return QVector3D(result[0]*distance+margin_x,result[1]*distance+margin_y,result[2]*distance);
+}
+
+QVector3D C3D::produtoVetorial(QVector3D origem, QVector3D a, QVector3D b){
+    QVector3D ax = a - origem;
+    QVector3D bx = b - origem;
+    return QVector3D(ax.y()*bx.z()-ax.z()*bx.y(), -ax.x()*bx.z()+ax.z()*bx.x(), ax.x()*bx.y()-ax.y()*bx.x());
 }
 
 
