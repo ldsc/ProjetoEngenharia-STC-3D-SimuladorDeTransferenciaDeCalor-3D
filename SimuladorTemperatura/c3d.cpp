@@ -216,29 +216,54 @@ void C3D::paintEvent(QPaintEvent *e) {
 
     QPainter painter(this);
     minimizeAngles();
+    QVector<QPolygon> triangulosDesenho;
+    QVector<QColor> coresDesenho;
+    QVector<std::pair<int, double>> pos_norm;
 
+    double prodVet;
     int a, b, c;
+    int count = 0;
     for(int cb = 0; cb < cube.size(); cb++){
         for(int i = 0; i < 8; i++)
             drawCube[i] = rotate(cube[cb][i]);
 
         for(int r = 0; r < 12; r++){
             if(activeEdges[cb][r]){
-                if(r == 0 || r == 1 || r == 8 || r == 9) /// fronteiras de g
-                    painter.setPen(QPen(QColor(colors[cb].red(), colors[cb].green(), colors[cb].blue(), colors[cb].alpha()),2));
-                else
-                    painter.setPen(QPen(QColor(colors[cb].red()*0.6, colors[cb].green()*0.6, colors[cb].blue()*0.6, colors[cb].alpha()),2));
                 a = triangles[r].x();
                 b = triangles[r].y();
                 c = triangles[r].z();
-                if(produtoVetorial(drawCube[a], drawCube[b], drawCube[c]).z() > 0){
-                        painter.drawLine(drawCube[a].x(), drawCube[a].y(), drawCube[b].x(), drawCube[b].y());
-                        painter.drawLine(drawCube[a].x(), drawCube[a].y(), drawCube[c].x(), drawCube[c].y());
-                        painter.drawLine(drawCube[c].x(), drawCube[c].y(), drawCube[b].x(), drawCube[b].y());
+                prodVet = produtoVetorial(drawCube[a], drawCube[b], drawCube[c]).z();
+                if(prodVet > 0){
+                    pos_norm.push_back(std::pair(count, prodVet));
+                    count++;
+                    if(r == 0 || r == 1 || r == 8 || r == 9) /// fronteiras de g
+                        coresDesenho.push_back(QColor(colors[cb].red(), colors[cb].green(), colors[cb].blue(), 255));
+                    else
+                        coresDesenho.push_back(QColor(QColor(colors[cb].red()*0.6, colors[cb].green()*0.6, colors[cb].blue()*0.6, colors[cb].alpha())));
+                    QPolygon pol;
+                    pol << QPoint(drawCube[a].x(),drawCube[a].y())
+                        << QPoint(drawCube[b].x(),drawCube[b].y())
+                        << QPoint(drawCube[c].x(),drawCube[c].y());
+                    triangulosDesenho.push_back(pol);
                 }
             }
         }
     }
+
+    /// organizo conforme a profundidade
+    std::sort(pos_norm.begin(), pos_norm.end(), [](auto &left, auto &right) {
+        return left.second > right.second;
+    });
+
+    /// desenho na tela
+    int pos;
+    painter.setPen(QColor(0,0,0,0));
+    for(int i = 0; i<triangulosDesenho.size(); i++){
+        pos = pos_norm[i].first;
+        painter.setBrush(coresDesenho[pos]);
+        painter.drawPolygon(triangulosDesenho[pos]);
+    }
+
     painter.drawImage(0,0, *mImage);
     e->accept();
 }

@@ -6,8 +6,11 @@
 #include <QPaintEvent>
 #include <QVector>
 #include <math.h>
+//#include <QPoint>
 #include <QMouseEvent>
+//#include <QPolygon>
 #include <omp.h>
+#include <algorithm>
 
 #include "CSimuladorTemperatura.h"
 
