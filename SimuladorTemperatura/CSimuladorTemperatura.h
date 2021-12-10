@@ -68,6 +68,8 @@ public:
     void setDelta_z(double _delta_z) { delta_z = _delta_z; }
 
     /// --------- FUNCOES GET ---------
+    int getWidth(){return width;}
+    int getHeight(){return height;}
     double getProps(double temperature, std::string material);
     QColor getColor(std::string material);
     int getNGRIDS() { return NGRIDS; }

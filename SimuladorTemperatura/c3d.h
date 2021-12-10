@@ -38,6 +38,7 @@ protected:
     void createPoints();
     void createTriangles();
 
+    QVector<bool> edges(int i, int j, int g);
     QVector<QVector3D> createCube(QVector3D point);
     QVector3D produtoVetorial(QVector3D origem, QVector3D a, QVector3D b);
 
@@ -51,13 +52,15 @@ private:
     double angle_z = 0.0;
     double distance = 1.0;
     int margin_x = 250;
-    int margin_y = 250;
     bool mousePress = false;
+    int margin_y = 250;
     int size;
-    int MAX_THREADS = omp_get_max_threads();
+    int MAX_THREADS = omp_get_max_threads()-5;
     const float PI = 3.141592;
     double dx = 1, dy = 1, dz = 2;
     QVector<QVector<QVector3D>> cube;
+    QVector<QVector<bool>> activeEdges;
+    QVector<QColor> colors;
     QVector<QVector3D> drawCube;
     QVector<QVector3D> triangles;
     CSimuladorTemperatura *simulador;
