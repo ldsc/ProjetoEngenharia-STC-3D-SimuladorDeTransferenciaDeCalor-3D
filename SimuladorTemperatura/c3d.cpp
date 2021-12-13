@@ -31,7 +31,7 @@ C3D::C3D(CSimuladorTemperatura *_simulador, QWidget *parent)
     std::cout<<"criando cubos"<<std::endl;
     dx = 1;//simulador->getDelta_x();
     dy = dx;
-    dz = 20;//simulador->getDelta_z();
+    dz = 1*simulador->getDelta_z()/simulador->getDelta_x();
     for(int g = 0; g<simulador->getNGRIDS(); g++){
         for(int i = 0; i < simulador->grid[g]->getWidth(); i++){
             for(int j = 0; j < simulador->grid[g]->getHeight(); j++){
@@ -140,16 +140,16 @@ QVector<QVector3D> C3D::createCube(QVector3D point){
 
 void C3D::keyPressEvent(QKeyEvent *event){
     if (event->key() == Qt::Key_Up){
-        margin_y+=10.0f;
+        margin_y+=30.0f;
     }
     else if (event->key() == Qt::Key_Down){
-        margin_y-=10.0f;
+        margin_y-=30.0f;
     }
     else if (event->key() == Qt::Key_Left){
-        margin_x+=10.0f;
+        margin_x+=30.0f;
     }
     else if (event->key() == Qt::Key_Right){
-        margin_x-=10.0f;
+        margin_x-=30.0f;
     }
     else if (event->key() == Qt::Key_PageUp){
         distance*=1.1;
@@ -239,7 +239,7 @@ void C3D::paintEvent(QPaintEvent *e) {
                     if(r == 0 || r == 1 || r == 8 || r == 9) /// fronteiras de g
                         coresDesenho.push_back(QColor(colors[cb].red(), colors[cb].green(), colors[cb].blue(), 255));
                     else
-                        coresDesenho.push_back(QColor(QColor(colors[cb].red()*0.6, colors[cb].green()*0.6, colors[cb].blue()*0.6, colors[cb].alpha())));
+                        coresDesenho.push_back(QColor(QColor(colors[cb].red()*0.6, colors[cb].green()*0.6, colors[cb].blue()*0.6, 255)));
                     QPolygon pol;
                     pol << QPoint(drawCube[a].x(),drawCube[a].y())
                         << QPoint(drawCube[b].x(),drawCube[b].y())

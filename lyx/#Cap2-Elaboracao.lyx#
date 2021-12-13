@@ -229,7 +229,7 @@ Formulação teórica
 
 \begin_layout Standard
 A equação da difusão de calor (Cap.
- 2 Incropera) pode ser estruturada a partir da Lei de Fourier.
+ 2 Incropera####) pode ser estruturada a partir da Lei de Fourier.
  A equação geral da difusão de calor em meios tridimensionais cartesianos
  está na equação 
 \begin_inset CommandInset ref
@@ -1191,19 +1191,8 @@ j
 \series default
  da normal.
  Isso serve para ser desenhado primeiro o que está atrás, e depois desenhar
- o que está na frente, sobrescrevendo áreas que deveriam estar ocultas,
- evitando o caso confuso como na figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig_cubos_3D"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- caso (b).
- É uma técnica lenta, mas de fácil implementação.
+ o que está na frente, sobrescrevendo áreas que deveriam estar ocultas.
+ Essa técnica se chama 
 \end_layout
 
 \begin_layout Section
