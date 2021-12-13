@@ -224,6 +224,10 @@ Pacote de gráficos: utilização da biblioteca qcustomplot, para montar os
 \end_layout
 
 \begin_layout Section
+Formulação
+\end_layout
+
+\begin_layout Subsection
 Formulação teórica
 \end_layout
 
@@ -749,6 +753,129 @@ T_{i,j,k}^{n+1}=\left(nx\Delta z+nz\Delta x+\frac{\rho c_{p}\Delta x\Delta z}{k\
 \end_layout
 
 \begin_layout Subsection
+Paralelismos/multi-thread
+\end_layout
+
+\begin_layout Standard
+Os chips de processadores atuais, são constituídos por vários processadores
+ menores, o que permite que um mesmo processador consiga realizar tarefas
+ distintas.
+ A idéia é separar tarefas distintas, para que um processador não fique
+ travado em uma única tarefa.
+ 
+\end_layout
+
+\begin_layout Standard
+Uma analogia para melhorar a explicação é a dos estudantes.
+ Uma sala cheia de estudantes, recebe uma tarefa de resolver uma lista de
+ exercícios.
+ Se todos os exercícios forem resolvidas por um único aluno, levará um tempo
+ muito grande para terminarem a tarefa (caso sem paralelismo).
+ Se os alunos dividirem as tarefas entre si, ela será resolvida muito mais
+ rapidamente.
+ 
+\end_layout
+
+\begin_layout Standard
+Similarmente ao cenário acima, foram implementados três casos de paralelismo,
+ por questão de didática.
+\end_layout
+
+\begin_layout Enumerate
+Sem paralelismo: uma única thread do processador resolve todos os cálculos.
+\end_layout
+
+\begin_layout Enumerate
+Paralelismo por grid: cada thread resolve uma camada do objeto.
+ Possuí certa otimização em relação ao anterior, mas, se só existir objeto
+ em uma camada, outras threads ficam osciosas.
+\end_layout
+
+\begin_layout Enumerate
+Paralelismo total: todas as threads do processador resolvem os cálculos
+ de todo o objeto 3D, intercalando a posição com base no número da thread.
+\end_layout
+
+\begin_layout Standard
+A figura ilustra melhor esses casos
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_threads_exemplo"
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/threads.png
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Figura ilustrando os três casos de paralelismo implementados para duas camadas
+ com 9 células cada, e um processador com duas threads.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O algoritmo utilizado para o caso 3 é:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+
+\shape italic
+for(int i = NUM_THREAD; i < size; i+=MAX_THREADS)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Renderização 3D
 \end_layout
 
@@ -829,7 +956,8 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Utilizando a matriz de rotação do autor 
+Portanto, tendo em mãos os pontos das arestas, é multiplicado esses vetores
+ com a matriz de rotação do autor 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Herter_1993"
@@ -837,7 +965,7 @@ literal "false"
 
 \end_inset
 
- mostrada em 
+ mostrada em (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:matriz_rotacao"
@@ -847,9 +975,9 @@ noprefix "false"
 
 \end_inset
 
-, é possível rotacionar qualquer ponto dependendo dos três angulos do observador.
- Para isso, é multiplicado o vetor das posições dos pontos com a matriz
- da rotação:
+), a qual permite rotacionar qualquer ponto a partir dos três angulos do
+ observador.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -882,8 +1010,7 @@ noprefix "false"
 
 \end_inset
 
-.
- O observador está alinhado com o objeto.
+, onde o observador está alinhado com o objeto.
  
 \end_layout
 
@@ -953,23 +1080,27 @@ name "fig_cubos_3D_screen"
 Nos desenhos do simulador, cada pixel da figura, é uma célula com propriedades
  que serão calculadas, possuindo material, temperatura e volume.
  Como o usuário pode desenhar por pixel, a renderização 3D deve partir do
- princípio que cada pixel é um potencial objeto que deve obrigatoriamente
- ser desenhado.
+ princípio que cada pixel é um 
+\series bold
+potencial
+\series default
+ objeto que deve ser renderizado.
  
 \end_layout
 
 \begin_layout Standard
 Inicialmente, essa conclusão pode ficar vaga, pois todas as células do simulador
- devem ser desenhadas mas, quando a simulação fica grande, são vários objetos
- renderizando ao mesmo tempo, tornando muito lenta a simulação.
+ devem ser renderizadas, mas, quando a simulação fica grande, é numeroso
+ a quantidade de objetos renderizando ao mesmo tempo, tornando muito lenta
+ a apresentação.
  Então algumas considerações são feitas no algoritmo para otimizar a renderizaçã
 o.
 \end_layout
 
 \begin_layout Standard
 Primeiro, é desejável desenhar triângulos, e não pontos ou retas, por 2
- motivos: geometria simples, possui normal, e a biblioteca do Qt consegue
- desenhar e preencher a área com qualquer cor desejável.
+ motivos: geometria simples, possui normal e a biblioteca do Qt consegue
+ desenhar e preencher a área com qualquer cor escolhida.
 \begin_inset Float figure
 placement H
 wide false
@@ -1013,7 +1144,8 @@ Mesmo desenho da figura anterior, mas agora renderizando a partir de triângulos
 \begin_layout Standard
 O segundo motivo apresentado, é o mais importante dos três.
  Um triângulo possui três pontos, podendo ser reduzido para dois vetores
- (subtraindo o ponto de origem dos outros dois pontos).
+ (subtraindo o ponto de origem dos outros dois pontos) e permite-se calcular
+ a normal dessa superfície.
  Com isso, é obtido dos vetores 
 \begin_inset Formula $\boldsymbol{a}=\{a_{1},a_{2},a_{3}\}$
 \end_inset
@@ -1074,7 +1206,7 @@ noprefix "false"
 
 \end_inset
 
-, o caso (a) da figura 
+: o caso (a) da figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_normal"
@@ -1087,7 +1219,7 @@ noprefix "false"
 , mostra uma normal saindo do papel, em direção ao olho do leitor, logo,
  é um triângulo que deve ser renderizado.
  O caso (b) possui uma normal no sentido contrário, e não faz sentido desenhar
- esse triângulo, pois está oculto pelo resto do objeto.
+ esse triângulo, pois está na parte de trás do objeto.
 \end_layout
 
 \begin_layout Standard
@@ -1176,7 +1308,7 @@ da normal, reduz a renderização de objetos ocultos, e otimiza o software
 \end_layout
 
 \begin_layout Standard
-Uma outra condição implementada foi a de avaliar se o objeto possui fronteira
+Uma outra condição implementada é a de avaliar se o objeto possui fronteira
  com outro objeto.
  Com isso, não é necessário renderizar 4 triângulos dessas duas superfícies
  em contato.
@@ -1192,7 +1324,7 @@ j
  da normal.
  Isso serve para ser desenhado primeiro o que está atrás, e depois desenhar
  o que está na frente, sobrescrevendo áreas que deveriam estar ocultas,
- evitando o caso confuso como na figura 
+ evitando a criação de figuras confusas como no caso (b) da figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_cubos_3D"
@@ -1202,7 +1334,7 @@ noprefix "false"
 
 \end_inset
 
- caso (b).
+.
  É uma técnica lenta, mas de fácil implementação.
 \end_layout
 

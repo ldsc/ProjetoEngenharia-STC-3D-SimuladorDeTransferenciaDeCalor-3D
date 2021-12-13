@@ -21,6 +21,12 @@
 % Para uso de listagens de código
 \usepackage{color}
 \definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+\definecolor{lightgray}{rgb}{0.8,0.8,0.8}%   rgb color model
+\definecolor{mygreen1}{rgb}{0.2,1,0}%   rgb color model
+\definecolor{mygreen2}{rgb}{0.4,1,0}%   rgb color model
+\definecolor{brown}{rgb}{0.6,0.3,0}%   rgb color model
+\definecolor{olive}{rgb}{0.5,0.5,0}%   rgb color model
+\definecolor{mymauve}{rgb}{0.9,0.7,1}%   rgb color model
 % Informa que vai usar o pacote listings, 
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
@@ -152,6 +158,28 @@ filename "Cap2-Elaboracao.lyx"
 
 \begin_layout Standard
 \align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap4-Projeto.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap6-Implementacao.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
 \begin_inset Note Note
 status open
 
@@ -193,17 +221,6 @@ filename "Cap5-ProjetoOrientadoAObjeto.lyx"
 o projeto orientado a objeto deixou de ser capítulo e virou uma seção dentro
  do arquivo Cap4-Projeto.lyx
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap6-Implementacao.lyx"
 
 \end_inset
 
