@@ -16,25 +16,24 @@ void CSimuladorTemperatura::resetGrid() {
 void CSimuladorTemperatura::createListOfMaterials() {
     ///*
     std::string matName;
-    QDirIterator it(dir.absolutePath()+"//materiais", {"*.txt"}, QDir::Files, QDirIterator::Subdirectories);
+    QDirIterator it(dir.absolutePath()+"//materiais", {"*.correlacao", "*.constante", "*.interpolacao"}, QDir::Files, QDirIterator::Subdirectories);
     while (it.hasNext()) {
         it.next();
         matName = it.fileName().toStdString();
-        materiais[matName] = chooseMaterialType(matName);
+        QFileInfo fi(it.fileName());
+        std::string type = fi.suffix().toStdString();
+        materiais[matName] = chooseMaterialType(matName, type);
     }
     for(auto const& imap: materiais)
         name_materiais.push_back(imap.first);
 }
 
-CMaterial* CSimuladorTemperatura::chooseMaterialType(std::string name){
+CMaterial* CSimuladorTemperatura::chooseMaterialType(std::string name, std::string type){
     std::ifstream file(dir.absolutePath().toStdString()+"/materiais//"+name);
 
-    std::string type;
-    std::getline(file, type);
-    file.close();
-    if (type == "correlacao")
+    if (type == "correlacao" || type == "constante")
         return new CMaterialCorrelacao(name);
-    else
+    else if (type == "interpolacao")
         return new CMaterialInterpolacao(name);
 }
 

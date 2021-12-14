@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass extbook
 \begin_preamble
 \usepackage {graphicx}
@@ -31,16 +33,18 @@
 \language_package auto
 \inputencoding utf8
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -83,6 +87,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -97,7 +102,10 @@
 \tocdepth 1
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
@@ -111,7 +119,7 @@
 \begin_body
 
 \begin_layout Chapter
-Título do Apêndice
+Como adicionar materiais
 \end_layout
 
 \begin_layout Standard
@@ -124,7 +132,7 @@ status open
 \backslash
 lhead{Apêndice 
 \backslash
-thechapter: Titulo do Apêndice}
+thechapter: Como utilizar o software}
 \backslash
 rhead{
 \backslash
@@ -133,54 +141,250 @@ thepage}
 
 \end_inset
 
-Descreve-se neste apêndice ...
-\end_layout
 
-\begin_layout Itemize
-Os anexos ou apêndices contém material auxiliar.
- Por exemplo, tabelas, gráficos, resultados de experimentos, algoritmos,
- códigos e simulações.
-\end_layout
-
-\begin_layout Itemize
-Um apêndice pode incluir assuntos mais gerais (geral demais para estar no
- núcleo do trabalho) ou mais específicos (detalhado demais para estar no
- núcleo do trabalho).
-\end_layout
-
-\begin_layout Itemize
-Pode conter um artigo de auxílio fundamental ao trabalho.
- 
-\end_layout
-
-\begin_layout Itemize
-Pode conter artigos publicados.
-\end_layout
-
-\begin_layout Itemize
-[tudo aquilo que for importante para a tese mas não essencial, deve ser
- colocado em apêndices]
-\end_layout
-
-\begin_layout Itemize
-[como exemplo, revisão de metodologias, técnicas, modelos matemáticos, ítens
- desenvolvidos por terceiros]
-\end_layout
-
-\begin_layout Itemize
-[algoritmos e programas devem ser colocados no apêndice]
-\end_layout
-
-\begin_layout Itemize
-[imagens detalhadas de programas desenvolvidos devem ser colocados no apêndice]
-\end_layout
-
-\begin_layout Section
-Sub-Titulo do Apêndice
 \end_layout
 
 \begin_layout Standard
-.....conteúdo..
+Para adicionar qualquer material ao simulador, é necessário clicar em Arquivo->I
+mport material, e escolher o arquivo desejado.
+ É importante lembrar que os arquivos devem ter o formato que será ensinado
+ abaixo, e a extensão do arquivo deve ser '.constante', '.correlacao' ou '.interpol
+acao', conforme o modelo escolhido.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/importar_material.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Como adicionar um material no simulador.
+ Primeiro seleciona Arquivo, Import material.
+ Uma janela será aberta, para o usuário escolher o material.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Método da correlação ou constante
+\end_layout
+
+\begin_layout Standard
+Para adicionar um material que utilize métodos de correlação ou possuí proprieda
+des termofísicas constantes, deverá ser criado um arquivo com extensão '.correlac
+ao' ou '.constante', respectivamente.
+\end_layout
+
+\begin_layout Standard
+O molde do arquivo é apresentado abaixo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+
+\color gray
+RGBA:
+\color inherit
+ 236 217 122 255
+\end_layout
+
+\begin_layout Plain Layout
+
+\color gray
+/// C1+C2*T 
+\end_layout
+
+\begin_layout Plain Layout
+
+\color gray
+Cp:
+\color inherit
+ 2.753 0.000223
+\end_layout
+
+\begin_layout Plain Layout
+
+\color gray
+k:
+\color inherit
+ 76.64 0.2633 0.0002
+\end_layout
+
+\begin_layout Plain Layout
+
+\color gray
+rho:
+\color inherit
+ 0.7473 0.0002 0.0000005
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde a primeira linha contém o RGBA do material, na linha do Cp, cada valor
+ é o valor das respectivas constantes, seguindo o modelo de correlação nas
+ linhas comentadas ('///').Método da correlação ou constante
+\end_layout
+
+\begin_layout Section
+Método de interpolação
+\end_layout
+
+\begin_layout Standard
+Para adicionar um material que utilize métodos de interpolação, deverá ser
+ criado um arquivo com extensão '.interpolacao'.
+\end_layout
+
+\begin_layout Standard
+O molde do arquivo é apresentado abaixo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+
+\color gray
+RGBA:
+\color inherit
+ 255 128 0 30 
+\end_layout
+
+\begin_layout Plain Layout
+
+\color gray
+rho:
+\color inherit
+ 7.262 
+\end_layout
+
+\begin_layout Plain Layout
+
+\color gray
+Cp:
+\color inherit
+ 7.925 
+\end_layout
+
+\begin_layout Plain Layout
+
+\color gray
+-T---k: 
+\end_layout
+
+\begin_layout Plain Layout
+100 0.2 
+\end_layout
+
+\begin_layout Plain Layout
+200 0.4 
+\end_layout
+
+\begin_layout Plain Layout
+300 0.5 
+\end_layout
+
+\begin_layout Plain Layout
+400 0.55 
+\end_layout
+
+\begin_layout Plain Layout
+500 0.6 
+\end_layout
+
+\begin_layout Plain Layout
+600 0.65 
+\end_layout
+
+\begin_layout Plain Layout
+700 0.7 
+\end_layout
+
+\begin_layout Plain Layout
+800 0.75 
+\end_layout
+
+\begin_layout Plain Layout
+900 0.8 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde a primeira linha contém o RGBA do material, nas linhas abaixo contém
+ rho e Cp.
+ Abaixo da linha com T e k, são inseridos os valores da temperatura, e a
+ respectiva condutividade térmica (k).
+ O usuário pode adicionar quantas linhas desejar.
 \end_layout
 
 \end_body

@@ -43,7 +43,7 @@ public:
     void resetGrid();
 
     void createListOfMaterials();
-    CMaterial* chooseMaterialType(std::string name);
+    CMaterial* chooseMaterialType(std::string name, std::string type);
 
     void addGrid();
     void delGrid(int _grid);

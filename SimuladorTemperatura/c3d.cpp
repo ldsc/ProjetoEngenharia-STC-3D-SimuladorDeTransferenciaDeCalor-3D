@@ -32,13 +32,16 @@ C3D::C3D(CSimuladorTemperatura *_simulador, QWidget *parent)
     dx = 1;//simulador->getDelta_x();
     dy = dx;
     dz = 1*simulador->getDelta_z()/simulador->getDelta_x();
+    double maxTemp = simulador->getTmax();
+    double minTemp = simulador->getTmin();
     for(int g = 0; g<simulador->getNGRIDS(); g++){
         for(int i = 0; i < simulador->grid[g]->getWidth(); i++){
             for(int j = 0; j < simulador->grid[g]->getHeight(); j++){
                 if (simulador->grid[g]->operator()(i,j)->active){
                     cube.push_back(createCube(QVector3D(i,j,(g+1)*dz)));
                     activeEdges.push_back(edges(i,j,g));
-                    colors.push_back(simulador->grid[g]->operator()(i,j)->material->getColor());
+                    colorsMaterial.push_back(simulador->grid[g]->operator()(i,j)->material->getColor());
+                    colorsTemperature.push_back(getRGB(simulador->grid[g]->operator()(i,j)->temp, minTemp, maxTemp));
                 }
             }
         }
@@ -169,6 +172,9 @@ void C3D::keyPressEvent(QKeyEvent *event){
     else if (event->key() == Qt::Key_A){
         angle_y+=0.1;
     }
+    else if (event->key() == Qt::Key_Space){
+        corMaterial = corMaterial ? false:true;
+    }
     update();
 }
 
@@ -219,7 +225,11 @@ void C3D::paintEvent(QPaintEvent *e) {
     QVector<QPolygon> triangulosDesenho;
     QVector<QColor> coresDesenho;
     QVector<std::pair<int, double>> pos_norm;
-
+    QVector<QColor> color;
+    if (corMaterial)
+        color = colorsMaterial;
+    else
+        color = colorsTemperature;
     double prodVet;
     int a, b, c;
     int count = 0;
@@ -237,9 +247,10 @@ void C3D::paintEvent(QPaintEvent *e) {
                     pos_norm.push_back(std::pair(count, prodVet));
                     count++;
                     if(r == 0 || r == 1 || r == 8 || r == 9) /// fronteiras de g
-                        coresDesenho.push_back(QColor(colors[cb].red(), colors[cb].green(), colors[cb].blue(), 255));
+                        coresDesenho.push_back(QColor(color[cb].red(), color[cb].green(), color[cb].blue(), 255));
                     else
-                        coresDesenho.push_back(QColor(QColor(colors[cb].red()*0.6, colors[cb].green()*0.6, colors[cb].blue()*0.6, 255)));
+                        coresDesenho.push_back(QColor(QColor(color[cb].red()*0.6, color[cb].green()*0.6, color[cb].blue()*0.6, 255)));
+
                     QPolygon pol;
                     pol << QPoint(drawCube[a].x(),drawCube[a].y())
                         << QPoint(drawCube[b].x(),drawCube[b].y())
@@ -268,8 +279,8 @@ void C3D::paintEvent(QPaintEvent *e) {
     e->accept();
 }
 
-QColor C3D::getRGB(int z){
-    return QColor::fromRgb(150+z, 150+z, 150+z);
+QColor C3D::getRGB(double x, double min, double max){
+    return QColor::fromRgb(255, (max - x)*255/(max - min), 0, 255);
 }
 
 void C3D::timerEvent(QTimerEvent *e){

@@ -15,10 +15,10 @@ public:
     double getThermalConst(double T);
 
     QColor getColor()       { return color; }
-    std::string getName()   { return name; }
+    //std::string getName()   { return name; }
 
 protected:
-    std::string name;
+    //std::string name;
     QColor color;
 
     double C0_rho, C1_rho;

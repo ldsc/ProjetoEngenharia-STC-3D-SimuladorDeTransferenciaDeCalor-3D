@@ -31,7 +31,7 @@ protected:
 
     void timerEvent(QTimerEvent *e) override;
     QVector3D rotate(QVector3D a);
-    QColor getRGB(int z);
+    QColor getRGB(double x, double min, double max);
     void keyPressEvent(QKeyEvent *event) override;
     void mousePressEvent(QMouseEvent *e) override;
     void mouseReleaseEvent(QMouseEvent *e) override;
@@ -45,7 +45,9 @@ protected:
     QVector<QVector3D> createCube(QVector3D point);
     QVector3D produtoVetorial(QVector3D origem, QVector3D a, QVector3D b);
 
+
 private:
+    bool corMaterial = false;
     QPoint mousePos;
     int timerId;
     QImage *mImage;
@@ -63,7 +65,8 @@ private:
     double dx = 1, dy = 1, dz = 2;
     QVector<QVector<QVector3D>> cube;
     QVector<QVector<bool>> activeEdges;
-    QVector<QColor> colors;
+    QVector<QColor> colorsMaterial;
+    QVector<QColor> colorsTemperature;
     QVector<QVector3D> drawCube;
     QVector<QVector3D> triangles;
     CSimuladorTemperatura *simulador;
