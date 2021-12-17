@@ -15,11 +15,11 @@ public:
     double getThermalConst(double T);
 
     QColor getColor()       { return color; }
-    //std::string getName()   { return name; }
+    std::string getName()   { return name; }
 
     double getK(double T);
 protected:
-    //std::string name;
+    std::string name;
     QColor color;
 
 private:

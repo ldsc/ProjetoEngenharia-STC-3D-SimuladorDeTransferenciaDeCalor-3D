@@ -1,0 +1,1627 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentação Simulador de Difusão Térmica: Referência da Classe QCPColorGradient</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Documentação Simulador de Difusão Térmica<span id="projectnumber">&#160;2.2</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Tipos Públicos</a> &#124;
+<a href="#pub-methods">Membros Públicos</a> &#124;
+<a href="#pro-methods">Membros Protegidos</a> &#124;
+<a href="#pro-attribs">Atributos Protegidos</a> &#124;
+<a href="class_q_c_p_color_gradient-members.html">Lista de todos os Membros</a>  </div>
+  <div class="headertitle"><div class="title">Referência da Classe QCPColorGradient</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Defines a color gradient for use with e.g. <a class="el" href="class_q_c_p_color_map.html">QCPColorMap</a>.  
+ <a href="class_q_c_p_color_gradient.html#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qcustomplot_8h_source.html">qcustomplot.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Tipos Públicos</h2></td></tr>
+<tr class="memitem:ac5dca17cc24336e6ca176610e7f77fc1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1">ColorInterpolation</a> { <a class="el" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7">ciRGB</a>
+, <a class="el" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb">ciHSV</a>
+ }</td></tr>
+<tr class="separator:ac5dca17cc24336e6ca176610e7f77fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd38ab8d2cceef9cd98eef88408ccb7e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7e">NanHandling</a> { <br />
+&#160;&#160;<a class="el" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea997c2713f8ffe470834e6ccdb45576f8">nhNone</a>
+, <a class="el" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea8a0f1857151baf1aab0f1bc5c8a2b73f">nhLowestColor</a>
+, <a class="el" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea1f1fec8678f690bdb2a437661beba24e">nhHighestColor</a>
+, <a class="el" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea6abad803991346258fe0270ba24c2172">nhTransparent</a>
+, <br />
+&#160;&#160;<a class="el" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7eab2eff641b22417f165f4c1f5973aaf9b">nhNanColor</a>
+<br />
+ }</td></tr>
+<tr class="separator:afd38ab8d2cceef9cd98eef88408ccb7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed6569828fee337023670272910c9072"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072">GradientPreset</a> { <br />
+&#160;&#160;<a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb">gpGrayscale</a>
+, <a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5">gpHot</a>
+, <a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557">gpCold</a>
+, <a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a1bb89351b6def7d220973443fe059c62">gpNight</a>
+, <br />
+&#160;&#160;<a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a9e72663bf6b94b65945f7843f24e0721">gpCandy</a>
+, <a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a382f0b07cec1a59d8a533438aea815d2">gpGeography</a>
+, <a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a4297f4f9e212a819cd65e8e34567182b">gpIon</a>
+, <a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072af1676b129f9f458ace453f280c731cf7">gpThermal</a>
+, <br />
+&#160;&#160;<a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072ab7414ce4e36dc3e82e0132a7f0f41b52">gpPolar</a>
+, <a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072ad63adc100ef46f6b4a8a6deacec4642f">gpSpectrum</a>
+, <a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a5f8a9e67b64c17ddfe4f069fe2b9fb02">gpJet</a>
+, <a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130">gpHues</a>
+<br />
+ }</td></tr>
+<tr class="separator:aed6569828fee337023670272910c9072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Membros Públicos</h2></td></tr>
+<tr class="memitem:a96bcc490ff9dc32b22941ce00800bce0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a96bcc490ff9dc32b22941ce00800bce0">QCPColorGradient</a> ()</td></tr>
+<tr class="separator:a96bcc490ff9dc32b22941ce00800bce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e570b4004fd60bd135e52d685ed2b66"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a4e570b4004fd60bd135e52d685ed2b66">QCPColorGradient</a> (<a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072">GradientPreset</a> preset)</td></tr>
+<tr class="separator:a4e570b4004fd60bd135e52d685ed2b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f3478c33c59aa3c03b9ea1f809877fa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a7f3478c33c59aa3c03b9ea1f809877fa">operator==</a> (const <a class="el" href="class_q_c_p_color_gradient.html">QCPColorGradient</a> &amp;other) const</td></tr>
+<tr class="separator:a7f3478c33c59aa3c03b9ea1f809877fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad26a10e3beaef4fc6f2553d1a9756087"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#ad26a10e3beaef4fc6f2553d1a9756087">operator!=</a> (const <a class="el" href="class_q_c_p_color_gradient.html">QCPColorGradient</a> &amp;other) const</td></tr>
+<tr class="separator:ad26a10e3beaef4fc6f2553d1a9756087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4b9d7034fc3b6c76318b05075367090"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#ac4b9d7034fc3b6c76318b05075367090">levelCount</a> () const</td></tr>
+<tr class="separator:ac4b9d7034fc3b6c76318b05075367090"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62e423a8012169dfe1234df1f7463bd1"><td class="memItemLeft" align="right" valign="top">QMap&lt; double, QColor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a62e423a8012169dfe1234df1f7463bd1">colorStops</a> () const</td></tr>
+<tr class="separator:a62e423a8012169dfe1234df1f7463bd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abad5002858db8cf75ecb045200881de6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1">ColorInterpolation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#abad5002858db8cf75ecb045200881de6">colorInterpolation</a> () const</td></tr>
+<tr class="separator:abad5002858db8cf75ecb045200881de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db4d379cc88e61f881cdbc5b63da0cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7e">NanHandling</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a9db4d379cc88e61f881cdbc5b63da0cd">nanHandling</a> () const</td></tr>
+<tr class="separator:a9db4d379cc88e61f881cdbc5b63da0cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a057a02669d4f9977e7299e74f439715b"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a057a02669d4f9977e7299e74f439715b">nanColor</a> () const</td></tr>
+<tr class="separator:a057a02669d4f9977e7299e74f439715b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22a1d2b17f203caf0dcec833507fb9e0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a22a1d2b17f203caf0dcec833507fb9e0">periodic</a> () const</td></tr>
+<tr class="separator:a22a1d2b17f203caf0dcec833507fb9e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18da587eb4f7fc788ea28ba15b6a12de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a18da587eb4f7fc788ea28ba15b6a12de">setLevelCount</a> (int n)</td></tr>
+<tr class="separator:a18da587eb4f7fc788ea28ba15b6a12de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a724e828aa6f0ba5011a9392477c35d3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a724e828aa6f0ba5011a9392477c35d3a">setColorStops</a> (const QMap&lt; double, QColor &gt; &amp;<a class="el" href="class_q_c_p_color_gradient.html#a62e423a8012169dfe1234df1f7463bd1">colorStops</a>)</td></tr>
+<tr class="separator:a724e828aa6f0ba5011a9392477c35d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b48be5e78079db1bb2a1188a4c3390e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a> (double position, const QColor &amp;<a class="el" href="class_q_c_p_color_gradient.html#a0599545c859268b025d2060dea741cea">color</a>)</td></tr>
+<tr class="separator:a3b48be5e78079db1bb2a1188a4c3390e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa13fda86406e1d896a465a409ae63b38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a> (<a class="el" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1">ColorInterpolation</a> interpolation)</td></tr>
+<tr class="separator:aa13fda86406e1d896a465a409ae63b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ba44c2c0af3ffe917a68eef1678b71f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a0ba44c2c0af3ffe917a68eef1678b71f">setNanHandling</a> (<a class="el" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7e">NanHandling</a> handling)</td></tr>
+<tr class="separator:a0ba44c2c0af3ffe917a68eef1678b71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb1c11bdd1701c66e573aaff593c5c2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#abb1c11bdd1701c66e573aaff593c5c2d">setNanColor</a> (const QColor &amp;<a class="el" href="class_q_c_p_color_gradient.html#a0599545c859268b025d2060dea741cea">color</a>)</td></tr>
+<tr class="separator:abb1c11bdd1701c66e573aaff593c5c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39d6448155fc00a219f239220d14bb39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a39d6448155fc00a219f239220d14bb39">setPeriodic</a> (bool enabled)</td></tr>
+<tr class="separator:a39d6448155fc00a219f239220d14bb39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf423ceb943e177b0ed2c48c811d83dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#aaf423ceb943e177b0ed2c48c811d83dc">colorize</a> (const double *data, const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;range, QRgb *scanLine, int n, int dataIndexFactor=1, bool logarithmic=false)</td></tr>
+<tr class="separator:aaf423ceb943e177b0ed2c48c811d83dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf0cc7fba83ef21f7b8d5d5258519db3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#acf0cc7fba83ef21f7b8d5d5258519db3">colorize</a> (const double *data, const unsigned char *alpha, const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;range, QRgb *scanLine, int n, int dataIndexFactor=1, bool logarithmic=false)</td></tr>
+<tr class="separator:acf0cc7fba83ef21f7b8d5d5258519db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0599545c859268b025d2060dea741cea"><td class="memItemLeft" align="right" valign="top">QRgb&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a0599545c859268b025d2060dea741cea">color</a> (double position, const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;range, bool logarithmic=false)</td></tr>
+<tr class="separator:a0599545c859268b025d2060dea741cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0aeec1528241728b9671bf8e60b1622"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#aa0aeec1528241728b9671bf8e60b1622">loadPreset</a> (<a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072">GradientPreset</a> preset)</td></tr>
+<tr class="separator:aa0aeec1528241728b9671bf8e60b1622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a939213e85f0d1279519d555c5fcfb6ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a939213e85f0d1279519d555c5fcfb6ad">clearColorStops</a> ()</td></tr>
+<tr class="separator:a939213e85f0d1279519d555c5fcfb6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f72f501de429829ec446333316decda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_c_p_color_gradient.html">QCPColorGradient</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a9f72f501de429829ec446333316decda">inverted</a> () const</td></tr>
+<tr class="separator:a9f72f501de429829ec446333316decda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Membros Protegidos</h2></td></tr>
+<tr class="memitem:a137b368ea8829a871974add6e4883c71"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a137b368ea8829a871974add6e4883c71">stopsUseAlpha</a> () const</td></tr>
+<tr class="separator:a137b368ea8829a871974add6e4883c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353f15ab3ab586eebf1f6b58c3e2707b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a353f15ab3ab586eebf1f6b58c3e2707b">updateColorBuffer</a> ()</td></tr>
+<tr class="separator:a353f15ab3ab586eebf1f6b58c3e2707b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Atributos Protegidos</h2></td></tr>
+<tr class="memitem:a98fb68e359904b2c991fcae3e38a211a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a></td></tr>
+<tr class="separator:a98fb68e359904b2c991fcae3e38a211a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e11a2b0974ef289d12c324822bc3a3e"><td class="memItemLeft" align="right" valign="top">QMap&lt; double, QColor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a></td></tr>
+<tr class="separator:a9e11a2b0974ef289d12c324822bc3a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a028cef73d863800a9ee93ffd641cce01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1">ColorInterpolation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a028cef73d863800a9ee93ffd641cce01">mColorInterpolation</a></td></tr>
+<tr class="separator:a028cef73d863800a9ee93ffd641cce01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0be33364dbf6226cc231f56fdf341f12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7e">NanHandling</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a0be33364dbf6226cc231f56fdf341f12">mNanHandling</a></td></tr>
+<tr class="separator:a0be33364dbf6226cc231f56fdf341f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a719b2c3edff4b0e38271edb909b81490"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a719b2c3edff4b0e38271edb909b81490">mNanColor</a></td></tr>
+<tr class="separator:a719b2c3edff4b0e38271edb909b81490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b07deeb20ca1ee2d5ea7e01bf0420af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#a4b07deeb20ca1ee2d5ea7e01bf0420af">mPeriodic</a></td></tr>
+<tr class="separator:a4b07deeb20ca1ee2d5ea7e01bf0420af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b5f0739faa5f8295154d47ce38ecff"><td class="memItemLeft" align="right" valign="top">QVector&lt; QRgb &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a></td></tr>
+<tr class="separator:af8b5f0739faa5f8295154d47ce38ecff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abacf55e11f67d6722a687af1bb2687bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_color_gradient.html#abacf55e11f67d6722a687af1bb2687bd">mColorBufferInvalidated</a></td></tr>
+<tr class="separator:abacf55e11f67d6722a687af1bb2687bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p >Defines a color gradient for use with e.g. <a class="el" href="class_q_c_p_color_map.html">QCPColorMap</a>. </p>
+<p >This class describes a color gradient which can be used to encode data with color. For example, <a class="el" href="class_q_c_p_color_map.html" title="A plottable representing a two-dimensional color map in a plot.">QCPColorMap</a> and <a class="el" href="class_q_c_p_color_scale.html" title="A color scale for use with color coding data such as QCPColorMap.">QCPColorScale</a> have <a class="el" href="class_q_c_p_color_map.html#a7313c78360471cead3576341a2c50377">setGradient</a> methods which take an instance of this class. Colors are set with <a class="el" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt(double position, const QColor &amp;color)</a> with a <em>position</em> from 0 to 1. In between these defined color positions, the color will be interpolated linearly either in RGB or HSV space, see <a class="el" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>.</p>
+<p >Alternatively, load one of the preset color gradients shown in the image below, with <a class="el" href="class_q_c_p_color_gradient.html#aa0aeec1528241728b9671bf8e60b1622">loadPreset</a>, or by directly specifying the preset in the constructor.</p>
+<p >Apart from red, green and blue components, the gradient also interpolates the alpha values of the configured color stops. This allows to display some portions of the data range as transparent in the plot.</p>
+<p >How NaN values are interpreted can be configured with <a class="el" href="class_q_c_p_color_gradient.html#a0ba44c2c0af3ffe917a68eef1678b71f">setNanHandling</a>.</p>
+<div class="image">
+<img src="QCPColorGradient.png" alt=""/>
+</div>
+<p >The constructor <a class="el" href="class_q_c_p_color_gradient.html#a4e570b4004fd60bd135e52d685ed2b66">QCPColorGradient(GradientPreset preset)</a> allows directly converting a <a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072">GradientPreset</a> to a <a class="el" href="class_q_c_p_color_gradient.html" title="Defines a color gradient for use with e.g. QCPColorMap.">QCPColorGradient</a>. This means that you can directly pass <a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072">GradientPreset</a> to all the <em>setGradient</em> methods, e.g.: </p><div class="fragment"></div><!-- fragment --><p >The total number of levels used in the gradient can be set with <a class="el" href="class_q_c_p_color_gradient.html#a18da587eb4f7fc788ea28ba15b6a12de">setLevelCount</a>. Whether the color gradient shall be applied periodically (wrapping around) to data values that lie outside the data range specified on the plottable instance can be controlled with <a class="el" href="class_q_c_p_color_gradient.html#a39d6448155fc00a219f239220d14bb39">setPeriodic</a>. </p>
+</div><h2 class="groupheader">Enumerações</h2>
+<a id="ac5dca17cc24336e6ca176610e7f77fc1" name="ac5dca17cc24336e6ca176610e7f77fc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5dca17cc24336e6ca176610e7f77fc1">&#9670;&nbsp;</a></span>ColorInterpolation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1">QCPColorGradient::ColorInterpolation</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Defines the color spaces in which color interpolation between gradient stops can be performed.</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumeradores</th></tr><tr><td class="fieldname"><a id="ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7" name="ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7"></a>ciRGB&#160;</td><td class="fielddoc"><p >Color channels red, green and blue are linearly interpolated. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb" name="ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb"></a>ciHSV&#160;</td><td class="fielddoc"><p >Color channels hue, saturation and value are linearly interpolated (The hue is interpolated over the shortest angle distance) </p>
+</td></tr>
+</table>
+<div class="fragment"><div class="line"><a id="l04724" name="l04724"></a><span class="lineno"> 4724</span>                          { <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7">ciRGB</a>  </div>
+<div class="line"><a id="l04725" name="l04725"></a><span class="lineno"> 4725</span>                            ,<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb">ciHSV</a> </div>
+<div class="line"><a id="l04726" name="l04726"></a><span class="lineno"> 4726</span>                          };</div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7"><div class="ttname"><a href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7">QCPColorGradient::ciRGB</a></div><div class="ttdeci">@ ciRGB</div><div class="ttdoc">Color channels red, green and blue are linearly interpolated.</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4724</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb"><div class="ttname"><a href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb">QCPColorGradient::ciHSV</a></div><div class="ttdeci">@ ciHSV</div><div class="ttdoc">Color channels hue, saturation and value are linearly interpolated (The hue is interpolated over the ...</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4725</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aed6569828fee337023670272910c9072" name="aed6569828fee337023670272910c9072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed6569828fee337023670272910c9072">&#9670;&nbsp;</a></span>GradientPreset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072">QCPColorGradient::GradientPreset</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Defines the available presets that can be loaded with <a class="el" href="class_q_c_p_color_gradient.html#aa0aeec1528241728b9671bf8e60b1622">loadPreset</a>. See the documentation there for an image of the presets. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumeradores</th></tr><tr><td class="fieldname"><a id="aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb" name="aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb"></a>gpGrayscale&#160;</td><td class="fielddoc"><p >Continuous lightness from black to white (suited for non-biased data representation) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5" name="aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5"></a>gpHot&#160;</td><td class="fielddoc"><p >Continuous lightness from black over firey colors to white (suited for non-biased data representation) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557" name="aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557"></a>gpCold&#160;</td><td class="fielddoc"><p >Continuous lightness from black over icey colors to white (suited for non-biased data representation) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aed6569828fee337023670272910c9072a1bb89351b6def7d220973443fe059c62" name="aed6569828fee337023670272910c9072a1bb89351b6def7d220973443fe059c62"></a>gpNight&#160;</td><td class="fielddoc"><p >Continuous lightness from black over weak blueish colors to white (suited for non-biased data representation) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aed6569828fee337023670272910c9072a9e72663bf6b94b65945f7843f24e0721" name="aed6569828fee337023670272910c9072a9e72663bf6b94b65945f7843f24e0721"></a>gpCandy&#160;</td><td class="fielddoc"><p >Blue over pink to white. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aed6569828fee337023670272910c9072a382f0b07cec1a59d8a533438aea815d2" name="aed6569828fee337023670272910c9072a382f0b07cec1a59d8a533438aea815d2"></a>gpGeography&#160;</td><td class="fielddoc"><p >Colors suitable to represent different elevations on geographical maps. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aed6569828fee337023670272910c9072a4297f4f9e212a819cd65e8e34567182b" name="aed6569828fee337023670272910c9072a4297f4f9e212a819cd65e8e34567182b"></a>gpIon&#160;</td><td class="fielddoc"><p >Half hue spectrum from black over purple to blue and finally green (creates banding illusion but allows more precise magnitude estimates) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aed6569828fee337023670272910c9072af1676b129f9f458ace453f280c731cf7" name="aed6569828fee337023670272910c9072af1676b129f9f458ace453f280c731cf7"></a>gpThermal&#160;</td><td class="fielddoc"><p >Colors suitable for thermal imaging, ranging from dark blue over purple to orange, yellow and white. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aed6569828fee337023670272910c9072ab7414ce4e36dc3e82e0132a7f0f41b52" name="aed6569828fee337023670272910c9072ab7414ce4e36dc3e82e0132a7f0f41b52"></a>gpPolar&#160;</td><td class="fielddoc"><p >Colors suitable to emphasize polarity around the center, with blue for negative, black in the middle and red for positive values. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aed6569828fee337023670272910c9072ad63adc100ef46f6b4a8a6deacec4642f" name="aed6569828fee337023670272910c9072ad63adc100ef46f6b4a8a6deacec4642f"></a>gpSpectrum&#160;</td><td class="fielddoc"><p >An approximation of the visible light spectrum (creates banding illusion but allows more precise magnitude estimates) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aed6569828fee337023670272910c9072a5f8a9e67b64c17ddfe4f069fe2b9fb02" name="aed6569828fee337023670272910c9072a5f8a9e67b64c17ddfe4f069fe2b9fb02"></a>gpJet&#160;</td><td class="fielddoc"><p >Hue variation similar to a spectrum, often used in numerical visualization (creates banding illusion but allows more precise magnitude estimates) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130" name="aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130"></a>gpHues&#160;</td><td class="fielddoc"><p >Full hue cycle, with highest and lowest color red (suitable for periodic data, such as angles and phases, see <a class="el" href="class_q_c_p_color_gradient.html#a39d6448155fc00a219f239220d14bb39">setPeriodic</a>) </p>
+</td></tr>
+</table>
+<div class="fragment"><div class="line"><a id="l04746" name="l04746"></a><span class="lineno"> 4746</span>                      { <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb">gpGrayscale</a>  </div>
+<div class="line"><a id="l04747" name="l04747"></a><span class="lineno"> 4747</span>                        ,<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5">gpHot</a>       </div>
+<div class="line"><a id="l04748" name="l04748"></a><span class="lineno"> 4748</span>                        ,<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557">gpCold</a>      </div>
+<div class="line"><a id="l04749" name="l04749"></a><span class="lineno"> 4749</span>                        ,<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a1bb89351b6def7d220973443fe059c62">gpNight</a>     </div>
+<div class="line"><a id="l04750" name="l04750"></a><span class="lineno"> 4750</span>                        ,<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a9e72663bf6b94b65945f7843f24e0721">gpCandy</a>     </div>
+<div class="line"><a id="l04751" name="l04751"></a><span class="lineno"> 4751</span>                        ,<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a382f0b07cec1a59d8a533438aea815d2">gpGeography</a> </div>
+<div class="line"><a id="l04752" name="l04752"></a><span class="lineno"> 4752</span>                        ,<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a4297f4f9e212a819cd65e8e34567182b">gpIon</a>       </div>
+<div class="line"><a id="l04753" name="l04753"></a><span class="lineno"> 4753</span>                        ,<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072af1676b129f9f458ace453f280c731cf7">gpThermal</a>   </div>
+<div class="line"><a id="l04754" name="l04754"></a><span class="lineno"> 4754</span>                        ,<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072ab7414ce4e36dc3e82e0132a7f0f41b52">gpPolar</a>     </div>
+<div class="line"><a id="l04755" name="l04755"></a><span class="lineno"> 4755</span>                        ,<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072ad63adc100ef46f6b4a8a6deacec4642f">gpSpectrum</a>  </div>
+<div class="line"><a id="l04756" name="l04756"></a><span class="lineno"> 4756</span>                        ,<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a5f8a9e67b64c17ddfe4f069fe2b9fb02">gpJet</a>       </div>
+<div class="line"><a id="l04757" name="l04757"></a><span class="lineno"> 4757</span>                        ,<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130">gpHues</a>      </div>
+<div class="line"><a id="l04758" name="l04758"></a><span class="lineno"> 4758</span>                      };</div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_aed6569828fee337023670272910c9072a1bb89351b6def7d220973443fe059c62"><div class="ttname"><a href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a1bb89351b6def7d220973443fe059c62">QCPColorGradient::gpNight</a></div><div class="ttdeci">@ gpNight</div><div class="ttdoc">Continuous lightness from black over weak blueish colors to white (suited for non-biased data represe...</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4749</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130"><div class="ttname"><a href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130">QCPColorGradient::gpHues</a></div><div class="ttdeci">@ gpHues</div><div class="ttdoc">Full hue cycle, with highest and lowest color red (suitable for periodic data, such as angles and pha...</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4757</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_aed6569828fee337023670272910c9072a382f0b07cec1a59d8a533438aea815d2"><div class="ttname"><a href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a382f0b07cec1a59d8a533438aea815d2">QCPColorGradient::gpGeography</a></div><div class="ttdeci">@ gpGeography</div><div class="ttdoc">Colors suitable to represent different elevations on geographical maps.</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4751</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_aed6569828fee337023670272910c9072a4297f4f9e212a819cd65e8e34567182b"><div class="ttname"><a href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a4297f4f9e212a819cd65e8e34567182b">QCPColorGradient::gpIon</a></div><div class="ttdeci">@ gpIon</div><div class="ttdoc">Half hue spectrum from black over purple to blue and finally green (creates banding illusion but allo...</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4752</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5"><div class="ttname"><a href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5">QCPColorGradient::gpHot</a></div><div class="ttdeci">@ gpHot</div><div class="ttdoc">Continuous lightness from black over firey colors to white (suited for non-biased data representation...</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4747</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_aed6569828fee337023670272910c9072a5f8a9e67b64c17ddfe4f069fe2b9fb02"><div class="ttname"><a href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a5f8a9e67b64c17ddfe4f069fe2b9fb02">QCPColorGradient::gpJet</a></div><div class="ttdeci">@ gpJet</div><div class="ttdoc">Hue variation similar to a spectrum, often used in numerical visualization (creates banding illusion ...</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4756</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_aed6569828fee337023670272910c9072a9e72663bf6b94b65945f7843f24e0721"><div class="ttname"><a href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a9e72663bf6b94b65945f7843f24e0721">QCPColorGradient::gpCandy</a></div><div class="ttdeci">@ gpCandy</div><div class="ttdoc">Blue over pink to white.</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4750</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_aed6569828fee337023670272910c9072ab7414ce4e36dc3e82e0132a7f0f41b52"><div class="ttname"><a href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072ab7414ce4e36dc3e82e0132a7f0f41b52">QCPColorGradient::gpPolar</a></div><div class="ttdeci">@ gpPolar</div><div class="ttdoc">Colors suitable to emphasize polarity around the center, with blue for negative, black in the middle ...</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4754</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_aed6569828fee337023670272910c9072ad63adc100ef46f6b4a8a6deacec4642f"><div class="ttname"><a href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072ad63adc100ef46f6b4a8a6deacec4642f">QCPColorGradient::gpSpectrum</a></div><div class="ttdeci">@ gpSpectrum</div><div class="ttdoc">An approximation of the visible light spectrum (creates banding illusion but allows more precise magn...</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4755</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb"><div class="ttname"><a href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb">QCPColorGradient::gpGrayscale</a></div><div class="ttdeci">@ gpGrayscale</div><div class="ttdoc">Continuous lightness from black to white (suited for non-biased data representation)</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4746</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557"><div class="ttname"><a href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557">QCPColorGradient::gpCold</a></div><div class="ttdeci">@ gpCold</div><div class="ttdoc">Continuous lightness from black over icey colors to white (suited for non-biased data representation)</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4748</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_aed6569828fee337023670272910c9072af1676b129f9f458ace453f280c731cf7"><div class="ttname"><a href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072af1676b129f9f458ace453f280c731cf7">QCPColorGradient::gpThermal</a></div><div class="ttdeci">@ gpThermal</div><div class="ttdoc">Colors suitable for thermal imaging, ranging from dark blue over purple to orange,...</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4753</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afd38ab8d2cceef9cd98eef88408ccb7e" name="afd38ab8d2cceef9cd98eef88408ccb7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd38ab8d2cceef9cd98eef88408ccb7e">&#9670;&nbsp;</a></span>NanHandling</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7e">QCPColorGradient::NanHandling</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Defines how NaN data points shall appear in the plot.</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_q_c_p_color_gradient.html#a0ba44c2c0af3ffe917a68eef1678b71f">setNanHandling</a>, <a class="el" href="class_q_c_p_color_gradient.html#abb1c11bdd1701c66e573aaff593c5c2d">setNanColor</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumeradores</th></tr><tr><td class="fieldname"><a id="afd38ab8d2cceef9cd98eef88408ccb7ea997c2713f8ffe470834e6ccdb45576f8" name="afd38ab8d2cceef9cd98eef88408ccb7ea997c2713f8ffe470834e6ccdb45576f8"></a>nhNone&#160;</td><td class="fielddoc"><p >NaN data points are not explicitly handled and shouldn't occur in the data (this gives slight performance improvement) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afd38ab8d2cceef9cd98eef88408ccb7ea8a0f1857151baf1aab0f1bc5c8a2b73f" name="afd38ab8d2cceef9cd98eef88408ccb7ea8a0f1857151baf1aab0f1bc5c8a2b73f"></a>nhLowestColor&#160;</td><td class="fielddoc"><p >NaN data points appear as the lowest color defined in this <a class="el" href="class_q_c_p_color_gradient.html" title="Defines a color gradient for use with e.g. QCPColorMap.">QCPColorGradient</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afd38ab8d2cceef9cd98eef88408ccb7ea1f1fec8678f690bdb2a437661beba24e" name="afd38ab8d2cceef9cd98eef88408ccb7ea1f1fec8678f690bdb2a437661beba24e"></a>nhHighestColor&#160;</td><td class="fielddoc"><p >NaN data points appear as the highest color defined in this <a class="el" href="class_q_c_p_color_gradient.html" title="Defines a color gradient for use with e.g. QCPColorMap.">QCPColorGradient</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afd38ab8d2cceef9cd98eef88408ccb7ea6abad803991346258fe0270ba24c2172" name="afd38ab8d2cceef9cd98eef88408ccb7ea6abad803991346258fe0270ba24c2172"></a>nhTransparent&#160;</td><td class="fielddoc"><p >NaN data points appear transparent. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afd38ab8d2cceef9cd98eef88408ccb7eab2eff641b22417f165f4c1f5973aaf9b" name="afd38ab8d2cceef9cd98eef88408ccb7eab2eff641b22417f165f4c1f5973aaf9b"></a>nhNanColor&#160;</td><td class="fielddoc"><p >NaN data points appear as the color defined with <a class="el" href="class_q_c_p_color_gradient.html#abb1c11bdd1701c66e573aaff593c5c2d">setNanColor</a>. </p>
+</td></tr>
+</table>
+<div class="fragment"><div class="line"><a id="l04734" name="l04734"></a><span class="lineno"> 4734</span>                   { <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea997c2713f8ffe470834e6ccdb45576f8">nhNone</a> </div>
+<div class="line"><a id="l04735" name="l04735"></a><span class="lineno"> 4735</span>                     ,<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea8a0f1857151baf1aab0f1bc5c8a2b73f">nhLowestColor</a>  </div>
+<div class="line"><a id="l04736" name="l04736"></a><span class="lineno"> 4736</span>                     ,<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea1f1fec8678f690bdb2a437661beba24e">nhHighestColor</a> </div>
+<div class="line"><a id="l04737" name="l04737"></a><span class="lineno"> 4737</span>                     ,<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea6abad803991346258fe0270ba24c2172">nhTransparent</a> </div>
+<div class="line"><a id="l04738" name="l04738"></a><span class="lineno"> 4738</span>                     ,<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7eab2eff641b22417f165f4c1f5973aaf9b">nhNanColor</a> </div>
+<div class="line"><a id="l04739" name="l04739"></a><span class="lineno"> 4739</span>                   };</div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_afd38ab8d2cceef9cd98eef88408ccb7ea1f1fec8678f690bdb2a437661beba24e"><div class="ttname"><a href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea1f1fec8678f690bdb2a437661beba24e">QCPColorGradient::nhHighestColor</a></div><div class="ttdeci">@ nhHighestColor</div><div class="ttdoc">NaN data points appear as the highest color defined in this QCPColorGradient.</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4736</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_afd38ab8d2cceef9cd98eef88408ccb7ea6abad803991346258fe0270ba24c2172"><div class="ttname"><a href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea6abad803991346258fe0270ba24c2172">QCPColorGradient::nhTransparent</a></div><div class="ttdeci">@ nhTransparent</div><div class="ttdoc">NaN data points appear transparent.</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4737</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_afd38ab8d2cceef9cd98eef88408ccb7ea8a0f1857151baf1aab0f1bc5c8a2b73f"><div class="ttname"><a href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea8a0f1857151baf1aab0f1bc5c8a2b73f">QCPColorGradient::nhLowestColor</a></div><div class="ttdeci">@ nhLowestColor</div><div class="ttdoc">NaN data points appear as the lowest color defined in this QCPColorGradient.</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4735</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_afd38ab8d2cceef9cd98eef88408ccb7ea997c2713f8ffe470834e6ccdb45576f8"><div class="ttname"><a href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea997c2713f8ffe470834e6ccdb45576f8">QCPColorGradient::nhNone</a></div><div class="ttdeci">@ nhNone</div><div class="ttdoc">NaN data points are not explicitly handled and shouldn't occur in the data (this gives slight perform...</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4734</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_afd38ab8d2cceef9cd98eef88408ccb7eab2eff641b22417f165f4c1f5973aaf9b"><div class="ttname"><a href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7eab2eff641b22417f165f4c1f5973aaf9b">QCPColorGradient::nhNanColor</a></div><div class="ttdeci">@ nhNanColor</div><div class="ttdoc">NaN data points appear as the color defined with setNanColor.</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4738</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Construtores e Destrutores</h2>
+<a id="a96bcc490ff9dc32b22941ce00800bce0" name="a96bcc490ff9dc32b22941ce00800bce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96bcc490ff9dc32b22941ce00800bce0">&#9670;&nbsp;</a></span>QCPColorGradient() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QCPColorGradient::QCPColorGradient </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Constructs a new, empty <a class="el" href="class_q_c_p_color_gradient.html" title="Defines a color gradient for use with e.g. QCPColorMap.">QCPColorGradient</a> with no predefined color stops. You can add own color stops with <a class="el" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>.</p>
+<p >The color level count is initialized to 350. </p>
+<div class="fragment"><div class="line"><a id="l16526" name="l16526"></a><span class="lineno">16526</span>                                   :</div>
+<div class="line"><a id="l16527" name="l16527"></a><span class="lineno">16527</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>(350),</div>
+<div class="line"><a id="l16528" name="l16528"></a><span class="lineno">16528</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a028cef73d863800a9ee93ffd641cce01">mColorInterpolation</a>(<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7">ciRGB</a>),</div>
+<div class="line"><a id="l16529" name="l16529"></a><span class="lineno">16529</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a0be33364dbf6226cc231f56fdf341f12">mNanHandling</a>(<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea997c2713f8ffe470834e6ccdb45576f8">nhNone</a>),</div>
+<div class="line"><a id="l16530" name="l16530"></a><span class="lineno">16530</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a719b2c3edff4b0e38271edb909b81490">mNanColor</a>(Qt::black),</div>
+<div class="line"><a id="l16531" name="l16531"></a><span class="lineno">16531</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a4b07deeb20ca1ee2d5ea7e01bf0420af">mPeriodic</a>(<span class="keyword">false</span>),</div>
+<div class="line"><a id="l16532" name="l16532"></a><span class="lineno">16532</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#abacf55e11f67d6722a687af1bb2687bd">mColorBufferInvalidated</a>(<span class="keyword">true</span>)</div>
+<div class="line"><a id="l16533" name="l16533"></a><span class="lineno">16533</span>{</div>
+<div class="line"><a id="l16534" name="l16534"></a><span class="lineno">16534</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>.fill(qRgb(0, 0, 0), <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>);</div>
+<div class="line"><a id="l16535" name="l16535"></a><span class="lineno">16535</span>}</div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_a028cef73d863800a9ee93ffd641cce01"><div class="ttname"><a href="class_q_c_p_color_gradient.html#a028cef73d863800a9ee93ffd641cce01">QCPColorGradient::mColorInterpolation</a></div><div class="ttdeci">ColorInterpolation mColorInterpolation</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4795</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_a0be33364dbf6226cc231f56fdf341f12"><div class="ttname"><a href="class_q_c_p_color_gradient.html#a0be33364dbf6226cc231f56fdf341f12">QCPColorGradient::mNanHandling</a></div><div class="ttdeci">NanHandling mNanHandling</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4796</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_a4b07deeb20ca1ee2d5ea7e01bf0420af"><div class="ttname"><a href="class_q_c_p_color_gradient.html#a4b07deeb20ca1ee2d5ea7e01bf0420af">QCPColorGradient::mPeriodic</a></div><div class="ttdeci">bool mPeriodic</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4798</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_a719b2c3edff4b0e38271edb909b81490"><div class="ttname"><a href="class_q_c_p_color_gradient.html#a719b2c3edff4b0e38271edb909b81490">QCPColorGradient::mNanColor</a></div><div class="ttdeci">QColor mNanColor</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4797</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_a98fb68e359904b2c991fcae3e38a211a"><div class="ttname"><a href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">QCPColorGradient::mLevelCount</a></div><div class="ttdeci">int mLevelCount</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4793</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_abacf55e11f67d6722a687af1bb2687bd"><div class="ttname"><a href="class_q_c_p_color_gradient.html#abacf55e11f67d6722a687af1bb2687bd">QCPColorGradient::mColorBufferInvalidated</a></div><div class="ttdeci">bool mColorBufferInvalidated</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4802</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_af8b5f0739faa5f8295154d47ce38ecff"><div class="ttname"><a href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">QCPColorGradient::mColorBuffer</a></div><div class="ttdeci">QVector&lt; QRgb &gt; mColorBuffer</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4801</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4e570b4004fd60bd135e52d685ed2b66" name="a4e570b4004fd60bd135e52d685ed2b66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e570b4004fd60bd135e52d685ed2b66">&#9670;&nbsp;</a></span>QCPColorGradient() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QCPColorGradient::QCPColorGradient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072">GradientPreset</a>&#160;</td>
+          <td class="paramname"><em>preset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Constructs a new <a class="el" href="class_q_c_p_color_gradient.html" title="Defines a color gradient for use with e.g. QCPColorMap.">QCPColorGradient</a> initialized with the colors and color interpolation according to <em>preset</em>.</p>
+<p >The color level count is initialized to 350. </p>
+<div class="fragment"><div class="line"><a id="l16543" name="l16543"></a><span class="lineno">16543</span>                                                        :</div>
+<div class="line"><a id="l16544" name="l16544"></a><span class="lineno">16544</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>(350),</div>
+<div class="line"><a id="l16545" name="l16545"></a><span class="lineno">16545</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a028cef73d863800a9ee93ffd641cce01">mColorInterpolation</a>(<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7">ciRGB</a>),</div>
+<div class="line"><a id="l16546" name="l16546"></a><span class="lineno">16546</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a0be33364dbf6226cc231f56fdf341f12">mNanHandling</a>(<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea997c2713f8ffe470834e6ccdb45576f8">nhNone</a>),</div>
+<div class="line"><a id="l16547" name="l16547"></a><span class="lineno">16547</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a719b2c3edff4b0e38271edb909b81490">mNanColor</a>(Qt::black),</div>
+<div class="line"><a id="l16548" name="l16548"></a><span class="lineno">16548</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a4b07deeb20ca1ee2d5ea7e01bf0420af">mPeriodic</a>(<span class="keyword">false</span>),</div>
+<div class="line"><a id="l16549" name="l16549"></a><span class="lineno">16549</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#abacf55e11f67d6722a687af1bb2687bd">mColorBufferInvalidated</a>(<span class="keyword">true</span>)</div>
+<div class="line"><a id="l16550" name="l16550"></a><span class="lineno">16550</span>{</div>
+<div class="line"><a id="l16551" name="l16551"></a><span class="lineno">16551</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>.fill(qRgb(0, 0, 0), <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>);</div>
+<div class="line"><a id="l16552" name="l16552"></a><span class="lineno">16552</span>  <a class="code hl_function" href="class_q_c_p_color_gradient.html#aa0aeec1528241728b9671bf8e60b1622">loadPreset</a>(preset);</div>
+<div class="line"><a id="l16553" name="l16553"></a><span class="lineno">16553</span>}</div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_aa0aeec1528241728b9671bf8e60b1622"><div class="ttname"><a href="class_q_c_p_color_gradient.html#aa0aeec1528241728b9671bf8e60b1622">QCPColorGradient::loadPreset</a></div><div class="ttdeci">void loadPreset(GradientPreset preset)</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:16859</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Funções membros</h2>
+<a id="a939213e85f0d1279519d555c5fcfb6ad" name="a939213e85f0d1279519d555c5fcfb6ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a939213e85f0d1279519d555c5fcfb6ad">&#9670;&nbsp;</a></span>clearColorStops()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPColorGradient::clearColorStops </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Clears all color stops.</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_q_c_p_color_gradient.html#a724e828aa6f0ba5011a9392477c35d3a">setColorStops</a>, <a class="el" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a> </dd></dl>
+<div class="fragment"><div class="line"><a id="l16969" name="l16969"></a><span class="lineno">16969</span>{</div>
+<div class="line"><a id="l16970" name="l16970"></a><span class="lineno">16970</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a>.clear();</div>
+<div class="line"><a id="l16971" name="l16971"></a><span class="lineno">16971</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#abacf55e11f67d6722a687af1bb2687bd">mColorBufferInvalidated</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l16972" name="l16972"></a><span class="lineno">16972</span>}</div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_a9e11a2b0974ef289d12c324822bc3a3e"><div class="ttname"><a href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">QCPColorGradient::mColorStops</a></div><div class="ttdeci">QMap&lt; double, QColor &gt; mColorStops</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4794</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0599545c859268b025d2060dea741cea" name="a0599545c859268b025d2060dea741cea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0599545c859268b025d2060dea741cea">&#9670;&nbsp;</a></span>color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRgb QCPColorGradient::color </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;&#160;</td>
+          <td class="paramname"><em>range</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>logarithmic</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l16820" name="l16820"></a><span class="lineno">16820</span>{</div>
+<div class="line"><a id="l16821" name="l16821"></a><span class="lineno">16821</span>  <span class="comment">// If you change something here, make sure to also adapt ::colorize()</span></div>
+<div class="line"><a id="l16822" name="l16822"></a><span class="lineno">16822</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_q_c_p_color_gradient.html#abacf55e11f67d6722a687af1bb2687bd">mColorBufferInvalidated</a>)</div>
+<div class="line"><a id="l16823" name="l16823"></a><span class="lineno">16823</span>    <a class="code hl_function" href="class_q_c_p_color_gradient.html#a353f15ab3ab586eebf1f6b58c3e2707b">updateColorBuffer</a>();</div>
+<div class="line"><a id="l16824" name="l16824"></a><span class="lineno">16824</span>  </div>
+<div class="line"><a id="l16825" name="l16825"></a><span class="lineno">16825</span>  <span class="keyword">const</span> <span class="keywordtype">bool</span> skipNanCheck = <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a0be33364dbf6226cc231f56fdf341f12">mNanHandling</a> == <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea997c2713f8ffe470834e6ccdb45576f8">nhNone</a>;</div>
+<div class="line"><a id="l16826" name="l16826"></a><span class="lineno">16826</span>  <span class="keywordflow">if</span> (!skipNanCheck &amp;&amp; std::isnan(position))</div>
+<div class="line"><a id="l16827" name="l16827"></a><span class="lineno">16827</span>  {</div>
+<div class="line"><a id="l16828" name="l16828"></a><span class="lineno">16828</span>    <span class="keywordflow">switch</span>(<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a0be33364dbf6226cc231f56fdf341f12">mNanHandling</a>)</div>
+<div class="line"><a id="l16829" name="l16829"></a><span class="lineno">16829</span>    {</div>
+<div class="line"><a id="l16830" name="l16830"></a><span class="lineno">16830</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea8a0f1857151baf1aab0f1bc5c8a2b73f">nhLowestColor</a>: <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>.first();</div>
+<div class="line"><a id="l16831" name="l16831"></a><span class="lineno">16831</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea1f1fec8678f690bdb2a437661beba24e">nhHighestColor</a>: <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>.last();</div>
+<div class="line"><a id="l16832" name="l16832"></a><span class="lineno">16832</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea6abad803991346258fe0270ba24c2172">nhTransparent</a>: <span class="keywordflow">return</span> qRgba(0, 0, 0, 0);</div>
+<div class="line"><a id="l16833" name="l16833"></a><span class="lineno">16833</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7eab2eff641b22417f165f4c1f5973aaf9b">nhNanColor</a>: <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a719b2c3edff4b0e38271edb909b81490">mNanColor</a>.rgba();</div>
+<div class="line"><a id="l16834" name="l16834"></a><span class="lineno">16834</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea997c2713f8ffe470834e6ccdb45576f8">nhNone</a>: <span class="keywordflow">return</span> qRgba(0, 0, 0, 0); <span class="comment">// shouldn&#39;t happen</span></div>
+<div class="line"><a id="l16835" name="l16835"></a><span class="lineno">16835</span>    }</div>
+<div class="line"><a id="l16836" name="l16836"></a><span class="lineno">16836</span>  }</div>
+<div class="line"><a id="l16837" name="l16837"></a><span class="lineno">16837</span>  </div>
+<div class="line"><a id="l16838" name="l16838"></a><span class="lineno">16838</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> posToIndexFactor = !logarithmic ? (<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>-1)/range.<a class="code hl_function" href="class_q_c_p_range.html#a62326e7cc4316b96df6a60813230e63f">size</a>() : (<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>-1)/qLn(range.<a class="code hl_variable" href="class_q_c_p_range.html#ae44eb3aafe1d0e2ed34b499b6d2e074f">upper</a>/range.<a class="code hl_variable" href="class_q_c_p_range.html#aa3aca3edb14f7ca0c85d912647b91745">lower</a>);</div>
+<div class="line"><a id="l16839" name="l16839"></a><span class="lineno">16839</span>  <span class="keywordtype">int</span> index = int((!logarithmic ? position-range.<a class="code hl_variable" href="class_q_c_p_range.html#aa3aca3edb14f7ca0c85d912647b91745">lower</a> : qLn(position/range.<a class="code hl_variable" href="class_q_c_p_range.html#aa3aca3edb14f7ca0c85d912647b91745">lower</a>)) * posToIndexFactor);</div>
+<div class="line"><a id="l16840" name="l16840"></a><span class="lineno">16840</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a4b07deeb20ca1ee2d5ea7e01bf0420af">mPeriodic</a>)</div>
+<div class="line"><a id="l16841" name="l16841"></a><span class="lineno">16841</span>  {</div>
+<div class="line"><a id="l16842" name="l16842"></a><span class="lineno">16842</span>    index = qBound(0, index, <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>-1);</div>
+<div class="line"><a id="l16843" name="l16843"></a><span class="lineno">16843</span>  } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l16844" name="l16844"></a><span class="lineno">16844</span>  {</div>
+<div class="line"><a id="l16845" name="l16845"></a><span class="lineno">16845</span>    index %= <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>;</div>
+<div class="line"><a id="l16846" name="l16846"></a><span class="lineno">16846</span>    <span class="keywordflow">if</span> (index &lt; 0)</div>
+<div class="line"><a id="l16847" name="l16847"></a><span class="lineno">16847</span>      index += <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>;</div>
+<div class="line"><a id="l16848" name="l16848"></a><span class="lineno">16848</span>  }</div>
+<div class="line"><a id="l16849" name="l16849"></a><span class="lineno">16849</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>.at(index);</div>
+<div class="line"><a id="l16850" name="l16850"></a><span class="lineno">16850</span>}</div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_a353f15ab3ab586eebf1f6b58c3e2707b"><div class="ttname"><a href="class_q_c_p_color_gradient.html#a353f15ab3ab586eebf1f6b58c3e2707b">QCPColorGradient::updateColorBuffer</a></div><div class="ttdeci">void updateColorBuffer()</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:17009</div></div>
+<div class="ttc" id="aclass_q_c_p_range_html_a62326e7cc4316b96df6a60813230e63f"><div class="ttname"><a href="class_q_c_p_range.html#a62326e7cc4316b96df6a60813230e63f">QCPRange::size</a></div><div class="ttdeci">double size() const</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:818</div></div>
+<div class="ttc" id="aclass_q_c_p_range_html_aa3aca3edb14f7ca0c85d912647b91745"><div class="ttname"><a href="class_q_c_p_range.html#aa3aca3edb14f7ca0c85d912647b91745">QCPRange::lower</a></div><div class="ttdeci">double lower</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:799</div></div>
+<div class="ttc" id="aclass_q_c_p_range_html_ae44eb3aafe1d0e2ed34b499b6d2e074f"><div class="ttname"><a href="class_q_c_p_range.html#ae44eb3aafe1d0e2ed34b499b6d2e074f">QCPRange::upper</a></div><div class="ttdeci">double upper</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:799</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abad5002858db8cf75ecb045200881de6" name="abad5002858db8cf75ecb045200881de6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abad5002858db8cf75ecb045200881de6">&#9670;&nbsp;</a></span>colorInterpolation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1">ColorInterpolation</a> QCPColorGradient::colorInterpolation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l04769" name="l04769"></a><span class="lineno"> 4769</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a028cef73d863800a9ee93ffd641cce01">mColorInterpolation</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aaf423ceb943e177b0ed2c48c811d83dc" name="aaf423ceb943e177b0ed2c48c811d83dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf423ceb943e177b0ed2c48c811d83dc">&#9670;&nbsp;</a></span>colorize() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPColorGradient::colorize </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;&#160;</td>
+          <td class="paramname"><em>range</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QRgb *&#160;</td>
+          <td class="paramname"><em>scanLine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dataIndexFactor</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>logarithmic</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Esse é um método provido por conveniência. Ele difere do método acima apenas na lista de argumentos que devem ser utilizados.</p>
+<p >This method is used to quickly convert a <em>data</em> array to colors. The colors will be output in the array <em>scanLine</em>. Both <em>data</em> and <em>scanLine</em> must have the length <em>n</em> when passed to this function. The data range that shall be used for mapping the data value to the gradient is passed in <em>range</em>. <em>logarithmic</em> indicates whether the data values shall be mapped to colors logarithmically.</p>
+<p >if <em>data</em> actually contains 2D-data linearized via <code>[row*columnCount + column]</code>, you can set <em>dataIndexFactor</em> to <code>columnCount</code> to convert a column instead of a row of the data array, in <em>scanLine</em>. <em>scanLine</em> will remain a regular (1D) array. This works because <em>data</em> is addressed <code>data[i*dataIndexFactor]</code>.</p>
+<p >Use the overloaded method to additionally provide alpha map data.</p>
+<p >The QRgb values that are placed in <em>scanLine</em> have their r, g, and b components premultiplied with alpha (see QImage::Format_ARGB32_Premultiplied). </p>
+<div class="fragment"><div class="line"><a id="l16691" name="l16691"></a><span class="lineno">16691</span>{</div>
+<div class="line"><a id="l16692" name="l16692"></a><span class="lineno">16692</span>  <span class="comment">// If you change something here, make sure to also adapt color() and the other colorize() overload</span></div>
+<div class="line"><a id="l16693" name="l16693"></a><span class="lineno">16693</span>  <span class="keywordflow">if</span> (!data)</div>
+<div class="line"><a id="l16694" name="l16694"></a><span class="lineno">16694</span>  {</div>
+<div class="line"><a id="l16695" name="l16695"></a><span class="lineno">16695</span>    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;null pointer given as data&quot;</span>;</div>
+<div class="line"><a id="l16696" name="l16696"></a><span class="lineno">16696</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l16697" name="l16697"></a><span class="lineno">16697</span>  }</div>
+<div class="line"><a id="l16698" name="l16698"></a><span class="lineno">16698</span>  <span class="keywordflow">if</span> (!scanLine)</div>
+<div class="line"><a id="l16699" name="l16699"></a><span class="lineno">16699</span>  {</div>
+<div class="line"><a id="l16700" name="l16700"></a><span class="lineno">16700</span>    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;null pointer given as scanLine&quot;</span>;</div>
+<div class="line"><a id="l16701" name="l16701"></a><span class="lineno">16701</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l16702" name="l16702"></a><span class="lineno">16702</span>  }</div>
+<div class="line"><a id="l16703" name="l16703"></a><span class="lineno">16703</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_q_c_p_color_gradient.html#abacf55e11f67d6722a687af1bb2687bd">mColorBufferInvalidated</a>)</div>
+<div class="line"><a id="l16704" name="l16704"></a><span class="lineno">16704</span>    <a class="code hl_function" href="class_q_c_p_color_gradient.html#a353f15ab3ab586eebf1f6b58c3e2707b">updateColorBuffer</a>();</div>
+<div class="line"><a id="l16705" name="l16705"></a><span class="lineno">16705</span>  </div>
+<div class="line"><a id="l16706" name="l16706"></a><span class="lineno">16706</span>  <span class="keyword">const</span> <span class="keywordtype">bool</span> skipNanCheck = <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a0be33364dbf6226cc231f56fdf341f12">mNanHandling</a> == <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea997c2713f8ffe470834e6ccdb45576f8">nhNone</a>;</div>
+<div class="line"><a id="l16707" name="l16707"></a><span class="lineno">16707</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> posToIndexFactor = !logarithmic ? (<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>-1)/range.<a class="code hl_function" href="class_q_c_p_range.html#a62326e7cc4316b96df6a60813230e63f">size</a>() : (<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>-1)/qLn(range.<a class="code hl_variable" href="class_q_c_p_range.html#ae44eb3aafe1d0e2ed34b499b6d2e074f">upper</a>/range.<a class="code hl_variable" href="class_q_c_p_range.html#aa3aca3edb14f7ca0c85d912647b91745">lower</a>);</div>
+<div class="line"><a id="l16708" name="l16708"></a><span class="lineno">16708</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;n; ++i)</div>
+<div class="line"><a id="l16709" name="l16709"></a><span class="lineno">16709</span>  {</div>
+<div class="line"><a id="l16710" name="l16710"></a><span class="lineno">16710</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> value = data[dataIndexFactor*i];</div>
+<div class="line"><a id="l16711" name="l16711"></a><span class="lineno">16711</span>    <span class="keywordflow">if</span> (skipNanCheck || !std::isnan(value))</div>
+<div class="line"><a id="l16712" name="l16712"></a><span class="lineno">16712</span>    {</div>
+<div class="line"><a id="l16713" name="l16713"></a><span class="lineno">16713</span>      <span class="keywordtype">int</span> index = int((!logarithmic ? value-range.<a class="code hl_variable" href="class_q_c_p_range.html#aa3aca3edb14f7ca0c85d912647b91745">lower</a> : qLn(value/range.<a class="code hl_variable" href="class_q_c_p_range.html#aa3aca3edb14f7ca0c85d912647b91745">lower</a>)) * posToIndexFactor);</div>
+<div class="line"><a id="l16714" name="l16714"></a><span class="lineno">16714</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a4b07deeb20ca1ee2d5ea7e01bf0420af">mPeriodic</a>)</div>
+<div class="line"><a id="l16715" name="l16715"></a><span class="lineno">16715</span>      {</div>
+<div class="line"><a id="l16716" name="l16716"></a><span class="lineno">16716</span>        index = qBound(0, index, <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>-1);</div>
+<div class="line"><a id="l16717" name="l16717"></a><span class="lineno">16717</span>      } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l16718" name="l16718"></a><span class="lineno">16718</span>      {</div>
+<div class="line"><a id="l16719" name="l16719"></a><span class="lineno">16719</span>        index %= <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>;</div>
+<div class="line"><a id="l16720" name="l16720"></a><span class="lineno">16720</span>        <span class="keywordflow">if</span> (index &lt; 0)</div>
+<div class="line"><a id="l16721" name="l16721"></a><span class="lineno">16721</span>          index += <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>;</div>
+<div class="line"><a id="l16722" name="l16722"></a><span class="lineno">16722</span>      }</div>
+<div class="line"><a id="l16723" name="l16723"></a><span class="lineno">16723</span>      scanLine[i] = <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>.at(index);</div>
+<div class="line"><a id="l16724" name="l16724"></a><span class="lineno">16724</span>    } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l16725" name="l16725"></a><span class="lineno">16725</span>    {</div>
+<div class="line"><a id="l16726" name="l16726"></a><span class="lineno">16726</span>      <span class="keywordflow">switch</span>(<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a0be33364dbf6226cc231f56fdf341f12">mNanHandling</a>)</div>
+<div class="line"><a id="l16727" name="l16727"></a><span class="lineno">16727</span>      {</div>
+<div class="line"><a id="l16728" name="l16728"></a><span class="lineno">16728</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea8a0f1857151baf1aab0f1bc5c8a2b73f">nhLowestColor</a>: scanLine[i] = <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>.first(); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16729" name="l16729"></a><span class="lineno">16729</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea1f1fec8678f690bdb2a437661beba24e">nhHighestColor</a>: scanLine[i] = <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>.last(); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16730" name="l16730"></a><span class="lineno">16730</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea6abad803991346258fe0270ba24c2172">nhTransparent</a>: scanLine[i] = qRgba(0, 0, 0, 0); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16731" name="l16731"></a><span class="lineno">16731</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7eab2eff641b22417f165f4c1f5973aaf9b">nhNanColor</a>: scanLine[i] = <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a719b2c3edff4b0e38271edb909b81490">mNanColor</a>.rgba(); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16732" name="l16732"></a><span class="lineno">16732</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea997c2713f8ffe470834e6ccdb45576f8">nhNone</a>: <span class="keywordflow">break</span>; <span class="comment">// shouldn&#39;t happen</span></div>
+<div class="line"><a id="l16733" name="l16733"></a><span class="lineno">16733</span>      }</div>
+<div class="line"><a id="l16734" name="l16734"></a><span class="lineno">16734</span>    }</div>
+<div class="line"><a id="l16735" name="l16735"></a><span class="lineno">16735</span>  }</div>
+<div class="line"><a id="l16736" name="l16736"></a><span class="lineno">16736</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acf0cc7fba83ef21f7b8d5d5258519db3" name="acf0cc7fba83ef21f7b8d5d5258519db3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf0cc7fba83ef21f7b8d5d5258519db3">&#9670;&nbsp;</a></span>colorize() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPColorGradient::colorize </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned char *&#160;</td>
+          <td class="paramname"><em>alpha</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;&#160;</td>
+          <td class="paramname"><em>range</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QRgb *&#160;</td>
+          <td class="paramname"><em>scanLine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dataIndexFactor</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>logarithmic</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Esse é um método provido por conveniência. Ele difere do método acima apenas na lista de argumentos que devem ser utilizados.</p>
+<p >Additionally to the other overload of <a class="el" href="class_q_c_p_color_gradient.html#aaf423ceb943e177b0ed2c48c811d83dc">colorize</a>, this method takes the array <em>alpha</em>, which has the same size and structure as <em>data</em> and encodes the alpha information per data point.</p>
+<p >The QRgb values that are placed in <em>scanLine</em> have their r, g and b components premultiplied with alpha (see QImage::Format_ARGB32_Premultiplied). </p>
+<div class="fragment"><div class="line"><a id="l16747" name="l16747"></a><span class="lineno">16747</span>{</div>
+<div class="line"><a id="l16748" name="l16748"></a><span class="lineno">16748</span>  <span class="comment">// If you change something here, make sure to also adapt color() and the other colorize() overload</span></div>
+<div class="line"><a id="l16749" name="l16749"></a><span class="lineno">16749</span>  <span class="keywordflow">if</span> (!data)</div>
+<div class="line"><a id="l16750" name="l16750"></a><span class="lineno">16750</span>  {</div>
+<div class="line"><a id="l16751" name="l16751"></a><span class="lineno">16751</span>    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;null pointer given as data&quot;</span>;</div>
+<div class="line"><a id="l16752" name="l16752"></a><span class="lineno">16752</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l16753" name="l16753"></a><span class="lineno">16753</span>  }</div>
+<div class="line"><a id="l16754" name="l16754"></a><span class="lineno">16754</span>  <span class="keywordflow">if</span> (!alpha)</div>
+<div class="line"><a id="l16755" name="l16755"></a><span class="lineno">16755</span>  {</div>
+<div class="line"><a id="l16756" name="l16756"></a><span class="lineno">16756</span>    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;null pointer given as alpha&quot;</span>;</div>
+<div class="line"><a id="l16757" name="l16757"></a><span class="lineno">16757</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l16758" name="l16758"></a><span class="lineno">16758</span>  }</div>
+<div class="line"><a id="l16759" name="l16759"></a><span class="lineno">16759</span>  <span class="keywordflow">if</span> (!scanLine)</div>
+<div class="line"><a id="l16760" name="l16760"></a><span class="lineno">16760</span>  {</div>
+<div class="line"><a id="l16761" name="l16761"></a><span class="lineno">16761</span>    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;null pointer given as scanLine&quot;</span>;</div>
+<div class="line"><a id="l16762" name="l16762"></a><span class="lineno">16762</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l16763" name="l16763"></a><span class="lineno">16763</span>  }</div>
+<div class="line"><a id="l16764" name="l16764"></a><span class="lineno">16764</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_q_c_p_color_gradient.html#abacf55e11f67d6722a687af1bb2687bd">mColorBufferInvalidated</a>)</div>
+<div class="line"><a id="l16765" name="l16765"></a><span class="lineno">16765</span>    <a class="code hl_function" href="class_q_c_p_color_gradient.html#a353f15ab3ab586eebf1f6b58c3e2707b">updateColorBuffer</a>();</div>
+<div class="line"><a id="l16766" name="l16766"></a><span class="lineno">16766</span>  </div>
+<div class="line"><a id="l16767" name="l16767"></a><span class="lineno">16767</span>  <span class="keyword">const</span> <span class="keywordtype">bool</span> skipNanCheck = <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a0be33364dbf6226cc231f56fdf341f12">mNanHandling</a> == <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea997c2713f8ffe470834e6ccdb45576f8">nhNone</a>;</div>
+<div class="line"><a id="l16768" name="l16768"></a><span class="lineno">16768</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> posToIndexFactor = !logarithmic ? (<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>-1)/range.<a class="code hl_function" href="class_q_c_p_range.html#a62326e7cc4316b96df6a60813230e63f">size</a>() : (<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>-1)/qLn(range.<a class="code hl_variable" href="class_q_c_p_range.html#ae44eb3aafe1d0e2ed34b499b6d2e074f">upper</a>/range.<a class="code hl_variable" href="class_q_c_p_range.html#aa3aca3edb14f7ca0c85d912647b91745">lower</a>);</div>
+<div class="line"><a id="l16769" name="l16769"></a><span class="lineno">16769</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;n; ++i)</div>
+<div class="line"><a id="l16770" name="l16770"></a><span class="lineno">16770</span>  {</div>
+<div class="line"><a id="l16771" name="l16771"></a><span class="lineno">16771</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> value = data[dataIndexFactor*i];</div>
+<div class="line"><a id="l16772" name="l16772"></a><span class="lineno">16772</span>    <span class="keywordflow">if</span> (skipNanCheck || !std::isnan(value))</div>
+<div class="line"><a id="l16773" name="l16773"></a><span class="lineno">16773</span>    {</div>
+<div class="line"><a id="l16774" name="l16774"></a><span class="lineno">16774</span>      <span class="keywordtype">int</span> index = int((!logarithmic ? value-range.<a class="code hl_variable" href="class_q_c_p_range.html#aa3aca3edb14f7ca0c85d912647b91745">lower</a> : qLn(value/range.<a class="code hl_variable" href="class_q_c_p_range.html#aa3aca3edb14f7ca0c85d912647b91745">lower</a>)) * posToIndexFactor);</div>
+<div class="line"><a id="l16775" name="l16775"></a><span class="lineno">16775</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a4b07deeb20ca1ee2d5ea7e01bf0420af">mPeriodic</a>)</div>
+<div class="line"><a id="l16776" name="l16776"></a><span class="lineno">16776</span>      {</div>
+<div class="line"><a id="l16777" name="l16777"></a><span class="lineno">16777</span>        index = qBound(0, index, <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>-1);</div>
+<div class="line"><a id="l16778" name="l16778"></a><span class="lineno">16778</span>      } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l16779" name="l16779"></a><span class="lineno">16779</span>      {</div>
+<div class="line"><a id="l16780" name="l16780"></a><span class="lineno">16780</span>        index %= <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>;</div>
+<div class="line"><a id="l16781" name="l16781"></a><span class="lineno">16781</span>        <span class="keywordflow">if</span> (index &lt; 0)</div>
+<div class="line"><a id="l16782" name="l16782"></a><span class="lineno">16782</span>          index += <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>;</div>
+<div class="line"><a id="l16783" name="l16783"></a><span class="lineno">16783</span>      }</div>
+<div class="line"><a id="l16784" name="l16784"></a><span class="lineno">16784</span>      <span class="keywordflow">if</span> (alpha[dataIndexFactor*i] == 255)</div>
+<div class="line"><a id="l16785" name="l16785"></a><span class="lineno">16785</span>      {</div>
+<div class="line"><a id="l16786" name="l16786"></a><span class="lineno">16786</span>        scanLine[i] = <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>.at(index);</div>
+<div class="line"><a id="l16787" name="l16787"></a><span class="lineno">16787</span>      } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l16788" name="l16788"></a><span class="lineno">16788</span>      {</div>
+<div class="line"><a id="l16789" name="l16789"></a><span class="lineno">16789</span>        <span class="keyword">const</span> QRgb rgb = <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>.at(index);</div>
+<div class="line"><a id="l16790" name="l16790"></a><span class="lineno">16790</span>        <span class="keyword">const</span> <span class="keywordtype">float</span> alphaF = alpha[dataIndexFactor*i]/255.0f;</div>
+<div class="line"><a id="l16791" name="l16791"></a><span class="lineno">16791</span>        scanLine[i] = qRgba(<span class="keywordtype">int</span>(qRed(rgb)*alphaF), <span class="keywordtype">int</span>(qGreen(rgb)*alphaF), <span class="keywordtype">int</span>(qBlue(rgb)*alphaF), <span class="keywordtype">int</span>(qAlpha(rgb)*alphaF)); <span class="comment">// also multiply r,g,b with alpha, to conform to Format_ARGB32_Premultiplied</span></div>
+<div class="line"><a id="l16792" name="l16792"></a><span class="lineno">16792</span>      }</div>
+<div class="line"><a id="l16793" name="l16793"></a><span class="lineno">16793</span>    } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l16794" name="l16794"></a><span class="lineno">16794</span>    {</div>
+<div class="line"><a id="l16795" name="l16795"></a><span class="lineno">16795</span>      <span class="keywordflow">switch</span>(<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a0be33364dbf6226cc231f56fdf341f12">mNanHandling</a>)</div>
+<div class="line"><a id="l16796" name="l16796"></a><span class="lineno">16796</span>      {</div>
+<div class="line"><a id="l16797" name="l16797"></a><span class="lineno">16797</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea8a0f1857151baf1aab0f1bc5c8a2b73f">nhLowestColor</a>: scanLine[i] = <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>.first(); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16798" name="l16798"></a><span class="lineno">16798</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea1f1fec8678f690bdb2a437661beba24e">nhHighestColor</a>: scanLine[i] = <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>.last(); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16799" name="l16799"></a><span class="lineno">16799</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea6abad803991346258fe0270ba24c2172">nhTransparent</a>: scanLine[i] = qRgba(0, 0, 0, 0); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16800" name="l16800"></a><span class="lineno">16800</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7eab2eff641b22417f165f4c1f5973aaf9b">nhNanColor</a>: scanLine[i] = <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a719b2c3edff4b0e38271edb909b81490">mNanColor</a>.rgba(); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16801" name="l16801"></a><span class="lineno">16801</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7ea997c2713f8ffe470834e6ccdb45576f8">nhNone</a>: <span class="keywordflow">break</span>; <span class="comment">// shouldn&#39;t happen</span></div>
+<div class="line"><a id="l16802" name="l16802"></a><span class="lineno">16802</span>      }</div>
+<div class="line"><a id="l16803" name="l16803"></a><span class="lineno">16803</span>    }</div>
+<div class="line"><a id="l16804" name="l16804"></a><span class="lineno">16804</span>  }</div>
+<div class="line"><a id="l16805" name="l16805"></a><span class="lineno">16805</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a62e423a8012169dfe1234df1f7463bd1" name="a62e423a8012169dfe1234df1f7463bd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62e423a8012169dfe1234df1f7463bd1">&#9670;&nbsp;</a></span>colorStops()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt; double, QColor &gt; QCPColorGradient::colorStops </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l04768" name="l04768"></a><span class="lineno"> 4768</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9f72f501de429829ec446333316decda" name="a9f72f501de429829ec446333316decda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f72f501de429829ec446333316decda">&#9670;&nbsp;</a></span>inverted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_c_p_color_gradient.html">QCPColorGradient</a> QCPColorGradient::inverted </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Returns an inverted gradient. The inverted gradient has all properties as this <a class="el" href="class_q_c_p_color_gradient.html">QCPColorGradient</a>, but the order of the color stops is inverted.</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_q_c_p_color_gradient.html#a724e828aa6f0ba5011a9392477c35d3a">setColorStops</a>, <a class="el" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a> </dd></dl>
+<div class="fragment"><div class="line"><a id="l16981" name="l16981"></a><span class="lineno">16981</span>{</div>
+<div class="line"><a id="l16982" name="l16982"></a><span class="lineno">16982</span>  <a class="code hl_class" href="class_q_c_p_color_gradient.html">QCPColorGradient</a> result(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l16983" name="l16983"></a><span class="lineno">16983</span>  result.clearColorStops();</div>
+<div class="line"><a id="l16984" name="l16984"></a><span class="lineno">16984</span>  <span class="keywordflow">for</span> (QMap&lt;double, QColor&gt;::const_iterator it=<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a>.constBegin(); it!=<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a>.constEnd(); ++it)</div>
+<div class="line"><a id="l16985" name="l16985"></a><span class="lineno">16985</span>    result.setColorStopAt(1.0-it.key(), it.value());</div>
+<div class="line"><a id="l16986" name="l16986"></a><span class="lineno">16986</span>  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l16987" name="l16987"></a><span class="lineno">16987</span>}</div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html"><div class="ttname"><a href="class_q_c_p_color_gradient.html">QCPColorGradient</a></div><div class="ttdoc">Defines a color gradient for use with e.g. QCPColorMap.</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4716</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac4b9d7034fc3b6c76318b05075367090" name="ac4b9d7034fc3b6c76318b05075367090"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4b9d7034fc3b6c76318b05075367090">&#9670;&nbsp;</a></span>levelCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QCPColorGradient::levelCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l04767" name="l04767"></a><span class="lineno"> 4767</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa0aeec1528241728b9671bf8e60b1622" name="aa0aeec1528241728b9671bf8e60b1622"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0aeec1528241728b9671bf8e60b1622">&#9670;&nbsp;</a></span>loadPreset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPColorGradient::loadPreset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072">GradientPreset</a>&#160;</td>
+          <td class="paramname"><em>preset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Clears the current color stops and loads the specified <em>preset</em>. A preset consists of predefined color stops and the corresponding color interpolation method.</p>
+<p >The available presets are: </p><div class="image">
+<img src="QCPColorGradient.png" alt=""/>
+</div>
+ <div class="fragment"><div class="line"><a id="l16860" name="l16860"></a><span class="lineno">16860</span>{</div>
+<div class="line"><a id="l16861" name="l16861"></a><span class="lineno">16861</span>  <a class="code hl_function" href="class_q_c_p_color_gradient.html#a939213e85f0d1279519d555c5fcfb6ad">clearColorStops</a>();</div>
+<div class="line"><a id="l16862" name="l16862"></a><span class="lineno">16862</span>  <span class="keywordflow">switch</span> (preset)</div>
+<div class="line"><a id="l16863" name="l16863"></a><span class="lineno">16863</span>  {</div>
+<div class="line"><a id="l16864" name="l16864"></a><span class="lineno">16864</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb">gpGrayscale</a>:</div>
+<div class="line"><a id="l16865" name="l16865"></a><span class="lineno">16865</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>(<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7">ciRGB</a>);</div>
+<div class="line"><a id="l16866" name="l16866"></a><span class="lineno">16866</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0, Qt::black);</div>
+<div class="line"><a id="l16867" name="l16867"></a><span class="lineno">16867</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(1, Qt::white);</div>
+<div class="line"><a id="l16868" name="l16868"></a><span class="lineno">16868</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16869" name="l16869"></a><span class="lineno">16869</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5">gpHot</a>:</div>
+<div class="line"><a id="l16870" name="l16870"></a><span class="lineno">16870</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>(<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7">ciRGB</a>);</div>
+<div class="line"><a id="l16871" name="l16871"></a><span class="lineno">16871</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0, QColor(50, 0, 0));</div>
+<div class="line"><a id="l16872" name="l16872"></a><span class="lineno">16872</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.2, QColor(180, 10, 0));</div>
+<div class="line"><a id="l16873" name="l16873"></a><span class="lineno">16873</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.4, QColor(245, 50, 0));</div>
+<div class="line"><a id="l16874" name="l16874"></a><span class="lineno">16874</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.6, QColor(255, 150, 10));</div>
+<div class="line"><a id="l16875" name="l16875"></a><span class="lineno">16875</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.8, QColor(255, 255, 50));</div>
+<div class="line"><a id="l16876" name="l16876"></a><span class="lineno">16876</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(1, QColor(255, 255, 255));</div>
+<div class="line"><a id="l16877" name="l16877"></a><span class="lineno">16877</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16878" name="l16878"></a><span class="lineno">16878</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557">gpCold</a>:</div>
+<div class="line"><a id="l16879" name="l16879"></a><span class="lineno">16879</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>(<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7">ciRGB</a>);</div>
+<div class="line"><a id="l16880" name="l16880"></a><span class="lineno">16880</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0, QColor(0, 0, 50));</div>
+<div class="line"><a id="l16881" name="l16881"></a><span class="lineno">16881</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.2, QColor(0, 10, 180));</div>
+<div class="line"><a id="l16882" name="l16882"></a><span class="lineno">16882</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.4, QColor(0, 50, 245));</div>
+<div class="line"><a id="l16883" name="l16883"></a><span class="lineno">16883</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.6, QColor(10, 150, 255));</div>
+<div class="line"><a id="l16884" name="l16884"></a><span class="lineno">16884</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.8, QColor(50, 255, 255));</div>
+<div class="line"><a id="l16885" name="l16885"></a><span class="lineno">16885</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(1, QColor(255, 255, 255));</div>
+<div class="line"><a id="l16886" name="l16886"></a><span class="lineno">16886</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16887" name="l16887"></a><span class="lineno">16887</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a1bb89351b6def7d220973443fe059c62">gpNight</a>:</div>
+<div class="line"><a id="l16888" name="l16888"></a><span class="lineno">16888</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>(<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb">ciHSV</a>);</div>
+<div class="line"><a id="l16889" name="l16889"></a><span class="lineno">16889</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0, QColor(10, 20, 30));</div>
+<div class="line"><a id="l16890" name="l16890"></a><span class="lineno">16890</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(1, QColor(250, 255, 250));</div>
+<div class="line"><a id="l16891" name="l16891"></a><span class="lineno">16891</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16892" name="l16892"></a><span class="lineno">16892</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a9e72663bf6b94b65945f7843f24e0721">gpCandy</a>:</div>
+<div class="line"><a id="l16893" name="l16893"></a><span class="lineno">16893</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>(<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb">ciHSV</a>);</div>
+<div class="line"><a id="l16894" name="l16894"></a><span class="lineno">16894</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0, QColor(0, 0, 255));</div>
+<div class="line"><a id="l16895" name="l16895"></a><span class="lineno">16895</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(1, QColor(255, 250, 250));</div>
+<div class="line"><a id="l16896" name="l16896"></a><span class="lineno">16896</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16897" name="l16897"></a><span class="lineno">16897</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a382f0b07cec1a59d8a533438aea815d2">gpGeography</a>:</div>
+<div class="line"><a id="l16898" name="l16898"></a><span class="lineno">16898</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>(<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7">ciRGB</a>);</div>
+<div class="line"><a id="l16899" name="l16899"></a><span class="lineno">16899</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0, QColor(70, 170, 210));</div>
+<div class="line"><a id="l16900" name="l16900"></a><span class="lineno">16900</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.20, QColor(90, 160, 180));</div>
+<div class="line"><a id="l16901" name="l16901"></a><span class="lineno">16901</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.25, QColor(45, 130, 175));</div>
+<div class="line"><a id="l16902" name="l16902"></a><span class="lineno">16902</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.30, QColor(100, 140, 125));</div>
+<div class="line"><a id="l16903" name="l16903"></a><span class="lineno">16903</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.5, QColor(100, 140, 100));</div>
+<div class="line"><a id="l16904" name="l16904"></a><span class="lineno">16904</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.6, QColor(130, 145, 120));</div>
+<div class="line"><a id="l16905" name="l16905"></a><span class="lineno">16905</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.7, QColor(140, 130, 120));</div>
+<div class="line"><a id="l16906" name="l16906"></a><span class="lineno">16906</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.9, QColor(180, 190, 190));</div>
+<div class="line"><a id="l16907" name="l16907"></a><span class="lineno">16907</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(1, QColor(210, 210, 230));</div>
+<div class="line"><a id="l16908" name="l16908"></a><span class="lineno">16908</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16909" name="l16909"></a><span class="lineno">16909</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a4297f4f9e212a819cd65e8e34567182b">gpIon</a>:</div>
+<div class="line"><a id="l16910" name="l16910"></a><span class="lineno">16910</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>(<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb">ciHSV</a>);</div>
+<div class="line"><a id="l16911" name="l16911"></a><span class="lineno">16911</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0, QColor(50, 10, 10));</div>
+<div class="line"><a id="l16912" name="l16912"></a><span class="lineno">16912</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.45, QColor(0, 0, 255));</div>
+<div class="line"><a id="l16913" name="l16913"></a><span class="lineno">16913</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.8, QColor(0, 255, 255));</div>
+<div class="line"><a id="l16914" name="l16914"></a><span class="lineno">16914</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(1, QColor(0, 255, 0));</div>
+<div class="line"><a id="l16915" name="l16915"></a><span class="lineno">16915</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16916" name="l16916"></a><span class="lineno">16916</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072af1676b129f9f458ace453f280c731cf7">gpThermal</a>:</div>
+<div class="line"><a id="l16917" name="l16917"></a><span class="lineno">16917</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>(<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7">ciRGB</a>);</div>
+<div class="line"><a id="l16918" name="l16918"></a><span class="lineno">16918</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0, QColor(0, 0, 50));</div>
+<div class="line"><a id="l16919" name="l16919"></a><span class="lineno">16919</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.15, QColor(20, 0, 120));</div>
+<div class="line"><a id="l16920" name="l16920"></a><span class="lineno">16920</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.33, QColor(200, 30, 140));</div>
+<div class="line"><a id="l16921" name="l16921"></a><span class="lineno">16921</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.6, QColor(255, 100, 0));</div>
+<div class="line"><a id="l16922" name="l16922"></a><span class="lineno">16922</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.85, QColor(255, 255, 40));</div>
+<div class="line"><a id="l16923" name="l16923"></a><span class="lineno">16923</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(1, QColor(255, 255, 255));</div>
+<div class="line"><a id="l16924" name="l16924"></a><span class="lineno">16924</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16925" name="l16925"></a><span class="lineno">16925</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072ab7414ce4e36dc3e82e0132a7f0f41b52">gpPolar</a>:</div>
+<div class="line"><a id="l16926" name="l16926"></a><span class="lineno">16926</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>(<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7">ciRGB</a>);</div>
+<div class="line"><a id="l16927" name="l16927"></a><span class="lineno">16927</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0, QColor(50, 255, 255));</div>
+<div class="line"><a id="l16928" name="l16928"></a><span class="lineno">16928</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.18, QColor(10, 70, 255));</div>
+<div class="line"><a id="l16929" name="l16929"></a><span class="lineno">16929</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.28, QColor(10, 10, 190));</div>
+<div class="line"><a id="l16930" name="l16930"></a><span class="lineno">16930</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.5, QColor(0, 0, 0));</div>
+<div class="line"><a id="l16931" name="l16931"></a><span class="lineno">16931</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.72, QColor(190, 10, 10));</div>
+<div class="line"><a id="l16932" name="l16932"></a><span class="lineno">16932</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.82, QColor(255, 70, 10));</div>
+<div class="line"><a id="l16933" name="l16933"></a><span class="lineno">16933</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(1, QColor(255, 255, 50));</div>
+<div class="line"><a id="l16934" name="l16934"></a><span class="lineno">16934</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16935" name="l16935"></a><span class="lineno">16935</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072ad63adc100ef46f6b4a8a6deacec4642f">gpSpectrum</a>:</div>
+<div class="line"><a id="l16936" name="l16936"></a><span class="lineno">16936</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>(<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb">ciHSV</a>);</div>
+<div class="line"><a id="l16937" name="l16937"></a><span class="lineno">16937</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0, QColor(50, 0, 50));</div>
+<div class="line"><a id="l16938" name="l16938"></a><span class="lineno">16938</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.15, QColor(0, 0, 255));</div>
+<div class="line"><a id="l16939" name="l16939"></a><span class="lineno">16939</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.35, QColor(0, 255, 255));</div>
+<div class="line"><a id="l16940" name="l16940"></a><span class="lineno">16940</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.6, QColor(255, 255, 0));</div>
+<div class="line"><a id="l16941" name="l16941"></a><span class="lineno">16941</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.75, QColor(255, 30, 0));</div>
+<div class="line"><a id="l16942" name="l16942"></a><span class="lineno">16942</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(1, QColor(50, 0, 0));</div>
+<div class="line"><a id="l16943" name="l16943"></a><span class="lineno">16943</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16944" name="l16944"></a><span class="lineno">16944</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a5f8a9e67b64c17ddfe4f069fe2b9fb02">gpJet</a>:</div>
+<div class="line"><a id="l16945" name="l16945"></a><span class="lineno">16945</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>(<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7">ciRGB</a>);</div>
+<div class="line"><a id="l16946" name="l16946"></a><span class="lineno">16946</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0, QColor(0, 0, 100));</div>
+<div class="line"><a id="l16947" name="l16947"></a><span class="lineno">16947</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.15, QColor(0, 50, 255));</div>
+<div class="line"><a id="l16948" name="l16948"></a><span class="lineno">16948</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.35, QColor(0, 255, 255));</div>
+<div class="line"><a id="l16949" name="l16949"></a><span class="lineno">16949</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.65, QColor(255, 255, 0));</div>
+<div class="line"><a id="l16950" name="l16950"></a><span class="lineno">16950</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0.85, QColor(255, 30, 0));</div>
+<div class="line"><a id="l16951" name="l16951"></a><span class="lineno">16951</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(1, QColor(100, 0, 0));</div>
+<div class="line"><a id="l16952" name="l16952"></a><span class="lineno">16952</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16953" name="l16953"></a><span class="lineno">16953</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130">gpHues</a>:</div>
+<div class="line"><a id="l16954" name="l16954"></a><span class="lineno">16954</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>(<a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb">ciHSV</a>);</div>
+<div class="line"><a id="l16955" name="l16955"></a><span class="lineno">16955</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(0, QColor(255, 0, 0));</div>
+<div class="line"><a id="l16956" name="l16956"></a><span class="lineno">16956</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(1.0/3.0, QColor(0, 0, 255));</div>
+<div class="line"><a id="l16957" name="l16957"></a><span class="lineno">16957</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(2.0/3.0, QColor(0, 255, 0));</div>
+<div class="line"><a id="l16958" name="l16958"></a><span class="lineno">16958</span>      <a class="code hl_function" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>(1, QColor(255, 0, 0));</div>
+<div class="line"><a id="l16959" name="l16959"></a><span class="lineno">16959</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l16960" name="l16960"></a><span class="lineno">16960</span>  }</div>
+<div class="line"><a id="l16961" name="l16961"></a><span class="lineno">16961</span>}</div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_a3b48be5e78079db1bb2a1188a4c3390e"><div class="ttname"><a href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">QCPColorGradient::setColorStopAt</a></div><div class="ttdeci">void setColorStopAt(double position, const QColor &amp;color)</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:16609</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_a939213e85f0d1279519d555c5fcfb6ad"><div class="ttname"><a href="class_q_c_p_color_gradient.html#a939213e85f0d1279519d555c5fcfb6ad">QCPColorGradient::clearColorStops</a></div><div class="ttdeci">void clearColorStops()</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:16968</div></div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_aa13fda86406e1d896a465a409ae63b38"><div class="ttname"><a href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">QCPColorGradient::setColorInterpolation</a></div><div class="ttdeci">void setColorInterpolation(ColorInterpolation interpolation)</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:16622</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a057a02669d4f9977e7299e74f439715b" name="a057a02669d4f9977e7299e74f439715b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a057a02669d4f9977e7299e74f439715b">&#9670;&nbsp;</a></span>nanColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor QCPColorGradient::nanColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l04771" name="l04771"></a><span class="lineno"> 4771</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a719b2c3edff4b0e38271edb909b81490">mNanColor</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9db4d379cc88e61f881cdbc5b63da0cd" name="a9db4d379cc88e61f881cdbc5b63da0cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9db4d379cc88e61f881cdbc5b63da0cd">&#9670;&nbsp;</a></span>nanHandling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7e">NanHandling</a> QCPColorGradient::nanHandling </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l04770" name="l04770"></a><span class="lineno"> 4770</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a0be33364dbf6226cc231f56fdf341f12">mNanHandling</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad26a10e3beaef4fc6f2553d1a9756087" name="ad26a10e3beaef4fc6f2553d1a9756087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad26a10e3beaef4fc6f2553d1a9756087">&#9670;&nbsp;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QCPColorGradient::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_q_c_p_color_gradient.html">QCPColorGradient</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l04764" name="l04764"></a><span class="lineno"> 4764</span>{ <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == other); }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7f3478c33c59aa3c03b9ea1f809877fa" name="a7f3478c33c59aa3c03b9ea1f809877fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f3478c33c59aa3c03b9ea1f809877fa">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QCPColorGradient::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_q_c_p_color_gradient.html">QCPColorGradient</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l16557" name="l16557"></a><span class="lineno">16557</span>{</div>
+<div class="line"><a id="l16558" name="l16558"></a><span class="lineno">16558</span>  <span class="keywordflow">return</span> ((other.<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a> == this-&gt;mLevelCount) &amp;&amp;</div>
+<div class="line"><a id="l16559" name="l16559"></a><span class="lineno">16559</span>          (other.<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a028cef73d863800a9ee93ffd641cce01">mColorInterpolation</a> == this-&gt;mColorInterpolation) &amp;&amp;</div>
+<div class="line"><a id="l16560" name="l16560"></a><span class="lineno">16560</span>          (other.<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a0be33364dbf6226cc231f56fdf341f12">mNanHandling</a> == this -&gt;mNanHandling) &amp;&amp;</div>
+<div class="line"><a id="l16561" name="l16561"></a><span class="lineno">16561</span>          (other.<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a719b2c3edff4b0e38271edb909b81490">mNanColor</a> == this-&gt;mNanColor) &amp;&amp;</div>
+<div class="line"><a id="l16562" name="l16562"></a><span class="lineno">16562</span>          (other.<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a4b07deeb20ca1ee2d5ea7e01bf0420af">mPeriodic</a> == this-&gt;mPeriodic) &amp;&amp;</div>
+<div class="line"><a id="l16563" name="l16563"></a><span class="lineno">16563</span>          (other.<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a> == this-&gt;mColorStops));</div>
+<div class="line"><a id="l16564" name="l16564"></a><span class="lineno">16564</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a22a1d2b17f203caf0dcec833507fb9e0" name="a22a1d2b17f203caf0dcec833507fb9e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22a1d2b17f203caf0dcec833507fb9e0">&#9670;&nbsp;</a></span>periodic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QCPColorGradient::periodic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l04772" name="l04772"></a><span class="lineno"> 4772</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a4b07deeb20ca1ee2d5ea7e01bf0420af">mPeriodic</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa13fda86406e1d896a465a409ae63b38" name="aa13fda86406e1d896a465a409ae63b38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa13fda86406e1d896a465a409ae63b38">&#9670;&nbsp;</a></span>setColorInterpolation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPColorGradient::setColorInterpolation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1">QCPColorGradient::ColorInterpolation</a>&#160;</td>
+          <td class="paramname"><em>interpolation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets whether the colors in between the configured color stops (see <a class="el" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>) shall be interpolated linearly in RGB or in HSV color space.</p>
+<p >For example, a sweep in RGB space from red to green will have a muddy brown intermediate color, whereas in HSV space the intermediate color is yellow. </p>
+<div class="fragment"><div class="line"><a id="l16623" name="l16623"></a><span class="lineno">16623</span>{</div>
+<div class="line"><a id="l16624" name="l16624"></a><span class="lineno">16624</span>  <span class="keywordflow">if</span> (interpolation != <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a028cef73d863800a9ee93ffd641cce01">mColorInterpolation</a>)</div>
+<div class="line"><a id="l16625" name="l16625"></a><span class="lineno">16625</span>  {</div>
+<div class="line"><a id="l16626" name="l16626"></a><span class="lineno">16626</span>    <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a028cef73d863800a9ee93ffd641cce01">mColorInterpolation</a> = interpolation;</div>
+<div class="line"><a id="l16627" name="l16627"></a><span class="lineno">16627</span>    <a class="code hl_variable" href="class_q_c_p_color_gradient.html#abacf55e11f67d6722a687af1bb2687bd">mColorBufferInvalidated</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l16628" name="l16628"></a><span class="lineno">16628</span>  }</div>
+<div class="line"><a id="l16629" name="l16629"></a><span class="lineno">16629</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3b48be5e78079db1bb2a1188a4c3390e" name="a3b48be5e78079db1bb2a1188a4c3390e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b48be5e78079db1bb2a1188a4c3390e">&#9670;&nbsp;</a></span>setColorStopAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPColorGradient::setColorStopAt </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QColor &amp;&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets the <em>color</em> the gradient will have at the specified <em>position</em> (from 0 to 1). In between these color stops, the color is interpolated according to <a class="el" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>.</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_q_c_p_color_gradient.html#a724e828aa6f0ba5011a9392477c35d3a">setColorStops</a>, <a class="el" href="class_q_c_p_color_gradient.html#a939213e85f0d1279519d555c5fcfb6ad">clearColorStops</a> </dd></dl>
+<div class="fragment"><div class="line"><a id="l16610" name="l16610"></a><span class="lineno">16610</span>{</div>
+<div class="line"><a id="l16611" name="l16611"></a><span class="lineno">16611</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a>.insert(position, <a class="code hl_function" href="class_q_c_p_color_gradient.html#a0599545c859268b025d2060dea741cea">color</a>);</div>
+<div class="line"><a id="l16612" name="l16612"></a><span class="lineno">16612</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#abacf55e11f67d6722a687af1bb2687bd">mColorBufferInvalidated</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l16613" name="l16613"></a><span class="lineno">16613</span>}</div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_a0599545c859268b025d2060dea741cea"><div class="ttname"><a href="class_q_c_p_color_gradient.html#a0599545c859268b025d2060dea741cea">QCPColorGradient::color</a></div><div class="ttdeci">QRgb color(double position, const QCPRange &amp;range, bool logarithmic=false)</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:16819</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a724e828aa6f0ba5011a9392477c35d3a" name="a724e828aa6f0ba5011a9392477c35d3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a724e828aa6f0ba5011a9392477c35d3a">&#9670;&nbsp;</a></span>setColorStops()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPColorGradient::setColorStops </td>
+          <td>(</td>
+          <td class="paramtype">const QMap&lt; double, QColor &gt; &amp;&#160;</td>
+          <td class="paramname"><em>colorStops</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets at which positions from 0 to 1 which color shall occur. The positions are the keys, the colors are the values of the passed QMap <em>colorStops</em>. In between these color stops, the color is interpolated according to <a class="el" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>.</p>
+<p >A more convenient way to create a custom gradient may be to clear all color stops with <a class="el" href="class_q_c_p_color_gradient.html#a939213e85f0d1279519d555c5fcfb6ad">clearColorStops</a> (or creating a new, empty <a class="el" href="class_q_c_p_color_gradient.html" title="Defines a color gradient for use with e.g. QCPColorMap.">QCPColorGradient</a>) and then adding them one by one with <a class="el" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>.</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_q_c_p_color_gradient.html#a939213e85f0d1279519d555c5fcfb6ad">clearColorStops</a> </dd></dl>
+<div class="fragment"><div class="line"><a id="l16598" name="l16598"></a><span class="lineno">16598</span>{</div>
+<div class="line"><a id="l16599" name="l16599"></a><span class="lineno">16599</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a> = <a class="code hl_function" href="class_q_c_p_color_gradient.html#a62e423a8012169dfe1234df1f7463bd1">colorStops</a>;</div>
+<div class="line"><a id="l16600" name="l16600"></a><span class="lineno">16600</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#abacf55e11f67d6722a687af1bb2687bd">mColorBufferInvalidated</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l16601" name="l16601"></a><span class="lineno">16601</span>}</div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_a62e423a8012169dfe1234df1f7463bd1"><div class="ttname"><a href="class_q_c_p_color_gradient.html#a62e423a8012169dfe1234df1f7463bd1">QCPColorGradient::colorStops</a></div><div class="ttdeci">QMap&lt; double, QColor &gt; colorStops() const</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:4768</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a18da587eb4f7fc788ea28ba15b6a12de" name="a18da587eb4f7fc788ea28ba15b6a12de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18da587eb4f7fc788ea28ba15b6a12de">&#9670;&nbsp;</a></span>setLevelCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPColorGradient::setLevelCount </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets the number of discretization levels of the color gradient to <em>n</em>. The default is 350 which is typically enough to create a smooth appearance. The minimum number of levels is 2.</p>
+<div class="image">
+<img src="QCPColorGradient-levelcount.png" alt=""/>
+</div>
+ <div class="fragment"><div class="line"><a id="l16573" name="l16573"></a><span class="lineno">16573</span>{</div>
+<div class="line"><a id="l16574" name="l16574"></a><span class="lineno">16574</span>  <span class="keywordflow">if</span> (n &lt; 2)</div>
+<div class="line"><a id="l16575" name="l16575"></a><span class="lineno">16575</span>  {</div>
+<div class="line"><a id="l16576" name="l16576"></a><span class="lineno">16576</span>    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;n must be greater or equal 2 but was&quot;</span> &lt;&lt; n;</div>
+<div class="line"><a id="l16577" name="l16577"></a><span class="lineno">16577</span>    n = 2;</div>
+<div class="line"><a id="l16578" name="l16578"></a><span class="lineno">16578</span>  }</div>
+<div class="line"><a id="l16579" name="l16579"></a><span class="lineno">16579</span>  <span class="keywordflow">if</span> (n != <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>)</div>
+<div class="line"><a id="l16580" name="l16580"></a><span class="lineno">16580</span>  {</div>
+<div class="line"><a id="l16581" name="l16581"></a><span class="lineno">16581</span>    <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a> = n;</div>
+<div class="line"><a id="l16582" name="l16582"></a><span class="lineno">16582</span>    <a class="code hl_variable" href="class_q_c_p_color_gradient.html#abacf55e11f67d6722a687af1bb2687bd">mColorBufferInvalidated</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l16583" name="l16583"></a><span class="lineno">16583</span>  }</div>
+<div class="line"><a id="l16584" name="l16584"></a><span class="lineno">16584</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abb1c11bdd1701c66e573aaff593c5c2d" name="abb1c11bdd1701c66e573aaff593c5c2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb1c11bdd1701c66e573aaff593c5c2d">&#9670;&nbsp;</a></span>setNanColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPColorGradient::setNanColor </td>
+          <td>(</td>
+          <td class="paramtype">const QColor &amp;&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets the color that NaN data is represented by, if <a class="el" href="class_q_c_p_color_gradient.html#a0ba44c2c0af3ffe917a68eef1678b71f">setNanHandling</a> is set to ref nhNanColor.</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_q_c_p_color_gradient.html#a0ba44c2c0af3ffe917a68eef1678b71f">setNanHandling</a> </dd></dl>
+<div class="fragment"><div class="line"><a id="l16648" name="l16648"></a><span class="lineno">16648</span>{</div>
+<div class="line"><a id="l16649" name="l16649"></a><span class="lineno">16649</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a719b2c3edff4b0e38271edb909b81490">mNanColor</a> = <a class="code hl_function" href="class_q_c_p_color_gradient.html#a0599545c859268b025d2060dea741cea">color</a>;</div>
+<div class="line"><a id="l16650" name="l16650"></a><span class="lineno">16650</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0ba44c2c0af3ffe917a68eef1678b71f" name="a0ba44c2c0af3ffe917a68eef1678b71f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ba44c2c0af3ffe917a68eef1678b71f">&#9670;&nbsp;</a></span>setNanHandling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPColorGradient::setNanHandling </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7e">QCPColorGradient::NanHandling</a>&#160;</td>
+          <td class="paramname"><em>handling</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets how NaNs in the data are displayed in the plot.</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_q_c_p_color_gradient.html#abb1c11bdd1701c66e573aaff593c5c2d">setNanColor</a> </dd></dl>
+<div class="fragment"><div class="line"><a id="l16637" name="l16637"></a><span class="lineno">16637</span>{</div>
+<div class="line"><a id="l16638" name="l16638"></a><span class="lineno">16638</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a0be33364dbf6226cc231f56fdf341f12">mNanHandling</a> = handling;</div>
+<div class="line"><a id="l16639" name="l16639"></a><span class="lineno">16639</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a39d6448155fc00a219f239220d14bb39" name="a39d6448155fc00a219f239220d14bb39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39d6448155fc00a219f239220d14bb39">&#9670;&nbsp;</a></span>setPeriodic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPColorGradient::setPeriodic </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enabled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets whether data points that are outside the configured data range (e.g. <a class="el" href="class_q_c_p_color_map.html#a980b42837821159786a85b4b7dcb8774">QCPColorMap::setDataRange</a>) are colored by periodically repeating the color gradient or whether they all have the same color, corresponding to the respective gradient boundary color.</p>
+<div class="image">
+<img src="QCPColorGradient-periodic.png" alt=""/>
+</div>
+<p >As shown in the image above, gradients that have the same start and end color are especially suitable for a periodic gradient mapping, since they produce smooth color transitions throughout the color map. A preset that has this property is <a class="el" href="class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130">gpHues</a>.</p>
+<p >In practice, using periodic color gradients makes sense when the data corresponds to a periodic dimension, such as an angle or a phase. If this is not the case, the color encoding might become ambiguous, because multiple different data values are shown as the same color. </p>
+<div class="fragment"><div class="line"><a id="l16668" name="l16668"></a><span class="lineno">16668</span>{</div>
+<div class="line"><a id="l16669" name="l16669"></a><span class="lineno">16669</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a4b07deeb20ca1ee2d5ea7e01bf0420af">mPeriodic</a> = enabled;</div>
+<div class="line"><a id="l16670" name="l16670"></a><span class="lineno">16670</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a137b368ea8829a871974add6e4883c71" name="a137b368ea8829a871974add6e4883c71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a137b368ea8829a871974add6e4883c71">&#9670;&nbsp;</a></span>stopsUseAlpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QCPColorGradient::stopsUseAlpha </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l16995" name="l16995"></a><span class="lineno">16995</span>{</div>
+<div class="line"><a id="l16996" name="l16996"></a><span class="lineno">16996</span>  <span class="keywordflow">for</span> (QMap&lt;double, QColor&gt;::const_iterator it=<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a>.constBegin(); it!=<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a>.constEnd(); ++it)</div>
+<div class="line"><a id="l16997" name="l16997"></a><span class="lineno">16997</span>  {</div>
+<div class="line"><a id="l16998" name="l16998"></a><span class="lineno">16998</span>    <span class="keywordflow">if</span> (it.value().alpha() &lt; 255)</div>
+<div class="line"><a id="l16999" name="l16999"></a><span class="lineno">16999</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l17000" name="l17000"></a><span class="lineno">17000</span>  }</div>
+<div class="line"><a id="l17001" name="l17001"></a><span class="lineno">17001</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l17002" name="l17002"></a><span class="lineno">17002</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a353f15ab3ab586eebf1f6b58c3e2707b" name="a353f15ab3ab586eebf1f6b58c3e2707b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a353f15ab3ab586eebf1f6b58c3e2707b">&#9670;&nbsp;</a></span>updateColorBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPColorGradient::updateColorBuffer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l17010" name="l17010"></a><span class="lineno">17010</span>{</div>
+<div class="line"><a id="l17011" name="l17011"></a><span class="lineno">17011</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>.size() != <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>)</div>
+<div class="line"><a id="l17012" name="l17012"></a><span class="lineno">17012</span>    <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>.resize(<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>);</div>
+<div class="line"><a id="l17013" name="l17013"></a><span class="lineno">17013</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a>.size() &gt; 1)</div>
+<div class="line"><a id="l17014" name="l17014"></a><span class="lineno">17014</span>  {</div>
+<div class="line"><a id="l17015" name="l17015"></a><span class="lineno">17015</span>    <span class="keywordtype">double</span> indexToPosFactor = 1.0/double(<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>-1);</div>
+<div class="line"><a id="l17016" name="l17016"></a><span class="lineno">17016</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> useAlpha = <a class="code hl_function" href="class_q_c_p_color_gradient.html#a137b368ea8829a871974add6e4883c71">stopsUseAlpha</a>();</div>
+<div class="line"><a id="l17017" name="l17017"></a><span class="lineno">17017</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a98fb68e359904b2c991fcae3e38a211a">mLevelCount</a>; ++i)</div>
+<div class="line"><a id="l17018" name="l17018"></a><span class="lineno">17018</span>    {</div>
+<div class="line"><a id="l17019" name="l17019"></a><span class="lineno">17019</span>      <span class="keywordtype">double</span> position = i*indexToPosFactor;</div>
+<div class="line"><a id="l17020" name="l17020"></a><span class="lineno">17020</span>      QMap&lt;double, QColor&gt;::const_iterator it = <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a>.lowerBound(position);</div>
+<div class="line"><a id="l17021" name="l17021"></a><span class="lineno">17021</span>      <span class="keywordflow">if</span> (it == <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a>.constEnd()) <span class="comment">// position is on or after last stop, use color of last stop</span></div>
+<div class="line"><a id="l17022" name="l17022"></a><span class="lineno">17022</span>      {</div>
+<div class="line"><a id="l17023" name="l17023"></a><span class="lineno">17023</span>        <span class="keywordflow">if</span> (useAlpha)</div>
+<div class="line"><a id="l17024" name="l17024"></a><span class="lineno">17024</span>        {</div>
+<div class="line"><a id="l17025" name="l17025"></a><span class="lineno">17025</span>          <span class="keyword">const</span> QColor col = std::prev(it).value();</div>
+<div class="line"><a id="l17026" name="l17026"></a><span class="lineno">17026</span>          <span class="keyword">const</span> <span class="keywordtype">double</span> alphaPremultiplier = col.alpha()/255.0; <span class="comment">// since we use QImage::Format_ARGB32_Premultiplied</span></div>
+<div class="line"><a id="l17027" name="l17027"></a><span class="lineno">17027</span>          <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>[i] = qRgba(<span class="keywordtype">int</span>(col.red()*alphaPremultiplier),</div>
+<div class="line"><a id="l17028" name="l17028"></a><span class="lineno">17028</span>                                  <span class="keywordtype">int</span>(col.green()*alphaPremultiplier),</div>
+<div class="line"><a id="l17029" name="l17029"></a><span class="lineno">17029</span>                                  <span class="keywordtype">int</span>(col.blue()*alphaPremultiplier),</div>
+<div class="line"><a id="l17030" name="l17030"></a><span class="lineno">17030</span>                                  col.alpha());</div>
+<div class="line"><a id="l17031" name="l17031"></a><span class="lineno">17031</span>        } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l17032" name="l17032"></a><span class="lineno">17032</span>          <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>[i] = std::prev(it).value().rgba();</div>
+<div class="line"><a id="l17033" name="l17033"></a><span class="lineno">17033</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (it == <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a>.constBegin()) <span class="comment">// position is on or before first stop, use color of first stop</span></div>
+<div class="line"><a id="l17034" name="l17034"></a><span class="lineno">17034</span>      {</div>
+<div class="line"><a id="l17035" name="l17035"></a><span class="lineno">17035</span>        <span class="keywordflow">if</span> (useAlpha)</div>
+<div class="line"><a id="l17036" name="l17036"></a><span class="lineno">17036</span>        {</div>
+<div class="line"><a id="l17037" name="l17037"></a><span class="lineno">17037</span>          <span class="keyword">const</span> QColor &amp;col = it.value();</div>
+<div class="line"><a id="l17038" name="l17038"></a><span class="lineno">17038</span>          <span class="keyword">const</span> <span class="keywordtype">double</span> alphaPremultiplier = col.alpha()/255.0; <span class="comment">// since we use QImage::Format_ARGB32_Premultiplied</span></div>
+<div class="line"><a id="l17039" name="l17039"></a><span class="lineno">17039</span>          <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>[i] = qRgba(<span class="keywordtype">int</span>(col.red()*alphaPremultiplier),</div>
+<div class="line"><a id="l17040" name="l17040"></a><span class="lineno">17040</span>                                  <span class="keywordtype">int</span>(col.green()*alphaPremultiplier),</div>
+<div class="line"><a id="l17041" name="l17041"></a><span class="lineno">17041</span>                                  <span class="keywordtype">int</span>(col.blue()*alphaPremultiplier),</div>
+<div class="line"><a id="l17042" name="l17042"></a><span class="lineno">17042</span>                                  col.alpha());</div>
+<div class="line"><a id="l17043" name="l17043"></a><span class="lineno">17043</span>        } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l17044" name="l17044"></a><span class="lineno">17044</span>          <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>[i] = it.value().rgba();</div>
+<div class="line"><a id="l17045" name="l17045"></a><span class="lineno">17045</span>      } <span class="keywordflow">else</span> <span class="comment">// position is in between stops (or on an intermediate stop), interpolate color</span></div>
+<div class="line"><a id="l17046" name="l17046"></a><span class="lineno">17046</span>      {</div>
+<div class="line"><a id="l17047" name="l17047"></a><span class="lineno">17047</span>        QMap&lt;double, QColor&gt;::const_iterator high = it;</div>
+<div class="line"><a id="l17048" name="l17048"></a><span class="lineno">17048</span>        QMap&lt;double, QColor&gt;::const_iterator low = std::prev(it);</div>
+<div class="line"><a id="l17049" name="l17049"></a><span class="lineno">17049</span>        <span class="keywordtype">double</span> t = (position-low.key())/(high.key()-low.key()); <span class="comment">// interpolation factor 0..1</span></div>
+<div class="line"><a id="l17050" name="l17050"></a><span class="lineno">17050</span>        <span class="keywordflow">switch</span> (<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a028cef73d863800a9ee93ffd641cce01">mColorInterpolation</a>)</div>
+<div class="line"><a id="l17051" name="l17051"></a><span class="lineno">17051</span>        {</div>
+<div class="line"><a id="l17052" name="l17052"></a><span class="lineno">17052</span>          <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7">ciRGB</a>:</div>
+<div class="line"><a id="l17053" name="l17053"></a><span class="lineno">17053</span>          {</div>
+<div class="line"><a id="l17054" name="l17054"></a><span class="lineno">17054</span>            <span class="keywordflow">if</span> (useAlpha)</div>
+<div class="line"><a id="l17055" name="l17055"></a><span class="lineno">17055</span>            {</div>
+<div class="line"><a id="l17056" name="l17056"></a><span class="lineno">17056</span>              <span class="keyword">const</span> <span class="keywordtype">int</span> alpha = int((1-t)*low.value().alpha() + t*high.value().alpha());</div>
+<div class="line"><a id="l17057" name="l17057"></a><span class="lineno">17057</span>              <span class="keyword">const</span> <span class="keywordtype">double</span> alphaPremultiplier = alpha/255.0; <span class="comment">// since we use QImage::Format_ARGB32_Premultiplied</span></div>
+<div class="line"><a id="l17058" name="l17058"></a><span class="lineno">17058</span>              <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>[i] = qRgba(<span class="keywordtype">int</span>( ((1-t)*low.value().red() + t*high.value().red())*alphaPremultiplier ),</div>
+<div class="line"><a id="l17059" name="l17059"></a><span class="lineno">17059</span>                                      <span class="keywordtype">int</span>( ((1-t)*low.value().green() + t*high.value().green())*alphaPremultiplier ),</div>
+<div class="line"><a id="l17060" name="l17060"></a><span class="lineno">17060</span>                                      <span class="keywordtype">int</span>( ((1-t)*low.value().blue() + t*high.value().blue())*alphaPremultiplier ),</div>
+<div class="line"><a id="l17061" name="l17061"></a><span class="lineno">17061</span>                                      alpha);</div>
+<div class="line"><a id="l17062" name="l17062"></a><span class="lineno">17062</span>            } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l17063" name="l17063"></a><span class="lineno">17063</span>            {</div>
+<div class="line"><a id="l17064" name="l17064"></a><span class="lineno">17064</span>              <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>[i] = qRgb(<span class="keywordtype">int</span>( ((1-t)*low.value().red() + t*high.value().red()) ),</div>
+<div class="line"><a id="l17065" name="l17065"></a><span class="lineno">17065</span>                                     <span class="keywordtype">int</span>( ((1-t)*low.value().green() + t*high.value().green()) ),</div>
+<div class="line"><a id="l17066" name="l17066"></a><span class="lineno">17066</span>                                     <span class="keywordtype">int</span>( ((1-t)*low.value().blue() + t*high.value().blue())) );</div>
+<div class="line"><a id="l17067" name="l17067"></a><span class="lineno">17067</span>            }</div>
+<div class="line"><a id="l17068" name="l17068"></a><span class="lineno">17068</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l17069" name="l17069"></a><span class="lineno">17069</span>          }</div>
+<div class="line"><a id="l17070" name="l17070"></a><span class="lineno">17070</span>          <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb">ciHSV</a>:</div>
+<div class="line"><a id="l17071" name="l17071"></a><span class="lineno">17071</span>          {</div>
+<div class="line"><a id="l17072" name="l17072"></a><span class="lineno">17072</span>            QColor lowHsv = low.value().toHsv();</div>
+<div class="line"><a id="l17073" name="l17073"></a><span class="lineno">17073</span>            QColor highHsv = high.value().toHsv();</div>
+<div class="line"><a id="l17074" name="l17074"></a><span class="lineno">17074</span>            <span class="keywordtype">double</span> hue = 0;</div>
+<div class="line"><a id="l17075" name="l17075"></a><span class="lineno">17075</span>            <span class="keywordtype">double</span> hueDiff = highHsv.hueF()-lowHsv.hueF();</div>
+<div class="line"><a id="l17076" name="l17076"></a><span class="lineno">17076</span>            <span class="keywordflow">if</span> (hueDiff &gt; 0.5)</div>
+<div class="line"><a id="l17077" name="l17077"></a><span class="lineno">17077</span>              hue = lowHsv.hueF() - t*(1.0-hueDiff);</div>
+<div class="line"><a id="l17078" name="l17078"></a><span class="lineno">17078</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (hueDiff &lt; -0.5)</div>
+<div class="line"><a id="l17079" name="l17079"></a><span class="lineno">17079</span>              hue = lowHsv.hueF() + t*(1.0+hueDiff);</div>
+<div class="line"><a id="l17080" name="l17080"></a><span class="lineno">17080</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l17081" name="l17081"></a><span class="lineno">17081</span>              hue = lowHsv.hueF() + t*hueDiff;</div>
+<div class="line"><a id="l17082" name="l17082"></a><span class="lineno">17082</span>            <span class="keywordflow">if</span> (hue &lt; 0) hue += 1.0;</div>
+<div class="line"><a id="l17083" name="l17083"></a><span class="lineno">17083</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (hue &gt;= 1.0) hue -= 1.0;</div>
+<div class="line"><a id="l17084" name="l17084"></a><span class="lineno">17084</span>            <span class="keywordflow">if</span> (useAlpha)</div>
+<div class="line"><a id="l17085" name="l17085"></a><span class="lineno">17085</span>            {</div>
+<div class="line"><a id="l17086" name="l17086"></a><span class="lineno">17086</span>              <span class="keyword">const</span> QRgb rgb = QColor::fromHsvF(hue,</div>
+<div class="line"><a id="l17087" name="l17087"></a><span class="lineno">17087</span>                                                (1-t)*lowHsv.saturationF() + t*highHsv.saturationF(),</div>
+<div class="line"><a id="l17088" name="l17088"></a><span class="lineno">17088</span>                                                (1-t)*lowHsv.valueF() + t*highHsv.valueF()).rgb();</div>
+<div class="line"><a id="l17089" name="l17089"></a><span class="lineno">17089</span>              <span class="keyword">const</span> <span class="keywordtype">double</span> alpha = (1-t)*lowHsv.alphaF() + t*highHsv.alphaF();</div>
+<div class="line"><a id="l17090" name="l17090"></a><span class="lineno">17090</span>              <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>[i] = qRgba(<span class="keywordtype">int</span>(qRed(rgb)*alpha), <span class="keywordtype">int</span>(qGreen(rgb)*alpha), <span class="keywordtype">int</span>(qBlue(rgb)*alpha), <span class="keywordtype">int</span>(255*alpha));</div>
+<div class="line"><a id="l17091" name="l17091"></a><span class="lineno">17091</span>            }</div>
+<div class="line"><a id="l17092" name="l17092"></a><span class="lineno">17092</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l17093" name="l17093"></a><span class="lineno">17093</span>            {</div>
+<div class="line"><a id="l17094" name="l17094"></a><span class="lineno">17094</span>              <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>[i] = QColor::fromHsvF(hue,</div>
+<div class="line"><a id="l17095" name="l17095"></a><span class="lineno">17095</span>                                                 (1-t)*lowHsv.saturationF() + t*highHsv.saturationF(),</div>
+<div class="line"><a id="l17096" name="l17096"></a><span class="lineno">17096</span>                                                 (1-t)*lowHsv.valueF() + t*highHsv.valueF()).rgb();</div>
+<div class="line"><a id="l17097" name="l17097"></a><span class="lineno">17097</span>            }</div>
+<div class="line"><a id="l17098" name="l17098"></a><span class="lineno">17098</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l17099" name="l17099"></a><span class="lineno">17099</span>          }</div>
+<div class="line"><a id="l17100" name="l17100"></a><span class="lineno">17100</span>        }</div>
+<div class="line"><a id="l17101" name="l17101"></a><span class="lineno">17101</span>      }</div>
+<div class="line"><a id="l17102" name="l17102"></a><span class="lineno">17102</span>    }</div>
+<div class="line"><a id="l17103" name="l17103"></a><span class="lineno">17103</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a>.size() == 1)</div>
+<div class="line"><a id="l17104" name="l17104"></a><span class="lineno">17104</span>  {</div>
+<div class="line"><a id="l17105" name="l17105"></a><span class="lineno">17105</span>    <span class="keyword">const</span> QRgb rgb = <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a>.constBegin().value().rgb();</div>
+<div class="line"><a id="l17106" name="l17106"></a><span class="lineno">17106</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> alpha = <a class="code hl_variable" href="class_q_c_p_color_gradient.html#a9e11a2b0974ef289d12c324822bc3a3e">mColorStops</a>.constBegin().value().alphaF();</div>
+<div class="line"><a id="l17107" name="l17107"></a><span class="lineno">17107</span>    <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>.fill(qRgba(<span class="keywordtype">int</span>(qRed(rgb)*alpha), <span class="keywordtype">int</span>(qGreen(rgb)*alpha), <span class="keywordtype">int</span>(qBlue(rgb)*alpha), <span class="keywordtype">int</span>(255*alpha)));</div>
+<div class="line"><a id="l17108" name="l17108"></a><span class="lineno">17108</span>  } <span class="keywordflow">else</span> <span class="comment">// mColorStops is empty, fill color buffer with black</span></div>
+<div class="line"><a id="l17109" name="l17109"></a><span class="lineno">17109</span>  {</div>
+<div class="line"><a id="l17110" name="l17110"></a><span class="lineno">17110</span>    <a class="code hl_variable" href="class_q_c_p_color_gradient.html#af8b5f0739faa5f8295154d47ce38ecff">mColorBuffer</a>.fill(qRgb(0, 0, 0));</div>
+<div class="line"><a id="l17111" name="l17111"></a><span class="lineno">17111</span>  }</div>
+<div class="line"><a id="l17112" name="l17112"></a><span class="lineno">17112</span>  <a class="code hl_variable" href="class_q_c_p_color_gradient.html#abacf55e11f67d6722a687af1bb2687bd">mColorBufferInvalidated</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l17113" name="l17113"></a><span class="lineno">17113</span>}</div>
+<div class="ttc" id="aclass_q_c_p_color_gradient_html_a137b368ea8829a871974add6e4883c71"><div class="ttname"><a href="class_q_c_p_color_gradient.html#a137b368ea8829a871974add6e4883c71">QCPColorGradient::stopsUseAlpha</a></div><div class="ttdeci">bool stopsUseAlpha() const</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:16994</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Atributos</h2>
+<a id="af8b5f0739faa5f8295154d47ce38ecff" name="af8b5f0739faa5f8295154d47ce38ecff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8b5f0739faa5f8295154d47ce38ecff">&#9670;&nbsp;</a></span>mColorBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;QRgb&gt; QCPColorGradient::mColorBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abacf55e11f67d6722a687af1bb2687bd" name="abacf55e11f67d6722a687af1bb2687bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abacf55e11f67d6722a687af1bb2687bd">&#9670;&nbsp;</a></span>mColorBufferInvalidated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QCPColorGradient::mColorBufferInvalidated</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a028cef73d863800a9ee93ffd641cce01" name="a028cef73d863800a9ee93ffd641cce01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a028cef73d863800a9ee93ffd641cce01">&#9670;&nbsp;</a></span>mColorInterpolation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1">ColorInterpolation</a> QCPColorGradient::mColorInterpolation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9e11a2b0974ef289d12c324822bc3a3e" name="a9e11a2b0974ef289d12c324822bc3a3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e11a2b0974ef289d12c324822bc3a3e">&#9670;&nbsp;</a></span>mColorStops</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;double, QColor&gt; QCPColorGradient::mColorStops</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a98fb68e359904b2c991fcae3e38a211a" name="a98fb68e359904b2c991fcae3e38a211a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98fb68e359904b2c991fcae3e38a211a">&#9670;&nbsp;</a></span>mLevelCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QCPColorGradient::mLevelCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a719b2c3edff4b0e38271edb909b81490" name="a719b2c3edff4b0e38271edb909b81490"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a719b2c3edff4b0e38271edb909b81490">&#9670;&nbsp;</a></span>mNanColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor QCPColorGradient::mNanColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0be33364dbf6226cc231f56fdf341f12" name="a0be33364dbf6226cc231f56fdf341f12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0be33364dbf6226cc231f56fdf341f12">&#9670;&nbsp;</a></span>mNanHandling</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_c_p_color_gradient.html#afd38ab8d2cceef9cd98eef88408ccb7e">NanHandling</a> QCPColorGradient::mNanHandling</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4b07deeb20ca1ee2d5ea7e01bf0420af" name="a4b07deeb20ca1ee2d5ea7e01bf0420af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b07deeb20ca1ee2d5ea7e01bf0420af">&#9670;&nbsp;</a></span>mPeriodic</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QCPColorGradient::mPeriodic</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>A documentação para essa classe foi gerada a partir dos seguintes arquivos:<ul>
+<li>C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/SimuladorTemperatura/<a class="el" href="qcustomplot_8h_source.html">qcustomplot.h</a></li>
+<li>C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/SimuladorTemperatura/<a class="el" href="qcustomplot_8cpp.html">qcustomplot.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

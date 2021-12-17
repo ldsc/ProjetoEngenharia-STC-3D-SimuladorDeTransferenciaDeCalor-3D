@@ -1,13 +1,5 @@
 #include "CGrid.h"
 
-void CGrid::printGrid() {
-    for (int i = 0; i < width; i++) {
-        for (int k = 0; k < height; k++)
-            std::cout << grid[k * width + i].temp << "  ";
-        std::cout << std::endl;
-    }
-}
-
 void CGrid::resetSize(int _width, int _height, double temperature) {
     width = _width;
     height = _height;
@@ -23,7 +15,7 @@ void CGrid::resetGrid(double temperature) {
         grid[i].source = false;
         grid[i].temp = temperature;
         grid[i].temp_nup1 = temperature;
-        grid[i].material = new CMaterial("ar");
+        grid[i].material = new CMaterial();
     }
 }
 
@@ -69,9 +61,9 @@ void CGrid::draw(int x, double _temperature, bool active, bool isSource, std::st
     grid[x].active = active;
     grid[x].source = isSource;
     if (active)
-        grid[x].material = new CMaterialCorrelacao(_material+".txt");
+        grid[x].material = new CMaterialCorrelacao(_material);
     else
-        grid[x].material = new CMaterial("ar");
+        grid[x].material = new CMaterial();
 }
 
 void CGrid::updateIteration() {

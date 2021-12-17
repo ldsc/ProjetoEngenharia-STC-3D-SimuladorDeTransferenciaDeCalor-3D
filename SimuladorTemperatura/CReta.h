@@ -4,6 +4,7 @@
 #include <sstream>
 #include <iomanip>
 #include <fstream>
+
 /// Class CReta,  representa uma reta y = a + b * x.
 class CReta
 {  

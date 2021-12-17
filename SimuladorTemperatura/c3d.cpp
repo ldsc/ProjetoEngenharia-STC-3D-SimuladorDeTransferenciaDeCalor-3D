@@ -1,4 +1,5 @@
 #include "C3D.h"
+
 C3D::C3D(QWidget *parent)
     : QMainWindow(parent)
 {

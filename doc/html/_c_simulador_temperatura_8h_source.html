@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentação Simulador de Difusão Térmica: Código-Fonte de CSimuladorTemperatura.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Documentação Simulador de Difusão Térmica<span id="projectnumber">&#160;2.2</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">CSimuladorTemperatura.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_c_simulador_temperatura_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CSIMULADORTEMPERATURA_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CSIMULADORTEMPERATURA_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QDir&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;omp.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QPoint&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_c_material_8h.html">CMaterial.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QDirIterator&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_c_grid_8h.html">CGrid.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_c_material_correlacao_8h.html">CMaterialCorrelacao.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_c_material_interpolacao_8h.html">CMaterialInterpolacao.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="class_c_simulador_temperatura.html">CSimuladorTemperatura</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">//int parallel = 0;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    QDir dir;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">int</span> MAX_THREADS = omp_get_max_threads()-1;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">int</span> width, height;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">bool</span> materialPropertiesStatus = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">int</span> NGRIDS = 1;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> MIN_ERRO = 1.0e-1;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> MAX_ITERATION = 39;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">double</span> delta_x = 2.6e-4, delta_t = 5.0e-1, delta_z = 0.05;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">double</span> Tmax = 1000, Tmin = 300;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">double</span> actualTemperature = 300;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">double</span> actual_time = 0.0;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    std::map&lt;std::string, CMaterial*&gt; materiais;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    std::vector&lt;std::string&gt; name_materiais;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#a58e718f627e5d6ac48f3e12ecddf48c4">   37</a></span>    std::vector&lt;CGrid*&gt; <a class="code hl_variable" href="class_c_simulador_temperatura.html#a58e718f627e5d6ac48f3e12ecddf48c4">grid</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#af3d09d3e9e445a5f6eacfecad2be94b8">   40</a></span>    <a class="code hl_function" href="class_c_simulador_temperatura.html#af3d09d3e9e445a5f6eacfecad2be94b8">CSimuladorTemperatura</a>() { <a class="code hl_function" href="class_c_simulador_temperatura.html#a00e457c3a74b6de9647577a9cd1654cc">createListOfMaterials</a>();  }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a898956eb5be42e3bc812a23e57a59221">resetSize</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a36e164b95b3f17fe017b982eb5937a8c">resetGrid</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a00e457c3a74b6de9647577a9cd1654cc">createListOfMaterials</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_class" href="class_c_material.html">CMaterial</a>* <a class="code hl_function" href="class_c_simulador_temperatura.html#a34292258a3469169d71fa6b00e44569d">chooseMaterialType</a>(std::string name);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a40ff3d2716a6dabb283d94a96acd6ba6">addGrid</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a2a97fd1ea0182aee8ff0bf0833c332a7">delGrid</a>(<span class="keywordtype">int</span> _grid);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#abc078a2fa5b9fac2f4af13a3dfc98984">run_sem_paralelismo</a>();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a074c8ec9214081f9fe45744f90e46e0d">run_paralelismo_por_grid</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a8c9e75dc7ca0cf7071d93d7875d8347f">run_paralelismo_total</a>();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a702ec25ff144aa183f8547e78836b024">solverByGrid</a>(<span class="keywordtype">int</span> g);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a986fdfe768e2482e5d54831177d7fae9">solverByThread</a>(<span class="keywordtype">int</span> thread_num);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a293dd018de021aa61656489f125277b2">calculatePointIteration</a>(<span class="keywordtype">int</span>  x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> g);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    std::string <a class="code hl_function" href="class_c_simulador_temperatura.html#a8db2722e69116c78f3ccae1e0173b4e1">saveGrid</a>(std::string nameFile);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    std::string <a class="code hl_function" href="class_c_simulador_temperatura.html#a5ee6808f49602ac4a1d66249c529b4db">openGrid</a>(std::string nameFile);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    std::string <a class="code hl_function" href="class_c_simulador_temperatura.html#aefd3929e665ef1c73d1477da3aaf9cff">openMaterial</a>(std::string nameFile);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a4b51dd48fbd1a40090fa9b7fee25b76f">setActualTemperature</a>(<span class="keywordtype">double</span> newTemperature);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a12695578c6fb55d99b4386cf53ba735b">changeMaterialPropertiesStatus</a>();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#adcd5efc252a2a5339fe5db49ec8457f0">   66</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#adcd5efc252a2a5339fe5db49ec8457f0">setDelta_t</a>(<span class="keywordtype">double</span> _delta_t) { delta_t = _delta_t; }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#ace3f3159116310b018223571339225a8">   67</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#ace3f3159116310b018223571339225a8">setDelta_x</a>(<span class="keywordtype">double</span> _delta_x) { delta_x = _delta_x; }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#ab4862df074331355ba667fab06eac73e">   68</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#ab4862df074331355ba667fab06eac73e">setDelta_z</a>(<span class="keywordtype">double</span> _delta_z) { delta_z = _delta_z; }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#aafab7e7c4cc2b174d48377edc2b7d6d8">   71</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#aafab7e7c4cc2b174d48377edc2b7d6d8">getWidth</a>(){<span class="keywordflow">return</span> width;}</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#aef26d18efc71969abcfd64030185de6c">   72</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#aef26d18efc71969abcfd64030185de6c">getHeight</a>(){<span class="keywordflow">return</span> height;}</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a44ca68bb32fb61d5d728694ac7663491">getProps</a>(<span class="keywordtype">double</span> temperature, std::string material);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    QColor <a class="code hl_function" href="class_c_simulador_temperatura.html#ae061acd768a29569de4480158fd57fd0">getColor</a>(std::string material);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#a8c98f4951037d600dc0b58f19f0e48fb">   75</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a8c98f4951037d600dc0b58f19f0e48fb">getNGRIDS</a>() { <span class="keywordflow">return</span> NGRIDS; }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#abec880ddb15ae923f36b31a65246a9a6">   76</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#abec880ddb15ae923f36b31a65246a9a6">getMaterialStatus</a>() { <span class="keywordflow">return</span> materialPropertiesStatus; }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#ae0a6e81c6267cbf08dfe6c88d643080e">maxTemp</a>();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#af77257efcdf25a8ffc30ef0497ba6949">minTemp</a>();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#ac7d74a075b53ba1ce1a7788f970c76ef">   79</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#ac7d74a075b53ba1ce1a7788f970c76ef">get_ActualTemperature</a>() { <span class="keywordflow">return</span> actualTemperature; }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#a37f803a8faf2d2e87ff70e1a5c2e7a82">   81</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a37f803a8faf2d2e87ff70e1a5c2e7a82">getTmax</a>() { <span class="keywordflow">return</span> Tmax; }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#a7f0167111eb9b32a4ffc8a93a4ec2a0f">   82</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a7f0167111eb9b32a4ffc8a93a4ec2a0f">getTmin</a>() { <span class="keywordflow">return</span> Tmin; }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#a87739e691be7dbf21a8171d232996637">   84</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a87739e691be7dbf21a8171d232996637">getDelta_t</a>() { <span class="keywordflow">return</span> delta_t; }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#aab05ca73998b3d0b66924be33ce8f4a0">   85</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#aab05ca73998b3d0b66924be33ce8f4a0">getDelta_x</a>() { <span class="keywordflow">return</span> delta_x; }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#a8dba1ea220c82816b6f017c1992f2c49">   86</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a8dba1ea220c82816b6f017c1992f2c49">getDelta_z</a>() { <span class="keywordflow">return</span> delta_z; }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#a3be284e15d78029a0680bd1a8cdf85f0">   87</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_c_simulador_temperatura.html#a3be284e15d78029a0680bd1a8cdf85f0">getTime</a>() { <span class="keywordflow">return</span> actual_time; }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#a95ca273214b3331f8133f16f17510602">   89</a></span>    <a class="code hl_class" href="class_c_material.html">CMaterial</a>* <a class="code hl_function" href="class_c_simulador_temperatura.html#a95ca273214b3331f8133f16f17510602">getMaterial</a>(std::string mat) { <span class="keywordflow">return</span> materiais[mat]; }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="class_c_simulador_temperatura.html#aa051f0bbaebd906b7255784316f6cca0">   91</a></span>    std::vector&lt;std::string&gt; <a class="code hl_function" href="class_c_simulador_temperatura.html#aa051f0bbaebd906b7255784316f6cca0">getMateriais</a>() { <span class="keywordflow">return</span> name_materiais; }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>};</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_c_grid_8h_html"><div class="ttname"><a href="_c_grid_8h.html">CGrid.h</a></div></div>
+<div class="ttc" id="a_c_material_8h_html"><div class="ttname"><a href="_c_material_8h.html">CMaterial.h</a></div></div>
+<div class="ttc" id="a_c_material_correlacao_8h_html"><div class="ttname"><a href="_c_material_correlacao_8h.html">CMaterialCorrelacao.h</a></div></div>
+<div class="ttc" id="a_c_material_interpolacao_8h_html"><div class="ttname"><a href="_c_material_interpolacao_8h.html">CMaterialInterpolacao.h</a></div></div>
+<div class="ttc" id="aclass_c_material_html"><div class="ttname"><a href="class_c_material.html">CMaterial</a></div><div class="ttdef"><b>Definition:</b> CMaterial.h:7</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html"><div class="ttname"><a href="class_c_simulador_temperatura.html">CSimuladorTemperatura</a></div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:17</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a00e457c3a74b6de9647577a9cd1654cc"><div class="ttname"><a href="class_c_simulador_temperatura.html#a00e457c3a74b6de9647577a9cd1654cc">CSimuladorTemperatura::createListOfMaterials</a></div><div class="ttdeci">void createListOfMaterials()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:16</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a074c8ec9214081f9fe45744f90e46e0d"><div class="ttname"><a href="class_c_simulador_temperatura.html#a074c8ec9214081f9fe45744f90e46e0d">CSimuladorTemperatura::run_paralelismo_por_grid</a></div><div class="ttdeci">void run_paralelismo_por_grid()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:77</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a12695578c6fb55d99b4386cf53ba735b"><div class="ttname"><a href="class_c_simulador_temperatura.html#a12695578c6fb55d99b4386cf53ba735b">CSimuladorTemperatura::changeMaterialPropertiesStatus</a></div><div class="ttdeci">void changeMaterialPropertiesStatus()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:240</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a293dd018de021aa61656489f125277b2"><div class="ttname"><a href="class_c_simulador_temperatura.html#a293dd018de021aa61656489f125277b2">CSimuladorTemperatura::calculatePointIteration</a></div><div class="ttdeci">double calculatePointIteration(int x, int y, int g)</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:132</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a2a97fd1ea0182aee8ff0bf0833c332a7"><div class="ttname"><a href="class_c_simulador_temperatura.html#a2a97fd1ea0182aee8ff0bf0833c332a7">CSimuladorTemperatura::delGrid</a></div><div class="ttdeci">void delGrid(int _grid)</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:46</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a34292258a3469169d71fa6b00e44569d"><div class="ttname"><a href="class_c_simulador_temperatura.html#a34292258a3469169d71fa6b00e44569d">CSimuladorTemperatura::chooseMaterialType</a></div><div class="ttdeci">CMaterial * chooseMaterialType(std::string name)</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:29</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a36e164b95b3f17fe017b982eb5937a8c"><div class="ttname"><a href="class_c_simulador_temperatura.html#a36e164b95b3f17fe017b982eb5937a8c">CSimuladorTemperatura::resetGrid</a></div><div class="ttdeci">void resetGrid()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:11</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a37f803a8faf2d2e87ff70e1a5c2e7a82"><div class="ttname"><a href="class_c_simulador_temperatura.html#a37f803a8faf2d2e87ff70e1a5c2e7a82">CSimuladorTemperatura::getTmax</a></div><div class="ttdeci">double getTmax()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:81</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a3be284e15d78029a0680bd1a8cdf85f0"><div class="ttname"><a href="class_c_simulador_temperatura.html#a3be284e15d78029a0680bd1a8cdf85f0">CSimuladorTemperatura::getTime</a></div><div class="ttdeci">double getTime()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:87</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a40ff3d2716a6dabb283d94a96acd6ba6"><div class="ttname"><a href="class_c_simulador_temperatura.html#a40ff3d2716a6dabb283d94a96acd6ba6">CSimuladorTemperatura::addGrid</a></div><div class="ttdeci">void addGrid()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:41</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a44ca68bb32fb61d5d728694ac7663491"><div class="ttname"><a href="class_c_simulador_temperatura.html#a44ca68bb32fb61d5d728694ac7663491">CSimuladorTemperatura::getProps</a></div><div class="ttdeci">double getProps(double temperature, std::string material)</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:244</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a4b51dd48fbd1a40090fa9b7fee25b76f"><div class="ttname"><a href="class_c_simulador_temperatura.html#a4b51dd48fbd1a40090fa9b7fee25b76f">CSimuladorTemperatura::setActualTemperature</a></div><div class="ttdeci">void setActualTemperature(double newTemperature)</div><div class="ttdoc">------— FUNCOES SET ------—</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:232</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a58e718f627e5d6ac48f3e12ecddf48c4"><div class="ttname"><a href="class_c_simulador_temperatura.html#a58e718f627e5d6ac48f3e12ecddf48c4">CSimuladorTemperatura::grid</a></div><div class="ttdeci">std::vector&lt; CGrid * &gt; grid</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:37</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a5ee6808f49602ac4a1d66249c529b4db"><div class="ttname"><a href="class_c_simulador_temperatura.html#a5ee6808f49602ac4a1d66249c529b4db">CSimuladorTemperatura::openGrid</a></div><div class="ttdeci">std::string openGrid(std::string nameFile)</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:209</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a702ec25ff144aa183f8547e78836b024"><div class="ttname"><a href="class_c_simulador_temperatura.html#a702ec25ff144aa183f8547e78836b024">CSimuladorTemperatura::solverByGrid</a></div><div class="ttdeci">void solverByGrid(int g)</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:99</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a7f0167111eb9b32a4ffc8a93a4ec2a0f"><div class="ttname"><a href="class_c_simulador_temperatura.html#a7f0167111eb9b32a4ffc8a93a4ec2a0f">CSimuladorTemperatura::getTmin</a></div><div class="ttdeci">double getTmin()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:82</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a87739e691be7dbf21a8171d232996637"><div class="ttname"><a href="class_c_simulador_temperatura.html#a87739e691be7dbf21a8171d232996637">CSimuladorTemperatura::getDelta_t</a></div><div class="ttdeci">double getDelta_t()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:84</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a898956eb5be42e3bc812a23e57a59221"><div class="ttname"><a href="class_c_simulador_temperatura.html#a898956eb5be42e3bc812a23e57a59221">CSimuladorTemperatura::resetSize</a></div><div class="ttdeci">void resetSize(int width, int height)</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:3</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a8c98f4951037d600dc0b58f19f0e48fb"><div class="ttname"><a href="class_c_simulador_temperatura.html#a8c98f4951037d600dc0b58f19f0e48fb">CSimuladorTemperatura::getNGRIDS</a></div><div class="ttdeci">int getNGRIDS()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:75</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a8c9e75dc7ca0cf7071d93d7875d8347f"><div class="ttname"><a href="class_c_simulador_temperatura.html#a8c9e75dc7ca0cf7071d93d7875d8347f">CSimuladorTemperatura::run_paralelismo_total</a></div><div class="ttdeci">void run_paralelismo_total()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:86</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a8db2722e69116c78f3ccae1e0173b4e1"><div class="ttname"><a href="class_c_simulador_temperatura.html#a8db2722e69116c78f3ccae1e0173b4e1">CSimuladorTemperatura::saveGrid</a></div><div class="ttdeci">std::string saveGrid(std::string nameFile)</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:190</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a8dba1ea220c82816b6f017c1992f2c49"><div class="ttname"><a href="class_c_simulador_temperatura.html#a8dba1ea220c82816b6f017c1992f2c49">CSimuladorTemperatura::getDelta_z</a></div><div class="ttdeci">double getDelta_z()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:86</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a95ca273214b3331f8133f16f17510602"><div class="ttname"><a href="class_c_simulador_temperatura.html#a95ca273214b3331f8133f16f17510602">CSimuladorTemperatura::getMaterial</a></div><div class="ttdeci">CMaterial * getMaterial(std::string mat)</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:89</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_a986fdfe768e2482e5d54831177d7fae9"><div class="ttname"><a href="class_c_simulador_temperatura.html#a986fdfe768e2482e5d54831177d7fae9">CSimuladorTemperatura::solverByThread</a></div><div class="ttdeci">void solverByThread(int thread_num)</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:113</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_aa051f0bbaebd906b7255784316f6cca0"><div class="ttname"><a href="class_c_simulador_temperatura.html#aa051f0bbaebd906b7255784316f6cca0">CSimuladorTemperatura::getMateriais</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getMateriais()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:91</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_aab05ca73998b3d0b66924be33ce8f4a0"><div class="ttname"><a href="class_c_simulador_temperatura.html#aab05ca73998b3d0b66924be33ce8f4a0">CSimuladorTemperatura::getDelta_x</a></div><div class="ttdeci">double getDelta_x()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:85</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_aafab7e7c4cc2b174d48377edc2b7d6d8"><div class="ttname"><a href="class_c_simulador_temperatura.html#aafab7e7c4cc2b174d48377edc2b7d6d8">CSimuladorTemperatura::getWidth</a></div><div class="ttdeci">int getWidth()</div><div class="ttdoc">------— FUNCOES GET ------—</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:71</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_ab4862df074331355ba667fab06eac73e"><div class="ttname"><a href="class_c_simulador_temperatura.html#ab4862df074331355ba667fab06eac73e">CSimuladorTemperatura::setDelta_z</a></div><div class="ttdeci">void setDelta_z(double _delta_z)</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:68</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_abc078a2fa5b9fac2f4af13a3dfc98984"><div class="ttname"><a href="class_c_simulador_temperatura.html#abc078a2fa5b9fac2f4af13a3dfc98984">CSimuladorTemperatura::run_sem_paralelismo</a></div><div class="ttdeci">void run_sem_paralelismo()</div><div class="ttdoc">------— FUNCOES DO SOLVER ------—</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:70</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_abec880ddb15ae923f36b31a65246a9a6"><div class="ttname"><a href="class_c_simulador_temperatura.html#abec880ddb15ae923f36b31a65246a9a6">CSimuladorTemperatura::getMaterialStatus</a></div><div class="ttdeci">bool getMaterialStatus()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:76</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_ac7d74a075b53ba1ce1a7788f970c76ef"><div class="ttname"><a href="class_c_simulador_temperatura.html#ac7d74a075b53ba1ce1a7788f970c76ef">CSimuladorTemperatura::get_ActualTemperature</a></div><div class="ttdeci">double get_ActualTemperature()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:79</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_ace3f3159116310b018223571339225a8"><div class="ttname"><a href="class_c_simulador_temperatura.html#ace3f3159116310b018223571339225a8">CSimuladorTemperatura::setDelta_x</a></div><div class="ttdeci">void setDelta_x(double _delta_x)</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:67</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_adcd5efc252a2a5339fe5db49ec8457f0"><div class="ttname"><a href="class_c_simulador_temperatura.html#adcd5efc252a2a5339fe5db49ec8457f0">CSimuladorTemperatura::setDelta_t</a></div><div class="ttdeci">void setDelta_t(double _delta_t)</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:66</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_ae061acd768a29569de4480158fd57fd0"><div class="ttname"><a href="class_c_simulador_temperatura.html#ae061acd768a29569de4480158fd57fd0">CSimuladorTemperatura::getColor</a></div><div class="ttdeci">QColor getColor(std::string material)</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:248</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_ae0a6e81c6267cbf08dfe6c88d643080e"><div class="ttname"><a href="class_c_simulador_temperatura.html#ae0a6e81c6267cbf08dfe6c88d643080e">CSimuladorTemperatura::maxTemp</a></div><div class="ttdeci">double maxTemp()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:252</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_aef26d18efc71969abcfd64030185de6c"><div class="ttname"><a href="class_c_simulador_temperatura.html#aef26d18efc71969abcfd64030185de6c">CSimuladorTemperatura::getHeight</a></div><div class="ttdeci">int getHeight()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:72</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_aefd3929e665ef1c73d1477da3aaf9cff"><div class="ttname"><a href="class_c_simulador_temperatura.html#aefd3929e665ef1c73d1477da3aaf9cff">CSimuladorTemperatura::openMaterial</a></div><div class="ttdeci">std::string openMaterial(std::string nameFile)</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:51</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_af3d09d3e9e445a5f6eacfecad2be94b8"><div class="ttname"><a href="class_c_simulador_temperatura.html#af3d09d3e9e445a5f6eacfecad2be94b8">CSimuladorTemperatura::CSimuladorTemperatura</a></div><div class="ttdeci">CSimuladorTemperatura()</div><div class="ttdoc">------— FUNCOES DE CRIACAO ------—</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:40</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html_af77257efcdf25a8ffc30ef0497ba6949"><div class="ttname"><a href="class_c_simulador_temperatura.html#af77257efcdf25a8ffc30ef0497ba6949">CSimuladorTemperatura::minTemp</a></div><div class="ttdeci">double minTemp()</div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.cpp:262</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

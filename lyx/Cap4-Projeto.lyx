@@ -210,6 +210,10 @@ status open
 \align center
 \begin_inset Graphics
 	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/v1.0.png
+	lyxscale 60
+	width 100text%
+	height 85theight%
+	keepAspectRatio
 
 \end_inset
 
@@ -255,6 +259,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/v1.1.png
+	lyxscale 60
+	scale 60
 
 \end_inset
 
@@ -347,8 +353,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/v2.0.png
-	lyxscale 60
-	scale 60
+	lyxscale 40
+	scale 40
 
 \end_inset
 
@@ -398,8 +404,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/qt_creator.PNG
-	lyxscale 40
-	scale 40
+	lyxscale 25
+	scale 25
 
 \end_inset
 
@@ -459,8 +465,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/v2.2.PNG
-	lyxscale 40
-	scale 40
+	lyxscale 25
+	scale 25
 
 \end_inset
 

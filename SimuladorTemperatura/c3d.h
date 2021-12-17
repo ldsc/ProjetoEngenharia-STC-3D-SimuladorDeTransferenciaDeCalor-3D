@@ -1,16 +1,13 @@
 #ifndef C3D_H
 #define C3D_H
 
-#include <QMainWindow>
-#include <QPainter>
-#include <QPaintEvent>
-#include <QVector>
 #include <math.h>
-//#include <QPoint>
-#include <QMouseEvent>
-//#include <QPolygon>
-#include <omp.h>
+#include <QVector>
+#include <QPainter>
 #include <algorithm>
+#include <QMainWindow>
+#include <QPaintEvent>
+#include <QMouseEvent>
 
 #include "CSimuladorTemperatura.h"
 
@@ -29,9 +26,10 @@ public:
 protected:
     void paintEvent(QPaintEvent *event) override;
 
-    void timerEvent(QTimerEvent *e) override;
     QVector3D rotate(QVector3D a);
     QColor getRGB(double x, double min, double max);
+
+    void timerEvent(QTimerEvent *e) override;
     void keyPressEvent(QKeyEvent *event) override;
     void mousePressEvent(QMouseEvent *e) override;
     void mouseReleaseEvent(QMouseEvent *e) override;
@@ -47,29 +45,28 @@ protected:
 
 
 private:
-    bool corMaterial = false;
-    QPoint mousePos;
+    int size;
     int timerId;
     QImage *mImage;
+    QPoint mousePos;
     int size_x, size_y;
+    int margin_x = 250;
+    int margin_y = 250;
     double angle_x = 0.0;
     double angle_y = 0.0;
     double angle_z = 0.0;
     double distance = 1.0;
-    int margin_x = 250;
     bool mousePress = false;
-    int margin_y = 250;
-    int size;
-    int MAX_THREADS = omp_get_max_threads()-5;
+    bool corMaterial = false;
     const float PI = 3.141592;
     double dx = 1, dy = 1, dz = 2;
-    QVector<QVector<QVector3D>> cube;
-    QVector<QVector<bool>> activeEdges;
-    QVector<QColor> colorsMaterial;
-    QVector<QColor> colorsTemperature;
+    CSimuladorTemperatura *simulador;
     QVector<QVector3D> drawCube;
     QVector<QVector3D> triangles;
-    CSimuladorTemperatura *simulador;
+    QVector<QColor> colorsMaterial;
+    QVector<QColor> colorsTemperature;
+    QVector<QVector<QVector3D>> cube;
+    QVector<QVector<bool>> activeEdges;
 
 };
 #endif // MAINWINDOW_H

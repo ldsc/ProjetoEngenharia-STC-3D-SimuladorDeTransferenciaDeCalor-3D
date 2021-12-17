@@ -7,10 +7,10 @@
 #include <QPoint>
 #include <fstream>
 #include <iomanip>
-#include "CMaterial.h"
 #include <QDirIterator>
 
 #include "CGrid.h"
+#include "CMaterial.h"
 #include "CMaterialCorrelacao.h"
 #include "CMaterialInterpolacao.h"
 

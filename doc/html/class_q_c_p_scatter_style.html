@@ -1,0 +1,1486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentação Simulador de Difusão Térmica: Referência da Classe QCPScatterStyle</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Documentação Simulador de Difusão Térmica<span id="projectnumber">&#160;2.2</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Tipos Públicos</a> &#124;
+<a href="#pub-methods">Membros Públicos</a> &#124;
+<a href="#pro-attribs">Atributos Protegidos</a> &#124;
+<a href="class_q_c_p_scatter_style-members.html">Lista de todos os Membros</a>  </div>
+  <div class="headertitle"><div class="title">Referência da Classe QCPScatterStyle</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Represents the visual appearance of scatter points.  
+ <a href="class_q_c_p_scatter_style.html#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qcustomplot_8h_source.html">qcustomplot.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Tipos Públicos</h2></td></tr>
+<tr class="memitem:a8974f6a20f8f6eea7781f0e6af9deb46"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46">ScatterProperty</a> { <br />
+&#160;&#160;<a class="el" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46a5891be10bea382fad6c20f7737a2dd90">spNone</a> = 0x00
+, <a class="el" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46aa04d012e7c03e455db2b68fdd55c2a04">spPen</a> = 0x01
+, <a class="el" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46af0499b1fc04de2dcc7e47ff0ef75c904">spBrush</a> = 0x02
+, <a class="el" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46a553ae95798ace9a328c7cd62045260b0">spSize</a> = 0x04
+, <br />
+&#160;&#160;<a class="el" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46a19c224563adb42c55fb8b7ae6904411b">spShape</a> = 0x08
+, <a class="el" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46af62509c0409467f387234274762e6f69">spAll</a> = 0xFF
+<br />
+ }</td></tr>
+<tr class="separator:a8974f6a20f8f6eea7781f0e6af9deb46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb31525af6b680e6f1b7472e43859349"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">ScatterShape</a> { <br />
+&#160;&#160;<a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349abd144c291ca274f77053ec68cab6c022">ssNone</a>
+, <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a06e15a735b79093a1d999c0374fa3aa1">ssDot</a>
+, <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a9eacd60f059dc3ef71bf249f515a6fe4">ssCross</a>
+, <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a2d7f1d3c1a148b9d9d17f2fd9cae5eb7">ssPlus</a>
+, <br />
+&#160;&#160;<a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a7c92a110880d0ef2170dff3a5b4f7779">ssCircle</a>
+, <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a281fe1434696dcbab3aa6b9ccfbb09e9">ssDisc</a>
+, <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a279e48703ddc9f1cf4a61d3e2817ab3c">ssSquare</a>
+, <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a4fc5929df1b2dad0a3cb2ef2c8b6e633">ssDiamond</a>
+, <br />
+&#160;&#160;<a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a6047a2d64e41f1d6ce54445d595d442f">ssStar</a>
+, <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a74a8d4eff1d97b57c53a60d0003453c3">ssTriangle</a>
+, <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a6156274d21d8b4115197567d3ea2d9a8">ssTriangleInverted</a>
+, <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a7081310936c200c6c78e34c172f72d07">ssCrossSquare</a>
+, <br />
+&#160;&#160;<a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a5aa8e9db545e5404482fec774768ee25">ssPlusSquare</a>
+, <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a524613ba5d1c4eaa1541d74cf339d283">ssCrossCircle</a>
+, <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a6fa151d01f1694c9ff9922da686dc535">ssPlusCircle</a>
+, <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349ada3b2988ece38c121922a4b5007eb08d">ssPeace</a>
+, <br />
+&#160;&#160;<a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e">ssPixmap</a>
+, <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d">ssCustom</a>
+<br />
+ }</td></tr>
+<tr class="separator:adb31525af6b680e6f1b7472e43859349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Membros Públicos</h2></td></tr>
+<tr class="memitem:a8836018d9ad83ccd8870de8315c1be73"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a8836018d9ad83ccd8870de8315c1be73">QCPScatterStyle</a> ()</td></tr>
+<tr class="separator:a8836018d9ad83ccd8870de8315c1be73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a003d92f74f4561eda111862eadd62f28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a003d92f74f4561eda111862eadd62f28">QCPScatterStyle</a> (<a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">ScatterShape</a> <a class="el" href="class_q_c_p_scatter_style.html#af04cad55bd7f58a96da4fc6bc46a0a1e">shape</a>, double <a class="el" href="class_q_c_p_scatter_style.html#a0e94526d9165d9f50e262102bdd71a47">size</a>=6)</td></tr>
+<tr class="separator:a003d92f74f4561eda111862eadd62f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa059da858c864c7e05871dc602d7eab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#afa059da858c864c7e05871dc602d7eab">QCPScatterStyle</a> (<a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">ScatterShape</a> <a class="el" href="class_q_c_p_scatter_style.html#af04cad55bd7f58a96da4fc6bc46a0a1e">shape</a>, const QColor &amp;color, double <a class="el" href="class_q_c_p_scatter_style.html#a0e94526d9165d9f50e262102bdd71a47">size</a>)</td></tr>
+<tr class="separator:afa059da858c864c7e05871dc602d7eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e1b64f12cac7f07af180ae4316fd38d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a6e1b64f12cac7f07af180ae4316fd38d">QCPScatterStyle</a> (<a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">ScatterShape</a> <a class="el" href="class_q_c_p_scatter_style.html#af04cad55bd7f58a96da4fc6bc46a0a1e">shape</a>, const QColor &amp;color, const QColor &amp;fill, double <a class="el" href="class_q_c_p_scatter_style.html#a0e94526d9165d9f50e262102bdd71a47">size</a>)</td></tr>
+<tr class="separator:a6e1b64f12cac7f07af180ae4316fd38d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85acc4941d7e5c9bca5fa51377a77f49"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a85acc4941d7e5c9bca5fa51377a77f49">QCPScatterStyle</a> (<a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">ScatterShape</a> <a class="el" href="class_q_c_p_scatter_style.html#af04cad55bd7f58a96da4fc6bc46a0a1e">shape</a>, const QPen &amp;<a class="el" href="class_q_c_p_scatter_style.html#acdd6313d16e69d3810e9d1f48dd9e4bb">pen</a>, const QBrush &amp;<a class="el" href="class_q_c_p_scatter_style.html#adc4f66aed84f1d7a3a5aabf4f48f31a6">brush</a>, double <a class="el" href="class_q_c_p_scatter_style.html#a0e94526d9165d9f50e262102bdd71a47">size</a>)</td></tr>
+<tr class="separator:a85acc4941d7e5c9bca5fa51377a77f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63962094587a4c2258435aa7933996cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a63962094587a4c2258435aa7933996cc">QCPScatterStyle</a> (const QPixmap &amp;<a class="el" href="class_q_c_p_scatter_style.html#a9b2d1a2ec0aac0c74f7582d14050e93a">pixmap</a>)</td></tr>
+<tr class="separator:a63962094587a4c2258435aa7933996cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a879c30647683b3cfbde2afecea815e6f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a879c30647683b3cfbde2afecea815e6f">QCPScatterStyle</a> (const QPainterPath &amp;<a class="el" href="class_q_c_p_scatter_style.html#aef1fac84c9830fd97f2a8568e605e372">customPath</a>, const QPen &amp;<a class="el" href="class_q_c_p_scatter_style.html#acdd6313d16e69d3810e9d1f48dd9e4bb">pen</a>, const QBrush &amp;<a class="el" href="class_q_c_p_scatter_style.html#adc4f66aed84f1d7a3a5aabf4f48f31a6">brush</a>=Qt::NoBrush, double <a class="el" href="class_q_c_p_scatter_style.html#a0e94526d9165d9f50e262102bdd71a47">size</a>=6)</td></tr>
+<tr class="separator:a879c30647683b3cfbde2afecea815e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e94526d9165d9f50e262102bdd71a47"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a0e94526d9165d9f50e262102bdd71a47">size</a> () const</td></tr>
+<tr class="separator:a0e94526d9165d9f50e262102bdd71a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af04cad55bd7f58a96da4fc6bc46a0a1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">ScatterShape</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#af04cad55bd7f58a96da4fc6bc46a0a1e">shape</a> () const</td></tr>
+<tr class="separator:af04cad55bd7f58a96da4fc6bc46a0a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdd6313d16e69d3810e9d1f48dd9e4bb"><td class="memItemLeft" align="right" valign="top">QPen&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#acdd6313d16e69d3810e9d1f48dd9e4bb">pen</a> () const</td></tr>
+<tr class="separator:acdd6313d16e69d3810e9d1f48dd9e4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc4f66aed84f1d7a3a5aabf4f48f31a6"><td class="memItemLeft" align="right" valign="top">QBrush&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#adc4f66aed84f1d7a3a5aabf4f48f31a6">brush</a> () const</td></tr>
+<tr class="separator:adc4f66aed84f1d7a3a5aabf4f48f31a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b2d1a2ec0aac0c74f7582d14050e93a"><td class="memItemLeft" align="right" valign="top">QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a9b2d1a2ec0aac0c74f7582d14050e93a">pixmap</a> () const</td></tr>
+<tr class="separator:a9b2d1a2ec0aac0c74f7582d14050e93a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef1fac84c9830fd97f2a8568e605e372"><td class="memItemLeft" align="right" valign="top">QPainterPath&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#aef1fac84c9830fd97f2a8568e605e372">customPath</a> () const</td></tr>
+<tr class="separator:aef1fac84c9830fd97f2a8568e605e372"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d59ba8864914f765817841089e436f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a7d59ba8864914f765817841089e436f1">setFromOther</a> (const <a class="el" href="class_q_c_p_scatter_style.html">QCPScatterStyle</a> &amp;other, ScatterProperties properties)</td></tr>
+<tr class="separator:a7d59ba8864914f765817841089e436f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaefdd031052892c4136129db68596e0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#aaefdd031052892c4136129db68596e0f">setSize</a> (double <a class="el" href="class_q_c_p_scatter_style.html#a0e94526d9165d9f50e262102bdd71a47">size</a>)</td></tr>
+<tr class="separator:aaefdd031052892c4136129db68596e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c641c4d4c6d29cb705d3887cfce91c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a7c641c4d4c6d29cb705d3887cfce91c1">setShape</a> (<a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">ScatterShape</a> <a class="el" href="class_q_c_p_scatter_style.html#af04cad55bd7f58a96da4fc6bc46a0a1e">shape</a>)</td></tr>
+<tr class="separator:a7c641c4d4c6d29cb705d3887cfce91c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a761f1f229cc0ca4703e1e2b89f6dd1ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a761f1f229cc0ca4703e1e2b89f6dd1ba">setPen</a> (const QPen &amp;<a class="el" href="class_q_c_p_scatter_style.html#acdd6313d16e69d3810e9d1f48dd9e4bb">pen</a>)</td></tr>
+<tr class="separator:a761f1f229cc0ca4703e1e2b89f6dd1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74d692aaeb8d4b36d6f7d510e44264b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a74d692aaeb8d4b36d6f7d510e44264b1">setBrush</a> (const QBrush &amp;<a class="el" href="class_q_c_p_scatter_style.html#adc4f66aed84f1d7a3a5aabf4f48f31a6">brush</a>)</td></tr>
+<tr class="separator:a74d692aaeb8d4b36d6f7d510e44264b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fb611d46acfac520d7b89a1c71d9246"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a5fb611d46acfac520d7b89a1c71d9246">setPixmap</a> (const QPixmap &amp;<a class="el" href="class_q_c_p_scatter_style.html#a9b2d1a2ec0aac0c74f7582d14050e93a">pixmap</a>)</td></tr>
+<tr class="separator:a5fb611d46acfac520d7b89a1c71d9246"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96a3e949f90b2afe5677ca9412a12a1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a96a3e949f90b2afe5677ca9412a12a1e">setCustomPath</a> (const QPainterPath &amp;<a class="el" href="class_q_c_p_scatter_style.html#aef1fac84c9830fd97f2a8568e605e372">customPath</a>)</td></tr>
+<tr class="separator:a96a3e949f90b2afe5677ca9412a12a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72db6bcb1e1abd6e53c1315dd3dea7e4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a72db6bcb1e1abd6e53c1315dd3dea7e4">isNone</a> () const</td></tr>
+<tr class="separator:a72db6bcb1e1abd6e53c1315dd3dea7e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47077eb6450fe9a788f833e4ec1b1d5a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a47077eb6450fe9a788f833e4ec1b1d5a">isPenDefined</a> () const</td></tr>
+<tr class="separator:a47077eb6450fe9a788f833e4ec1b1d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acabc2a8c83d650b946f50c3166b6c35e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#acabc2a8c83d650b946f50c3166b6c35e">undefinePen</a> ()</td></tr>
+<tr class="separator:acabc2a8c83d650b946f50c3166b6c35e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd8044ece445300499ca0dc164821e0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#afd8044ece445300499ca0dc164821e0f">applyTo</a> (<a class="el" href="class_q_c_p_painter.html">QCPPainter</a> *painter, const QPen &amp;defaultPen) const</td></tr>
+<tr class="separator:afd8044ece445300499ca0dc164821e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89b5105e6027bfcbfeefed9d201b607c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a89b5105e6027bfcbfeefed9d201b607c">drawShape</a> (<a class="el" href="class_q_c_p_painter.html">QCPPainter</a> *painter, const QPointF &amp;pos) const</td></tr>
+<tr class="separator:a89b5105e6027bfcbfeefed9d201b607c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95c297b114c77c22428ef40f54620ddf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a95c297b114c77c22428ef40f54620ddf">drawShape</a> (<a class="el" href="class_q_c_p_painter.html">QCPPainter</a> *painter, double x, double y) const</td></tr>
+<tr class="separator:a95c297b114c77c22428ef40f54620ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Atributos Protegidos</h2></td></tr>
+<tr class="memitem:a757da98671eb06b221979373ac2cec91"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a></td></tr>
+<tr class="separator:a757da98671eb06b221979373ac2cec91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1b327f35f107ed108290187bbc8c7c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">ScatterShape</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#af1b327f35f107ed108290187bbc8c7c6">mShape</a></td></tr>
+<tr class="separator:af1b327f35f107ed108290187bbc8c7c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17"><td class="memItemLeft" align="right" valign="top">QPen&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17">mPen</a></td></tr>
+<tr class="separator:a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b9c6ab10aebcaf236f1f45d1d6d64d1"><td class="memItemLeft" align="right" valign="top">QBrush&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a1b9c6ab10aebcaf236f1f45d1d6d64d1">mBrush</a></td></tr>
+<tr class="separator:a1b9c6ab10aebcaf236f1f45d1d6d64d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7697346c89b19d4cd1d8dd33319ec9e3"><td class="memItemLeft" align="right" valign="top">QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a7697346c89b19d4cd1d8dd33319ec9e3">mPixmap</a></td></tr>
+<tr class="separator:a7697346c89b19d4cd1d8dd33319ec9e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a813cb074744dc5a2f59cc99d6a10c6f0"><td class="memItemLeft" align="right" valign="top">QPainterPath&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a813cb074744dc5a2f59cc99d6a10c6f0">mCustomPath</a></td></tr>
+<tr class="separator:a813cb074744dc5a2f59cc99d6a10c6f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84ef5aa591ddba07b440f597e1669e78"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_scatter_style.html#a84ef5aa591ddba07b440f597e1669e78">mPenDefined</a></td></tr>
+<tr class="separator:a84ef5aa591ddba07b440f597e1669e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p >Represents the visual appearance of scatter points. </p>
+<p >This class holds information about shape, color and size of scatter points. In plottables like <a class="el" href="class_q_c_p_graph.html" title="A plottable representing a graph in a plot.">QCPGraph</a> it is used to store how scatter points shall be drawn. For example, <a class="el" href="class_q_c_p_graph.html#a12bd17a8ba21983163ec5d8f42a9fea5">QCPGraph::setScatterStyle</a> takes a <a class="el" href="class_q_c_p_scatter_style.html" title="Represents the visual appearance of scatter points.">QCPScatterStyle</a> instance.</p>
+<p >A scatter style consists of a shape (<a class="el" href="class_q_c_p_scatter_style.html#a7c641c4d4c6d29cb705d3887cfce91c1">setShape</a>), a line color (<a class="el" href="class_q_c_p_scatter_style.html#a761f1f229cc0ca4703e1e2b89f6dd1ba">setPen</a>) and possibly a fill (<a class="el" href="class_q_c_p_scatter_style.html#a74d692aaeb8d4b36d6f7d510e44264b1">setBrush</a>), if the shape provides a fillable area. Further, the size of the shape can be controlled with <a class="el" href="class_q_c_p_scatter_style.html#aaefdd031052892c4136129db68596e0f">setSize</a>.</p>
+<h1><a class="anchor" id="QCPScatterStyle-defining"></a>
+Specifying a scatter style</h1>
+<p >You can set all these configurations either by calling the respective functions on an instance: </p><div class="fragment"></div><!-- fragment --><p >Or you can use one of the various constructors that take different parameter combinations, making it easy to specify a scatter style in a single call, like so: </p><div class="fragment"></div><!-- fragment --><h1><a class="anchor" id="QCPScatterStyle-undefinedpen"></a>
+Leaving the color/pen up to the plottable</h1>
+<p >There are two constructors which leave the pen undefined: <a class="el" href="class_q_c_p_scatter_style.html#a8836018d9ad83ccd8870de8315c1be73">QCPScatterStyle()</a> and <a class="el" href="class_q_c_p_scatter_style.html#a003d92f74f4561eda111862eadd62f28">QCPScatterStyle(ScatterShape shape, double size)</a>. If those constructors are used, a call to <a class="el" href="class_q_c_p_scatter_style.html#a47077eb6450fe9a788f833e4ec1b1d5a">isPenDefined</a> will return false. It leads to scatter points that inherit the pen from the plottable that uses the scatter style. Thus, if such a scatter style is passed to <a class="el" href="class_q_c_p_graph.html" title="A plottable representing a graph in a plot.">QCPGraph</a>, the line color of the graph (<a class="el" href="class_q_c_p_abstract_plottable.html#ab74b09ae4c0e7e13142fe4b5bf46cac7">QCPGraph::setPen</a>) will be used by the scatter points. This makes it very convenient to set up typical scatter settings:</p>
+<div class="fragment"></div><!-- fragment --><p >Notice that it wasn't even necessary to explicitly call a <a class="el" href="class_q_c_p_scatter_style.html" title="Represents the visual appearance of scatter points.">QCPScatterStyle</a> constructor. This works because <a class="el" href="class_q_c_p_scatter_style.html" title="Represents the visual appearance of scatter points.">QCPScatterStyle</a> provides a constructor that can transform a <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">ScatterShape</a> directly into a <a class="el" href="class_q_c_p_scatter_style.html" title="Represents the visual appearance of scatter points.">QCPScatterStyle</a> instance (that's the <a class="el" href="class_q_c_p_scatter_style.html#a003d92f74f4561eda111862eadd62f28">QCPScatterStyle(ScatterShape shape, double size)</a> constructor with a default for <em>size</em>). In those cases, C++ allows directly supplying a <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">ScatterShape</a>, where actually a <a class="el" href="class_q_c_p_scatter_style.html" title="Represents the visual appearance of scatter points.">QCPScatterStyle</a> is expected.</p>
+<h1><a class="anchor" id="QCPScatterStyle-custompath-and-pixmap"></a>
+Custom shapes and pixmaps</h1>
+<p ><a class="el" href="class_q_c_p_scatter_style.html" title="Represents the visual appearance of scatter points.">QCPScatterStyle</a> supports drawing custom shapes and arbitrary pixmaps as scatter points.</p>
+<p >For custom shapes, you can provide a QPainterPath with the desired shape to the <a class="el" href="class_q_c_p_scatter_style.html#a96a3e949f90b2afe5677ca9412a12a1e">setCustomPath</a> function or call the constructor that takes a painter path. The scatter shape will automatically be set to <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d">ssCustom</a>.</p>
+<p >For pixmaps, you call <a class="el" href="class_q_c_p_scatter_style.html#a5fb611d46acfac520d7b89a1c71d9246">setPixmap</a> with the desired QPixmap. Alternatively you can use the constructor that takes a QPixmap. The scatter shape will automatically be set to <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e">ssPixmap</a>. Note that <a class="el" href="class_q_c_p_scatter_style.html#aaefdd031052892c4136129db68596e0f">setSize</a> does not influence the appearance of the pixmap. </p>
+</div><h2 class="groupheader">Enumerações</h2>
+<a id="a8974f6a20f8f6eea7781f0e6af9deb46" name="a8974f6a20f8f6eea7781f0e6af9deb46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8974f6a20f8f6eea7781f0e6af9deb46">&#9670;&nbsp;</a></span>ScatterProperty</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46">QCPScatterStyle::ScatterProperty</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Represents the various properties of a scatter style instance. For example, this enum is used to specify which properties of <a class="el" href="class_q_c_p_selection_decorator.html#ab403a613289714ff4fd4a0c0371ab116">QCPSelectionDecorator::setScatterStyle</a> will be used when highlighting selected data points.</p>
+<p >Specific scatter properties can be transferred between <a class="el" href="class_q_c_p_scatter_style.html">QCPScatterStyle</a> instances via <a class="el" href="class_q_c_p_scatter_style.html#a7d59ba8864914f765817841089e436f1">setFromOther</a>. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumeradores</th></tr><tr><td class="fieldname"><a id="a8974f6a20f8f6eea7781f0e6af9deb46a5891be10bea382fad6c20f7737a2dd90" name="a8974f6a20f8f6eea7781f0e6af9deb46a5891be10bea382fad6c20f7737a2dd90"></a>spNone&#160;</td><td class="fielddoc"><p ><code>0x00</code> None </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8974f6a20f8f6eea7781f0e6af9deb46aa04d012e7c03e455db2b68fdd55c2a04" name="a8974f6a20f8f6eea7781f0e6af9deb46aa04d012e7c03e455db2b68fdd55c2a04"></a>spPen&#160;</td><td class="fielddoc"><p ><code>0x01</code> The pen property, see <a class="el" href="class_q_c_p_scatter_style.html#a761f1f229cc0ca4703e1e2b89f6dd1ba">setPen</a> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8974f6a20f8f6eea7781f0e6af9deb46af0499b1fc04de2dcc7e47ff0ef75c904" name="a8974f6a20f8f6eea7781f0e6af9deb46af0499b1fc04de2dcc7e47ff0ef75c904"></a>spBrush&#160;</td><td class="fielddoc"><p ><code>0x02</code> The brush property, see <a class="el" href="class_q_c_p_scatter_style.html#a74d692aaeb8d4b36d6f7d510e44264b1">setBrush</a> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8974f6a20f8f6eea7781f0e6af9deb46a553ae95798ace9a328c7cd62045260b0" name="a8974f6a20f8f6eea7781f0e6af9deb46a553ae95798ace9a328c7cd62045260b0"></a>spSize&#160;</td><td class="fielddoc"><p ><code>0x04</code> The size property, see <a class="el" href="class_q_c_p_scatter_style.html#aaefdd031052892c4136129db68596e0f">setSize</a> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8974f6a20f8f6eea7781f0e6af9deb46a19c224563adb42c55fb8b7ae6904411b" name="a8974f6a20f8f6eea7781f0e6af9deb46a19c224563adb42c55fb8b7ae6904411b"></a>spShape&#160;</td><td class="fielddoc"><p ><code>0x08</code> The shape property, see <a class="el" href="class_q_c_p_scatter_style.html#a7c641c4d4c6d29cb705d3887cfce91c1">setShape</a> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8974f6a20f8f6eea7781f0e6af9deb46af62509c0409467f387234274762e6f69" name="a8974f6a20f8f6eea7781f0e6af9deb46af62509c0409467f387234274762e6f69"></a>spAll&#160;</td><td class="fielddoc"><p ><code>0xFF</code> All properties </p>
+</td></tr>
+</table>
+<div class="fragment"><div class="line"><a id="l02474" name="l02474"></a><span class="lineno"> 2474</span>                       { <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46a5891be10bea382fad6c20f7737a2dd90">spNone</a>  = 0x00  </div>
+<div class="line"><a id="l02475" name="l02475"></a><span class="lineno"> 2475</span>                         ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46aa04d012e7c03e455db2b68fdd55c2a04">spPen</a>   = 0x01  </div>
+<div class="line"><a id="l02476" name="l02476"></a><span class="lineno"> 2476</span>                         ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46af0499b1fc04de2dcc7e47ff0ef75c904">spBrush</a> = 0x02  </div>
+<div class="line"><a id="l02477" name="l02477"></a><span class="lineno"> 2477</span>                         ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46a553ae95798ace9a328c7cd62045260b0">spSize</a>  = 0x04  </div>
+<div class="line"><a id="l02478" name="l02478"></a><span class="lineno"> 2478</span>                         ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46a19c224563adb42c55fb8b7ae6904411b">spShape</a> = 0x08  </div>
+<div class="line"><a id="l02479" name="l02479"></a><span class="lineno"> 2479</span>                         ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46af62509c0409467f387234274762e6f69">spAll</a>   = 0xFF  </div>
+<div class="line"><a id="l02480" name="l02480"></a><span class="lineno"> 2480</span>                       };</div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a8974f6a20f8f6eea7781f0e6af9deb46a19c224563adb42c55fb8b7ae6904411b"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46a19c224563adb42c55fb8b7ae6904411b">QCPScatterStyle::spShape</a></div><div class="ttdeci">@ spShape</div><div class="ttdoc">0x08 The shape property, see setShape</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2478</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a8974f6a20f8f6eea7781f0e6af9deb46a553ae95798ace9a328c7cd62045260b0"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46a553ae95798ace9a328c7cd62045260b0">QCPScatterStyle::spSize</a></div><div class="ttdeci">@ spSize</div><div class="ttdoc">0x04 The size property, see setSize</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2477</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a8974f6a20f8f6eea7781f0e6af9deb46a5891be10bea382fad6c20f7737a2dd90"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46a5891be10bea382fad6c20f7737a2dd90">QCPScatterStyle::spNone</a></div><div class="ttdeci">@ spNone</div><div class="ttdoc">0x00 None</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2474</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a8974f6a20f8f6eea7781f0e6af9deb46aa04d012e7c03e455db2b68fdd55c2a04"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46aa04d012e7c03e455db2b68fdd55c2a04">QCPScatterStyle::spPen</a></div><div class="ttdeci">@ spPen</div><div class="ttdoc">0x01 The pen property, see setPen</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2475</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a8974f6a20f8f6eea7781f0e6af9deb46af0499b1fc04de2dcc7e47ff0ef75c904"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46af0499b1fc04de2dcc7e47ff0ef75c904">QCPScatterStyle::spBrush</a></div><div class="ttdeci">@ spBrush</div><div class="ttdoc">0x02 The brush property, see setBrush</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2476</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a8974f6a20f8f6eea7781f0e6af9deb46af62509c0409467f387234274762e6f69"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46af62509c0409467f387234274762e6f69">QCPScatterStyle::spAll</a></div><div class="ttdeci">@ spAll</div><div class="ttdoc">0xFF All properties</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2479</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adb31525af6b680e6f1b7472e43859349" name="adb31525af6b680e6f1b7472e43859349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb31525af6b680e6f1b7472e43859349">&#9670;&nbsp;</a></span>ScatterShape</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">QCPScatterStyle::ScatterShape</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Defines the shape used for scatter points.</p>
+<p >On plottables/items that draw scatters, the sizes of these visualizations (with exception of <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a06e15a735b79093a1d999c0374fa3aa1">ssDot</a> and <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e">ssPixmap</a>) can be controlled with the <a class="el" href="class_q_c_p_scatter_style.html#aaefdd031052892c4136129db68596e0f">setSize</a> function. Scatters are drawn with the pen and brush specified with <a class="el" href="class_q_c_p_scatter_style.html#a761f1f229cc0ca4703e1e2b89f6dd1ba">setPen</a> and <a class="el" href="class_q_c_p_scatter_style.html#a74d692aaeb8d4b36d6f7d510e44264b1">setBrush</a>. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumeradores</th></tr><tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349abd144c291ca274f77053ec68cab6c022" name="adb31525af6b680e6f1b7472e43859349abd144c291ca274f77053ec68cab6c022"></a>ssNone&#160;</td><td class="fielddoc"><p >no scatter symbols are drawn (e.g. in <a class="el" href="class_q_c_p_graph.html" title="A plottable representing a graph in a plot.">QCPGraph</a>, data only represented with lines) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349a06e15a735b79093a1d999c0374fa3aa1" name="adb31525af6b680e6f1b7472e43859349a06e15a735b79093a1d999c0374fa3aa1"></a>ssDot&#160;</td><td class="fielddoc"><p >\enumimage{ssDot.png} a single pixel (use <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a281fe1434696dcbab3aa6b9ccfbb09e9">ssDisc</a> or <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a7c92a110880d0ef2170dff3a5b4f7779">ssCircle</a> if you want a round shape with a certain radius) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349a9eacd60f059dc3ef71bf249f515a6fe4" name="adb31525af6b680e6f1b7472e43859349a9eacd60f059dc3ef71bf249f515a6fe4"></a>ssCross&#160;</td><td class="fielddoc"><p >\enumimage{ssCross.png} a cross </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349a2d7f1d3c1a148b9d9d17f2fd9cae5eb7" name="adb31525af6b680e6f1b7472e43859349a2d7f1d3c1a148b9d9d17f2fd9cae5eb7"></a>ssPlus&#160;</td><td class="fielddoc"><p >\enumimage{ssPlus.png} a plus </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349a7c92a110880d0ef2170dff3a5b4f7779" name="adb31525af6b680e6f1b7472e43859349a7c92a110880d0ef2170dff3a5b4f7779"></a>ssCircle&#160;</td><td class="fielddoc"><p >\enumimage{ssCircle.png} a circle </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349a281fe1434696dcbab3aa6b9ccfbb09e9" name="adb31525af6b680e6f1b7472e43859349a281fe1434696dcbab3aa6b9ccfbb09e9"></a>ssDisc&#160;</td><td class="fielddoc"><p >\enumimage{ssDisc.png} a circle which is filled with the pen's color (not the brush as with ssCircle) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349a279e48703ddc9f1cf4a61d3e2817ab3c" name="adb31525af6b680e6f1b7472e43859349a279e48703ddc9f1cf4a61d3e2817ab3c"></a>ssSquare&#160;</td><td class="fielddoc"><p >\enumimage{ssSquare.png} a square </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349a4fc5929df1b2dad0a3cb2ef2c8b6e633" name="adb31525af6b680e6f1b7472e43859349a4fc5929df1b2dad0a3cb2ef2c8b6e633"></a>ssDiamond&#160;</td><td class="fielddoc"><p >\enumimage{ssDiamond.png} a diamond </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349a6047a2d64e41f1d6ce54445d595d442f" name="adb31525af6b680e6f1b7472e43859349a6047a2d64e41f1d6ce54445d595d442f"></a>ssStar&#160;</td><td class="fielddoc"><p >\enumimage{ssStar.png} a star with eight arms, i.e. a combination of cross and plus </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349a74a8d4eff1d97b57c53a60d0003453c3" name="adb31525af6b680e6f1b7472e43859349a74a8d4eff1d97b57c53a60d0003453c3"></a>ssTriangle&#160;</td><td class="fielddoc"><p >\enumimage{ssTriangle.png} an equilateral triangle, standing on baseline </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349a6156274d21d8b4115197567d3ea2d9a8" name="adb31525af6b680e6f1b7472e43859349a6156274d21d8b4115197567d3ea2d9a8"></a>ssTriangleInverted&#160;</td><td class="fielddoc"><p >\enumimage{ssTriangleInverted.png} an equilateral triangle, standing on corner </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349a7081310936c200c6c78e34c172f72d07" name="adb31525af6b680e6f1b7472e43859349a7081310936c200c6c78e34c172f72d07"></a>ssCrossSquare&#160;</td><td class="fielddoc"><p >\enumimage{ssCrossSquare.png} a square with a cross inside </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349a5aa8e9db545e5404482fec774768ee25" name="adb31525af6b680e6f1b7472e43859349a5aa8e9db545e5404482fec774768ee25"></a>ssPlusSquare&#160;</td><td class="fielddoc"><p >\enumimage{ssPlusSquare.png} a square with a plus inside </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349a524613ba5d1c4eaa1541d74cf339d283" name="adb31525af6b680e6f1b7472e43859349a524613ba5d1c4eaa1541d74cf339d283"></a>ssCrossCircle&#160;</td><td class="fielddoc"><p >\enumimage{ssCrossCircle.png} a circle with a cross inside </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349a6fa151d01f1694c9ff9922da686dc535" name="adb31525af6b680e6f1b7472e43859349a6fa151d01f1694c9ff9922da686dc535"></a>ssPlusCircle&#160;</td><td class="fielddoc"><p >\enumimage{ssPlusCircle.png} a circle with a plus inside </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349ada3b2988ece38c121922a4b5007eb08d" name="adb31525af6b680e6f1b7472e43859349ada3b2988ece38c121922a4b5007eb08d"></a>ssPeace&#160;</td><td class="fielddoc"><p >\enumimage{ssPeace.png} a circle, with one vertical and two downward diagonal lines </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e" name="adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e"></a>ssPixmap&#160;</td><td class="fielddoc"><p >a custom pixmap specified by <a class="el" href="class_q_c_p_scatter_style.html#a5fb611d46acfac520d7b89a1c71d9246">setPixmap</a>, centered on the data point coordinates </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d" name="adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d"></a>ssCustom&#160;</td><td class="fielddoc"><p >custom painter operations are performed per scatter (As QPainterPath, see <a class="el" href="class_q_c_p_scatter_style.html#a96a3e949f90b2afe5677ca9412a12a1e">setCustomPath</a>) </p>
+</td></tr>
+</table>
+<div class="fragment"><div class="line"><a id="l02492" name="l02492"></a><span class="lineno"> 2492</span>                    { <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349abd144c291ca274f77053ec68cab6c022">ssNone</a>       </div>
+<div class="line"><a id="l02493" name="l02493"></a><span class="lineno"> 2493</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a06e15a735b79093a1d999c0374fa3aa1">ssDot</a>       </div>
+<div class="line"><a id="l02494" name="l02494"></a><span class="lineno"> 2494</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a9eacd60f059dc3ef71bf249f515a6fe4">ssCross</a>     </div>
+<div class="line"><a id="l02495" name="l02495"></a><span class="lineno"> 2495</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a2d7f1d3c1a148b9d9d17f2fd9cae5eb7">ssPlus</a>      </div>
+<div class="line"><a id="l02496" name="l02496"></a><span class="lineno"> 2496</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a7c92a110880d0ef2170dff3a5b4f7779">ssCircle</a>    </div>
+<div class="line"><a id="l02497" name="l02497"></a><span class="lineno"> 2497</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a281fe1434696dcbab3aa6b9ccfbb09e9">ssDisc</a>      </div>
+<div class="line"><a id="l02498" name="l02498"></a><span class="lineno"> 2498</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a279e48703ddc9f1cf4a61d3e2817ab3c">ssSquare</a>    </div>
+<div class="line"><a id="l02499" name="l02499"></a><span class="lineno"> 2499</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a4fc5929df1b2dad0a3cb2ef2c8b6e633">ssDiamond</a>   </div>
+<div class="line"><a id="l02500" name="l02500"></a><span class="lineno"> 2500</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a6047a2d64e41f1d6ce54445d595d442f">ssStar</a>      </div>
+<div class="line"><a id="l02501" name="l02501"></a><span class="lineno"> 2501</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a74a8d4eff1d97b57c53a60d0003453c3">ssTriangle</a>  </div>
+<div class="line"><a id="l02502" name="l02502"></a><span class="lineno"> 2502</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a6156274d21d8b4115197567d3ea2d9a8">ssTriangleInverted</a> </div>
+<div class="line"><a id="l02503" name="l02503"></a><span class="lineno"> 2503</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a7081310936c200c6c78e34c172f72d07">ssCrossSquare</a>      </div>
+<div class="line"><a id="l02504" name="l02504"></a><span class="lineno"> 2504</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a5aa8e9db545e5404482fec774768ee25">ssPlusSquare</a>       </div>
+<div class="line"><a id="l02505" name="l02505"></a><span class="lineno"> 2505</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a524613ba5d1c4eaa1541d74cf339d283">ssCrossCircle</a>      </div>
+<div class="line"><a id="l02506" name="l02506"></a><span class="lineno"> 2506</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a6fa151d01f1694c9ff9922da686dc535">ssPlusCircle</a>       </div>
+<div class="line"><a id="l02507" name="l02507"></a><span class="lineno"> 2507</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349ada3b2988ece38c121922a4b5007eb08d">ssPeace</a>     </div>
+<div class="line"><a id="l02508" name="l02508"></a><span class="lineno"> 2508</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e">ssPixmap</a>    </div>
+<div class="line"><a id="l02509" name="l02509"></a><span class="lineno"> 2509</span>                      ,<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d">ssCustom</a>    </div>
+<div class="line"><a id="l02510" name="l02510"></a><span class="lineno"> 2510</span>                    };</div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349a06e15a735b79093a1d999c0374fa3aa1"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a06e15a735b79093a1d999c0374fa3aa1">QCPScatterStyle::ssDot</a></div><div class="ttdeci">@ ssDot</div><div class="ttdoc">\enumimage{ssDot.png} a single pixel (use ssDisc or ssCircle if you want a round shape with a certain...</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2493</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d">QCPScatterStyle::ssCustom</a></div><div class="ttdeci">@ ssCustom</div><div class="ttdoc">custom painter operations are performed per scatter (As QPainterPath, see setCustomPath)</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2509</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349a279e48703ddc9f1cf4a61d3e2817ab3c"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a279e48703ddc9f1cf4a61d3e2817ab3c">QCPScatterStyle::ssSquare</a></div><div class="ttdeci">@ ssSquare</div><div class="ttdoc">\enumimage{ssSquare.png} a square</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2498</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349a281fe1434696dcbab3aa6b9ccfbb09e9"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a281fe1434696dcbab3aa6b9ccfbb09e9">QCPScatterStyle::ssDisc</a></div><div class="ttdeci">@ ssDisc</div><div class="ttdoc">\enumimage{ssDisc.png} a circle which is filled with the pen's color (not the brush as with ssCircle)</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2497</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349a2d7f1d3c1a148b9d9d17f2fd9cae5eb7"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a2d7f1d3c1a148b9d9d17f2fd9cae5eb7">QCPScatterStyle::ssPlus</a></div><div class="ttdeci">@ ssPlus</div><div class="ttdoc">\enumimage{ssPlus.png} a plus</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2495</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349a4fc5929df1b2dad0a3cb2ef2c8b6e633"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a4fc5929df1b2dad0a3cb2ef2c8b6e633">QCPScatterStyle::ssDiamond</a></div><div class="ttdeci">@ ssDiamond</div><div class="ttdoc">\enumimage{ssDiamond.png} a diamond</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2499</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349a524613ba5d1c4eaa1541d74cf339d283"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a524613ba5d1c4eaa1541d74cf339d283">QCPScatterStyle::ssCrossCircle</a></div><div class="ttdeci">@ ssCrossCircle</div><div class="ttdoc">\enumimage{ssCrossCircle.png} a circle with a cross inside</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2505</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349a5aa8e9db545e5404482fec774768ee25"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a5aa8e9db545e5404482fec774768ee25">QCPScatterStyle::ssPlusSquare</a></div><div class="ttdeci">@ ssPlusSquare</div><div class="ttdoc">\enumimage{ssPlusSquare.png} a square with a plus inside</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2504</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349a6047a2d64e41f1d6ce54445d595d442f"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a6047a2d64e41f1d6ce54445d595d442f">QCPScatterStyle::ssStar</a></div><div class="ttdeci">@ ssStar</div><div class="ttdoc">\enumimage{ssStar.png} a star with eight arms, i.e. a combination of cross and plus</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2500</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349a6156274d21d8b4115197567d3ea2d9a8"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a6156274d21d8b4115197567d3ea2d9a8">QCPScatterStyle::ssTriangleInverted</a></div><div class="ttdeci">@ ssTriangleInverted</div><div class="ttdoc">\enumimage{ssTriangleInverted.png} an equilateral triangle, standing on corner</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2502</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349a6fa151d01f1694c9ff9922da686dc535"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a6fa151d01f1694c9ff9922da686dc535">QCPScatterStyle::ssPlusCircle</a></div><div class="ttdeci">@ ssPlusCircle</div><div class="ttdoc">\enumimage{ssPlusCircle.png} a circle with a plus inside</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2506</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349a7081310936c200c6c78e34c172f72d07"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a7081310936c200c6c78e34c172f72d07">QCPScatterStyle::ssCrossSquare</a></div><div class="ttdeci">@ ssCrossSquare</div><div class="ttdoc">\enumimage{ssCrossSquare.png} a square with a cross inside</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2503</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349a74a8d4eff1d97b57c53a60d0003453c3"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a74a8d4eff1d97b57c53a60d0003453c3">QCPScatterStyle::ssTriangle</a></div><div class="ttdeci">@ ssTriangle</div><div class="ttdoc">\enumimage{ssTriangle.png} an equilateral triangle, standing on baseline</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2501</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349a7c92a110880d0ef2170dff3a5b4f7779"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a7c92a110880d0ef2170dff3a5b4f7779">QCPScatterStyle::ssCircle</a></div><div class="ttdeci">@ ssCircle</div><div class="ttdoc">\enumimage{ssCircle.png} a circle</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2496</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e">QCPScatterStyle::ssPixmap</a></div><div class="ttdeci">@ ssPixmap</div><div class="ttdoc">a custom pixmap specified by setPixmap, centered on the data point coordinates</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2508</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349a9eacd60f059dc3ef71bf249f515a6fe4"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a9eacd60f059dc3ef71bf249f515a6fe4">QCPScatterStyle::ssCross</a></div><div class="ttdeci">@ ssCross</div><div class="ttdoc">\enumimage{ssCross.png} a cross</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2494</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349abd144c291ca274f77053ec68cab6c022"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349abd144c291ca274f77053ec68cab6c022">QCPScatterStyle::ssNone</a></div><div class="ttdeci">@ ssNone</div><div class="ttdoc">no scatter symbols are drawn (e.g. in QCPGraph, data only represented with lines)</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2492</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adb31525af6b680e6f1b7472e43859349ada3b2988ece38c121922a4b5007eb08d"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349ada3b2988ece38c121922a4b5007eb08d">QCPScatterStyle::ssPeace</a></div><div class="ttdeci">@ ssPeace</div><div class="ttdoc">\enumimage{ssPeace.png} a circle, with one vertical and two downward diagonal lines</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2507</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Construtores e Destrutores</h2>
+<a id="a8836018d9ad83ccd8870de8315c1be73" name="a8836018d9ad83ccd8870de8315c1be73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8836018d9ad83ccd8870de8315c1be73">&#9670;&nbsp;</a></span>QCPScatterStyle() <span class="overload">[1/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QCPScatterStyle::QCPScatterStyle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Creates a new <a class="el" href="class_q_c_p_scatter_style.html" title="Represents the visual appearance of scatter points.">QCPScatterStyle</a> instance with size set to 6. No shape, pen or brush is defined.</p>
+<p >Since the pen is undefined (<a class="el" href="class_q_c_p_scatter_style.html#a47077eb6450fe9a788f833e4ec1b1d5a">isPenDefined</a> returns false), the scatter color will be inherited from the plottable that uses this scatter style. </p>
+<div class="fragment"><div class="line"><a id="l10635" name="l10635"></a><span class="lineno">10635</span>                                 :</div>
+<div class="line"><a id="l10636" name="l10636"></a><span class="lineno">10636</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>(6),</div>
+<div class="line"><a id="l10637" name="l10637"></a><span class="lineno">10637</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#af1b327f35f107ed108290187bbc8c7c6">mShape</a>(<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349abd144c291ca274f77053ec68cab6c022">ssNone</a>),</div>
+<div class="line"><a id="l10638" name="l10638"></a><span class="lineno">10638</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17">mPen</a>(Qt::NoPen),</div>
+<div class="line"><a id="l10639" name="l10639"></a><span class="lineno">10639</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a1b9c6ab10aebcaf236f1f45d1d6d64d1">mBrush</a>(Qt::NoBrush),</div>
+<div class="line"><a id="l10640" name="l10640"></a><span class="lineno">10640</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a84ef5aa591ddba07b440f597e1669e78">mPenDefined</a>(<span class="keyword">false</span>)</div>
+<div class="line"><a id="l10641" name="l10641"></a><span class="lineno">10641</span>{</div>
+<div class="line"><a id="l10642" name="l10642"></a><span class="lineno">10642</span>}</div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17">QCPScatterStyle::mPen</a></div><div class="ttdeci">QPen mPen</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2550</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a1b9c6ab10aebcaf236f1f45d1d6d64d1"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a1b9c6ab10aebcaf236f1f45d1d6d64d1">QCPScatterStyle::mBrush</a></div><div class="ttdeci">QBrush mBrush</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2551</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a757da98671eb06b221979373ac2cec91"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">QCPScatterStyle::mSize</a></div><div class="ttdeci">double mSize</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2548</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a84ef5aa591ddba07b440f597e1669e78"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a84ef5aa591ddba07b440f597e1669e78">QCPScatterStyle::mPenDefined</a></div><div class="ttdeci">bool mPenDefined</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2556</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_af1b327f35f107ed108290187bbc8c7c6"><div class="ttname"><a href="class_q_c_p_scatter_style.html#af1b327f35f107ed108290187bbc8c7c6">QCPScatterStyle::mShape</a></div><div class="ttdeci">ScatterShape mShape</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2549</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a003d92f74f4561eda111862eadd62f28" name="a003d92f74f4561eda111862eadd62f28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a003d92f74f4561eda111862eadd62f28">&#9670;&nbsp;</a></span>QCPScatterStyle() <span class="overload">[2/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QCPScatterStyle::QCPScatterStyle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">ScatterShape</a>&#160;</td>
+          <td class="paramname"><em>shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>size</em> = <code>6</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Creates a new <a class="el" href="class_q_c_p_scatter_style.html" title="Represents the visual appearance of scatter points.">QCPScatterStyle</a> instance with shape set to <em>shape</em> and size to <em>size</em>. No pen or brush is defined.</p>
+<p >Since the pen is undefined (<a class="el" href="class_q_c_p_scatter_style.html#a47077eb6450fe9a788f833e4ec1b1d5a">isPenDefined</a> returns false), the scatter color will be inherited from the plottable that uses this scatter style. </p>
+<div class="fragment"><div class="line"><a id="l10651" name="l10651"></a><span class="lineno">10651</span>                                                                :</div>
+<div class="line"><a id="l10652" name="l10652"></a><span class="lineno">10652</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#a0e94526d9165d9f50e262102bdd71a47">size</a>),</div>
+<div class="line"><a id="l10653" name="l10653"></a><span class="lineno">10653</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#af1b327f35f107ed108290187bbc8c7c6">mShape</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#af04cad55bd7f58a96da4fc6bc46a0a1e">shape</a>),</div>
+<div class="line"><a id="l10654" name="l10654"></a><span class="lineno">10654</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17">mPen</a>(Qt::NoPen),</div>
+<div class="line"><a id="l10655" name="l10655"></a><span class="lineno">10655</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a1b9c6ab10aebcaf236f1f45d1d6d64d1">mBrush</a>(Qt::NoBrush),</div>
+<div class="line"><a id="l10656" name="l10656"></a><span class="lineno">10656</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a84ef5aa591ddba07b440f597e1669e78">mPenDefined</a>(<span class="keyword">false</span>)</div>
+<div class="line"><a id="l10657" name="l10657"></a><span class="lineno">10657</span>{</div>
+<div class="line"><a id="l10658" name="l10658"></a><span class="lineno">10658</span>}</div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a0e94526d9165d9f50e262102bdd71a47"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a0e94526d9165d9f50e262102bdd71a47">QCPScatterStyle::size</a></div><div class="ttdeci">double size() const</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2522</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_af04cad55bd7f58a96da4fc6bc46a0a1e"><div class="ttname"><a href="class_q_c_p_scatter_style.html#af04cad55bd7f58a96da4fc6bc46a0a1e">QCPScatterStyle::shape</a></div><div class="ttdeci">ScatterShape shape() const</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2523</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afa059da858c864c7e05871dc602d7eab" name="afa059da858c864c7e05871dc602d7eab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa059da858c864c7e05871dc602d7eab">&#9670;&nbsp;</a></span>QCPScatterStyle() <span class="overload">[3/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QCPScatterStyle::QCPScatterStyle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">ScatterShape</a>&#160;</td>
+          <td class="paramname"><em>shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QColor &amp;&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Creates a new <a class="el" href="class_q_c_p_scatter_style.html" title="Represents the visual appearance of scatter points.">QCPScatterStyle</a> instance with shape set to <em>shape</em>, the pen color set to <em>color</em>, and size to <em>size</em>. No brush is defined, i.e. the scatter point will not be filled. </p>
+<div class="fragment"><div class="line"><a id="l10664" name="l10664"></a><span class="lineno">10664</span>                                                                                     :</div>
+<div class="line"><a id="l10665" name="l10665"></a><span class="lineno">10665</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#a0e94526d9165d9f50e262102bdd71a47">size</a>),</div>
+<div class="line"><a id="l10666" name="l10666"></a><span class="lineno">10666</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#af1b327f35f107ed108290187bbc8c7c6">mShape</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#af04cad55bd7f58a96da4fc6bc46a0a1e">shape</a>),</div>
+<div class="line"><a id="l10667" name="l10667"></a><span class="lineno">10667</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17">mPen</a>(QPen(color)),</div>
+<div class="line"><a id="l10668" name="l10668"></a><span class="lineno">10668</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a1b9c6ab10aebcaf236f1f45d1d6d64d1">mBrush</a>(Qt::NoBrush),</div>
+<div class="line"><a id="l10669" name="l10669"></a><span class="lineno">10669</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a84ef5aa591ddba07b440f597e1669e78">mPenDefined</a>(<span class="keyword">true</span>)</div>
+<div class="line"><a id="l10670" name="l10670"></a><span class="lineno">10670</span>{</div>
+<div class="line"><a id="l10671" name="l10671"></a><span class="lineno">10671</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6e1b64f12cac7f07af180ae4316fd38d" name="a6e1b64f12cac7f07af180ae4316fd38d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e1b64f12cac7f07af180ae4316fd38d">&#9670;&nbsp;</a></span>QCPScatterStyle() <span class="overload">[4/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QCPScatterStyle::QCPScatterStyle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">ScatterShape</a>&#160;</td>
+          <td class="paramname"><em>shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QColor &amp;&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QColor &amp;&#160;</td>
+          <td class="paramname"><em>fill</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Creates a new <a class="el" href="class_q_c_p_scatter_style.html" title="Represents the visual appearance of scatter points.">QCPScatterStyle</a> instance with shape set to <em>shape</em>, the pen color set to <em>color</em>, the brush color to <em>fill</em> (with a solid pattern), and size to <em>size</em>. </p>
+<div class="fragment"><div class="line"><a id="l10677" name="l10677"></a><span class="lineno">10677</span>                                                                                                         :</div>
+<div class="line"><a id="l10678" name="l10678"></a><span class="lineno">10678</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#a0e94526d9165d9f50e262102bdd71a47">size</a>),</div>
+<div class="line"><a id="l10679" name="l10679"></a><span class="lineno">10679</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#af1b327f35f107ed108290187bbc8c7c6">mShape</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#af04cad55bd7f58a96da4fc6bc46a0a1e">shape</a>),</div>
+<div class="line"><a id="l10680" name="l10680"></a><span class="lineno">10680</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17">mPen</a>(QPen(color)),</div>
+<div class="line"><a id="l10681" name="l10681"></a><span class="lineno">10681</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a1b9c6ab10aebcaf236f1f45d1d6d64d1">mBrush</a>(QBrush(fill)),</div>
+<div class="line"><a id="l10682" name="l10682"></a><span class="lineno">10682</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a84ef5aa591ddba07b440f597e1669e78">mPenDefined</a>(<span class="keyword">true</span>)</div>
+<div class="line"><a id="l10683" name="l10683"></a><span class="lineno">10683</span>{</div>
+<div class="line"><a id="l10684" name="l10684"></a><span class="lineno">10684</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a85acc4941d7e5c9bca5fa51377a77f49" name="a85acc4941d7e5c9bca5fa51377a77f49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85acc4941d7e5c9bca5fa51377a77f49">&#9670;&nbsp;</a></span>QCPScatterStyle() <span class="overload">[5/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QCPScatterStyle::QCPScatterStyle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">ScatterShape</a>&#160;</td>
+          <td class="paramname"><em>shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPen &amp;&#160;</td>
+          <td class="paramname"><em>pen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QBrush &amp;&#160;</td>
+          <td class="paramname"><em>brush</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Creates a new <a class="el" href="class_q_c_p_scatter_style.html" title="Represents the visual appearance of scatter points.">QCPScatterStyle</a> instance with shape set to <em>shape</em>, the pen set to <em>pen</em>, the brush to <em>brush</em>, and size to <em>size</em>.</p>
+<dl class="section warning"><dt>Aviso</dt><dd>In some cases it might be tempting to directly use a pen style like <code>Qt::NoPen</code> as <em>pen</em> and a color like <code>Qt::blue</code> as <em>brush</em>. Notice however, that the corresponding call<br  />
+<code><a class="el" href="class_q_c_p_scatter_style.html" title="Represents the visual appearance of scatter points.">QCPScatterStyle(QCPScatterShape::ssCircle, Qt::NoPen, Qt::blue, 5)</a></code><br  />
+doesn't necessarily lead C++ to use this constructor in some cases, but might mistake <code>Qt::NoPen</code> for a QColor and use the <a class="el" href="class_q_c_p_scatter_style.html#a6e1b64f12cac7f07af180ae4316fd38d">QCPScatterStyle(ScatterShape shape, const QColor &amp;color, const QColor &amp;fill, double size)</a> constructor instead (which will lead to an unexpected look of the scatter points). To prevent this, be more explicit with the parameter types. For example, use <code>QBrush(Qt::blue)</code> instead of just <code>Qt::blue</code>, to clearly point out to the compiler that this constructor is wanted. </dd></dl>
+<div class="fragment"><div class="line"><a id="l10701" name="l10701"></a><span class="lineno">10701</span>                                                                                                      :</div>
+<div class="line"><a id="l10702" name="l10702"></a><span class="lineno">10702</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#a0e94526d9165d9f50e262102bdd71a47">size</a>),</div>
+<div class="line"><a id="l10703" name="l10703"></a><span class="lineno">10703</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#af1b327f35f107ed108290187bbc8c7c6">mShape</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#af04cad55bd7f58a96da4fc6bc46a0a1e">shape</a>),</div>
+<div class="line"><a id="l10704" name="l10704"></a><span class="lineno">10704</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17">mPen</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#acdd6313d16e69d3810e9d1f48dd9e4bb">pen</a>),</div>
+<div class="line"><a id="l10705" name="l10705"></a><span class="lineno">10705</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a1b9c6ab10aebcaf236f1f45d1d6d64d1">mBrush</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#adc4f66aed84f1d7a3a5aabf4f48f31a6">brush</a>),</div>
+<div class="line"><a id="l10706" name="l10706"></a><span class="lineno">10706</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a84ef5aa591ddba07b440f597e1669e78">mPenDefined</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#acdd6313d16e69d3810e9d1f48dd9e4bb">pen</a>.style() != Qt::NoPen)</div>
+<div class="line"><a id="l10707" name="l10707"></a><span class="lineno">10707</span>{</div>
+<div class="line"><a id="l10708" name="l10708"></a><span class="lineno">10708</span>}</div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_acdd6313d16e69d3810e9d1f48dd9e4bb"><div class="ttname"><a href="class_q_c_p_scatter_style.html#acdd6313d16e69d3810e9d1f48dd9e4bb">QCPScatterStyle::pen</a></div><div class="ttdeci">QPen pen() const</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2524</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_adc4f66aed84f1d7a3a5aabf4f48f31a6"><div class="ttname"><a href="class_q_c_p_scatter_style.html#adc4f66aed84f1d7a3a5aabf4f48f31a6">QCPScatterStyle::brush</a></div><div class="ttdeci">QBrush brush() const</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2525</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a63962094587a4c2258435aa7933996cc" name="a63962094587a4c2258435aa7933996cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63962094587a4c2258435aa7933996cc">&#9670;&nbsp;</a></span>QCPScatterStyle() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QCPScatterStyle::QCPScatterStyle </td>
+          <td>(</td>
+          <td class="paramtype">const QPixmap &amp;&#160;</td>
+          <td class="paramname"><em>pixmap</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Creates a new <a class="el" href="class_q_c_p_scatter_style.html" title="Represents the visual appearance of scatter points.">QCPScatterStyle</a> instance which will show the specified <em>pixmap</em>. The scatter shape is set to <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e">ssPixmap</a>. </p>
+<div class="fragment"><div class="line"><a id="l10714" name="l10714"></a><span class="lineno">10714</span>                                                      :</div>
+<div class="line"><a id="l10715" name="l10715"></a><span class="lineno">10715</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>(5),</div>
+<div class="line"><a id="l10716" name="l10716"></a><span class="lineno">10716</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#af1b327f35f107ed108290187bbc8c7c6">mShape</a>(<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e">ssPixmap</a>),</div>
+<div class="line"><a id="l10717" name="l10717"></a><span class="lineno">10717</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17">mPen</a>(Qt::NoPen),</div>
+<div class="line"><a id="l10718" name="l10718"></a><span class="lineno">10718</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a1b9c6ab10aebcaf236f1f45d1d6d64d1">mBrush</a>(Qt::NoBrush),</div>
+<div class="line"><a id="l10719" name="l10719"></a><span class="lineno">10719</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a7697346c89b19d4cd1d8dd33319ec9e3">mPixmap</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#a9b2d1a2ec0aac0c74f7582d14050e93a">pixmap</a>),</div>
+<div class="line"><a id="l10720" name="l10720"></a><span class="lineno">10720</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a84ef5aa591ddba07b440f597e1669e78">mPenDefined</a>(<span class="keyword">false</span>)</div>
+<div class="line"><a id="l10721" name="l10721"></a><span class="lineno">10721</span>{</div>
+<div class="line"><a id="l10722" name="l10722"></a><span class="lineno">10722</span>}</div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a7697346c89b19d4cd1d8dd33319ec9e3"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a7697346c89b19d4cd1d8dd33319ec9e3">QCPScatterStyle::mPixmap</a></div><div class="ttdeci">QPixmap mPixmap</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2552</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a9b2d1a2ec0aac0c74f7582d14050e93a"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a9b2d1a2ec0aac0c74f7582d14050e93a">QCPScatterStyle::pixmap</a></div><div class="ttdeci">QPixmap pixmap() const</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2526</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a879c30647683b3cfbde2afecea815e6f" name="a879c30647683b3cfbde2afecea815e6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a879c30647683b3cfbde2afecea815e6f">&#9670;&nbsp;</a></span>QCPScatterStyle() <span class="overload">[7/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QCPScatterStyle::QCPScatterStyle </td>
+          <td>(</td>
+          <td class="paramtype">const QPainterPath &amp;&#160;</td>
+          <td class="paramname"><em>customPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPen &amp;&#160;</td>
+          <td class="paramname"><em>pen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QBrush &amp;&#160;</td>
+          <td class="paramname"><em>brush</em> = <code>Qt::NoBrush</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>size</em> = <code>6</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Creates a new <a class="el" href="class_q_c_p_scatter_style.html" title="Represents the visual appearance of scatter points.">QCPScatterStyle</a> instance with a custom shape that is defined via <em>customPath</em>. The scatter shape is set to <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d">ssCustom</a>.</p>
+<p >The custom shape line will be drawn with <em>pen</em> and filled with <em>brush</em>. The size has a slightly different meaning than for built-in scatter points: The custom path will be drawn scaled by a factor of <em>size/6.0</em>. Since the default <em>size</em> is 6, the custom path will appear in its original size by default. To for example double the size of the path, set <em>size</em> to 12. </p>
+<div class="fragment"><div class="line"><a id="l10733" name="l10733"></a><span class="lineno">10733</span>                                                                                                                  :</div>
+<div class="line"><a id="l10734" name="l10734"></a><span class="lineno">10734</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#a0e94526d9165d9f50e262102bdd71a47">size</a>),</div>
+<div class="line"><a id="l10735" name="l10735"></a><span class="lineno">10735</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#af1b327f35f107ed108290187bbc8c7c6">mShape</a>(<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d">ssCustom</a>),</div>
+<div class="line"><a id="l10736" name="l10736"></a><span class="lineno">10736</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17">mPen</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#acdd6313d16e69d3810e9d1f48dd9e4bb">pen</a>),</div>
+<div class="line"><a id="l10737" name="l10737"></a><span class="lineno">10737</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a1b9c6ab10aebcaf236f1f45d1d6d64d1">mBrush</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#adc4f66aed84f1d7a3a5aabf4f48f31a6">brush</a>),</div>
+<div class="line"><a id="l10738" name="l10738"></a><span class="lineno">10738</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a813cb074744dc5a2f59cc99d6a10c6f0">mCustomPath</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#aef1fac84c9830fd97f2a8568e605e372">customPath</a>),</div>
+<div class="line"><a id="l10739" name="l10739"></a><span class="lineno">10739</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a84ef5aa591ddba07b440f597e1669e78">mPenDefined</a>(<a class="code hl_function" href="class_q_c_p_scatter_style.html#acdd6313d16e69d3810e9d1f48dd9e4bb">pen</a>.style() != Qt::NoPen)</div>
+<div class="line"><a id="l10740" name="l10740"></a><span class="lineno">10740</span>{</div>
+<div class="line"><a id="l10741" name="l10741"></a><span class="lineno">10741</span>}</div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a813cb074744dc5a2f59cc99d6a10c6f0"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a813cb074744dc5a2f59cc99d6a10c6f0">QCPScatterStyle::mCustomPath</a></div><div class="ttdeci">QPainterPath mCustomPath</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2553</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_aef1fac84c9830fd97f2a8568e605e372"><div class="ttname"><a href="class_q_c_p_scatter_style.html#aef1fac84c9830fd97f2a8568e605e372">QCPScatterStyle::customPath</a></div><div class="ttdeci">QPainterPath customPath() const</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2527</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Funções membros</h2>
+<a id="afd8044ece445300499ca0dc164821e0f" name="afd8044ece445300499ca0dc164821e0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd8044ece445300499ca0dc164821e0f">&#9670;&nbsp;</a></span>applyTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPScatterStyle::applyTo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_c_p_painter.html">QCPPainter</a> *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPen &amp;&#160;</td>
+          <td class="paramname"><em>defaultPen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Applies the pen and the brush of this scatter style to <em>painter</em>. If this scatter style has an undefined pen (<a class="el" href="class_q_c_p_scatter_style.html#a47077eb6450fe9a788f833e4ec1b1d5a">isPenDefined</a>), sets the pen of <em>painter</em> to <em>defaultPen</em> instead.</p>
+<p >This function is used by plottables (or any class that wants to draw scatters) just before a number of scatters with this style shall be drawn with the <em>painter</em>.</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_q_c_p_scatter_style.html#a89b5105e6027bfcbfeefed9d201b607c">drawShape</a> </dd></dl>
+<div class="fragment"><div class="line"><a id="l10862" name="l10862"></a><span class="lineno">10862</span>{</div>
+<div class="line"><a id="l10863" name="l10863"></a><span class="lineno">10863</span>  painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#af9c7a4cd1791403901f8c5b82a150195">setPen</a>(<a class="code hl_variable" href="class_q_c_p_scatter_style.html#a84ef5aa591ddba07b440f597e1669e78">mPenDefined</a> ? <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17">mPen</a> : defaultPen);</div>
+<div class="line"><a id="l10864" name="l10864"></a><span class="lineno">10864</span>  painter-&gt;setBrush(<a class="code hl_variable" href="class_q_c_p_scatter_style.html#a1b9c6ab10aebcaf236f1f45d1d6d64d1">mBrush</a>);</div>
+<div class="line"><a id="l10865" name="l10865"></a><span class="lineno">10865</span>}</div>
+<div class="ttc" id="aclass_q_c_p_painter_html_af9c7a4cd1791403901f8c5b82a150195"><div class="ttname"><a href="class_q_c_p_painter.html#af9c7a4cd1791403901f8c5b82a150195">QCPPainter::setPen</a></div><div class="ttdeci">void setPen(const QPen &amp;pen)</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:328</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adc4f66aed84f1d7a3a5aabf4f48f31a6" name="adc4f66aed84f1d7a3a5aabf4f48f31a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc4f66aed84f1d7a3a5aabf4f48f31a6">&#9670;&nbsp;</a></span>brush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QBrush QCPScatterStyle::brush </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l02525" name="l02525"></a><span class="lineno"> 2525</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a1b9c6ab10aebcaf236f1f45d1d6d64d1">mBrush</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aef1fac84c9830fd97f2a8568e605e372" name="aef1fac84c9830fd97f2a8568e605e372"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef1fac84c9830fd97f2a8568e605e372">&#9670;&nbsp;</a></span>customPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPainterPath QCPScatterStyle::customPath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l02527" name="l02527"></a><span class="lineno"> 2527</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a813cb074744dc5a2f59cc99d6a10c6f0">mCustomPath</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a89b5105e6027bfcbfeefed9d201b607c" name="a89b5105e6027bfcbfeefed9d201b607c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89b5105e6027bfcbfeefed9d201b607c">&#9670;&nbsp;</a></span>drawShape() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPScatterStyle::drawShape </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_c_p_painter.html">QCPPainter</a> *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPointF &amp;&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Draws the scatter shape with <em>painter</em> at position <em>pos</em>.</p>
+<p >This function does not modify the pen or the brush on the painter, as <a class="el" href="class_q_c_p_scatter_style.html#afd8044ece445300499ca0dc164821e0f">applyTo</a> is meant to be called before scatter points are drawn with <a class="el" href="class_q_c_p_scatter_style.html#a89b5105e6027bfcbfeefed9d201b607c">drawShape</a>.</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_q_c_p_scatter_style.html#afd8044ece445300499ca0dc164821e0f">applyTo</a> </dd></dl>
+<div class="fragment"><div class="line"><a id="l10876" name="l10876"></a><span class="lineno">10876</span>{</div>
+<div class="line"><a id="l10877" name="l10877"></a><span class="lineno">10877</span>  <a class="code hl_function" href="class_q_c_p_scatter_style.html#a89b5105e6027bfcbfeefed9d201b607c">drawShape</a>(painter, pos.x(), pos.y());</div>
+<div class="line"><a id="l10878" name="l10878"></a><span class="lineno">10878</span>}</div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a89b5105e6027bfcbfeefed9d201b607c"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a89b5105e6027bfcbfeefed9d201b607c">QCPScatterStyle::drawShape</a></div><div class="ttdeci">void drawShape(QCPPainter *painter, const QPointF &amp;pos) const</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:10875</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a95c297b114c77c22428ef40f54620ddf" name="a95c297b114c77c22428ef40f54620ddf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95c297b114c77c22428ef40f54620ddf">&#9670;&nbsp;</a></span>drawShape() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPScatterStyle::drawShape </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_c_p_painter.html">QCPPainter</a> *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Esse é um método provido por conveniência. Ele difere do método acima apenas na lista de argumentos que devem ser utilizados. Draws the scatter shape with <em>painter</em> at position <em>x</em> and <em>y</em>. </p>
+<div class="fragment"><div class="line"><a id="l10884" name="l10884"></a><span class="lineno">10884</span>{</div>
+<div class="line"><a id="l10885" name="l10885"></a><span class="lineno">10885</span>  <span class="keywordtype">double</span> w = <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>/2.0;</div>
+<div class="line"><a id="l10886" name="l10886"></a><span class="lineno">10886</span>  <span class="keywordflow">switch</span> (<a class="code hl_variable" href="class_q_c_p_scatter_style.html#af1b327f35f107ed108290187bbc8c7c6">mShape</a>)</div>
+<div class="line"><a id="l10887" name="l10887"></a><span class="lineno">10887</span>  {</div>
+<div class="line"><a id="l10888" name="l10888"></a><span class="lineno">10888</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349abd144c291ca274f77053ec68cab6c022">ssNone</a>: <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l10889" name="l10889"></a><span class="lineno">10889</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a06e15a735b79093a1d999c0374fa3aa1">ssDot</a>:</div>
+<div class="line"><a id="l10890" name="l10890"></a><span class="lineno">10890</span>    {</div>
+<div class="line"><a id="l10891" name="l10891"></a><span class="lineno">10891</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QPointF(x, y), QPointF(x+0.0001, y));</div>
+<div class="line"><a id="l10892" name="l10892"></a><span class="lineno">10892</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l10893" name="l10893"></a><span class="lineno">10893</span>    }</div>
+<div class="line"><a id="l10894" name="l10894"></a><span class="lineno">10894</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a9eacd60f059dc3ef71bf249f515a6fe4">ssCross</a>:</div>
+<div class="line"><a id="l10895" name="l10895"></a><span class="lineno">10895</span>    {</div>
+<div class="line"><a id="l10896" name="l10896"></a><span class="lineno">10896</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(x-w, y-w, x+w, y+w));</div>
+<div class="line"><a id="l10897" name="l10897"></a><span class="lineno">10897</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(x-w, y+w, x+w, y-w));</div>
+<div class="line"><a id="l10898" name="l10898"></a><span class="lineno">10898</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l10899" name="l10899"></a><span class="lineno">10899</span>    }</div>
+<div class="line"><a id="l10900" name="l10900"></a><span class="lineno">10900</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a2d7f1d3c1a148b9d9d17f2fd9cae5eb7">ssPlus</a>:</div>
+<div class="line"><a id="l10901" name="l10901"></a><span class="lineno">10901</span>    {</div>
+<div class="line"><a id="l10902" name="l10902"></a><span class="lineno">10902</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(x-w,   y, x+w,   y));</div>
+<div class="line"><a id="l10903" name="l10903"></a><span class="lineno">10903</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(  x, y+w,   x, y-w));</div>
+<div class="line"><a id="l10904" name="l10904"></a><span class="lineno">10904</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l10905" name="l10905"></a><span class="lineno">10905</span>    }</div>
+<div class="line"><a id="l10906" name="l10906"></a><span class="lineno">10906</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a7c92a110880d0ef2170dff3a5b4f7779">ssCircle</a>:</div>
+<div class="line"><a id="l10907" name="l10907"></a><span class="lineno">10907</span>    {</div>
+<div class="line"><a id="l10908" name="l10908"></a><span class="lineno">10908</span>      painter-&gt;drawEllipse(QPointF(x , y), w, w);</div>
+<div class="line"><a id="l10909" name="l10909"></a><span class="lineno">10909</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l10910" name="l10910"></a><span class="lineno">10910</span>    }</div>
+<div class="line"><a id="l10911" name="l10911"></a><span class="lineno">10911</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a281fe1434696dcbab3aa6b9ccfbb09e9">ssDisc</a>:</div>
+<div class="line"><a id="l10912" name="l10912"></a><span class="lineno">10912</span>    {</div>
+<div class="line"><a id="l10913" name="l10913"></a><span class="lineno">10913</span>      QBrush b = painter-&gt;brush();</div>
+<div class="line"><a id="l10914" name="l10914"></a><span class="lineno">10914</span>      painter-&gt;setBrush(painter-&gt;pen().color());</div>
+<div class="line"><a id="l10915" name="l10915"></a><span class="lineno">10915</span>      painter-&gt;drawEllipse(QPointF(x , y), w, w);</div>
+<div class="line"><a id="l10916" name="l10916"></a><span class="lineno">10916</span>      painter-&gt;setBrush(b);</div>
+<div class="line"><a id="l10917" name="l10917"></a><span class="lineno">10917</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l10918" name="l10918"></a><span class="lineno">10918</span>    }</div>
+<div class="line"><a id="l10919" name="l10919"></a><span class="lineno">10919</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a279e48703ddc9f1cf4a61d3e2817ab3c">ssSquare</a>:</div>
+<div class="line"><a id="l10920" name="l10920"></a><span class="lineno">10920</span>    {</div>
+<div class="line"><a id="l10921" name="l10921"></a><span class="lineno">10921</span>      painter-&gt;drawRect(QRectF(x-w, y-w, <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>, <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>));</div>
+<div class="line"><a id="l10922" name="l10922"></a><span class="lineno">10922</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l10923" name="l10923"></a><span class="lineno">10923</span>    }</div>
+<div class="line"><a id="l10924" name="l10924"></a><span class="lineno">10924</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a4fc5929df1b2dad0a3cb2ef2c8b6e633">ssDiamond</a>:</div>
+<div class="line"><a id="l10925" name="l10925"></a><span class="lineno">10925</span>    {</div>
+<div class="line"><a id="l10926" name="l10926"></a><span class="lineno">10926</span>      QPointF lineArray[4] = {QPointF(x-w,   y),</div>
+<div class="line"><a id="l10927" name="l10927"></a><span class="lineno">10927</span>                              QPointF(  x, y-w),</div>
+<div class="line"><a id="l10928" name="l10928"></a><span class="lineno">10928</span>                              QPointF(x+w,   y),</div>
+<div class="line"><a id="l10929" name="l10929"></a><span class="lineno">10929</span>                              QPointF(  x, y+w)};</div>
+<div class="line"><a id="l10930" name="l10930"></a><span class="lineno">10930</span>      painter-&gt;drawPolygon(lineArray, 4);</div>
+<div class="line"><a id="l10931" name="l10931"></a><span class="lineno">10931</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l10932" name="l10932"></a><span class="lineno">10932</span>    }</div>
+<div class="line"><a id="l10933" name="l10933"></a><span class="lineno">10933</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a6047a2d64e41f1d6ce54445d595d442f">ssStar</a>:</div>
+<div class="line"><a id="l10934" name="l10934"></a><span class="lineno">10934</span>    {</div>
+<div class="line"><a id="l10935" name="l10935"></a><span class="lineno">10935</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(x-w,   y, x+w,   y));</div>
+<div class="line"><a id="l10936" name="l10936"></a><span class="lineno">10936</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(  x, y+w,   x, y-w));</div>
+<div class="line"><a id="l10937" name="l10937"></a><span class="lineno">10937</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(x-w*0.707, y-w*0.707, x+w*0.707, y+w*0.707));</div>
+<div class="line"><a id="l10938" name="l10938"></a><span class="lineno">10938</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(x-w*0.707, y+w*0.707, x+w*0.707, y-w*0.707));</div>
+<div class="line"><a id="l10939" name="l10939"></a><span class="lineno">10939</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l10940" name="l10940"></a><span class="lineno">10940</span>    }</div>
+<div class="line"><a id="l10941" name="l10941"></a><span class="lineno">10941</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a74a8d4eff1d97b57c53a60d0003453c3">ssTriangle</a>:</div>
+<div class="line"><a id="l10942" name="l10942"></a><span class="lineno">10942</span>    {</div>
+<div class="line"><a id="l10943" name="l10943"></a><span class="lineno">10943</span>      QPointF lineArray[3] = {QPointF(x-w, y+0.755*w),</div>
+<div class="line"><a id="l10944" name="l10944"></a><span class="lineno">10944</span>                              QPointF(x+w, y+0.755*w),</div>
+<div class="line"><a id="l10945" name="l10945"></a><span class="lineno">10945</span>                              QPointF(  x, y-0.977*w)};</div>
+<div class="line"><a id="l10946" name="l10946"></a><span class="lineno">10946</span>      painter-&gt;drawPolygon(lineArray, 3);</div>
+<div class="line"><a id="l10947" name="l10947"></a><span class="lineno">10947</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l10948" name="l10948"></a><span class="lineno">10948</span>    }</div>
+<div class="line"><a id="l10949" name="l10949"></a><span class="lineno">10949</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a6156274d21d8b4115197567d3ea2d9a8">ssTriangleInverted</a>:</div>
+<div class="line"><a id="l10950" name="l10950"></a><span class="lineno">10950</span>    {</div>
+<div class="line"><a id="l10951" name="l10951"></a><span class="lineno">10951</span>      QPointF lineArray[3] = {QPointF(x-w, y-0.755*w),</div>
+<div class="line"><a id="l10952" name="l10952"></a><span class="lineno">10952</span>                              QPointF(x+w, y-0.755*w),</div>
+<div class="line"><a id="l10953" name="l10953"></a><span class="lineno">10953</span>                              QPointF(  x, y+0.977*w)};</div>
+<div class="line"><a id="l10954" name="l10954"></a><span class="lineno">10954</span>      painter-&gt;drawPolygon(lineArray, 3);</div>
+<div class="line"><a id="l10955" name="l10955"></a><span class="lineno">10955</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l10956" name="l10956"></a><span class="lineno">10956</span>    }</div>
+<div class="line"><a id="l10957" name="l10957"></a><span class="lineno">10957</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a7081310936c200c6c78e34c172f72d07">ssCrossSquare</a>:</div>
+<div class="line"><a id="l10958" name="l10958"></a><span class="lineno">10958</span>    {</div>
+<div class="line"><a id="l10959" name="l10959"></a><span class="lineno">10959</span>      painter-&gt;drawRect(QRectF(x-w, y-w, <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>, <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>));</div>
+<div class="line"><a id="l10960" name="l10960"></a><span class="lineno">10960</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(x-w, y-w, x+w*0.95, y+w*0.95));</div>
+<div class="line"><a id="l10961" name="l10961"></a><span class="lineno">10961</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(x-w, y+w*0.95, x+w*0.95, y-w));</div>
+<div class="line"><a id="l10962" name="l10962"></a><span class="lineno">10962</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l10963" name="l10963"></a><span class="lineno">10963</span>    }</div>
+<div class="line"><a id="l10964" name="l10964"></a><span class="lineno">10964</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a5aa8e9db545e5404482fec774768ee25">ssPlusSquare</a>:</div>
+<div class="line"><a id="l10965" name="l10965"></a><span class="lineno">10965</span>    {</div>
+<div class="line"><a id="l10966" name="l10966"></a><span class="lineno">10966</span>      painter-&gt;drawRect(QRectF(x-w, y-w, <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>, <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>));</div>
+<div class="line"><a id="l10967" name="l10967"></a><span class="lineno">10967</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(x-w,   y, x+w*0.95,   y));</div>
+<div class="line"><a id="l10968" name="l10968"></a><span class="lineno">10968</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(  x, y+w,        x, y-w));</div>
+<div class="line"><a id="l10969" name="l10969"></a><span class="lineno">10969</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l10970" name="l10970"></a><span class="lineno">10970</span>    }</div>
+<div class="line"><a id="l10971" name="l10971"></a><span class="lineno">10971</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a524613ba5d1c4eaa1541d74cf339d283">ssCrossCircle</a>:</div>
+<div class="line"><a id="l10972" name="l10972"></a><span class="lineno">10972</span>    {</div>
+<div class="line"><a id="l10973" name="l10973"></a><span class="lineno">10973</span>      painter-&gt;drawEllipse(QPointF(x, y), w, w);</div>
+<div class="line"><a id="l10974" name="l10974"></a><span class="lineno">10974</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(x-w*0.707, y-w*0.707, x+w*0.670, y+w*0.670));</div>
+<div class="line"><a id="l10975" name="l10975"></a><span class="lineno">10975</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(x-w*0.707, y+w*0.670, x+w*0.670, y-w*0.707));</div>
+<div class="line"><a id="l10976" name="l10976"></a><span class="lineno">10976</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l10977" name="l10977"></a><span class="lineno">10977</span>    }</div>
+<div class="line"><a id="l10978" name="l10978"></a><span class="lineno">10978</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a6fa151d01f1694c9ff9922da686dc535">ssPlusCircle</a>:</div>
+<div class="line"><a id="l10979" name="l10979"></a><span class="lineno">10979</span>    {</div>
+<div class="line"><a id="l10980" name="l10980"></a><span class="lineno">10980</span>      painter-&gt;drawEllipse(QPointF(x, y), w, w);</div>
+<div class="line"><a id="l10981" name="l10981"></a><span class="lineno">10981</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(x-w,   y, x+w,   y));</div>
+<div class="line"><a id="l10982" name="l10982"></a><span class="lineno">10982</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(  x, y+w,   x, y-w));</div>
+<div class="line"><a id="l10983" name="l10983"></a><span class="lineno">10983</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l10984" name="l10984"></a><span class="lineno">10984</span>    }</div>
+<div class="line"><a id="l10985" name="l10985"></a><span class="lineno">10985</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349ada3b2988ece38c121922a4b5007eb08d">ssPeace</a>:</div>
+<div class="line"><a id="l10986" name="l10986"></a><span class="lineno">10986</span>    {</div>
+<div class="line"><a id="l10987" name="l10987"></a><span class="lineno">10987</span>      painter-&gt;drawEllipse(QPointF(x, y), w, w);</div>
+<div class="line"><a id="l10988" name="l10988"></a><span class="lineno">10988</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(x, y-w,         x,       y+w));</div>
+<div class="line"><a id="l10989" name="l10989"></a><span class="lineno">10989</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(x,   y, x-w*0.707, y+w*0.707));</div>
+<div class="line"><a id="l10990" name="l10990"></a><span class="lineno">10990</span>      painter-&gt;<a class="code hl_function" href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">drawLine</a>(QLineF(x,   y, x+w*0.707, y+w*0.707));</div>
+<div class="line"><a id="l10991" name="l10991"></a><span class="lineno">10991</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l10992" name="l10992"></a><span class="lineno">10992</span>    }</div>
+<div class="line"><a id="l10993" name="l10993"></a><span class="lineno">10993</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e">ssPixmap</a>:</div>
+<div class="line"><a id="l10994" name="l10994"></a><span class="lineno">10994</span>    {</div>
+<div class="line"><a id="l10995" name="l10995"></a><span class="lineno">10995</span>      <span class="keyword">const</span> <span class="keywordtype">double</span> widthHalf = <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a7697346c89b19d4cd1d8dd33319ec9e3">mPixmap</a>.width()*0.5;</div>
+<div class="line"><a id="l10996" name="l10996"></a><span class="lineno">10996</span>      <span class="keyword">const</span> <span class="keywordtype">double</span> heightHalf = <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a7697346c89b19d4cd1d8dd33319ec9e3">mPixmap</a>.height()*0.5;</div>
+<div class="line"><a id="l10997" name="l10997"></a><span class="lineno">10997</span><span class="preprocessor">#if QT_VERSION &lt; QT_VERSION_CHECK(4, 8, 0)</span></div>
+<div class="line"><a id="l10998" name="l10998"></a><span class="lineno">10998</span>      <span class="keyword">const</span> QRectF clipRect = painter-&gt;clipRegion().boundingRect().adjusted(-widthHalf, -heightHalf, widthHalf, heightHalf);</div>
+<div class="line"><a id="l10999" name="l10999"></a><span class="lineno">10999</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l11000" name="l11000"></a><span class="lineno">11000</span>      <span class="keyword">const</span> QRectF clipRect = painter-&gt;clipBoundingRect().adjusted(-widthHalf, -heightHalf, widthHalf, heightHalf);</div>
+<div class="line"><a id="l11001" name="l11001"></a><span class="lineno">11001</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l11002" name="l11002"></a><span class="lineno">11002</span>      <span class="keywordflow">if</span> (clipRect.contains(x, y))</div>
+<div class="line"><a id="l11003" name="l11003"></a><span class="lineno">11003</span>        painter-&gt;drawPixmap(qRound(x-widthHalf), qRound(y-heightHalf), <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a7697346c89b19d4cd1d8dd33319ec9e3">mPixmap</a>);</div>
+<div class="line"><a id="l11004" name="l11004"></a><span class="lineno">11004</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l11005" name="l11005"></a><span class="lineno">11005</span>    }</div>
+<div class="line"><a id="l11006" name="l11006"></a><span class="lineno">11006</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d">ssCustom</a>:</div>
+<div class="line"><a id="l11007" name="l11007"></a><span class="lineno">11007</span>    {</div>
+<div class="line"><a id="l11008" name="l11008"></a><span class="lineno">11008</span>      QTransform oldTransform = painter-&gt;transform();</div>
+<div class="line"><a id="l11009" name="l11009"></a><span class="lineno">11009</span>      painter-&gt;translate(x, y);</div>
+<div class="line"><a id="l11010" name="l11010"></a><span class="lineno">11010</span>      painter-&gt;scale(<a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>/6.0, <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>/6.0);</div>
+<div class="line"><a id="l11011" name="l11011"></a><span class="lineno">11011</span>      painter-&gt;drawPath(<a class="code hl_variable" href="class_q_c_p_scatter_style.html#a813cb074744dc5a2f59cc99d6a10c6f0">mCustomPath</a>);</div>
+<div class="line"><a id="l11012" name="l11012"></a><span class="lineno">11012</span>      painter-&gt;setTransform(oldTransform);</div>
+<div class="line"><a id="l11013" name="l11013"></a><span class="lineno">11013</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l11014" name="l11014"></a><span class="lineno">11014</span>    }</div>
+<div class="line"><a id="l11015" name="l11015"></a><span class="lineno">11015</span>  }</div>
+<div class="line"><a id="l11016" name="l11016"></a><span class="lineno">11016</span>}</div>
+<div class="ttc" id="aclass_q_c_p_painter_html_a0b4b1b9bd495e182c731774dc800e6e0"><div class="ttname"><a href="class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0">QCPPainter::drawLine</a></div><div class="ttdeci">void drawLine(const QLineF &amp;line)</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:371</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a72db6bcb1e1abd6e53c1315dd3dea7e4" name="a72db6bcb1e1abd6e53c1315dd3dea7e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72db6bcb1e1abd6e53c1315dd3dea7e4">&#9670;&nbsp;</a></span>isNone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QCPScatterStyle::isNone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Returns whether the scatter shape is <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349abd144c291ca274f77053ec68cab6c022">ssNone</a>.</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_q_c_p_scatter_style.html#a7c641c4d4c6d29cb705d3887cfce91c1">setShape</a> </dd></dl>
+<div class="fragment"><div class="line"><a id="l02539" name="l02539"></a><span class="lineno"> 2539</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_scatter_style.html#af1b327f35f107ed108290187bbc8c7c6">mShape</a> == <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349abd144c291ca274f77053ec68cab6c022">ssNone</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a47077eb6450fe9a788f833e4ec1b1d5a" name="a47077eb6450fe9a788f833e4ec1b1d5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47077eb6450fe9a788f833e4ec1b1d5a">&#9670;&nbsp;</a></span>isPenDefined()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QCPScatterStyle::isPenDefined </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Returns whether a pen has been defined for this scatter style.</p>
+<p >The pen is undefined if a constructor is called that does not carry <em>pen</em> as parameter. Those are <a class="el" href="class_q_c_p_scatter_style.html#a8836018d9ad83ccd8870de8315c1be73">QCPScatterStyle()</a> and <a class="el" href="class_q_c_p_scatter_style.html#a003d92f74f4561eda111862eadd62f28">QCPScatterStyle(ScatterShape shape, double size)</a>. If the pen is undefined, the pen of the respective plottable will be used for drawing scatters.</p>
+<p >If a pen was defined for this scatter style instance, and you now wish to undefine the pen, call <a class="el" href="class_q_c_p_scatter_style.html#acabc2a8c83d650b946f50c3166b6c35e">undefinePen</a>.</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_q_c_p_scatter_style.html#a761f1f229cc0ca4703e1e2b89f6dd1ba">setPen</a> </dd></dl>
+<div class="fragment"><div class="line"><a id="l02540" name="l02540"></a><span class="lineno"> 2540</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a84ef5aa591ddba07b440f597e1669e78">mPenDefined</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acdd6313d16e69d3810e9d1f48dd9e4bb" name="acdd6313d16e69d3810e9d1f48dd9e4bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdd6313d16e69d3810e9d1f48dd9e4bb">&#9670;&nbsp;</a></span>pen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPen QCPScatterStyle::pen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l02524" name="l02524"></a><span class="lineno"> 2524</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17">mPen</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9b2d1a2ec0aac0c74f7582d14050e93a" name="a9b2d1a2ec0aac0c74f7582d14050e93a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b2d1a2ec0aac0c74f7582d14050e93a">&#9670;&nbsp;</a></span>pixmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPixmap QCPScatterStyle::pixmap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l02526" name="l02526"></a><span class="lineno"> 2526</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a7697346c89b19d4cd1d8dd33319ec9e3">mPixmap</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a74d692aaeb8d4b36d6f7d510e44264b1" name="a74d692aaeb8d4b36d6f7d510e44264b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74d692aaeb8d4b36d6f7d510e44264b1">&#9670;&nbsp;</a></span>setBrush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPScatterStyle::setBrush </td>
+          <td>(</td>
+          <td class="paramtype">const QBrush &amp;&#160;</td>
+          <td class="paramname"><em>brush</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets the brush that will be used to fill scatter points to <em>brush</em>. Note that not all scatter shapes have fillable areas. For example, <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a2d7f1d3c1a148b9d9d17f2fd9cae5eb7">ssPlus</a> does not while <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a7c92a110880d0ef2170dff3a5b4f7779">ssCircle</a> does.</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_q_c_p_scatter_style.html#a761f1f229cc0ca4703e1e2b89f6dd1ba">setPen</a> </dd></dl>
+<div class="fragment"><div class="line"><a id="l10813" name="l10813"></a><span class="lineno">10813</span>{</div>
+<div class="line"><a id="l10814" name="l10814"></a><span class="lineno">10814</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a1b9c6ab10aebcaf236f1f45d1d6d64d1">mBrush</a> = <a class="code hl_function" href="class_q_c_p_scatter_style.html#adc4f66aed84f1d7a3a5aabf4f48f31a6">brush</a>;</div>
+<div class="line"><a id="l10815" name="l10815"></a><span class="lineno">10815</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a96a3e949f90b2afe5677ca9412a12a1e" name="a96a3e949f90b2afe5677ca9412a12a1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96a3e949f90b2afe5677ca9412a12a1e">&#9670;&nbsp;</a></span>setCustomPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPScatterStyle::setCustomPath </td>
+          <td>(</td>
+          <td class="paramtype">const QPainterPath &amp;&#160;</td>
+          <td class="paramname"><em>customPath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets the custom shape that will be drawn as scatter point to <em>customPath</em>.</p>
+<p >The scatter shape is automatically set to <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d">ssCustom</a>. </p>
+<div class="fragment"><div class="line"><a id="l10836" name="l10836"></a><span class="lineno">10836</span>{</div>
+<div class="line"><a id="l10837" name="l10837"></a><span class="lineno">10837</span>  <a class="code hl_function" href="class_q_c_p_scatter_style.html#a7c641c4d4c6d29cb705d3887cfce91c1">setShape</a>(<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d">ssCustom</a>);</div>
+<div class="line"><a id="l10838" name="l10838"></a><span class="lineno">10838</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a813cb074744dc5a2f59cc99d6a10c6f0">mCustomPath</a> = <a class="code hl_function" href="class_q_c_p_scatter_style.html#aef1fac84c9830fd97f2a8568e605e372">customPath</a>;</div>
+<div class="line"><a id="l10839" name="l10839"></a><span class="lineno">10839</span>}</div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a7c641c4d4c6d29cb705d3887cfce91c1"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a7c641c4d4c6d29cb705d3887cfce91c1">QCPScatterStyle::setShape</a></div><div class="ttdeci">void setShape(ScatterShape shape)</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:10786</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7d59ba8864914f765817841089e436f1" name="a7d59ba8864914f765817841089e436f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d59ba8864914f765817841089e436f1">&#9670;&nbsp;</a></span>setFromOther()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPScatterStyle::setFromOther </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_q_c_p_scatter_style.html">QCPScatterStyle</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ScatterProperties&#160;</td>
+          <td class="paramname"><em>properties</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Copies the specified <em>properties</em> from the <em>other</em> scatter style to this scatter style. </p>
+<div class="fragment"><div class="line"><a id="l10747" name="l10747"></a><span class="lineno">10747</span>{</div>
+<div class="line"><a id="l10748" name="l10748"></a><span class="lineno">10748</span>  <span class="keywordflow">if</span> (properties.testFlag(<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46aa04d012e7c03e455db2b68fdd55c2a04">spPen</a>))</div>
+<div class="line"><a id="l10749" name="l10749"></a><span class="lineno">10749</span>  {</div>
+<div class="line"><a id="l10750" name="l10750"></a><span class="lineno">10750</span>    <a class="code hl_function" href="class_q_c_p_scatter_style.html#a761f1f229cc0ca4703e1e2b89f6dd1ba">setPen</a>(other.<a class="code hl_function" href="class_q_c_p_scatter_style.html#acdd6313d16e69d3810e9d1f48dd9e4bb">pen</a>());</div>
+<div class="line"><a id="l10751" name="l10751"></a><span class="lineno">10751</span>    <span class="keywordflow">if</span> (!other.<a class="code hl_function" href="class_q_c_p_scatter_style.html#a47077eb6450fe9a788f833e4ec1b1d5a">isPenDefined</a>())</div>
+<div class="line"><a id="l10752" name="l10752"></a><span class="lineno">10752</span>      <a class="code hl_function" href="class_q_c_p_scatter_style.html#acabc2a8c83d650b946f50c3166b6c35e">undefinePen</a>();</div>
+<div class="line"><a id="l10753" name="l10753"></a><span class="lineno">10753</span>  }</div>
+<div class="line"><a id="l10754" name="l10754"></a><span class="lineno">10754</span>  <span class="keywordflow">if</span> (properties.testFlag(<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46af0499b1fc04de2dcc7e47ff0ef75c904">spBrush</a>))</div>
+<div class="line"><a id="l10755" name="l10755"></a><span class="lineno">10755</span>    <a class="code hl_function" href="class_q_c_p_scatter_style.html#a74d692aaeb8d4b36d6f7d510e44264b1">setBrush</a>(other.<a class="code hl_function" href="class_q_c_p_scatter_style.html#adc4f66aed84f1d7a3a5aabf4f48f31a6">brush</a>());</div>
+<div class="line"><a id="l10756" name="l10756"></a><span class="lineno">10756</span>  <span class="keywordflow">if</span> (properties.testFlag(<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46a553ae95798ace9a328c7cd62045260b0">spSize</a>))</div>
+<div class="line"><a id="l10757" name="l10757"></a><span class="lineno">10757</span>    <a class="code hl_function" href="class_q_c_p_scatter_style.html#aaefdd031052892c4136129db68596e0f">setSize</a>(other.<a class="code hl_function" href="class_q_c_p_scatter_style.html#a0e94526d9165d9f50e262102bdd71a47">size</a>());</div>
+<div class="line"><a id="l10758" name="l10758"></a><span class="lineno">10758</span>  <span class="keywordflow">if</span> (properties.testFlag(<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46a19c224563adb42c55fb8b7ae6904411b">spShape</a>))</div>
+<div class="line"><a id="l10759" name="l10759"></a><span class="lineno">10759</span>  {</div>
+<div class="line"><a id="l10760" name="l10760"></a><span class="lineno">10760</span>    <a class="code hl_function" href="class_q_c_p_scatter_style.html#a7c641c4d4c6d29cb705d3887cfce91c1">setShape</a>(other.<a class="code hl_function" href="class_q_c_p_scatter_style.html#af04cad55bd7f58a96da4fc6bc46a0a1e">shape</a>());</div>
+<div class="line"><a id="l10761" name="l10761"></a><span class="lineno">10761</span>    <span class="keywordflow">if</span> (other.<a class="code hl_function" href="class_q_c_p_scatter_style.html#af04cad55bd7f58a96da4fc6bc46a0a1e">shape</a>() == <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e">ssPixmap</a>)</div>
+<div class="line"><a id="l10762" name="l10762"></a><span class="lineno">10762</span>      <a class="code hl_function" href="class_q_c_p_scatter_style.html#a5fb611d46acfac520d7b89a1c71d9246">setPixmap</a>(other.<a class="code hl_function" href="class_q_c_p_scatter_style.html#a9b2d1a2ec0aac0c74f7582d14050e93a">pixmap</a>());</div>
+<div class="line"><a id="l10763" name="l10763"></a><span class="lineno">10763</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (other.<a class="code hl_function" href="class_q_c_p_scatter_style.html#af04cad55bd7f58a96da4fc6bc46a0a1e">shape</a>() == <a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d">ssCustom</a>)</div>
+<div class="line"><a id="l10764" name="l10764"></a><span class="lineno">10764</span>      <a class="code hl_function" href="class_q_c_p_scatter_style.html#a96a3e949f90b2afe5677ca9412a12a1e">setCustomPath</a>(other.<a class="code hl_function" href="class_q_c_p_scatter_style.html#aef1fac84c9830fd97f2a8568e605e372">customPath</a>());</div>
+<div class="line"><a id="l10765" name="l10765"></a><span class="lineno">10765</span>  }</div>
+<div class="line"><a id="l10766" name="l10766"></a><span class="lineno">10766</span>}</div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a47077eb6450fe9a788f833e4ec1b1d5a"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a47077eb6450fe9a788f833e4ec1b1d5a">QCPScatterStyle::isPenDefined</a></div><div class="ttdeci">bool isPenDefined() const</div><div class="ttdef"><b>Definition:</b> qcustomplot.h:2540</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a5fb611d46acfac520d7b89a1c71d9246"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a5fb611d46acfac520d7b89a1c71d9246">QCPScatterStyle::setPixmap</a></div><div class="ttdeci">void setPixmap(const QPixmap &amp;pixmap)</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:10824</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a74d692aaeb8d4b36d6f7d510e44264b1"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a74d692aaeb8d4b36d6f7d510e44264b1">QCPScatterStyle::setBrush</a></div><div class="ttdeci">void setBrush(const QBrush &amp;brush)</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:10812</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a761f1f229cc0ca4703e1e2b89f6dd1ba"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a761f1f229cc0ca4703e1e2b89f6dd1ba">QCPScatterStyle::setPen</a></div><div class="ttdeci">void setPen(const QPen &amp;pen)</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:10800</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_a96a3e949f90b2afe5677ca9412a12a1e"><div class="ttname"><a href="class_q_c_p_scatter_style.html#a96a3e949f90b2afe5677ca9412a12a1e">QCPScatterStyle::setCustomPath</a></div><div class="ttdeci">void setCustomPath(const QPainterPath &amp;customPath)</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:10835</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_aaefdd031052892c4136129db68596e0f"><div class="ttname"><a href="class_q_c_p_scatter_style.html#aaefdd031052892c4136129db68596e0f">QCPScatterStyle::setSize</a></div><div class="ttdeci">void setSize(double size)</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:10773</div></div>
+<div class="ttc" id="aclass_q_c_p_scatter_style_html_acabc2a8c83d650b946f50c3166b6c35e"><div class="ttname"><a href="class_q_c_p_scatter_style.html#acabc2a8c83d650b946f50c3166b6c35e">QCPScatterStyle::undefinePen</a></div><div class="ttdeci">void undefinePen()</div><div class="ttdef"><b>Definition:</b> qcustomplot.cpp:10847</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a761f1f229cc0ca4703e1e2b89f6dd1ba" name="a761f1f229cc0ca4703e1e2b89f6dd1ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a761f1f229cc0ca4703e1e2b89f6dd1ba">&#9670;&nbsp;</a></span>setPen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPScatterStyle::setPen </td>
+          <td>(</td>
+          <td class="paramtype">const QPen &amp;&#160;</td>
+          <td class="paramname"><em>pen</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets the pen that will be used to draw scatter points to <em>pen</em>.</p>
+<p >If the pen was previously undefined (see <a class="el" href="class_q_c_p_scatter_style.html#a47077eb6450fe9a788f833e4ec1b1d5a">isPenDefined</a>), the pen is considered defined after a call to this function, even if <em>pen</em> is <code>Qt::NoPen</code>. If you have defined a pen previously by calling this function and now wish to undefine the pen, call <a class="el" href="class_q_c_p_scatter_style.html#acabc2a8c83d650b946f50c3166b6c35e">undefinePen</a>.</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_q_c_p_scatter_style.html#a74d692aaeb8d4b36d6f7d510e44264b1">setBrush</a> </dd></dl>
+<div class="fragment"><div class="line"><a id="l10801" name="l10801"></a><span class="lineno">10801</span>{</div>
+<div class="line"><a id="l10802" name="l10802"></a><span class="lineno">10802</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a84ef5aa591ddba07b440f597e1669e78">mPenDefined</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l10803" name="l10803"></a><span class="lineno">10803</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17">mPen</a> = <a class="code hl_function" href="class_q_c_p_scatter_style.html#acdd6313d16e69d3810e9d1f48dd9e4bb">pen</a>;</div>
+<div class="line"><a id="l10804" name="l10804"></a><span class="lineno">10804</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5fb611d46acfac520d7b89a1c71d9246" name="a5fb611d46acfac520d7b89a1c71d9246"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fb611d46acfac520d7b89a1c71d9246">&#9670;&nbsp;</a></span>setPixmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPScatterStyle::setPixmap </td>
+          <td>(</td>
+          <td class="paramtype">const QPixmap &amp;&#160;</td>
+          <td class="paramname"><em>pixmap</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets the pixmap that will be drawn as scatter point to <em>pixmap</em>.</p>
+<p >Note that <a class="el" href="class_q_c_p_scatter_style.html#aaefdd031052892c4136129db68596e0f">setSize</a> does not influence the appearance of the pixmap.</p>
+<p >The scatter shape is automatically set to <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e">ssPixmap</a>. </p>
+<div class="fragment"><div class="line"><a id="l10825" name="l10825"></a><span class="lineno">10825</span>{</div>
+<div class="line"><a id="l10826" name="l10826"></a><span class="lineno">10826</span>  <a class="code hl_function" href="class_q_c_p_scatter_style.html#a7c641c4d4c6d29cb705d3887cfce91c1">setShape</a>(<a class="code hl_enumvalue" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e">ssPixmap</a>);</div>
+<div class="line"><a id="l10827" name="l10827"></a><span class="lineno">10827</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a7697346c89b19d4cd1d8dd33319ec9e3">mPixmap</a> = <a class="code hl_function" href="class_q_c_p_scatter_style.html#a9b2d1a2ec0aac0c74f7582d14050e93a">pixmap</a>;</div>
+<div class="line"><a id="l10828" name="l10828"></a><span class="lineno">10828</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7c641c4d4c6d29cb705d3887cfce91c1" name="a7c641c4d4c6d29cb705d3887cfce91c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c641c4d4c6d29cb705d3887cfce91c1">&#9670;&nbsp;</a></span>setShape()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPScatterStyle::setShape </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">QCPScatterStyle::ScatterShape</a>&#160;</td>
+          <td class="paramname"><em>shape</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets the shape to <em>shape</em>.</p>
+<p >Note that the calls <a class="el" href="class_q_c_p_scatter_style.html#a5fb611d46acfac520d7b89a1c71d9246">setPixmap</a> and <a class="el" href="class_q_c_p_scatter_style.html#a96a3e949f90b2afe5677ca9412a12a1e">setCustomPath</a> automatically set the shape to <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e">ssPixmap</a> and <a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d">ssCustom</a>, respectively.</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_q_c_p_scatter_style.html#aaefdd031052892c4136129db68596e0f">setSize</a> </dd></dl>
+<div class="fragment"><div class="line"><a id="l10787" name="l10787"></a><span class="lineno">10787</span>{</div>
+<div class="line"><a id="l10788" name="l10788"></a><span class="lineno">10788</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#af1b327f35f107ed108290187bbc8c7c6">mShape</a> = <a class="code hl_function" href="class_q_c_p_scatter_style.html#af04cad55bd7f58a96da4fc6bc46a0a1e">shape</a>;</div>
+<div class="line"><a id="l10789" name="l10789"></a><span class="lineno">10789</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aaefdd031052892c4136129db68596e0f" name="aaefdd031052892c4136129db68596e0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaefdd031052892c4136129db68596e0f">&#9670;&nbsp;</a></span>setSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPScatterStyle::setSize </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets the size (pixel diameter) of the drawn scatter points to <em>size</em>.</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_q_c_p_scatter_style.html#a7c641c4d4c6d29cb705d3887cfce91c1">setShape</a> </dd></dl>
+<div class="fragment"><div class="line"><a id="l10774" name="l10774"></a><span class="lineno">10774</span>{</div>
+<div class="line"><a id="l10775" name="l10775"></a><span class="lineno">10775</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a> = <a class="code hl_function" href="class_q_c_p_scatter_style.html#a0e94526d9165d9f50e262102bdd71a47">size</a>;</div>
+<div class="line"><a id="l10776" name="l10776"></a><span class="lineno">10776</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af04cad55bd7f58a96da4fc6bc46a0a1e" name="af04cad55bd7f58a96da4fc6bc46a0a1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af04cad55bd7f58a96da4fc6bc46a0a1e">&#9670;&nbsp;</a></span>shape()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">ScatterShape</a> QCPScatterStyle::shape </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l02523" name="l02523"></a><span class="lineno"> 2523</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_scatter_style.html#af1b327f35f107ed108290187bbc8c7c6">mShape</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0e94526d9165d9f50e262102bdd71a47" name="a0e94526d9165d9f50e262102bdd71a47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e94526d9165d9f50e262102bdd71a47">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QCPScatterStyle::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a id="l02522" name="l02522"></a><span class="lineno"> 2522</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a757da98671eb06b221979373ac2cec91">mSize</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acabc2a8c83d650b946f50c3166b6c35e" name="acabc2a8c83d650b946f50c3166b6c35e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acabc2a8c83d650b946f50c3166b6c35e">&#9670;&nbsp;</a></span>undefinePen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPScatterStyle::undefinePen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets this scatter style to have an undefined pen (see <a class="el" href="class_q_c_p_scatter_style.html#a47077eb6450fe9a788f833e4ec1b1d5a">isPenDefined</a> for what an undefined pen implies).</p>
+<p >A call to <a class="el" href="class_q_c_p_scatter_style.html#a761f1f229cc0ca4703e1e2b89f6dd1ba">setPen</a> will define a pen. </p>
+<div class="fragment"><div class="line"><a id="l10848" name="l10848"></a><span class="lineno">10848</span>{</div>
+<div class="line"><a id="l10849" name="l10849"></a><span class="lineno">10849</span>  <a class="code hl_variable" href="class_q_c_p_scatter_style.html#a84ef5aa591ddba07b440f597e1669e78">mPenDefined</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l10850" name="l10850"></a><span class="lineno">10850</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Atributos</h2>
+<a id="a1b9c6ab10aebcaf236f1f45d1d6d64d1" name="a1b9c6ab10aebcaf236f1f45d1d6d64d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b9c6ab10aebcaf236f1f45d1d6d64d1">&#9670;&nbsp;</a></span>mBrush</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QBrush QCPScatterStyle::mBrush</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a813cb074744dc5a2f59cc99d6a10c6f0" name="a813cb074744dc5a2f59cc99d6a10c6f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a813cb074744dc5a2f59cc99d6a10c6f0">&#9670;&nbsp;</a></span>mCustomPath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPainterPath QCPScatterStyle::mCustomPath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17" name="a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17">&#9670;&nbsp;</a></span>mPen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPen QCPScatterStyle::mPen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a84ef5aa591ddba07b440f597e1669e78" name="a84ef5aa591ddba07b440f597e1669e78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84ef5aa591ddba07b440f597e1669e78">&#9670;&nbsp;</a></span>mPenDefined</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QCPScatterStyle::mPenDefined</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7697346c89b19d4cd1d8dd33319ec9e3" name="a7697346c89b19d4cd1d8dd33319ec9e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7697346c89b19d4cd1d8dd33319ec9e3">&#9670;&nbsp;</a></span>mPixmap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPixmap QCPScatterStyle::mPixmap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af1b327f35f107ed108290187bbc8c7c6" name="af1b327f35f107ed108290187bbc8c7c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1b327f35f107ed108290187bbc8c7c6">&#9670;&nbsp;</a></span>mShape</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349">ScatterShape</a> QCPScatterStyle::mShape</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a757da98671eb06b221979373ac2cec91" name="a757da98671eb06b221979373ac2cec91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a757da98671eb06b221979373ac2cec91">&#9670;&nbsp;</a></span>mSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QCPScatterStyle::mSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>A documentação para essa classe foi gerada a partir dos seguintes arquivos:<ul>
+<li>C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/SimuladorTemperatura/<a class="el" href="qcustomplot_8h_source.html">qcustomplot.h</a></li>
+<li>C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/SimuladorTemperatura/<a class="el" href="qcustomplot_8cpp.html">qcustomplot.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>
