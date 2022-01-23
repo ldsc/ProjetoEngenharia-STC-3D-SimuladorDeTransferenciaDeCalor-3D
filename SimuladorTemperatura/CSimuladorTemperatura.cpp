@@ -96,24 +96,25 @@ void CSimuladorTemperatura::run_paralelismo_total() {
 }
 
 void CSimuladorTemperatura::solverByGrid(int g) {
-    double erro = 1;
+    double erro = 1, _erro;
     int iter = 0;
     while (erro > MIN_ERRO && iter <= MAX_ITERATION) {
         grid[g]->updateIteration(); /// atualizo temp_nu para calcular o erro da iteracao
         for (int i = 0; i < grid[g]->getWidth(); i++)
             for (int k = 0; k < grid[g]->getHeight(); k++)
                 calculatePointIteration(i, k, g);
-        erro = grid[g]->maxErroIteration();
+        _erro = grid[g]->maxErroIteration();
+        erro = erro < _erro ? _erro : erro;
         iter++;
     }
     grid[g]->updateSolver();
 }
 
 void CSimuladorTemperatura::solverByThread(int thread_num) {
-    double erro = 1, _erro;
+    double erro = 0, _erro;
     int iter = 0;
     int x, y;
-    while (erro > MIN_ERRO && iter <= MAX_ITERATION) {
+    do {
         for (int g = 0; g < NGRIDS; g++) {
             for (int i = thread_num; i < grid[g]->getSize(); i+=MAX_THREADS) {
                 x = i % grid[g]->getWidth();
@@ -125,7 +126,8 @@ void CSimuladorTemperatura::solverByThread(int thread_num) {
             }
         }
         iter++;
-    }
+    } while (iter <= MAX_ITERATION);
+    std::cout<<"iteracoes: " << iter << " - erro: " << erro << std::endl;
 }
 
 double CSimuladorTemperatura::calculatePointIteration(int x, int y, int g) {
@@ -141,48 +143,48 @@ double CSimuladorTemperatura::calculatePointIteration(int x, int y, int g) {
     if (y - 1 > 0) {
         if ((*grid[g])(x, y - 1)->active) {
             n_x++;
-            inf = (*grid[g])(x, y - 1)->temp_nup1*delta_z;
+            inf = (*grid[g])(x, y - 1)->temp_nup1*delta_z*delta_z;
         }
     }
 
     if (y + 1 < grid[g]->getHeight()) {
         if ((*grid[g])(x, y + 1)->active) {
             n_x++;
-            sup = (*grid[g])(x, y + 1)->temp_nup1 * delta_z;
+            sup = (*grid[g])(x, y + 1)->temp_nup1 * delta_z*delta_z;
         }
     }
 
     if (x - 1 > 0) {
         if ((*grid[g])(x - 1, y)->active) {
             n_x++;
-            esq = (*grid[g])(x - 1, y)->temp_nup1 * delta_z;
+            esq = (*grid[g])(x - 1, y)->temp_nup1 * delta_z* delta_z;
         }
     }
 
     if (x + 1 < grid[g]->getWidth()) {
         if ((*grid[g])(x + 1, y)->active) {
             n_x++;
-            dir = (*grid[g])(x + 1, y)->temp_nup1 * delta_z;
+            dir = (*grid[g])(x + 1, y)->temp_nup1 * delta_z* delta_z;
         }
     }
 
     if ( g < NGRIDS-1) {
         if (grid[g + 1]->operator()(x, y)->active) {
             n_z++;
-            cima = (*grid[g + 1])(x, y)->temp_nup1*delta_x;
+            cima = (*grid[g + 1])(x, y)->temp_nup1*delta_x*delta_x;
         }
     }
 
     if (g > 0) {
         if (grid[g - 1]->operator()(x, y)->active) {
             n_z++;
-            baixo = (*grid[g - 1])(x, y)->temp_nup1 * delta_x;
+            baixo = (*grid[g - 1])(x, y)->temp_nup1 * delta_x*delta_x;
         }
     }
 
     thermalConstant = (*grid[g])(x, y)->material->getThermalConst((*grid[g])(x, y)->temp_nup1);
 
-    (*grid[g])(x, y)->temp_nup1 = (thermalConstant * (*grid[g])(x, y)->temp*delta_x*delta_z/delta_t + inf + sup + esq + dir + cima + baixo) / (n_x*delta_z + n_z*delta_x + thermalConstant *delta_x*delta_z/delta_t);
+    (*grid[g])(x, y)->temp_nup1 = (thermalConstant * (*grid[g])(x, y)->temp*delta_x*delta_x*delta_z*delta_z/delta_t + inf + sup + esq + dir + cima + baixo) / (n_x*delta_z*delta_z + n_z*delta_x*delta_x + thermalConstant*delta_x*delta_x*delta_z*delta_z/delta_t);
     return (*grid[g])(x, y)->temp_nup1 - (*grid[g])(x, y)->temp_nu;
 }
 

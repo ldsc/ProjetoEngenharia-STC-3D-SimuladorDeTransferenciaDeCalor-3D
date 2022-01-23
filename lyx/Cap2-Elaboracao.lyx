@@ -283,7 +283,7 @@ A modelagem pode ser feita por diferenças finitas atrasadas BTCS, onde cada
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{\partial^{2}T}{\partial x^{2}}=\frac{T_{i+1,j,k}^{n+1}-2T_{i,j,k}^{n+1}+T_{i-1,j,k}^{n+1}}{\Delta x}
+\frac{\partial^{2}T}{\partial x^{2}}=\frac{T_{i+1,j,k}^{n+1}-2T_{i,j,k}^{n+1}+T_{i-1,j,k}^{n+1}}{\Delta x^{2}}
 \end{equation}
 
 \end_inset
@@ -294,7 +294,7 @@ A modelagem pode ser feita por diferenças finitas atrasadas BTCS, onde cada
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{\partial^{2}T}{\partial y^{2}}=\frac{T_{i,j+1,k}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j-1,k}^{n+1}}{\Delta y}
+\frac{\partial^{2}T}{\partial y^{2}}=\frac{T_{i,j+1,k}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j-1,k}^{n+1}}{\Delta y^{2}}
 \end{equation}
 
 \end_inset
@@ -305,7 +305,7 @@ A modelagem pode ser feita por diferenças finitas atrasadas BTCS, onde cada
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{\partial^{2}T}{\partial z^{2}}=\frac{T_{i,j,k+1}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j,k-1}^{n+1}}{\Delta z}
+\frac{\partial^{2}T}{\partial z^{2}}=\frac{T_{i,j,k+1}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j,k-1}^{n+1}}{\Delta z^{2}}
 \end{equation}
 
 \end_inset
@@ -332,8 +332,8 @@ Substituindo as diferenças finitas na equação geral:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\frac{T_{i+1,j,k}^{n+1}-2T_{i,j,k}^{n+1}+T_{i-1,j,k}^{n+1}}{\Delta x}+\frac{T_{i,j+1,k}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j-1,k}^{n+1}}{\Delta y}+\\
-\frac{T_{i,j,k+1}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j,k-1}^{n+1}}{\Delta z}=\frac{\rho c_{p}}{k}\frac{T_{i,j,k}^{n+1}-T_{i,j,k}^{n}}{\Delta t}
+\frac{T_{i+1,j,k}^{n+1}-2T_{i,j,k}^{n+1}+T_{i-1,j,k}^{n+1}}{\Delta x^{2}}+\frac{T_{i,j+1,k}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j-1,k}^{n+1}}{\Delta y^{2}}+\\
+\frac{T_{i,j,k+1}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j,k-1}^{n+1}}{\Delta z^{2}}=\frac{\rho c_{p}}{k}\frac{T_{i,j,k}^{n+1}-T_{i,j,k}^{n}}{\Delta t}
 \end{array}
 \end{equation}
 
@@ -356,7 +356,7 @@ Onde a malha é homogênea na superfície, mas não entre os perfis, ou seja,
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\frac{T_{i+1,j,k}^{n+1}+T_{i,j+1,k}^{n+1}-4T_{i,j,k}^{n+1}+T_{i-1,j,k}^{n+1}+T_{i,j-1,k}^{n+1}}{\Delta x}+\frac{T_{i,j,k+1}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j,k-1}^{n+1}}{\Delta z}\\
+\frac{T_{i+1,j,k}^{n+1}+T_{i,j+1,k}^{n+1}-4T_{i,j,k}^{n+1}+T_{i-1,j,k}^{n+1}+T_{i,j-1,k}^{n+1}}{\Delta x^{2}}+\frac{T_{i,j,k+1}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j,k-1}^{n+1}}{\Delta z^{2}}\\
 =\frac{\rho c_{p}}{k}\frac{T_{i,j,k}^{n+1}-T_{i,j,k}^{n}}{\Delta t}
 \end{array}
 \end{equation}
@@ -374,7 +374,7 @@ Multiplicando pelo múltiplo comum:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\frac{\Delta z\left(T_{i+1,j,k}^{n+1}+T_{i,j+1,k}^{n+1}-4T_{i,j,k}^{n+1}+T_{i-1,j,k}^{n+1}+T_{i,j-1,k}^{n+1}\right)+\Delta x\left(T_{i,j,k+1}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j,k-1}^{n+1}\right)}{\Delta x\Delta z}\\
+\frac{\Delta z^{2}\left(T_{i+1,j,k}^{n+1}+T_{i,j+1,k}^{n+1}-4T_{i,j,k}^{n+1}+T_{i-1,j,k}^{n+1}+T_{i,j-1,k}^{n+1}\right)+\Delta x^{2}\left(T_{i,j,k+1}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j,k-1}^{n+1}\right)}{\Delta x^{2}\Delta z^{2}}\\
 =\frac{\rho c_{p}}{k}\frac{T_{i,j,k}^{n+1}-T_{i,j,k}^{n}}{\Delta t}
 \end{array}
 \end{equation}
@@ -388,8 +388,8 @@ Multiplicando pelo múltiplo comum:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\Delta z\left(T_{i+1,j,k}^{n+1}+T_{i,j+1,k}^{n+1}-4T_{i,j,k}^{n+1}+T_{i-1,j,k}^{n+1}+T_{i,j-1,k}^{n+1}\right)+\Delta x\left(T_{i,j,k+1}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j,k-1}^{n+1}\right)\\
-=\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}\left(T_{i,j,k}^{n+1}-T_{i,j,k}^{n}\right)
+\Delta z^{2}\left(T_{i+1,j,k}^{n+1}+T_{i,j+1,k}^{n+1}-4T_{i,j,k}^{n+1}+T_{i-1,j,k}^{n+1}+T_{i,j-1,k}^{n+1}\right)+\Delta x^{2}\left(T_{i,j,k+1}^{n+1}-2T_{i,j,k}^{n+1}+T_{i,j,k-1}^{n+1}\right)\\
+=\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}\left(T_{i,j,k}^{n+1}-T_{i,j,k}^{n}\right)
 \end{array}
 \end{equation}
 
@@ -402,8 +402,8 @@ Multiplicando pelo múltiplo comum:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\Delta zT_{i+1,j,k}^{n+1}+\Delta zT_{i,j+1,k}^{n+1}-4\Delta zT_{i,j,k}^{n+1}+\Delta zT_{i-1,j,k}^{n+1}+\Delta zT_{i,j-1,k}^{n+1}+\\
-\Delta xT_{i,j,k+1}^{n+1}-2\Delta xT_{i,j,k}^{n+1}+\Delta xT_{i,j,k-1}^{n+1}=\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n+1}-\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n}
+\Delta z^{2}T_{i+1,j,k}^{n+1}+\Delta z^{2}T_{i,j+1,k}^{n+1}-4\Delta z^{2}T_{i,j,k}^{n+1}+\Delta z^{2}T_{i-1,j,k}^{n+1}+\Delta z^{2}T_{i,j-1,k}^{n+1}+\\
+\Delta x^{2}T_{i,j,k+1}^{n+1}-2\Delta x^{2}T_{i,j,k}^{n+1}+\Delta x^{2}T_{i,j,k-1}^{n+1}=\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n+1}-\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n}
 \end{array}
 \end{equation}
 
@@ -420,10 +420,10 @@ Encontrando a seguinte equação:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\Delta zT_{i+1,j,k}^{n+1}+\Delta zT_{i,j+1,k}^{n+1}+\Delta xT_{i,j,k+1}^{n+1}\\
-+\Delta zT_{i-1,j,k}^{n+1}+\Delta zT_{i,j-1,k}^{n+1}+\Delta xT_{i,j,k-1}^{n+1}\\
--\left(4\Delta z+2\Delta x+\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}\right)T_{i,j,k}^{n+1}\\
-=-\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n}
+\Delta z^{2}T_{i+1,j,k}^{n+1}+\Delta z^{2}T_{i,j+1,k}^{n+1}+\Delta x^{2}T_{i,j,k+1}^{n+1}\\
++\Delta z^{2}T_{i-1,j,k}^{n+1}+\Delta z^{2}T_{i,j-1,k}^{n+1}+\Delta x^{2}T_{i,j,k-1}^{n+1}\\
+-\left(4\Delta z^{2}+2\Delta x^{2}+\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}\right)T_{i,j,k}^{n+1}\\
+=-\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}T_{i,j,k}^{n}
 \end{array}\label{eq:EquacaoGeralDiscretizada}
 \end{equation}
 
@@ -522,7 +522,7 @@ Primeira Parte
 \begin_layout Standard
 É discretizada a condição de contorno de Neumann, onde não há trocas com
  o meio externo, considerando que não há trocas com o ponto anterior no
- eixo x:
+ eixo x, e com diferenças finitas:
 \end_layout
 
 \begin_layout Standard
@@ -573,6 +573,33 @@ T_{i,j,k+1}^{n+1}=T_{i,j,k}^{n+1}
 
 \end_layout
 
+\begin_layout Standard
+A segunda opção de modelagem numérica da condição de contorno de Neumann,
+ é com diferenças finitas centradas, ou seja:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial T}{\partial x}_{i,j,k}=\frac{T_{i+1,j,k}^{n+1}-T_{i-1,j,k}^{n+1}}{2\Delta x}=0
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T_{i+1,j,k}^{n+1}=T_{i-1,j,k}^{n+1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
 Segunda Parte
 \end_layout
@@ -606,10 +633,10 @@ noprefix "false"
 \begin_inset Formula 
 \[
 \begin{array}{c}
-\Delta zT_{i+1,j,k}^{n+1}+\Delta zT_{i,j+1,k}^{n+1}+\Delta xT_{i,j,k+1}^{n+1}\\
-+\underline{\Delta zT_{i,j,k}^{n+1}}+\Delta zT_{i,j-1,k}^{n+1}+\Delta xT_{i,j,k-1}^{n+1}\\
--\left(4\Delta z+2\Delta x+\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}\right)T_{i,j,k}^{n+1}\\
-=-\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n}
+\Delta z^{2}T_{i+1,j,k}^{n+1}+\Delta z^{2}T_{i,j+1,k}^{n+1}+\Delta x^{2}T_{i,j,k+1}^{n+1}\\
++\underline{\Delta z^{2}T_{i,j,k}^{n+1}}+\Delta z^{2}T_{i,j-1,k}^{n+1}+\Delta x^{2}T_{i,j,k-1}^{n+1}\\
+-\left(4\Delta z^{2}+2\Delta x^{2}+\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}\right)T_{i,j,k}^{n+1}\\
+=-\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}T_{i,j,k}^{n}
 \end{array}
 \]
 
@@ -626,10 +653,10 @@ Arrumando a equação:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\Delta zT_{i+1,j,k}^{n+1}+\Delta zT_{i,j+1,k}^{n+1}+\Delta xT_{i,j,k+1}^{n+1}\\
-+\Delta zT_{i,j-1,k}^{n+1}+\Delta xT_{i,j,k-1}^{n+1}\\
--\left(3\Delta z+2\Delta x+\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}\right)T_{i,j,k}^{n+1}\\
-=-\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n}
+\Delta z^{2}T_{i+1,j,k}^{n+1}+\Delta z^{2}T_{i,j+1,k}^{n+1}+\Delta x^{2}T_{i,j,k+1}^{n+1}\\
++\Delta z^{2}T_{i,j-1,k}^{n+1}+\Delta x^{2}T_{i,j,k-1}^{n+1}\\
+-\left(3\Delta z^{2}+2\Delta x^{2}+\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}\right)T_{i,j,k}^{n+1}\\
+=-\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}T_{i,j,k}^{n}
 \end{array}
 \end{equation}
 
@@ -680,10 +707,10 @@ Pode-se ir além, e provar o caso onde há fronteiras em todos os sentidos:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\Delta zT_{i1,j,k}^{n+1}+\Delta zT_{i,j1,k}^{n+1}+\Delta xT_{i,j,k1}^{n+1}\\
-+\Delta zT_{i,j,k}^{n+1}+\Delta zT_{i,j1,k}^{n+1}+\Delta xT_{i,j,k1}^{n+1}\\
--\left(4\Delta z+2\Delta x+\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}\right)T_{i,j,k}^{n+1}\\
-=-\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n}
+\Delta z^{2}T_{i1,j,k}^{n+1}+\Delta z^{2}T_{i,j1,k}^{n+1}+\Delta x^{2}T_{i,j,k1}^{n+1}\\
++\Delta z^{2}T_{i,j,k}^{n+1}+\Delta z^{2}T_{i,j1,k}^{n+1}+\Delta x^{2}T_{i,j,k1}^{n+1}\\
+-\left(4\Delta z^{2}+2\Delta x^{2}+\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}\right)T_{i,j,k}^{n+1}\\
+=-\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}T_{i,j,k}^{n}
 \end{array}
 \end{equation}
 
@@ -699,7 +726,7 @@ resultando em
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-T_{i,j,k}^{n+1}=\frac{\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}}{\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}}T_{i,j,k}^{n}
+T_{i,j,k}^{n+1}=\frac{\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}}{\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}}T_{i,j,k}^{n}
 \end{equation}
 
 \end_inset
@@ -740,12 +767,154 @@ noprefix "false"
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-T_{i,j,k}^{n+1}=\left(nx\Delta z+nz\Delta x+\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}\right)^{-1}\left[\begin{array}{c}
-\frac{\rho c_{p}\Delta x\Delta z}{k\Delta t}T_{i,j,k}^{n}+\\
-\Delta zT_{i+1,j,k}^{n+1}+\Delta zT_{i,j+1,k}^{n+1}+\Delta xT_{i,j,k+1}^{n+1}\\
-\Delta zT_{i-1,j,k}^{n+1}+\Delta zT_{i,j-1,k}^{n+1}+\Delta xT_{i,j,k-1}^{n+1}]
+T_{i,j,k}^{n+1}=\left(nx\Delta z^{2}+nz\Delta x^{2}+\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}\right)^{-1}\left[\begin{array}{c}
+\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}T_{i,j,k}^{n}+\\
+\Delta z^{2}T_{i+1,j,k}^{n+1}+\Delta z^{2}T_{i,j+1,k}^{n+1}+\Delta x^{2}T_{i,j,k+1}^{n+1}\\
+\Delta z^{2}T_{i-1,j,k}^{n+1}+\Delta z^{2}T_{i,j-1,k}^{n+1}+\Delta x^{2}T_{i,j,k-1}^{n+1}]
 \end{array}+\right]\end{array}\label{eq:EquacaoDiscretizadaFinal}
 \end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Generalizando para o segundo caso, temos o mesmo caso da fronteira selada
+ à esquerda:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+\Delta z^{2}T_{i+1,j,k}^{n+1}+\Delta z^{2}T_{i,j+1,k}^{n+1}+\Delta x^{2}T_{i,j,k+1}^{n+1}\\
++\underline{\Delta z^{2}T_{i-1,j,k}^{n+1}}+\Delta z^{2}T_{i,j-1,k}^{n+1}+\Delta x^{2}T_{i,j,k-1}^{n+1}\\
+-\left(4\Delta z^{2}+2\Delta x^{2}+\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}\right)T_{i,j,k}^{n+1}\\
+=-\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}T_{i,j,k}^{n}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substituindo a condição de contorno:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+\Delta z^{2}T_{i+1,j,k}^{n+1}+\Delta z^{2}T_{i,j+1,k}^{n+1}+\Delta x^{2}T_{i,j,k+1}^{n+1}\\
++\underline{\Delta z^{2}T_{i+1,j,k}^{n+1}}+\Delta z^{2}T_{i,j-1,k}^{n+1}+\Delta x^{2}T_{i,j,k-1}^{n+1}\\
+-\left(4\Delta z^{2}+2\Delta x^{2}+\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}\right)T_{i,j,k}^{n+1}\\
+=-\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}T_{i,j,k}^{n}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde podemos chegar na equação geral:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+T_{i,j,k}^{n+1}=\left(4\Delta z^{2}+2\Delta x^{2}+\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}\right)^{-1}\left[\begin{array}{c}
+\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}T_{i,j,k}^{n}+\\
+\Delta z^{2}T_{i+1,j,k}^{n+1}+\Delta z^{2}T_{i,j+1,k}^{n+1}+\Delta x^{2}T_{i,j,k+1}^{n+1}\\
+\Delta z^{2}T_{i-1,j,k}^{n+1}+\Delta z^{2}T_{i,j-1,k}^{n+1}+\Delta x^{2}T_{i,j,k-1}^{n+1}]
+\end{array}+\right]\end{array}\label{eq:EquacaoDiscretizadaFinal_caso 2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde nx e ny sempre serão 4 e 2, respectivamente.
+ Mas esse caso tem restrições em relação ao algoritmo.
+ Caso o ponto estudado esteja isolado, as fronteiras entrarão em um loop
+ na solução, e só poderá ser resolvida manualmente.
+ Por exemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{i,j,k}^{n+1}=\left(4\Delta z^{2}+2\Delta x^{2}+\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}\right)^{-1}\left[\begin{array}{c}
+\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}T_{i,j,k}^{n}+\\
+\Delta z^{2}T_{i+1,j,k}^{n+1}+\Delta z^{2}T_{i,j+1,k}^{n+1}+\Delta x^{2}T_{i,j,k+1}^{n+1}\\
+\Delta z^{2}T_{i-1,j,k}^{n+1}+\Delta z^{2}T_{i,j-1,k}^{n+1}+\Delta x^{2}T_{i,j,k-1}^{n+1}]
+\end{array}+\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substituindo as condições de fronteira para os pontos fora do domínio:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{i,j,k}^{n+1}=\left(4\Delta z^{2}+2\Delta x^{2}+\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}\right)^{-1}\left[\begin{array}{c}
+\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}T_{i,j,k}^{n}+\\
+\Delta z^{2}T_{i-1,j,k}^{n+1}+\Delta z^{2}T_{i,j-1,k}^{n+1}+\Delta x^{2}T_{i,j,k-1}^{n+1}\\
+\Delta z^{2}T_{i+1,j,k}^{n+1}+\Delta z^{2}T_{i,j+1,k}^{n+1}+\Delta x^{2}T_{i,j,k+1}^{n+1}]
+\end{array}+\right]
+\]
+
+\end_inset
+
+mas as temperaturas acima ainda estão fora do domínio, e substituindo as
+ condições de fronteiras, elas retornam para a equação geral.
+\end_layout
+
+\begin_layout Standard
+Então, será considerado que o simulador sempre terá um domínio com 4 células,
+ no mínimo.
+ Isso permite a solução para qualquer superfície em x-y.
+ Para o eixo vertical, haverá um if-else onde, caso tenha somente uma camada
+ na área analisada, a equação será:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{i,j,k}^{n+1}=\left(4\Delta z^{2}+2\Delta x^{2}+\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}\right)^{-1}\left[\begin{array}{c}
+\frac{\rho c_{p}\Delta x^{2}\Delta z^{2}}{k\Delta t}T_{i,j,k}^{n}+\\
+\Delta z^{2}T_{i-1,j,k}^{n+1}+\Delta z^{2}T_{i,j-1,k}^{n+1}+\\
+\Delta z^{2}T_{i+1,j,k}^{n+1}+\Delta z^{2}T_{i,j+1,k}^{n+1}+2\Delta x^{2}T_{i,j,k+1}^{n+1}]
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{i,j,k}^{n+1}=\left(4+\frac{\rho c_{p}\Delta x^{2}}{k\Delta t}\right)^{-1}\left[\begin{array}{c}
+\frac{\rho c_{p}\Delta x^{2}}{k\Delta t}T_{i,j,k}^{n}+\\
+T_{i-1,j,k}^{n+1}+T_{i,j-1,k}^{n+1}+\\
+T_{i+1,j,k}^{n+1}+T_{i,j+1,k}^{n+1}]
+\end{array}\right]
+\]
 
 \end_inset
 

@@ -310,11 +310,13 @@ void MainWindow::makePlot2(){
 void MainWindow::makePlot3(){
     QVector<double> temperature_x(size_x);
     QVector<double> labor_x(size_x);
+    std::ofstream file(dir.absolutePath().toStdString()+"\\save_results\\horizontal_"+std::to_string(time[time.size()-1]+1)+".dat");
     for (int i = 0; i < size_x; i++){
         labor_x[i] = simulador->getDelta_x()*(i+1);
         temperature_x[i] = simulador->grid[studyGrid]->operator()(i, studyPoint.y())->temp;
+        file << labor_x[i] << "; " << temperature_x[i] << std::endl;
     }
-
+    file.close();
     ui->plot3->graph(0)->setData(labor_x,temperature_x);
     ui->plot3->xAxis->setRange(labor_x[0], labor_x[size_x-1]);
     ui->plot3->yAxis->setRange(simulador->getTmin()-50, simulador->getTmax()+50);
@@ -325,11 +327,13 @@ void MainWindow::makePlot3(){
 void MainWindow::makePlot4(){
     QVector<double> temperature_y(size_y);
     QVector<double> labor_y(size_y);
+    std::ofstream file(dir.absolutePath().toStdString()+"\\save_results\\vertical"+std::to_string(time[time.size()-1]+1)+".dat");
     for (int i = 0; i < size_y; i++){
         labor_y[i] = simulador->getDelta_x()*(i+1);
         temperature_y[i] = simulador->grid[studyGrid]->operator()(studyPoint.x(), i)->temp;
+        file << labor_y[i] << "; " << temperature_y[i] << std::endl;
     }
-
+    file.close();
     ui->plot4->graph(0)->setData(labor_y,temperature_y);
     ui->plot4->xAxis->setRange(labor_y[0], labor_y[size_y-1]);
     ui->plot4->yAxis->setRange(simulador->getTmin()-50, simulador->getTmax()+50);
@@ -345,7 +349,7 @@ void MainWindow::makePlotMatProps(){
     QVector<double> props(nPoints);
     QVector<double> temperature_x(nPoints);
     std::vector<std::string> materiais = simulador->getMateriais();
-    double max_props = 600;
+    double max_props = 700;
 
     double dT = (simulador->getTmax() - simulador->getTmin())/(nPoints-1);
     for (unsigned int mat = 0; mat < materiais.size(); mat++){
@@ -353,6 +357,7 @@ void MainWindow::makePlotMatProps(){
             for (int i = 0; i < nPoints; i++){
                 temperature_x[i] = dT*i + simulador->getTmin();
                 props[i] = simulador->getProps(temperature_x[i], materiais[mat]);
+                std::cout<<props[i] << std::endl;
             }
         ui->plot_MatProps->graph(mat)->setPen(QPen(simulador->getColor(materiais[mat])));
         ui->plot_MatProps->graph(mat)->setData(temperature_x,props);

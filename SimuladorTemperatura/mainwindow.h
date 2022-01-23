@@ -33,6 +33,7 @@ public:
     ~MainWindow();
 
 private:
+    QDir dir;
     Ui::MainWindow *ui;
     QPoint m_mousePos;
     QPixmap pixmap;

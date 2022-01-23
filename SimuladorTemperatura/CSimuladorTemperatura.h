@@ -18,12 +18,12 @@ class CSimuladorTemperatura {
 private:
     //int parallel = 0;
     QDir dir;
-    int MAX_THREADS = omp_get_max_threads()-1;
+    int MAX_THREADS = omp_get_max_threads()-4;
     int width, height;
     bool materialPropertiesStatus = true;
     int NGRIDS = 1;
-    const double MIN_ERRO = 1.0e-1;
-    const int MAX_ITERATION = 39;
+    const double MIN_ERRO = 1.0;
+    const int MAX_ITERATION = 500;
     double delta_x = 2.6e-4, delta_t = 5.0e-1, delta_z = 0.05;
 
     double Tmax = 1000, Tmin = 300;
