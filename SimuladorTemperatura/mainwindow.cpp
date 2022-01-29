@@ -357,7 +357,6 @@ void MainWindow::makePlotMatProps(){
             for (int i = 0; i < nPoints; i++){
                 temperature_x[i] = dT*i + simulador->getTmin();
                 props[i] = simulador->getProps(temperature_x[i], materiais[mat]);
-                std::cout<<props[i] << std::endl;
             }
         ui->plot_MatProps->graph(mat)->setPen(QPen(simulador->getColor(materiais[mat])));
         ui->plot_MatProps->graph(mat)->setData(temperature_x,props);
@@ -419,7 +418,7 @@ void MainWindow::on_actionExport_pdf_triggered()
 }
 
 void MainWindow::on_actionImport_material_triggered() {
-    QString file_name = QFileDialog::getOpenFileName(this, "Open a file", "C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//materiais", tr("Dados (*.txt)"));
+    QString file_name = QFileDialog::getOpenFileName(this, "Open a file", "C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//materiais", tr("Dados (*.constante, *.correlacao, *.interpolacao)"));
     std::string name = simulador->openMaterial(file_name.toStdString());
     ui->textBrowser_3->setText(QString::fromStdString("Material "+name+" carregado!"));
     ui->material_comboBox->addItem(QString::fromStdString(name));

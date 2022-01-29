@@ -21,6 +21,12 @@
 % Para uso de listagens de código
 \usepackage{color}
 \definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+\definecolor{lightgray}{rgb}{0.8,0.8,0.8}%   rgb color model
+\definecolor{mygreen1}{rgb}{0.2,1,0}%   rgb color model
+\definecolor{mygreen2}{rgb}{0.2,1,0}%   rgb color model
+\definecolor{brown}{rgb}{0.6,0.3,0}%   rgb color model
+\definecolor{olive}{rgb}{0.5,0.5,0}%   rgb color model
+\definecolor{mymauve}{rgb}{0.9,0.7,1}%   rgb color model
 % Informa que vai usar o pacote listings, 
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
@@ -135,47 +141,463 @@ thechapter - Teste}
 \end_layout
 
 \begin_layout Standard
-Todo projeto de engenharia passa por uma etapa de testes.
- Neste capítulo apresentamos alguns testes do software desenvolvido.
- Estes testes devem dar resposta aos diagramas de caso de uso inicialmente
- apresentados (diagramas de caso de uso geral e específicos).
+Neste capítulo será validado os resultados do simulador utilizando solução
+ da equação do calor para coordenadas cartesianas de uma dimensão.
+\end_layout
+
+\begin_layout Standard
+Também será apresentado soluções aplicados à indústria do petróleo, como
+ injeção de calor em reservatório, e aplicações na engenharia em geral,
+ como resfriamento de computadores.
 \end_layout
 
 \begin_layout Section
-Teste 1: Descrição
+Teste 1: Validação do simulador
 \end_layout
 
 \begin_layout Standard
-No início apresente texto explicativo do teste:
-\end_layout
-
-\begin_layout Itemize
-O que esta sendo testado?
-\end_layout
-
-\begin_layout Itemize
-Como o teste vai ser realizado?
-\end_layout
-
-\begin_layout Itemize
-Como o programa será validado?
-\end_layout
-
-\begin_layout Standard
-A seguir apresente texto explicando a sequência do teste e imagens do programa
- (captura de tela).
-\end_layout
-
-\begin_layout Standard
-coloque aqui texto falando do diagrama de pacotes, referencie a figura.
- Veja Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Teste-TelaPrograma-Captura1"
+Para validar os resultados do simulador, será comparado os resultados do
+ simulador, com a solução proposta no 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "incropera2008fundamentos"
+literal "false"
 
 \end_inset
 
-.
+, na página 179, equação (5.57).
+ A solução para o caso unidimensional é:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{T-T_{s}}{T_{i}-T_{s}}=erf\left(\frac{x}{2\sqrt{\alpha t}}\right)\label{eq:solucao analitica}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde erf é a 
+\shape italic
+função erro de Gauss
+\shape default
+, e 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ é a constante com as propriedades termofísicas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\alpha=\frac{k}{\rho C_{p}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As soluções horizontais e verticais do simulador são salvas em uma pasta
+ em arquivos '.txt', com o respectivo tempo no nome do arquivo.
+\end_layout
+
+\begin_layout Standard
+Foi programado um código em python para comparar dois resultados do simulador
+ com a solução da equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:solucao analitica"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, apresentado abaixo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstdefinestyle{C++}{
+\end_layout
+
+\begin_layout Plain Layout
+
+% tipo de bordas
+\end_layout
+
+\begin_layout Plain Layout
+
+frame=lines,
+\end_layout
+
+\begin_layout Plain Layout
+
+% tamanho da fonte e tipo de fonte
+\end_layout
+
+\begin_layout Plain Layout
+
+basicstyle=
+\backslash
+small
+\backslash
+ttfamily,
+\end_layout
+
+\begin_layout Plain Layout
+
+% linguagem
+\end_layout
+
+\begin_layout Plain Layout
+
+language=[ISO]C++,
+\end_layout
+
+\begin_layout Plain Layout
+
+% numeração
+\end_layout
+
+\begin_layout Plain Layout
+
+numbers=left, 
+\end_layout
+
+\begin_layout Plain Layout
+
+numberstyle=
+\backslash
+tiny, 
+\end_layout
+
+\begin_layout Plain Layout
+
+stepnumber=1, 
+\end_layout
+
+\begin_layout Plain Layout
+
+numbersep=1pt, 
+\end_layout
+
+\begin_layout Plain Layout
+
+firstnumber=1, 
+\end_layout
+
+\begin_layout Plain Layout
+
+% formatação
+\end_layout
+
+\begin_layout Plain Layout
+
+breakatwhitespace=false,
+\end_layout
+
+\begin_layout Plain Layout
+
+breaklines=true,
+\end_layout
+
+\begin_layout Plain Layout
+
+extendedchars=true,
+\end_layout
+
+\begin_layout Plain Layout
+
+% cores
+\end_layout
+
+\begin_layout Plain Layout
+
+backgroundcolor=
+\backslash
+color{white},
+\end_layout
+
+\begin_layout Plain Layout
+
+commentstyle=
+\backslash
+color{lightgray}, 
+\end_layout
+
+\begin_layout Plain Layout
+
+keywordstyle=
+\backslash
+color{blue},
+\end_layout
+
+\begin_layout Plain Layout
+
+morekeywords={*,...}, 
+\end_layout
+
+\begin_layout Plain Layout
+
+stringstyle=
+\backslash
+color{mygreen1},
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+% Palavras chave BLUE
+\end_layout
+
+\begin_layout Plain Layout
+
+emph={ bool, char, char8_t, char16_t, char32_t, wchar_t,short, int, long,
+ long long, float, double, long double, void, const, extern, mutable, register,
+ signed, static, typedef, unsigned, volatile, using, typename, auto, constexpr,
+ decltype, class, enum, struct, union, const_cast, dynamic_cast, reinterpret_cas
+t, static_cast, try, throw, catch, noexcept, delete, new, nullptr, static,
+ const, friend, virtual, operator, namespace, sizeof, template, typename,
+ concept, class,  delete, friend, explicit, this, typeid, private, protected,
+ public, alignas, alignof, asm, concept, consteval, constexpr, constinit
+ export, extern, inline, static_assert, requires, template, typename, mutable,
+  volatile, co_await, co_return, co_yield, atomic_cancel, atomic_commit,
+ atomic_noexcept, import, module, synchronized,co_await, co_return, co_yield,
+ reflexpr }, 
+\end_layout
+
+\begin_layout Plain Layout
+
+emphstyle={
+\backslash
+color{blue}},
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+% Estruturas de controle e de repeticao RED
+\end_layout
+
+\begin_layout Plain Layout
+
+emph={[2] and, and_eq, bitand, bitor, compl, false, not, not_eq, or, or_eq,
+ true, xor, xor_eq, break, case, continue, default, do, else, for, goto,
+ if, return, switch, while  } ,
+\end_layout
+
+\begin_layout Plain Layout
+
+emphstyle={[2]
+\backslash
+color{red}},
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+% Arquivos de inclusao mymauve (note que alguns poderao aparecer com outra
+ cor, ocorre quando nome arquivo igual ao nome da classe)
+\end_layout
+
+\begin_layout Plain Layout
+
+emph={[3] algorithm , atomic ,backward ,bits ,bitset ,cassert ,ccomplex
+ ,cctype ,cerrno ,cfenv ,cfloat ,chrono ,cinttypes ,ciso646 ,climits ,clocale
+ ,cmath ,complex ,csetjmp ,csignal ,cstdalign ,cstdarg ,cstdbool ,cstddef
+ ,cstdint ,cstdio ,cstdlib ,cstring ,ctgmath ,ctime ,cwchar ,cwctype ,debug
+ ,decimal ,exception ,ext ,filesystem, fstream ,functional  ,initializer_list
+ ,iomanip ,ios ,iosfwd ,iostream ,istream ,iterator ,limits ,locale ,numeric
+ ,ostream ,profile ,random ,ratio ,regex ,scoped_allocator ,sstream ,stack
+ ,stdexcept  ,streambuf ,system_error ,tr1 ,tr2 ,typeindex ,typeinfo ,type_trait
+s ,utility ,x86_64-redhat-linux ,complex } , 
+\end_layout
+
+\begin_layout Plain Layout
+
+emphstyle={[3]
+\backslash
+color{green}},
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+% Strings VERDE2
+\end_layout
+
+\begin_layout Plain Layout
+
+emph={[4] string, string_view, wstring, u16string,u32string } ,
+\end_layout
+
+\begin_layout Plain Layout
+
+emphstyle={[4]
+\backslash
+color{mygreen2}
+\backslash
+bfseries},
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+% Containers purple
+\end_layout
+
+\begin_layout Plain Layout
+
+emph={[5]  array, vector, deque, forward_list, list, set, multiset, map,
+ multimap, unordered_set, unordered_multiset, unordered_map, unordered_multimap
+ , pair, tuple, basic_string },
+\end_layout
+
+\begin_layout Plain Layout
+
+emphstyle={[5]
+\backslash
+color{brown}
+\backslash
+bfseries},
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+%Algoritmos genericos VERMELHO2
+\end_layout
+
+\begin_layout Plain Layout
+
+emph={[6]  accumulate, find, max, adjacent_find, find_if, max_element, binary_se
+arch, min, count, find_first_of, for_each, min_element, count_if, includes,
+ mismatch, equal, lexicographical_compare, nth_element, equal_range, lower_bound
+, mismatch, search, search_n, find_end, upper_bound, copy, remove_if, copy_backw
+ard, replace, fill, replace_copy, fill_n, replace_copy_if, generate, replace_if,
+ generate_n, reverse, inplace_merge, reverse_copy, iter_swap, rotate,  make_heap
+, rotate_copy, merge, set_difference, nth_element, next_permutation, set_interse
+ction, set_symmetric_difference, partial_sort, set_union, partial_sort_copy,
+ sort, partition, sort_heap, prev_permutation, stable_partition, push_heap,
+ stable_sort, pop_heap, swap, random_shuffle, swap_ranges, remove, transform,
+ unique, unique_copy, remove_copy, remove_copy_if, all_of, any_of, none_of,
+ find_if_not, copy_if, copy_n, move, move_backward, suffle, is_partitioned,
+ partition_copy, partition_point, is_sorted, is_sorted_until, is_heap, is_heap_u
+ntil, minmax, minmax_element, is_permutation, iota, uninitialized_copy_n,
+ for_each_n, sample, clamp, reduce, exclusive_scan, inclusive_scan, transform_re
+duce, transform_exclusive_scan, transform_inclusive_scan, uninitialized_move,
+ uninitialized_move_n, uninitialized_default_construct, uninitialized_default_co
+nstruct_n, uninitialized_value_construct, uninitialized_value_construct_n,
+ destroy, destroy_at, destroy_n, shift_left, shift_right, compare_3way,
+ lexicographical_compare_3way } ,
+\end_layout
+
+\begin_layout Plain Layout
+
+emphstyle={[6]
+\backslash
+color{olive}},
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+% Processamento Paralelo Orange/laranja
+\end_layout
+
+\begin_layout Plain Layout
+
+emph={[7] thread, yield, get_id, sleep_for, sleep_until, thread_local, memory,
+ mutex, parallel, mutex, timed_mutex, recursive_mutex, shared_mutex, shared_time
+d_mutex, lock_guard, scoped_lock, unique_lock, shared_lock, defer_lock_t,
+ try_to_lock_t, adopt_lock_t, try_lock, lock, once_flag, call_once, condition_va
+riable, condition_variable_any, notify_all_at_thread_exit, cv_status, promise,
+ packaged_task, future, shared_future, async, launch, future_status, future_erro
+r, future_category, future_errc, hardware_destructive_interference_size,
+ hardware_constructive_interference_size  } ,
+\end_layout
+
+\begin_layout Plain Layout
+
+emphstyle={[7]
+\backslash
+color{mymauve}},
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da validação.}, label={validac
+ao}] {../SimuladorTemperatura/save_results_validacao/validacao.py}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como resultado, o código acima apresenta o gráfico , comparando dois tempos
+ 50 e 100 segundos.
 \end_layout
 
 \begin_layout Standard
@@ -188,8 +610,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../imagens/SAIL-TelaCapturada-2.png
-	width 100text%
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/validacao.png
+	lyxscale 70
+	scale 70
 
 \end_inset
 
@@ -200,14 +623,506 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tela do programa mostrando xxx
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Teste-TelaPrograma-Captura1"
+Comparação da solução da equação de calor com o resultado do simulador.
+\end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os dados acima foram obtidos utilizando um material com propriedades termofísica
+s constantes, apresentadas na tabela abaixo:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Propriedade
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+40.000
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+k
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+40
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.600
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O erro do simulador foi menor que 1.06%, para o tempo de 50,0 segundos, e
+ para 500 iterações.
+ 
+\end_layout
+
+\begin_layout Standard
+É importante mencionar que o número de iterações deve ser alta, pois o método
+ iterativo BTCS, só consegue 'avançar' uma única célula por iteração.
+ Ou seja, o número mínimo de iterações deve ser maior que o número de células
+ na vertical ( número de células na vertical é maior que na horizontal).
+\end_layout
+
+\begin_layout Section
+Resultados: injeção de calor em reservatório - modelo 1
+\end_layout
+
+\begin_layout Standard
+A seguir, é apresentado uma simulação para injeção térmica em um reservatório
+ de petróleo com camadas, onde o poço está injetando calor com condutividade
+ infinite e com penetração parcial.
+\end_layout
+
+\begin_layout Standard
+As propriedades termofísicas utilizadas para a rocha são:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Propriedade
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+920
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+k
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.600
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As propriedades do poço são:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Propriedade
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+593
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+k
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10,33
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.020
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O teste busca analisar como é a transferência de calor na região próxima
+ ao poço, considerando injeção de água, e com a formação de 
+\shape italic
+fingers
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_t0.PNG
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tempo inicial da simulação.
+ Na esquerda, o cinza representa o poço, azul a água e o amarelo, arenito.
+ Na direita, é mostrado as temperaturas.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Com a evolução do tempo, a região mais próxima do poço é a mais alterada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_t610.PNG
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Evolução da simulação.
+ Tempo de 610 segundos.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Com a evolução do tempo, é possível perceber que a região próxima ao poço
+ fica com temperatura quase homogênea, começando a se espalhar para o restante
+ do reservatório.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_tfinal.PNG
+	lyxscale 75
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tempo final de 7.180 segundos.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_tfinal_graficos.PNG
+	lyxscale 85
+	width 85text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gráficos do tempo final de 7.180 segundos.
 \end_layout
 
 \end_inset
@@ -221,40 +1136,57 @@ name "fig:Teste-TelaPrograma-Captura1"
 \end_layout
 
 \begin_layout Section
-Teste 2: Descrição
+Resultados: Injeção de calor em reservatório - modelo 2
 \end_layout
 
 \begin_layout Standard
-No início apresente texto explicativo do teste:
-\end_layout
+Para a segunda simulação, será utilizado um modelo semelhante ao modelo
+ 1, mas sem a injeção de água, conforme mostrado na figura 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
 
-\begin_layout Itemize
-O que esta sendo testado?
-\end_layout
-
-\begin_layout Itemize
-Como o teste vai ser realizado?
-\end_layout
-
-\begin_layout Itemize
-Como o programa será validado?
-\end_layout
-
-\begin_layout Standard
-A seguir apresente texto explicando a sequência do teste e imagens do programa
- (captura de tela).
-\end_layout
-
-\begin_layout Standard
-Coloque aqui texto falando do diagrama de pacotes, referencie a figura.
- Veja Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Teste-TelaPrograma-Captura2"
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_modelo2.PNG
+	lyxscale 85
+	width 90text%
 
 \end_inset
 
-.
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modelo 2 de injeção térmica em reservatório.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste_reservatorio_sem_agua"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Com esse modelo, é esperado que a variação de temperatura não atinja regiões
+ distantes do reservatório, devido à baixa condutividade térmica do arenito.
 \end_layout
 
 \begin_layout Standard
@@ -267,8 +1199,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../imagens/SAIL-TelaCapturada-2.png
-	width 100text%
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_modelo2_resultado.PNG
+	lyxscale 85
+	width 85text%
 
 \end_inset
 
@@ -279,10 +1212,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tela do programa mostrando xxx
+Modelo 2 de injeção térmica em reservatório após 4.000 segundos.
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Teste-TelaPrograma-Captura2"
+name "fig:Teste_reservatorio_sem_agua-2"
 
 \end_inset
 
@@ -299,20 +1232,401 @@ name "fig:Teste-TelaPrograma-Captura2"
 
 \end_layout
 
-\begin_layout Description
-Nota: 
-\begin_inset space ~
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_modelo2_graficos.PNG
+	lyxscale 50
+	width 85text%
+
 \end_inset
 
 
-\begin_inset Newline newline
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Graficos mostrando a variação de temperatura na região próxima ao poço.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste_reservatorio_sem_agua-3"
+
 \end_inset
 
-Não perca de vista a visão do todo; do projeto de engenharia como um todo.
- Cada capítulo, cada seção, cada parágrafo deve se encaixar.
- Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos, de ver o todo e suas diferentes partes,
- de modelar processos/sistemas/produtos de engenharia.
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A comparação dos dois modelos mostra como efetivo é a injeção de água com
+ temperatura elevada para aquecer o reservatório.
+ Sem injeção de água, a temperatura não consegue atingir regiões distantes
+ devido a baixa condutividade térmica do arenito.
+\end_layout
+
+\begin_layout Section
+Resultados: resfriamento de processadores
+\end_layout
+
+\begin_layout Standard
+Processadores são componentes elétricos de mais alta importância e complexidade
+ do mundo moderno.
+ São responsáveis por realizar numerosas operações matemáticas em curtíssimos
+ espaços de tempo.
+ Mas esse alto poder de processamento causa uma elevada geração de calor,
+ a qual pode atrapalhar ou queimar o componente.
+\end_layout
+
+\begin_layout Standard
+Então, para evitar danos no componente, foram criados diversos mecanismos
+ de resfriamentos, como 
+\shape italic
+air coolers
+\shape default
+ e 
+\shape italic
+water coolers.
+ 
+\shape default
+Esse problema fica complexo, quando é analisado equipamentos reduzidos,
+ como 
+\shape italic
+smartphones
+\shape default
+ e 
+\shape italic
+notebooks.
+\end_layout
+
+\begin_layout Standard
+Na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste_notebook"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, é mostrado o interior de um 
+\shape italic
+notebook.
+ 
+\shape default
+É possível perceber uma longa barra de cobre, cruzando pela GPU e CPU, os
+ componentes com maior processamento e geração de calor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/notebook.jpeg
+	lyxscale 40
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Interior de um 
+\shape italic
+notebook
+\shape default
+, apresentando o 
+\shape italic
+heatpipe,
+\shape default
+ que é a barra de cobre que cruza a GPU e CPU, e resfria na ventoinha.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste_notebook"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Utilizando o simulador, é possível simular o caso acima, utilizando cobre
+ com propriedades constantes como material.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Propriedade
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+353
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+k
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+42
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.262
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste_notebook2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, é apresentado o modelo do resfriador.
+ onde o grid 0, possui as fontes de calor (GPU, CPU), e a fonte de resfriamento
+ acima (ventoinha).
+ No grid 1, é mostrado o 
+\shape italic
+heatpipe
+\shape default
+, interligando os componentes, e chegando à ventoinha.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/resultado_temp_notebook.PNG
+	lyxscale 50
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulação do sistema de resfriamento do notebook após chegar ao período
+ permanente.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste_notebook2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste_notebook3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, são apresentados os gráficos da temperatura ao longo da horizontal (esquerda)
+ e vertical (direita).
+ 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/teste_graficos_notebook.PNG
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Interior de um 
+\shape italic
+notebook
+\shape default
+, apresentando o 
+\shape italic
+heatpipe,
+\shape default
+ que é a barra de cobre que cruza a GPU e CPU, e resfria na ventoinha.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste_notebook3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A temperatura é rapidamente dispersada quando chega à ventoinha, resultando
+ em duas quedas de temperatura, indicando que o componente do meio (CPU)
+ na simulação, deveria estar mais próximo do outro componente (GPU), para
+ que a queda de temperatura seja linear, evitando o super-aquecimento de
+ uma das partes.
 \end_layout
 
 \end_body

@@ -98,7 +98,7 @@ void CSimuladorTemperatura::run_paralelismo_total() {
 void CSimuladorTemperatura::solverByGrid(int g) {
     double erro = 1, _erro;
     int iter = 0;
-    while (erro > MIN_ERRO && iter <= MAX_ITERATION) {
+    while (erro < MIN_ERRO || iter <= MAX_ITERATION) {
         grid[g]->updateIteration(); /// atualizo temp_nu para calcular o erro da iteracao
         for (int i = 0; i < grid[g]->getWidth(); i++)
             for (int k = 0; k < grid[g]->getHeight(); k++)
@@ -126,7 +126,9 @@ void CSimuladorTemperatura::solverByThread(int thread_num) {
             }
         }
         iter++;
-    } while (iter <= MAX_ITERATION);
+        if (erro < MIN_ERRO && iter > MIN_ITERATION)
+            break;
+    } while (iter < MAX_ITERATION);
     std::cout<<"iteracoes: " << iter << " - erro: " << erro << std::endl;
 }
 
@@ -224,6 +226,7 @@ std::string CSimuladorTemperatura::openGrid(std::string nameFile) {
         grid[gg] = new CGrid(width, height, 0.0);
     while(file >> i >> g >> _temperature >> _active >> _source >> _name){
             grid[g]->draw(i, _temperature, _active, _source, _name);
+            Tmax = Tmax < _temperature ? _temperature : Tmax;
     }
 
     file.close();

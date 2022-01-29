@@ -22,11 +22,11 @@ private:
     int width, height;
     bool materialPropertiesStatus = true;
     int NGRIDS = 1;
-    const double MIN_ERRO = 1.0;
-    const int MAX_ITERATION = 500;
+    const double MIN_ERRO = 0.05;
+    const int MAX_ITERATION = 500, MIN_ITERATION = 50;
     double delta_x = 2.6e-4, delta_t = 5.0e-1, delta_z = 0.05;
 
-    double Tmax = 1000, Tmin = 300;
+    double Tmax = 400, Tmin = 300;
 
     double actualTemperature = 300;
     double actual_time = 0.0;
