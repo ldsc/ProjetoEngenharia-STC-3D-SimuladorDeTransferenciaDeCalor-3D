@@ -1,22 +1,22 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+
+#include <QDir>                  ///< Biblioteca que permite acessar diretórios.
+#include <QImage>                /// desenhar pixels
+#include <QColor>                /// escolher a cor dos pixels
 #include <string>
 #include <iostream>
-
-#include <QDir>                  ///< Biblioteca que permite acessar diretorios.
-#include <QDirIterator>
-#include <QImage>                ///< desenhar pixels
-#include <QColor>                ///< escolher a cor dos pixels
-#include <QPainter>              ///< desenhar pixels
-#include <QPrinter>              ///< Biblioteca  que habilita a geracao de pdf.
-#include <QPainter>              ///< Biblioteca que auxilia a geracao do pdf.
+#include <QPainter>              /// desenhar pixels
+#include <QPrinter>              ///< Biblioteca  que habilita a geração de pdf.
+#include <QPainter>              ///< Biblioteca que auxilia a geração do pdf.
 #include <QPdfWriter>
 #include <QMainWindow>
-#include <QMouseEvent>           ///< pegar acoes/posicao do mouse
+#include <QMouseEvent>           /// pegar acoes/posicao do mouse
 #include <QFileDialog>
+#include <QDirIterator>
 
-#include "C3D.h"
+#include "CRender3D.h"
 #include "ui_mainwindow.h"
 #include "CSimuladorTemperatura.h"
 
@@ -33,6 +33,7 @@ public:
     ~MainWindow();
 
 private:
+    QDir dir;
     Ui::MainWindow *ui;
     QPoint m_mousePos;
     QPixmap pixmap;

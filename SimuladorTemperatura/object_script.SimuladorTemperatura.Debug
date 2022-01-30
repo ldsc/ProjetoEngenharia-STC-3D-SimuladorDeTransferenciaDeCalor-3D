@@ -1,9 +1,9 @@
-debug/C3D.o
 debug/CCell.o
 debug/CGrid.o
 debug/CMaterial.o
 debug/CMaterialCorrelacao.o
 debug/CMaterialInterpolacao.o
+debug/CRender3D.o
 debug/CReta.o
 debug/CSegmentoReta.o
 debug/CSimuladorTemperatura.o
@@ -11,6 +11,6 @@ debug/main.o
 debug/mainwindow.o
 debug/qcustomplot.o
 debug/qrc_gridButton.o
-debug/moc_C3D.o
+debug/moc_CRender3D.o
 debug/moc_mainwindow.o
 debug/moc_qcustomplot.o

@@ -4,14 +4,15 @@
 #include <sstream>
 #include <iomanip>
 #include <fstream>
+
 /// Class CReta,  representa uma reta y = a + b * x.
 class CReta
 {  
 protected:
-   double x = 0.0; ///< Representa valor de x.
-   double y = 0.0; ///< Representa valor de y.
-   double b = 0.0; ///< Representa valor de b da  equacao y = a + b*x; normalmente e calculado.
-   double a = 0.0; ///< Representa valor de a da  equacao y = a + b*x; normalmente e calculado.
+   double x = 0.0; /// Representa valor de x.
+   double y = 0.0; /// Representa valor de y.
+   double b = 0.0; /// Representa valor de b da  equacao y = a + b*x; normalmente e calculado.
+   double a = 0.0; /// Representa valor de a da  equacao y = a + b*x; normalmente e calculado.
    
 public:
   /// Construtor default.

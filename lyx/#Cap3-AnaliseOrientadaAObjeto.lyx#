@@ -144,12 +144,76 @@ name "sec:AOO"
 \end_layout
 
 \begin_layout Standard
-Neste capítulo, são apresentadas todas as classes desenvolvidas no software.
- Também será apresentado diagramas exemplificando suas interações.
+Neste capítulo, será apresentado os objetos desenvolvidos no projeto, suas
+ relações, atributos e métodos.
+ Depois de uma breve explicação sobre cada objeto, será apresentado cinco
+ diagramas de UML, para auxiliar no entendimento do software e suas relações.
+ Serão apresentados os diagramas de classes, de sequência, de comunidação,
+ de máquina de estado e de atividades.
 \end_layout
 
 \begin_layout Section
-Diagramas de classes
+Dicionário das classes
+\end_layout
+
+\begin_layout Standard
+O software é constituído por 10 classes, onde duas classes de interpolação
+ foram implementadas pelo professor André Duarte Bueno no ensino de C++.
+ Utilizar esse código pronto, mostra que o simulador pode ser adaptado para
+ outros métodos do cálculo das propriedades termofísicas.
+\end_layout
+
+\begin_layout Enumerate
+mainwindow.h: Classe responsável pela janela principal.
+ Consegue capturar os valores adicionados pelo usuário, e enviar para a
+ classe do simulador.
+ Permite o usuário desenhar o objeto, e apresenta os resultados por meio
+ de gráficos e pela região de desenho.
+\end_layout
+
+\begin_layout Enumerate
+CRender3D.h: Classe responsável por apresentar o objeto em renderização 3D.
+ É criada a partir do mainwindow e recebe valores do simulador.
+ Possui toda a álgebra necessária para a renderização.
+\end_layout
+
+\begin_layout Enumerate
+CSimuladorTemperatura.h: Classe responsável por organizar as células do objeto,
+ e por resolver o sistema numérico do problema da difusão térmica.
+\end_layout
+
+\begin_layout Enumerate
+CGrid.h: Classe responsável por organizar as células do objeto em grids,
+ importante para organizar as células, e facilitar a utilização pela classe
+ CSimuladorTemperatura.
+\end_layout
+
+\begin_layout Enumerate
+CCell.h: Classe responsável por armazenar informações da célula, como se
+ ela está ativa ou não, se é fonte de calor ou não, qual o material e qual
+ a temperatura.
+\end_layout
+
+\begin_layout Enumerate
+CMaterial.h: Classe virtual responsável por prover os valores das propriedades
+ termofísicas dos materiais, é chamada pelo CSimuladorTemperatura, e é sobreescr
+ita por CMat
+\end_layout
+
+\begin_layout Enumerate
+CMaterialCorrelacao.h:
+\end_layout
+
+\begin_layout Enumerate
+CMaterialInterpolacao.h:
+\end_layout
+
+\begin_layout Enumerate
+CReta.h:
+\end_layout
+
+\begin_layout Enumerate
+CSegmentoReta.h:
 \end_layout
 
 \begin_layout Standard

@@ -16,7 +16,7 @@
 #include <QFileDialog>
 #include <QDirIterator>
 
-#include "C3D.h"
+#include "CRender3D.h"
 #include "ui_mainwindow.h"
 #include "CSimuladorTemperatura.h"
 

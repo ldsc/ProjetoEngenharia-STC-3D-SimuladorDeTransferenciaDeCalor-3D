@@ -1,11 +1,11 @@
 #ifndef CMATERIALCORRELACAO_H
 #define CMATERIALCORRELACAO_H
 
-#include <iostream>
-#include <fstream>
+#include <QDir>
 #include <string>
 #include <QColor>
-#include <QDir>
+#include <fstream>
+#include <iostream>
 
 #include "CMaterial.h"
 

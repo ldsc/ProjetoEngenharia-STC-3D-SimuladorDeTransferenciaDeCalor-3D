@@ -159,7 +159,7 @@ void MainWindow::start_buttons(){
 }
 
 void MainWindow::createWidgetProps(){
-    /// scroll com os materiais para o grafico
+    /// scroll com os materiais para o gráfico
     std::vector<std::string> materiais = simulador->getMateriais();
     checkboxes = new QWidget(ui->scrollArea);
     layout = new QVBoxLayout(checkboxes);
@@ -310,11 +310,13 @@ void MainWindow::makePlot2(){
 void MainWindow::makePlot3(){
     QVector<double> temperature_x(size_x);
     QVector<double> labor_x(size_x);
+    std::ofstream file(dir.absolutePath().toStdString()+"\\save_results\\horizontal_"+std::to_string(time[time.size()-1]+1)+".dat");
     for (int i = 0; i < size_x; i++){
         labor_x[i] = simulador->getDelta_x()*(i+1);
         temperature_x[i] = simulador->grid[studyGrid]->operator()(i, studyPoint.y())->temp;
+        file << labor_x[i] << "; " << temperature_x[i] << std::endl;
     }
-
+    file.close();
     ui->plot3->graph(0)->setData(labor_x,temperature_x);
     ui->plot3->xAxis->setRange(labor_x[0], labor_x[size_x-1]);
     ui->plot3->yAxis->setRange(simulador->getTmin()-50, simulador->getTmax()+50);
@@ -325,11 +327,13 @@ void MainWindow::makePlot3(){
 void MainWindow::makePlot4(){
     QVector<double> temperature_y(size_y);
     QVector<double> labor_y(size_y);
+    std::ofstream file(dir.absolutePath().toStdString()+"\\save_results\\vertical"+std::to_string(time[time.size()-1]+1)+".dat");
     for (int i = 0; i < size_y; i++){
         labor_y[i] = simulador->getDelta_x()*(i+1);
         temperature_y[i] = simulador->grid[studyGrid]->operator()(studyPoint.x(), i)->temp;
+        file << labor_y[i] << "; " << temperature_y[i] << std::endl;
     }
-
+    file.close();
     ui->plot4->graph(0)->setData(labor_y,temperature_y);
     ui->plot4->xAxis->setRange(labor_y[0], labor_y[size_y-1]);
     ui->plot4->yAxis->setRange(simulador->getTmin()-50, simulador->getTmax()+50);
@@ -345,7 +349,7 @@ void MainWindow::makePlotMatProps(){
     QVector<double> props(nPoints);
     QVector<double> temperature_x(nPoints);
     std::vector<std::string> materiais = simulador->getMateriais();
-    double max_props = 600;
+    double max_props = 700;
 
     double dT = (simulador->getTmax() - simulador->getTmin())/(nPoints-1);
     for (unsigned int mat = 0; mat < materiais.size(); mat++){
@@ -414,7 +418,7 @@ void MainWindow::on_actionExport_pdf_triggered()
 }
 
 void MainWindow::on_actionImport_material_triggered() {
-    QString file_name = QFileDialog::getOpenFileName(this, "Open a file", "C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//materiais", tr("Dados (*.txt)"));
+    QString file_name = QFileDialog::getOpenFileName(this, "Open a file", "C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//materiais", tr("Dados (*.constante, *.correlacao, *.interpolacao)"));
     std::string name = simulador->openMaterial(file_name.toStdString());
     ui->textBrowser_3->setText(QString::fromStdString("Material "+name+" carregado!"));
     ui->material_comboBox->addItem(QString::fromStdString(name));
@@ -481,7 +485,7 @@ QString MainWindow::save_pdf(QString file_name){
     pdf.setOutputFileName(file_name);
 
     QPainter painterPDF(this);
-    if (!painterPDF.begin(&pdf))        //Se nao conseguir abrir o arquivo PDF ele nao executa o resto.
+    if (!painterPDF.begin(&pdf))        //Se não conseguir abrir o arquivo PDF ele não executa o resto.
         return "Erro ao abrir PDF";
 
 
@@ -497,10 +501,10 @@ QString MainWindow::save_pdf(QString file_name){
 
 
 
-    painterPDF.drawText(400,140, "==> PROPRIEDADES DA SIMULACAO <==");
-    painterPDF.drawText(400,160, "Temperatura maxima: " + QString::number(simulador->getTmax())+" K");
-    painterPDF.drawText(400,180, "Temperatura minima: " + QString::number(simulador->getTmin())+" K");
-    painterPDF.drawText(400,200, "Tempo maximo: " + QString::number(time[time.size()-1])+" s");
+    painterPDF.drawText(400,140, "==> PROPRIEDADES DA SIMULAÇÃO <==");
+    painterPDF.drawText(400,160, "Temperatura máxima: " + QString::number(simulador->getTmax())+" K");
+    painterPDF.drawText(400,180, "Temperatura mínima: " + QString::number(simulador->getTmin())+" K");
+    painterPDF.drawText(400,200, "Tempo máximo: " + QString::number(time[time.size()-1])+" s");
 
     painterPDF.drawText(400,240, "Tipo de paralelismo: " + ui->parallel_comboBox->currentText());
     painterPDF.drawText(400,260, "Coordenada do ponto de estudo (x,y,z): " + QString::number(studyPoint.x()*simulador->getDelta_x())+","+QString::number(studyPoint.y()*simulador->getDelta_x())+","+QString::number(studyGrid*simulador->getDelta_z()));
@@ -587,7 +591,7 @@ void MainWindow::on_gridDelGrid_clicked()
 }
 
 void MainWindow::on_button3D_clicked(){
-    C3D *newWindow = new C3D(simulador);
-    //C3D *newWindow = new C3D();
+    CRender3D *newWindow = new CRender3D(simulador);
+    //CRender3D *newWindow = new CRender3D();
     newWindow->show();
 }

@@ -1,8 +1,9 @@
 #ifndef	CMATERIAL_HPP
 #define CMATERIAL_HPP
-#include <iostream>
+
 #include <string>
 #include <QColor>
+#include <iostream>
 
 class CMaterial {
 public:

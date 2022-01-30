@@ -1,19 +1,21 @@
 #include "CMaterialInterpolacao.h"
 
 CMaterialInterpolacao::CMaterialInterpolacao(std::string fileName){
-    std::string strTemporaria;
+    std::string str_temp;
     int r, g, b, alpha;
+    name = fileName;
 
     QDir dir; std::string path = dir.absolutePath().toStdString();
     std::ifstream file(path+"/materiais//"+fileName);
     if (file.is_open()){
-        std::getline(file, strTemporaria);
-        std::getline(file, name);
 
-        file >> r; file >> g; file >> b; file >> alpha;
+        file >> str_temp; file >> r; file >> g; file >> b; file >> alpha;
         color = QColor(r, g, b, alpha);
 
-        file >> rho; file >> cp;
+        file >> str_temp; file >> rho;
+        file >> str_temp; file >> cp;
+
+        file >> str_temp; /// texto
 
         double x1, x2, y1, y2;
         file >> x1 >> y1;

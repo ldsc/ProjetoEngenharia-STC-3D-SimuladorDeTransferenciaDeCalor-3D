@@ -1,9 +1,9 @@
-release/C3D.o
 release/CCell.o
 release/CGrid.o
 release/CMaterial.o
 release/CMaterialCorrelacao.o
 release/CMaterialInterpolacao.o
+release/CRender3D.o
 release/CReta.o
 release/CSegmentoReta.o
 release/CSimuladorTemperatura.o
@@ -11,6 +11,6 @@ release/main.o
 release/mainwindow.o
 release/qcustomplot.o
 release/qrc_gridButton.o
-release/moc_C3D.o
+release/moc_CRender3D.o
 release/moc_mainwindow.o
 release/moc_qcustomplot.o

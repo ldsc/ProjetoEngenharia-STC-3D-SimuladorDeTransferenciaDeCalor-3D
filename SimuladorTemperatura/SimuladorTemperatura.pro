@@ -11,12 +11,12 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    C3D.cpp \
     CCell.cpp \
     CGrid.cpp \
     CMaterial.cpp \
     CMaterialCorrelacao.cpp \
     CMaterialInterpolacao.cpp \
+    CRender3D.cpp \
     CReta.cpp \
     CSegmentoReta.cpp \
     CSimuladorTemperatura.cpp \
@@ -25,12 +25,12 @@ SOURCES += \
     qcustomplot.cpp
 
 HEADERS += \
-    C3D.h \
     CCell.h \
     CGrid.h \
     CMaterial.h \
     CMaterialCorrelacao.h \
     CMaterialInterpolacao.h \
+    CRender3D.h \
     CReta.h \
     CSegmentoReta.h \
     CSimuladorTemperatura.h \

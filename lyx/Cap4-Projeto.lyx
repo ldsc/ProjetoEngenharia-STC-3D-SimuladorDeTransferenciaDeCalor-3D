@@ -498,6 +498,75 @@ Versão 1.2, final.
 \end_layout
 
 \begin_layout Section
+Diagrama de componentes
+\end_layout
+
+\begin_layout Standard
+O diagrama de componentes mostra as relações entre todos os componentes
+ do software.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama de componentes.png
+	lyxscale 75
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-componentes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Começando pela esquerda na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-componentes"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, temos o executável e o main.
+ Os outros dois componentes em azul criam janelas para o usuário se comunicar
+ com o software.
+ O componente em roxo, é a biblioteca de gráficos utilizados pelo software.
+\end_layout
+
+\begin_layout Standard
+Os componentes em verde, são responsáveis por calcular as propriedades dos
+ materiais, por interpolação ou correlação.
+\end_layout
+
+\begin_layout Standard
+Os componentes em laranja claro são responsáveis pela simulação da difusão
+ térmica.
+\end_layout
+
+\begin_layout Section
 Diagrama de implantação
 \begin_inset Index idx
 status collapsed
@@ -519,42 +588,26 @@ name "sec:Diagrama-de-execução"
 \end_layout
 
 \begin_layout Standard
-O diagrama de implantação é um diagrama de alto nível que inclui relações
- entre o sistema e o hardware e que se preocupa com os aspectos da arquitetura
- computacional escolhida.
- Seu enfoque é o hardware, a configuração dos nós em tempo de execução.
- 
+O diagrama de implementação é um diagrama que apresenta as relações entre
+ sistema e hardware, mostrando quais equipamentos são necessários para que
+ o software seja executado corretamente.
 \end_layout
 
 \begin_layout Standard
-O diagrama de implantação deve incluir os elementos necessários para que
- o sistema seja colocado em funcionamento: computador, periféricos, processadore
-s, dispositivos, nós, relacionamentos de dependência, associação, componentes,
- subsistemas, restrições e notas.
-\end_layout
-
-\begin_layout Standard
-Veja na Figura 
+Na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-implantação."
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
- um exemplo de diagrama de implantação de um cluster.
- Observe a presença de um servidor conectado a um switch.
- Os nós do cluster (ou clientes) também estão conectados ao switch.
- Os resultados das simulações são armazenados em um servidor de arquivos
- (
-\emph on
-storage
-\emph default
-).
-\end_layout
-
-\begin_layout Standard
-Pode-se utilizar uma anotação de localização para identificar onde determinado
- componente está residente, por exemplo {localização: sala 3}.
+, é mostrado quais equipamentos o software Simulador de Difusão Térmica
+ utiliza.
+ No caso, são utilizados os periféricos de um desktop ou notebook, o processador
+, memória RAM e memória de longo prazo, como um HD ou SSD.
 \end_layout
 
 \begin_layout Standard
@@ -567,9 +620,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../imagens/fig-3-17-diagrama-execucao.png
-	lyxscale 90
-	width 100text%
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama de implementação.png
+	lyxscale 75
+	width 90text%
 
 \end_inset
 
@@ -577,10 +630,8 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Diagrama de implantação
+\align center
+Fonte: Produzido pelo autor.
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-implantação."
@@ -593,27 +644,6 @@ name "cap:Diagrama-de-implantação."
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-Nota: 
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Não perca de vista a visão do todo; do projeto de engenharia como um todo.
- Cada capítulo, cada seção, cada parágrafo deve se encaixar.
- Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos, de ver o todo e suas diferentes partes,
- de modelar processos/sistemas/produtos de engenharia.
 \end_layout
 
 \end_body
