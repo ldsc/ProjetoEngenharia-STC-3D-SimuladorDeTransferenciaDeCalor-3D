@@ -283,6 +283,7 @@ reference "cap:Diagrama-de-classes"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -290,7 +291,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../imagens/fig-3-9-Diagrama-de-classes-heranca.png
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/diagrama-de-classes.png
 	width 100text%
 
 \end_inset
@@ -324,43 +325,6 @@ name "cap:Diagrama-de-classes"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Nota: 
-\begin_inset space ~
-\end_inset
-
- 
-\begin_inset Newline newline
-\end_inset
-
-deve ocupar toda a página impressa! se necessário rotacionar 90 graus; SE
- NECESSÁRIO DIVIDIR EM 2 PÁGINAS; o importante é que toda figura/tabela
- deve ser bem legível (fonte mínima = 10).
-\end_layout
-
-\begin_layout Subsection
-Dicionário de classes
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Dicionário-de-classes"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Classe CNomeClasse: representa.....
-\end_layout
-
-\begin_layout Itemize
-Classe CNomeClasse: representa.....
-\end_layout
-
-\begin_layout Itemize
-Classe CNomeClasse: representa.....
 \end_layout
 
 \begin_layout Section
@@ -600,9 +564,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../imagens/DiagComunicacao-CalculoAreaFuncao.png
-	lyxscale 85
-	width 100text%
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama-de-comunicacao.png
+	lyxscale 30
+	width 85text%
 
 \end_inset
 
@@ -708,9 +672,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../imagens/fig-3-14-Diagrama-de-estados-aluno.png
-	lyxscale 85
-	width 100text%
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/diagrama-de-maquina-estado.png
+	lyxscale 30
+	width 85text%
 
 \end_inset
 
@@ -746,40 +710,32 @@ Diagrama de atividades
 \end_layout
 
 \begin_layout Standard
-.....
+No diagrama de atividades, é apresentado em detalhes uma atividade específica.
+ Para o presente caso, será apresentado o diagrama de atividades da classe
+ CRender3D.h, divido à complexidade de renderização 3D.
 \end_layout
 
 \begin_layout Standard
-Veja na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cap:Diagrama-de-atividades"
-
-\end_inset
-
- o diagrama de atividades correspondente a uma atividade específica do diagrama
- de máguina de estado.
- Observe que....
+Inicialmente, essa classe recebe os dados do simulador, as posições e os
+ atributos das células.
+ Com isso, são criadas matrizes com os pontos de triângulos para cada respectivo
+ ponto, se a superfície desse objeto for possível de observar.
+ Ou seja, se existir uma superfície em contato com essa outra superfície,
+ nenhuma das duas será criadas, pois estarão dentro do objeto.
 \end_layout
 
 \begin_layout Standard
-...descrever em detalhes uma atividade específica..não pode ser a sequência de
- uso geral, trata-se de um caso específico, detalhado do diagrama de máquina
- de estado.
+A partir desse ponto, é obtido os valores dos ângulos e calculado a matriz
+ rotacionada dos pontos dos triângulos e, em seguida, obtidas suas normas.
+ Se positivo, esse valor é guardado em uma matriz, a qual é ordenada em
+ ordem crescente.
 \end_layout
 
-\begin_layout Itemize
-Lembrar que o diagrama de sequência é a representação de um método de cálculo
- específico.
- 
-\end_layout
-
-\begin_layout Itemize
-Não é para fazer o diagrama de atividades do método de gerenciamento!!!
-\end_layout
-
-\begin_layout Itemize
-Coloque aqui um diagrama de atividades que mostra contas/cálculos! 
+\begin_layout Standard
+Com todos os valores calculados e ordenados, a classe renderiza na tela
+ o objeto 3D.
+ Conforme condições do usuário, o objeto pode concluir suas atividades,
+ ou calcular novos valores para outra renderização.
 \end_layout
 
 \begin_layout Standard
@@ -792,9 +748,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../imagens/DiagAtividade-MetodoArea.png
-	lyxscale 85
-	width 100text%
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama de atividades.png
+	lyxscale 30
+	width 85text%
 
 \end_inset
 
@@ -823,22 +779,6 @@ name "cap:Diagrama-de-atividades"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Description
-Nota: 
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Não perca de vista a visão do todo; do projeto de engenharia como um todo.
- Cada capítulo, cada seção, cada parágrafo deve se encaixar.
- Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos, de ver o todo e suas diferentes partes,
- de modelar processos/sistemas/produtos de engenharia.
 \end_layout
 
 \end_body

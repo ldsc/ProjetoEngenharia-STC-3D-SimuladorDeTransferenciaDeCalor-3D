@@ -736,7 +736,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CRender3D.},
- label={CRender3D-hicacao-cpp}] {../listagens/CRender3D.h}
+ label={CRender3D-cpp}] {../listagens/CRender3D.h}
 \end_layout
 
 \end_inset
