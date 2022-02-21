@@ -336,7 +336,7 @@ Após os desenhos do usuário e colocado o simulador para rodar, o simulador
  irá calcular a temperatura iterativamente em cada ponto, e só passará para
  o próximo tempo se o erro entre iterações for menor que um valor aceitável.
  Posteriormente, o desenho será atualizado e mostrará a nova distribuição
- de temperatura, e plotará os gráficos com os novos valores calculados.
+ de temperatura, e plotará os gráficos com os novos valores.
 \end_layout
 
 \begin_layout Standard
@@ -358,8 +358,7 @@ Para calcular as propriedades termofísicas dos materiais, são utilizados
 \end_layout
 
 \begin_layout Standard
-Os principais termos e suas unidades utilizadas neste projeto estão listadas
- abaixo:
+Os principais termos e suas unidades são listadas abaixo:
 \end_layout
 
 \begin_layout Itemize
@@ -410,7 +409,7 @@ Dados relativos ao objeto
 \begin_inset Formula $\Delta x,\Delta y$
 \end_inset
 
- - distância entre os centros dos blocos, valor inicial: 1px=0.0026m 
+ distância entre nodos, valor inicial: 1px=0.0026m 
 \begin_inset Formula $[m]$
 \end_inset
 
@@ -421,7 +420,7 @@ Dados relativos ao objeto
 \begin_inset Formula $\Delta z$
 \end_inset
 
- - distância entre perfis, valor inicial: 0.05m 
+ distância entre perfis, valor inicial: 0.05m 
 \begin_inset Formula $[m]$
 \end_inset
 
@@ -432,7 +431,7 @@ Dados relativos ao objeto
 \begin_inset Formula $T$
 \end_inset
 
- - temperatura no nodo 
+ temperatura no nodo 
 \begin_inset Formula $[K]$
 \end_inset
 
@@ -449,35 +448,35 @@ Variáveis usadas na simulação:
 \begin_inset Formula $i$
 \end_inset
 
- - posição do nodo em relação ao eixo x;
+ posição do nodo em relação ao eixo x;
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $k$
 \end_inset
 
- - posição do nodo em relação ao eixo y;
+ posição do nodo em relação ao eixo y;
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $g$
 \end_inset
 
- - qual grid/perfil está sendo analisado;
+ qual grid/perfil está sendo analisado;
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $t$
 \end_inset
 
- - tempo atual;
+ tempo atual;
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $\nu$
 \end_inset
 
- - número da iteração.
+ número da iteração.
 \end_layout
 
 \end_deeper
