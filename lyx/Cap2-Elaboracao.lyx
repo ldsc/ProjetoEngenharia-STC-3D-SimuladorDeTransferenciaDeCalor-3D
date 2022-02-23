@@ -195,7 +195,7 @@ Transferência de calor é uma subárea da termodinâmica, a qual é área da
 
 \begin_layout Standard
 A condução só pode ocorrer em meio material (fluidos ou sólidos), e sem
- que haja moviemento do próprio meio, característica da convecção 
+ que haja movi emento do próprio meio, característica da convecção 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "nussenzveig2018curso"
@@ -215,7 +215,7 @@ Modelagem numérica:
 \begin_layout Standard
 Métodos numéricos são algoritmos desenvolvidos com ajuda da matemática para
  resolver problemas complexos da natureza.
- São utilizados quando uma solução analítica é dificil de ser obtida, ou
+ São utilizados quando uma solução analítica é difícil de ser obtida, ou
  com condições de contorno complexas.
 \end_layout
 
@@ -629,7 +629,7 @@ literal "false"
 
 \end_inset
 
-, mas utlizando as equações de calor:
+, mas utilizando as equações de calor:
 \end_layout
 
 \begin_layout Standard
@@ -1082,7 +1082,7 @@ C_{1}\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}\overset{\nu}{T
 \end_layout
 
 \begin_layout Standard
-Mas, como objetido na Eq.
+Mas, como demonstrado na Eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1414,7 +1414,7 @@ Paralelismos/multi-thread
 Os chips de processadores atuais, são constituídos por vários processadores
  menores, o que permite que um mesmo processador consiga realizar tarefas
  distintas.
- A idéia é separar tarefas distintas, para que um processador não fique
+ A ideia é separar tarefas distintas, para que um processador não fique
  travado em uma única tarefa.
  
 \end_layout
@@ -1442,7 +1442,7 @@ Sem paralelismo: uma única thread do processador resolve todos os cálculos.
 \begin_layout Enumerate
 Paralelismo por grid: cada thread resolve uma camada do objeto.
  Possuí certa otimização em relação ao anterior, mas, se só existir objeto
- em uma camada, outras threads ficam osciosas.
+ em uma camada, outras threads ficam ociosas.
 \end_layout
 
 \begin_layout Enumerate
@@ -1658,7 +1658,7 @@ noprefix "false"
 
 \end_inset
 
-), a qual permite rotacionar qualquer ponto a partir dos três angulos do
+), a qual permite rotacionar qualquer ponto a partir dos três ângulos do
  observador.
  
 \end_layout
@@ -1716,7 +1716,7 @@ de frente
 \end_inset
 
  que o observador está olhando, mas ligeiramente de lado.
- Mesmo que o objeto cubo tenha aresta de 3 centimetros.
+ Mesmo que o objeto cubo tenha aresta de 3 centímetros.
 \begin_inset Float figure
 placement H
 wide false

@@ -137,56 +137,66 @@ double CSimuladorTemperatura::calculatePointIteration(int x, int y, int g) {
         return 0.0;
     if ((*grid[g])(x, y)->source)
         return 0.0;
-    float n_x = 0;
-    float n_z = 0;
-    double inf = .0, sup = .0, esq = .0, dir = .0, cima = .0, baixo =.0;
-    double thermalConstant;
+
+    float T_esq = .0, T_dir = .0, T_sup = .0, T_inf = .0, T_cim = .0, T_bai = .0;
+    float k_esq = .0, k_dir = .0, k_sup = .0, k_inf = .0, k_cim = .0, k_bai = .0;
+    float C1, C2;
+
+    float k1;
+    float k2 = (*grid[g])(x, y)->material->getK((*grid[g])(x, y)->temp_nup1);
 
     if (y - 1 > 0) {
         if ((*grid[g])(x, y - 1)->active) {
-            n_x++;
-            inf = (*grid[g])(x, y - 1)->temp_nup1*delta_z*delta_z;
+            k1 = (*grid[g])(x, y - 1)->material->getK((*grid[g])(x, y - 1)->temp_nup1);
+            k_inf = 2*k1*k2/(k1+k2);
+            T_inf = (*grid[g])(x, y - 1)->temp_nup1;
         }
     }
 
     if (y + 1 < grid[g]->getHeight()) {
         if ((*grid[g])(x, y + 1)->active) {
-            n_x++;
-            sup = (*grid[g])(x, y + 1)->temp_nup1 * delta_z*delta_z;
+            k1 = (*grid[g])(x, y + 1)->material->getK((*grid[g])(x, y + 1)->temp_nup1);
+            k_sup = 2*k1*k2/(k1+k2);
+            T_sup = (*grid[g])(x, y + 1)->temp_nup1;
         }
     }
 
     if (x - 1 > 0) {
         if ((*grid[g])(x - 1, y)->active) {
-            n_x++;
-            esq = (*grid[g])(x - 1, y)->temp_nup1 * delta_z* delta_z;
+            k1 = (*grid[g])(x - 1, y)->material->getK((*grid[g])(x - 1, y)->temp_nup1);
+            k_esq = 2*k1*k2/(k1+k2);
+            T_esq = (*grid[g])(x - 1, y)->temp_nup1;
         }
     }
 
     if (x + 1 < grid[g]->getWidth()) {
         if ((*grid[g])(x + 1, y)->active) {
-            n_x++;
-            dir = (*grid[g])(x + 1, y)->temp_nup1 * delta_z* delta_z;
+            k1 = (*grid[g])(x + 1, y)->material->getK((*grid[g])(x + 1, y)->temp_nup1);
+            k_dir = 2*k1*k2/(k1+k2);
+            T_dir = (*grid[g])(x + 1, y)->temp_nup1;
         }
     }
 
     if ( g < NGRIDS-1) {
         if (grid[g + 1]->operator()(x, y)->active) {
-            n_z++;
-            cima = (*grid[g + 1])(x, y)->temp_nup1*delta_x*delta_x;
+            k1 = (*grid[g + 1])(x, y)->material->getK((*grid[g + 1])(x, y)->temp_nup1);
+            k_cim = 2*k1*k2/(k1+k2);
+            T_cim = (*grid[g + 1])(x, y)->temp_nup1;
         }
     }
 
     if (g > 0) {
         if (grid[g - 1]->operator()(x, y)->active) {
-            n_z++;
-            baixo = (*grid[g - 1])(x, y)->temp_nup1 * delta_x*delta_x;
+            k1 = (*grid[g - 1])(x, y)->material->getK((*grid[g - 1])(x, y)->temp_nup1);
+            k_bai = 2*k1*k2/(k1+k2);
+            T_bai = (*grid[g - 1])(x, y)->temp_nup1;
         }
     }
 
-    thermalConstant = (*grid[g])(x, y)->material->getThermalConst((*grid[g])(x, y)->temp_nup1);
+    C2 = (delta_z*delta_z*delta_x*delta_x/delta_t) * (*grid[g])(x, y)->material->getCp() * (*grid[g])(x, y)->material->getRho();
+    C1 = 1/(C2 + delta_z*delta_z*(k_esq+k_dir) + delta_z*delta_z*(k_sup+k_inf) + delta_x*delta_x*(k_cim+k_bai));
+    (*grid[g])(x, y)->temp_nup1 = C1*(C2*(*grid[g])(x, y)->temp + delta_z*delta_z*(k_esq*T_esq+k_dir*T_dir) + delta_z*delta_z*(k_sup*T_sup+k_inf*T_inf) + delta_x*delta_x*(k_cim*T_cim+k_bai*T_bai));
 
-    (*grid[g])(x, y)->temp_nup1 = (thermalConstant * (*grid[g])(x, y)->temp*delta_x*delta_x*delta_z*delta_z/delta_t + inf + sup + esq + dir + cima + baixo) / (n_x*delta_z*delta_z + n_z*delta_x*delta_x + thermalConstant*delta_x*delta_x*delta_z*delta_z/delta_t);
     return (*grid[g])(x, y)->temp_nup1 - (*grid[g])(x, y)->temp_nu;
 }
 

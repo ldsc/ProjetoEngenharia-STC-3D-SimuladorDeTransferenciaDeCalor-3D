@@ -13,6 +13,9 @@ class CMaterialCorrelacao:public CMaterial {
 public:
     CMaterialCorrelacao(std::string fileName);
     double getThermalConst(double T);
+    double getK(double T);
+    double getCp() {return rho;}
+    double getRho() {return cp;}
 
     QColor getColor()       { return color; }
     std::string getName()   { return name; }
@@ -21,8 +24,8 @@ protected:
     std::string name;
     QColor color;
 
-    double C0_rho, C1_rho;
-    double C0_cp, C1_cp, C2_cp;
+    double rho;
+    double cp;
     double C0_k, C1_k, C2_k;
 };
 #endif
