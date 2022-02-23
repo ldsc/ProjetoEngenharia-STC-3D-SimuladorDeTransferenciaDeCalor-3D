@@ -1400,10 +1400,9 @@ O terceiro caso, é o cálculo pela interpolação e, como o nome diz, calcula
 \end_layout
 
 \begin_layout Standard
-Assim, é finalizada as demonstrações físico-numérica do problema da difusão
+Assim é finalizada as demonstrações físico-numérica do problema da difusão
  térmica.
- A partir de agora, será elaborado o paralelismo/multithreading, e a renderizaçã
-o 3D.
+ A partir de agora, será analisado o paralelismo/multithreading
 \end_layout
 
 \begin_layout Subsection
@@ -1423,8 +1422,8 @@ Os chips de processadores atuais, são constituídos por vários processadores
 Uma analogia para melhorar a explicação é a dos estudantes.
  Uma sala cheia de estudantes, recebe uma tarefa de resolver uma lista de
  exercícios.
- Se todos os exercícios forem resolvidas por um único aluno, levará muito
- tempo para terminar a tarefa (caso sem paralelismo).
+ Se todos os exercícios forem resolvidas por um único aluno, levará um tempo
+ muito grande para terminarem a tarefa (caso sem paralelismo).
  Se os alunos dividirem as tarefas entre si, ela será resolvida muito mais
  rapidamente.
  
@@ -1529,42 +1528,13 @@ for(int i = NUM_THREAD; i < size; i+=MAX_THREADS)
 
 \end_layout
 
-\begin_layout Standard
-Esse algoritmo diz que a thread 
-\begin_inset Quotes eld
-\end_inset
-
-i
-\begin_inset Quotes erd
-\end_inset
-
-, deverá começar a resolver as equações na posição 
-\begin_inset Quotes eld
-\end_inset
-
-i
-\begin_inset Quotes erd
-\end_inset
-
-.
- Quando finalizar, deve pular para a posição 
-\begin_inset Quotes eld
-\end_inset
-
-i + números de threads
-\begin_inset Quotes erd
-\end_inset
-
-.
-\end_layout
-
 \begin_layout Subsection
 Renderização 3D
 \end_layout
 
 \begin_layout Standard
 Após o usuário desenhar algum objeto no software, pode ser de interesse
- observar como seria em renderização 3D.
+ dele observar como seria em renderização 3D.
  Portanto, é implementado algoritmos para essa renderização.
  
 \end_layout

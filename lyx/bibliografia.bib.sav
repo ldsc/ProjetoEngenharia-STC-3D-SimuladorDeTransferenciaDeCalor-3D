@@ -350,8 +350,7 @@ url = {http://www.test.org/doe/}
   volume       = {17},
   publisher    = {Elsevier {BV}},
 }
-
-@Article{CHENG; FUJII, 1998,
+{CHENG; FUJII, 1998,
   author       = {K. C. CHENG and T. FUJII},
   date         = {1998},
   journaltitle = {Heat Transfer Engineering},
@@ -391,6 +390,44 @@ url = {http://www.test.org/doe/}
   isbn      = {85-7193-046-5},
   location  = {Rio de Janeiro},
   publisher = {Interciência PETROBRAS},
+}
+
+@Book{,
+  isbn = {85-7522-040-3},
+}
+{Bueno, 2003,
+  author = {André Duarte Bueno},
+  date   = {2003},
+  title  = {Programação Orientada a Objeto com C++},
+}
+
+@Book{nussenzveig2018curso,
+  author    = {Nussenzveig, H. M.},
+  date      = {2018},
+  title     = {Curso de física básica 2 : fluidos, oscilações e ondas, calor},
+  isbn      = {978-85-212-0747-4},
+  location  = {Brasil},
+  publisher = {Blucher},
+}
+
+@Book{9781108001809,
+  author    = {Fourier, Jean Baptiste Joseph},
+  date      = {2009-07-08},
+  title     = {Theorie Analytique de La Chaleur},
+  isbn      = {978-1108001809},
+  pagetotal = {676},
+  publisher = {Cambridge University Press},
+  url       = {https://www.ebook.de/de/product/8770220/jean_baptiste_joseph_fourier_theorie_analytique_de_la_chaleur.html},
+  ean       = {9781108001809},
+  year      = {2009},
+}
+
+@Manual{thermophysical 2008,
+  author = {Juan J Valencia; Peter N. Quested},
+  date   = {2008},
+  editor = {ADM},
+  title  = {Thermophysical Properties},
+  doi    = {10.1361/asmhba0005240},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}
