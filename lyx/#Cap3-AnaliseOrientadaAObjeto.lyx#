@@ -427,9 +427,7 @@ status open
 
 \begin_layout Plain Layout
 Diagrama de sequência
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Diagrama-de-sequencia-geral"
+\end_layout
 
 \end_inset
 
@@ -439,6 +437,11 @@ name "fig:Diagrama-de-sequencia-geral"
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+deve mostrar uma sequência geral
 \end_layout
 
 \end_inset
@@ -454,58 +457,16 @@ Diagrama de sequência específico
 \end_layout
 
 \begin_layout Standard
-A seguir, é apresentado o diagrama de sequênia específico, conforme ilustrado
- na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "DUPLICATA: cap:Diagrama-de-caso-de-uso-especifico:Titulo"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama de sequencia especifica.png
-	lyxscale 85
-	width 100text%
-
-\end_inset
-
-
+...
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Diagrama de sequência
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Diagrama-de-sequencia-especifico"
-
-\end_inset
-
-
+\begin_layout Itemize
+[deve mostrar uma sequência específica; NÃO É PARA REPETIR O GERAL COM 1-2
+ coisas diferentes!
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+\begin_layout Standard
+é um novo diagrama; detalhando algo! ]
 \end_layout
 
 \begin_layout Section
@@ -557,22 +518,27 @@ name "par:Diagrama-de-colaboração:"
 \end_layout
 
 \begin_layout Standard
-O diagrama de comuniacção tem como objetivo, apresentar as interações dos
- objetos, juntamente com sua sequência de processos.
+No diagrama de comunicação o foco é a interação e a troca de mensagens e
+ dados entre os objetos.
+ 
+\end_layout
+
+\begin_layout Itemize
+[Pode ser a repetição de um diagrama de sequência; mas note que o formato
+ do gráfico é diferente, aqui a ênfase é o entendimento das mensagens que
+ chegam e saem de cada objeto.]
 \end_layout
 
 \begin_layout Standard
-O diagrama de comuniação do caso de uso geral é apresentado na Figura 
+Veja na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: cap:Diagrama-de-comunicação"
-plural "false"
-caps "false"
-noprefix "false"
+reference "subsec:Diagrama-de-Comunicação"
 
 \end_inset
 
-.
+ o diagrama de comunicação mostrando a sequência de blablabla.
+ Observe que ....
 \end_layout
 
 \begin_layout Standard
@@ -650,9 +616,37 @@ name "subsec:diagrama de estados"
 \end_layout
 
 \begin_layout Standard
-O diagrama de máquina de estado foca em analisar os estados de uma classe
- desde o momento de sua criação, até sua destruição.
- 
+Um diagrama de máquina de estado representa os diversos estados que o objeto
+ assume e os eventos que ocorrem ao longo de sua vida ou mesmo ao longo
+ de um processo (histórico do objeto).
+ É usado para modelar aspectos dinâmicos do objeto.
+\end_layout
+
+\begin_layout Standard
+Veja na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-maquina-de-estado"
+
+\end_inset
+
+ o diagrama de máquina de estado para o objeto XXX.
+ Observe que....
+\end_layout
+
+\begin_layout Itemize
+Lembre-se, são os estados de um objeto específico e não uma sequência de
+ cálculo; as sequência já foram mostrados nos diagramas de sequência e comunicaç
+ão!!
+\end_layout
+
+\begin_layout Itemize
+Vou repetir; Não faça o diagrama de máquina de estado como sendo uma repetição
+ dos diagramas de sequência! 
+\end_layout
+
+\begin_layout Itemize
+Este diagrama trata dos estados de um objeto único/específico!
 \end_layout
 
 \begin_layout Standard
