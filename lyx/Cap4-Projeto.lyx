@@ -209,7 +209,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/v1.0.png
+	filename ../imagens/v1.0.png
 	lyxscale 60
 	width 100text%
 	height 85theight%
@@ -234,10 +234,6 @@ SFML
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -258,7 +254,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/v1.1.png
+	filename ../imagens/v1.1.png
 	lyxscale 60
 	scale 60
 
@@ -303,7 +299,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/v1.2.png
+	filename ../imagens/v1.2.png
 	lyxscale 80
 	scale 80
 
@@ -352,7 +348,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/v2.0.png
+	filename ../imagens/v2.0.png
 	lyxscale 40
 	scale 40
 
@@ -403,7 +399,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/qt_creator.PNG
+	filename ../imagens/qt_creator.PNG
 	lyxscale 25
 	scale 25
 
@@ -464,7 +460,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/v2.2.PNG
+	filename ../imagens/v2.2.PNG
 	lyxscale 25
 	scale 25
 
@@ -513,7 +509,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama de componentes.png
+	filename ../imagens/Diagrama de componentes.png
 	lyxscale 75
 	width 90text%
 
@@ -620,7 +616,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama de implementação.png
+	filename ../imagens/Diagrama de implementação.png
 	lyxscale 75
 	width 90text%
 

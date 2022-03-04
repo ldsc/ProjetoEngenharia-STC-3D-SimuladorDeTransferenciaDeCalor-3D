@@ -291,7 +291,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/diagrama-de-classes.png
+	filename ../imagens/diagrama-de-classes.png
 	lyxscale 30
 	width 100text%
 
@@ -413,7 +413,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama de sequencia geral.png
+	filename ../imagens/Diagrama de sequencia geral.png
 	lyxscale 85
 	width 100text%
 
@@ -475,7 +475,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama de sequencia especifica.png
+	filename ../imagens/Diagrama de sequencia especifica.png
 	lyxscale 85
 	width 100text%
 
@@ -585,7 +585,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama-de-comunicacao.png
+	filename ../imagens/Diagrama-de-comunicacao.png
 	lyxscale 30
 	width 85text%
 
@@ -665,7 +665,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/diagrama-de-maquina-estado.png
+	filename ../imagens/diagrama-de-maquina-estado.png
 	lyxscale 30
 	width 85text%
 
@@ -741,7 +741,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama de atividades.png
+	filename ../imagens/Diagrama de atividades.png
 	lyxscale 30
 	width 85text%
 

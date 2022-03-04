@@ -610,7 +610,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/validacao.png
+	filename ../imagens/validacao.png
 	lyxscale 70
 	scale 70
 
@@ -996,7 +996,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_t0.PNG
+	filename ../imagens/reservatorio_t0.PNG
 	width 75text%
 
 \end_inset
@@ -1037,7 +1037,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_t610.PNG
+	filename ../imagens/reservatorio_t610.PNG
 	width 75text%
 
 \end_inset
@@ -1076,7 +1076,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_tfinal.PNG
+	filename ../imagens/reservatorio_tfinal.PNG
 	lyxscale 75
 	width 75text%
 
@@ -1109,7 +1109,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_tfinal_graficos.PNG
+	filename ../imagens/reservatorio_tfinal_graficos.PNG
 	lyxscale 85
 	width 85text%
 
@@ -1151,7 +1151,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_modelo2.PNG
+	filename ../imagens/reservatorio_modelo2.PNG
 	lyxscale 85
 	width 90text%
 
@@ -1199,7 +1199,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_modelo2_resultado.PNG
+	filename ../imagens/reservatorio_modelo2_resultado.PNG
 	lyxscale 85
 	width 85text%
 
@@ -1242,7 +1242,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_modelo2_graficos.PNG
+	filename ../imagens/reservatorio_modelo2_graficos.PNG
 	lyxscale 50
 	width 85text%
 
@@ -1346,7 +1346,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/notebook.jpeg
+	filename ../imagens/notebook.jpeg
 	lyxscale 40
 	width 80text%
 
@@ -1523,7 +1523,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/resultado_temp_notebook.PNG
+	filename ../imagens/resultado_temp_notebook.PNG
 	lyxscale 50
 	width 90text%
 
@@ -1580,7 +1580,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/teste_graficos_notebook.PNG
+	filename ../imagens/teste_graficos_notebook.PNG
 	lyxscale 50
 	width 80text%
 

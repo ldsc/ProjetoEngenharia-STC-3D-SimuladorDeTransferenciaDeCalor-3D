@@ -350,7 +350,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/tipos de malha.png
+	filename ../imagens/ppt/tipos de malha.png
 	lyxscale 70
 	scale 70
 
@@ -696,7 +696,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/condutividade_Termica.png
+	filename ../imagens/ppt/condutividade_Termica.png
 
 \end_inset
 
@@ -813,7 +813,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/malha.bmp
+	filename ../imagens/malha.bmp
 	lyxscale 70
 	scale 70
 
@@ -889,7 +889,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/fronteira_neumann.png
+	filename ../imagens/ppt/fronteira_neumann.png
 
 \end_inset
 
@@ -1468,7 +1468,7 @@ name "fig_threads_exemplo"
 
 
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/threads.png
+	filename ../imagens/threads.png
 	lyxscale 70
 	scale 70
 
@@ -1594,7 +1594,7 @@ name "fig_cubos_3D"
 
 
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/cubos_3D.png
+	filename ../imagens/ppt/cubos_3D.png
 	lyxscale 70
 	scale 70
 
@@ -1725,15 +1725,8 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset CommandInset label
-LatexCommand label
-name "fig_cubos_3D_screen"
-
-\end_inset
-
-
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/cubo_3D_points_rotations.png
+	filename ../imagens/ppt/cubo_3D_points_rotations.png
 
 \end_inset
 
@@ -1746,6 +1739,12 @@ name "fig_cubos_3D_screen"
 \begin_layout Plain Layout
 (a) o cubo está com ângulos nulos.
  (b) ângulo x e y estão com valor de 0.1 radianos.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_cubos_3D_screen"
+
+\end_inset
+
  
 \end_layout
 
@@ -1800,7 +1799,7 @@ name "fig_cubos_3D_triangles"
 
 
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/cubo_3D_points_rotations_triangles.png
+	filename ../imagens/ppt/cubo_3D_points_rotations_triangles.png
 
 \end_inset
 
@@ -1956,7 +1955,7 @@ name "fig_normal"
 
 
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/normal.png
+	filename ../imagens/ppt/normal.png
 
 \end_inset
 
@@ -2088,7 +2087,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama de pacotes.png
+	filename ../imagens/Diagrama de pacotes.png
 	lyxscale 25
 	width 85text%
 

@@ -157,7 +157,7 @@ Nas páginas a seguir, são apresentados os grids, com um máximo de 6 grids
 \begin_layout Standard
 \begin_inset External
 	template PDFPages
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/relatorio_simulacao.pdf
+	filename ../relatorio_simulacao.pdf
 	extra LaTeX "pages=-"
 
 \end_inset

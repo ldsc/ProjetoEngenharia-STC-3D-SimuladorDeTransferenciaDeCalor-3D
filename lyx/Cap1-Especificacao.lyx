@@ -194,6 +194,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1378,7 +1379,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/caso_uso_geral1.png
+	filename ../imagens/caso_uso_geral1.png
 	lyxscale 60
 	width 60text%
 
@@ -1457,7 +1458,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/caso_uso_especifico1.png
+	filename ../imagens/caso_uso_especifico1.png
 	lyxscale 60
 	width 60text%
 
