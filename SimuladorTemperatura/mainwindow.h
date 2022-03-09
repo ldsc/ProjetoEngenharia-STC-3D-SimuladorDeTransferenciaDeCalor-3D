@@ -54,6 +54,7 @@ private:
     bool eraserActivated = false;
     QPoint studyPoint = QPoint(0,0);
     int studyGrid;
+    double minTempPlot = 0, maxTempPlot = 0;
     std::vector<bool> selectedMateriails;
     QVector<double> time, temperature;
 

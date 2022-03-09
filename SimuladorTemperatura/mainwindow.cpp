@@ -284,11 +284,20 @@ void MainWindow::on_gridUpButton_clicked()
 }
 
 void MainWindow::makePlot1(){
-    temperature.append(simulador->grid[studyGrid]->operator()(studyPoint.x(), studyPoint.y())->temp);
+    double temp = simulador->grid[studyGrid]->operator()(studyPoint.x(), studyPoint.y())->temp;
+    if (minTempPlot == 0){
+        minTempPlot = temp-10;
+        maxTempPlot = temp+10;
+    }
+    else{
+        minTempPlot = minTempPlot > temp-10 ? temp-10:minTempPlot;
+        maxTempPlot = maxTempPlot < temp+10 ? temp+10:maxTempPlot;
+    }
+    temperature.append(temp);
 
     ui->plot1->graph(0)->setData(time,temperature);
     ui->plot1->xAxis->setRange(time[0], time[time.size()-1]+1);
-    ui->plot1->yAxis->setRange(simulador->getTmin()-50, simulador->getTmax()+50);
+    ui->plot1->yAxis->setRange(minTempPlot, maxTempPlot);
     ui->plot1->replot();
     ui->plot1->update();
 }

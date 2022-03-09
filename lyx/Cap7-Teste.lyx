@@ -234,7 +234,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/validacao_temperaturas.png
 	lyxscale 70
-	scale 70
+	scale 95
 
 \end_inset
 
@@ -670,7 +670,7 @@ status open
 \begin_inset Graphics
 	filename ../imagens/validacao.png
 	lyxscale 70
-	scale 70
+	width 100text%
 
 \end_inset
 
@@ -1278,8 +1278,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/modelo_guilherme.png
-	lyxscale 110
-	scale 110
+	lyxscale 120
+	scale 120
 
 \end_inset
 
@@ -1395,6 +1395,336 @@ Modelo_guilherme.dat
 \end_layout
 
 \begin_layout Section
+Injeção de calor em reservatório - modelo five-spot
+\end_layout
+
+\begin_layout Standard
+Dando sequência para os modelos de injeção de calor em reservatórios, um
+ modelo bastante utilizado é o 
+\shape italic
+five-spot,
+\shape default
+ caracterizado pela presença de 5 poços em um reservatório, com 4 injetores,
+ e 1 central produtor.
+ Para a primeira simulação, os 5 poços serão injetores de calor.
+ 
+\end_layout
+
+\begin_layout Standard
+As propriedades da rocha e do tamanho do reservatório são as mesmos da seção
+ anterior (Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Tabela-com-propriedades-injecao-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:resultado-modelo-five-spot-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ é apresentado o resultado do modelo 
+\shape italic
+five-spot
+\shape default
+ com os 5 poços injetores.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/five_spot_1.png
+	lyxscale 110
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultados da simulação do primeiro modelo 
+\shape italic
+five-spot
+\shape default
+ após 3.600 segundos.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:resultado-modelo-five-spot-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analisando os resultados gráficos na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:resultado-modelo-five-spot-graficos-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, em (a) é possível perceber um pico de temperatura no meio do eixo x, devido
+ a proximidade com o poço central, e em (b), os picos estão nas extremidades,
+ por causa dos poços superior-esquerdo e inferior esquerdo.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/five_spot_graficos_1.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gráficos da simulação do primeiro modelo 
+\shape italic
+five-spot
+\shape default
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:resultado-modelo-five-spot-graficos-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O modelo para simulação pode ser obtido no arquivo 
+\begin_inset Quotes eld
+\end_inset
+
+Modelo_five_spot_1.dat
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Agora será simulado um modelo 
+\shape italic
+five-spot 
+\shape default
+com o poço central produtor.
+ Para o simulador, será como um sumidouro de calor, onde a temperatura será
+ constante em 300K (mesma temperatura do restante do reservatório).
+\end_layout
+
+\begin_layout Standard
+Como é um sistema isolado, com fonte e sumidouro, após um longo período
+ de tempo, é atingido regime permanente, onde a temperatura atingirá um
+ equilíbrio, e não varia com o tempo.
+ Na simulação, foi alcançado um regime próximo ao permanente, no temop 460.800
+ segundos, ou 128 horas.
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:resultado-modelo-five-spot-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ mostra em (a) o cenário inicial, (b) o cenário final, próximo ao regime
+ permanente e em (c) a renderização do reservatório em 3D.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/five_spot_2.png
+	lyxscale 110
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultados da simulação do segundo modelo 
+\shape italic
+five-spot
+\shape default
+ após 460.800 segundos.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:resultado-modelo-five-spot-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Abaixo, seguem os gráficos na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:resultado-modelo-five-spot-graficos-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Em (a), é possível perceber uma temperatura maior nas extremidades, diminuindo
+ até as proximidades do poço.
+ Em (b), é observado uma reta nas extremidades, e uma parábola na região
+ central.
+ Em (c), é apresentada a temperatura ao longo do tempo, no ponto central
+ de estudo.
+ Para atingir o regime permanente, a temperatura nesse gráfico deveria estabiliz
+ar, convergindo para uma reta constante.
+ 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/five_spot_graficos_2.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gráficos da simulação do segundo modelo 
+\shape italic
+five-spot
+\shape default
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:resultado-modelo-five-spot-graficos-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O modelo para simulação pode ser obtido no arquivo 
+\begin_inset Quotes eld
+\end_inset
+
+Modelo_five_spot_2.dat
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
 Injeção de calor em reservatório - modelo 1
 \end_layout
 
@@ -1415,10 +1745,6 @@ placement H
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1687,8 +2013,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../imagens/reservatorio_modelo2.PNG
-	lyxscale 70
-	width 70text%
+	lyxscale 80
+	width 95text%
 
 \end_inset
 
@@ -1756,8 +2082,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../imagens/reservatorio_modelo2_resultado.PNG
-	lyxscale 70
-	width 70text%
+	lyxscale 80
+	width 95text%
 
 \end_inset
 
@@ -1909,7 +2235,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../imagens/reservatorio_t0.PNG
-	width 75text%
+	lyxscale 105
+	width 95text%
 
 \end_inset
 
@@ -1972,7 +2299,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../imagens/reservatorio_t610.PNG
-	width 75text%
+	lyxscale 105
+	width 95text%
 
 \end_inset
 
@@ -2032,8 +2360,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../imagens/reservatorio_tfinal.PNG
-	lyxscale 75
-	width 75text%
+	lyxscale 85
+	width 95text%
 
 \end_inset
 
@@ -2089,7 +2417,7 @@ status open
 \begin_inset Graphics
 	filename ../imagens/reservatorio_tfinal_graficos.PNG
 	lyxscale 85
-	width 85text%
+	width 100text%
 
 \end_inset
 
