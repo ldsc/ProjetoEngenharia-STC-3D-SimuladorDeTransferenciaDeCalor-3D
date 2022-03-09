@@ -159,7 +159,7 @@ void MainWindow::start_buttons(){
 }
 
 void MainWindow::createWidgetProps(){
-    /// scroll com os materiais para o gr√°fico
+    /// scroll com os materiais para o gr·fico
     std::vector<std::string> materiais = simulador->getMateriais();
     checkboxes = new QWidget(ui->scrollArea);
     layout = new QVBoxLayout(checkboxes);
@@ -485,7 +485,7 @@ QString MainWindow::save_pdf(QString file_name){
     pdf.setOutputFileName(file_name);
 
     QPainter painterPDF(this);
-    if (!painterPDF.begin(&pdf))        //Se n√£o conseguir abrir o arquivo PDF ele n√£o executa o resto.
+    if (!painterPDF.begin(&pdf))        //Se n„o conseguir abrir o arquivo PDF ele n„o executa o resto.
         return "Erro ao abrir PDF";
 
 
@@ -501,10 +501,10 @@ QString MainWindow::save_pdf(QString file_name){
 
 
 
-    painterPDF.drawText(400,140, "==> PROPRIEDADES DA SIMULA√á√ÉO <==");
-    painterPDF.drawText(400,160, "Temperatura m√°xima: " + QString::number(simulador->getTmax())+" K");
-    painterPDF.drawText(400,180, "Temperatura m√≠nima: " + QString::number(simulador->getTmin())+" K");
-    painterPDF.drawText(400,200, "Tempo m√°ximo: " + QString::number(time[time.size()-1])+" s");
+    painterPDF.drawText(400,140, "==> PROPRIEDADES DA SIMULA«√O <==");
+    painterPDF.drawText(400,160, "Temperatura m·xima: " + QString::number(simulador->getTmax())+" K");
+    painterPDF.drawText(400,180, "Temperatura mÌnima: " + QString::number(simulador->getTmin())+" K");
+    painterPDF.drawText(400,200, "Tempo m·ximo: " + QString::number(time[time.size()-1])+" s");
 
     painterPDF.drawText(400,240, "Tipo de paralelismo: " + ui->parallel_comboBox->currentText());
     painterPDF.drawText(400,260, "Coordenada do ponto de estudo (x,y,z): " + QString::number(studyPoint.x()*simulador->getDelta_x())+","+QString::number(studyPoint.y()*simulador->getDelta_x())+","+QString::number(studyGrid*simulador->getDelta_z()));

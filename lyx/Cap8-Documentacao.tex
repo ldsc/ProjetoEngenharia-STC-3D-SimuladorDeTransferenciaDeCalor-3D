@@ -1,0 +1,116 @@
+
+\chapter{Documentação }
+
+\lhead{\thechapter - Documentação} 
+
+Todo projeto de engenharia precisa ser bem documentado. Neste sentido,
+apresenta-se neste capítulo a documentação de uso do \textquotedbl software
+XXXX\textquotedbl . Esta documentação tem o formato de uma apostila
+que explica passo a passo como usar o software. 
+
+\section{Documentação do usuário}
+
+Descreve-se aqui o manual do usuário, um guia que explica, passo a
+passo a forma de instalação e uso do software desenvolvido.
+
+\subsection{Como instalar o software}
+
+Para instalar o software execute o seguinte passo a passo:
+\begin{itemize}
+\item blablabla
+\item ..
+\item .
+\end{itemize}
+
+\subsection{Como rodar o software}
+
+Para rodar o software ....blablabla
+
+Veja no Capítulo \ref{chap:Teste} - Teste, exemplos de uso do software.
+
+\section{Documentação para desenvolvedor}
+
+Apresenta-se nesta seção a documentação para o desenvolvedor, isto
+é, informações para usuários que queiram modificar, aperfeiçoar ou
+ampliar este software.
+
+\subsection{Dependências}
+
+Para compilar o software é necessário atender as seguintes dependências:
+\begin{itemize}
+\item Instalar o compilador g++ da GNU disponível em \href{http://gcc.gnu.org}{http://gcc.gnu.org}.
+Para instalar no GNU/Linux use o comando \texttt{yum install gcc}.
+\item Biblioteca CGnuplot; os arquivos para acesso a biblioteca CGnuplot
+devem estar no diretório com os códigos do software;
+\item O software \texttt{gnuplot}, disponível no endereço \href{http://www.gnuplot.info/}{http://www.gnuplot.info/},
+deve estar instalado. É possível que haja necessidade de setar o caminho
+para execução do \texttt{gnuplot}. 
+\item .
+\item .
+\end{itemize}
+
+\subsection{Como gerar a documentação usando doxygen}
+
+A documentação do código do software deve ser feita usando o padrão
+JAVADOC, conforme apresentada no Capítulo - Documentação, do livro
+texto da disciplina. Depois de documentar o código, use o software
+\texttt{doxygen }para gerar a documentação do desenvolvedor no formato
+html. O software \texttt{doxygen} lê os arquivos com os códigos ({*}.h
+e {*}.cpp) e gera uma documentação muito útil e de fácil navegação
+no formato html. 
+\begin{itemize}
+\item Veja informações sobre uso do formato JAVADOC em:
+
+\begin{itemize}
+\item \href{http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html}{http://www.stack.nl/$\sim$dimitri/doxygen/manual/docblocks.html}
+\end{itemize}
+\item Veja informações sobre o software \texttt{doxygen} em
+
+\begin{itemize}
+\item \href{http://www.stack.nl/~dimitri/doxygen/}{http://www.stack.nl/$\sim$dimitri/doxygen/}
+\end{itemize}
+\end{itemize}
+Passos para gerar a documentação usando o \texttt{doxygen}.
+\begin{itemize}
+\item Documente o código usando o formato JAVADOC. Um bom exemplo de código
+documentado é apresentado nos arquivos da biblioteca CGnuplot, abra
+os arquivos \texttt{CGnuplot.h} e \texttt{CGnuplot.cpp} no editor
+de texto e veja como o código foi documentado.
+\item Abra um terminal.
+\item Vá para o diretório onde esta o código.
+
+\begin{lyxcode}
+cd~/caminho/para/seu/codigo
+\end{lyxcode}
+\item Peça para o \texttt{doxygen} gerar o arquivo de definições (arquivo
+que diz para o doxygem como deve ser a documentação).
+
+\begin{lyxcode}
+dogygen~-g
+\end{lyxcode}
+\item Peça para o \texttt{doxygen} gerar a documentação.
+
+\begin{lyxcode}
+doxygen
+\end{lyxcode}
+\item Verifique a documentação gerada abrindo o arquivo html/index.html.
+
+\begin{lyxcode}
+firefox~html/index.html
+\end{lyxcode}
+ou
+\begin{lyxcode}
+chrome~html/index.html
+\end{lyxcode}
+\end{itemize}
+Apresenta-se a seguir algumas imagens com as telas das saídas geradas
+pelo software \texttt{doxygen}.
+\begin{description}
+\item [{Nota:}] ~\\
+Não perca de vista a visão do todo; do projeto de engenharia como
+um todo. Cada capítulo, cada seção, cada parágrafo deve se encaixar.
+Este é um diferencial fundamental do engenheiro em relação ao técnico,
+a capacidade de desenvolver projetos, de ver o todo e suas diferentes
+partes, de modelar processos/sistemas/produtos de engenharia.
+\end{description}
+

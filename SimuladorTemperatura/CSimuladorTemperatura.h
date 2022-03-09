@@ -23,7 +23,7 @@ private:
     bool materialPropertiesStatus = true;
     int NGRIDS = 1;
     const double MIN_ERRO = 0.05;
-    const int MAX_ITERATION = 500, MIN_ITERATION = 50;
+    const int MAX_ITERATION = 1000, MIN_ITERATION = 800;
     double delta_x = 2.6e-4, delta_t = 5.0e-1, delta_z = 0.05;
 
     double Tmax = 400, Tmin = 300;

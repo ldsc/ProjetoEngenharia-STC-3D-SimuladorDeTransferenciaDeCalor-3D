@@ -82,7 +82,8 @@ void MainWindow::printPosition(){
 
 void MainWindow::printDrawSize(){
     int size = ui->horizontalSliderDrawSize->value();
-    ui->textDrawSize->setText("Tamanho: "+QString::number(size) + " px/ "+QString::number(size*simulador->getDelta_x()) + " cm");
+    simulador->setDelta_x(std::stod(ui->input_dx->text().toStdString()));
+    ui->textDrawSize->setText("Tamanho: "+QString::number(size) + " px/ "+QString::number(size*simulador->getDelta_x()) + " m");
 }
 
 void MainWindow::start_buttons(){

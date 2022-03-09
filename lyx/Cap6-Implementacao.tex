@@ -1,0 +1,170 @@
+
+\chapter{Implementação\label{chap:Implementa=0000E7=0000E3o}}
+
+\lhead{\thechapter - Implementação} 
+
+Neste capítulo do projeto de engenharia apresentamos os códigos fonte
+que foram desenvolvidos.
+\begin{description}
+\item [{Nota:}] os códigos devem ser documentados usando padrão \textbf{javadoc}.
+Posteriormente usar o programa \textbf{doxygen }para gerar a documentação
+no formato html. 
+
+\begin{itemize}
+\item Veja informações gerais aqui \href{http://www.doxygen.org/}{http://www.doxygen.org/}.
+\item Veja exemplo aqui \href{http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html}{http://www.stack.nl/$\sim$dimitri/doxygen/manual/docblocks.html}.
+\end{itemize}
+\end{description}
+
+\section{Código fonte\label{sec:Codigo-fonte}\index{Implementação}}
+
+\lstdefinestyle{C++}{
+% tipo de bordas
+frame=lines,
+% tamanho da fonte e tipo de fonte
+basicstyle=\small\ttfamily,
+% linguagem
+language=[ISO]C++,
+% numeração
+numbers=left, 
+numberstyle=\tiny, 
+stepnumber=1, 
+numbersep=1pt, 
+firstnumber=1, 
+% formatação
+breakatwhitespace=false,
+breaklines=true,
+extendedchars=true,
+% cores
+backgroundcolor=\color{white},
+commentstyle=\color{lightgray}, 
+keywordstyle=\color{blue},
+morekeywords={*,...}, 
+stringstyle=\color{mygreen1},
+%
+% Palavras chave BLUE
+emph={ bool, char, char8_t, char16_t, char32_t, wchar_t,short, int, long, long long, float, double, long double, void, const, extern, mutable, register, signed, static, typedef, unsigned, volatile, using, typename, auto, constexpr, decltype, class, enum, struct, union, const_cast, dynamic_cast, reinterpret_cast, static_cast, try, throw, catch, noexcept, delete, new, nullptr, static, const, friend, virtual, operator, namespace, sizeof, template, typename, concept, class,  delete, friend, explicit, this, typeid, private, protected, public, alignas, alignof, asm, concept, consteval, constexpr, constinit export, extern, inline, static_assert, requires, template, typename, mutable,  volatile, co_await, co_return, co_yield, atomic_cancel, atomic_commit, atomic_noexcept, import, module, synchronized,co_await, co_return, co_yield, reflexpr }, 
+emphstyle={\color{blue}},
+%
+% Estruturas de controle e de repeticao RED
+emph={[2] and, and_eq, bitand, bitor, compl, false, not, not_eq, or, or_eq, true, xor, xor_eq, break, case, continue, default, do, else, for, goto, if, return, switch, while  } ,
+emphstyle={[2]\color{red}},
+%
+% Arquivos de inclusao mymauve (note que alguns poderao aparecer com outra cor, ocorre quando nome arquivo igual ao nome da classe)
+emph={[3] algorithm , atomic ,backward ,bits ,bitset ,cassert ,ccomplex ,cctype ,cerrno ,cfenv ,cfloat ,chrono ,cinttypes ,ciso646 ,climits ,clocale ,cmath ,complex ,csetjmp ,csignal ,cstdalign ,cstdarg ,cstdbool ,cstddef ,cstdint ,cstdio ,cstdlib ,cstring ,ctgmath ,ctime ,cwchar ,cwctype ,debug ,decimal ,exception ,ext ,filesystem, fstream ,functional  ,initializer_list ,iomanip ,ios ,iosfwd ,iostream ,istream ,iterator ,limits ,locale ,numeric ,ostream ,profile ,random ,ratio ,regex ,scoped_allocator ,sstream ,stack ,stdexcept  ,streambuf ,system_error ,tr1 ,tr2 ,typeindex ,typeinfo ,type_traits ,utility ,x86_64-redhat-linux ,complex } , 
+emphstyle={[3]\color{green}},
+%
+% Strings VERDE2
+emph={[4] string, string_view, wstring, u16string,u32string } ,
+emphstyle={[4]\color{mygreen2}\bfseries},
+%
+% Containers purple
+emph={[5]  array, vector, deque, forward_list, list, set, multiset, map, multimap, unordered_set, unordered_multiset, unordered_map, unordered_multimap , pair, tuple, basic_string },
+emphstyle={[5]\color{brown}\bfseries},
+%
+%Algoritmos genericos VERMELHO2
+emph={[6]  accumulate, find, max, adjacent_find, find_if, max_element, binary_search, min, count, find_first_of, for_each, min_element, count_if, includes, mismatch, equal, lexicographical_compare, nth_element, equal_range, lower_bound, mismatch, search, search_n, find_end, upper_bound, copy, remove_if, copy_backward, replace, fill, replace_copy, fill_n, replace_copy_if, generate, replace_if, generate_n, reverse, inplace_merge, reverse_copy, iter_swap, rotate,  make_heap, rotate_copy, merge, set_difference, nth_element, next_permutation, set_intersection, set_symmetric_difference, partial_sort, set_union, partial_sort_copy, sort, partition, sort_heap, prev_permutation, stable_partition, push_heap, stable_sort, pop_heap, swap, random_shuffle, swap_ranges, remove, transform, unique, unique_copy, remove_copy, remove_copy_if, all_of, any_of, none_of, find_if_not, copy_if, copy_n, move, move_backward, suffle, is_partitioned, partition_copy, partition_point, is_sorted, is_sorted_until, is_heap, is_heap_until, minmax, minmax_element, is_permutation, iota, uninitialized_copy_n, for_each_n, sample, clamp, reduce, exclusive_scan, inclusive_scan, transform_reduce, transform_exclusive_scan, transform_inclusive_scan, uninitialized_move, uninitialized_move_n, uninitialized_default_construct, uninitialized_default_construct_n, uninitialized_value_construct, uninitialized_value_construct_n, destroy, destroy_at, destroy_n, shift_left, shift_right, compare_3way, lexicographical_compare_3way } ,
+emphstyle={[6]\color{olive}},
+%
+% Processamento Paralelo Orange/laranja
+emph={[7] thread, yield, get_id, sleep_for, sleep_until, thread_local, memory, mutex, parallel, mutex, timed_mutex, recursive_mutex, shared_mutex, shared_timed_mutex, lock_guard, scoped_lock, unique_lock, shared_lock, defer_lock_t, try_to_lock_t, adopt_lock_t, try_lock, lock, once_flag, call_once, condition_variable, condition_variable_any, notify_all_at_thread_exit, cv_status, promise, packaged_task, future, shared_future, async, launch, future_status, future_error, future_category, future_errc, hardware_destructive_interference_size, hardware_constructive_interference_size  } ,
+emphstyle={[7]\color{mymauve}},
+}
+
+Apresenta-se a seguir um conjunto de classes (arquivos .h e .cpp)
+além do programa \texttt{main}.
+
+Apresenta-se na listagem \ref{main-cpp} o arquivo com código da função
+main.
+
+\lstset{style=C++} \lstinputlisting[ caption={Arquivo de implementação da função main.}, label={main-cpp}] {../listagens/main.cpp}
+
+Apresenta-se na listagem \ref{mainwindow-h} o arquivo de cabeçalho
+da classe mainwindow. 
+
+\lstset{style=C++} \lstinputlisting[ caption={Arquivo de implementação da função mainwindow.}, label={mainwindow-h}] {../listagens/mainwindow.h}Apresenta-se
+na listagem \ref{mainwindow-cpp} implementação da classe mainwindow. 
+
+\lstset{style=C++} \lstinputlisting[ caption={Arquivo de implementação da função mainwindow.}, label={mainwindow-cpp}] {../listagens/mainwindow.cpp}
+
+Apresenta-se na listagem \ref{CRender3D-h} o arquivo de cabeçalho
+da classe CRender3D. 
+
+\lstset{style=C++} \lstinputlisting[ caption={Arquivo de implementação da classe CRender3D.}, label={CRender3D-cpp}] {../listagens/CRender3D.h}Apresenta-se
+na listagem \ref{CRender3D-cpp} implementação da classe CRender3D. 
+
+\lstset{style=C++} \lstinputlisting[ caption={
+Arquivo de implementação da função \texttt{main()}.}, label={CRender3D-cpp}] {../listagens/CRender3D.cpp}
+
+Apresenta-se na listagem \ref{CSimuladorTemperatura-h} o arquivo
+de cabeçalho da classe CSimuladorTemperatura. 
+
+\lstset{style=C++} \lstinputlisting[ caption={Arquivo de implementação da classe CSimuladorTemperatura.}, label={CSimuladorTemperatura-h}] {../listagens/CSimuladorTemperatura.h}Apresenta-se
+na listagem \ref{CSimuladorTemperatura-cpp} implementação da classe
+CSimuladorTemperatura. 
+
+\lstset{style=C++} \lstinputlisting[ caption={
+Arquivo de implementação da função \texttt{main()}.}, label={CSimuladorTemperatura-cpp}] {../listagens/CSimuladorTemperatura.cpp}
+
+Apresenta-se na listagem \ref{CGrid-h} o arquivo de cabeçalho da
+classe CGrid. 
+
+\lstset{style=C++} \lstinputlisting[ caption={Arquivo de implementação da classe CGrid.}, label={CGrid-h}] {../listagens/CGrid.h}Apresenta-se
+na listagem \ref{CGrid-cpp} implementação da classe CGrid. 
+
+\lstset{style=C++} \lstinputlisting[ caption={
+Arquivo de implementação da função \texttt{main()}.}, label={CGrid-cpp}] {../listagens/CGrid.cpp}
+
+Apresenta-se na listagem \ref{CCell-h} o arquivo de cabeçalho da
+classe CCell. 
+
+\lstset{style=C++} \lstinputlisting[ caption={Arquivo de implementação da classe CCell.}, label={CCell-h}] {../listagens/CCell.h}Apresenta-se
+na listagem \ref{CCell-cpp} implementação da classe CCell. 
+
+\lstset{style=C++} \lstinputlisting[ caption={
+Arquivo de implementação da função \texttt{main()}.}, label={CCell-cpp}] {../listagens/CCell.cpp}
+
+Apresenta-se na listagem \ref{CMaterial-h} o arquivo de cabeçalho
+da classe CMaterial. 
+
+\lstset{style=C++} \lstinputlisting[ caption={Arquivo de implementação da classe CMaterial.}, label={CMaterial-h}] {../listagens/CMaterial.h}Apresenta-se
+na listagem \ref{CMaterial-cpp} implementação da classe CMaterial. 
+
+\lstset{style=C++} \lstinputlisting[ caption={
+Arquivo de implementação da função \texttt{main()}.}, label={CMaterial-cpp}] {../listagens/CMaterial.cpp}Apresenta-se na listagem \ref{CMaterialCorrelacao-h} o arquivo de
+cabeçalho da classe CMaterialCorrelacao. 
+
+\lstset{style=C++} \lstinputlisting[ caption={Arquivo de implementação da classe CMaterialCorrelacao.}, label={CMaterialCorrelacao-h}] {../listagens/CMaterialCorrelacao.h}Apresenta-se
+na listagem \ref{CMaterialCorrelacao-cpp} implementação da classe
+CMaterialCorrelacao. 
+
+\lstset{style=C++} \lstinputlisting[ caption={
+Arquivo de implementação da função \texttt{main()}.}, label={CMaterialCorrelacao-cpp}] {../listagens/CMaterialCorrelacao.cpp}
+
+Apresenta-se na listagem \ref{CMaterialInterpolacao-h} o arquivo
+de cabeçalho da classe CMaterialInterpolacao. 
+
+\lstset{style=C++} \lstinputlisting[ caption={Arquivo de implementação da classe CMaterialInterpolacao.}, label={CMaterialInterpolacao-h}] {../listagens/CMaterialInterpolacao.h}Apresenta-se
+na listagem \ref{CMaterialInterpolacao-cpp} implementação da classe
+CMaterialInterpolacao. 
+
+\lstset{style=C++} \lstinputlisting[ caption={
+Arquivo de implementação da função \texttt{main()}.}, label={CMaterialInterpolacao-cpp}] {../listagens/CMaterialInterpolacao.cpp}
+
+Apresenta-se na listagem \ref{CSegmentoReta-h} o arquivo de cabeçalho
+da classe CSegmentoReta. 
+
+\lstset{style=C++} \lstinputlisting[ caption={Arquivo de implementação da classe CSegmentoReta.}, label={CSegmentoReta-h}] {../listagens/CSegmentoReta.h}Apresenta-se
+na listagem \ref{CSegmentoReta-cpp} implementação da classe CSegmentoReta. 
+
+\lstset{style=C++} \lstinputlisting[ caption={
+Arquivo de implementação da função \texttt{main()}.}, label={CSegmentoReta-cpp}] {../listagens/CSegmentoReta.cpp}
+
+Apresenta-se na listagem \ref{CReta-h} o arquivo de cabeçalho da
+classe CReta. 
+
+\lstset{style=C++} \lstinputlisting[ caption={Arquivo de implementação da classe CReta.}, label={CReta-h}] {../listagens/CReta.h}Apresenta-se
+na listagem \ref{CReta-cpp} implementação da classe CReta. 
+
+\lstset{style=C++} \lstinputlisting[ caption={
+Arquivo de implementação da função \texttt{main()}.}, label={CReta-cpp}] {../listagens/CReta.cpp}

@@ -2,14 +2,14 @@
 #define MAINWINDOW_H
 
 
-#include <QDir>                  ///< Biblioteca que permite acessar diretÃ³rios.
+#include <QDir>                  /// Biblioteca que permite acessar diretórios.
 #include <QImage>                /// desenhar pixels
 #include <QColor>                /// escolher a cor dos pixels
 #include <string>
 #include <iostream>
 #include <QPainter>              /// desenhar pixels
-#include <QPrinter>              ///< Biblioteca  que habilita a geraÃ§Ã£o de pdf.
-#include <QPainter>              ///< Biblioteca que auxilia a geraÃ§Ã£o do pdf.
+#include <QPrinter>              /// Biblioteca  que habilita a geração de pdf.
+#include <QPainter>              /// Biblioteca que auxilia a geração do pdf.
 #include <QPdfWriter>
 #include <QMainWindow>
 #include <QMouseEvent>           /// pegar acoes/posicao do mouse

@@ -141,22 +141,25 @@ thechapter - Teste}
 \end_layout
 
 \begin_layout Standard
-Neste capítulo será validado os resultados do simulador utilizando solução
- da equação do calor para coordenadas cartesianas de uma dimensão.
+Neste capítulo, será apresentado os testes e resultados do simulador.
+ Inicialmente, o simulador será validado com a solução analítica unidimensional.
 \end_layout
 
 \begin_layout Standard
-Também será apresentado soluções aplicados à indústria do petróleo, como
- injeção de calor em reservatório, e aplicações na engenharia em geral,
- como resfriamento de computadores.
+A seguir, serão apresentados resultados aplicados à indústria do petróleo,
+ como injeção térmica em reservatórios, simulação reduzida de 
+\shape italic
+five-spot
+\shape default
+ e, por fim, uma aplicação real na tecnologia.
 \end_layout
 
 \begin_layout Section
-Teste 1: Validação do simulador
+Validação do simulador
 \end_layout
 
 \begin_layout Standard
-Para validar os resultados do simulador, será comparado os resultados do
+Para validar os resultados do simulador, foi comparado os resultados do
  simulador, com a solução proposta no 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -165,8 +168,11 @@ literal "false"
 
 \end_inset
 
-, na página 179, equação (5.57).
- A solução para o caso unidimensional é:
+ (equação 5.57).
+\end_layout
+
+\begin_layout Standard
+A solução para o caso unidimensional é:
 \end_layout
 
 \begin_layout Standard
@@ -206,11 +212,63 @@ função erro de Gauss
 \begin_layout Standard
 As soluções horizontais e verticais do simulador são salvas em uma pasta
  em arquivos '.txt', com o respectivo tempo no nome do arquivo.
+ A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Aplicação-do-problema-unidimensional"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ mostra a aplicação do problema no simulador.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/validacao_temperaturas.png
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aplicação do problema unidimensional no simulador.
+ (a) é no tempo inicial e (b) depois de 100 segundos.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Aplicação-do-problema-unidimensional"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Foi programado um código em python para comparar dois resultados do simulador
- com a solução da equação 
+Para comparar os resultados do simulador com a solução analítica da Equação
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:solucao analitica"
@@ -220,7 +278,7 @@ noprefix "false"
 
 \end_inset
 
-, apresentado abaixo:
+, foi programado um código em python apresentado abaixo:
 \end_layout
 
 \begin_layout Standard
@@ -596,8 +654,8 @@ ao}] {../SimuladorTemperatura/save_results_validacao/validacao.py}
 \end_layout
 
 \begin_layout Standard
-Como resultado, o código acima apresenta o gráfico , comparando dois tempos
- 50 e 100 segundos.
+Como resultado do código acima, é apresentado um gráfico comparando dois
+ tempos: 50 e 100 segundos.
 \end_layout
 
 \begin_layout Standard
@@ -610,7 +668,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/validacao.png
+	filename ../imagens/validacao.png
 	lyxscale 70
 	scale 70
 
@@ -641,11 +699,30 @@ Comparação da solução da equação de calor com o resultado do simulador.
 \end_layout
 
 \begin_layout Standard
-Os dados acima foram obtidos utilizando um material com propriedades termofísica
-s constantes, apresentadas na tabela abaixo:
+Os dados da simulação foram obtidos utilizando um material com propriedades
+ termofísicas constantes apresentadas na tabela abaixo:
 \end_layout
 
 \begin_layout Standard
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabela com as propriedades termofísicas do modelo de validação.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="2">
@@ -745,27 +822,583 @@ k
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-O erro do simulador foi menor que 1.06%, para o tempo de 50,0 segundos, e
- para 500 iterações.
+O erro do simulador foi 0.69% para 50,0 segundos, e 0,88% para 100,0 segundos.
+ O mínimo de iteração para cada variação de tempo foi de 800 iterações.
  
 \end_layout
 
 \begin_layout Standard
-É importante mencionar que o número de iterações deve ser alta, pois o método
- iterativo BTCS, só consegue 'avançar' uma única célula por iteração.
- Ou seja, o número mínimo de iterações deve ser maior que o número de células
- na vertical ( número de células na vertical é maior que na horizontal).
+É importante mencionar que o número de iterações deve ser alta, pois o simulador
+ resolve o método BTCS forma iterativa, e só consegue 'avançar' a influência
+ da temperatura em uma célula por iteração.
+ O número mínimo de iterações para o simulador deve ser maior que o número
+ de células na vertical ( número de células na vertical é maior que na horizonta
+l).
+\end_layout
+
+\begin_layout Standard
+O modelo para simulação pode ser obtido no arquivo 
+\begin_inset Quotes eld
+\end_inset
+
+Modelo_validacao.dat
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
-Resultados: injeção de calor em reservatório - modelo 1
+Injeção de calor em reservatório - comparação com outro simulador
+\end_layout
+
+\begin_layout Standard
+Como segundo teste do simulador, será comparado o resultado do simulador
+ com o simulador desenvolvido no Trabalho de Conclusão de Curso do Guilherme
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lima2020"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Para essa simulação, será considerado um reservatório de arenito com água,
+ onde a porosidade é 20%.
+ As fronteiras do reservatório estão com temperatura constante ao longo
+ do tempo de 1000K (condição de contorno de Dirichlet), e um poço central
+ com tamanho desprezível, também com temperatura constante de 1000K.
+ O restante do reservatório está com temperatura de 300K.
+\end_layout
+
+\begin_layout Standard
+As propriedades dos materiais estão na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Tabela-com-propriedades-injecao-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabela com propriedades termofísicas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dong_2015"
+literal "false"
+
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Tabela-com-propriedades-injecao-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Material
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k\,[W/m.K]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rho\,[kg/m^{3}]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $c_{p}\,[J/kg.K]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arenito
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2270,0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+710,00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Água
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,56
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+999,87
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.200,00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como o simulador não consegue tratar mistura de materiais, será utilizado
+ o desenvolvimento utilizado pelo trabalho do Guilherme, considerando porosidade
+ de 0,20.
+ Como não é apresentado uma equação para calcular densidade e a capacidade
+ térmica da mistura isoladamente, será utilizado o mesmo modelo para a condutivi
+dade térmica ( Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:propriedades-termofisicas-medias"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), onde 
+\begin_inset Formula $\psi$
+\end_inset
+
+ é a propriedade termosfísica analisada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\psi=\phi\psi_{1}+(1-\phi)\psi_{2}\label{eq:propriedades-termofisicas-medias}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Com isso, é obtido a propriedade do arenito com água na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Tabela-com-propriedades-injecao-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabela com propriedades termofísicas do arenito com água.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Tabela-com-propriedades-injecao-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Material
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k\,[W/m.K]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rho\,[kg/m^{3}]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $c_{p}\,[J/kg.K]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arenito com água
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,792
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2015,974
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1408,00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O resultado da simulação é mostrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:resultado-modelo-guilherme"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Em (a), é apresentado o modelo inicial, antes de iniciar a simulação.
+ Em (b), é apresentado o modelo após 3600 segundos.
+ Em (c), é mostrado o modelo pela renderização 3D.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/modelo_guilherme.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultados da simulação com renderização 3D.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:resultado-modelo-guilherme"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:resultado-modelo-guilherme-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ mostra os gráficos da simulação.
+ Em (a), é mostrada a temperatura ao longo do tempo, no ponto onde as duas
+ retas de estudo se cruzam.
+ Em (b), é mostrado a temperatura ao longo da reta horizontal de estudo.
+ É possível observar os picos de temperatura elevada nas extremidades (região
+ onde a temperatura é contante em 1000K), e um pico na região central, onde
+ a reta se aproxima do ponto central de injeção térmica.
+\end_layout
+
+\begin_layout Standard
+Em (c) é mostrado a temperatura ao longo da reta vertical de estudo, e é
+ observado os dois picos das extremidades e uma região linear de temperatura.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/modelo_guilherme_graficos.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gráficos da simulação para o tempo de 3.600 segundos.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:resultado-modelo-guilherme-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para resolver esse problema, foi utilizado no simulador um dx=0.00667, posição
+ do ponto de estudo em (87, 229).
+ 
+\end_layout
+
+\begin_layout Standard
+O modelo para simulação pode ser obtido no arquivo 
+\begin_inset Quotes eld
+\end_inset
+
+Modelo_guilherme.dat
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Injeção de calor em reservatório - modelo 1
 \end_layout
 
 \begin_layout Standard
 A seguir, é apresentado uma simulação para injeção térmica em um reservatório
- de petróleo com camadas, onde o poço está injetando calor com condutividade
- infinite e com penetração parcial.
+ de petróleo, onde o poço está injetando calor com condutividade infinita
+ e com penetração parcial.
 \end_layout
 
 \begin_layout Standard
@@ -773,6 +1406,29 @@ As propriedades termofísicas utilizadas para a rocha são:
 \end_layout
 
 \begin_layout Standard
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabela com as propriedades termofísicas do modelo 1 - Arenito
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="2">
@@ -866,6 +1522,11 @@ k
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -977,13 +1638,9 @@ k
 \end_layout
 
 \begin_layout Standard
-O teste busca analisar como é a transferência de calor na região próxima
- ao poço, considerando injeção de água, e com a formação de 
-\shape italic
-fingers
-\shape default
-.
- 
+Esse caso pode ser interpretado como uma fotografia da região próxima ao
+ poço, sobre um poço com temperatura elevada que busca aquecer o reservatório,
+ diminuindo assim a viscosidade do óleo e facilitando sua produção.
 \end_layout
 
 \begin_layout Standard
@@ -996,89 +1653,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_t0.PNG
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Tempo inicial da simulação.
- Na esquerda, o cinza representa o poço, azul a água e o amarelo, arenito.
- Na direita, é mostrado as temperaturas.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Com a evolução do tempo, a região mais próxima do poço é a mais alterada.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_t610.PNG
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Evolução da simulação.
- Tempo de 610 segundos.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Com a evolução do tempo, é possível perceber que a região próxima ao poço
- fica com temperatura quase homogênea, começando a se espalhar para o restante
- do reservatório.
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_tfinal.PNG
+	filename ../imagens/reservatorio_modelo2.PNG
 	lyxscale 85
-	width 85text%
+	width 90text%
 
 \end_inset
 
@@ -1089,81 +1666,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tempo final de 7.180 segundos.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_tfinal_graficos.PNG
-	lyxscale 85
-	width 85text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Gráficos do tempo final de 7.180 segundos.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Resultados: Injeção de calor em reservatório - modelo 2
-\end_layout
-
-\begin_layout Standard
-Para a segunda simulação, será utilizado um modelo semelhante ao modelo
- 1, mas sem a injeção de água, conforme mostrado na figura 
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_modelo2.PNG
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Modelo 2 de injeção térmica em reservatório.
+Modelo 1 de injeção térmica em reservatório.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Teste_reservatorio_sem_agua"
@@ -1184,8 +1687,29 @@ name "fig:Teste_reservatorio_sem_agua"
 \end_layout
 
 \begin_layout Standard
-Com esse modelo, é esperado que a variação de temperatura não atinja regiões
- distantes do reservatório, devido à baixa condutividade térmica do arenito.
+Com o modelo da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste_reservatorio_sem_agua"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, é esperado que a variação de temperatura não atinja regiões distantes
+ do reservatório devida à baixa condutividade térmica do arenito.
+ E é exatamente isso que pode ser observado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste_reservatorio_sem_agua-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ com tempo de 4.000 segundos.
 \end_layout
 
 \begin_layout Standard
@@ -1198,9 +1722,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_modelo2_resultado.PNG
-	lyxscale 95
-	width 95text%
+	filename ../imagens/reservatorio_modelo2_resultado.PNG
+	lyxscale 85
+	width 85text%
 
 \end_inset
 
@@ -1211,7 +1735,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Modelo 2 de injeção térmica em reservatório após 4.000 segundos.
+Modelo 1 de injeção térmica em reservatório após 4.000 segundos.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Teste_reservatorio_sem_agua-2"
@@ -1232,6 +1756,30 @@ name "fig:Teste_reservatorio_sem_agua-2"
 \end_layout
 
 \begin_layout Standard
+Os gráficos são mostrados na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste_reservatorio_sem_agua-3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Na esquerda, é mostrado a temperatura ao longo da reta horizontal preta,
+ escolhido como ponto de estudo do modelo.
+ 
+\end_layout
+
+\begin_layout Standard
+É interessante analisar a alta variação de temperatura para um tempo longo.
+ Isso é esperado para materiais com baixíssimas condutividades térmicas.
+ Caso o reservatório tivesse uma condutividade térmica alta, seria esperado
+ que a temperatura fosse bem distribuída ao longo do reservatório.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -1241,9 +1789,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/reservatorio_modelo2_graficos.PNG
+	filename ../imagens/reservatorio_modelo2_graficos.PNG
 	lyxscale 50
-	width 50text%
+	width 85text%
 
 \end_inset
 
@@ -1275,9 +1823,287 @@ name "fig:Teste_reservatorio_sem_agua-3"
 \end_layout
 
 \begin_layout Standard
-A comparação dos dois modelos mostra como efetivo é a injeção de água com
- temperatura elevada para aquecer o reservatório.
- Sem injeção de água, a temperatura não consegue atingir regiões distantes.
+O modelo para simulação pode ser obtido no arquivo 
+\begin_inset Quotes eld
+\end_inset
+
+Modelo_reservatorio_sem_agua.dat
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Injeção de calor em reservatório - modelo 2
+\end_layout
+
+\begin_layout Standard
+A seguir, será simulado o modelo 2 para o caso de injeção de calor em reservatór
+io.
+ A diferença fundamental para o caso 1, são os 
+\shape italic
+fingers
+\shape default
+ de água quente adentrando no reservatório.
+ Caso mais próximo da realidade.
+\end_layout
+
+\begin_layout Standard
+No modelo 2, o poço continua com a condutividade térmica infinita, mas a
+ água e o reservatório podem variar suas temperaturas, conforme mostrado
+ na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:injecao-termica-com-agua-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/reservatorio_t0.PNG
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tempo inicial da simulação.
+ Na esquerda, o cinza representa o poço, azul a água e o amarelo, arenito.
+ Na direita, é mostrado as temperaturas.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:injecao-termica-com-agua-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Com a evolução do tempo, a região mais próxima dos 
+\shape italic
+fingers
+\shape default
+ de água, é a mais alterada.
+ A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:injecao-termica-com-agua-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ mostra esse cenário.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/reservatorio_t610.PNG
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Evolução da simulação.
+ Tempo de 610 segundos.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:injecao-termica-com-agua-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Avançando mais no tempo, chegando a 7.180 segundos, é possível perber que
+ a região dos 
+\shape italic
+fingers 
+\shape default
+de água está com temperatura bem distribuída (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:injecao-termica-com-agua-3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), se assemelhando ao modelo 1, mas com poço muito mais largo.
+ 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/reservatorio_tfinal.PNG
+	lyxscale 75
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tempo final de 7.180 segundos.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:injecao-termica-com-agua-3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A variação de temperatura ao longo das retas de estudo foram mais suaves
+ em relação ao modelo 1 (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:injecao-termica-com-agua-graficos"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/reservatorio_tfinal_graficos.PNG
+	lyxscale 85
+	width 85text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gráficos do tempo final de 7.180 segundos.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:injecao-termica-com-agua-graficos"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A comparação dos dois modelos, mostra quão efetivo é a injeção de água quente
+ no reservatório em relação a um simples poço com temperatura elevada.
+ A variação de temperatura atinge regiões mais distantes do reservatório,
+ aquecendo um volume muito maior de óleo, que futuramente será produzido.
+\end_layout
+
+\begin_layout Standard
+O modelo para simulação pode ser obtido no arquivo 
+\begin_inset Quotes eld
+\end_inset
+
+Modelo_reservatorio_com_agua.dat
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -1304,8 +2130,8 @@ air coolers
 water coolers.
  
 \shape default
-Esse problema fica complexo, quando é analisado equipamentos reduzidos,
- como 
+Mas esse problema fica complexo quando é analisado equipamentos com espaços
+ reduzidos, como 
 \shape italic
 smartphones
 \shape default
@@ -1330,8 +2156,12 @@ noprefix "false"
 notebook.
  
 \shape default
-É possível perceber uma longa barra de cobre, cruzando pela GPU e CPU, os
- componentes com maior processamento e geração de calor.
+É possível perceber uma longa barra de cobre (
+\shape italic
+heatpipe
+\shape default
+), cruzando pela GPU e CPU, os componentes com maior processamento e geração
+ de calor.
 \end_layout
 
 \begin_layout Standard
@@ -1344,7 +2174,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/notebook.jpeg
+	filename ../imagens/notebook.jpeg
 	lyxscale 40
 	width 80text%
 
@@ -1502,13 +2332,13 @@ noprefix "false"
 \end_inset
 
 , é apresentado o modelo do resfriador.
- onde o grid 0, possui as fontes de calor (GPU, CPU), e a fonte de resfriamento
- acima (ventoinha).
- No grid 1, é mostrado o 
+ onde o grid 0, são referentes às fontes de calor (GPU, CPU), e acima é
+ o sumidouro de calor (ventoinha).
+ Já no grid 1, é mostrado o 
 \shape italic
 heatpipe
 \shape default
-, interligando os componentes, e chegando à ventoinha.
+ interligando os componentes, e chegando à ventoinha.
 \end_layout
 
 \begin_layout Standard
@@ -1521,9 +2351,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/resultado_temp_notebook.PNG
+	filename ../imagens/resultado_temp_notebook.PNG
 	lyxscale 50
-	width 80text%
+	width 90text%
 
 \end_inset
 
@@ -1578,7 +2408,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/teste_graficos_notebook.PNG
+	filename ../imagens/teste_graficos_notebook.PNG
 	lyxscale 50
 	width 80text%
 
@@ -1620,11 +2450,51 @@ name "fig:Teste_notebook3"
 \end_layout
 
 \begin_layout Standard
-A temperatura é rapidamente dispersada quando chega à ventoinha, resultando
- em duas quedas de temperatura, indicando que o componente do meio (CPU)
- na simulação, deveria estar mais próximo do outro componente (GPU), para
- que a queda de temperatura seja linear, evitando o super-aquecimento de
+A temperatura é rapidamente dispersada quando chega à ventoinha.
+ O gráfico da direita da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste_notebook3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, mostra o eixo y com duas quedas de temperatura, indicando que o componente
+ do meio (CPU), deveria estar mais próximo do outro componente (GPU) para
+ que a queda de temperatura seja linear, evitando um super-aquecimento de
  uma das partes.
+ 
+\end_layout
+
+\begin_layout Standard
+Esse problema da localização é específico do modelo simulado, o qual foi
+ desenhado sem ser totalmente fiel ao modelo da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste_notebook"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Tornando um caso mais interessante de se analisar devido ao erro milimétrico
+ das posições do desenho.
+\end_layout
+
+\begin_layout Standard
+O modelo para simulação pode ser obtido no arquivo 
+\begin_inset Quotes eld
+\end_inset
+
+Modelo_notebook.dat
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \end_body

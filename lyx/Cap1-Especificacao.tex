@@ -1,0 +1,302 @@
+\lhead{\thechapter\space - Especificação}  
+
+\chapter{Especificação\index{Concepção}\index{especificação}}
+
+Apresenta-se neste capítulo do projeto de engenharia a concepção,
+a especificação do sistema a ser modelado e desenvolvido.
+
+\section{Características gerais}
+
+O \textit{software} Simulador de difusão térmica 3D, é um software
+programado sob o Paradigma Orientado ao Objeto em C++, capaz de simular
+a transferência de calor em objetos tridimensionais, com formas e
+superfícies complexas e definidas pelo usuário, o qual também pode
+definir quais materiais constituem o objeto, e qual o método utilizado
+para calcular as propriedades termofísicas para cada material. Também
+é permitido a renderização 3D do objeto, e salvar os resultados em
+formato pdf.
+
+Para resolver o problema da transferência do calor, é modelado a equação
+diferencial por diferenças finitas implícitas, especificamente pelo
+método BTCS (\textit{Backward Time Centered Space}), que é incondicionalmente
+estável. As condições iniciais, são inseridas pelo usuário, e as condições
+de contorno externo são definitas por regiões que não trocam calor
+com o meio externo (condição de contorno de Neumann).
+
+\begin{table}[ph]
+\begin{centering}
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|>{\centering}p{8cm}|}
+\hline 
+\textbf{Nome} & Simulador de difusão térmica 3D\tabularnewline
+\hline 
+\textbf{Componentes principais} & Método numérico implícito BTCS.
+
+Métodos de correlação e interpolação para propriedades termofísicas.
+
+Renderização 3D.\tabularnewline
+\hline 
+\textbf{Missão} & Simulador de transferência de calor em objetos 3D com superfícies
+complexas, formado por materiais com propriedades depententes da temperatura.
+E auxiliar no ensino das diversas disciplinas abrangidas por este
+trabalho.\tabularnewline
+\hline 
+\end{tabular*}
+\par\end{centering}
+\caption{Características básicas do programa}
+\end{table}
+
+
+\section{Especificação\index{especificação}}
+
+Deseja-se desenvolver um software com interface gráfica amigável ao
+usuário, onde seja possível desenhar o objeto 3D, por meio de perfis,
+com o usuário escolhendo a temperatura e o material. A simulação é
+governada pela Equação da Difusão Térmica, a qual é modelada por diferenças
+finitas, pelo método BTCS, com fronteiras seladas. 
+
+Na dinâmica de execução, o usuário deverá escolher o tamanho do objeto,
+a temperatura, em qual perfil está desenhando, o material e suas propriedades
+termofísicas, e um ponto de monitoramento e estudo. O usuário terá
+a liberdade para utilizar um dentre três métodos para obter as propriedades
+dos materiais: propriedades constantes, correlação e interpolação.
+
+Após os desenhos do usuário e colocado o simulador para rodar, o simulador
+irá calcular a temperatura iterativamente em cada ponto, e só passará
+para o próximo tempo se o erro entre iterações for menor que um valor
+aceitável. Posteriormente, o desenho será atualizado e mostrará a
+nova distribuição de temperatura, e plotará os gráficos com os novos
+valores calculados.
+
+O software será programado em C++, com paradigma orientado ao objeto,
+utilizando a biblioteca \textit{Qt} para criar a interface do usuário,
+e \textit{qcustomplot }para gerar os gráficos.
+
+Para calcular as propriedades termofísicas dos materiais, são utilizados
+três modelos: propriedades constantes, por correlação e por interpolação.
+
+Os principais termos e suas unidades utilizadas neste projeto estão
+listadas abaixo:
+\begin{itemize}
+\item Dados relativos ao material:
+\begin{itemize}
+\item $c_{p}$ - capacidade térmica $\left[J/g\cdot K\right]$
+\item $k$ - condutividade térmica $\left[W/m\cdot K\right]$
+\item $\rho$ - massa específica $\left[kg/m^{3}\right]$
+\end{itemize}
+\item Dados relativos ao objeto
+\begin{itemize}
+\item $\Delta x,\Delta y$ - distância entre os centros dos blocos, valor
+inicial: 1px=0.0026m $[m]$;
+\item $\Delta z$ - distância entre perfis, valor inicial: 0.05m $[m]$;
+\item $T$ - temperatura no nodo $[K]$;
+\end{itemize}
+\item Variáveis usadas na simulação:
+\begin{itemize}
+\item $i$ - posição do nodo em relação ao eixo x;
+\item $k$ - posição do nodo em relação ao eixo y;
+\item $g$ - qual grid/perfil está sendo analisado;
+\item $t$ - tempo atual;
+\item $\nu$ - número da iteração.
+\end{itemize}
+\end{itemize}
+
+\subsection{Requisitos funcionais}
+
+Apresenta-se a seguir os requisitos funcionais.
+
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|p{11.5cm}|}
+\hline 
+\textbf{RF-01} & O programa deve ter uma interface gráfica amigável.\tabularnewline
+\hline 
+\end{tabular*}
+
+\bigskip{}
+
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|p{11.5cm}|}
+\hline 
+\textbf{RF-02} & O usuário tem a liberdade de desenhar qualquer objeto 3D, escolhendo
+também sua temperatura em cada ponto.\tabularnewline
+\hline 
+\end{tabular*}
+
+\bigskip{}
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|p{11.5cm}|}
+\hline 
+\textbf{RF-03} & O usuário tem a liberdade de escolher o material em cada ponto do
+objeto, juntamente com o método para obter as propriedades termofísicas. \tabularnewline
+\hline 
+\end{tabular*}
+
+\bigskip{}
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|p{11.5cm}|}
+\hline 
+\textbf{RF-04} & O usuário poderá escolher um ponto de estudo, cuja temperatura será
+monitorada ao longo do tempo, juntamente com todas as linhas cardeais
+partindo desse ponto.\tabularnewline
+\hline 
+\end{tabular*}
+
+\bigskip{}
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|p{11.5cm}|}
+\hline 
+\textbf{RF-05} & O usuário poderá escolher uma região de fonte ou sumidouro.\tabularnewline
+\hline 
+\end{tabular*}
+
+\bigskip{}
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|p{11.5cm}|}
+\hline 
+\textbf{RF-06} & O usuário poderá salvar e/ou carregar dados da simulação.\tabularnewline
+\hline 
+\end{tabular*}
+
+\bigskip{}
+
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|p{11.5cm}|}
+\hline 
+\textbf{RF-07} & O usuário poderá salvar os resultados da simulação em um arquivo pdf.\tabularnewline
+\hline 
+\end{tabular*}
+
+\bigskip{}
+
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|p{11.5cm}|}
+\hline 
+\textbf{RF-08} & O usuário pode adicionar materiais no simulador, e escolhar a forma
+de calcular suas propriedades termofísicas: constante, correlação
+ou interpolação.\tabularnewline
+\hline 
+\end{tabular*}
+
+\bigskip{}
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|p{11.5cm}|}
+\hline 
+\textbf{RF-09} & O usuário poderá comparar as propriedades termofísicas dos materiais. \tabularnewline
+\hline 
+\end{tabular*}
+
+\bigskip{}
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|p{11.5cm}|}
+\hline 
+\textbf{RF-10} & O usuário poderá acompanhar a evolução da temperatura em uma superfície
+2D em todo intervalo de tempo.\tabularnewline
+\hline 
+\end{tabular*}
+
+\bigskip{}
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|p{11.5cm}|}
+\hline 
+\textbf{RF-11} & O usuário poderá visualizar o objeto 3D desenhado em uma janela separada.\tabularnewline
+\hline 
+\end{tabular*}
+
+\subsection{Requisitos não funcionais}
+
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|p{11cm}|}
+\hline 
+\textbf{RNF-01} & Os cálculos devem ser feitos utilizando-se o método numérico de diferenças
+finitas BTCS.\tabularnewline
+\hline 
+\end{tabular*}
+
+\bigskip{}
+
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|p{11cm}|}
+\hline 
+\textbf{RNF-02} & O programa deverá ser multi-plataforma, podendo ser executado em \emph{Windows},
+\emph{GNU/Linux} ou \emph{Mac}.\tabularnewline
+\hline 
+\end{tabular*}
+
+\bigskip{}
+
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|p{11cm}|}
+\hline 
+\textbf{RNF-03} & A performance do programa pode ser alterada com a mudança do modelo
+de paralelismo.\tabularnewline
+\hline 
+\end{tabular*}
+
+\bigskip{}
+
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|p{11cm}|}
+\hline 
+\textbf{RNF-04} & A interface gráfica deve ser desenvolvida pela biblioteca Qt.\tabularnewline
+\hline 
+\end{tabular*}
+
+\bigskip{}
+
+\begin{tabular*}{14cm}{@{\extracolsep{\fill}}|c|p{11cm}|}
+\hline 
+\textbf{RNF-05} & O usuário pode definir as propriedades físicas da simulação, como
+intervalo de tempo e espaço.\tabularnewline
+\hline 
+\end{tabular*}
+
+\section{Casos de uso\index{Casos de uso} }
+
+\begin{table}[H]
+\caption{Exemplo de caso de uso\label{cap:Exemplo-de-um-caso-de-uso (tabela)}}
+
+~
+\centering{}%
+\begin{tabular}{|c|p{10cm}|}
+\hline 
+Nome do caso de uso: & Cálculo da temperatura\tabularnewline
+\hline 
+\hline 
+Resumo/descrição: & Cálculo da distribuição de temperatura em determinadas condições.\tabularnewline
+\hline 
+Etapas: & 1. Escolha da temperatura e do material
+
+2. Desenhar o objeto desenhado
+
+3. Escolher um ponto de estudo
+
+4. Rodar a simulação e analisar resultados
+
+5. Salvar objeto e resultados em pdf\tabularnewline
+\hline 
+\hline 
+Cenários alternativos: & Um cenário alternativo envolve uma entrada de propriedades de um metal
+obtidas em laboratório, escolher se essas propriedades vão ser calculadas
+por correlação ou interpolação.\tabularnewline
+\hline 
+\end{tabular}
+\end{table}
+
+
+\subsection{Diagrama de caso de uso geral}
+
+O diagrama de caso de uso geral da Figura \ref{cap:Diagrama-caso-uso-geral}
+mostra o usuário desenhando um objeto com material padrão do simulador,
+escolhendo um ponto de estudo, rodando a simulação, analisando os
+resultados e salvando o objeto e resultados em pdf.
+
+\begin{figure}[ph]
+\begin{centering}
+\includegraphics[width=0.6\textwidth]{../imagens/caso_uso_geral1}
+\par\end{centering}
+\caption{Diagrama de caso de uso -- Caso de uso geral\label{cap:Diagrama-caso-uso-geral}}
+\end{figure}
+
+
+\subsection{Diagrama de caso de uso específico}
+
+O caso de uso específico na Figura \ref{cap:Diagrama-de-caso-de-uso-especifico:Titulo}
+mostra um cenário onde o usuário quer utilizar os valores da condutividade
+térmica obtidos em laboratório. Ele deve montar um arquivo .txt com
+esses valores (a forma de criar esse arquivo é descrito no Apêndice
+B), e carregar no simulador. 
+
+O usuário terá a liberdade de comparar seu material com outros padrões
+do simulador, e escolhe-lo para o desenho do objeto.
+
+\begin{figure}[ph]
+\begin{centering}
+\includegraphics[width=0.6\textwidth]{../imagens/caso_uso_especifico1}
+\par\end{centering}
+\caption{Diagrama de caso de uso específico\label{cap:Diagrama-de-caso-de-uso-especifico:Titulo}}
+\end{figure}
+

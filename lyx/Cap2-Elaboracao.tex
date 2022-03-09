@@ -1,0 +1,726 @@
+\lhead{\thechapter\space - Elaboração}  
+
+\chapter{Elaboração\index{Elaboração}\label{sec:Elabora=0000E7=0000E3o}}
+
+Neste capítulo é apresentado a elaboração do programa, constituído
+pelo desenvolvimento teórico, modelagem numérica, identificação de
+pacotes e algoritmos adicionais relacionados ao \textit{software}.
+
+\section{Análise de domínio}
+
+A análise de domínio, como parte da elaboração, tem o objetivo de
+entender e delimitar conceitos fundamentais, sob o qual o software
+é construído\cite{Bueno}. 
+
+O presente trabalho pode ser dividido em quatro conceitos fundamentais:
+\begin{enumerate}
+\item Transferência de calor:
+
+Transferência de calor é uma subárea da termodinâmica, a qual é área
+da física. É responsável por tratar das três formas possíveis de transferência
+de calor: condução, convecção e radiação. Este projeto trata especificamente
+da condução de calor. 
+
+A condução só pode ocorrer em meio material (fluidos ou sólidos),
+e sem que haja movi emento do próprio meio, característica da convecção
+\cite{nussenzveig2018curso}.
+\item Modelagem numérica:
+
+Métodos numéricos são algoritmos desenvolvidos com ajuda da matemática
+para resolver problemas complexos da natureza. São utilizados quando
+uma solução analítica é difícil de ser obtida, ou com condições de
+contorno complexas.
+\item Programação orientada ao objeto com C++:
+
+O paradigma orientado ao objeto é um dos principais paradigmas da
+programação, utilizado especialmente na construção de grandes \textit{softwares}
+devido à portabilidade, organização e delimitação de assuntos. C++
+é uma das linguagens mais utilizadas atualmente, por ser mais rápida
+com muito suporte e por permitir a orientação ao objeto.
+\item Renderização 3D:
+
+Renderização 3D é uma área com grande ascensão na indústria de jogos
+e softwares de engenharia profissional, torna prático que usuários
+consigam visualizar o objeto sob qualquer ótica. É necessário a utilização
+de vários conceitos da álgebra linear.
+\end{enumerate}
+
+\section{Formulação}
+
+\subsection{Formulação teórica}
+
+A taxa de transferência de calor foi modelado empiricamente por Jean
+B. J. Fourier em 1822 (\cite{9781108001809}). Posteriormente a teoria
+foi aprimorada até chegar na equação geral da difusão de calor (\ref{DUPLICATA: eq:EquacaoGeralDifusaoTermica}).
+O desenvolvimento teórico para chegar nesta equação, pode ser acompanhado
+detalhadamente no \cite{incropera2008fundamentos}.
+
+Portanto, a seguir é apresentada a equação geral da difusão de calor
+em meios tridimensionais cartesianos:
+
+\begin{equation}
+\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)+\frac{\partial}{\partial y}\left(k\frac{\partial T}{\partial y}\right)+\frac{\partial}{\partial z}\left(k\frac{\partial T}{\partial z}\right)=\rho c_{p}\frac{\partial T}{\partial t}\label{eq:EquacaoGeralDifusaoTermica}
+\end{equation}
+
+Onde $\rho$ é a massa específica em $\left[kg/m^{3}\right]$, $c_{p}$
+é a capacidade térmica em $\left[J/\left(kg\cdot K\right)\right]$,
+$k$ é a condutividade térmica em $\left[W/\left(m\cdot K\right)\right]$.
+
+Para resolver a equação geral da difusão térmica, será utilizado o
+método implícito de diferenças finitas BTCS, com malha em formato
+bloco centrado.
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.7]{\string"../imagens/ppt/tipos de malha\string".png}
+\par\end{centering}
+\caption{Tipos de malha, (a) bloco-centrado e (b) ponto-distribuído.\label{fig:Tipos-de-malha}}
+\end{figure}
+
+Conforme a Figura \ref{fig:Tipos-de-malha}, existem dois tipos principais
+de malha: bloco-centrado, onde os pontos analisados estão nos centros
+de cada bloco, e ponto-distribuído, onde os pontos analisados estão
+nas fronteiras de cada bloco.
+
+Com esses conceitos em mente, a equação geral é modelada por diferenças
+finitas, mantendo a condutividade térmica dentro da derivada espacial.
+Inicialmente, será modelado somente a derivada externa:
+
+\begin{equation}
+\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)=\frac{\left(k\frac{\partial T}{\partial x}\right)_{i-\frac{1}{2},j,k}-\left(k\frac{\partial T}{\partial x}\right)_{i+\frac{1}{2},j,k}}{\Delta x}
+\end{equation}
+
+Modelando as derivadas internas:
+
+\begin{equation}
+\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)=\frac{k_{i-\frac{1}{2},j,k}\left(\frac{T_{i-1,j,k}-T_{i,j,k}}{\Delta x}\right)-k_{i+\frac{1}{2},j,k}\left(\frac{T_{i,j,k}-T_{i+1,j,k}}{\Delta x}\right)}{\Delta x}
+\end{equation}
+
+Com um pouco de álgebra:
+
+\begin{equation}
+\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)=\frac{k_{i-\frac{1}{2},j,k}\left(T_{i-1,j,k}-T_{i,j,k}\right)-k_{i+\frac{1}{2},j,k}\left(T_{i,j,k}-T_{i+1,j,k}\right)}{\Delta x^{2}}
+\end{equation}
+
+Chegando na modelagem final para a derivada espacial ao longo do x:
+
+\begin{equation}
+\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)=\frac{k_{i-\frac{1}{2},j,k}T_{i-1,j,k}-\left(k_{i-\frac{1}{2},j,k}+k_{i+\frac{1}{2},j,k}\right)T_{i,j,k}+k_{i+\frac{1}{2},j,k}T_{i+1,j,k}}{\Delta x^{2}}
+\end{equation}
+
+Como as outras dimensões são simétricas:
+
+\begin{equation}
+\frac{\partial}{\partial y}\left(k\frac{\partial T}{\partial y}\right)=\frac{k_{i,j-\frac{1}{2},k}T_{i,j-1,k}-\left(k_{i,j-\frac{1}{2},k}+k_{i,j+\frac{1}{2},k}\right)T_{i,j,k}+k_{i,j+\frac{1}{2},k}T_{i,j+1,k}}{\Delta y^{2}}
+\end{equation}
+
+\begin{equation}
+\frac{\partial}{\partial z}\left(k\frac{\partial T}{\partial z}\right)=\frac{k_{i,j,k-\frac{1}{2}}T_{i,j,k-1}-\left(k_{i,j,k-\frac{1}{2}}+k_{i,j,k+\frac{1}{2}}\right)T_{i,j,k}+k_{i,j,k+\frac{1}{2}}T_{i,j,k+1}}{\Delta z^{2}}
+\end{equation}
+
+A derivada temporal é atrasada no tempo:
+
+\begin{equation}
+\frac{\partial T}{\partial t}=\frac{T_{i,j}^{n+1}-T_{i,j}^{n}}{\Delta t}
+\end{equation}
+
+Substituindo as diferenças finitas na equação geral:
+
+\begin{equation}
+\begin{array}{c}
+\frac{k_{i-\frac{1}{2},j,k}T_{i-1,j,k}-\left(k_{i-\frac{1}{2},j,k}+k_{i+\frac{1}{2},j,k}\right)T_{i,j,k}+k_{i+\frac{1}{2},j,k}T_{i+1,j,k}}{\Delta x^{2}}+\\
+\frac{k_{i,j-\frac{1}{2},k}T_{i,j-1,k}-\left(k_{i,j-\frac{1}{2},k}+k_{i,j+\frac{1}{2},k}\right)T_{i,j,k}+k_{i,j+\frac{1}{2},k}T_{i,j+1,k}}{\Delta y^{2}}+\\
+\frac{k_{i,j,k-\frac{1}{2}}T_{i,j,k-1}-\left(k_{i,j,k-\frac{1}{2}}+k_{i,j,k+\frac{1}{2}}\right)T_{i,j,k}+k_{i,j,k+\frac{1}{2}}T_{i,j,k+1}}{\Delta z^{2}}=\\
+\frac{T_{i,j}^{n+1}-T_{i,j}^{n}}{\Delta t}
+\end{array}
+\end{equation}
+
+Onde a malha é homogênea na superfície, mas não entre os perfis, ou
+seja, $\Delta x=\Delta y\neq\Delta z$. Substituindo:
+
+\begin{equation}
+\begin{array}{c}
+\frac{k_{i-\frac{1}{2},j,k}T_{i-1,j,k}-\left(k_{i-\frac{1}{2},j,k}+k_{i+\frac{1}{2},j,k}\right)T_{i,j,k}+k_{i+\frac{1}{2},j,k}T_{i+1,j,k}}{\Delta x^{2}}+\\
+\frac{k_{i,j-\frac{1}{2},k}T_{i,j-1,k}-\left(k_{i,j-\frac{1}{2},k}+k_{i,j+\frac{1}{2},k}\right)T_{i,j,k}+k_{i,j+\frac{1}{2},k}T_{i,j+1,k}}{\Delta x^{2}}+\\
+\frac{k_{i,j,k-\frac{1}{2}}T_{i,j,k-1}-\left(k_{i,j,k-\frac{1}{2}}+k_{i,j,k+\frac{1}{2}}\right)T_{i,j,k}+k_{i,j,k+\frac{1}{2}}T_{i,j,k+1}}{\Delta z^{2}}=\\
+c_{p}\rho\frac{T_{i,j}^{n+1}-T_{i,j}^{n}}{\Delta t}
+\end{array}
+\end{equation}
+
+Multiplicando pelo múltiplo comum:
+
+\begin{equation}
+\begin{array}{c}
+\Delta z^{2}\left(k_{i-\frac{1}{2},j,k}^{n+1}T_{i-1,j,k}^{n+1}-\left(k_{i-\frac{1}{2},j,k}^{n+1}+k_{i+\frac{1}{2},j,k}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i+\frac{1}{2},j,k}^{n+1}T_{i+1,j,k}^{n+1}\right)+\\
+\Delta z^{2}\left(k_{i,j-\frac{1}{2},k}^{n+1}T_{i,j-1,k}^{n+1}-\left(k_{i,j-\frac{1}{2},k}^{n+1}+k_{i,j+\frac{1}{2},k}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i,j+\frac{1}{2},k}^{n+1}T_{i,j+1,k}^{n+1}\right)+\\
+\Delta x^{2}\left(k_{i,j,k-\frac{1}{2}}^{n+1}T_{i,j,k-1}^{n+1}-\left(k_{i,j,k-\frac{1}{2}}^{n+1}+k_{i,j,k+\frac{1}{2}}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i,j,k+\frac{1}{2}}^{n+1}T_{i,j,k+1}^{n+1}\right)=\\
+\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}T_{i,j}^{n+1}-\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}T_{i,j}^{n}
+\end{array}
+\end{equation}
+
+Como a equação acima é complexa para ser reorganizada e resolvida
+por equações matriciais, será utilizado aproximações implícitas para
+resolver esse problema, para calcular a iteração $\nu+1$, será utilizado:
+
+\begin{equation}
+\begin{array}{c}
+\overset{\nu+1}{T_{i,j}^{n+1}}=\\
+C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{\nu}{T_{i,j}^{n}}+\\
+C_{1}\Delta z^{2}\left(\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}\overset{\nu}{T_{i-1,j,k}^{n+1}}+\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}\overset{\nu}{T_{i+1,j,k}^{n+1}}\right)+\\
+C_{1}\Delta z^{2}\left(\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}\overset{\nu}{T_{i,j-1,k}^{n+1}}+\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}\overset{\nu}{T_{i,j+1,k}^{n+1}}\right)+\\
+C_{1}\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}\overset{\nu}{T_{i,j,k-1}^{n+1}}+\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}\overset{\nu}{T_{i,j,k+1}^{n+1}}\right)
+\end{array}\label{eq:EquacaoGeralDiscretizada}
+\end{equation}
+
+Onde $C_{1}$é a constante:
+
+\begin{equation}
+\begin{array}{c}
+\frac{1}{C_{1}}=\begin{array}{ccc}
+\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+ & \Delta z^{2}\left(\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}+\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}\right)+\\
+ & \Delta z^{2}\left(\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}+\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}\right) & +\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}+\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}\right)
+\end{array}\end{array}
+\end{equation}
+
+Agora, é necessário definir o cálculo das condutividades térmicas
+nas fronteiras. Para isso, será feito um análogo com a permeabilidade
+de rochas em série \cite{rosa2006engenharia}, mas utilizando as equações
+de calor:
+
+\begin{equation}
+q_{x}=-kA\frac{dT}{dx}=-\frac{kA}{L}\Delta T
+\end{equation}
+
+Isolando a diferença de temperatura:
+
+\begin{equation}
+\Delta T=-\frac{Lq_{x}}{kA}
+\end{equation}
+
+A Figura \ref{DUPLICATA: fig:Representa=0000E7=0000E3o-de-condutividade}
+mostra um caso de condutividades térmicas em série. O calor (q) que
+entra no sistema, é igual ao que sai. E a diferença de temperatura
+entre a esquerda (0) e a direita (2), é soma das diferenças nesse
+meio, ou seja:
+
+\begin{equation}
+T_{0}-T_{2}=\left(T_{0}-T_{1}\right)+\left(T_{1}-T_{2}\right)
+\end{equation}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{../imagens/ppt/condutividade_Termica}
+\par\end{centering}
+\caption{Representação de condutividade térmica em série.\label{fig:Representa=0000E7=0000E3o-de-condutividade}}
+\end{figure}
+
+Logo,
+
+\begin{equation}
+\Delta T_{t}=\Delta T_{1}+\Delta T_{2}
+\end{equation}
+
+Onde as taxas de transferência de calor são:
+
+\begin{equation}
+-\frac{2Lq}{k_{r}A}=-\frac{Lq}{k_{1}A}-\frac{Lq}{k_{2}A}
+\end{equation}
+
+Com alguns ajustes algébricos:
+
+\begin{equation}
+\frac{2}{k_{r}}=\frac{1}{k_{1}}+\frac{1}{k_{2}}
+\end{equation}
+
+Ou, simplesmente:
+
+\begin{equation}
+k_{r}=\frac{2k_{1}k_{2}}{k_{1}+k_{2}}
+\end{equation}
+
+É importante analisar a célula computacional, ou a região que é observada
+quando um ponto é calculado. Para isso, é apresentada a Figura \ref{DUPLICATA: fig:Malha-utilizada-para},
+onde a esquerda é o tempo anterior T=n-1, e o ponto calculado está
+no tempo presente T=n. Para calcular o ponto vermelho, é utilizado
+o mesmo ponto, mas no tempo anterior, e uma célula em cada sentido.
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.7]{../imagens/malha}
+\par\end{centering}
+\caption{Malha utilizada para calcular um ponto de temperatura, cada ponto
+é o centro dos blocos.\label{fig:Malha-utilizada-para}}
+\end{figure}
+
+A seguir, é resolvida a última etapa da modelagem do problema, a modelagem
+da condição de fronteira de Neumann
+
+\subsubsection{Condição de fronteira}
+
+Condição de fronteira, como o próprio nome diz, é a condição onde
+estão os limites materiais do objeto. Nessa região, a condução térmica
+é diferente do interior do objeto, pois não poderá conduzir calor
+em todos os sentidos, mas só onde existir material adjacente.
+
+A condição de contorno de Neumann define que, nessa região, o objeto
+não troca calor com o meio externo. Na Figura \ref{DUPLICATA: fig:FronteiraNeumann},
+a fronteira está na reta vermelha e, como o método modelado utilizaria
+o ponto à esquerda, é necessário encontrar um substituto real para
+esse termo.
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{../imagens/ppt/fronteira_neumann}
+\par\end{centering}
+\caption{Análise da fronteira de Neumann.\label{fig:FronteiraNeumann}}
+\end{figure}
+
+Por isso, é importante modelar a condição de contorno, que pode ser
+modelada com diferenças finitas centradas como:
+
+\begin{equation}
+k\frac{\partial T}{\partial x}_{i-\frac{1}{2},j,k}=0\frac{T_{i,j,k}^{n+1}-T_{i-1,j,k}^{n+1}}{\Delta x}=0
+\end{equation}
+
+A equação acima possui duas soluções:
+
+\begin{equation}
+\begin{cases}
+k_{i-\frac{1}{2},j,k} & =0\\
+\frac{\partial T}{\partial x}_{i-\frac{1}{2},j,k} & =0
+\end{cases}\label{eq:solucao_neumann}
+\end{equation}
+
+Resolvendo a linha de baixo:
+\begin{equation}
+\frac{\partial T}{\partial x}_{i-\frac{1}{2},j,k}=\frac{T_{i,j,k}^{n+1}-T_{i-1,j,k}^{n+1}}{\Delta x}=0
+\end{equation}
+
+\begin{equation}
+T_{i-1,j,k}^{n+1}=T_{i,j,k}^{n+1}
+\end{equation}
+
+Todas as seis fronteiras são simétricas, então:
+
+\begin{equation}
+\begin{array}{c}
+T_{i-1,j,k}^{n+1}=T_{i,j,k}^{n+1}\\
+T_{i+1,j,k}^{n+1}=T_{i,j,k}^{n+1}\\
+T_{i,j-1,k}^{n+1}=T_{i,j,k}^{n+1}\\
+T_{i,j+1,k}^{n+1}=T_{i,j,k}^{n+1}\\
+T_{i,j,k-1}^{n+1}=T_{i,j,k}^{n+1}\\
+T_{i,j,k+1}^{n+1}=T_{i,j,k}^{n+1}
+\end{array}\label{eq:ModelagemFronteiras}
+\end{equation}
+
+As equações encontradas na Eq. \ref{DUPLICATA: eq:ModelagemFronteiras}
+dizem que, se existir uma fronteira, a temperatura inexistente deve
+ser substituída pela temperatura do próprio ponto. Ou, como mostrado
+na Eq. \ref{DUPLICATA: eq:solucao_neumann}, a condutividade térmica
+na fronteira deve ser zero. Quaisquer dentre as duas opções resolvem
+o problema da condição de contorno de Neumann.
+
+\subsubsection{Demonstrações}
+
+Nesta parte, será analisado dois casos para validar as modelagens.
+Primeiro, será utilizado um objeto formado por uma única célula isolada
+no espaço. Posteriormente, será analisado o caso do objeto constituído
+por um único material, mas bidimensional.
+
+Começando pelo objeto de única célula, todas as suas seis fronteiras
+devem ser aplicadas as condições de contorno de Neumann. Fisicamente,
+é esperado que o objeto, por estar isolado, não varie com sua temperatura
+interna ao longo do tempo. Então, partindo da equação geral:
+
+\begin{equation}
+\begin{array}{c}
+\overset{\nu+1}{T_{i,j}^{n+1}}=\\
+C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{\nu}{T_{i,j}^{n}}+\\
+C_{1}\Delta z^{2}\left(\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}\overset{\nu}{T_{i-1,j,k}^{n+1}}+\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}\overset{\nu}{T_{i+1,j,k}^{n+1}}\right)+\\
+C_{1}\Delta z^{2}\left(\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}\overset{\nu}{T_{i,j-1,k}^{n+1}}+\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}\overset{\nu}{T_{i,j+1,k}^{n+1}}\right)+\\
+C_{1}\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}\overset{\nu}{T_{i,j,k-1}^{n+1}}+\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}\overset{\nu}{T_{i,j,k+1}^{n+1}}\right)
+\end{array}
+\end{equation}
+
+\begin{equation}
+\begin{array}{c}
+\frac{1}{C_{1}}=\begin{array}{ccc}
+\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+ & \Delta z^{2}\left(\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}+\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}\right)+\\
+ & \Delta z^{2}\left(\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}+\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}\right) & +\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}+\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}\right)
+\end{array}\end{array}
+\end{equation}
+
+Mas, como demonstrado na Eq. \ref{DUPLICATA: eq:solucao_neumann},
+quando houver fronteira, a condutividade térmica na fronteira é zero:
+\begin{equation}
+\begin{array}{c}
+\overset{\nu+1}{T_{i,j}^{n+1}}=\\
+C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{\nu}{T_{i,j}^{n}}+\\
+C_{1}\Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}}\overset{\nu}{T_{i-1,j,k}^{n+1}}+\cancelto{0}{\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}}\overset{\nu}{T_{i+1,j,k}^{n+1}}\right)+\\
+C_{1}\Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}}\overset{\nu}{T_{i,j-1,k}^{n+1}}+\cancelto{0}{\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}}\overset{\nu}{T_{i,j+1,k}^{n+1}}\right)+\\
+C_{1}\Delta x^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}}\overset{\nu}{T_{i,j,k-1}^{n+1}}+\cancelto{0}{\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}}\overset{\nu}{T_{i,j,k+1}^{n+1}}\right)
+\end{array}
+\end{equation}
+
+\begin{equation}
+\begin{array}{c}
+\frac{1}{C_{1}}=\begin{array}{ccc}
+\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+ & \Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}}+\cancelto{0}{\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}}\right)+\\
+ & \Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}}+\cancelto{0}{\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}}\right) & +\Delta x^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}}+\cancelto{0}{\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}}\right)
+\end{array}\end{array}
+\end{equation}
+
+Resultando em:
+\begin{equation}
+\begin{array}{c}
+\overset{\nu+1}{T_{i,j}^{n+1}}=C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{\nu}{T_{i,j}^{n}}\end{array}
+\end{equation}
+
+\begin{equation}
+\begin{array}{c}
+\frac{1}{C_{1}}=\begin{array}{c}
+\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\end{array}\end{array}
+\end{equation}
+
+Logo:
+\begin{equation}
+\begin{array}{c}
+\overset{\nu+1}{T_{i,j}^{n+1}}=\frac{\Delta t}{\Delta z^{2}\Delta x^{2}c_{p}\rho}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{\nu}{T_{i,j}^{n}}\end{array}
+\end{equation}
+\begin{equation}
+\begin{array}{c}
+\overset{\nu+1}{T_{i,j}^{n+1}}=\overset{\nu}{T_{i,j}^{n}}\end{array}
+\end{equation}
+
+Mostrando que a temperatura não varia com o tempo.
+
+Para a segunda demonstração, onde o objeto é constituído pelo mesmo
+material e mesma condutividade térmica, mas somente bidimensional.
+Partindo da equação geral:
+\begin{equation}
+\begin{array}{c}
+\overset{}{T_{i,j}^{n+1}}=\\
+C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n}}+\\
+C_{1}\Delta z^{2}\left(\overset{}{k_{i-\frac{1}{2},j,k}^{n+1}}\overset{}{T_{i-1,j,k}^{n+1}}+\overset{}{k_{i+\frac{1}{2},j,k}^{n+1}}\overset{}{T_{i+1,j,k}^{n+1}}\right)+\\
+C_{1}\Delta z^{2}\left(\overset{}{k_{i,j-\frac{1}{2},k}^{n+1}}\overset{}{T_{i,j-1,k}^{n+1}}+\overset{}{k_{i,j+\frac{1}{2},k}^{n+1}}\overset{}{T_{i,j+1,k}^{n+1}}\right)+\\
+C_{1}\Delta x^{2}\left(\overset{}{k_{i,j,k-\frac{1}{2}}^{n+1}}\overset{}{T_{i,j,k-1}^{n+1}}+\overset{}{k_{i,j,k+\frac{1}{2}}^{n+1}}\overset{}{T_{i,j,k+1}^{n+1}}\right)
+\end{array}
+\end{equation}
+
+\begin{equation}
+\begin{array}{c}
+\frac{1}{C_{1}}=\begin{array}{ccc}
+\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+ & \Delta z^{2}\left(\overset{}{k_{i-\frac{1}{2},j,k}^{n+1}}+\overset{}{k_{i+\frac{1}{2},j,k}^{n+1}}\right)+\\
+ & \Delta z^{2}\left(\overset{}{k_{i,j-\frac{1}{2},k}^{n+1}}+\overset{}{k_{i,j+\frac{1}{2},k}^{n+1}}\right) & +\Delta x^{2}\left(\overset{}{k_{i,j,k-\frac{1}{2}}^{n+1}}+\overset{}{k_{i,j,k+\frac{1}{2}}^{n+1}}\right)
+\end{array}\end{array}
+\end{equation}
+
+Com a substituição de todas as condutividades térmicas nas interfaces
+por k, e simplificando para bidimensional:
+\begin{equation}
+\begin{array}{c}
+\overset{}{T_{i,j}^{n+1}}=\\
+C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n}}+\\
+C_{1}\Delta z^{2}\left(k\overset{}{T_{i-1,j,k}^{n+1}}+k\overset{}{T_{i+1,j,k}^{n+1}}\right)+\\
+C_{1}\Delta z^{2}\left(k\overset{}{T_{i,j-1,k}^{n+1}}+k\overset{}{T_{i,j+1,k}^{n+1}}\right)
+\end{array}
+\end{equation}
+
+\begin{equation}
+\begin{array}{c}
+\frac{1}{C_{1}}=\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+\Delta z^{2}\left(k+k\right)+\Delta z^{2}\left(k+k\right)\end{array}
+\end{equation}
+
+Com alguns ajustes:
+\begin{equation}
+\begin{array}{c}
+\overset{}{\frac{1}{C_{1}}T_{i,j}^{n+1}}=\\
+\frac{\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n}}+\\
+k\left(\overset{}{T_{i-1,j,k}^{n+1}}+\overset{}{T_{i+1,j,k}^{n+1}}\right)+\\
+k\left(\overset{}{T_{i,j-1,k}^{n+1}}+\overset{}{T_{i,j+1,k}^{n+1}}\right)
+\end{array}
+\end{equation}
+
+\begin{equation}
+\begin{array}{c}
+\frac{1}{C_{1}}=\frac{\Delta x^{2}c_{p}\rho}{\Delta t}+2k+2k\end{array}
+\end{equation}
+
+Logo:
+
+\begin{equation}
+\begin{array}{c}
+\left(\frac{\Delta x^{2}c_{p}\rho}{k\Delta t}+2+2\right)\overset{}{T_{i,j}^{n+1}}=\\
+\frac{\Delta x^{2}c_{p}\rho}{k\Delta t}\overset{}{T_{i,j}^{n}}+\\
+\left(\overset{}{T_{i-1,j,k}^{n+1}}+\overset{}{T_{i+1,j,k}^{n+1}}\right)+\\
+\left(\overset{}{T_{i,j-1,k}^{n+1}}+\overset{}{T_{i,j+1,k}^{n+1}}\right)
+\end{array}
+\end{equation}
+
+Chegando na equação:
+
+\begin{equation}
+\begin{array}{c}
+\frac{c_{p}\rho}{k}\frac{T_{i,j}^{n+1}-T_{i,j}^{n}}{\Delta t}=\\
+\frac{\overset{}{T_{i-1,j,k}^{n+1}}-2\overset{}{T_{i,j}^{n+1}}+\overset{}{T_{i+1,j,k}^{n+1}}}{\Delta x^{2}}+\\
+\frac{\overset{}{T_{i,j-1,k}^{n+1}}-\overset{}{2T_{i,j}^{n+1}}+\overset{}{T_{i,j+1,k}^{n+1}}}{\Delta x^{2}}
+\end{array}
+\end{equation}
+
+E essa é a igual implícita discretizada para um sistema homogêneo
+bidimensional, conforme \cite{incropera2008fundamentos}.
+
+\subsection{Condutividade térmica variável}
+
+A condutividade térmica (k), no projeto desenvolvido, pode variar
+com o espaço, pelo objeto ser constituído por mais de um material,
+com condutividade térmica distinta. Mas também pode variar com a temperatura
+e, consequentemente, com o tempo.
+
+Será fornecido aos usuários, três opções para calcular essas condutividades
+térmicas:
+\begin{itemize}
+\item Valores constantes;
+\item Correlação;
+\item Interpolação.
+\end{itemize}
+Para o primeiro caso, como o nome diz, a condutividade térmica será
+constante ao longo de todo o tempo, variando somente com a posição.
+
+No segundo caso, será utilizado os modelos de correlação do \textit{handbook
+Thermophysical Properties }\cite{thermophysical}. O modelo proposto,
+é calculado, em geral, como:
+\begin{equation}
+k=C_{0}+C_{1}T-C_{2}T^{2}
+\end{equation}
+
+Onde $C_{0},C_{1}$e $C_{2}$ são constantes da correlação, específico
+para cada material.
+
+O terceiro caso, é o cálculo pela interpolação e, como o nome diz,
+calcula a condutividade térmica pela interpolação linear entre valores
+obtidos em laboratório.
+
+Assim, é finalizada as demonstrações físico-numérica do problema da
+difusão térmica. A partir de agora, será elaborado o paralelismo/multithreading,
+e a renderização 3D.
+
+\subsection{Paralelismos/multi-thread}
+
+Os chips de processadores atuais, são constituídos por vários processadores
+menores, o que permite que um mesmo processador consiga realizar tarefas
+distintas. A ideia é separar tarefas distintas, para que um processador
+não fique travado em uma única tarefa. 
+
+Uma analogia para melhorar a explicação é a dos estudantes. Uma sala
+cheia de estudantes, recebe uma tarefa de resolver uma lista de exercícios.
+Se todos os exercícios forem resolvidas por um único aluno, levará
+muito tempo para terminar a tarefa (caso sem paralelismo). Se os alunos
+dividirem as tarefas entre si, ela será resolvida muito mais rapidamente. 
+
+Similarmente ao cenário acima, foram implementados três casos de paralelismo,
+por questão de didática.
+\begin{enumerate}
+\item Sem paralelismo: uma única thread do processador resolve todos os
+cálculos.
+\item Paralelismo por grid: cada thread resolve uma camada do objeto. Possuí
+certa otimização em relação ao anterior, mas, se só existir objeto
+em uma camada, outras threads ficam ociosas.
+\item Paralelismo total: todas as threads do processador resolvem os cálculos
+de todo o objeto 3D, intercalando a posição com base no número da
+thread.
+\end{enumerate}
+A figura ilustra melhor esses casos
+\begin{figure}[H]
+\begin{centering}
+\label{fig_threads_exemplo}\includegraphics[scale=0.7]{../imagens/threads}
+\par\end{centering}
+\caption{Figura ilustrando os três casos de paralelismo implementados para
+duas camadas com 9 células cada, e um processador com duas threads.}
+\end{figure}
+
+O algoritmo utilizado para o caso 3 é:
+
+\noindent\begin{minipage}[t]{1\columnwidth}%
+\textit{for(int i = NUM\_THREAD; i < size; i+=MAX\_THREADS)}%
+\end{minipage}
+
+Esse algoritmo diz que a thread ``i'', deverá começar a resolver
+as equações na posição ``i''. Quando finalizar, deve pular para
+a posição ``i + números de threads''.
+
+\subsection{Renderização 3D}
+
+Após o usuário desenhar algum objeto no software, pode ser de interesse
+observar como seria em renderização 3D. Portanto, é implementado algoritmos
+para essa renderização. 
+
+Inicialmente, é interessante observar a complexidade da renderização:
+um objeto 3D deve ser apresentado em uma tela 2D, com a ilusão de
+ótica que é um objeto com profundidade. Por exemplo, um cubo com arestas
+de tamanho 1 cm é mostrado nos quatro casos da figura abaixo:
+
+\begin{figure}[H]
+\begin{centering}
+\label{fig_cubos_3D}\includegraphics[scale=0.7]{../imagens/ppt/cubos_3D}
+\par\end{centering}
+\caption{(a) Observador alinhado com uma das faces do cubo. (b) observador
+não está alinhado e não foram removidas arestas ocultas. O cérebro
+consegue interpretar que é um objeto 3D, mas fica confuso entre os
+casos (c) e (d). }
+\end{figure}
+
+Todos cantos do cubo da figura \ref{fig_cubos_3D} estão na mesma
+posição, o que mudou foi o ângulo do observador com o objeto.
+
+Portanto, tendo em mãos os pontos das arestas, é multiplicado esses
+vetores com a matriz de rotação do autor \cite{Herter_1993} mostrada
+em (\ref{eq:matriz_rotacao}), a qual permite rotacionar qualquer
+ponto a partir dos três ângulos do observador. 
+
+\begin{equation}
+\begin{array}{c}
+R(\alpha,\beta,\gamma)=\\
+\left[\begin{array}{ccccc}
+cos(\gamma)cos(\beta) &  & cos(\gamma)sin(\beta)sin(\alpha)-sin(\gamma)cos(\alpha) &  & cos(\gamma)sin(\beta)sin(\alpha)+sin(\gamma)cos(\alpha)\\
+sin(\gamma)cos(\beta) &  & sin(\gamma)sin(\beta)sin(\alpha)+cos(\gamma)cos(\alpha) &  & sin(\gamma)sin(\beta)cos(\alpha)-cos(\gamma)sin(\alpha)\\
+-sin(\beta) &  & cos(\beta)*sin(\alpha) &  & cos(\beta)*cos(\alpha)
+\end{array}\right]
+\end{array}\label{eq:matriz_rotacao}
+\end{equation}
+
+Ou seja, inicialmente, um cubo de aresta 3 cm, com uma margem de 1
+cm, pode ser mostrado na tela (monitor) com os pontos do caso (a)
+da figura \ref{fig_cubos_3D_screen}, onde o observador está alinhado
+com o objeto. 
+
+Conforme desejado, o objeto pode mudar seu ângulo com o observador,
+como no caso (b), onde os ângulos x e y passaram a ter o valor de
+0.1 radianos. Não foi só os pontos de trás do cubo que aparecem (e
+mudaram seus valores), mas todos os pontos foram modificados. 
+
+Além disso, a aresta possui valor ligeiramente menor que 3, pois não
+é mais ``de frente'' que o observador está olhando, mas ligeiramente
+de lado. Mesmo que o objeto cubo tenha aresta de 3 centímetros.
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{../imagens/ppt/cubo_3D_points_rotations}
+\par\end{centering}
+\caption{(a) o cubo está com ângulos nulos. (b) ângulo x e y estão com valor
+de 0.1 radianos.\label{fig_cubos_3D_screen} }
+\end{figure}
+
+Nos desenhos do simulador, cada pixel da figura, é uma célula com
+propriedades que serão calculadas, possuindo material, temperatura
+e volume. Como o usuário pode desenhar por pixel, a renderização 3D
+deve partir do princípio que cada pixel é um \textbf{potencial} objeto
+que deve ser renderizado. 
+
+Inicialmente, essa conclusão pode ficar vaga, pois todas as células
+do simulador devem ser renderizadas, mas, quando a simulação fica
+grande, é numeroso a quantidade de objetos renderizando ao mesmo tempo,
+tornando muito lenta a apresentação. Então algumas considerações são
+feitas no algoritmo para otimizar a renderização.
+
+Primeiro, é desejável desenhar triângulos, e não pontos ou retas,
+por 2 motivos: geometria simples, possui normal e a biblioteca do
+Qt consegue desenhar e preencher a área com qualquer cor escolhida.
+\begin{figure}[H]
+\begin{centering}
+\label{fig_cubos_3D_triangles}\includegraphics{../imagens/ppt/cubo_3D_points_rotations_triangles}
+\par\end{centering}
+\caption{Mesmo desenho da figura anterior, mas agora renderizando a partir
+de triângulos.}
+\end{figure}
+
+O segundo motivo apresentado, é o mais importante dos três. Um triângulo
+possui três pontos, podendo ser reduzido para dois vetores (subtraindo
+o ponto de origem dos outros dois pontos) e permite-se calcular a
+normal dessa superfície. Com isso, é obtido dos vetores $\boldsymbol{a}=\{a_{1},a_{2},a_{3}\}$
+e o vetor \textbf{$\boldsymbol{b}=\{b_{1},b_{2},b_{3}\}$ }permitindo
+a realização do produto vetorial:
+
+\begin{equation}
+\boldsymbol{a}\times\boldsymbol{b}=\left[\begin{array}{ccc}
+\boldsymbol{i} & \boldsymbol{j} & \boldsymbol{k}\\
+a_{1} & a_{2} & a_{3}\\
+b_{1} & b_{2} & b_{3}
+\end{array}\right]
+\end{equation}
+
+Ou simplesmente:
+
+\begin{equation}
+\boldsymbol{a}\times\boldsymbol{b}=(a_{2}b_{3}-a_{3}b_{2})\boldsymbol{i}-(a_{1}b_{3}-a_{3}b_{1})\boldsymbol{k}+(a_{1}b_{2}-a_{2}b_{1})\boldsymbol{j}\label{eq:normal_resumido}
+\end{equation}
+
+Utilizando a Regra da Mão Direita$^{\ref{fn:rodape_regra_mao_direita}}$,
+é possível entender a utilidade da equação \ref{eq:normal_resumido}:
+o caso (a) da figura \ref{fig_normal}, mostra uma normal saindo do
+papel, em direção ao olho do leitor, logo, é um triângulo que deve
+ser renderizado. O caso (b) possui uma normal no sentido contrário,
+e não faz sentido desenhar esse triângulo, pois está na parte de trás
+do objeto.
+
+\footnote{\label{fn:rodape_regra_mao_direita}Para utilizar a Regra da Mão Direita,
+posicione o dedo polegar sobre o ponto \textbf{o}, e estique o indicador
+para o ponto \textbf{a}, agora, feche o indicador no sentido do ponto
+\textbf{b} (seta curvada mostra o sentido que a ponta do indicador
+deve realizar). No caso (a) da figura, o dedo polegar fica no sentido
+para fora do papel, e o caso (b), para dentro.}
+
+\begin{figure}[H]
+\begin{centering}
+\label{fig_normal}\includegraphics{../imagens/ppt/normal}
+\par\end{centering}
+\caption{(a) mostra um caso onde a normal é na direção do leitor e (b) mostra
+um caso onde a normal é para dentro da folha.}
+\end{figure}
+
+Essa simples operação condicional do valor positivo/negativo de \textbf{j
+}da normal, reduz a renderização de objetos ocultos, e otimiza o software
+em duas vezes.
+
+Uma outra condição implementada é a de avaliar se o objeto possui
+fronteira com outro objeto. Com isso, não é necessário renderizar
+4 triângulos dessas duas superfícies em contato. Como estão em contato,
+não deve ser renderizada sob hipótese alguma.
+
+Por fim, antes de renderizar os numerosos triângulos, eles são colocadas
+em ordem crescente com o valor de \textbf{j} da normal. Isso serve
+para ser desenhado primeiro o que está atrás, e depois desenhar o
+que está na frente, sobrescrevendo áreas que deveriam estar ocultas,
+evitando a criação de figuras confusas como no caso (b) da figura
+\ref{fig_cubos_3D}. É uma técnica lenta, mas de fácil implementação.
+
+\section{Identificação de pacotes -- assuntos}
+\begin{itemize}
+\item Pacote de malhas: organiza o objeto desenhado em vetores, facilita
+o acesso do simulador às propriedades de cada célula.
+\item Pacote de simulação: nela está presente o coração do simulador: o
+solver da equação da temperatura, discretizada por métodos numéricos,
+e resolvida por método iterativo.
+\item Pacote de interpolação: utilizado para realizar interpolação com propriedades
+termofísicas dos materiais, é acessado pelo simulador, e retorna as
+propriedades do material.
+\item Pacote de correlação: mesma função da linha acima, mas para método
+de correlação.
+\item Pacote de interface ao usuário: utilização da biblioteca Qt, para
+criar interface gráfica amigável. Fornece um ambiente onde o usuário
+pode enviar comandos para o simulador de maneira fácil, e apresenta
+os resultados.
+\item Pacote de gráficos: utilização da biblioteca qcustomplot, para montar
+os melhores gráficos para o problema. É solicitado ao pacote de malhas
+os resultados da temperatura. Está presente junto com o pacote de
+interface
+\end{itemize}
+ 
+
+\section{Diagrama de pacotes -- assuntos}
+
+Abaixo é apresentado o diagrama de pacotes (Figura \ref{fig:Diagrama-de-Pacotes}).
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[width=0.85\textwidth]{\string"../imagens/Diagrama de pacotes\string".png}
+\par\end{centering}
+\caption{Diagrama de Pacotes\label{fig:Diagrama-de-Pacotes}}
+\end{figure}
+

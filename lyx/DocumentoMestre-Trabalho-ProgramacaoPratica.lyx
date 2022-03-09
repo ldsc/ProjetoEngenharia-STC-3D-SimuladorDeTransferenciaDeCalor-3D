@@ -172,6 +172,13 @@ filename "Cap4-Projeto.lyx"
 \end_inset
 
 
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap6-Implementacao.lyx"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
