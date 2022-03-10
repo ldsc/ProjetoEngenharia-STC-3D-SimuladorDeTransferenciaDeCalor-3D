@@ -166,7 +166,7 @@ A análise de domínio, como parte da elaboração, tem o objetivo de entender
  e delimitar conceitos fundamentais, sob o qual o software é construído
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Bueno"
+key "Bueno2003"
 literal "false"
 
 \end_inset
@@ -195,10 +195,10 @@ Transferência de calor é uma subárea da termodinâmica, a qual é área da
 
 \begin_layout Standard
 A condução só pode ocorrer em meio material (fluidos ou sólidos), e sem
- que haja moviemento do próprio meio, característica da convecção 
+ que haja movi emento do próprio meio, característica da convecção 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "nussenzveig2018curso"
+key "Nussenzveig2014"
 literal "false"
 
 \end_inset
@@ -215,7 +215,7 @@ Modelagem numérica:
 \begin_layout Standard
 Métodos numéricos são algoritmos desenvolvidos com ajuda da matemática para
  resolver problemas complexos da natureza.
- São utilizados quando uma solução analítica é dificil de ser obtida, ou
+ São utilizados quando uma solução analítica é difícil de ser obtida, ou
  com condições de contorno complexas.
 \end_layout
 
@@ -264,7 +264,7 @@ A taxa de transferência de calor foi modelado empiricamente por Jean B.
  Fourier em 1822 (
 \begin_inset CommandInset citation
 LatexCommand cite
-key "9781108001809"
+key "Fourier1822"
 literal "false"
 
 \end_inset
@@ -274,7 +274,7 @@ literal "false"
  de calor (
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: eq:EquacaoGeralDifusaoTermica"
+reference "eq:equacao-geral"
 plural "false"
 caps "false"
 noprefix "false"
@@ -302,7 +302,7 @@ Portanto, a seguir é apresentada a equação geral da difusão de calor em
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)+\frac{\partial}{\partial y}\left(k\frac{\partial T}{\partial y}\right)+\frac{\partial}{\partial z}\left(k\frac{\partial T}{\partial z}\right)=\rho c_{p}\frac{\partial T}{\partial t}\label{eq:EquacaoGeralDifusaoTermica}
+\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)+\frac{\partial}{\partial y}\left(k\frac{\partial T}{\partial y}\right)+\frac{\partial}{\partial z}\left(k\frac{\partial T}{\partial z}\right)=\rho c_{p}\frac{\partial T}{\partial t}\label{eq:equacao-geral}
 \end{equation}
 
 \end_inset
@@ -350,9 +350,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/tipos de malha.png
+	filename ../imagens/ppt/tipos de malha.png
 	lyxscale 70
-	scale 70
+	width 70text%
 
 \end_inset
 
@@ -624,12 +624,12 @@ Agora, é necessário definir o cálculo das condutividades térmicas nas fronte
  
 \begin_inset CommandInset citation
 LatexCommand cite
-key "rosa2006engenharia"
+key "Rosa2006"
 literal "false"
 
 \end_inset
 
-, mas utlizando as equações de calor:
+, mas utilizando as equações de calor:
 \end_layout
 
 \begin_layout Standard
@@ -662,7 +662,7 @@ Isolando a diferença de temperatura:
 A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: fig:Representação-de-condutividade"
+reference "fig:Representação-de-condutividade"
 plural "false"
 caps "false"
 noprefix "false"
@@ -696,7 +696,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/condutividade_Termica.png
+	filename ../imagens/ppt/condutividade_Termica.png
+	width 50text%
 
 \end_inset
 
@@ -793,7 +794,7 @@ k_{r}=\frac{2k_{1}k_{2}}{k_{1}+k_{2}}
  Para isso, é apresentada a Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: fig:Malha-utilizada-para"
+reference "fig:Malha-utilizada-para"
 plural "false"
 caps "false"
 noprefix "false"
@@ -813,7 +814,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/malha.bmp
+	filename ../imagens/malha.bmp
 	lyxscale 70
 	scale 70
 
@@ -870,7 +871,7 @@ A condição de contorno de Neumann define que, nessa região, o objeto não
  Na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: fig:FronteiraNeumann"
+reference "fig:FronteiraNeumann"
 plural "false"
 caps "false"
 noprefix "false"
@@ -889,7 +890,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/fronteira_neumann.png
+	filename ../imagens/ppt/fronteira_neumann.png
+	width 60text%
 
 \end_inset
 
@@ -1004,7 +1006,7 @@ As equações encontradas na Eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: eq:ModelagemFronteiras"
+reference "eq:ModelagemFronteiras"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1017,7 +1019,7 @@ noprefix "false"
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: eq:solucao_neumann"
+reference "eq:solucao_neumann"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1082,11 +1084,11 @@ C_{1}\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}\overset{\nu}{T
 \end_layout
 
 \begin_layout Standard
-Mas, como objetido na Eq.
+Mas, como demonstrado na Eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: eq:solucao_neumann"
+reference "eq:solucao_neumann"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1400,9 +1402,10 @@ O terceiro caso, é o cálculo pela interpolação e, como o nome diz, calcula
 \end_layout
 
 \begin_layout Standard
-Assim é finalizada as demonstrações físico-numérica do problema da difusão
+Assim, é finalizada as demonstrações físico-numérica do problema da difusão
  térmica.
- A partir de agora, será analisado o paralelismo/multithreading
+ A partir de agora, será elaborado o paralelismo/multithreading, e a renderizaçã
+o 3D.
 \end_layout
 
 \begin_layout Subsection
@@ -1413,7 +1416,7 @@ Paralelismos/multi-thread
 Os chips de processadores atuais, são constituídos por vários processadores
  menores, o que permite que um mesmo processador consiga realizar tarefas
  distintas.
- A idéia é separar tarefas distintas, para que um processador não fique
+ A ideia é separar tarefas distintas, para que um processador não fique
  travado em uma única tarefa.
  
 \end_layout
@@ -1422,8 +1425,8 @@ Os chips de processadores atuais, são constituídos por vários processadores
 Uma analogia para melhorar a explicação é a dos estudantes.
  Uma sala cheia de estudantes, recebe uma tarefa de resolver uma lista de
  exercícios.
- Se todos os exercícios forem resolvidas por um único aluno, levará um tempo
- muito grande para terminarem a tarefa (caso sem paralelismo).
+ Se todos os exercícios forem resolvidas por um único aluno, levará muito
+ tempo para terminar a tarefa (caso sem paralelismo).
  Se os alunos dividirem as tarefas entre si, ela será resolvida muito mais
  rapidamente.
  
@@ -1441,7 +1444,7 @@ Sem paralelismo: uma única thread do processador resolve todos os cálculos.
 \begin_layout Enumerate
 Paralelismo por grid: cada thread resolve uma camada do objeto.
  Possuí certa otimização em relação ao anterior, mas, se só existir objeto
- em uma camada, outras threads ficam osciosas.
+ em uma camada, outras threads ficam ociosas.
 \end_layout
 
 \begin_layout Enumerate
@@ -1450,7 +1453,17 @@ Paralelismo total: todas as threads do processador resolvem os cálculos
 \end_layout
 
 \begin_layout Standard
-A figura ilustra melhor esses casos
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Figura-threads"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ ilustra melhor esses três casos.
 \begin_inset Float figure
 placement H
 wide false
@@ -1459,15 +1472,8 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset CommandInset label
-LatexCommand label
-name "fig_threads_exemplo"
-
-\end_inset
-
-
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/threads.png
+	filename ../imagens/threads.png
 	lyxscale 70
 	scale 70
 
@@ -1482,6 +1488,13 @@ name "fig_threads_exemplo"
 \begin_layout Plain Layout
 Figura ilustrando os três casos de paralelismo implementados para duas camadas
  com 9 células cada, e um processador com duas threads.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Figura-threads"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1528,13 +1541,42 @@ for(int i = NUM_THREAD; i < size; i+=MAX_THREADS)
 
 \end_layout
 
+\begin_layout Standard
+Esse algoritmo diz que a thread 
+\begin_inset Quotes eld
+\end_inset
+
+i
+\begin_inset Quotes erd
+\end_inset
+
+, deverá começar a resolver as equações na posição 
+\begin_inset Quotes eld
+\end_inset
+
+i
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Quando finalizar, deve pular para a posição 
+\begin_inset Quotes eld
+\end_inset
+
+i + números de threads
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsection
 Renderização 3D
 \end_layout
 
 \begin_layout Standard
 Após o usuário desenhar algum objeto no software, pode ser de interesse
- dele observar como seria em renderização 3D.
+ observar como seria em renderização 3D.
  Portanto, é implementado algoritmos para essa renderização.
  
 \end_layout
@@ -1556,15 +1598,8 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset CommandInset label
-LatexCommand label
-name "fig_cubos_3D"
-
-\end_inset
-
-
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/cubos_3D.png
+	filename ../imagens/ppt/cubos_3D.png
 	lyxscale 70
 	scale 70
 
@@ -1582,6 +1617,13 @@ name "fig_cubos_3D"
  O cérebro consegue interpretar que é um objeto 3D, mas fica confuso entre
  os casos (c) e (d).
  
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_cubos_3D"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1595,7 +1637,7 @@ name "fig_cubos_3D"
 \end_layout
 
 \begin_layout Standard
-Todos cantos do cubo da figura 
+Todos cantos do cubo da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_cubos_3D"
@@ -1628,7 +1670,7 @@ noprefix "false"
 
 \end_inset
 
-), a qual permite rotacionar qualquer ponto a partir dos três angulos do
+), a qual permite rotacionar qualquer ponto a partir dos três ângulos do
  observador.
  
 \end_layout
@@ -1686,7 +1728,7 @@ de frente
 \end_inset
 
  que o observador está olhando, mas ligeiramente de lado.
- Mesmo que o objeto cubo tenha aresta de 3 centimetros.
+ Mesmo que o objeto cubo tenha aresta de 3 centímetros.
 \begin_inset Float figure
 placement H
 wide false
@@ -1695,15 +1737,8 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset CommandInset label
-LatexCommand label
-name "fig_cubos_3D_screen"
-
-\end_inset
-
-
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/cubo_3D_points_rotations.png
+	filename ../imagens/ppt/cubo_3D_points_rotations.png
 
 \end_inset
 
@@ -1716,6 +1751,12 @@ name "fig_cubos_3D_screen"
 \begin_layout Plain Layout
 (a) o cubo está com ângulos nulos.
  (b) ângulo x e y estão com valor de 0.1 radianos.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_cubos_3D_screen"
+
+\end_inset
+
  
 \end_layout
 
@@ -1770,7 +1811,7 @@ name "fig_cubos_3D_triangles"
 
 
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/cubo_3D_points_rotations_triangles.png
+	filename ../imagens/ppt/cubo_3D_points_rotations_triangles.png
 
 \end_inset
 
@@ -1926,7 +1967,7 @@ name "fig_normal"
 
 
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/normal.png
+	filename ../imagens/ppt/normal.png
 
 \end_inset
 
@@ -2058,7 +2099,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama de pacotes.png
+	filename ../imagens/Diagrama de pacotes.png
 	lyxscale 25
 	width 85text%
 

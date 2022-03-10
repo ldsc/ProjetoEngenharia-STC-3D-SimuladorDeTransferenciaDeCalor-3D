@@ -393,7 +393,7 @@ A seguir, é apresentado o diagrama de sequênccia geral, conforme o exemplo
  do caso de uso da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: cap:Diagrama-caso-uso-geral"
+reference "fig:Diagrama-de-sequencia-geral"
 plural "false"
 caps "false"
 noprefix "false"
@@ -414,7 +414,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../imagens/Diagrama de sequencia geral.png
-	lyxscale 85
+	lyxscale 20
 	width 100text%
 
 \end_inset
@@ -458,7 +458,7 @@ A seguir, é apresentado o diagrama de sequênia específico, conforme ilustrado
  na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: cap:Diagrama-de-caso-de-uso-especifico:Titulo"
+reference "fig:Diagrama-de-sequencia-especifico"
 plural "false"
 caps "false"
 noprefix "false"
@@ -476,7 +476,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../imagens/Diagrama de sequencia especifica.png
-	lyxscale 85
+	lyxscale 20
 	width 100text%
 
 \end_inset
@@ -565,7 +565,7 @@ O diagrama de comuniacção tem como objetivo, apresentar as interações dos
 O diagrama de comuniação do caso de uso geral é apresentado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: cap:Diagrama-de-comunicação"
+reference "cap:Diagrama-de-comunicação"
 plural "false"
 caps "false"
 noprefix "false"
@@ -652,7 +652,17 @@ name "subsec:diagrama de estados"
 \begin_layout Standard
 O diagrama de máquina de estado foca em analisar os estados de uma classe
  desde o momento de sua criação, até sua destruição.
- 
+ A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-maquina-de-estado"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ mostra a máquina de estado para a classe CSimuladorTermico.
 \end_layout
 
 \begin_layout Standard
@@ -703,7 +713,17 @@ Diagrama de atividades
 \end_layout
 
 \begin_layout Standard
-No diagrama de atividades, é apresentado em detalhes uma atividade específica.
+No diagrama de atividades apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-atividades"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, é mostrado em detalhes uma atividade específica.
  Para o presente caso, será apresentado o diagrama de atividades da classe
  CRender3D.h, divido à complexidade de renderização 3D.
 \end_layout

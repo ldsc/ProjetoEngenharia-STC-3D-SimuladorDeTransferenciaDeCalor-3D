@@ -141,54 +141,10 @@ thechapter - Implementação}
 \end_layout
 
 \begin_layout Standard
-Neste capítulo do projeto de engenharia apresentamos os códigos fonte que
- foram desenvolvidos.
-\end_layout
-
-\begin_layout Description
-Nota: os códigos devem ser documentados usando padrão 
-\series bold
-javadoc
-\series default
-.
- Posteriormente usar o programa 
-\series bold
-doxygen 
-\series default
-para gerar a documentação no formato html.
+Neste capítulo, são apresentados os códigos fonte implementados.
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Veja informações gerais aqui 
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.doxygen.org/"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Veja exemplo aqui 
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
 \begin_layout Section
 Código fonte
 \begin_inset CommandInset label
@@ -566,25 +522,6 @@ color{mymauve}},
 \begin_layout Plain Layout
 
 }
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Nota importante: as listagens, arquivos .h .cpp, devem ser salvas usando formato
- ISO 8859-1, que é um formato internacional para línguas latinas (o que
- inclui o portugues).
- Se os arquivos forem salvos no formato UTF-8 alguns caracteres de acentuação
- irão aparecer errados.
-\end_layout
-
-\begin_layout Plain Layout
-Se o arquivo já existe, você pode mudar a codificação no Kate/Gedit indo
- em SALVAR-COMO, e selecionando o formato ISO 8859-1.
 \end_layout
 
 \end_inset

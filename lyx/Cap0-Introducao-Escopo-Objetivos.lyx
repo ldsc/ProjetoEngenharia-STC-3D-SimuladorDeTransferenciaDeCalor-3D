@@ -1001,28 +1001,6 @@ today}
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Substitua "SeuNomeAqui" por seu nome e sobrenome
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Jamais retire o 
-\backslash
-today ele vai colocar data no material impresso
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -1044,7 +1022,7 @@ O estudo do calor, é uma das principais áreas da física.
  como Newton e Fourier
 \begin_inset CommandInset citation
 LatexCommand cite
-key "CHENG;"
+key "Fourier1822"
 literal "false"
 
 \end_inset
@@ -1060,7 +1038,7 @@ Na indústria do petróleo, esse problema é analisado cuidadosamente em todas
  de 210ºC, a formação de grafite 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "thomas2001fundamentos"
+key "Thomas2004"
 literal "false"
 
 \end_inset
@@ -1075,7 +1053,7 @@ Na produção, são utilizados trocadores de calor nas plataformas.
  o petróleo no reservatório como método de recuperação avançada 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "rosa2006engenharia"
+key "Rosa2006"
 literal "false"
 
 \end_inset

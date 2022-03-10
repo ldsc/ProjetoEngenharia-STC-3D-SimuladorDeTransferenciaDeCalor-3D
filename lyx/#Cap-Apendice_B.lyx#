@@ -145,9 +145,24 @@ thepage}
 \end_layout
 
 \begin_layout Standard
+Os resultados da simulação podem ser exportados em pdf, onde a primeira
+ página apresenta informações da simulação, juntamente com os gráficos.
+\end_layout
+
+\begin_layout Standard
+Nas páginas a seguir, são apresentados os grids, com um máximo de 6 grids
+ por página.
+\end_layout
+
+\begin_layout Standard
+O objeto 3D do relatório pode ser interpretado como chapas furadas de 
+\end_layout
+
+\begin_layout Standard
 \begin_inset External
 	template PDFPages
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/relatorio_simulacao.pdf
+	filename ../relatorio_simulacao.pdf
+	extra LaTeX "pages=-"
 
 \end_inset
 

@@ -1044,7 +1044,7 @@ O estudo do calor, é uma das principais áreas da física.
  como Newton e Fourier
 \begin_inset CommandInset citation
 LatexCommand cite
-key "CHENG;"
+key "Fourier1822"
 literal "false"
 
 \end_inset
@@ -1060,7 +1060,7 @@ Na indústria do petróleo, esse problema é analisado cuidadosamente em todas
  de 210ºC, a formação de grafite 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "thomas2001fundamentos"
+key "Thomas"
 literal "false"
 
 \end_inset
@@ -1075,7 +1075,7 @@ Na produção, são utilizados trocadores de calor nas plataformas.
  o petróleo no reservatório como método de recuperação avançada 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "rosa2006engenharia"
+key "Rosa"
 literal "false"
 
 \end_inset
@@ -1134,7 +1134,7 @@ name "sec:Objetivos"
 \end_layout
 
 \begin_layout Standard
-O objetido deste projeto de engenharia é desenvolver um programa que resolve
+O objetivo deste projeto de engenharia é desenvolver um programa que resolve
  o problema de transferência de calor, utilizando métodos numéricos, programado
  orientado ao objeto com a linguagem C++, utilizando paralelismos e 
 \shape italic
@@ -1182,49 +1182,19 @@ Backward Time, Centered Space
 Programação em C++: por meio da orientação ao objeto em C++, o problema
  pode ser dividido em classes, paradigma este que melhora o controle e organizaç
 ão do problema, e facilita adaptações e incrementações ao simulador.
- Além disso, essa linguagem possui 
+ Além disso, essa linguagem possui bibliotecas que auxiliam a utilização
+ de paralelismos e 
+\shape italic
+multithreading.
 \end_layout
 
 \begin_layout Itemize
-Objetivo específico
+Interface ao usuário: com integração total ao core do simulador, a interface
+ permite que o usuário tenha liberdade total para modificar as propriedades
+ da simulação.
+ E com a implementação de renderização 3D, é possível observar o objeto
+ de maneira alternativa e integral.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Simulação da transferência de calor de qualquer superfície.
-\end_layout
-
-\begin_layout Itemize
-Programação em C++, utilizando o paradigma de orientação ao objeto, e pacotes
- externos, permitindo modificações e adições no código fonte disponibilizado.
-\end_layout
-
-\begin_layout Itemize
-Métodos numéricos: solução de equações diferenciais da conservação de energia
- por meio de diferenças finitas, e desenvolvimento de algoritmo para resolver
- qualquer problema de fronteira.
-\end_layout
-
-\begin_layout Itemize
-Modelagem física e matemática do problema.
-\end_layout
-
-\begin_layout Itemize
-Simulação com dados de materiais obtidos em laboratório
-\end_layout
-
-\begin_layout Itemize
-Programação com paralelismo
-\end_layout
-
-\begin_layout Itemize
-Gerar gráfico e interface de usuário com software externo.
-\end_layout
-
-\begin_layout Itemize
-Resolver métodos iterativos.
-\end_layout
-
-\end_deeper
 \end_body
 \end_document

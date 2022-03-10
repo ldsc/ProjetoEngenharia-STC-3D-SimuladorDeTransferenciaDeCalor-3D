@@ -37,6 +37,8 @@ public:
     QAction *actionNew;
     QAction *actionExport_pdf;
     QAction *actionImport_material;
+    QAction *actionConfigurar_simula_o;
+    QAction *actionAbout;
     QWidget *centralwidget;
     QPushButton *pushButton;
     QTextBrowser *textBrowser_3;
@@ -92,7 +94,7 @@ public:
     QPushButton *button3D;
     QMenuBar *menubar;
     QMenu *menuFile;
-    QMenu *menuHel;
+    QMenu *menuHelp;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -125,6 +127,10 @@ public:
         QIcon icon4;
         icon4.addFile(QString::fromUtf8(":/fig/new_mat.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionImport_material->setIcon(icon4);
+        actionConfigurar_simula_o = new QAction(MainWindow);
+        actionConfigurar_simula_o->setObjectName(QString::fromUtf8("actionConfigurar_simula_o"));
+        actionAbout = new QAction(MainWindow);
+        actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
@@ -372,17 +378,18 @@ public:
         menubar->setGeometry(QRect(0, 0, 1516, 21));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
-        menuHel = new QMenu(menubar);
-        menuHel->setObjectName(QString::fromUtf8("menuHel"));
+        menuHelp = new QMenu(menubar);
+        menuHelp->setObjectName(QString::fromUtf8("menuHelp"));
         MainWindow->setMenuBar(menubar);
 
         menubar->addAction(menuFile->menuAction());
-        menubar->addAction(menuHel->menuAction());
+        menubar->addAction(menuHelp->menuAction());
         menuFile->addAction(actionNew);
         menuFile->addAction(actionSave);
         menuFile->addAction(actionOpen);
         menuFile->addAction(actionExport_pdf);
         menuFile->addAction(actionImport_material);
+        menuHelp->addAction(actionAbout);
 
         retranslateUi(MainWindow);
 
@@ -397,6 +404,8 @@ public:
         actionNew->setText(QCoreApplication::translate("MainWindow", "New", nullptr));
         actionExport_pdf->setText(QCoreApplication::translate("MainWindow", "Export pdf", nullptr));
         actionImport_material->setText(QCoreApplication::translate("MainWindow", "Import material", nullptr));
+        actionConfigurar_simula_o->setText(QCoreApplication::translate("MainWindow", "Simulation options", nullptr));
+        actionAbout->setText(QCoreApplication::translate("MainWindow", "About", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "Run", nullptr));
         textBrowser_3->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -488,7 +497,7 @@ public:
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
         button3D->setText(QCoreApplication::translate("MainWindow", "3D", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
-        menuHel->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
+        menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
     } // retranslateUi
 
 };

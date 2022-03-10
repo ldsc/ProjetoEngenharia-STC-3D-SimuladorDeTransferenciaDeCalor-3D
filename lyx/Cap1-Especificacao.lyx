@@ -189,12 +189,22 @@ Backward Time Centered Space
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Características básicas do programa
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -277,18 +287,6 @@ Simulador de transferência de calor em objetos 3D com superfícies complexas,
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Características básicas do programa
-\end_layout
 
 \end_inset
 
@@ -1188,7 +1186,31 @@ do software
 
 \end_layout
 
+\begin_layout Subsection
+Diagrama de caso de uso geral
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ do software
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+O diagrama de caso de uso geral da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-caso-uso-geral"
+
+\end_inset
+
+ mostra o usuário desenhando um objeto com material padrão do simulador,
+ escolhendo um ponto de estudo, rodando a simulação, analisando os resultados
+ e salvando o objeto e resultados em pdf.
 \begin_inset Float table
 placement H
 wide false
@@ -1202,7 +1224,7 @@ status open
 Exemplo de caso de uso
 \begin_inset CommandInset label
 LatexCommand label
-name "cap:Exemplo-de-um-caso-de-uso (tabela)"
+name "cap:Exemplo-de-um-caso-de-uso"
 
 \end_inset
 
@@ -1343,35 +1365,9 @@ o ou interpolação.
 
 \end_layout
 
-\begin_layout Subsection
-Diagrama de caso de uso geral
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
- do software
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-O diagrama de caso de uso geral da Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cap:Diagrama-caso-uso-geral"
-
-\end_inset
-
- mostra o usuário desenhando um objeto com material padrão do simulador,
- escolhendo um ponto de estudo, rodando a simulação, analisando os resultados
- e salvando o objeto e resultados em pdf.
-\end_layout
-
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1430,7 +1426,7 @@ status open
 O caso de uso específico na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
+reference "cap:Diagrama-de-caso-de-uso-especifico"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1451,6 +1447,7 @@ O usuário terá a liberdade de comparar seu material com outros padrões do
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1474,7 +1471,7 @@ status open
 Diagrama de caso de uso específico
 \begin_inset CommandInset label
 LatexCommand label
-name "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
+name "cap:Diagrama-de-caso-de-uso-especifico"
 
 \end_inset
 

@@ -150,6 +150,17 @@ mport material, e escolher o arquivo desejado.
  É importante lembrar que os arquivos devem ter o formato que será ensinado
  abaixo, e a extensão do arquivo deve ser '.constante', '.correlacao' ou '.interpol
 acao', conforme o modelo escolhido.
+ a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Como-adicionar-um"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ ilustra o local onde deve ser clicado para adicionar o material.
 \end_layout
 
 \begin_layout Standard
@@ -164,7 +175,7 @@ status open
 \begin_inset Graphics
 	filename ../imagens/importar_material.png
 	lyxscale 30
-	scale 30
+	width 100text%
 
 \end_inset
 
@@ -178,6 +189,13 @@ status open
 Como adicionar um material no simulador.
  Primeiro seleciona Arquivo, Import material.
  Uma janela será aberta, para o usuário escolher o material.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Como-adicionar-um"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -238,15 +256,21 @@ RGBA:
 \begin_layout Plain Layout
 
 \color gray
-/// C1+C2*T 
+Cp:
+\color inherit
+ 2753
 \end_layout
 
 \begin_layout Plain Layout
 
 \color gray
-Cp:
+rho:
 \color inherit
- 2.753 0.000223
+ 747.3
+\end_layout
+
+\begin_layout Plain Layout
+/// k=C0+C1*T-C2*T^2
 \end_layout
 
 \begin_layout Plain Layout
@@ -257,23 +281,17 @@ k:
  76.64 0.2633 0.0002
 \end_layout
 
-\begin_layout Plain Layout
-
-\color gray
-rho:
-\color inherit
- 0.7473 0.0002 0.0000005
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Onde a primeira linha contém o RGBA do material, na linha do Cp, cada valor
- é o valor das respectivas constantes, seguindo o modelo de correlação nas
- linhas comentadas ('///').Método da correlação ou constante
+Onde a primeira linha contém o RGBA do material, a segunda linha contém
+ o valor de Cp, seguindo por rho.
+ Na quarta linha tem um comentário mostrando a equação da correlação utilizada,
+ e na última linha, devem ser inseridos os valores de C0, C1 e C2, respectivamen
+te.
 \end_layout
 
 \begin_layout Section

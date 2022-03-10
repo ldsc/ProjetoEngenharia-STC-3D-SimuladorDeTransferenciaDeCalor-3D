@@ -1,0 +1,527 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package auto
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Documentação 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter - Documentação} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Todo projeto de engenharia precisa ser bem documentado.
+ Neste sentido, apresenta-se neste capítulo a documentação de uso do "software
+ XXXX".
+ Esta documentação tem o formato de uma apostila que explica passo a passo
+ como usar o software.
+ 
+\end_layout
+
+\begin_layout Section
+Documentação do usuário
+\end_layout
+
+\begin_layout Standard
+Descreve-se aqui o manual do usuário, um guia que explica, passo a passo
+ a forma de instalação e uso do software desenvolvido.
+\end_layout
+
+\begin_layout Subsection
+Como instalar o software
+\end_layout
+
+\begin_layout Standard
+Para instalar o software execute o seguinte passo a passo:
+\end_layout
+
+\begin_layout Itemize
+blablabla
+\end_layout
+
+\begin_layout Itemize
+..
+\end_layout
+
+\begin_layout Itemize
+.
+\end_layout
+
+\begin_layout Subsection
+Como rodar o software
+\end_layout
+
+\begin_layout Standard
+Para rodar o software ....blablabla
+\end_layout
+
+\begin_layout Standard
+Veja no Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Teste"
+
+\end_inset
+
+ - Teste, exemplos de uso do software.
+\end_layout
+
+\begin_layout Subsection
+Como utilizar o software
+\end_layout
+
+\begin_layout Standard
+A seguir, será explicado todas funcionalidades da janela do software, o
+ significado delas, e como utilizar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/explicacao_software.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Guia para utilizar o software.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Guia-para-utilizar"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Guia-para-utilizar"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ mostra a janela principal do software e foram listadas 14 grupos de funcionalid
+ades importantes ao usuário.
+\end_layout
+
+\begin_layout Enumerate
+Região onde o usuário desenha o objeto desejado.
+ Para desenhar, deve ser clicado com o botão esquerdo do mouse.
+\end_layout
+
+\begin_layout Enumerate
+Retas e ponto de estudo, a partir dele, serão gerados os quatro gráficos
+ da direita (5-8).
+ Para escolher a posição, o usuário deve clicar com o botão direito do mouse.
+\end_layout
+
+\begin_layout Enumerate
+Região onde o usuário consegue diferenciar os materiais utilizados na simulação.
+\end_layout
+
+\begin_layout Enumerate
+Botões para o usuário navegar entre as camadas.
+ Clicando no 'mais', ele pode criar uma camada.
+ No 'X', pode excluir a camada atual, e as setas são para navegação.
+\end_layout
+
+\begin_layout Enumerate
+Gráfico da temperatura ao longo do tempo.
+ Mostra a temperatura no ponto de estudo escolhido em 3, e é atualizado
+ em toda evolução temporal da simulação.
+\end_layout
+
+\begin_layout Enumerate
+Gráfico da temperatura ao longo das camadas.
+ Como só foi criado uma única camada, o gráfico ficará vazio.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Gráfico da temperatura ao longo da horizontal.
+ Mostra a temperatura ao longo da reta horizontal de estudo.
+\end_layout
+
+\begin_layout Enumerate
+Gráfico da temperatura ao longo da vertical.
+ Mostra a temperatura ao longo da reta vertical de estudo.
+\end_layout
+
+\begin_layout Enumerate
+Gráfico com as propriedades termofísicas ao longo da temperatura.
+ O usuário pode selecionar o material que quer analisar na região esquerda
+ da área destacada.
+\end_layout
+
+\begin_layout Enumerate
+Propriedades do desenho.
+ Aqui o usuário pode escolher se quer apagar o desenho ou não, o formato
+ do pincel, tamanho do pincel, temperatura e material da área desenhada
+ e se é fonte/sumidouro de calor ou não.
+\end_layout
+
+\begin_layout Enumerate
+Propriedades da simulação.
+ Aqui o usuáro pode configurar o tamanho da malha (dx), a distância entre
+ as camadas (dz), o intervalo de tempo (dt), e os diversos tipos de velocidade
+ da simulação: sem paralelismo, paralelismo por grid, paralelismo total
+ (este último é o mais rápido, e é a escolha padrão)
+\end_layout
+
+\begin_layout Enumerate
+Botão para iniciar a janela com a renderização 3D.
+ Para navegar nessa janela, são listados os seguintes botões:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Espaço: muda a cor entre temperatura ou materiais.
+\end_layout
+
+\begin_layout Enumerate
+Pg Up: zoom in.
+\end_layout
+
+\begin_layout Enumerate
+Pg Down: zoom out.
+\end_layout
+
+\begin_layout Enumerate
+w/a/s/d: configura o ângulo do objeto.
+\end_layout
+
+\begin_layout Enumerate
+setas: move o objeto na janela.
+\end_layout
+
+\begin_layout Enumerate
+mouse: mesmas funcionalidades de (d).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Botão para iniciar ou parar a simulação.
+\end_layout
+
+\begin_layout Enumerate
+Área com informações da posição/temperatura/material do desenho à esquerda,
+ e informações da simulação (tempo atual e quanto tempo levou para resolver
+ as iterações para chegar no novo tempo)
+\end_layout
+
+\begin_layout Section
+Documentação para desenvolvedor
+\end_layout
+
+\begin_layout Standard
+Nesta seção, é apresentado informações para desenvolvedores, como a documentação
+ em html, e a listagem de algumas dependências específicas.
+\end_layout
+
+\begin_layout Standard
+A documentação em html foi gerada utilizando o 
+\shape italic
+software
+\shape default
+ Doxygen, como mostrada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Logo-e-documentação"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, disponível em https://www.doxygen.nl/download.html;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/doxygen.PNG
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Logo e documentação do 
+\shape italic
+software
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Logo-e-documentação"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ao clicar sobre qualquer item da listagem acima, será possível analisar
+ o código daquele arquivo, como mostrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Logo-e-documentação-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/doxygen_classe.PNG
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Código fonte da classe CSimuladorTemperatura, no Doxygen
+\shape italic
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Logo-e-documentação-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Dependências
+\end_layout
+
+\begin_layout Standard
+Para compilar o software é necessário atender as seguintes dependências:
+\end_layout
+
+\begin_layout Itemize
+Instalar o compilador g++ da GNU disponível em 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://gcc.gnu.org"
+target "http://gcc.gnu.org"
+literal "false"
+
+\end_inset
+
+.
+ Para instalar no GNU/Linux use o comando 
+\family typewriter
+yum install gcc
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+Biblioteca Qt disponível em https://www.qt.io/download;
+\end_layout
+
+\end_body
+\end_document

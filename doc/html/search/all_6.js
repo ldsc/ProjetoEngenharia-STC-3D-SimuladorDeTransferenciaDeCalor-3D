@@ -13,7 +13,7 @@ var searchData=
   ['getname_10',['getName',['../class_c_material.html#abbfaa37255f5645e9a4db67e9f99b444',1,'CMaterial::getName()'],['../class_c_material_correlacao.html#a26e3f60ad64f111b0aad2829a59b2a81',1,'CMaterialCorrelacao::getName()'],['../class_c_material_interpolacao.html#ab5504b87feab10a21c3d41cb0917677f',1,'CMaterialInterpolacao::getName()']]],
   ['getngrids_11',['getNGRIDS',['../class_c_simulador_temperatura.html#a8c98f4951037d600dc0b58f19f0e48fb',1,'CSimuladorTemperatura']]],
   ['getprops_12',['getProps',['../class_c_simulador_temperatura.html#a44ca68bb32fb61d5d728694ac7663491',1,'CSimuladorTemperatura']]],
-  ['getrgb_13',['getRGB',['../class_c3_d.html#a39a31c71dc3f7a6c492252db1194996c',1,'C3D']]],
+  ['getrgb_13',['getRGB',['../class_c_render3_d.html#a5fb772effe58998bc62fa1b44e8f0172',1,'CRender3D']]],
   ['getsize_14',['getSize',['../class_c_grid.html#a20b90e99ec1b570a8d2ea2524dc4c3b3',1,'CGrid']]],
   ['gettemp_15',['getTemp',['../class_c_grid.html#a0f85646f50e814b9c429fbeb255626a8',1,'CGrid']]],
   ['getthermalconst_16',['getThermalConst',['../class_c_material.html#aa288d854ac975d6a27b219d2b7f20c51',1,'CMaterial::getThermalConst()'],['../class_c_material_correlacao.html#a038d7da14cf24f139e92eecb2c0ee8ac',1,'CMaterialCorrelacao::getThermalConst()'],['../class_c_material_interpolacao.html#a13e5d7d7bf95df5c68047dea9acebda8',1,'CMaterialInterpolacao::getThermalConst()']]],

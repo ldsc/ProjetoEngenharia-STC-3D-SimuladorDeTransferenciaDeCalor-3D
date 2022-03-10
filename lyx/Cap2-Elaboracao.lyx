@@ -166,7 +166,7 @@ A análise de domínio, como parte da elaboração, tem o objetivo de entender
  e delimitar conceitos fundamentais, sob o qual o software é construído
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Bueno"
+key "Bueno2003"
 literal "false"
 
 \end_inset
@@ -198,7 +198,7 @@ A condução só pode ocorrer em meio material (fluidos ou sólidos), e sem
  que haja movi emento do próprio meio, característica da convecção 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "nussenzveig2018curso"
+key "Nussenzveig2014"
 literal "false"
 
 \end_inset
@@ -264,7 +264,7 @@ A taxa de transferência de calor foi modelado empiricamente por Jean B.
  Fourier em 1822 (
 \begin_inset CommandInset citation
 LatexCommand cite
-key "9781108001809"
+key "Fourier1822"
 literal "false"
 
 \end_inset
@@ -274,7 +274,7 @@ literal "false"
  de calor (
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: eq:EquacaoGeralDifusaoTermica"
+reference "eq:equacao-geral"
 plural "false"
 caps "false"
 noprefix "false"
@@ -302,7 +302,7 @@ Portanto, a seguir é apresentada a equação geral da difusão de calor em
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)+\frac{\partial}{\partial y}\left(k\frac{\partial T}{\partial y}\right)+\frac{\partial}{\partial z}\left(k\frac{\partial T}{\partial z}\right)=\rho c_{p}\frac{\partial T}{\partial t}\label{eq:EquacaoGeralDifusaoTermica}
+\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)+\frac{\partial}{\partial y}\left(k\frac{\partial T}{\partial y}\right)+\frac{\partial}{\partial z}\left(k\frac{\partial T}{\partial z}\right)=\rho c_{p}\frac{\partial T}{\partial t}\label{eq:equacao-geral}
 \end{equation}
 
 \end_inset
@@ -352,7 +352,7 @@ status open
 \begin_inset Graphics
 	filename ../imagens/ppt/tipos de malha.png
 	lyxscale 70
-	scale 70
+	width 70text%
 
 \end_inset
 
@@ -624,7 +624,7 @@ Agora, é necessário definir o cálculo das condutividades térmicas nas fronte
  
 \begin_inset CommandInset citation
 LatexCommand cite
-key "rosa2006engenharia"
+key "Rosa2006"
 literal "false"
 
 \end_inset
@@ -662,7 +662,7 @@ Isolando a diferença de temperatura:
 A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: fig:Representação-de-condutividade"
+reference "fig:Representação-de-condutividade"
 plural "false"
 caps "false"
 noprefix "false"
@@ -697,6 +697,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../imagens/ppt/condutividade_Termica.png
+	width 50text%
 
 \end_inset
 
@@ -793,7 +794,7 @@ k_{r}=\frac{2k_{1}k_{2}}{k_{1}+k_{2}}
  Para isso, é apresentada a Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: fig:Malha-utilizada-para"
+reference "fig:Malha-utilizada-para"
 plural "false"
 caps "false"
 noprefix "false"
@@ -849,7 +850,7 @@ name "fig:Malha-utilizada-para"
 
 \begin_layout Standard
 A seguir, é resolvida a última etapa da modelagem do problema, a modelagem
- da condição de fronteira de Neumann
+ da condição de fronteira de Neumann.
 \end_layout
 
 \begin_layout Subsubsection
@@ -870,7 +871,7 @@ A condição de contorno de Neumann define que, nessa região, o objeto não
  Na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: fig:FronteiraNeumann"
+reference "fig:FronteiraNeumann"
 plural "false"
 caps "false"
 noprefix "false"
@@ -890,6 +891,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../imagens/ppt/fronteira_neumann.png
+	width 60text%
 
 \end_inset
 
@@ -1004,7 +1006,7 @@ As equações encontradas na Eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: eq:ModelagemFronteiras"
+reference "eq:ModelagemFronteiras"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1017,7 +1019,7 @@ noprefix "false"
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: eq:solucao_neumann"
+reference "eq:solucao_neumann"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1086,7 +1088,7 @@ Mas, como demonstrado na Eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "DUPLICATA: eq:solucao_neumann"
+reference "eq:solucao_neumann"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1451,7 +1453,17 @@ Paralelismo total: todas as threads do processador resolvem os cálculos
 \end_layout
 
 \begin_layout Standard
-A figura ilustra melhor esses casos
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Figura-threads"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ ilustra melhor esses três casos.
 \begin_inset Float figure
 placement H
 wide false
@@ -1460,13 +1472,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset CommandInset label
-LatexCommand label
-name "fig_threads_exemplo"
-
-\end_inset
-
-
 \begin_inset Graphics
 	filename ../imagens/threads.png
 	lyxscale 70
@@ -1483,6 +1488,13 @@ name "fig_threads_exemplo"
 \begin_layout Plain Layout
 Figura ilustrando os três casos de paralelismo implementados para duas camadas
  com 9 células cada, e um processador com duas threads.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Figura-threads"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1586,13 +1598,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset CommandInset label
-LatexCommand label
-name "fig_cubos_3D"
-
-\end_inset
-
-
 \begin_inset Graphics
 	filename ../imagens/ppt/cubos_3D.png
 	lyxscale 70
@@ -1612,6 +1617,13 @@ name "fig_cubos_3D"
  O cérebro consegue interpretar que é um objeto 3D, mas fica confuso entre
  os casos (c) e (d).
  
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_cubos_3D"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1625,7 +1637,7 @@ name "fig_cubos_3D"
 \end_layout
 
 \begin_layout Standard
-Todos cantos do cubo da figura 
+Todos cantos do cubo da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_cubos_3D"
@@ -1643,12 +1655,13 @@ Portanto, tendo em mãos os pontos das arestas, é multiplicado esses vetores
  com a matriz de rotação do autor 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Herter_1993"
+key "Herter1993"
 literal "false"
 
 \end_inset
 
- mostrada em (
+ mostrada na Eq.
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:matriz_rotacao"
@@ -1658,7 +1671,7 @@ noprefix "false"
 
 \end_inset
 
-), a qual permite rotacionar qualquer ponto a partir dos três ângulos do
+, a qual permite rotacionar qualquer ponto a partir dos três ângulos do
  observador.
  
 \end_layout
@@ -1683,7 +1696,7 @@ sin(\gamma)cos(\beta) &  & sin(\gamma)sin(\beta)sin(\alpha)+cos(\gamma)cos(\alph
 
 \begin_layout Standard
 Ou seja, inicialmente, um cubo de aresta 3 cm, com uma margem de 1 cm, pode
- ser mostrado na tela (monitor) com os pontos do caso (a) da figura 
+ ser mostrado na tela (monitor) com os pontos do caso (a) da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_cubos_3D_screen"
@@ -1762,11 +1775,7 @@ name "fig_cubos_3D_screen"
 Nos desenhos do simulador, cada pixel da figura, é uma célula com propriedades
  que serão calculadas, possuindo material, temperatura e volume.
  Como o usuário pode desenhar por pixel, a renderização 3D deve partir do
- princípio que cada pixel é um 
-\series bold
-potencial
-\series default
- objeto que deve ser renderizado.
+ princípio que cada pixel é um potencial objeto que deve ser renderizado.
  
 \end_layout
 
@@ -1791,13 +1800,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset CommandInset label
-LatexCommand label
-name "fig_cubos_3D_triangles"
-
-\end_inset
-
-
 \begin_inset Graphics
 	filename ../imagens/ppt/cubo_3D_points_rotations_triangles.png
 
@@ -1811,6 +1813,13 @@ name "fig_cubos_3D_triangles"
 
 \begin_layout Plain Layout
 Mesmo desenho da figura anterior, mas agora renderizando a partir de triângulos.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_cubos_3D_triangles"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1947,13 +1956,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset CommandInset label
-LatexCommand label
-name "fig_normal"
-
-\end_inset
-
-
 \begin_inset Graphics
 	filename ../imagens/ppt/normal.png
 
@@ -1968,6 +1970,13 @@ name "fig_normal"
 \begin_layout Plain Layout
 (a) mostra um caso onde a normal é na direção do leitor e (b) mostra um
  caso onde a normal é para dentro da folha.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_normal"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2006,7 +2015,7 @@ j
  da normal.
  Isso serve para ser desenhado primeiro o que está atrás, e depois desenhar
  o que está na frente, sobrescrevendo áreas que deveriam estar ocultas,
- evitando a criação de figuras confusas como no caso (b) da figura 
+ evitando a criação de figuras confusas como no caso (b) da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_cubos_3D"
@@ -2056,7 +2065,7 @@ Pacote de interface ao usuário: utilização da biblioteca Qt, para criar
 Pacote de gráficos: utilização da biblioteca qcustomplot, para montar os
  melhores gráficos para o problema.
  É solicitado ao pacote de malhas os resultados da temperatura.
- Está presente junto com o pacote de interface
+ Está presente junto com o pacote de interface.
 \end_layout
 
 \begin_layout Standard

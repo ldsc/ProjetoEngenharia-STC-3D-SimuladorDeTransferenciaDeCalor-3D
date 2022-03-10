@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentação Simulador de Difusão Térmica: Código-Fonte de C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/listagens/CRender3D.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Documentação Simulador de Difusão Térmica<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_91d72e35a45c9e1755827819cfe5dd5c.html">listagens</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">CRender3D.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_c_render3_d_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CRENDER3D_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CRENDER3D_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QPainter&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QPaintEvent&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QMouseEvent&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_c_simulador_temperatura_8h.html">CSimuladorTemperatura.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>QT_BEGIN_NAMESPACE</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespace_ui.html">   15</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_ui.html">Ui</a> { <span class="keyword">class </span><a class="code hl_class" href="class_c_render3_d.html">CRender3D</a>; }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>QT_END_NAMESPACE</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_c_render3_d.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="class_c_render3_d.html">CRender3D</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    Q_OBJECT</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_function" href="class_c_render3_d.html#a29cd961653c5c43a05d663d9cc7e53ed">CRender3D</a>( QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="class_c_render3_d.html#a29cd961653c5c43a05d663d9cc7e53ed">CRender3D</a>( <a class="code hl_class" href="class_c_simulador_temperatura.html">CSimuladorTemperatura</a> *simulador, QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="class_c_render3_d.html#aacf0c1f29c1a397a12008d6b0bc6ca1e">~CRender3D</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_render3_d.html#a2c71a6d2116342f61f5a57d4e615b341">paintEvent</a>(QPaintEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    QVector3D <a class="code hl_function" href="class_c_render3_d.html#ab9c48b251bf96813619d157b6696dc71">rotate</a>(QVector3D a);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    QColor <a class="code hl_function" href="class_c_render3_d.html#a5fb772effe58998bc62fa1b44e8f0172">getRGB</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> min, <span class="keywordtype">double</span> max);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_render3_d.html#a520d96c05cddfef09759f69de6a2bb7f">timerEvent</a>(QTimerEvent *e) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_render3_d.html#a4029c635f5e7ee8e7cce51d0a0c1f492">keyPressEvent</a>(QKeyEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_render3_d.html#a7d30a3ddcfadde4f185523dad1ba660f">mousePressEvent</a>(QMouseEvent *e) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_render3_d.html#a63a8cce34c87f0ec6fb99d178b276a91">mouseReleaseEvent</a>(QMouseEvent *e) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_render3_d.html#a3c3d80a69e91a3476b5d647ecfffda68">mouseMoveEvent</a>(QMouseEvent *e) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_render3_d.html#a1d359e87531da2f12790909baa5847f6">minimizeAngles</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_c_render3_d.html#ad7ef8127282ec449ecc727bb99c52469">   39</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_render3_d.html#ad7ef8127282ec449ecc727bb99c52469">createPoints</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_render3_d.html#ab3960b26a293bf64ffb868b61da8a0c9">createTriangles</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    QVector&lt;bool&gt; <a class="code hl_function" href="class_c_render3_d.html#ae691e6b7d518823ab31f5afcd9c32cfc">edges</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> g);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    QVector&lt;QVector3D&gt; <a class="code hl_function" href="class_c_render3_d.html#aa81e58399ad93457ff86404d249b48a7">createCube</a>(QVector3D point);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    QVector3D <a class="code hl_function" href="class_c_render3_d.html#a3df9d31823a1d282ceaebf15de75abff">produtoVetorial</a>(QVector3D origem, QVector3D a, QVector3D b);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">int</span> size;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">int</span> timerId;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    QImage *mImage;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    QPoint mousePos;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">int</span> size_x, size_y;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">int</span> margin_x = 250;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">int</span> margin_y = 250;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">double</span> angle_x = 0.0;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">double</span> angle_y = 0.0;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">double</span> angle_z = 0.0;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">double</span> distance = 1.0;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">bool</span> mousePress = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">bool</span> corMaterial = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">const</span> <span class="keywordtype">float</span> PI = 3.141592;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">double</span> dx = 1, dy = 1, dz = 2;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_class" href="class_c_simulador_temperatura.html">CSimuladorTemperatura</a> *simulador;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    QVector&lt;QVector3D&gt; drawCube;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    QVector&lt;QVector3D&gt; triangles;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    QVector&lt;QColor&gt; colorsMaterial;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    QVector&lt;QColor&gt; colorsTemperature;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    QVector&lt;QVector&lt;QVector3D&gt;&gt; cube;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    QVector&lt;QVector&lt;bool&gt;&gt; activeEdges;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif </span><span class="comment">// MAINWINDOW_H</span></div>
+<div class="ttc" id="a_c_simulador_temperatura_8h_html"><div class="ttname"><a href="_c_simulador_temperatura_8h.html">CSimuladorTemperatura.h</a></div></div>
+<div class="ttc" id="aclass_c_render3_d_html"><div class="ttname"><a href="class_c_render3_d.html">CRender3D</a></div><div class="ttdef"><b>Definition:</b> CRender3D.h:19</div></div>
+<div class="ttc" id="aclass_c_render3_d_html_a1d359e87531da2f12790909baa5847f6"><div class="ttname"><a href="class_c_render3_d.html#a1d359e87531da2f12790909baa5847f6">CRender3D::minimizeAngles</a></div><div class="ttdeci">void minimizeAngles()</div><div class="ttdef"><b>Definition:</b> CRender3D.cpp:203</div></div>
+<div class="ttc" id="aclass_c_render3_d_html_a29cd961653c5c43a05d663d9cc7e53ed"><div class="ttname"><a href="class_c_render3_d.html#a29cd961653c5c43a05d663d9cc7e53ed">CRender3D::CRender3D</a></div><div class="ttdeci">CRender3D(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> CRender3D.cpp:3</div></div>
+<div class="ttc" id="aclass_c_render3_d_html_a2c71a6d2116342f61f5a57d4e615b341"><div class="ttname"><a href="class_c_render3_d.html#a2c71a6d2116342f61f5a57d4e615b341">CRender3D::paintEvent</a></div><div class="ttdeci">void paintEvent(QPaintEvent *event) override</div><div class="ttdef"><b>Definition:</b> CRender3D.cpp:220</div></div>
+<div class="ttc" id="aclass_c_render3_d_html_a3c3d80a69e91a3476b5d647ecfffda68"><div class="ttname"><a href="class_c_render3_d.html#a3c3d80a69e91a3476b5d647ecfffda68">CRender3D::mouseMoveEvent</a></div><div class="ttdeci">void mouseMoveEvent(QMouseEvent *e) override</div><div class="ttdef"><b>Definition:</b> CRender3D.cpp:194</div></div>
+<div class="ttc" id="aclass_c_render3_d_html_a3df9d31823a1d282ceaebf15de75abff"><div class="ttname"><a href="class_c_render3_d.html#a3df9d31823a1d282ceaebf15de75abff">CRender3D::produtoVetorial</a></div><div class="ttdeci">QVector3D produtoVetorial(QVector3D origem, QVector3D a, QVector3D b)</div><div class="ttdef"><b>Definition:</b> CRender3D.cpp:319</div></div>
+<div class="ttc" id="aclass_c_render3_d_html_a4029c635f5e7ee8e7cce51d0a0c1f492"><div class="ttname"><a href="class_c_render3_d.html#a4029c635f5e7ee8e7cce51d0a0c1f492">CRender3D::keyPressEvent</a></div><div class="ttdeci">void keyPressEvent(QKeyEvent *event) override</div><div class="ttdef"><b>Definition:</b> CRender3D.cpp:145</div></div>
+<div class="ttc" id="aclass_c_render3_d_html_a520d96c05cddfef09759f69de6a2bb7f"><div class="ttname"><a href="class_c_render3_d.html#a520d96c05cddfef09759f69de6a2bb7f">CRender3D::timerEvent</a></div><div class="ttdeci">void timerEvent(QTimerEvent *e) override</div><div class="ttdef"><b>Definition:</b> CRender3D.cpp:287</div></div>
+<div class="ttc" id="aclass_c_render3_d_html_a5fb772effe58998bc62fa1b44e8f0172"><div class="ttname"><a href="class_c_render3_d.html#a5fb772effe58998bc62fa1b44e8f0172">CRender3D::getRGB</a></div><div class="ttdeci">QColor getRGB(double x, double min, double max)</div><div class="ttdef"><b>Definition:</b> CRender3D.cpp:283</div></div>
+<div class="ttc" id="aclass_c_render3_d_html_a63a8cce34c87f0ec6fb99d178b276a91"><div class="ttname"><a href="class_c_render3_d.html#a63a8cce34c87f0ec6fb99d178b276a91">CRender3D::mouseReleaseEvent</a></div><div class="ttdeci">void mouseReleaseEvent(QMouseEvent *e) override</div><div class="ttdef"><b>Definition:</b> CRender3D.cpp:187</div></div>
+<div class="ttc" id="aclass_c_render3_d_html_a7d30a3ddcfadde4f185523dad1ba660f"><div class="ttname"><a href="class_c_render3_d.html#a7d30a3ddcfadde4f185523dad1ba660f">CRender3D::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QMouseEvent *e) override</div><div class="ttdef"><b>Definition:</b> CRender3D.cpp:182</div></div>
+<div class="ttc" id="aclass_c_render3_d_html_aa81e58399ad93457ff86404d249b48a7"><div class="ttname"><a href="class_c_render3_d.html#aa81e58399ad93457ff86404d249b48a7">CRender3D::createCube</a></div><div class="ttdeci">QVector&lt; QVector3D &gt; createCube(QVector3D point)</div><div class="ttdef"><b>Definition:</b> CRender3D.cpp:130</div></div>
+<div class="ttc" id="aclass_c_render3_d_html_aacf0c1f29c1a397a12008d6b0bc6ca1e"><div class="ttname"><a href="class_c_render3_d.html#aacf0c1f29c1a397a12008d6b0bc6ca1e">CRender3D::~CRender3D</a></div><div class="ttdeci">~CRender3D()</div><div class="ttdef"><b>Definition:</b> CRender3D.cpp:58</div></div>
+<div class="ttc" id="aclass_c_render3_d_html_ab3960b26a293bf64ffb868b61da8a0c9"><div class="ttname"><a href="class_c_render3_d.html#ab3960b26a293bf64ffb868b61da8a0c9">CRender3D::createTriangles</a></div><div class="ttdeci">void createTriangles()</div><div class="ttdef"><b>Definition:</b> CRender3D.cpp:109</div></div>
+<div class="ttc" id="aclass_c_render3_d_html_ab9c48b251bf96813619d157b6696dc71"><div class="ttname"><a href="class_c_render3_d.html#ab9c48b251bf96813619d157b6696dc71">CRender3D::rotate</a></div><div class="ttdeci">QVector3D rotate(QVector3D a)</div><div class="ttdef"><b>Definition:</b> CRender3D.cpp:294</div></div>
+<div class="ttc" id="aclass_c_render3_d_html_ad7ef8127282ec449ecc727bb99c52469"><div class="ttname"><a href="class_c_render3_d.html#ad7ef8127282ec449ecc727bb99c52469">CRender3D::createPoints</a></div><div class="ttdeci">void createPoints()</div></div>
+<div class="ttc" id="aclass_c_render3_d_html_ae691e6b7d518823ab31f5afcd9c32cfc"><div class="ttname"><a href="class_c_render3_d.html#ae691e6b7d518823ab31f5afcd9c32cfc">CRender3D::edges</a></div><div class="ttdeci">QVector&lt; bool &gt; edges(int i, int j, int g)</div><div class="ttdef"><b>Definition:</b> CRender3D.cpp:63</div></div>
+<div class="ttc" id="aclass_c_simulador_temperatura_html"><div class="ttname"><a href="class_c_simulador_temperatura.html">CSimuladorTemperatura</a></div><div class="ttdef"><b>Definition:</b> CSimuladorTemperatura.h:17</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdoc">pegar acoes/posicao do mouse</div><div class="ttdef"><b>Definition:</b> CRender3D.h:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

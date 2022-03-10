@@ -196,7 +196,17 @@ Windows 10.
 
 \begin_layout Standard
 Inicialmente, foi desenvolvido um software simples, com uma mistura de janela-te
-rminal.
+rminal mostrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Versão-0.1,-simples"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
  O usuário podia desenhar e simular, mas não tinha muita liberdade para
  escolher e adicionar materiais.
  
@@ -209,11 +219,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/v1.0.png
+	filename ../imagens/v1.0.png
 	lyxscale 60
-	width 100text%
-	height 85theight%
-	keepAspectRatio
+	width 80text%
 
 \end_inset
 
@@ -227,14 +235,17 @@ status open
 Versão 0.1, simples e utilizando a biblioteca 
 \shape italic
 SFML
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Versão-0.1,-simples"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
@@ -245,7 +256,17 @@ SFML
 
 \begin_layout Standard
 Conforme a evolução pedia, foi criada uma segunda janela, a qual replica
- o desenho com as cores do material escolhido.
+ o desenho com as cores do material escolhido, como mostrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Versão-0.2,-simples,"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -258,9 +279,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/v1.1.png
+	filename ../imagens/v1.1.png
 	lyxscale 60
-	scale 60
+	width 80text%
 
 \end_inset
 
@@ -272,6 +293,13 @@ status open
 
 \begin_layout Plain Layout
 Versão 0.2, simples, mas preparando terreno para uma segunda janela dos materiais.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Versão-0.2,-simples,"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -285,7 +313,18 @@ Versão 0.2, simples, mas preparando terreno para uma segunda janela dos materia
 \end_layout
 
 \begin_layout Standard
-Por fim, foi montada a versão final utilizando essa biblioteca.
+Por fim, foi montada a versão final utilizando essa biblioteca, mostrado
+ na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Versão-0.3,-completa"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
  Foi uma versão importantíssima para o aprendizado, pois o usuário não desenhava
  diretamente no software, mas era enviado uma lista de propriedades do desenho
  para o grid e, quando o desenho era atualizado, a biblioteca utilizava
@@ -303,9 +342,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/v1.2.png
+	filename ../imagens/v1.2.png
 	lyxscale 80
-	scale 80
+	width 80text%
 
 \end_inset
 
@@ -317,6 +356,13 @@ status open
 
 \begin_layout Plain Layout
 Versão 0.3, completa e complexa, mas muito lento.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Versão-0.3,-completa"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -342,7 +388,17 @@ Qt
 \begin_layout Standard
 Como o software foi programado com orientação ao objeto, foi rápido a migração,
  modificando, quase que somente, a classe da janela.
- Permitindo criar o software na versão 1.0.
+ Permitindo criar o software na versão 1.0, como na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Versão-1.0,-inicial"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \begin_inset Float figure
 placement H
 wide false
@@ -352,9 +408,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/v2.0.png
+	filename ../imagens/v2.0.png
 	lyxscale 40
-	scale 40
+	width 100text%
 
 \end_inset
 
@@ -370,6 +426,13 @@ Versão 1.0, inicial e incompleta, mas utilizando a biblioteca
 Qt
 \shape default
 .
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Versão-1.0,-inicial"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -390,10 +453,19 @@ Visual Studio
 \shape default
 para o
 \shape italic
- Qt Creator.
- 
+ Qt Creator
 \shape default
-Abaixo é apresentado o ambiente de trabalho.
+, a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Qt-Creator"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ apresenta o ambiente de trabalho.
 \begin_inset Float figure
 placement H
 wide false
@@ -403,9 +475,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/qt_creator.PNG
+	filename ../imagens/qt_creator.PNG
 	lyxscale 25
-	scale 25
+	width 100text%
 
 \end_inset
 
@@ -419,8 +491,13 @@ status open
 
 \shape italic
 Qt Creator
-\shape default
-.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Qt-Creator"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -464,9 +541,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/v2.2.PNG
+	filename ../imagens/v2.2.PNG
 	lyxscale 25
-	scale 25
+	width 100text%
 
 \end_inset
 
@@ -503,7 +580,7 @@ Diagrama de componentes
 
 \begin_layout Standard
 O diagrama de componentes mostra as relações entre todos os componentes
- do software.
+ do software, apresentado na Figura 
 \begin_inset Float figure
 placement H
 wide false
@@ -513,9 +590,49 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama de componentes.png
+	filename ../imagens/Diagrama de componentes.png
+	lyxscale 25
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de componentes
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-componentes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/Diagrama de componentes.png
 	lyxscale 75
-	width 90text%
+	width 100text%
 
 \end_inset
 
@@ -620,7 +737,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama de implementação.png
+	filename ../imagens/Diagrama de implementação.png
 	lyxscale 75
 	width 90text%
 

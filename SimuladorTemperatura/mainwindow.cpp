@@ -605,3 +605,11 @@ void MainWindow::on_button3D_clicked(){
     //CRender3D *newWindow = new CRender3D();
     newWindow->show();
 }
+void MainWindow::on_actionAbout_triggered()
+{
+    QMessageBox *msgBox = new QMessageBox(this);
+    QString msg = "Simulador de Difusão Térmica. \nVersão 1.0.\nCriado por: Nicholas de Almeida Pinto\n09/03/2022";
+    msgBox->setText(msg);
+    int ret = msgBox->exec();
+}
+

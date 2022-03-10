@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass extbook
 \begin_preamble
 \usepackage {graphicx}
@@ -30,16 +32,18 @@
 \language_package auto
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -70,6 +74,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -84,7 +89,10 @@
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
@@ -120,12 +128,9 @@ thechapter - Documentação}
 \end_layout
 
 \begin_layout Standard
-Todo projeto de engenharia precisa ser bem documentado.
- Neste sentido, apresenta-se neste capítulo a documentação de uso do "software
- XXXX".
- Esta documentação tem o formato de uma apostila que explica passo a passo
- como usar o software.
- 
+Neste capítulo é apresentado a documentação do software, mostrando como
+ rodar o software, como utilizar, e a documentação gerada pelo Doxygen.
+ Por fim, é listada as dependências externas.
 \end_layout
 
 \begin_layout Section
@@ -138,42 +143,188 @@ Descreve-se aqui o manual do usuário, um guia que explica, passo a passo
 \end_layout
 
 \begin_layout Subsection
-Como instalar o software
-\end_layout
-
-\begin_layout Standard
-Para instalar o software execute o seguinte passo a passo:
-\end_layout
-
-\begin_layout Itemize
-blablabla
-\end_layout
-
-\begin_layout Itemize
-..
-\end_layout
-
-\begin_layout Itemize
-.
-\end_layout
-
-\begin_layout Subsection
 Como rodar o software
 \end_layout
 
 \begin_layout Standard
-Para rodar o software ....blablabla
+Para rodar o software será necessário a instação do Qt Creator.
+ A partir desse software, será possível abrir o projeto desenvolvido, juntamente
+ com todos os seus códigos.
+\end_layout
+
+\begin_layout Subsection
+Como utilizar o software
 \end_layout
 
 \begin_layout Standard
-Veja no Capítulo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:Teste"
+A seguir, será explicado todas funcionalidades da janela do software, o
+ significado delas, e como utilizar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/explicacao_software.png
+	width 100text%
 
 \end_inset
 
- - Teste, exemplos de uso do software.
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Guia para utilizar o software.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Guia-para-utilizar"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Guia-para-utilizar"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ mostra a janela principal do software e foram listadas 14 grupos de funcionalid
+ades importantes ao usuário.
+\end_layout
+
+\begin_layout Enumerate
+Região onde o usuário desenha o objeto desejado.
+ Para desenhar, deve ser clicado com o botão esquerdo do mouse.
+\end_layout
+
+\begin_layout Enumerate
+Retas e ponto de estudo, a partir dele, serão gerados os quatro gráficos
+ da direita (5-8).
+ Para escolher a posição, o usuário deve clicar com o botão direito do mouse.
+\end_layout
+
+\begin_layout Enumerate
+Região onde o usuário consegue diferenciar os materiais utilizados na simulação.
+\end_layout
+
+\begin_layout Enumerate
+Botões para o usuário navegar entre as camadas.
+ Clicando no 'mais', ele pode criar uma camada.
+ No 'X', pode excluir a camada atual, e as setas são para navegação.
+\end_layout
+
+\begin_layout Enumerate
+Gráfico da temperatura ao longo do tempo.
+ Mostra a temperatura no ponto de estudo escolhido em 3, e é atualizado
+ em toda evolução temporal da simulação.
+\end_layout
+
+\begin_layout Enumerate
+Gráfico da temperatura ao longo das camadas.
+ Como só foi criado uma única camada, o gráfico ficará vazio.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Gráfico da temperatura ao longo da horizontal.
+ Mostra a temperatura ao longo da reta horizontal de estudo.
+\end_layout
+
+\begin_layout Enumerate
+Gráfico da temperatura ao longo da vertical.
+ Mostra a temperatura ao longo da reta vertical de estudo.
+\end_layout
+
+\begin_layout Enumerate
+Gráfico com as propriedades termofísicas ao longo da temperatura.
+ O usuário pode selecionar o material que quer analisar na região esquerda
+ da área destacada.
+\end_layout
+
+\begin_layout Enumerate
+Propriedades do desenho.
+ Aqui o usuário pode escolher se quer apagar o desenho ou não, o formato
+ do pincel, tamanho do pincel, temperatura e material da área desenhada
+ e se é fonte/sumidouro de calor ou não.
+\end_layout
+
+\begin_layout Enumerate
+Propriedades da simulação.
+ Aqui o usuáro pode configurar o tamanho da malha (dx), a distância entre
+ as camadas (dz), o intervalo de tempo (dt), e os diversos tipos de velocidade
+ da simulação: sem paralelismo, paralelismo por grid, paralelismo total
+ (este último é o mais rápido, e é a escolha padrão)
+\end_layout
+
+\begin_layout Enumerate
+Botão para iniciar a janela com a renderização 3D.
+ Para navegar nessa janela, são listados os seguintes botões:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Espaço: muda a cor entre temperatura ou materiais.
+\end_layout
+
+\begin_layout Enumerate
+Pg Up: zoom in.
+\end_layout
+
+\begin_layout Enumerate
+Pg Down: zoom out.
+\end_layout
+
+\begin_layout Enumerate
+w/a/s/d: configura o ângulo do objeto.
+\end_layout
+
+\begin_layout Enumerate
+setas: move o objeto na janela.
+\end_layout
+
+\begin_layout Enumerate
+mouse: mesmas funcionalidades de (d).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Botão para iniciar ou parar a simulação.
+\end_layout
+
+\begin_layout Enumerate
+Área com informações da posição/temperatura/material do desenho à esquerda,
+ e informações da simulação (tempo atual e quanto tempo levou para resolver
+ as iterações para chegar no novo tempo)
 \end_layout
 
 \begin_layout Section
@@ -181,8 +332,133 @@ Documentação para desenvolvedor
 \end_layout
 
 \begin_layout Standard
-Apresenta-se nesta seção a documentação para o desenvolvedor, isto é, informaçõe
-s para usuários que queiram modificar, aperfeiçoar ou ampliar este software.
+Nesta seção, é apresentado informações para desenvolvedores, como a documentação
+ em html, e a listagem de algumas dependências específicas.
+\end_layout
+
+\begin_layout Standard
+A documentação em html foi gerada utilizando o 
+\shape italic
+software
+\shape default
+ Doxygen, como mostrada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Logo-e-documentação"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, disponível em https://www.doxygen.nl/download.html;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/doxygen.PNG
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Logo e documentação do 
+\shape italic
+software
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Logo-e-documentação"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ao clicar sobre qualquer item da listagem acima, será possível analisar
+ o código daquele arquivo, como mostrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Logo-e-documentação-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/doxygen_classe.PNG
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Código fonte da classe CSimuladorTemperatura, no Doxygen
+\shape italic
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Logo-e-documentação-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -199,6 +475,7 @@ Instalar o compilador g++ da GNU disponível em
 LatexCommand href
 name "http://gcc.gnu.org"
 target "http://gcc.gnu.org"
+literal "false"
 
 \end_inset
 
@@ -211,243 +488,7 @@ yum install gcc
 \end_layout
 
 \begin_layout Itemize
-Biblioteca CGnuplot; os arquivos para acesso a biblioteca CGnuplot devem
- estar no diretório com os códigos do software;
-\end_layout
-
-\begin_layout Itemize
-O software 
-\family typewriter
-gnuplot
-\family default
-, disponível no endereço 
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.gnuplot.info/"
-
-\end_inset
-
-, deve estar instalado.
- É possível que haja necessidade de setar o caminho para execução do 
-\family typewriter
-gnuplot
-\family default
-.
- 
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Coloque aqui quaisquer dependências de arquivos com dados
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Coloque aqui quaisquer dependências de softwares ou sistemas externos
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
-Como gerar a documentação usando doxygen
-\end_layout
-
-\begin_layout Standard
-A documentação do código do software deve ser feita usando o padrão JAVADOC,
- conforme apresentada no Capítulo - Documentação, do livro texto da disciplina.
- Depois de documentar o código, use o software 
-\family typewriter
-doxygen 
-\family default
-para gerar a documentação do desenvolvedor no formato html.
- O software 
-\family typewriter
-doxygen
-\family default
- lê os arquivos com os códigos (*.h e *.cpp) e gera uma documentação muito
- útil e de fácil navegação no formato html.
- 
-\end_layout
-
-\begin_layout Itemize
-Veja informações sobre uso do formato JAVADOC em:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html"
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Veja informações sobre o software 
-\family typewriter
-doxygen
-\family default
- em
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.stack.nl/~dimitri/doxygen/"
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-Passos para gerar a documentação usando o 
-\family typewriter
-doxygen
-\family default
-.
-\end_layout
-
-\begin_layout Itemize
-Documente o código usando o formato JAVADOC.
- Um bom exemplo de código documentado é apresentado nos arquivos da biblioteca
- CGnuplot, abra os arquivos 
-\family typewriter
-CGnuplot.h
-\family default
- e 
-\family typewriter
-CGnuplot.cpp
-\family default
- no editor de texto e veja como o código foi documentado.
-\end_layout
-
-\begin_layout Itemize
-Abra um terminal.
-\end_layout
-
-\begin_layout Itemize
-Vá para o diretório onde esta o código.
-\end_layout
-
-\begin_deeper
-\begin_layout LyX-Code
-
-\family typewriter
-cd /caminho/para/seu/codigo
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Peça para o 
-\family typewriter
-doxygen
-\family default
- gerar o arquivo de definições (arquivo que diz para o doxygem como deve
- ser a documentação).
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-O software doxywizard é uma interface gráfica que permite a configuração
- do arquivo de definições (gerado pelo comando doxygen -g).
- 
-\end_layout
-
-\begin_layout Plain Layout
-No GNU/Linux o doxywizard pode ser instaldo com o comando yum install doxygen-do
-xywizard.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout LyX-Code
-
-\family typewriter
-dogygen -g
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Peça para o 
-\family typewriter
-doxygen
-\family default
- gerar a documentação.
-\end_layout
-
-\begin_deeper
-\begin_layout LyX-Code
-
-\family typewriter
-doxygen
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Verifique a documentação gerada abrindo o arquivo html/index.html.
-\end_layout
-
-\begin_deeper
-\begin_layout LyX-Code
-firefox html/index.html
-\end_layout
-
-\begin_layout Standard
-ou
-\end_layout
-
-\begin_layout LyX-Code
-chrome html/index.html
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-Apresenta-se a seguir algumas imagens com as telas das saídas geradas pelo
- software 
-\family typewriter
-doxygen
-\family default
-.
-\end_layout
-
-\begin_layout Description
-Nota: 
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Não perca de vista a visão do todo; do projeto de engenharia como um todo.
- Cada capítulo, cada seção, cada parágrafo deve se encaixar.
- Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos, de ver o todo e suas diferentes partes,
- de modelar processos/sistemas/produtos de engenharia.
+Biblioteca Qt disponível em https://www.qt.io/download;
 \end_layout
 
 \end_body

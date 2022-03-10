@@ -155,6 +155,13 @@ Nas páginas a seguir, são apresentados os grids, com um máximo de 6 grids
 \end_layout
 
 \begin_layout Standard
+O objeto 3D do relatório pode ser interpretado como chapas furadas de cobre,
+ ferro e alumínio, com fontes de calor de níquel em vários pontos de cada
+ chapa.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset External
 	template PDFPages
 	filename ../relatorio_simulacao.pdf
