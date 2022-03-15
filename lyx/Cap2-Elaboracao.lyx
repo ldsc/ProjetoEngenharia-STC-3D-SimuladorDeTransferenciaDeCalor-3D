@@ -164,6 +164,7 @@ Análise de domínio
 \begin_layout Standard
 A análise de domínio, como parte da elaboração, tem o objetivo de entender
  e delimitar conceitos fundamentais, sob o qual o software é construído
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bueno2003"
@@ -195,7 +196,7 @@ Transferência de calor é uma subárea da termodinâmica, a qual é área da
 
 \begin_layout Standard
 A condução só pode ocorrer em meio material (fluidos ou sólidos), e sem
- que haja movi emento do próprio meio, característica da convecção 
+ que haja movi emento do próprio meio, característica da convecção (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Nussenzveig2014"
@@ -203,7 +204,7 @@ literal "false"
 
 \end_inset
 
-.
+).
 \end_layout
 
 \end_deeper
@@ -1366,7 +1367,7 @@ handbook Thermophysical Properties
 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "thermophysical"
+key "thermophysical2008"
 literal "false"
 
 \end_inset

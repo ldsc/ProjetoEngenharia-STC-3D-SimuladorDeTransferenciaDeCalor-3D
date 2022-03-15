@@ -102,9 +102,7 @@ status open
 \backslash
 lhead{
 \backslash
-thechapter
-\backslash
-space - Análise Orientada a Objeto}  
+thechapter - Análise Orientada a Objeto}  
 \end_layout
 
 \end_inset
@@ -675,9 +673,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../imagens/diagrama-de-maquina-estado.png
+	filename ../imagens/diagrama-de-maquina-de-estado.png
 	lyxscale 30
-	width 85text%
+	width 100text%
 
 \end_inset
 
@@ -763,7 +761,7 @@ status open
 \begin_inset Graphics
 	filename ../imagens/Diagrama de atividades.png
 	lyxscale 30
-	width 85text%
+	width 100text%
 
 \end_inset
 
