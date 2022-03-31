@@ -865,14 +865,6 @@ O título deve ser o mais claro possível, não deixando dúvidas sobre o assunt
 \align center
 
 \size large
-PROJETO ENGENHARIA
-\begin_inset Newline newline
-\end_inset
-
-SOFTWARE 
-\begin_inset Newline newline
-\end_inset
-
 SIMULADOR DE DIFUSÃO TÉRMICA 3D
 \begin_inset Newline newline
 \end_inset
@@ -1001,28 +993,6 @@ today}
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Substitua "SeuNomeAqui" por seu nome e sobrenome
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Jamais retire o 
-\backslash
-today ele vai colocar data no material impresso
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -1037,7 +1007,24 @@ name "sec:Escopo-do-Problema"
 \end_layout
 
 \begin_layout Standard
-O estudo do calor, é uma das principais áreas da física.
+Transferência de calor, é uma das principais áreas da física
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Disponível em <
+\begin_inset CommandInset href
+LatexCommand href
+target "http://lattes.cnpq.br/documents/11871/24930/TabeladeAreasdoConhecimento.pdf/d192ff6b-3e0a-4074-a74d-c280521bd5f7"
+
+\end_inset
+
+>
+\end_layout
+
+\end_inset
+
+.
  Seu comportamento foi especulado desde os primeiros filósofos, com a grande
  ascensão no período de 1600 e 1800, posteriomente, dominado.
  Contou com a contribuição científica de diversos grandes nomes da física,
@@ -1060,7 +1047,7 @@ Na indústria do petróleo, esse problema é analisado cuidadosamente em todas
  de 210ºC, a formação de grafite 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Thomas"
+key "Thomas2004"
 literal "false"
 
 \end_inset
@@ -1075,7 +1062,7 @@ Na produção, são utilizados trocadores de calor nas plataformas.
  o petróleo no reservatório como método de recuperação avançada 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Rosa"
+key "Rosa2006"
 literal "false"
 
 \end_inset
@@ -1084,36 +1071,36 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Desta forma, torna-se claro a importância do estudo da transferência de
- calor em regime transiente (quando a temperatura varia com o tempo), em
- objetos 3D com geometria complexa, e constituído por diversos materiais
- com propriedades físicas variáveis.
+Desta forma, torna-se clara a importância do estudo da condução ou difusão
+ de calor em regime transiente, em objetos 3D com geometria complexa, e
+ constituído por diversos materiais com propriedades físicas variáveis.
 \end_layout
 
 \begin_layout Standard
-A solução analítica do problema do calor é possível para casos unidimensionais,
- com condições de contorno e iniciais bem definidas, e com propriedades
- dos materiais, constantes.
- Para resolver o problema do parágrafo anterior, é necessário a utilização
- de modelagem numérica computacional.
+Soluções analíticas para a condução de calor em regime transiente é obtida
+ para casos unidimensionais, com condições de contorno e iniciais bem definidas,
+ e com propriedades dos materiais, constantes.
+ Para resolver o problema do anterior, com objeto 3D, regime transiente
+ e com geometriz complexa, é necessário a utilização de modelagem numérica
+ computacional.
 \end_layout
 
 \begin_layout Standard
 Conforme a complexidade do problema for evoluindo, a modelagem numérica
- exige cada vez mais do poder de processamento dos computadores, os quais,
+ exige cada vez mais poder de processamento dos computadores, os quais,
  atualmente, possuem diversos núcleos lógicos capazes de resolverem cálculos
  numéricos independentemente, acelerando as simulações.
  
 \end_layout
 
 \begin_layout Standard
-Para permitir as divisões das tarefas para os processadores, é utilizado
+Para permitir as divisões das tarefas para os processadores, é utilizada
  uma linguagem de programação de baixo nível, com comandos mais próximos
  da linguagem da máquina.
 \end_layout
 
 \begin_layout Standard
-Por fim, o ensino de engenharia pode ser aperfeiçoada com a utilização de
+Por fim, o ensino de engenharia pode ser aperfeiçoado com a utilização de
  
 \shape italic
 softwares
@@ -1134,8 +1121,8 @@ name "sec:Objetivos"
 \end_layout
 
 \begin_layout Standard
-O objetivo deste projeto de engenharia é desenvolver um programa que resolve
- o problema de transferência de calor, utilizando métodos numéricos, programado
+O objetivo deste projeto de engenharia é desenvolver um programa que simula
+ o processo de condução tridimensional de calor, n métodos numéricos, programado
  orientado ao objeto com a linguagem C++, utilizando paralelismos e 
 \shape italic
 multithreading,

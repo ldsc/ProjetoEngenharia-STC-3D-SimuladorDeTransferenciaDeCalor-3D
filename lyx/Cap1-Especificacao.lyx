@@ -164,27 +164,26 @@ O
 \shape italic
 software
 \shape default
- Simulador de difusão térmica 3D, é um software programado sob o Paradigma
- Orientado ao Objeto em C++, capaz de simular a transferência de calor em
- objetos tridimensionais, com formas e superfícies complexas e definidas
- pelo usuário, o qual também pode definir quais materiais constituem o objeto,
- e qual o método utilizado para calcular as propriedades termofísicas para
- cada material.
+ denominado Simulador de Difusão Térmica 3D (SDT-3D), é um programado sob
+ o paradigma orientado ao objeto em C++, capaz de simular a condução de
+ calor em objetos tridimensionais, com formas e superfícies complexas e
+ definidas pelo usuário, o qual também pode definir quais materiais constituem
+ o objeto, e qual o método utilizado para calcular as propriedades termofísicas
+ para cada material.
  Também é permitido a renderização 3D do objeto, e salvar os resultados
- em formato pdf.
+ em arquivo no formato pdf.
 \end_layout
 
 \begin_layout Standard
-Para resolver o problema da transferência do calor, é modelado a equação
- diferencial por diferenças finitas implícitas, especificamente pelo método
- BTCS (
+A equação diferencial de condução de calor é modelada por diferenças finitas,
+ especificamente pelo método BTCS (
 \shape italic
 Backward Time Centered Space
 \shape default
-), que é incondicionalmente estável.
+), um método implícito e incondicionalmente estável.
  As condições iniciais, são inseridas pelo usuário, e as condições de contorno
- externo são definitas por regiões que não trocam calor com o meio externo
- (condição de contorno de Neumann).
+ externas são definidas por regiões que não trocam calor com o meio externo,
+ isto é, fronteiras adiabáticas.
 \end_layout
 
 \begin_layout Standard
@@ -278,9 +277,11 @@ Missão
 \begin_inset Text
 
 \begin_layout Plain Layout
-Simulador de transferência de calor em objetos 3D com superfícies complexas,
- formado por materiais com propriedades depententes da temperatura.
- E auxiliar no ensino das diversas disciplinas abrangidas por este trabalho.
+Simulador de calor em objetos 3D com superfícies complexas, formado por
+ materiais com propriedades depententes da temperatura.
+ E auxiliar no ensino das diversas disciplinas abrangidas por este trabalho,
+ como calculo numérico, modelagem computacional, programação arientada ao
+ objeto em C++, física e matemática.
 \end_layout
 
 \end_inset
@@ -313,18 +314,22 @@ especificação
 \end_layout
 
 \begin_layout Standard
-Deseja-se desenvolver um software com interface gráfica amigável ao usuário,
- onde seja possível desenhar o objeto 3D, por meio de perfis, com o usuário
- escolhendo a temperatura e o material.
- A simulação é governada pela Equação da Difusão Térmica, a qual é modelada
- por diferenças finitas, pelo método BTCS, com fronteiras seladas.
+Deseja-se desenvolver um 
+\shape italic
+software
+\shape default
+ com interface gráfica amigável ao usuário, onde seja possível desenhar
+ o objeto 3D, por meio de perfis 2D, com o usuário escolhendo a temperatura
+ e o material.
+ A simulação é governada pela equação da difusão térmica, a qual é modelada
+ por diferenças finitas, pelo método BTCS, com fronteiras adiabáticas.
  
 \end_layout
 
 \begin_layout Standard
 Na dinâmica de execução, o usuário deverá escolher o tamanho do objeto,
  a temperatura, em qual perfil está desenhando, o material e suas propriedades
- termofísicas, e um ponto de monitoramento e estudo.
+ termofísicas, e um ponto de monitoramento da temperatura.
  O usuário terá a liberdade para utilizar um dentre três métodos para obter
  as propriedades dos materiais: propriedades constantes, correlação e interpolaç
 ão.
@@ -333,14 +338,19 @@ Na dinâmica de execução, o usuário deverá escolher o tamanho do objeto,
 \begin_layout Standard
 Após os desenhos do usuário e colocado o simulador para rodar, o simulador
  irá calcular a temperatura iterativamente em cada ponto, e só passará para
- o próximo tempo se o erro entre iterações for menor que um valor aceitável.
+ o próximo passo de tempo se o erro entre iterações for menor que um valor
+ aceitável.
  Posteriormente, o desenho será atualizado e mostrará a nova distribuição
  de temperatura, e plotará os gráficos com os novos valores calculados.
 \end_layout
 
 \begin_layout Standard
-O software será programado em C++, com paradigma orientado ao objeto, utilizando
- a biblioteca 
+O 
+\shape italic
+software
+\shape default
+ será programado em C++, com paradigma orientado ao objeto, utilizando a
+ biblioteca 
 \shape italic
 Qt
 \shape default
@@ -370,11 +380,11 @@ Dados relativos ao material:
 \begin_inset Formula $c_{p}$
 \end_inset
 
- - capacidade térmica 
-\begin_inset Formula $\left[J/g\cdot K\right]$
+ - calor específico a pressão constante 
+\begin_inset Formula $\left[J/kg\cdot K\right]$
 \end_inset
 
-
+;
 \end_layout
 
 \begin_layout Itemize
@@ -385,7 +395,7 @@ Dados relativos ao material:
 \begin_inset Formula $\left[W/m\cdot K\right]$
 \end_inset
 
-
+;
 \end_layout
 
 \begin_layout Itemize
@@ -396,7 +406,7 @@ Dados relativos ao material:
 \begin_inset Formula $\left[kg/m^{3}\right]$
 \end_inset
 
-
+.
 \end_layout
 
 \end_deeper
@@ -409,7 +419,7 @@ Dados relativos ao objeto
 \begin_inset Formula $\Delta x,\Delta y$
 \end_inset
 
- - distância entre os centros dos blocos, valor inicial: 1px=0.0026m 
+ - distância entre os centros dos blocos, valor inicial: 1px=0.0026 m 
 \begin_inset Formula $[m]$
 \end_inset
 
@@ -420,7 +430,7 @@ Dados relativos ao objeto
 \begin_inset Formula $\Delta z$
 \end_inset
 
- - distância entre perfis, valor inicial: 0.05m 
+ - distância entre perfis, valor inicial: 0.05 m 
 \begin_inset Formula $[m]$
 \end_inset
 
@@ -462,7 +472,11 @@ Variáveis usadas na simulação:
 \begin_inset Formula $g$
 \end_inset
 
- - qual grid/perfil está sendo analisado;
+ - qual 
+\shape italic
+grid
+\shape default
+/perfil está sendo analisado;
 \end_layout
 
 \begin_layout Itemize
@@ -470,6 +484,13 @@ Variáveis usadas na simulação:
 \end_inset
 
  - tempo atual;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n$
+\end_inset
+
+ - índice do passo de tempo;
 \end_layout
 
 \begin_layout Itemize
@@ -603,8 +624,9 @@ RF-03
 
 \begin_layout Plain Layout
 O usuário tem a liberdade de escolher o material em cada ponto do objeto,
- juntamente com o método para obter as propriedades termofísicas.
- 
+ juntamente com o método para obter a condutividade térmica.
+ Novos materiais podem ser adicionados pelo usuário, e a condutividade térmica
+ pode ser calculados por correlação ou interpolação linear.
 \end_layout
 
 \end_inset
@@ -783,9 +805,6 @@ O usuário poderá salvar os resultados da simulação em um arquivo pdf.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -799,46 +818,6 @@ O usuário poderá salvar os resultados da simulação em um arquivo pdf.
 
 \series bold
 RF-08
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-O usuário pode adicionar materiais no simulador, e escolhar a forma de calcular
- suas propriedades termofísicas: constante, correlação ou interpolação.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11.5cm">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-RF-09
 \end_layout
 
 \end_inset
@@ -878,7 +857,7 @@ O usuário poderá comparar as propriedades termofísicas dos materiais.
 \begin_layout Plain Layout
 
 \series bold
-RF-10
+RF-09
 \end_layout
 
 \end_inset
@@ -918,6 +897,45 @@ O usuário poderá acompanhar a evolução da temperatura em uma superfície
 \begin_layout Plain Layout
 
 \series bold
+RF-10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O usuário poderá visualizar o objeto 3D desenhado em uma janela específica.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
 RF-11
 \end_layout
 
@@ -927,7 +945,8 @@ RF-11
 \begin_inset Text
 
 \begin_layout Plain Layout
-O usuário poderá visualizar o objeto 3D desenhado em uma janela separada.
+O usuário pode definir as propriedades físicas da simulação, como intervalo
+ de tempo e espaço.
 \end_layout
 
 \end_inset
@@ -1119,49 +1138,6 @@ A interface gráfica deve ser desenvolvida pela biblioteca Qt.
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11cm">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-RNF-05
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-O usuário pode definir as propriedades físicas da simulação, como intervalo
- de tempo e espaço.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Casos de uso
 \begin_inset Index idx
@@ -1201,7 +1177,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-O diagrama de caso de uso geral da Figura 
+O diagrama de caso de uso geral da Fig.
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-caso-uso-geral"
@@ -1209,8 +1186,8 @@ reference "cap:Diagrama-caso-uso-geral"
 \end_inset
 
  mostra o usuário desenhando um objeto com material padrão do simulador,
- escolhendo um ponto de estudo, rodando a simulação, analisando os resultados
- e salvando o objeto e resultados em pdf.
+ escolhendo um ponto de estudo, executando a simulação, analisando os resultados
+ e salvando o objeto e os resultados em pdf.
 \begin_inset Float table
 placement H
 wide false
@@ -1310,7 +1287,7 @@ Etapas:
 
 \begin_layout Plain Layout
 2.
- Desenhar o objeto desenhado
+ Desenhar o objeto
 \end_layout
 
 \begin_layout Plain Layout
@@ -1320,7 +1297,7 @@ Etapas:
 
 \begin_layout Plain Layout
 4.
- Rodar a simulação e analisar resultados
+ Executar a simulação e analisar resultados
 \end_layout
 
 \begin_layout Plain Layout
@@ -1388,7 +1365,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de caso de uso – Caso de uso geral
+Diagrama de caso de uso geral
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-caso-uso-geral"
