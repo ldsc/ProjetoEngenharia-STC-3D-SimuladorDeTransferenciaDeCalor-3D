@@ -148,13 +148,13 @@ name "sec:Elaboração"
 \end_layout
 
 \begin_layout Standard
-Neste capítulo é apresentado a elaboração do programa, constituído pelo
+Neste capítulo é apresentada a elaboração do programa, constituído pelo
  desenvolvimento teórico, modelagem numérica, identificação de pacotes e
  algoritmos adicionais relacionados ao 
 \shape italic
 software
 \shape default
-.
+ desenvolvido.
 \end_layout
 
 \begin_layout Section
@@ -163,7 +163,11 @@ Análise de domínio
 
 \begin_layout Standard
 A análise de domínio, como parte da elaboração, tem o objetivo de entender
- e delimitar conceitos fundamentais, sob o qual o software é construído
+ e delimitar conceitos fundamentais, sob os quais o 
+\shape italic
+software
+\shape default
+ é construído 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bueno2003"
@@ -176,7 +180,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-O presente trabalho pode ser dividido em quatro conceitos fundamentais:
+O presente trabalho envolve quatro conceitos fundamentais:
 \end_layout
 
 \begin_layout Enumerate
@@ -185,8 +189,7 @@ Transferência de calor:
 
 \begin_deeper
 \begin_layout Standard
-Transferência de calor é uma subárea da termodinâmica, a qual é área da
- física.
+Transferência de calor é uma das áreas clássicas de fenomenologia da física.
  É responsável por tratar das três formas possíveis de transferência de
  calor: condução, convecção e radiação.
  Este projeto trata especificamente da condução de calor.
@@ -195,7 +198,7 @@ Transferência de calor é uma subárea da termodinâmica, a qual é área da
 
 \begin_layout Standard
 A condução só pode ocorrer em meio material (fluidos ou sólidos), e sem
- que haja movi emento do próprio meio, característica da convecção 
+ que haja moviemento do próprio meio, característica da convecção (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Nussenzveig2014"
@@ -203,7 +206,7 @@ literal "false"
 
 \end_inset
 
-.
+).
 \end_layout
 
 \end_deeper
@@ -243,7 +246,10 @@ Renderização 3D:
 
 \begin_deeper
 \begin_layout Standard
-Renderização 3D é uma área com grande ascensão na indústria de jogos e softwares
+Renderização 3D é uma área com grande ascensão na indústria de jogos e 
+\shape italic
+softwares
+\shape default
  de engenharia profissional, torna prático que usuários consigam visualizar
  o objeto sob qualquer ótica.
  É necessário a utilização de vários conceitos da álgebra linear.
@@ -271,7 +277,8 @@ literal "false"
 
 ).
  Posteriormente a teoria foi aprimorada até chegar na equação geral da difusão
- de calor (
+ de calor Eq.
+ (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:equacao-geral"
@@ -296,7 +303,7 @@ literal "false"
 
 \begin_layout Standard
 Portanto, a seguir é apresentada a equação geral da difusão de calor em
- meios tridimensionais cartesianos:
+ meios tridimensionais em coordenadas cartesianascartesianos:
 \end_layout
 
 \begin_layout Standard
@@ -308,34 +315,6 @@ Portanto, a seguir é apresentada a equação geral da difusão de calor em
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Onde 
-\begin_inset Formula $\rho$
-\end_inset
-
- é a massa específica em 
-\begin_inset Formula $\left[kg/m^{3}\right]$
-\end_inset
-
-, 
-\begin_inset Formula $c_{p}$
-\end_inset
-
- é a capacidade térmica em 
-\begin_inset Formula $\left[J/\left(kg\cdot K\right)\right]$
-\end_inset
-
-, 
-\begin_inset Formula $k$
-\end_inset
-
- é a condutividade térmica em 
-\begin_inset Formula $\left[W/\left(m\cdot K\right)\right]$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -494,7 +473,7 @@ A derivada temporal é atrasada no tempo:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{\partial T}{\partial t}=\frac{T_{i,j}^{n+1}-T_{i,j}^{n}}{\Delta t}
+\frac{\partial T}{\partial t}=\frac{T_{i,j,k}^{n}-T_{i,j,k}^{n-1}}{\Delta t}
 \end{equation}
 
 \end_inset
@@ -513,7 +492,7 @@ Substituindo as diferenças finitas na equação geral:
 \frac{k_{i-\frac{1}{2},j,k}T_{i-1,j,k}-\left(k_{i-\frac{1}{2},j,k}+k_{i+\frac{1}{2},j,k}\right)T_{i,j,k}+k_{i+\frac{1}{2},j,k}T_{i+1,j,k}}{\Delta x^{2}}+\\
 \frac{k_{i,j-\frac{1}{2},k}T_{i,j-1,k}-\left(k_{i,j-\frac{1}{2},k}+k_{i,j+\frac{1}{2},k}\right)T_{i,j,k}+k_{i,j+\frac{1}{2},k}T_{i,j+1,k}}{\Delta y^{2}}+\\
 \frac{k_{i,j,k-\frac{1}{2}}T_{i,j,k-1}-\left(k_{i,j,k-\frac{1}{2}}+k_{i,j,k+\frac{1}{2}}\right)T_{i,j,k}+k_{i,j,k+\frac{1}{2}}T_{i,j,k+1}}{\Delta z^{2}}=\\
-\frac{T_{i,j}^{n+1}-T_{i,j}^{n}}{\Delta t}
+\frac{T_{i,j,k}^{n}-T_{i,j,k}^{n-1}}{\Delta t}
 \end{array}
 \end{equation}
 
@@ -539,7 +518,7 @@ Onde a malha é homogênea na superfície, mas não entre os perfis, ou seja,
 \frac{k_{i-\frac{1}{2},j,k}T_{i-1,j,k}-\left(k_{i-\frac{1}{2},j,k}+k_{i+\frac{1}{2},j,k}\right)T_{i,j,k}+k_{i+\frac{1}{2},j,k}T_{i+1,j,k}}{\Delta x^{2}}+\\
 \frac{k_{i,j-\frac{1}{2},k}T_{i,j-1,k}-\left(k_{i,j-\frac{1}{2},k}+k_{i,j+\frac{1}{2},k}\right)T_{i,j,k}+k_{i,j+\frac{1}{2},k}T_{i,j+1,k}}{\Delta x^{2}}+\\
 \frac{k_{i,j,k-\frac{1}{2}}T_{i,j,k-1}-\left(k_{i,j,k-\frac{1}{2}}+k_{i,j,k+\frac{1}{2}}\right)T_{i,j,k}+k_{i,j,k+\frac{1}{2}}T_{i,j,k+1}}{\Delta z^{2}}=\\
-c_{p}\rho\frac{T_{i,j}^{n+1}-T_{i,j}^{n}}{\Delta t}
+c_{p}\rho\frac{T_{i,j,k}^{n}-T_{i,j,k}^{n-1}}{\Delta t}
 \end{array}
 \end{equation}
 
@@ -559,7 +538,7 @@ Multiplicando pelo múltiplo comum:
 \Delta z^{2}\left(k_{i-\frac{1}{2},j,k}^{n+1}T_{i-1,j,k}^{n+1}-\left(k_{i-\frac{1}{2},j,k}^{n+1}+k_{i+\frac{1}{2},j,k}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i+\frac{1}{2},j,k}^{n+1}T_{i+1,j,k}^{n+1}\right)+\\
 \Delta z^{2}\left(k_{i,j-\frac{1}{2},k}^{n+1}T_{i,j-1,k}^{n+1}-\left(k_{i,j-\frac{1}{2},k}^{n+1}+k_{i,j+\frac{1}{2},k}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i,j+\frac{1}{2},k}^{n+1}T_{i,j+1,k}^{n+1}\right)+\\
 \Delta x^{2}\left(k_{i,j,k-\frac{1}{2}}^{n+1}T_{i,j,k-1}^{n+1}-\left(k_{i,j,k-\frac{1}{2}}^{n+1}+k_{i,j,k+\frac{1}{2}}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i,j,k+\frac{1}{2}}^{n+1}T_{i,j,k+1}^{n+1}\right)=\\
-\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}T_{i,j}^{n+1}-\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}T_{i,j}^{n}
+\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}T_{i,j,k}^{n}-\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}T_{i,j,k}^{n-1}
 \end{array}
 \end{equation}
 
@@ -570,8 +549,9 @@ Multiplicando pelo múltiplo comum:
 
 \begin_layout Standard
 Como a equação acima é complexa para ser reorganizada e resolvida por equações
- matriciais, será utilizado aproximações implícitas para resolver esse problema,
- para calcular a iteração 
+ matriciais, será utilizado aproximações para resolver esse problema, com
+ ideia similar ao Método do Ponto Fixo (MPF).
+ Ou seja, será isolado uma das temperaturas para calcular a iteração 
 \begin_inset Formula $\nu+1$
 \end_inset
 
@@ -582,11 +562,11 @@ Como a equação acima é complexa para ser reorganizada e resolvida por equaç�
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{\nu+1}{T_{i,j}^{n+1}}=\\
-C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{\nu}{T_{i,j}^{n}}+\\
-C_{1}\Delta z^{2}\left(\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}\overset{\nu}{T_{i-1,j,k}^{n+1}}+\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}\overset{\nu}{T_{i+1,j,k}^{n+1}}\right)+\\
-C_{1}\Delta z^{2}\left(\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}\overset{\nu}{T_{i,j-1,k}^{n+1}}+\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}\overset{\nu}{T_{i,j+1,k}^{n+1}}\right)+\\
-C_{1}\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}\overset{\nu}{T_{i,j,k-1}^{n+1}}+\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}\overset{\nu}{T_{i,j,k+1}^{n+1}}\right)
+\overset{\nu+1}{T_{i,j}^{n}}=\\
+C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n-1}}+\\
+C_{1}\Delta z^{2}\left(\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n}}\overset{\nu}{T_{i-1,j,k}^{n}}+\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n}}\overset{\nu}{T_{i+1,j,k}^{n}}\right)+\\
+C_{1}\Delta z^{2}\left(\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n}}\overset{\nu}{T_{i,j-1,k}^{n}}+\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n}}\overset{\nu}{T_{i,j+1,k}^{n}}\right)+\\
+C_{1}\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n}}\overset{\nu}{T_{i,j,k-1}^{n}}+\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n}}\overset{\nu}{T_{i,j,k+1}^{n}}\right)
 \end{array}\label{eq:EquacaoGeralDiscretizada}
 \end{equation}
 
@@ -600,7 +580,7 @@ Onde
 \begin_inset Formula $C_{1}$
 \end_inset
 
-é a constante:
+é definido por:
 \end_layout
 
 \begin_layout Standard
@@ -608,8 +588,8 @@ Onde
 \begin{equation}
 \begin{array}{c}
 \frac{1}{C_{1}}=\begin{array}{ccc}
-\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+ & \Delta z^{2}\left(\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}+\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}\right)+\\
- & \Delta z^{2}\left(\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}+\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}\right) & +\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}+\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}\right)
+\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+ & \Delta z^{2}\left(\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n}}+\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n}}\right)+\\
+ & \Delta z^{2}\left(\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n}}+\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n}}\right) & +\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n}}+\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n}}\right)
 \end{array}\end{array}
 \end{equation}
 
@@ -644,6 +624,30 @@ q_{x}=-kA\frac{dT}{dx}=-\frac{kA}{L}\Delta T
 \end_layout
 
 \begin_layout Standard
+Onde 
+\begin_inset Formula $q_{x}$
+\end_inset
+
+ é a vazão, 
+\begin_inset Formula $k$
+\end_inset
+
+ a permeabilidade, 
+\begin_inset Formula $A$
+\end_inset
+
+ a área, 
+\begin_inset Formula $L$
+\end_inset
+
+ o comprimento e 
+\begin_inset Formula $\Delta T$
+\end_inset
+
+ a diferença de temperatura.
+\end_layout
+
+\begin_layout Standard
 Isolando a diferença de temperatura:
 \end_layout
 
@@ -670,7 +674,8 @@ noprefix "false"
 \end_inset
 
  mostra um caso de condutividades térmicas em série.
- O calor (q) que entra no sistema, é igual ao que sai.
+ Em um sistema onde não há fontes de calor, a taxa de calor (q) que entra
+ no sistema, é igual a que sai.
  E a diferença de temperatura entre a esquerda (0) e a direita (2), é soma
  das diferenças nesse meio, ou seja:
 \end_layout
@@ -790,7 +795,7 @@ k_{r}=\frac{2k_{1}k_{2}}{k_{1}+k_{2}}
 
 \begin_layout Standard
 É importante analisar a célula computacional, ou a região que é observada
- quando um ponto é calculado.
+ quando a temperatura é calculada em um ponto específico.
  Para isso, é apresentada a Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -801,10 +806,10 @@ noprefix "false"
 
 \end_inset
 
-, onde a esquerda é o tempo anterior T=n-1, e o ponto calculado está no
- tempo presente T=n.
- Para calcular o ponto vermelho, é utilizado o mesmo ponto, mas no tempo
- anterior, e uma célula em cada sentido.
+, onde a esquerda é o tempo anterior t=n-1, e o ponto calculado está no
+ tempo presente t=n.
+ Para calcular a temperatura no ponto vermelho, é utilizado o mesmo ponto,
+ mas no tempo anterior, e uma célula em cada sentido.
 \begin_inset Float figure
 placement H
 wide false
@@ -814,7 +819,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../imagens/malha.bmp
+	filename ../imagens/malha.png
 	lyxscale 70
 	scale 70
 
@@ -827,8 +832,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Malha utilizada para calcular um ponto de temperatura, cada ponto é o centro
- dos blocos.
+Malha utilizada para calcular a temperatura de um ponto, onde cada ponto
+ é o centro dos blocos.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Malha-utilizada-para"
@@ -850,10 +855,10 @@ name "fig:Malha-utilizada-para"
 
 \begin_layout Standard
 A seguir, é resolvida a última etapa da modelagem do problema, a modelagem
- da condição de fronteira de Neumann
+ da condição de fronteira de Neumann.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Condição de fronteira
 \end_layout
 
@@ -866,8 +871,9 @@ Condição de fronteira, como o próprio nome diz, é a condição onde estão
 \end_layout
 
 \begin_layout Standard
-A condição de contorno de Neumann define que, nessa região, o objeto não
- troca calor com o meio externo.
+A condição de contorno de Neumann define a taxa de troca de calor com o
+ meio externo, no trabalho desenvolvido essa taxa será sempre nula, ou seja,
+ a região estudada não troca calor com o meio externo.
  Na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -930,7 +936,7 @@ Por isso, é importante modelar a condição de contorno, que pode ser modelada
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-k\frac{\partial T}{\partial x}_{i-\frac{1}{2},j,k}=0\frac{T_{i,j,k}^{n+1}-T_{i-1,j,k}^{n+1}}{\Delta x}=0
+k\frac{\partial T}{\partial x}_{i-\frac{1}{2},j,k}=\frac{T_{i,j,k}^{n}-T_{i-1,j,k}^{n}}{\Delta x}=0
 \end{equation}
 
 \end_inset
@@ -960,7 +966,7 @@ k_{i-\frac{1}{2},j,k} & =0\\
 Resolvendo a linha de baixo:
 \begin_inset Formula 
 \begin{equation}
-\frac{\partial T}{\partial x}_{i-\frac{1}{2},j,k}=\frac{T_{i,j,k}^{n+1}-T_{i-1,j,k}^{n+1}}{\Delta x}=0
+\frac{\partial T}{\partial x}_{i-\frac{1}{2},j,k}=\frac{T_{i,j,k}^{n}-T_{i-1,j,k}^{n}}{\Delta x}=0
 \end{equation}
 
 \end_inset
@@ -971,7 +977,7 @@ Resolvendo a linha de baixo:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-T_{i-1,j,k}^{n+1}=T_{i,j,k}^{n+1}
+T_{i-1,j,k}^{n}=T_{i,j,k}^{n}
 \end{equation}
 
 \end_inset
@@ -987,12 +993,12 @@ Todas as seis fronteiras são simétricas, então:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-T_{i-1,j,k}^{n+1}=T_{i,j,k}^{n+1}\\
-T_{i+1,j,k}^{n+1}=T_{i,j,k}^{n+1}\\
-T_{i,j-1,k}^{n+1}=T_{i,j,k}^{n+1}\\
-T_{i,j+1,k}^{n+1}=T_{i,j,k}^{n+1}\\
-T_{i,j,k-1}^{n+1}=T_{i,j,k}^{n+1}\\
-T_{i,j,k+1}^{n+1}=T_{i,j,k}^{n+1}
+T_{i-1,j,k}^{n}=T_{i,j,k}^{n}\\
+T_{i+1,j,k}^{n}=T_{i,j,k}^{n}\\
+T_{i,j-1,k}^{n}=T_{i,j,k}^{n}\\
+T_{i,j+1,k}^{n}=T_{i,j,k}^{n}\\
+T_{i,j,k-1}^{n}=T_{i,j,k}^{n}\\
+T_{i,j,k+1}^{n}=T_{i,j,k}^{n}
 \end{array}\label{eq:ModelagemFronteiras}
 \end{equation}
 
@@ -1015,7 +1021,7 @@ noprefix "false"
 
  dizem que, se existir uma fronteira, a temperatura inexistente deve ser
  substituída pela temperatura do próprio ponto.
- Ou, como mostrado na Eq.
+ De forma alternativa, como mostrado na Eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1031,12 +1037,12 @@ noprefix "false"
  de Neumann.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Demonstrações
 \end_layout
 
 \begin_layout Standard
-Nesta parte, será analisado dois casos para validar as modelagens.
+Nesta parte, serão analisados dois casos para validar as modelagens.
  Primeiro, será utilizado um objeto formado por uma única célula isolada
  no espaço.
  Posteriormente, será analisado o caso do objeto constituído por um único
@@ -1044,47 +1050,26 @@ Nesta parte, será analisado dois casos para validar as modelagens.
 \end_layout
 
 \begin_layout Standard
-Começando pelo objeto de única célula, todas as suas seis fronteiras devem
- ser aplicadas as condições de contorno de Neumann.
- Fisicamente, é esperado que o objeto, por estar isolado, não varie com
- sua temperatura interna ao longo do tempo.
+Começando pelo objeto de única célula, em todas as suas seis fronteiras
+ devem ser aplicadas as condições de contorno de Neumann.
+ Fisicamente, é esperado que o objeto, por estar isolado, não varie sua
+ temperatura interna ao longo do tempo.
  Então, partindo da equação geral:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-\begin{array}{c}
-\overset{\nu+1}{T_{i,j}^{n+1}}=\\
-C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{\nu}{T_{i,j}^{n}}+\\
-C_{1}\Delta z^{2}\left(\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}\overset{\nu}{T_{i-1,j,k}^{n+1}}+\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}\overset{\nu}{T_{i+1,j,k}^{n+1}}\right)+\\
-C_{1}\Delta z^{2}\left(\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}\overset{\nu}{T_{i,j-1,k}^{n+1}}+\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}\overset{\nu}{T_{i,j+1,k}^{n+1}}\right)+\\
-C_{1}\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}\overset{\nu}{T_{i,j,k-1}^{n+1}}+\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}\overset{\nu}{T_{i,j,k+1}^{n+1}}\right)
-\end{array}
-\end{equation}
+Partindo da Eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EquacaoGeralDiscretizada"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-\begin{array}{c}
-\frac{1}{C_{1}}=\begin{array}{ccc}
-\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+ & \Delta z^{2}\left(\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}+\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}\right)+\\
- & \Delta z^{2}\left(\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}+\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}\right) & +\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}+\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}\right)
-\end{array}\end{array}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Mas, como demonstrado na Eq.
+) e, como demonstrado na Eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1095,15 +1080,15 @@ noprefix "false"
 
 \end_inset
 
-, quando houver fronteira, a condutividade térmica na fronteira é zero:
+, quando houver fronteira a condutividade térmica na fronteira é zero:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{\nu+1}{T_{i,j}^{n+1}}=\\
-C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{\nu}{T_{i,j}^{n}}+\\
-C_{1}\Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}}\overset{\nu}{T_{i-1,j,k}^{n+1}}+\cancelto{0}{\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}}\overset{\nu}{T_{i+1,j,k}^{n+1}}\right)+\\
-C_{1}\Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}}\overset{\nu}{T_{i,j-1,k}^{n+1}}+\cancelto{0}{\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}}\overset{\nu}{T_{i,j+1,k}^{n+1}}\right)+\\
-C_{1}\Delta x^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}}\overset{\nu}{T_{i,j,k-1}^{n+1}}+\cancelto{0}{\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}}\overset{\nu}{T_{i,j,k+1}^{n+1}}\right)
+\overset{\nu+1}{T_{i,j,k}^{n}}=\\
+C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j,k}^{n-1}}+\\
+C_{1}\Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n}}}\overset{\nu}{T_{i-1,j,k}^{n}}+\cancelto{0}{\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n}}}\overset{\nu}{T_{i+1,j,k}^{n}}\right)+\\
+C_{1}\Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n}}}\overset{\nu}{T_{i,j-1,k}^{n}}+\cancelto{0}{\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n}}}\overset{\nu}{T_{i,j+1,k}^{n}}\right)+\\
+C_{1}\Delta x^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n}}}\overset{\nu}{T_{i,j,k-1}^{n}}+\cancelto{0}{\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n}}}\overset{\nu}{T_{i,j,k+1}^{n}}\right)
 \end{array}
 \end{equation}
 
@@ -1117,8 +1102,8 @@ C_{1}\Delta x^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}}\
 \begin{equation}
 \begin{array}{c}
 \frac{1}{C_{1}}=\begin{array}{ccc}
-\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+ & \Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}}+\cancelto{0}{\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}}\right)+\\
- & \Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}}+\cancelto{0}{\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}}\right) & +\Delta x^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}}+\cancelto{0}{\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}}\right)
+\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+ & \Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n}}}+\cancelto{0}{\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n}}}\right)+\\
+ & \Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n}}}+\cancelto{0}{\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n}}}\right) & +\Delta x^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n}}}+\cancelto{0}{\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n}}}\right)
 \end{array}\end{array}
 \end{equation}
 
@@ -1132,7 +1117,7 @@ Resultando em:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{\nu+1}{T_{i,j}^{n+1}}=C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{\nu}{T_{i,j}^{n}}\end{array}
+\overset{\nu+1}{T_{i,j,k}^{n}}=C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n-1}}\end{array}
 \end{equation}
 
 \end_inset
@@ -1158,7 +1143,7 @@ Logo:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{\nu+1}{T_{i,j}^{n+1}}=\frac{\Delta t}{\Delta z^{2}\Delta x^{2}c_{p}\rho}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{\nu}{T_{i,j}^{n}}\end{array}
+\overset{\nu+1}{T_{i,j,k}^{n}}=\frac{\Delta t}{\Delta z^{2}\Delta x^{2}c_{p}\rho}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n-1}}\end{array}
 \end{equation}
 
 \end_inset
@@ -1167,7 +1152,7 @@ Logo:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{\nu+1}{T_{i,j}^{n+1}}=\overset{\nu}{T_{i,j}^{n}}\end{array}
+\overset{\nu+1}{T_{i,j,k}^{n}}=\overset{\nu}{T_{i,j,k}^{n-1}}\end{array}
 \end{equation}
 
 \end_inset
@@ -1182,48 +1167,37 @@ Mostrando que a temperatura não varia com o tempo.
 \begin_layout Standard
 Para a segunda demonstração, onde o objeto é constituído pelo mesmo material
  e mesma condutividade térmica, mas somente bidimensional.
- Partindo da equação geral:
-\begin_inset Formula 
-\begin{equation}
-\begin{array}{c}
-\overset{}{T_{i,j}^{n+1}}=\\
-C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n}}+\\
-C_{1}\Delta z^{2}\left(\overset{}{k_{i-\frac{1}{2},j,k}^{n+1}}\overset{}{T_{i-1,j,k}^{n+1}}+\overset{}{k_{i+\frac{1}{2},j,k}^{n+1}}\overset{}{T_{i+1,j,k}^{n+1}}\right)+\\
-C_{1}\Delta z^{2}\left(\overset{}{k_{i,j-\frac{1}{2},k}^{n+1}}\overset{}{T_{i,j-1,k}^{n+1}}+\overset{}{k_{i,j+\frac{1}{2},k}^{n+1}}\overset{}{T_{i,j+1,k}^{n+1}}\right)+\\
-C_{1}\Delta x^{2}\left(\overset{}{k_{i,j,k-\frac{1}{2}}^{n+1}}\overset{}{T_{i,j,k-1}^{n+1}}+\overset{}{k_{i,j,k+\frac{1}{2}}^{n+1}}\overset{}{T_{i,j,k+1}^{n+1}}\right)
-\end{array}
-\end{equation}
-
-\end_inset
-
-
+ 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-\begin{array}{c}
-\frac{1}{C_{1}}=\begin{array}{ccc}
-\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+ & \Delta z^{2}\left(\overset{}{k_{i-\frac{1}{2},j,k}^{n+1}}+\overset{}{k_{i+\frac{1}{2},j,k}^{n+1}}\right)+\\
- & \Delta z^{2}\left(\overset{}{k_{i,j-\frac{1}{2},k}^{n+1}}+\overset{}{k_{i,j+\frac{1}{2},k}^{n+1}}\right) & +\Delta x^{2}\left(\overset{}{k_{i,j,k-\frac{1}{2}}^{n+1}}+\overset{}{k_{i,j,k+\frac{1}{2}}^{n+1}}\right)
-\end{array}\end{array}
-\end{equation}
-
-\end_inset
-
-
+O índice k referente à terceira dimensão continuará aparecendo nas equações
+ abaixo para manter a ideia do algoritmo.
+ Como só existe um valor para essa dimensão, pode-se considerar o valor
+ fixo de 0.
 \end_layout
 
 \begin_layout Standard
-Com a substituição de todas as condutividades térmicas nas interfaces por
- k, e simplificando para bidimensional:
+Partindo da Eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EquacaoGeralDiscretizada"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) e substituindo todas as condutividades térmicas nas interfaces por k,
+ e simplificando para bidimensional:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{}{T_{i,j}^{n+1}}=\\
-C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n}}+\\
-C_{1}\Delta z^{2}\left(k\overset{}{T_{i-1,j,k}^{n+1}}+k\overset{}{T_{i+1,j,k}^{n+1}}\right)+\\
-C_{1}\Delta z^{2}\left(k\overset{}{T_{i,j-1,k}^{n+1}}+k\overset{}{T_{i,j+1,k}^{n+1}}\right)
+\overset{}{T_{i,j,k}^{n}}=\\
+C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j,k}^{n-1}}+\\
+C_{1}\Delta z^{2}\left(k\overset{}{T_{i-1,j,k}^{n}}+k\overset{}{T_{i+1,j,k}^{n}}\right)+\\
+C_{1}\Delta z^{2}\left(k\overset{}{T_{i,j-1,k}^{n}}+k\overset{}{T_{i,j+1,k}^{n}}\right)
 \end{array}
 \end{equation}
 
@@ -1249,10 +1223,10 @@ Com alguns ajustes:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{}{\frac{1}{C_{1}}T_{i,j}^{n+1}}=\\
-\frac{\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n}}+\\
-k\left(\overset{}{T_{i-1,j,k}^{n+1}}+\overset{}{T_{i+1,j,k}^{n+1}}\right)+\\
-k\left(\overset{}{T_{i,j-1,k}^{n+1}}+\overset{}{T_{i,j+1,k}^{n+1}}\right)
+\overset{}{\frac{1}{C_{1}}T_{i,j,k}^{n}}=\\
+\frac{\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j,k}^{n-1}}+\\
+k\left(\overset{}{T_{i-1,j,k}^{n}}+\overset{}{T_{i+1,j,k}^{n}}\right)+\\
+k\left(\overset{}{T_{i,j-1,k}^{n}}+\overset{}{T_{i,j+1,k}^{n}}\right)
 \end{array}
 \end{equation}
 
@@ -1281,10 +1255,10 @@ Logo:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\left(\frac{\Delta x^{2}c_{p}\rho}{k\Delta t}+2+2\right)\overset{}{T_{i,j}^{n+1}}=\\
-\frac{\Delta x^{2}c_{p}\rho}{k\Delta t}\overset{}{T_{i,j}^{n}}+\\
-\left(\overset{}{T_{i-1,j,k}^{n+1}}+\overset{}{T_{i+1,j,k}^{n+1}}\right)+\\
-\left(\overset{}{T_{i,j-1,k}^{n+1}}+\overset{}{T_{i,j+1,k}^{n+1}}\right)
+\left(\frac{\Delta x^{2}c_{p}\rho}{k\Delta t}+2+2\right)\overset{}{T_{i,j,k}^{n}}=\\
+\frac{\Delta x^{2}c_{p}\rho}{k\Delta t}\overset{}{T_{i,j,k}^{n-1}}+\\
+\left(\overset{}{T_{i-1,j,k}^{n}}+\overset{}{T_{i+1,j,k}^{n}}\right)+\\
+\left(\overset{}{T_{i,j-1,k}^{n}}+\overset{}{T_{i,j+1,k}^{n}}\right)
 \end{array}
 \end{equation}
 
@@ -1301,10 +1275,10 @@ Chegando na equação:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\frac{c_{p}\rho}{k}\frac{T_{i,j}^{n+1}-T_{i,j}^{n}}{\Delta t}=\\
-\frac{\overset{}{T_{i-1,j,k}^{n+1}}-2\overset{}{T_{i,j}^{n+1}}+\overset{}{T_{i+1,j,k}^{n+1}}}{\Delta x^{2}}+\\
-\frac{\overset{}{T_{i,j-1,k}^{n+1}}-\overset{}{2T_{i,j}^{n+1}}+\overset{}{T_{i,j+1,k}^{n+1}}}{\Delta x^{2}}
-\end{array}
+\frac{c_{p}\rho}{k}\frac{T_{i,j,k}^{n}-T_{i,j,k}^{n-1}}{\Delta t}=\\
+\frac{\overset{}{T_{i-1,j,k}^{n}}-2\overset{}{T_{i,j,k}^{n}}+\overset{}{T_{i+1,j,k}^{n}}}{\Delta x^{2}}+\\
+\frac{\overset{}{T_{i,j-1,k}^{n}}-\overset{}{2T_{i,j,k}^{n}}+\overset{}{T_{i,j+1,k}^{n}}}{\Delta x^{2}}
+\end{array}\label{eq:MetodoImplicitoBi}
 \end{equation}
 
 \end_inset
@@ -1313,7 +1287,18 @@ Chegando na equação:
 \end_layout
 
 \begin_layout Standard
-E essa é a igual implícita discretizada para um sistema homogêneo bidimensional,
+A Eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:MetodoImplicitoBi"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) representa o método implícito BTCS para um sistema homogêneo bidimensional,
  conforme 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1330,14 +1315,15 @@ Condutividade térmica variável
 \end_layout
 
 \begin_layout Standard
-A condutividade térmica (k), no projeto desenvolvido, pode variar com o
- espaço, pelo objeto ser constituído por mais de um material, com condutividade
+A condutividade térmica, no programas desenvolvido, pode variar com o espaço,
+ pelo objeto ser constituído por mais de um material, com condutividade
  térmica distinta.
- Mas também pode variar com a temperatura e, consequentemente, com o tempo.
+ Contudo, pode também variar com a temperatura e, consequentemente, com
+ o tempo.
 \end_layout
 
 \begin_layout Standard
-Será fornecido aos usuários, três opções para calcular essas condutividades
+Serão fornecidas aos usuários, três opções para calcular essas condutividades
  térmicas:
 \end_layout
 
@@ -1366,7 +1352,7 @@ handbook Thermophysical Properties
 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "thermophysical"
+key "thermophysical2008"
 literal "false"
 
 \end_inset
@@ -1384,15 +1370,15 @@ k=C_{0}+C_{1}T-C_{2}T^{2}
 \end_layout
 
 \begin_layout Standard
-Onde 
+onde 
 \begin_inset Formula $C_{0},C_{1}$
 \end_inset
 
-e 
+ e 
 \begin_inset Formula $C_{2}$
 \end_inset
 
- são constantes da correlação, específico para cada material.
+ são constantes da correlação, específicas para cada material.
 \end_layout
 
 \begin_layout Standard
@@ -1401,15 +1387,10 @@ O terceiro caso, é o cálculo pela interpolação e, como o nome diz, calcula
  em laboratório.
 \end_layout
 
-\begin_layout Standard
-Assim, é finalizada as demonstrações físico-numérica do problema da difusão
- térmica.
- A partir de agora, será elaborado o paralelismo/multithreading, e a renderizaçã
-o 3D.
-\end_layout
-
 \begin_layout Subsection
-Paralelismos/multi-thread
+Paralelismos/
+\shape italic
+multi-thread
 \end_layout
 
 \begin_layout Standard
@@ -1417,7 +1398,7 @@ Os chips de processadores atuais, são constituídos por vários processadores
  menores, o que permite que um mesmo processador consiga realizar tarefas
  distintas.
  A ideia é separar tarefas distintas, para que um processador não fique
- travado em uma única tarefa.
+ envolvido em uma única tarefa.
  
 \end_layout
 
@@ -1438,7 +1419,11 @@ Similarmente ao cenário acima, foram implementados três casos de paralelismo,
 \end_layout
 
 \begin_layout Enumerate
-Sem paralelismo: uma única thread do processador resolve todos os cálculos.
+Sem paralelismo: uma única 
+\shape italic
+thread
+\shape default
+ do processador resolve todos os cálculos.
 \end_layout
 
 \begin_layout Enumerate
@@ -1486,7 +1471,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Figura ilustrando os três casos de paralelismo implementados para duas camadas
+Ilustração dos três casos de paralelismo implementados para duas camadas
  com 9 células cada, e um processador com duas threads.
 \begin_inset CommandInset label
 LatexCommand label
@@ -1575,9 +1560,12 @@ Renderização 3D
 \end_layout
 
 \begin_layout Standard
-Após o usuário desenhar algum objeto no software, pode ser de interesse
- observar como seria em renderização 3D.
- Portanto, é implementado algoritmos para essa renderização.
+Após o usuário desenhar algum objeto no 
+\shape italic
+software
+\shape default
+, pode ser de interesse observar como seria em renderização 3D.
+ Portanto, foram implementados algoritmos para essa renderização.
  
 \end_layout
 
@@ -1651,16 +1639,17 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Portanto, tendo em mãos os pontos das arestas, é multiplicado esses vetores
- com a matriz de rotação do autor 
+Portanto, tendo definitos os pontos das arestas, seus respectivos vetores
+ são multiplicados pela matriz de rotação 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Herter_1993"
+key "Herter1993"
 literal "false"
 
 \end_inset
 
- mostrada em (
+ mostrada na Eq.
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:matriz_rotacao"
@@ -1670,12 +1659,14 @@ noprefix "false"
 
 \end_inset
 
-), a qual permite rotacionar qualquer ponto a partir dos três ângulos do
+, a qual permite rotacionar qualquer ponto a partir dos três ângulos do
  observador.
  
 \end_layout
 
 \begin_layout Standard
+
+\size small
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
@@ -1694,8 +1685,22 @@ sin(\gamma)cos(\beta) &  & sin(\gamma)sin(\beta)sin(\alpha)+cos(\gamma)cos(\alph
 \end_layout
 
 \begin_layout Standard
-Ou seja, inicialmente, um cubo de aresta 3 cm, com uma margem de 1 cm, pode
- ser mostrado na tela (monitor) com os pontos do caso (a) da figura 
+onde 
+\begin_inset Formula $\alpha,\,\beta\,$
+\end_inset
+
+e 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ são os Ângulos de Euler.
+ 
+\end_layout
+
+\begin_layout Standard
+Ou seja, inicialmente, um cubo de aresta 3 cm, com uma distância da origem
+ de 1 cm, pode ser mostrado na tela (monitor) com os pontos do caso (a)
+ da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_cubos_3D_screen"
@@ -1711,7 +1716,15 @@ noprefix "false"
 
 \begin_layout Standard
 Conforme desejado, o objeto pode mudar seu ângulo com o observador, como
- no caso (b), onde os ângulos x e y passaram a ter o valor de 0.1 radianos.
+ no caso (b), onde os ângulos 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ e 
+\begin_inset Formula $\beta$
+\end_inset
+
+ passaram a ter o valor de 0.1 radianos.
  Não foi só os pontos de trás do cubo que aparecem (e mudaram seus valores),
  mas todos os pontos foram modificados.
  
@@ -1750,7 +1763,15 @@ status open
 
 \begin_layout Plain Layout
 (a) o cubo está com ângulos nulos.
- (b) ângulo x e y estão com valor de 0.1 radianos.
+ (b) os ângulos 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ e 
+\begin_inset Formula $\beta$
+\end_inset
+
+ estão com valor de 0.1 radianos.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig_cubos_3D_screen"
@@ -1774,17 +1795,13 @@ name "fig_cubos_3D_screen"
 Nos desenhos do simulador, cada pixel da figura, é uma célula com propriedades
  que serão calculadas, possuindo material, temperatura e volume.
  Como o usuário pode desenhar por pixel, a renderização 3D deve partir do
- princípio que cada pixel é um 
-\series bold
-potencial
-\series default
- objeto que deve ser renderizado.
+ princípio que cada pixel é um potencial objeto que deve ser renderizado.
  
 \end_layout
 
 \begin_layout Standard
 Inicialmente, essa conclusão pode ficar vaga, pois todas as células do simulador
- devem ser renderizadas, mas, quando a simulação fica grande, é numeroso
+ devem ser renderizadas, mas, quando a simulação fica grande, é numerosa
  a quantidade de objetos renderizando ao mesmo tempo, tornando muito lenta
  a apresentação.
  Então algumas considerações são feitas no algoritmo para otimizar a renderizaçã
@@ -1803,13 +1820,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset CommandInset label
-LatexCommand label
-name "fig_cubos_3D_triangles"
-
-\end_inset
-
-
 \begin_inset Graphics
 	filename ../imagens/ppt/cubo_3D_points_rotations_triangles.png
 
@@ -1822,7 +1832,25 @@ name "fig_cubos_3D_triangles"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mesmo desenho da figura anterior, mas agora renderizando a partir de triângulos.
+Mesmo desenho da Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_cubos_3D_screen"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, mas agora renderizando a partir de triângulos.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_cubos_3D_triangles"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1840,11 +1868,11 @@ O segundo motivo apresentado, é o mais importante dos três.
  Um triângulo possui três pontos, podendo ser reduzido para dois vetores
  (subtraindo o ponto de origem dos outros dois pontos) e permite-se calcular
  a normal dessa superfície.
- Com isso, é obtido dos vetores 
+ Com isso, são obtidos os vetores 
 \begin_inset Formula $\boldsymbol{a}=\{a_{1},a_{2},a_{3}\}$
 \end_inset
 
- e o vetor 
+ e 
 \series bold
 
 \begin_inset Formula $\boldsymbol{b}=\{b_{1},b_{2},b_{3}\}$
@@ -1877,7 +1905,7 @@ Ou simplesmente:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\boldsymbol{a}\times\boldsymbol{b}=(a_{2}b_{3}-a_{3}b_{2})\boldsymbol{i}-(a_{1}b_{3}-a_{3}b_{1})\boldsymbol{k}+(a_{1}b_{2}-a_{2}b_{1})\boldsymbol{j}\label{eq:normal_resumido}
+\boldsymbol{a}\times\boldsymbol{b}=(a_{2}b_{3}-a_{3}b_{2})\boldsymbol{i}-(a_{1}b_{3}-a_{3}b_{1})\boldsymbol{j}+(a_{1}b_{2}-a_{2}b_{1})\boldsymbol{k}\label{eq:normal_resumido}
 \end{equation}
 
 \end_inset
@@ -1959,13 +1987,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset CommandInset label
-LatexCommand label
-name "fig_normal"
-
-\end_inset
-
-
 \begin_inset Graphics
 	filename ../imagens/ppt/normal.png
 
@@ -1980,6 +2001,13 @@ name "fig_normal"
 \begin_layout Plain Layout
 (a) mostra um caso onde a normal é na direção do leitor e (b) mostra um
  caso onde a normal é para dentro da folha.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_normal"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1993,20 +2021,24 @@ name "fig_normal"
 \end_layout
 
 \begin_layout Standard
-Essa simples operação condicional do valor positivo/negativo de 
+Essa simples operação condicional do valor positivo (apontando para o olho
+ do observador) e negativo (apontando para dentro da tela) de 
 \series bold
 j 
 \series default
-da normal, reduz a renderização de objetos ocultos, e otimiza o software
- em duas vezes.
+da normal, reduz a quantidade de objetos que devem ser renderizados, e otimiza
+ o software em duas vezes.
 \end_layout
 
 \begin_layout Standard
-Uma outra condição implementada é a de avaliar se o objeto possui fronteira
+Uma outra condição implementada é a de avaliar se o objeto está em contato
  com outro objeto.
- Com isso, não é necessário renderizar 4 triângulos dessas duas superfícies
- em contato.
- Como estão em contato, não deve ser renderizada sob hipótese alguma.
+ Na superfície de contato, existem 4 triângulos (2 de cada objeto), e eles
+ não devem ser renderizados, pois estão no interior do objeto maior.
+ Para esse cenário, pode-se pensar em blocos de montar: enquanto eles não
+ estão juntos, é possível observar todas as superfícies do bloco mas, quando
+ eles são encaixados, essa superfície de contato entre eles fica oculto.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2018,7 +2050,7 @@ j
  da normal.
  Isso serve para ser desenhado primeiro o que está atrás, e depois desenhar
  o que está na frente, sobrescrevendo áreas que deveriam estar ocultas,
- evitando a criação de figuras confusas como no caso (b) da figura 
+ evitando a criação de figuras confusas como no caso (b) da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_cubos_3D"
@@ -2033,7 +2065,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Section
-Identificação de pacotes – assuntos
+Identificação de pacotes
 \end_layout
 
 \begin_layout Itemize
@@ -2042,7 +2074,10 @@ Pacote de malhas: organiza o objeto desenhado em vetores, facilita o acesso
 \end_layout
 
 \begin_layout Itemize
-Pacote de simulação: nela está presente o coração do simulador: o solver
+Pacote de simulação: nele está presente o coração do simulador: o 
+\shape italic
+solver
+\shape default
  da equação da temperatura, discretizada por métodos numéricos, e resolvida
  por método iterativo.
 \end_layout
@@ -2065,10 +2100,13 @@ Pacote de interface ao usuário: utilização da biblioteca Qt, para criar
 \end_layout
 
 \begin_layout Itemize
-Pacote de gráficos: utilização da biblioteca qcustomplot, para montar os
- melhores gráficos para o problema.
+Pacote de gráficos: utilização da biblioteca 
+\shape italic
+qcustomplot
+\shape default
+, para montar os melhores gráficos para o problema.
  É solicitado ao pacote de malhas os resultados da temperatura.
- Está presente junto com o pacote de interface
+ Está presente junto com o pacote de interface.
 \end_layout
 
 \begin_layout Standard
@@ -2076,7 +2114,7 @@ Pacote de gráficos: utilização da biblioteca qcustomplot, para montar os
 \end_layout
 
 \begin_layout Section
-Diagrama de pacotes – assuntos
+Diagrama de pacotes
 \end_layout
 
 \begin_layout Standard
@@ -2101,7 +2139,7 @@ status open
 \begin_inset Graphics
 	filename ../imagens/Diagrama de pacotes.png
 	lyxscale 25
-	width 85text%
+	width 100text%
 
 \end_inset
 
