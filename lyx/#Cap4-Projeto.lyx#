@@ -145,10 +145,10 @@ thechapter - Projeto}
 \end_layout
 
 \begin_layout Standard
-Neste capítulo é apresentado questões relacionadas ao desenvolvimento do
- projeto, como ambiente de desenvolvimento e bibliotecas gráficas, comentados
+Neste capítulo são apresentadas questões relacionadas ao desenvolvimento
+ do projeto, como ambiente de desenvolvimento e bibliotecas gráficas, comentados
  juntamente com a evolução de versões.
- Também é apresentado os diagramas de componentes e de implantação.
+ Também são apresentados os diagramas de componentes e de implantação.
  
 \end_layout
 
@@ -174,15 +174,40 @@ name "sec:Projeto-do-sistema"
 \end_layout
 
 \begin_layout Standard
-O software desenvolvido foi implementado com a linguagem C++, sob o paradigma
- de orientação ao objeto.
+O 
+\shape italic
+software
+\shape default
+ desenvolvido foi implementado com a linguagem C++, sob o paradigma de orientaçã
+o ao objeto.
  
 \end_layout
 
 \begin_layout Standard
 Inicialmente, foi utilizado a biblioteca 
 \shape italic
-SFML 
+SFML
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\shape italic
+Simple and Fast Multimedia Library
+\shape default
+ é uma biblioteca de interface gráfica multi-linguagem, ver em <
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.sfml-dev.org/"
+
+\end_inset
+
+>.
+\end_layout
+
+\end_inset
+
+ 
 \shape default
 para a criação de janelas para o usuário, e utilizado o ambiente de desenvolvime
 nto 
@@ -195,8 +220,11 @@ Windows 10.
 \end_layout
 
 \begin_layout Standard
-Inicialmente, foi desenvolvido um software simples, com uma mistura de janela-te
-rminal mostrado na Figura 
+Inicialmente, foi desenvolvido um 
+\shape italic
+software
+\shape default
+ simples, com uma mistura de janela-terminal mostrado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Versão-0.1,-simples"
@@ -292,7 +320,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Versão 0.2, simples, mas preparando terreno para uma segunda janela dos materiais.
+Versão 0.2, simples, mas contendo uma segunda janela dos materiais.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Versão-0.2,-simples,"
@@ -326,9 +354,20 @@ noprefix "false"
 
 .
  Foi uma versão importantíssima para o aprendizado, pois o usuário não desenhava
- diretamente no software, mas era enviado uma lista de propriedades do desenho
- para o grid e, quando o desenho era atualizado, a biblioteca utilizava
- os valores do grid.
+ diretamente no 
+\shape italic
+software
+\shape default
+, mas era enviado uma lista de propriedades do desenho para o 
+\shape italic
+grid
+\shape default
+ e, quando o desenho era atualizado, a biblioteca utilizava os valores do
+ 
+\shape italic
+grid
+\shape default
+.
  Isso permitiu juntar as duas janelas.
 \end_layout
 
@@ -376,7 +415,7 @@ name "fig:Versão-0.3,-completa"
 \end_layout
 
 \begin_layout Standard
-Durante o desenvolvimento das versões anteriores, foi citado uma segunda
+Durante o desenvolvimento das versões anteriores, foi citada uma segunda
  biblioteca gráfica chamada 
 \shape italic
 Qt
@@ -386,9 +425,17 @@ Qt
 \end_layout
 
 \begin_layout Standard
-Como o software foi programado com orientação ao objeto, foi rápido a migração,
- modificando, quase que somente, a classe da janela.
- Permitindo criar o software na versão 1.0, como na Figura 
+Como o 
+\shape italic
+software
+\shape default
+ foi programado com orientação ao objeto, foi rápido a migração, modificando,
+ quase que somente, a classe da janela.
+ Permitindo criar o 
+\shape italic
+software
+\shape default
+ na versão 1.0, como na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Versão-1.0,-inicial"
@@ -446,7 +493,7 @@ name "fig:Versão-1.0,-inicial"
 \end_layout
 
 \begin_layout Standard
-Para utilizar as ferramentas fornecidas por essa bibliteca, foi migrado
+Para utilizar as ferramentas fornecidas por essa biblioteca, foi migrado
  do editor de texto 
 \shape italic
 Visual Studio 
@@ -511,7 +558,11 @@ name "fig:Qt-Creator"
 \end_layout
 
 \begin_layout Standard
-A curva de evolução do software dentro do 
+A curva de evolução do 
+\shape italic
+software
+\shape default
+ dentro do 
 \shape italic
 Qt Creator 
 \shape default
@@ -530,8 +581,8 @@ noprefix "false"
  da temperatura ao longo do tempo ou espaço.
  Na região do canto inferior esquerdo, mostram opções para a simulação ou
  criação do objeto.
- Na direita, é mostrado as propriedades termofísicas de vários materiais
- ao longo da temperatura.
+ Na direita, são mostradas as propriedades termofísicas de vários materiais
+ como função da temperatura.
 \begin_inset Float figure
 placement H
 wide false
@@ -560,7 +611,7 @@ name "fig:Versão-1.2,-final."
 
 \end_inset
 
-Versão 1.2, final.
+Versão 1.1, final.
  Na direita é apresentado a visualização 3D do objeto desenhado.
 \end_layout
 
@@ -580,7 +631,21 @@ Diagrama de componentes
 
 \begin_layout Standard
 O diagrama de componentes mostra as relações entre todos os componentes
- do software, apresentado na Figura 
+ do 
+\shape italic
+software
+\shape default
+, apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-componentes"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \begin_inset Float figure
 placement H
 wide false
@@ -621,46 +686,13 @@ name "fig:Diagrama-de-componentes"
 \end_inset
 
 
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../imagens/Diagrama de componentes.png
-	lyxscale 75
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte: Produzido pelo autor.
-\begin_inset CommandInset label
-LatexCommand label
-name "cap:Diagrama-de-componentes"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 Começando pela esquerda na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "cap:Diagrama-de-componentes"
+reference "fig:Diagrama-de-componentes"
 plural "false"
 caps "false"
 noprefix "false"
@@ -669,8 +701,16 @@ noprefix "false"
 
 , temos o executável e o main.
  Os outros dois componentes em azul criam janelas para o usuário se comunicar
- com o software.
- O componente em roxo, é a biblioteca de gráficos utilizados pelo software.
+ com o 
+\shape italic
+software
+\shape default
+.
+ O componente em roxo, é a biblioteca de gráficos utilizados pelo 
+\shape italic
+software
+\shape default
+.
 \end_layout
 
 \begin_layout Standard
@@ -679,8 +719,8 @@ Os componentes em verde, são responsáveis por calcular as propriedades dos
 \end_layout
 
 \begin_layout Standard
-Os componentes em laranja claro são responsáveis pela simulação da difusão
- térmica.
+Por fim, os componentes em laranja claro são responsáveis pela simulação
+ da difusão térmica.
 \end_layout
 
 \begin_layout Section
@@ -714,7 +754,7 @@ O diagrama de implementação é um diagrama que apresenta as relações entre
 Na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "cap:Diagrama-de-implantação."
+reference "fig:Diagrama-de-implementação"
 plural "false"
 caps "false"
 noprefix "false"
@@ -738,8 +778,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../imagens/Diagrama de implementação.png
-	lyxscale 75
-	width 90text%
+	lyxscale 25
+	width 100text%
 
 \end_inset
 
@@ -747,11 +787,18 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\align center
-Fonte: Produzido pelo autor.
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de implementação
 \begin_inset CommandInset label
 LatexCommand label
-name "cap:Diagrama-de-implantação."
+name "fig:Diagrama-de-implementação"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
