@@ -111,17 +111,7 @@ thechapter - Análise Orientada a Objeto}
 \end_layout
 
 \begin_layout Chapter
-AOO
-\begin_inset Index idx
-status collapsed
-
-\begin_layout Plain Layout
-AOO
-\end_layout
-
-\end_inset
-
- – Análise Orientada a Objeto
+Análise Orientada a Objeto
 \begin_inset Index idx
 status collapsed
 
@@ -142,10 +132,15 @@ name "sec:AOO"
 \end_layout
 
 \begin_layout Standard
-Neste capítulo, será apresentado os objetos desenvolvidos no projeto, suas
- relações, atributos e métodos.
- Depois de uma breve explicação sobre cada objeto, será apresentado cinco
- diagramas de UML, para auxiliar no entendimento do software e suas relações.
+Neste capítulo, serão apresentados os objetos desenvolvidos no projeto,
+ suas relações, atributos e métodos.
+ Depois de uma breve explicação sobre cada objeto, serão apresentados cinco
+ diagramas UML (Linguagem de Modelagem Unificada), para auxiliar no entendimento
+ do 
+\shape italic
+software
+\shape default
+ e suas relações.
  Serão apresentados os diagramas de classes, de sequência, de comunidação,
  de máquina de estado e de atividades.
 \end_layout
@@ -155,8 +150,12 @@ Dicionário das classes
 \end_layout
 
 \begin_layout Standard
-O software é constituído por 10 classes, onde duas classes de interpolação
- foram implementadas pelo professor André Duarte Bueno no ensino de C++.
+O 
+\shape italic
+software
+\shape default
+ é constituído por 10 classes, onde duas classes de interpolação foram implement
+adas pelo professor André Duarte Bueno no curso de C++.
  Utilizar esse código pronto, mostra que o simulador está apto a adições
  de métodos para o cálculo das propriedades termofísicas.
 \end_layout
@@ -167,8 +166,8 @@ O software é constituído por 10 classes, onde duas classes de interpolação
 mainwindow.h:
 \series default
  Classe responsável pela janela principal.
- Consegue capturar os valores adicionados pelo usuário, e enviar para a
- classe do simulador.
+ Consegue obter os valores adicionados pelo usuário, e enviar para a classe
+ do simulador.
  Permite o usuário desenhar o objeto, e apresenta os resultados por meio
  de gráficos e pela região de desenho.
 \end_layout
@@ -179,7 +178,7 @@ mainwindow.h:
 CRender3D.h:
 \series default
  Classe responsável por apresentar o objeto em renderização 3D.
- É criada a partir do mainwindow e recebe valores do simulador.
+ É criada a partir da classe mainwindow.h e recebe valores do simulador.
  Possui toda a álgebra necessária para a renderização.
 \end_layout
 
@@ -197,9 +196,12 @@ CSimuladorTemperatura.h:
 \series bold
 CGrid.h:
 \series default
- Classe responsável por organizar as células do objeto em grids, importante
- para organizar as células, e facilitar a utilização pela classe CSimuladorTempe
-ratura.
+ Classe responsável por organizar as células do objeto em 
+\shape italic
+grids
+\shape default
+, importante para organizar as células, e facilitar a utilização pela classe
+ CSimuladorTemperatura.h.
 \end_layout
 
 \begin_layout Enumerate
@@ -217,7 +219,7 @@ CCell.h:
 CMaterial.h:
 \series default
  Classe virtual responsável por prover os valores das propriedades termofísicas
- dos materiais, é chamada pelo CSimuladorTemperatura, e é sobreescrita por
+ dos materiais, é chamada pelo CSimuladorTemperatura.h, e é sobrescrita por
  CMaterialCorrelacao.h ou CMaterialInterpolacao.h.
 \end_layout
 
@@ -236,7 +238,7 @@ CMaterialCorrelacao.h:
 CMaterialInterpolacao.h:
 \series default
  Classe responsável por calcular os valores das propriedades termofísicas
- com base na temperatura, utilizando métodos de interporlação linear.
+ com base na temperatura, utilizando métodos de interpolação linear.
 \end_layout
 
 \begin_layout Enumerate
@@ -256,7 +258,7 @@ CSegmentoReta.h:
 \end_layout
 
 \begin_layout Standard
-Uma outra classe externa foi utilizada no simulador:
+Uma classe externa foi utilizada no simulador:
 \end_layout
 
 \begin_layout Enumerate
@@ -264,11 +266,13 @@ Uma outra classe externa foi utilizada no simulador:
 \series bold
 qcustomplot.h:
 \series default
- Classe responsável por gerar gráficos apresentados pelo mainwindow.h.
+ Classe responsável por gerar gráficos apresentados pelo mainwindow.h, obtido
+ em (https://www.qcustomplot.com/).
 \end_layout
 
 \begin_layout Standard
-O diagrama de classes é apresentado na Figura 
+O diagrama de classes é apresentado na Fig.
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-classes"
@@ -276,7 +280,8 @@ reference "cap:Diagrama-de-classes"
 \end_inset
 
 .
- 
+ Ele tem como objetivo apresentar todas as classes, seus atributos, métodos,
+ heranças e relações entre as classes.
 \end_layout
 
 \begin_layout Standard
@@ -327,27 +332,7 @@ name "cap:Diagrama-de-classes"
 \end_layout
 
 \begin_layout Section
-Diagrama de seqüência – eventos
-\begin_inset Index idx
-status collapsed
-
-\begin_layout Plain Layout
-Eventos
-\end_layout
-
-\end_inset
-
- e mensagens
-\begin_inset Index idx
-status collapsed
-
-\begin_layout Plain Layout
-Mensagens
-\end_layout
-
-\end_inset
-
-
+Diagrama de sequência
 \begin_inset Index idx
 status collapsed
 
@@ -371,7 +356,7 @@ name "subsec:diagrama de sequência"
 
 \shape italic
 \emph on
-O diagrama de seqüência enfatiza a troca de eventos e mensagens e sua ordem
+O diagrama de sequência enfatiza a troca de eventos e mensagens e sua ordem
  temporal.
  Contém informações sobre o fluxo de controle do software.
  Costuma ser montado a partir de um diagrama de caso de uso e estabelece
@@ -387,11 +372,22 @@ Diagrama de sequência geral
 \end_layout
 
 \begin_layout Standard
-A seguir, é apresentado o diagrama de sequênccia geral, conforme o exemplo
- do caso de uso da Figura 
+A seguir, é apresentado o diagrama de sequência geral na Fig.
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Diagrama-de-sequencia-geral"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, conforme o exemplo do caso de uso da Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-caso-uso-geral"
 plural "false"
 caps "false"
 noprefix "false"
@@ -452,11 +448,22 @@ Diagrama de sequência específico
 \end_layout
 
 \begin_layout Standard
-A seguir, é apresentado o diagrama de sequênia específico, conforme ilustrado
- na Figura 
+A seguir, é apresentado o diagrama de sequência específico na Fig.
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Diagrama-de-sequencia-especifico"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, baseado no diagrama de caso de uso específico, Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-caso-de-uso-especifico"
 plural "false"
 caps "false"
 noprefix "false"
@@ -517,17 +524,7 @@ comunicação
 
 \end_inset
 
- – colaboração
-\begin_inset Index idx
-status collapsed
-
-\begin_layout Plain Layout
-colaboração
-\end_layout
-
-\end_inset
-
-
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Diagrama-de-Comunicação"
@@ -555,12 +552,13 @@ name "par:Diagrama-de-colaboração:"
 \end_layout
 
 \begin_layout Standard
-O diagrama de comuniacção tem como objetivo, apresentar as interações dos
+O diagrama de comunicação tem como objetivo, apresentar as interações dos
  objetos, juntamente com sua sequência de processos.
 \end_layout
 
 \begin_layout Standard
-O diagrama de comuniação do caso de uso geral é apresentado na Figura 
+O diagrama de comunicação do caso de uso geral é apresentado na Fig.
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-comunicação"
@@ -648,9 +646,10 @@ name "subsec:diagrama de estados"
 \end_layout
 
 \begin_layout Standard
-O diagrama de máquina de estado foca em analisar os estados de uma classe
- desde o momento de sua criação, até sua destruição.
- A Figura 
+O diagrama de máquina de estado descreve os estados de uma classe desde
+ o momento de sua criação, até sua destruição.
+ A Fig.
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-maquina-de-estado"
@@ -660,7 +659,27 @@ noprefix "false"
 
 \end_inset
 
- mostra a máquina de estado para a classe CSimuladorTermico.
+ mostra a máquina de estado para a classe CSimuladorTemperatura.h.
+\end_layout
+
+\begin_layout Standard
+Inicialmente, os dados são recebidos pela classe CSimuladorTemperatura.h,
+ seus atributos são atualizados, e é iniciado o método BTCS.
+ Conforme a opção de paralelismo, ele pode seguir para uma dentre as três
+ sequências, chegando na comparação com a iteração anterior.
+ 
+\end_layout
+
+\begin_layout Standard
+Como o método resolve os sistemas de equações de maneira iterativa, é necessário
+ a comparação entre os valores calculados, com a iteração anterior, para
+ avaliar se os valores convergiram.
+ Se não convergiu, ele retorna para os cálculos, se convergiu, ele atualiza
+ as temperaturas nos 
+\shape italic
+grids
+\shape default
+, e finaliza suas ações.
 \end_layout
 
 \begin_layout Standard
@@ -711,7 +730,8 @@ Diagrama de atividades
 \end_layout
 
 \begin_layout Standard
-No diagrama de atividades apresentado na Figura 
+No diagrama de atividades apresentado na Fig.
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-atividades"
@@ -723,20 +743,20 @@ noprefix "false"
 
 , é mostrado em detalhes uma atividade específica.
  Para o presente caso, será apresentado o diagrama de atividades da classe
- CRender3D.h, divido à complexidade de renderização 3D.
+ CRender3D.h, devido à complexidade de renderização 3D.
 \end_layout
 
 \begin_layout Standard
 Inicialmente, essa classe recebe os dados do simulador, as posições e os
  atributos das células.
  Com isso, são criadas matrizes com os pontos de triângulos para cada respectivo
- ponto, se a superfície desse objeto for possível de observar.
+ ponto, se a superfície desse objeto for possível de se observar.
  Ou seja, se existir uma superfície em contato com essa outra superfície,
- nenhuma das duas será criadas, pois estarão dentro do objeto.
+ nenhuma das duas serão criadas, pois estarão dentro do objeto.
 \end_layout
 
 \begin_layout Standard
-A partir desse ponto, é obtido os valores dos ângulos e calculado a matriz
+A partir desse ponto, são obtidos os valores dos ângulos e calculado a matriz
  rotacionada dos pontos dos triângulos e, em seguida, obtidas suas normas.
  Se positivo, esse valor é guardado em uma matriz, a qual é ordenada em
  ordem crescente.
