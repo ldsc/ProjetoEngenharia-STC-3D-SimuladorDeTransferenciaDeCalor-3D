@@ -97,11 +97,12 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
@@ -164,14 +165,71 @@ O
 \shape italic
 software
 \shape default
- denominado Simulador de Difusão Térmica 3D (SDT-3D), é um programado sob
- o paradigma orientado ao objeto em C++, capaz de simular a condução de
- calor em objetos tridimensionais, com formas e superfícies complexas e
- definidas pelo usuário, o qual também pode definir quais materiais constituem
- o objeto, e qual o método utilizado para calcular as propriedades termofísicas
- para cada material.
- Também é permitido a renderização 3D do objeto, e salvar os resultados
- em arquivo no formato pdf.
+ denominado 
+\emph on
+Simulador de Difusão Térmica 3D (SDT-3D)
+\emph default
+, 
+\change_deleted 1908091853 1649766822
+é um programa
+\change_inserted 1908091853 1649766829
+será desenvolvido utilizando
+\change_deleted 1908091853 1649766830
+do sob 
+\change_inserted 1908091853 1649766830
+ 
+\change_unchanged
+o paradigma 
+\change_inserted 1908091853 1649766832
+da 
+\change_unchanged
+orienta
+\change_inserted 1908091853 1649766847
+ção a objeto usando a linguagem de alto desempenho
+\change_deleted 1908091853 1649766853
+do ao objeto em
+\change_unchanged
+ C++, 
+\change_inserted 1908091853 1649766861
+o mesmo será 
+\change_unchanged
+capaz de simular a condução de calor em objetos tridimensionais, com formas
+ e superfícies complexas 
+\change_deleted 1908091853 1649766873
+e 
+\change_unchanged
+definidas pelo usuário
+\change_deleted 1908091853 1649766882
+,
+\change_inserted 1908091853 1649766882
+.
+
+\change_unchanged
+ 
+\change_deleted 1908091853 1649766886
+o qual
+\change_inserted 1908091853 1649766887
+O usuário
+\change_unchanged
+ 
+\change_deleted 1908091853 1649766889
+também 
+\change_unchanged
+pode definir quais materiais constituem o objeto, e qual o método utilizado
+ para calcular as propriedades termofísicas para cada material.
+ Também é permitido a renderização 3D do objeto
+\change_inserted 1908091853 1649766924
+, o uso de processamento paralelo
+\change_unchanged
+, e 
+\change_deleted 1908091853 1649766930
+salvar 
+\change_unchanged
+os resultados 
+\change_inserted 1908091853 1649766934
+podem ser salvos 
+\change_unchanged
+em arquivo no formato pdf.
 \end_layout
 
 \begin_layout Standard
@@ -181,9 +239,13 @@ A equação diferencial de condução de calor é modelada por diferenças finit
 Backward Time Centered Space
 \shape default
 ), um método implícito e incondicionalmente estável.
- As condições iniciais, são inseridas pelo usuário, e as condições de contorno
- externas são definidas por regiões que não trocam calor com o meio externo,
- isto é, fronteiras adiabáticas.
+ As condições iniciais
+\change_deleted 1908091853 1649766968
+,
+\change_unchanged
+ são inseridas pelo usuário, e as condições de contorno externas são definidas
+ por regiões que não trocam calor com o meio externo, isto é, fronteiras
+ adiabáticas.
 \end_layout
 
 \begin_layout Standard
@@ -226,6 +288,12 @@ Nome
 
 \begin_layout Plain Layout
 Simulador de difusão térmica 3D
+\change_inserted 1908091853 1649766995
+ - 
+\emph on
+SDT-3D
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -247,15 +315,36 @@ Componentes principais
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\change_inserted 1908091853 1649767063
+Banco de dados com métodos de correlação e interpolação para propriedades
+ termofísicas.
+\end_layout
+
+\begin_layout Plain Layout
 Método numérico implícito BTCS.
 \end_layout
 
 \begin_layout Plain Layout
-Métodos de correlação e interpolação para propriedades termofísicas.
+
+\change_inserted 1908091853 1649767222
+Interface gráfica para desenho da simulação.
 \end_layout
 
 \begin_layout Plain Layout
-Renderização 3D.
+
+\change_deleted 1908091853 1649767060
+Métodos de correlação e interpolação para propriedades termofísicas.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Plain Layout
+Renderização 3D
+\change_inserted 1908091853 1649767110
+, processamento paralelo e saída gráfica e pdf
+\change_unchanged
+.
 \end_layout
 
 \end_inset
@@ -277,10 +366,35 @@ Missão
 \begin_inset Text
 
 \begin_layout Plain Layout
-Simulador de calor em objetos 3D com superfícies complexas, formado por
- materiais com propriedades depententes da temperatura.
- E auxiliar no ensino das diversas disciplinas abrangidas por este trabalho,
- como calculo numérico, modelagem computacional, programação arientada ao
+Simulador de 
+\change_inserted 1908091853 1649767117
+transferência de 
+\change_unchanged
+calor em objetos 3D com superfícies complexas, formado por materiais com
+ propriedades depen
+\change_deleted 1908091853 1649767125
+t
+\change_inserted 1908091853 1649767125
+d
+\change_unchanged
+entes da temperatura.
+ 
+\change_deleted 1908091853 1649767164
+E
+\change_inserted 1908091853 1649767165
+Visando
+\change_unchanged
+ auxiliar no ensino das diversas disciplinas abrangidas por este trabalho,
+ como c
+\change_deleted 1908091853 1649767177
+a
+\change_inserted 1908091853 1649767177
+á
+\change_unchanged
+lculo numérico, modelagem computacional, programação arientada a
+\change_deleted 1908091853 1649767183
+o
+\change_unchanged
  objeto em C++, física e matemática.
 \end_layout
 
@@ -319,32 +433,300 @@ Deseja-se desenvolver um
 software
 \shape default
  com interface gráfica amigável ao usuário, onde seja possível desenhar
- o objeto 3D, por meio de perfis 2D, com o usuário escolhendo a temperatura
- e o material.
- A simulação é governada pela equação da difusão térmica, a qual é modelada
+ 
+\change_deleted 1908091853 1649767294
+o 
+\change_unchanged
+objeto
+\change_inserted 1908091853 1649767296
+s
+\change_unchanged
+ 
+\change_deleted 1908091853 1649767298
+3D
+\change_inserted 1908091853 1649767300
+tridimensionais
+\change_unchanged
+, por meio de perfis 2D
+\change_deleted 1908091853 1649767321
+,
+\change_inserted 1908091853 1649767321
+.
+
+\change_unchanged
+ 
+\change_deleted 1908091853 1649767323
+com o 
+\change_inserted 1908091853 1649767384
+Para cada objeto a ser incluído na simulação o 
+\change_unchanged
+usuário escolhe
+\change_inserted 1908091853 1649767390
+, a partir de um banco de dados, 
+\change_deleted 1908091853 1649767393
+ndo a temperatura e o material
+\change_inserted 1908091853 1649767398
+as propriedades do material
+\change_unchanged
+.
+ 
+\change_inserted 1908091853 1649767400
+
+\end_layout
+
+\begin_layout Standard
+A simulação é governada pela equação da difusão térmica, a qual é modelada
  por diferenças finitas, pelo método BTCS, com fronteiras adiabáticas.
  
 \end_layout
 
 \begin_layout Standard
-Na dinâmica de execução, o usuário deverá escolher o tamanho do objeto,
- a temperatura, em qual perfil está desenhando, o material e suas propriedades
- termofísicas, e um ponto de monitoramento da temperatura.
- O usuário terá a liberdade para utilizar um dentre três métodos para obter
+Na dinâmica de 
+\change_deleted 1908091853 1649767471
+execução
+\change_inserted 1908091853 1649767482
+desenho dos objetos a serem simulados
+\change_unchanged
+, o usuário deverá escolher
+\change_inserted 1908091853 1649767566
+:
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1649767591
+o tipo de material e suas propriedades termofísicas a partir de um banco
+ de dados.
+ 
+\change_unchanged
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1649767697
+a temperatura inicial do objeto.
+\end_layout
+
+\begin_layout Itemize
+
+\change_deleted 1908091853 1649767609
+ o tamanho do objeto, a temperatura, em qual 
+\change_inserted 1908091853 1649767697
+ para cada plano 2D 
+\change_deleted 1908091853 1649767638
+perfil 
+\change_inserted 1908091853 1649767697
+a posição 
+\change_deleted 1908091853 1649767661
+está desenhando
+\change_inserted 1908091853 1649768501
+do objeto e suas dimensões
+\change_deleted 1908091853 1649767715
+,
+\change_unchanged
+ 
+\change_deleted 1908091853 1649767565
+o material e suas propriedades termofísicas,
+\change_inserted 1908091853 1649768534
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1649768601
+cada camada do objeto poderá ser construída a partir de um banco de objetos
+ geométricos simples, incluindo circulo, elipse, retângulo, quadrado.
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1649768604
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649768742
+possibilidade de carregar imagens 3D com objetos preliminarmente rotulados;
+ neste caso teremos um arquivo com a imagem 3D e um segundo arquivo correlaciona
+ndo o rótulo do objeto com o tipo de material [Nicholas, os comentários
+ com sugestões para melhorias futuras não devem ser apagados; assim a gente
+ não esquece]
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 1908091853 1649767737
+ e um ponto de monitoramento da temperatura.
+ 
+\change_unchanged
+O usuário terá a liberdade para utilizar um dentre três métodos para obter
  as propriedades dos materiais: propriedades constantes, correlação e interpolaç
 ão.
 \end_layout
 
 \begin_layout Standard
-Após os desenhos do usuário e colocado o simulador para rodar, o simulador
- irá calcular a temperatura iterativamente em cada ponto, e só passará para
- o próximo passo de tempo se o erro entre iterações for menor que um valor
- aceitável.
- Posteriormente, o desenho será atualizado e mostrará a nova distribuição
- de temperatura, e plotará os gráficos com os novos valores calculados.
+Após os desenhos 
+\change_deleted 1908091853 1649767796
+d
+\change_inserted 1908091853 1649767797
+pel
+\change_unchanged
+o usuário 
+\change_inserted 1908091853 1649767809
+do sistema a ser simulado é necessário definir:
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1649767822
+um ponto de monitoramento da temperatura.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1649767898
+tipo de condição de contorno?
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1649767906
+valor de erro aceitável
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted 1908091853 1649767859
+Finalmente 
+\change_deleted 1908091853 1649767862
+e
+\change_inserted 1908091853 1649767862
+é
+\change_unchanged
+ 
+\change_deleted 1908091853 1649767874
+colocado o simulador para rodar
+\change_inserted 1908091853 1649767880
+disparada a simulação em sí
+\change_deleted 1908091853 1649767882
+,
+\change_inserted 1908091853 1649767882
+.
+
+\change_unchanged
+ 
+\change_inserted 1908091853 1649767952
+A cada etapa da simulação o
+\change_deleted 1908091853 1649767883
+o
+\change_unchanged
+ simulador irá calcular a temperatura 
+\change_deleted 1908091853 1649767964
+iterativamente 
+\change_unchanged
+em cada ponto, e só 
+\change_inserted 1908091853 1649767973
+irá 
+\change_unchanged
+passar
+\change_deleted 1908091853 1649767975
+á 
+\change_inserted 1908091853 1649767977
+ 
+\change_unchanged
+para o próximo passo de tempo se o erro entre iterações for menor que 
+\change_deleted 1908091853 1649767912
+um
+\change_inserted 1908091853 1649767912
+o
+\change_unchanged
+ valor aceitável
+\change_inserted 1908091853 1649767916
+ definido pelo usuário
+\change_unchanged
+.
+ 
+\change_deleted 1908091853 1649767987
+Posteriormente
+\change_inserted 1908091853 1649768006
+Finalizado um passo de tempo
+\change_unchanged
+, 
+\change_inserted 1908091853 1649768022
+a janela gráfica que tem 
+\change_deleted 1908091853 1649768029
+o desenho
+\change_inserted 1908091853 1649768038
+a solução, distribuição de temperaturas,
+\change_unchanged
+ será atualizad
+\change_deleted 1908091853 1649768041
+o
+\change_inserted 1908091853 1649768041
+a
+\change_deleted 1908091853 1649768046
+ e mostrará a nova distribuição de temperatura,
+\change_inserted 1908091853 1649768046
+.
+
+\change_unchanged
+ 
+\change_deleted 1908091853 1649768048
+e
+\change_inserted 1908091853 1649768051
+O simulador também irá
+\change_unchanged
+ plotar
+\change_deleted 1908091853 1649768055
+á
+\change_unchanged
+ 
+\change_deleted 1908091853 1649768058
+os
+\change_unchanged
+ gráficos com os novos valores calculados
+\change_inserted 1908091853 1649768081
+ (eixo x e y para o ponto de monitoramento selecionado pelo usuário)
+\change_unchanged
+.
+\change_inserted 1908091853 1649768085
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1649768096
+Outras características desejadas incluem:
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1649768179
+possibilidade de alterar, a qualquer momento, o desenho do problema, inserindo
+ novos objetos.
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1649768123
+possibilidade de alterar, a qualquer momento, o ponto de monitoramento.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 1908091853 1649768762
 O 
 \shape italic
 software
@@ -359,24 +741,78 @@ Qt
 qcustomplot 
 \shape default
 para gerar os gráficos.
+\change_inserted 1908091853 1649768762
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649768776
+O 
+\shape italic
+software
+\shape default
+ será programado com o paradigma da orientação  a objeto, utilizando a linguagem
+ C++ e as bibliotecas 
+\shape italic
+Qt
+\shape default
+ para criar a interface do usuário e 
+\shape italic
+qcustomplot 
+\shape default
+para gerar os gráficos.
+ [estas definições a gente costuma tomar mais lá na frente]
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649768351
+esta parte abaixo vai lá para elaboração onde define as equações
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted 1908091853 1649768317
 Para calcular as propriedades termofísicas dos materiais, são utilizados
  três modelos: propriedades constantes, por correlação e por interpolação.
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted 1908091853 1649768317
 Os principais termos e suas unidades utilizadas neste projeto estão listadas
  abaixo:
 \end_layout
 
 \begin_layout Itemize
+
+\change_deleted 1908091853 1649768317
 Dados relativos ao material:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+
+\change_deleted 1908091853 1649768317
 \begin_inset Formula $c_{p}$
 \end_inset
 
@@ -388,6 +824,8 @@ Dados relativos ao material:
 \end_layout
 
 \begin_layout Itemize
+
+\change_deleted 1908091853 1649768317
 \begin_inset Formula $k$
 \end_inset
 
@@ -399,6 +837,8 @@ Dados relativos ao material:
 \end_layout
 
 \begin_layout Itemize
+
+\change_deleted 1908091853 1649768317
 \begin_inset Formula $\rho$
 \end_inset
 
@@ -411,11 +851,15 @@ Dados relativos ao material:
 
 \end_deeper
 \begin_layout Itemize
+
+\change_deleted 1908091853 1649768317
 Dados relativos ao objeto
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+
+\change_deleted 1908091853 1649768317
 \begin_inset Formula $\Delta x,\Delta y$
 \end_inset
 
@@ -427,6 +871,8 @@ Dados relativos ao objeto
 \end_layout
 
 \begin_layout Itemize
+
+\change_deleted 1908091853 1649768317
 \begin_inset Formula $\Delta z$
 \end_inset
 
@@ -438,6 +884,8 @@ Dados relativos ao objeto
 \end_layout
 
 \begin_layout Itemize
+
+\change_deleted 1908091853 1649768317
 \begin_inset Formula $T$
 \end_inset
 
@@ -450,11 +898,15 @@ Dados relativos ao objeto
 
 \end_deeper
 \begin_layout Itemize
+
+\change_deleted 1908091853 1649768317
 Variáveis usadas na simulação:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+
+\change_deleted 1908091853 1649768317
 \begin_inset Formula $i$
 \end_inset
 
@@ -462,6 +914,8 @@ Variáveis usadas na simulação:
 \end_layout
 
 \begin_layout Itemize
+
+\change_deleted 1908091853 1649768317
 \begin_inset Formula $k$
 \end_inset
 
@@ -469,6 +923,8 @@ Variáveis usadas na simulação:
 \end_layout
 
 \begin_layout Itemize
+
+\change_deleted 1908091853 1649768317
 \begin_inset Formula $g$
 \end_inset
 
@@ -480,6 +936,8 @@ grid
 \end_layout
 
 \begin_layout Itemize
+
+\change_deleted 1908091853 1649768317
 \begin_inset Formula $t$
 \end_inset
 
@@ -487,6 +945,8 @@ grid
 \end_layout
 
 \begin_layout Itemize
+
+\change_deleted 1908091853 1649768317
 \begin_inset Formula $n$
 \end_inset
 
@@ -494,10 +954,14 @@ grid
 \end_layout
 
 \begin_layout Itemize
+
+\change_deleted 1908091853 1649768317
 \begin_inset Formula $\nu$
 \end_inset
 
  - número da iteração.
+\change_unchanged
+
 \end_layout
 
 \end_deeper
@@ -512,6 +976,17 @@ status open
 
 \begin_layout Plain Layout
 coloque aqueles que fazem sentido para seu sistema
+\change_inserted 1908091853 1649769154
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769180
+note que separei, pois tinha RF com mais de uma coisa, cada RF é uma coisa
+ só
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -583,8 +1058,11 @@ RF-02
 \begin_inset Text
 
 \begin_layout Plain Layout
-O usuário tem a liberdade de desenhar qualquer objeto 3D, escolhendo também
- sua temperatura em cada ponto.
+O usuário tem a liberdade de desenhar qualquer objeto 3D
+\change_deleted 1908091853 1649769020
+, escolhendo também sua temperatura em cada ponto
+\change_unchanged
+.
 \end_layout
 
 \end_inset
@@ -594,6 +1072,52 @@ O usuário tem a liberdade de desenhar qualquer objeto 3D, escolhendo também
 
 \end_inset
 
+
+\change_inserted 1908091853 1649769056
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1649769012
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="block" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769189
+
+\series bold
+RF-03
+\end_layout
+
+\end_inset
+</cell>
+<cell mroffset="2cm" alignment="block" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769034
+O usuário tem a liberdade de desenhar qualquer escolher a temperatura em
+ cada ponto.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 
@@ -614,7 +1138,13 @@ O usuário tem a liberdade de desenhar qualquer objeto 3D, escolhendo também
 \begin_layout Plain Layout
 
 \series bold
-RF-03
+RF-0
+\change_deleted 1908091853 1649769193
+3
+\change_inserted 1908091853 1649769193
+4
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -625,8 +1155,12 @@ RF-03
 \begin_layout Plain Layout
 O usuário tem a liberdade de escolher o material em cada ponto do objeto,
  juntamente com o método para obter a condutividade térmica.
- Novos materiais podem ser adicionados pelo usuário, e a condutividade térmica
+ 
+\change_deleted 1908091853 1649768996
+Novos materiais podem ser adicionados pelo usuário, e a condutividade térmica
  pode ser calculados por correlação ou interpolação linear.
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -636,6 +1170,93 @@ O usuário tem a liberdade de escolher o material em cada ponto do objeto,
 
 \end_inset
 
+
+\change_inserted 1908091853 1649768991
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1649769096
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769198
+
+\series bold
+RF-05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769077
+Novos materiais podem ser adicionados no banco de dados pelo usuário
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1649769096
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769201
+
+\series bold
+RF-06
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769103
+A condutividade térmica pode ser calculados por correlação ou interpolação
+ linear.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 
@@ -656,7 +1277,13 @@ O usuário tem a liberdade de escolher o material em cada ponto do objeto,
 \begin_layout Plain Layout
 
 \series bold
-RF-04
+RF-0
+\change_deleted 1908091853 1649769206
+4
+\change_inserted 1908091853 1649769206
+7
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -678,6 +1305,51 @@ O usuário poderá escolher um ponto de estudo, cuja temperatura será monitorad
 \end_inset
 
 
+\change_inserted 1908091853 1649769119
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1649769119
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769210
+
+\series bold
+RF-08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769140
+O ponto de estudo poderá ser alterado durante a execução da simulação
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -697,7 +1369,13 @@ O usuário poderá escolher um ponto de estudo, cuja temperatura será monitorad
 \begin_layout Plain Layout
 
 \series bold
-RF-05
+RF-0
+\change_inserted 1908091853 1649769249
+9
+\change_deleted 1908091853 1649769249
+5
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -736,7 +1414,13 @@ O usuário poderá escolher uma região de fonte ou sumidouro.
 \begin_layout Plain Layout
 
 \series bold
-RF-06
+RF-
+\change_deleted 1908091853 1649769252
+06
+\change_inserted 1908091853 1649769252
+10
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -778,7 +1462,13 @@ O usuário poderá salvar e/ou carregar dados da simulação.
 \begin_layout Plain Layout
 
 \series bold
-RF-07
+RF-
+\change_inserted 1908091853 1649769256
+11
+\change_deleted 1908091853 1649769256
+07
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -817,7 +1507,13 @@ O usuário poderá salvar os resultados da simulação em um arquivo pdf.
 \begin_layout Plain Layout
 
 \series bold
-RF-08
+RF-
+\change_deleted 1908091853 1649769265
+08
+\change_inserted 1908091853 1649769265
+12
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -857,7 +1553,13 @@ O usuário poderá comparar as propriedades termofísicas dos materiais.
 \begin_layout Plain Layout
 
 \series bold
-RF-09
+RF-
+\change_deleted 1908091853 1649769271
+09
+\change_inserted 1908091853 1649769271
+12
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -897,7 +1599,13 @@ O usuário poderá acompanhar a evolução da temperatura em uma superfície
 \begin_layout Plain Layout
 
 \series bold
-RF-10
+RF-1
+\change_deleted 1908091853 1649769275
+0
+\change_inserted 1908091853 1649769275
+3
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -936,7 +1644,13 @@ O usuário poderá visualizar o objeto 3D desenhado em uma janela específica.
 \begin_layout Plain Layout
 
 \series bold
-RF-11
+RF-1
+\change_deleted 1908091853 1649769282
+1
+\change_inserted 1908091853 1649769282
+4
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -956,6 +1670,52 @@ O usuário pode definir as propriedades físicas da simulação, como intervalo
 
 \end_inset
 
+
+\change_inserted 1908091853 1649769304
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1649769304
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769308
+
+\series bold
+RF-15
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769346
+O desenho dos objetos será feito em camadas 2D a partir de geometrias bidimensio
+nais usuais como circulo, quadrado, retângulo, elipse.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 
@@ -1125,7 +1885,124 @@ RNF-04
 \begin_inset Text
 
 \begin_layout Plain Layout
-A interface gráfica deve ser desenvolvida pela biblioteca Qt.
+A 
+\change_inserted 1908091853 1649769399
+linguagem a ser utilizada é C++
+\change_deleted 1908091853 1649769393
+interface gráfica deve ser desenvolvida pela biblioteca Qt
+\change_unchanged
+.
+
+\change_inserted 1908091853 1649769478
+ (link para site isocppreference)
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\change_inserted 1908091853 1649769379
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1649769380
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1649769425
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769386
+
+\series bold
+RNF-05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769462
+A interface gráfica deve ser desenvolvida pela biblioteca multiplataforma
+ Qt (link para site).
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1649769425
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1649769425
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769425
+
+\series bold
+RNF-05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769455
+Os gráficos devem ser gerados usando a biblioteca QCustom Plot (link para
+ site).
 \end_layout
 
 \end_inset
@@ -1159,6 +2036,16 @@ do software
 
 \end_inset
 
+
+\change_inserted 1908091853 1649769492
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1649769505
+Nesta seão iremos mostrar alguns casos de uso do software a ser desenvolvido.
+\change_unchanged
 
 \end_layout
 
@@ -1241,7 +2128,21 @@ Nome do caso de uso:
 \begin_inset Text
 
 \begin_layout Plain Layout
-Cálculo da temperatura
+
+\change_deleted 1908091853 1649769531
+Cálculo
+\change_inserted 1908091853 1649769532
+Simulação
+\change_unchanged
+ da 
+\change_inserted 1908091853 1649769543
+distribuição da 
+\change_unchanged
+temperatura
+\change_inserted 1908091853 1649769547
+ em um objeto 3D
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1282,7 +2183,21 @@ Etapas:
 
 \begin_layout Plain Layout
 1.
- Escolha da temperatura e do material
+ Escolh
+\change_deleted 1908091853 1649769608
+a
+\change_inserted 1908091853 1649769608
+er
+\change_unchanged
+ 
+\change_deleted 1908091853 1649769611
+da temperatura e d
+\change_unchanged
+o material
+\change_inserted 1908091853 1649769617
+ e sua temperatura inicial
+\change_unchanged
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1297,12 +2212,35 @@ Etapas:
 
 \begin_layout Plain Layout
 4.
- Executar a simulação e analisar resultados
+ Executar a simulação 
+\change_deleted 1908091853 1649769636
+e a
+\change_inserted 1908091853 1649769637
+
 \end_layout
 
 \begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769638
 5.
- Salvar objeto e resultados em pdf
+ A
+\change_unchanged
+nalisar resultados
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_deleted 1908091853 1649769640
+5
+\change_inserted 1908091853 1649769640
+6
+\change_unchanged
+.
+ Salvar 
+\change_deleted 1908091853 1649769647
+objeto e 
+\change_unchanged
+resultados em pdf
 \end_layout
 
 \end_inset
@@ -1359,6 +2297,37 @@ status open
 \end_inset
 
 
+\change_inserted 1908091853 1649769705
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769729
+quando fala em temperatura esta falando em temperatura inicial, deixe isso
+ claro;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769748
+troque escolher aluminio por escolher tipo de material e tipo de interpolação;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769771
+troque desenho de superfície por desenho do objeto em camadas 2D;
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1400,7 +2369,13 @@ status open
 \end_layout
 
 \begin_layout Standard
-O caso de uso específico na Figura 
+O caso de uso específico 
+\change_deleted 1908091853 1649769811
+n
+\change_inserted 1908091853 1649769811
+d
+\change_unchanged
+a Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-caso-de-uso-especifico"
@@ -1411,7 +2386,25 @@ noprefix "false"
 \end_inset
 
  mostra um cenário onde o usuário quer utilizar os valores da condutividade
- térmica obtidos em laboratório.
+ térmica obtidos em laboratório
+\change_inserted 1908091853 1649769910
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769940
+você pode fazer o vínculo com os requisitos, ex, (RF-05)
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  Ele deve montar um arquivo .txt com esses valores (a forma de criar esse
  arquivo é descrito no Apêndice B), e carregar no simulador.
  
@@ -1419,7 +2412,25 @@ noprefix "false"
 
 \begin_layout Standard
 O usuário terá a liberdade de comparar seu material com outros padrões do
- simulador, e escolhe-lo para o desenho do objeto.
+ simulador
+\change_inserted 1908091853 1649769966
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649769976
+verifique se adicionou este RNF lá em cima
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+, e escolhe-lo para o desenho do objeto.
 \end_layout
 
 \begin_layout Standard
@@ -1439,6 +2450,83 @@ status open
 \end_inset
 
 
+\change_inserted 1908091853 1649770005
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649770042
+o primeiro item 
+\begin_inset Quotes eld
+\end_inset
+
+carregar aluminio interpolação é confuso; coloque 
+\begin_inset Quotes eld
+\end_inset
+
+adicionar novo material e interpolação
+\begin_inset Quotes erd
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649770105
+também troque escolher aluminio com interpolação por 
+\begin_inset Quotes eld
+\end_inset
+
+escolher tipo material e tipo de interpolação
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649770143
+note que neste diagrama faz exatamente o mesmo do anterior, o que muda é
+ a adição de novo material na base de dados.
+ poderia deixar só o que é diferente.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649770157
+Usuário vai para laboratório e mede propriedades;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649770170
+Usuário salva propriedades em arquivo txt com formato pré-definido;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649770191
+Usuário importa o novo material e interpolação para dentro do software.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649770215
+As informações do novo material e dados interpolação são salvos no diretório
+ dos materiais.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1446,6 +2534,22 @@ status open
 
 \begin_layout Plain Layout
 Diagrama de caso de uso específico
+\change_inserted 1908091853 1649770088
+: adição de novo material e interpolação
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649764500
+no título no lyx tem de dizer o que faz
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-caso-de-uso-especifico"
@@ -1458,10 +2562,86 @@ name "cap:Diagrama-de-caso-de-uso-especifico"
 \end_inset
 
 
+\change_inserted 1908091853 1649770239
+
 \end_layout
 
 \end_inset
 
+
+\change_inserted 1908091853 1649770241
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1649770245
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649770311
+monte um diagrama de caso de uso em que o desenho dos objetos já foi feito
+ em outro software e você irá importa uma imagem 3D com os objetos rotulados
+ e um arquivo auxiliar que lista os rótulos e o tipo de material e interpolação
+ a ser usado.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649770415
+Pense na situação em que a imagem 3D de uma rocha foi obtida usando microtomogra
+fia.
+ QUe a mesma foi segmentada e identificados os materiais(minerais).
+ Então teremos uma imagem 3D em que os pixeis estão rotulados com números
+ inteiros.
+ Todos os pixeis 1 se referem ao objeto 1 composto do material 1.
+ Todos os píxeis 2 se referem ao objeto 2 composto do material 2....
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649770442
+e vai ter um arquivo dizendo 
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649770456
+Objeto 1 = tipo material e tipo interpolação.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649770460
+Objeto 2 = tipo material e tipo interpolação.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649770464
+Objeto 3 = tipo material e tipo interpolação.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649770481
+Faça isso mesmo que não possamos implementar isso a tempo.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649770491
+Nas conclusões colocamos como TRABALHOS FUTUROS
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 

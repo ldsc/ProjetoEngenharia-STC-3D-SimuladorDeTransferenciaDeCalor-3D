@@ -261,6 +261,145 @@ Formulação
 \end_layout
 
 \begin_layout Subsection
+Termos e Unidades
+\end_layout
+
+\begin_layout Standard
+Os principais termos e suas unidades utilizadas neste projeto estão listadas
+ abaixo:
+\end_layout
+
+\begin_layout Itemize
+Dados relativos ao material:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $c_{p}$
+\end_inset
+
+ - calor específico a pressão constante 
+\begin_inset Formula $\left[J/kg\cdot K\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k$
+\end_inset
+
+ - condutividade térmica 
+\begin_inset Formula $\left[W/m\cdot K\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\rho$
+\end_inset
+
+ - massa específica 
+\begin_inset Formula $\left[kg/m^{3}\right]$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Dados relativos ao objeto
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\Delta x,\Delta y$
+\end_inset
+
+ - distância entre os centros dos blocos, valor inicial: 1px=0.0026 m 
+\begin_inset Formula $[m]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Delta z$
+\end_inset
+
+ - distância entre perfis, valor inicial: 0.05 m 
+\begin_inset Formula $[m]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $T$
+\end_inset
+
+ - temperatura no nodo 
+\begin_inset Formula $[K]$
+\end_inset
+
+;
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Variáveis usadas na simulação:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $i$
+\end_inset
+
+ - posição do nodo em relação ao eixo x;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k$
+\end_inset
+
+ - posição do nodo em relação ao eixo y;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $g$
+\end_inset
+
+ - qual 
+\shape italic
+grid
+\shape default
+/perfil está sendo analisado;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $t$
+\end_inset
+
+ - tempo atual;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n$
+\end_inset
+
+ - índice do passo de tempo;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\nu$
+\end_inset
+
+ - número da iteração.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
 Formulação teórica
 \end_layout
 
