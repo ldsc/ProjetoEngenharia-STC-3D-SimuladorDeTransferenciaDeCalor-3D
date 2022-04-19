@@ -225,8 +225,9 @@ rhead{}
 
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
+btprint "btPrintCited"
 bibfiles "bibliografia"
-options "apalike"
+options "abntex2-alf"
 
 \end_inset
 

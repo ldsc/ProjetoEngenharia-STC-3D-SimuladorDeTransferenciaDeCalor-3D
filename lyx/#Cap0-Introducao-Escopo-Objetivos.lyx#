@@ -101,6 +101,8 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -2128146698 "nicholas"
+\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
@@ -1007,7 +1009,25 @@ name "sec:Escopo-do-Problema"
 \end_layout
 
 \begin_layout Standard
-Transferência de calor, é uma das principais áreas da física
+
+\change_inserted 1908091853 1649763011
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649763046
+1- fale do macro problema da transferência de calor, da sua aplicação nas
+ engenharias e depois exemplos aplicados a petróleo
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+Transferência de calor é uma das principais áreas da física
 \begin_inset Foot
 status open
 
@@ -1040,11 +1060,122 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Na indústria do petróleo, esse problema é analisado cuidadosamente em todas
- as etapas, desde a exploração, quanto na produção e refino.
- Na exploração, é buscado um óleo maturado sob temperaturas entre 65ºC e
- 165ºC, acima de 180ºC, é propiciado a formação de gases leves, e acima
- de 210ºC, a formação de grafite 
+Qualquer definição de engenharia irá falar da transformação dos materiais
+ usando energia.
+ É por isso que todos os cursos de engenharia incluem, entre as suas disciplinas
+ obrigatórias, as disciplinas de materiais, transferência de calor, algoritmos/p
+rogramação e cálculo numérico.
+ São disciplinas necessárias para garantir os conhecimentos mínimos necessários
+ para lidar com o desenvolvimento de novos produtos.
+\end_layout
+
+\begin_layout Standard
+O conhecimento dos fenômenos da transferência de calor é fundamental na
+ indústria do petróleo, seja na etapa de exploração ou na etapa de produção.
+
+\change_deleted -2128146698 1649858312
+ 
+\change_inserted 1908091853 1649761815
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1649761948
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649762006
+Nicholas, porque não coloca aqui um beve histórico da geração do petróleo
+ dizendo que o tipo de petróleo depende das transferências de calor envolvidas,
+ temperaturas na geração.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649762017
+A seguir fala da maturação em diferentes temperaturas;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649762044
+Depois fala que na perfuração uma broca em atrito com a rocha vai gerar
+ muito calor e que o fluido de perfuração é usado para resfriar a broca;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649762067
+Que o processo de cimentação envolve reações químicas que geram calor.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649762126
+Que o óleo encontrado no reservatório esta a uma temperatura diferente e
+ que seu escoamento gera mecanismos de transferência de calor na coluna
+ de produção.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649762162
+QUe o óleo chega na plataforma sobre condições de temperatura diferentes,
+ que vai passar por processos de separação.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649762201
+Que o óleo será bombeado, escoado até um navio plataforma ou unidade e que
+ isto envolve mecanismos de transferência de calor.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649762260
+QUe os equipamentos de uma plataforma, como bombas, geram calor e irão precisar
+ de mecanismos de resfriamento, como dissipadores.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649762300
+Que reservatórios maduros perdem sua capacidade de produzir óleo e passam
+ a ser usados mecanismos de recuperação avançada, incluindo métodos térmicos,
+ combustão in situ.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649762375
+depois eu vi que colocou alguns destes exemplos abaixo, acho que fica melhor
+ se ordenar desta forma temporal, da geração do óleo, a perguração do poço,
+ completação, produção, estimulação, eor.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649762462
+Poderia colocar uma figura subdividida em 4 ítens que envolvem transferência
+ de calor.
+ Ex: um poço, uma tubulação, um trocador de calor, ..Dai neste texto você
+ cita a figura.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+Na exploração é buscado um óleo maturado sob temperaturas entre 65ºC e 165ºC,
+ pois acima de 180ºC, é propiciado a formação de gases leves, e acima de
+ 210ºC, a formação de grafite, 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Thomas2004"
@@ -1052,14 +1183,30 @@ literal "false"
 
 \end_inset
 
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+antes da referência coloque uma virgula
+\end_layout
+
+\end_inset
+
 .
+ Essas temperaturas são obtidas devido ao soterramento da matéria orgânica,
+ e pela proximidade com o manto terrestre.
+\end_layout
+
+\begin_layout Standard
+Na produção, são utilizados trocadores de calor nas plataformas para auxiliar
+ nas separações e no resfriamento do óleo para armazenamento.
  
 \end_layout
 
 \begin_layout Standard
-Na produção, são utilizados trocadores de calor nas plataformas.
- Na engenharia de reservatórios, é utilizado vapor de água para aquecer
- o petróleo no reservatório como método de recuperação avançada 
+Na engenharia de reservatórios, é utilizado vapor de água para aquecer o
+ petróleo no reservatório como método de recuperação avançada 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rosa2006"
@@ -1067,7 +1214,7 @@ literal "false"
 
 \end_inset
 
-.
+, com o objetivo de diminuir a viscosidade do óleo, e facilitar seu escoamento.
 \end_layout
 
 \begin_layout Standard
@@ -1077,12 +1224,95 @@ Desta forma, torna-se clara a importância do estudo da condução ou difusão
 \end_layout
 
 \begin_layout Standard
-Soluções analíticas para a condução de calor em regime transiente é obtida
- para casos unidimensionais, com condições de contorno e iniciais bem definidas,
- e com propriedades dos materiais, constantes.
- Para resolver o problema do anterior, com objeto 3D, regime transiente
- e com geometriz complexa, é necessário a utilização de modelagem numérica
- computacional.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+2.
+ Fale do ciclo básico dos cursos de engenharia
+\end_layout
+
+\begin_layout Plain Layout
+Disciplinas como mtm fisica qui e soluções básicas.
+ Você precisa deixar claro que o aprendizado das soluções analíticas é fundament
+al para entendimento dos fenômenos básicos;
+\end_layout
+
+\begin_layout Plain Layout
+A seguir, precisa explicar que para problemas práticos de engenharia é normal
+ ter de usar soluções computacionais.
+ Dai fala das disciplinas de calculo numérico, programação.
+\end_layout
+
+\end_inset
+
+Os cursos de engenharia incluem no seu ciclo básico um conjunto de disciplinas
+ de matemática, física e química que possibilitam o entendimento básico
+ dos problemas associados a temperatura.
+ O efeito da temperatura nos materiais e nos fenômenos estudados.
+ Muitos destes conceitos são apresentados para casos simplificados, unidimension
+ais e para funções bem comportadas.
+ Isto permite ao aluno encontrar as soluções, plotar gráficos e análisar
+ o comportamento dos sistemas em estudo.
+\end_layout
+
+\begin_layout Itemize
+Matemática:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Disciplina Cálculo I: a análise de gráficos da temperatura com o tempo,
+ permite a classificação do regime como transiente, permanente, infinito,
+ etc.
+\end_layout
+
+\begin_layout Itemize
+Disciplina Cálculo II: são utilizadas equações diferenciais para descrever
+ a transferência e conservação de energia.
+\end_layout
+
+\begin_layout Itemize
+Disciplina Cálculo III: transformadas de Fourier podem ser utilizadas para
+ obter uma solução da equação geral.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Física
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Disciplina Física I: em um parágrafo cite o que usa em Transferência de
+ calor
+\end_layout
+
+\begin_layout Itemize
+Disciplina Física II: em um parágrafo cite o que usa em Transferência de
+ calor
+\end_layout
+
+\begin_layout Itemize
+Disciplina Física III: em um parágrafo cite o que usa em Transferência de
+ calor
+\end_layout
+
+\begin_layout Itemize
+Disciplina Termodinâmica:
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Na prática, soluções analíticas para a condução de calor em regime transiente
+ são obtidas para casos unidimensionais, com condições de contorno e iniciais
+ bem definidas, e com propriedades dos materiais constantes.
+\end_layout
+
+\begin_layout Standard
+Para resolver problemas com objetos em duas ou três dimensões e com geometriz
+ complexa, em regime transiente é necessário, na maior parte dos casos,
+ a utilização da modelagem numérica computacional.
 \end_layout
 
 \begin_layout Standard
@@ -1090,7 +1320,6 @@ Conforme a complexidade do problema for evoluindo, a modelagem numérica
  exige cada vez mais poder de processamento dos computadores, os quais,
  atualmente, possuem diversos núcleos lógicos capazes de resolverem cálculos
  numéricos independentemente, acelerando as simulações.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1099,6 +1328,55 @@ Para permitir as divisões das tarefas para os processadores, é utilizada
  da linguagem da máquina.
 \end_layout
 
+\begin_layout Itemize
+Modelagem numérica computacional
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Disciplina Cálculo numérico: utilização de métodos iterativos para aproximar
+ as soluções das equações matriciais, tornando desnecessário os processos
+ de inversão de matriz, e multiplicação de matriz, etapas normais para o
+ método BTCS.
+ Em especial no simulador desenvolvido, como é permitido objetos com formas
+ genéricas, seria impossível resolver o problema por inversão de matriz,
+ pois grandes regiões da matriz teriam valores nulos, consequentemente,
+ seus determinantes seriam zero e impossível de inverter.
+\end_layout
+
+\begin_layout Itemize
+Disciplina Fundamentos de Ciências da Computação: utilização de lógicas
+ e algoritmos para acelerar as soluções das simulações.
+\end_layout
+
+\begin_layout Itemize
+Disciplina Programação Orientada a Objeto com C++: por meio do paradigma
+ orientado ao objeto com C++, é possível dividir cada atividade do 
+\shape italic
+software
+\shape default
+ em classes, auxiliando na organização e suporte, e diminuindo a complexidade
+ de implementação.
+\end_layout
+
+\begin_layout Itemize
+Disciplina Programação Prática - Projeto de Engenharia: em um parágrafo
+ cite o que usa em Transferência de calor
+\end_layout
+
+\begin_layout Itemize
+Disciplina optativa Processamento Paralelo: divisão dos cálculos da modelagem
+ em operações que podem ser resolvidas independentemente e separadamente,
+ e direcionar cada operação para um núcleo do processador, este processo
+ é chamado de 
+\shape italic
+multithreading,
+\shape default
+ e que acelera em muitas vezes a velocidade das simulações.
+ 
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 Por fim, o ensino de engenharia pode ser aperfeiçoado com a utilização de
  
@@ -1107,6 +1385,26 @@ softwares
 \shape default
  livres, que abordem álgebra, modelagem numérica, programação orientada
  ao objeto, além do problema físico em si.
+\change_inserted 1908091853 1649764326
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649764371
+deixe mais claro que o objetivo é desenvolver um simulador computacional
+ a ser usado no ensino de conceitos de transferência de calor por condução
+ em engenharia com aplicações em engenharia de petróleo
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section
@@ -1121,13 +1419,14 @@ name "sec:Objetivos"
 \end_layout
 
 \begin_layout Standard
-O objetivo deste projeto de engenharia é desenvolver um programa que simula
- o processo de condução tridimensional de calor, n métodos numéricos, programado
- orientado ao objeto com a linguagem C++, utilizando paralelismos e 
+O objetivo deste projeto de engenharia é desenvolver um programa educacional
+ que simula o processo de condução tridimensional de calor, no regime transiente
+, utilizando métodos numéricos, programação orientada ao objeto com a linguagem
+ C++, mecanismos de paralelismos e 
 \shape italic
 multithreading,
 \shape default
- e renderização 3D.
+ além de renderização 3D.
 \end_layout
 
 \begin_layout Standard
@@ -1135,40 +1434,106 @@ A finalidade deste projeto de engenharia é desenvolver um
 \shape italic
 software
 \shape default
- capaz de resolver problemas de transferência de calor em quaisquer objeto
- 3D, constituído por qualquer material com propriedades dependente da temperatur
-a, com interface de usuário amigável, e com renderização 3D, permitindo
+ capaz de resolver problemas de condução de calor em objetos 3D, constituídos
+ por por qualquer materiais com condutividade térmica dependente da temperatura.
+ O software terá interface de usuário amigável e renderização 3D, permitindo
  a visualização do problema.
 \end_layout
 
 \begin_layout Standard
-Os principais tópicos atacados por este projeto são:
+Os principais tópicos envolvidos neste projeto são o desenvolvimento de:
 \end_layout
 
 \begin_layout Itemize
-Transferência de calor: entender as equações físicas, como o calor é propagado
- em materiais com diversos formatos e materiais, e com propriedades termofísicas
- variáveis, podendo estas serem obtidas em laboratório, adicionadas ao 
+Banco de dados de propriedades térmicas: A partir da literatura, definir
+ padrões para as curvas de propriedades térmicas em função da temperatura
+ e então montar uma estrutura de diretórios com propriedades de materiais
+ conhecidos, normalmente utilizados em engenharia de petróleo.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+revise este texto
+\end_layout
+
+\end_inset
+
+ As propriedades térmicas poderão ser obtidas em laboratório, adicionadas
+ ao 
 \shape italic
 software
 \shape default
  e utilizados para simulação.
+ As propriedades podem ser calculadas por métodos de correlação ou por interpola
+ção linear.
 \end_layout
 
 \begin_layout Itemize
-Modelagem numérica: solução da equação diferencial da conservação de temperatura
- por meio de diferenças finitas, com o método implícito BTCS (
+Transferência de calor: entender as equações físicas, como o calor é propagado
+ em objetos com diversos formas e composto de diferentes materiais, com
+ propriedades termofísicas dependentes da temperatura.
+ 
+\change_inserted 1908091853 1649764094
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649764166
+Fale das possíveis aplicações, tipos de condições iniciais e condições de
+ contorno
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Itemize
+Modelagem numérica: solução da equação diferencial da condução ou difusão
+ de calor por meio de diferenças finitas, com o método implícito BTCS (
 \shape italic
 Backward Time, Centered Space
 \shape default
-), e com condições de contorno que podem ser aplicadas em todo o sistema,
- permitindo geometrias 3D complexas.
+), e com condições de contorno de Neumann que podem ser aplicadas em todo
+ o sistema, permitindo geometrias 3D complexas.
+ Além disso, devido à complexidade de encontrar uma solução utilizando sistemas
+ matriciais, é utilizado um método iterativo para obter o resultado aproximado
+ do problema.
+ Por meio da utilização e combinação dessas ferramentas, é possível resolver
+ qualquer problema de condução de calor, especialmente a solução simultanea
+ de casos isolados, e objetos com grandes regiões vazias.
+\change_inserted 1908091853 1649764179
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1649764225
+O uso destas ferramentas BTCS e Neumann permite aplicações como...
+ importante deixar claro o que pode resolver e o que não vai resolver
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
-Programação em C++: por meio da orientação ao objeto em C++, o problema
- pode ser dividido em classes, paradigma este que melhora o controle e organizaç
-ão do problema, e facilita adaptações e incrementações ao simulador.
+Programação em C++: por meio da orientação o objeto em C++, o problema pode
+ ser dividido em classes, paradigma este que melhora o controle e organização
+ do das etapas de desenvolvimento do software, além de facilitar futuras
+ adaptações e incrementos no simulador.
  Além disso, essa linguagem possui bibliotecas que auxiliam a utilização
  de paralelismos e 
 \shape italic
@@ -1176,11 +1541,11 @@ multithreading.
 \end_layout
 
 \begin_layout Itemize
-Interface ao usuário: com integração total ao core do simulador, a interface
- permite que o usuário tenha liberdade total para modificar as propriedades
- da simulação.
- E com a implementação de renderização 3D, é possível observar o objeto
- de maneira alternativa e integral.
+Interface do usuário: com integração total ao simulador, a interface gráfica
+ permite que o usuário tenha liberdade para modificar as propriedades da
+ simulação.
+ E com a implementação de renderização 3D, é possível visualizar o objeto
+ por diferentes ângulos.
 \end_layout
 
 \end_body

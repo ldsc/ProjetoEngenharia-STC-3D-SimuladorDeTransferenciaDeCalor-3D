@@ -39,6 +39,7 @@ public:
     QAction *actionImport_material;
     QAction *actionConfigurar_simula_o;
     QAction *actionAbout;
+    QAction *actionConfig;
     QWidget *centralwidget;
     QPushButton *pushButton;
     QTextBrowser *textBrowser_3;
@@ -71,6 +72,12 @@ public:
     QLineEdit *input_dt;
     QComboBox *parallel_comboBox;
     QTextBrowser *textBrowser_6;
+    QLineEdit *input_min_iter;
+    QTextBrowser *textBrowser_15;
+    QLineEdit *input_max_iter;
+    QTextBrowser *textBrowser_17;
+    QLineEdit *input_erro;
+    QTextBrowser *textBrowser_18;
     QWidget *widget_drawStyles;
     QTextBrowser *textBrowser_7;
     QTextBrowser *textBrowser_5;
@@ -131,11 +138,13 @@ public:
         actionConfigurar_simula_o->setObjectName(QString::fromUtf8("actionConfigurar_simula_o"));
         actionAbout = new QAction(MainWindow);
         actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
+        actionConfig = new QAction(MainWindow);
+        actionConfig->setObjectName(QString::fromUtf8("actionConfig"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(260, 790, 211, 41));
+        pushButton->setGeometry(QRect(260, 810, 211, 31));
         pushButton->setAcceptDrops(false);
         pushButton->setCheckable(true);
         textBrowser_3 = new QTextBrowser(centralwidget);
@@ -233,7 +242,7 @@ public:
         plot_MatProps->setGeometry(QRect(220, 10, 791, 241));
         widget_simulator_deltas = new QWidget(centralwidget);
         widget_simulator_deltas->setObjectName(QString::fromUtf8("widget_simulator_deltas"));
-        widget_simulator_deltas->setGeometry(QRect(20, 710, 461, 71));
+        widget_simulator_deltas->setGeometry(QRect(20, 710, 461, 91));
         textBrowser_10 = new QTextBrowser(widget_simulator_deltas);
         textBrowser_10->setObjectName(QString::fromUtf8("textBrowser_10"));
         textBrowser_10->setGeometry(QRect(290, 10, 51, 31));
@@ -265,6 +274,30 @@ public:
         textBrowser_6->setObjectName(QString::fromUtf8("textBrowser_6"));
         textBrowser_6->setGeometry(QRect(0, 40, 221, 31));
         textBrowser_6->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);\n"
+"border-color: rgba(255, 255, 255, 0);"));
+        input_min_iter = new QLineEdit(widget_simulator_deltas);
+        input_min_iter->setObjectName(QString::fromUtf8("input_min_iter"));
+        input_min_iter->setGeometry(QRect(60, 70, 81, 20));
+        textBrowser_15 = new QTextBrowser(widget_simulator_deltas);
+        textBrowser_15->setObjectName(QString::fromUtf8("textBrowser_15"));
+        textBrowser_15->setGeometry(QRect(0, 70, 61, 31));
+        textBrowser_15->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);\n"
+"border-color: rgba(255, 255, 255, 0);"));
+        input_max_iter = new QLineEdit(widget_simulator_deltas);
+        input_max_iter->setObjectName(QString::fromUtf8("input_max_iter"));
+        input_max_iter->setGeometry(QRect(220, 70, 71, 20));
+        textBrowser_17 = new QTextBrowser(widget_simulator_deltas);
+        textBrowser_17->setObjectName(QString::fromUtf8("textBrowser_17"));
+        textBrowser_17->setGeometry(QRect(150, 70, 71, 31));
+        textBrowser_17->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);\n"
+"border-color: rgba(255, 255, 255, 0);"));
+        input_erro = new QLineEdit(widget_simulator_deltas);
+        input_erro->setObjectName(QString::fromUtf8("input_erro"));
+        input_erro->setGeometry(QRect(340, 70, 91, 20));
+        textBrowser_18 = new QTextBrowser(widget_simulator_deltas);
+        textBrowser_18->setObjectName(QString::fromUtf8("textBrowser_18"));
+        textBrowser_18->setGeometry(QRect(290, 70, 51, 31));
+        textBrowser_18->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);\n"
 "border-color: rgba(255, 255, 255, 0);"));
         widget_drawStyles = new QWidget(centralwidget);
         widget_drawStyles->setObjectName(QString::fromUtf8("widget_drawStyles"));
@@ -369,7 +402,7 @@ public:
         button3D = new QPushButton(centralwidget);
         button3D->setObjectName(QString::fromUtf8("button3D"));
         button3D->setEnabled(true);
-        button3D->setGeometry(QRect(20, 790, 211, 41));
+        button3D->setGeometry(QRect(20, 810, 211, 31));
         button3D->setAcceptDrops(false);
         button3D->setCheckable(false);
         MainWindow->setCentralWidget(centralwidget);
@@ -406,6 +439,7 @@ public:
         actionImport_material->setText(QCoreApplication::translate("MainWindow", "Import material", nullptr));
         actionConfigurar_simula_o->setText(QCoreApplication::translate("MainWindow", "Simulation options", nullptr));
         actionAbout->setText(QCoreApplication::translate("MainWindow", "About", nullptr));
+        actionConfig->setText(QCoreApplication::translate("MainWindow", "Config.", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "Run", nullptr));
         textBrowser_3->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -456,6 +490,21 @@ public:
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">Velocidade da simula\303\247\303\243o-&gt;</span></p></body></html>", nullptr));
+        textBrowser_15->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">MIN ITER</span></p></body></html>", nullptr));
+        textBrowser_17->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">MAX ITER</span></p></body></html>", nullptr));
+        textBrowser_18->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Erro</p></body></html>", nullptr));
         textBrowser_7->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

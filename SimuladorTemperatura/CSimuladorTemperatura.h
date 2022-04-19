@@ -22,8 +22,8 @@ private:
     int width, height;
     bool materialPropertiesStatus = true;
     int NGRIDS = 1;
-    const double MIN_ERRO = 0.05;
-    const int MAX_ITERATION = 1000, MIN_ITERATION = 800;
+    double MIN_ERRO = 0.1;
+    int MAX_ITERATION = 1000, MIN_ITERATION = 800;
     double delta_x = 2.6e-4, delta_t = 5.0e-1, delta_z = 0.05;
 
     double Tmax = 400, Tmin = 300;
@@ -85,6 +85,14 @@ public:
     double getDelta_x() { return delta_x; }
     double getDelta_z() { return delta_z; }
     double getTime() { return actual_time; }
+
+    int MIN_ITER(){return MIN_ITERATION;}
+    int MAX_ITER(){return MAX_ITERATION;}
+    double ERRO_MIN(){return MIN_ERRO;}
+
+    void set_MIN_ITER(int MIN){MIN_ITERATION=MIN;}
+    void set_MAX_ITER(int MAX){MAX_ITERATION=MAX;}
+    void set_MIN_ERRO(double ERRO){MIN_ERRO=ERRO;}
 
     CMaterial* getMaterial(std::string mat) { return materiais[mat]; }
 
