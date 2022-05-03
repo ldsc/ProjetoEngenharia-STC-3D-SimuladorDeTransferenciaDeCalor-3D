@@ -339,7 +339,7 @@ status open
 \begin_inset Graphics
 	filename /home/andreduartebueno/workdir/Projeto-TCC-SimuladorDifusaoTermica-Nicholas-Bueno-Guilherme/imagens/EngenhariaSoftware-Geral.png
 	lyxscale 40
-	width 80text%
+	width 100text%
 	height 80text%
 	keepAspectRatio
 
@@ -520,7 +520,7 @@ status open
 \begin_inset Graphics
 	filename ../imagens/v1.0.png
 	lyxscale 60
-	width 80text%
+	width 100text%
 
 \end_inset
 
@@ -610,7 +610,7 @@ status open
 \begin_inset Graphics
 	filename ../imagens/v1.1.png
 	lyxscale 60
-	width 80text%
+	width 100text%
 
 \end_inset
 
@@ -647,8 +647,8 @@ name "fig:Versão-0.2,-simples,"
 
 \begin_layout Subsection
 
-\change_inserted 1908091853 1651583089
-Versão 0.3 - Adição de visualização para os tipos de materiais
+\change_inserted 1908091853 1651597306
+Versão 0.3 - Adição de atalhos na tela
 \end_layout
 
 \begin_layout Standard
@@ -763,7 +763,7 @@ status open
 \begin_inset Graphics
 	filename ../imagens/v1.2.png
 	lyxscale 80
-	width 80text%
+	width 100text%
 
 \end_inset
 
@@ -1261,6 +1261,26 @@ Versão
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651597360
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651597379
+se ocorreram novas mudanças até o final inclua uma versão 0.6 (ou chame de
+ 1.0).
+\change_unchanged
 
 \end_layout
 
