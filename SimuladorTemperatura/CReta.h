@@ -16,15 +16,16 @@ protected:
    
 public:
   /// Construtor default.
-  CReta ( ){ }
+  CReta ( ) = default;
   /// Construtor sobrecarregado, recebe a e b.
-  CReta (double _a, double _b): b{_b},a{_a}{ }
+  CReta (double _a, double _b): x{0.0},y{a},b{_b},a{_a}{ }
 
   /// Construtor sobrecarregado, recebe dados pontos (x1,y1) e (x2,y2).
-  CReta (double x1, double y1, double x2, double y2) : b{(y2-y1)/(x2-x1)}, a{y1-b*x1} { }
+  // bug se x2=x1
+  CReta (double x1, double y1, double x2, double y2) : x{x1},y{y1},b{(y2-y1)/(x2-x1)}, a{y1-b*x1} { }
 
   /// Construtor de copia.
-  CReta( const CReta& reta): x{reta.x}, y{reta.y},a{reta.a}, b{reta.b} { }
+  CReta( const CReta& reta): x{reta.x}, y{reta.y}, b{reta.b},a{reta.a} { }
   
   // Metodos Get/Set
   double X( )        { return x; }

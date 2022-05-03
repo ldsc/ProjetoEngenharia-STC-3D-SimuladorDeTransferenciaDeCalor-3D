@@ -83,11 +83,12 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
@@ -132,10 +133,19 @@ name "sec:AOO"
 \end_layout
 
 \begin_layout Standard
-Neste capítulo, serão apresentados os objetos desenvolvidos no projeto,
- suas relações, atributos e métodos.
- Depois de uma breve explicação sobre cada objeto, serão apresentados cinco
- diagramas UML (Linguagem de Modelagem Unificada), para auxiliar no entendimento
+Neste capítulo
+\change_deleted 1908091853 1651576383
+,
+\change_unchanged
+ serão apresentados os objetos desenvolvidos no projeto, suas relações,
+ atributos e métodos.
+ Depois de uma breve explicação sobre cada objeto, serão apresentados 
+\change_deleted 1908091853 1651576415
+cinco 
+\change_inserted 1908091853 1651576415
+ 
+\change_unchanged
+diagramas UML (Linguagem de Modelagem Unificada), para auxiliar no entendimento
  do 
 \shape italic
 software
@@ -166,10 +176,41 @@ adas pelo professor André Duarte Bueno no curso de C++.
 mainwindow.h:
 \series default
  Classe responsável pela janela principal.
- Consegue obter os valores adicionados pelo usuário, e enviar para a classe
- do simulador.
- Permite o usuário desenhar o objeto, e apresenta os resultados por meio
- de gráficos e pela região de desenho.
+ Consegue obter os valores adicionados pelo usuário
+\change_deleted 1908091853 1651576474
+,
+\change_unchanged
+ e enviar para a classe do simulador.
+ Permite 
+\change_inserted 1908091853 1651576479
+a
+\change_unchanged
+o usuário desenhar o objeto
+\change_inserted 1908091853 1651576507
+ a ser simulado
+\change_unchanged
+, 
+\change_inserted 1908091853 1651576567
+setar suas propriedades, setar as propriedades numéricas e disparar a simulação.
+ 
+\change_deleted 1908091853 1651576569
+e
+\change_unchanged
+ 
+\change_deleted 1908091853 1651576579
+a
+\change_inserted 1908091853 1651576579
+A
+\change_unchanged
+presenta os resultados 
+\change_inserted 1908091853 1651576622
+na medida em que os mesmos são realizados, possibilitando parar a simulação
+ para ver resultados parciais.
+ 
+\change_deleted 1908091853 1651576635
+por meio de gráficos e pela região de desenho.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Enumerate
@@ -187,8 +228,13 @@ CRender3D.h:
 \series bold
 CSimuladorTemperatura.h:
 \series default
- Classe responsável por organizar as células do objeto, e por resolver o
- sistema numérico do problema da difusão térmica.
+ Classe responsável por organizar as células do objeto
+\change_inserted 1908091853 1651576728
+ a ser simulado
+\change_deleted 1908091853 1651576730
+,
+\change_unchanged
+ e por resolver o sistema numérico do problema da difusão térmica.
 \end_layout
 
 \begin_layout Enumerate
@@ -200,8 +246,11 @@ CGrid.h:
 \shape italic
 grids
 \shape default
-, importante para organizar as células, e facilitar a utilização pela classe
- CSimuladorTemperatura.h.
+, importante para organizar as células
+\change_deleted 1908091853 1651576743
+,
+\change_unchanged
+ e facilitar a utilização pela classe CSimuladorTemperatura.h.
 \end_layout
 
 \begin_layout Enumerate
@@ -209,8 +258,21 @@ grids
 \series bold
 CCell.h:
 \series default
- Classe responsável por armazenar informações da célula, como se ela está
- ativa ou não, se é fonte de calor ou não, qual o material e qual a temperatura.
+ Classe responsável por armazenar informações da célula, 
+\change_deleted 1908091853 1651576758
+como 
+\change_inserted 1908091853 1651576758
+ 
+\change_unchanged
+se ela está ativa ou não, se é fonte de calor ou não, qual o 
+\change_inserted 1908091853 1651576765
+tipo de 
+\change_unchanged
+material e qual 
+\change_inserted 1908091853 1651576772
+su
+\change_unchanged
+a temperatura.
 \end_layout
 
 \begin_layout Enumerate
@@ -219,8 +281,24 @@ CCell.h:
 CMaterial.h:
 \series default
  Classe virtual responsável por prover os valores das propriedades termofísicas
- dos materiais, é chamada pelo CSimuladorTemperatura.h, e é sobrescrita por
- CMaterialCorrelacao.h ou CMaterialInterpolacao.h.
+ dos materiais
+\change_deleted 1908091853 1651576807
+,
+\change_inserted 1908091853 1651576807
+.
+
+\change_unchanged
+ 
+\change_deleted 1908091853 1651576811
+é
+\change_inserted 1908091853 1651576813
+É
+\change_unchanged
+ chamada pelo CSimuladorTemperatura.h
+\change_deleted 1908091853 1651576838
+,
+\change_unchanged
+ e é sobrescrita por CMaterialCorrelacao.h ou CMaterialInterpolacao.h.
 \end_layout
 
 \begin_layout Enumerate
@@ -229,7 +307,35 @@ CMaterial.h:
 CMaterialCorrelacao.h:
 \series default
  Classe responsável por calcular os valores das propriedades termofísicas
- com base na temperatura utilizando métodos de correlação.
+ com
+\change_inserted 1908091853 1651576913
+o
+\change_unchanged
+ 
+\change_deleted 1908091853 1651576904
+base na
+\change_inserted 1908091853 1651576906
+função da
+\change_unchanged
+ temperatura
+\change_inserted 1908091853 1651576927
+, a propriedade é determinada
+\change_unchanged
+ 
+\change_deleted 1908091853 1651576879
+utilizando métodos de 
+\change_inserted 1908091853 1651576935
+a partir de 
+\change_unchanged
+correlaç
+\change_inserted 1908091853 1651576883
+ões
+\change_deleted 1908091853 1651576882
+ão
+\change_inserted 1908091853 1651576942
+ lidas do disco
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Enumerate
@@ -238,7 +344,27 @@ CMaterialCorrelacao.h:
 CMaterialInterpolacao.h:
 \series default
  Classe responsável por calcular os valores das propriedades termofísicas
- com base na temperatura, utilizando métodos de interpolação linear.
+ com
+\change_inserted 1908091853 1651576957
+o função 
+\change_deleted 1908091853 1651576959
+ base na 
+\change_inserted 1908091853 1651576961
+ da 
+\change_unchanged
+temperatura, 
+\change_inserted 1908091853 1651576970
+a propriedade é determinada 
+\change_unchanged
+utilizando método
+\change_deleted 1908091853 1651576992
+s
+\change_unchanged
+ de interpolação linear
+\change_inserted 1908091853 1651577010
+ a partir de dados experimentais armazenados em disco
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Enumerate
@@ -246,7 +372,26 @@ CMaterialInterpolacao.h:
 \series bold
 CReta.h:
 \series default
- Classe responsável por calcular a interpolação linear.
+ 
+\change_inserted 1908091853 1651577046
+Representa uma reta, dado um valor de x calcula y.
+ 
+\change_deleted 1908091853 1651577052
+Classe responsável por
+\change_inserted 1908091853 1651577053
+Usada no
+\change_unchanged
+ calcul
+\change_inserted 1908091853 1651577056
+o
+\change_deleted 1908091853 1651577055
+ar
+\change_unchanged
+ 
+\change_inserted 1908091853 1651577057
+d
+\change_unchanged
+a interpolação linear.
 \end_layout
 
 \begin_layout Enumerate
@@ -254,7 +399,20 @@ CReta.h:
 \series bold
 CSegmentoReta.h:
 \series default
- Classe responsável por armazenar segmento de reta para a classe CReta.h.
+ 
+\change_deleted 1908091853 1651577066
+Classe responsável por armazenar
+\change_inserted 1908091853 1651577068
+Representa um
+\change_unchanged
+ segmento de reta
+\change_inserted 1908091853 1651577092
+ com intervalos definidos.
+ 
+\change_deleted 1908091853 1651577076
+ para a classe CReta.h
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
@@ -267,7 +425,30 @@ Uma classe externa foi utilizada no simulador:
 qcustomplot.h:
 \series default
  Classe responsável por gerar gráficos apresentados pelo mainwindow.h, obtido
- em (https://www.qcustomplot.com/).
+ em (
+\change_deleted 1908091853 1651577122
+https://www.qcustomplot.com/
+\change_inserted 1908091853 1651577122
+
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.qcustomplot.com/"
+
+\end_inset
+
+
+\change_unchanged
+).
+\change_inserted 1908091853 1651577133
+
+\end_layout
+
+\begin_layout Enumerate
+
+\change_inserted 1908091853 1651577143
+Também foram utilizadas diversas classes de Qt.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -301,6 +482,32 @@ status open
 \end_inset
 
 
+\change_inserted 1908091853 1651577196
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651577234
+coloque no apêndice 
+\begin_inset Quotes eld
+\end_inset
+
+Diagramas UML
+\begin_inset Quotes erd
+\end_inset
+
+ uma versão completa
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -319,10 +526,6 @@ name "cap:Diagrama-de-classes"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -357,22 +560,123 @@ name "subsec:diagrama de sequência"
 \shape italic
 \emph on
 O diagrama de sequência enfatiza a troca de eventos e mensagens e sua ordem
- temporal.
+ temporal
+\change_inserted 1908091853 1651577264
+, representando um cenário de uso do software
+\change_unchanged
+.
  Contém informações sobre o fluxo de controle do software.
  Costuma ser montado a partir de um diagrama de caso de uso e estabelece
  o relacionamento dos atores (usuários e sistemas externos) com alguns objetos
  do sistema.
+\change_inserted 1908091853 1651578823
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651578825
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651578999
+Monte 6 diagramas de sequência
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651578845
+O primeiro bem geral, ilustrando os objetos e seus relacionamentos mais
+ básicos
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651578873
+O segundo mostrando a adição de um novo material, apenas esta parte e os
+ objetos relacionados.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651578913
+O terceiro mostrando em detalhes uma sequência em que adiciona 3 objetos
+ no gráfico, com temperaturas iniciais diferentes e materiais diferentes.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651578938
+O quarto analisando resultados.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651578946
+O quinto disparando a simulação, parando no meio e fazendo alterações.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651579042
+O sexto mostrando como os objetos numéricos se relacionam durante a simulação.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651579022
+Enfim, os diagramas devem mostrar os principais cenários de uso do software.
+ E cada um só mostra os objetos realmente utilizados.
+ CGrid e CCell só vão aparecer no de
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 
 \shape italic
 \emph on
-Diagrama de sequência geral
+Diagrama de sequência 
+\change_deleted 1908091853 1651579113
+geral
+\change_inserted 1908091853 1651579116
+- cenário geral
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
-A seguir, é apresentado o diagrama de sequência geral na Fig.
+A seguir
+\change_deleted 1908091853 1651577507
+,
+\change_unchanged
+ é apresentado o diagrama de sequência geral na Fig
+\change_inserted 1908091853 1651577286
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651577310
+em todo documento troque Fig.
+ por Figura, troque Tab.
+ por Tabela.
+ é o padrão abnt
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -395,6 +699,85 @@ noprefix "false"
 \end_inset
 
 .
+\change_inserted 1908091853 1651578778
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651578793
+este diagrama deve ser bem geral, mostrando a sequência sem entrar nos detalhes
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651577603
+Corrigir na figura abaixo
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651577635
+- Escolher temperatura -> Definir temperatura inicial
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651577706
+- Para cada parte do objeto definir tipo de material e desenhar
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651578274
+- Definir propriedades físicas
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651578288
+- Definir propriedades numéricas da simulação
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651578323
+- ...enfim, coloque na ordem exata em que faz a simulação padrão.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651578324
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651578428
+.Quando chama Executar o método numérico tem implicações internas que podem
+ ser mostradas, da forma como esta CGrid e CCell podem ser retirados do
+ diagrama.
+ Ou seja, ou elimina CCGrid e CCell ou inclui as chamadas a métodos destes
+ objetos.
+ Pode eliminar aqui e colocar no segundo/terceiro diagrama de sequência
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -408,7 +791,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../imagens/Diagrama de sequencia geral.png
-	lyxscale 20
+	lyxscale 40
 	width 100text%
 
 \end_inset
@@ -444,11 +827,37 @@ name "fig:Diagrama-de-sequencia-geral"
 
 \shape italic
 \emph on
-Diagrama de sequência específico
+Diagrama de sequência 
+\change_deleted 1908091853 1651579061
+específico
+\change_inserted 1908091853 1651579334
+- adicionando novo material/correlação
 \end_layout
 
 \begin_layout Standard
-A seguir, é apresentado o diagrama de sequência específico na Fig.
+
+\change_inserted 1908091853 1651578807
+Uma atividade corriqueira é adicionar ao simulador um novo material.
+ Neste caso os dados do material são salvos em um arquivo de disco, em formato
+ pré-definido e então lidos pelo simulador.
+ .
+ O
+\change_deleted 1908091853 1651578556
+
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 1908091853 1651578556
+A seguir, é apresentado o
+\change_unchanged
+ diagrama de sequência 
+\change_deleted 1908091853 1651578560
+específico n
+\change_inserted 1908091853 1651578560
+d
+\change_unchanged
+a Fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -459,6 +868,10 @@ noprefix "false"
 
 \end_inset
 
+
+\change_inserted 1908091853 1651578583
+ 
+\change_deleted 1908091853 1651578571
 , baseado no diagrama de caso de uso específico, Fig.
  
 \begin_inset CommandInset ref
@@ -470,7 +883,30 @@ noprefix "false"
 
 \end_inset
 
+
+\change_inserted 1908091853 1651578594
+ mostra este cenário
+\change_unchanged
 .
+\change_inserted 1908091853 1651578599
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651578709
+na figura abaixo deixe apenas os itens relacionados a adição de novo material,
+ não entram CGrid e CCell
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Float figure
 placement H
 wide false
@@ -481,7 +917,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../imagens/Diagrama de sequencia especifica.png
-	lyxscale 20
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -510,6 +946,134 @@ name "fig:Diagrama-de-sequencia-especifico"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651578618
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651578651
+Coloque mais diagramas de sequência com cenários específicos, por exemplo:
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651578761
+- Diagrama de sequência que mostra a parte numérica, quais objetos numéricos
+ chamam quais durante a simulação (apenas a parte da simulação em sí, não
+ entra a entrada de dados nem a análise dos resultados).
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651578717
+- Diagrama de sequência para análise dos resultados.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted 1908091853 1651579163
+
+\shape italic
+\emph on
+Diagrama de sequência - adicionando objetos no gráfico
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651579424
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651579434
+adicionar no diagrama só os objetos efetivamente utilizados
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_deleted 1908091853 1651579261
+
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted 1908091853 1651579347
+
+\shape italic
+\emph on
+Diagrama de sequência - sequência numérica da simulação
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651579441
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651579441
+adicionar no diagrama só os objetos efetivamente utilizados
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted 1908091853 1651579177
+
+\shape italic
+\emph on
+Diagrama de sequência - análise de resultados
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651579443
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651579443
+adicionar no diagrama só os objetos efetivamente utilizados
+\end_layout
+
+\end_inset
+
+
+\change_deleted 1908091853 1651579450
+
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted 1908091853 1651579209
 
 \end_layout
 
@@ -552,8 +1116,11 @@ name "par:Diagrama-de-colaboração:"
 \end_layout
 
 \begin_layout Standard
-O diagrama de comunicação tem como objetivo, apresentar as interações dos
- objetos, juntamente com sua sequência de processos.
+O diagrama de comunicação tem como objetivo
+\change_deleted 1908091853 1651579456
+,
+\change_unchanged
+ apresentar as interações dos objetos, juntamente com sua sequência de processos.
 \end_layout
 
 \begin_layout Standard
@@ -569,6 +1136,24 @@ noprefix "false"
 \end_inset
 
 .
+\change_inserted 1908091853 1651579484
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651579488
+atualizar
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -659,12 +1244,19 @@ noprefix "false"
 
 \end_inset
 
- mostra a máquina de estado para a classe CSimuladorTemperatura.h.
+ mostra a máquina de estado para a classe CSimuladorTemperatura
+\change_deleted 1908091853 1651579527
+.h
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
-Inicialmente, os dados são recebidos pela classe CSimuladorTemperatura.h,
- seus atributos são atualizados, e é iniciado o método BTCS.
+Inicialmente, os dados são recebidos pela classe CSimuladorTemperatura
+\change_deleted 1908091853 1651579534
+.h
+\change_unchanged
+, seus atributos são atualizados, e é iniciado o método BTCS.
  Conforme a opção de paralelismo, ele pode seguir para uma dentre as três
  sequências, chegando na comparação com a iteração anterior.
  
@@ -706,6 +1298,10 @@ status open
 
 \begin_layout Plain Layout
 Diagrama de máquina de estado
+\change_inserted 1908091853 1651579692
+ para a classe XX
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-maquina-de-estado"
@@ -717,6 +1313,26 @@ name "cap:Diagrama-de-maquina-de-estado"
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651579708
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651579731
+Você deve montar diagramas de máquina de estado para classes cujo comportamento
+ possa mudar em função do estado do objeto
+\change_unchanged
 
 \end_layout
 
@@ -742,8 +1358,37 @@ noprefix "false"
 \end_inset
 
 , é mostrado em detalhes uma atividade específica.
- Para o presente caso, será apresentado o diagrama de atividades da classe
- CRender3D.h, devido à complexidade de renderização 3D.
+ Para o presente caso, será apresentado o diagrama de atividades 
+\change_deleted 1908091853 1651579571
+da 
+\change_inserted 1908091853 1651579575
+do método X da 
+\change_unchanged
+classe CRender3D.h, devido à complexidade de renderização 3D.
+\change_inserted 1908091853 1651579581
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651579619
+Diagrama de máquina de estado esta relacionado ao objeto como um todo;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651579625
+Diagrama de atividades é a descrição de um método/função específica.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -774,7 +1419,7 @@ Com todos os valores calculados e ordenados, a classe renderiza na tela
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -793,6 +1438,10 @@ status open
 
 \begin_layout Plain Layout
 Diagrama de atividades
+\change_inserted 1908091853 1651579686
+ para o método X::CRender3D
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-atividades"
@@ -809,6 +1458,28 @@ name "cap:Diagrama-de-atividades"
 
 \end_inset
 
+
+\change_inserted 1908091853 1651579746
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651579747
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651579786
+Você deve montar diagramas de atividade para métodos cujos cálculos ou fluxogram
+a sejam complexos
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 
