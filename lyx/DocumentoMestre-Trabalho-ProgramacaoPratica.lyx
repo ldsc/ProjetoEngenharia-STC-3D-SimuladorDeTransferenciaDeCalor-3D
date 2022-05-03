@@ -201,6 +201,29 @@ filename "Cap8-Documentacao.lyx"
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+precisamos adicionar uma seção para 
+\end_layout
+
+\begin_layout Plain Layout
+Conclusões e sugestões para trabalhos futuros:
+\end_layout
+
+\begin_layout Plain Layout
+- Possibilidade de salvar uma configuração de simulação e carregar depois.
+ (carregar imagens de simulações anteriores).
+\end_layout
+
+\begin_layout Plain Layout
+- Possibilidade de somar duas imagens de simulações anteriores.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
