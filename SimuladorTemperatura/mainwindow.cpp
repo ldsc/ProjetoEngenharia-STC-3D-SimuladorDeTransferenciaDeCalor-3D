@@ -121,7 +121,7 @@ void MainWindow::start_buttons(){
     ui->textBrowser_12->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_13->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_14->setFrameStyle(QFrame::NoFrame);
-    ui->textBrowser_15->setFrameStyle(QFrame::NoFrame);
+    //ui->textBrowser_15->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_16->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_17->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_18->setFrameStyle(QFrame::NoFrame);
@@ -158,7 +158,7 @@ void MainWindow::start_buttons(){
     ui->input_dt->setText(QString::fromStdString(std::to_string(simulador->getDelta_t())));
     ui->input_dx->setText(QString::fromStdString(std::to_string(simulador->getDelta_x())));
     ui->input_dz->setText(QString::fromStdString(std::to_string(simulador->getDelta_z())));
-    ui->input_min_iter->setText(QString::fromStdString(std::to_string(simulador->MIN_ITER())));
+    //ui->input_min_iter->setText(QString::fromStdString(std::to_string(simulador->MIN_ITER())));
     ui->input_max_iter->setText(QString::fromStdString(std::to_string(simulador->MAX_ITER())));
     ui->input_erro->setText(QString::fromStdString(std::to_string(simulador->ERRO_MIN())));
 
@@ -233,7 +233,7 @@ void MainWindow::runSimulator(){
     simulador->setDelta_x(std::stod(ui->input_dx->text().toStdString()));
     simulador->setDelta_z(std::stod(ui->input_dz->text().toStdString()));
 
-    simulador->set_MIN_ITER(std::stoi(ui->input_min_iter->text().toStdString()));
+    //simulador->set_MIN_ITER(std::stoi(ui->input_min_iter->text().toStdString()));
     simulador->set_MAX_ITER(std::stoi(ui->input_max_iter->text().toStdString()));
     simulador->set_MIN_ERRO(std::stod(ui->input_erro->text().toStdString()));
 

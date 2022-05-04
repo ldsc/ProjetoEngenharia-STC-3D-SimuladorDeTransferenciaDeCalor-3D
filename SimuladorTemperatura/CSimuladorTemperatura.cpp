@@ -126,7 +126,7 @@ void CSimuladorTemperatura::solverByThread(int thread_num) {
             }
         }
         iter++;
-        if (erro < MIN_ERRO && iter > MIN_ITERATION)
+        if (erro < MIN_ERRO)
             break;
     } while (iter < MAX_ITERATION);
     std::cout<<"iteracoes: " << iter << " - erro: " << erro << std::endl;

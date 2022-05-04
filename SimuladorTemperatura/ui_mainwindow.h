@@ -72,8 +72,6 @@ public:
     QLineEdit *input_dt;
     QComboBox *parallel_comboBox;
     QTextBrowser *textBrowser_6;
-    QLineEdit *input_min_iter;
-    QTextBrowser *textBrowser_15;
     QLineEdit *input_max_iter;
     QTextBrowser *textBrowser_17;
     QLineEdit *input_erro;
@@ -275,14 +273,6 @@ public:
         textBrowser_6->setGeometry(QRect(0, 40, 221, 31));
         textBrowser_6->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);\n"
 "border-color: rgba(255, 255, 255, 0);"));
-        input_min_iter = new QLineEdit(widget_simulator_deltas);
-        input_min_iter->setObjectName(QString::fromUtf8("input_min_iter"));
-        input_min_iter->setGeometry(QRect(60, 70, 81, 20));
-        textBrowser_15 = new QTextBrowser(widget_simulator_deltas);
-        textBrowser_15->setObjectName(QString::fromUtf8("textBrowser_15"));
-        textBrowser_15->setGeometry(QRect(0, 70, 61, 31));
-        textBrowser_15->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);\n"
-"border-color: rgba(255, 255, 255, 0);"));
         input_max_iter = new QLineEdit(widget_simulator_deltas);
         input_max_iter->setObjectName(QString::fromUtf8("input_max_iter"));
         input_max_iter->setGeometry(QRect(220, 70, 71, 20));
@@ -293,10 +283,10 @@ public:
 "border-color: rgba(255, 255, 255, 0);"));
         input_erro = new QLineEdit(widget_simulator_deltas);
         input_erro->setObjectName(QString::fromUtf8("input_erro"));
-        input_erro->setGeometry(QRect(340, 70, 91, 20));
+        input_erro->setGeometry(QRect(50, 70, 91, 20));
         textBrowser_18 = new QTextBrowser(widget_simulator_deltas);
         textBrowser_18->setObjectName(QString::fromUtf8("textBrowser_18"));
-        textBrowser_18->setGeometry(QRect(290, 70, 51, 31));
+        textBrowser_18->setGeometry(QRect(0, 70, 51, 31));
         textBrowser_18->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);\n"
 "border-color: rgba(255, 255, 255, 0);"));
         widget_drawStyles = new QWidget(centralwidget);
@@ -490,11 +480,6 @@ public:
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">Velocidade da simula\303\247\303\243o-&gt;</span></p></body></html>", nullptr));
-        textBrowser_15->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">MIN ITER</span></p></body></html>", nullptr));
         textBrowser_17->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
