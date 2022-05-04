@@ -1,7 +1,8 @@
-
+re
 *~
 *.bak
 *.o
 a.out
 *.exe
 *.xmi
+*.lyx#

@@ -3,7 +3,6 @@
 
 #include <string>
 #include <QColor>
-#include <iostream>
 
 class CMaterial {
 public:

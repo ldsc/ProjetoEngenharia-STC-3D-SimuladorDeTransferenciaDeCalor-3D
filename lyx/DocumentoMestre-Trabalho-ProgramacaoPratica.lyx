@@ -201,6 +201,29 @@ filename "Cap8-Documentacao.lyx"
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+precisamos adicionar uma seção para 
+\end_layout
+
+\begin_layout Plain Layout
+Conclusões e sugestões para trabalhos futuros:
+\end_layout
+
+\begin_layout Plain Layout
+- Possibilidade de salvar uma configuração de simulação e carregar depois.
+ (carregar imagens de simulações anteriores).
+\end_layout
+
+\begin_layout Plain Layout
+- Possibilidade de somar duas imagens de simulações anteriores.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -218,6 +241,37 @@ lhead{Referências}
 chead{} 
 \backslash
 rhead{}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Depois de gerar o documento procure por 
+\begin_inset Quotes eld
+\end_inset
+
+abaixo
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+acima
+\begin_inset Quotes erd
+\end_inset
+
+ e troque por referência a Figura/Tabela.
+\end_layout
+
+\begin_layout Plain Layout
+Com o tempo os documentos crescem e estes abaixo/acima ficam perdidos, por
+ isso não usamos.
 \end_layout
 
 \end_inset

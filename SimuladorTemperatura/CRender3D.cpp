@@ -10,7 +10,7 @@ CRender3D::CRender3D(QWidget *parent)
     mImage = new QImage(size_x, size_y,QImage::Format_ARGB32_Premultiplied);
     timerId = startTimer(0);
 
-    QVector3D point(0,0,0);
+    QVector3D point(0.,0.,0.);
     cube.push_back(createCube(point));
 
     createTriangles();

@@ -35,6 +35,8 @@ CMaterial* CSimuladorTemperatura::chooseMaterialType(std::string name, std::stri
         return new CMaterialCorrelacao(name);
     else if (type == "interpolacao")
         return new CMaterialInterpolacao(name);
+    else  // COLOQUEI ESTE ELSE PARA COMPLETAR AS POSSIBILIDADES E ELIMINAR MSG WARNING
+        return new CMaterialInterpolacao(name);
 }
 
 void CSimuladorTemperatura::addGrid(){

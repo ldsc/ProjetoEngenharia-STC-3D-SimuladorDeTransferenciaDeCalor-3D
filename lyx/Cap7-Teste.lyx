@@ -102,11 +102,12 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
@@ -132,7 +133,11 @@ status open
 \backslash
 lhead{
 \backslash
-thechapter - Teste} 
+thechapter - Teste}
+\change_deleted 1908091853 1651601147
+ 
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -141,17 +146,103 @@ thechapter - Teste}
 \end_layout
 
 \begin_layout Standard
-Neste capítulo, será apresentado os testes e resultados do simulador.
- Inicialmente, o simulador será validado com a solução analítica unidimensional.
+Neste capítulo serão apresentados os testes e resultados do simulador.
+ 
 \end_layout
 
 \begin_layout Standard
-A seguir, serão apresentados resultados aplicados à indústria do petróleo,
- como injeção térmica em reservatórios, simulação reduzida de 
+Inicialmente, o simulador será validado 
+\change_inserted 1908091853 1651598738
+comparando 
+\change_deleted 1908091853 1651598743
+com 
+\change_inserted 1908091853 1651598743
+um
+\change_unchanged
+a solução analítica unidimensional
+\change_inserted 1908091853 1651598759
+ conhecida com o resultado obtido pelo simulador
+\change_unchanged
+.
+ A seguir, serão apresentados resultados aplicados à indústria do petróleo,
+ como
+\change_inserted 1908091853 1651599305
+:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651599375
+os testes não devem estar no mesmo diretório do src; eu criei o diretorio
+ test, copiar para lá uma cópia do executável (ou link para o executável),
+ mover para lá o diretório com os materiais.
+ A vantagem é ficar separado dos códigos.
+ Os resultados dos testes devem estar lá
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_deleted 1908091853 1651598771
+ 
+\change_unchanged
+injeção térmica em reservatórios, 
+\change_inserted 1908091853 1651598776
+
+\end_layout
+
+\begin_layout Itemize
+simulação reduzida de 
 \shape italic
 five-spot
 \shape default
- e, por fim, uma aplicação real na tecnologia.
+ 
+\change_inserted 1908091853 1651599111
+
+\shape italic
+,
+\shape default
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651598821
+adicione mais uns dois exemplos aplicados a petróleo.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651598896
+veja https://pt.slideshare.net/sayonarasilva125/apostila-transmisso-calor-petrobra
+s
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_deleted 1908091853 1651598781
+e, por fim, 
+\change_unchanged
+uma aplicação real na tecnologia
+\change_inserted 1908091853 1651598795
+, resfriamento de processadores
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Section
@@ -160,7 +251,13 @@ Validação do simulador
 
 \begin_layout Standard
 Para validar os resultados do simulador, foi comparado os resultados do
- simulador, com a solução proposta no 
+ simulador, com a solução proposta 
+\change_deleted 1908091853 1651599128
+no
+\change_inserted 1908091853 1651599128
+por
+\change_unchanged
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "incropera2008fundamentos"
@@ -211,7 +308,21 @@ função erro de Gauss
 
 \begin_layout Standard
 As soluções horizontais e verticais do simulador são salvas em uma pasta
- em arquivos '.txt', com o respectivo tempo no nome do arquivo.
+ em arquivos '.txt'
+\change_inserted 1908091853 1651599166
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+, com o respectivo tempo no nome do arquivo.
  A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -232,9 +343,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/validacao_temperaturas.png
+	filename ../imagens/validacao_temperaturas.png
 	lyxscale 70
-	scale 95
+	scale 80
 
 \end_inset
 
@@ -278,7 +389,45 @@ noprefix "false"
 
 \end_inset
 
-, foi programado um código em python apresentado abaixo:
+, foi programado um código em python apresentado 
+\change_deleted 1908091853 1651599445
+abaixo
+\change_inserted 1908091853 1651599457
+na listatam 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651599454
+
+
+\backslash
+ref{validacao}
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+.
+\change_deleted 1908091853 1651599456
+:
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Mudei abaixo o nome para stylePython e a linguagem para python.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -289,7 +438,7 @@ status open
 
 
 \backslash
-lstdefinestyle{C++}{
+lstdefinestyle{stylePython}{
 \end_layout
 
 \begin_layout Plain Layout
@@ -323,7 +472,7 @@ ttfamily,
 
 \begin_layout Plain Layout
 
-language=[ISO]C++,
+language=Python,
 \end_layout
 
 \begin_layout Plain Layout
@@ -423,7 +572,8 @@ color{mygreen1},
 
 \begin_layout Plain Layout
 
-% Palavras chave BLUE
+% Palavras chave BLUE ABAIXO AS ENFASES SAO PARA PALAVRAS CHAVES DE C++
+ TROQUE PELAS DO PYHON
 \end_layout
 
 \begin_layout Plain Layout
@@ -642,10 +792,10 @@ status open
 
 
 \backslash
-lstset{style=C++} 
+lstset{style=stylePython} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da validação.}, label={validac
-ao}] {../SimuladorTemperatura/save_results_validacao/validacao.py}
+lstinputlisting[ caption={Arquivo de implementação da validação em Python},
+ label={validacao}] {../SimuladorTemperatura/save_results_validacao/validacao.py}
 \end_layout
 
 \end_inset
@@ -654,8 +804,37 @@ ao}] {../SimuladorTemperatura/save_results_validacao/validacao.py}
 \end_layout
 
 \begin_layout Standard
-Como resultado do código acima, é apresentado um gráfico comparando dois
- tempos: 50 e 100 segundos.
+Como resultado 
+\change_deleted 1908091853 1651599470
+do código acima,
+\change_unchanged
+ é apresentado um gráfico
+\change_inserted 1908091853 1651599489
+ com
+\change_unchanged
+ 
+\change_inserted 1908091853 1651599493
+duas soluções, para os tempos de 
+\change_deleted 1908091853 1651599494
+comparando dois tempos: 
+\change_inserted 1908091853 1651599494
+ 
+\change_unchanged
+50 e 100 segundos.
+
+\change_inserted 1908091853 1651599584
+ Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comparação da solução da equação de calor com o resultado do simulador"
+
+\end_inset
+
+.
+ Observe que para os dois tempos a solução numérica, obtida com o simulador
+ desenvolvido, esta de acordo com a solução teórica.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -681,15 +860,22 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Comparação da solução da equação de calor com o resultado do simulador.
-\end_layout
+Comparação da solução da equação de calor com o resultado do simulador
+\change_inserted 1908091853 1651599521
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Comparação da solução da equação de calor com o resultado do simulador"
 
 \end_inset
 
 
+\change_unchanged
+
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
@@ -700,7 +886,26 @@ Comparação da solução da equação de calor com o resultado do simulador.
 
 \begin_layout Standard
 Os dados da simulação foram obtidos utilizando um material com propriedades
- termofísicas constantes apresentadas na tabela abaixo:
+ termofísicas constantes apresentadas na 
+\change_deleted 1908091853 1651599596
+t
+\change_inserted 1908091853 1651599596
+T
+\change_unchanged
+abela 
+\change_deleted 1908091853 1651599613
+abaixo
+\change_inserted 1908091853 1651599613
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Tabela com as propriedades termofísicas do modelo de validação"
+
+\end_inset
+
+
+\change_unchanged
+:
 \end_layout
 
 \begin_layout Standard
@@ -715,7 +920,18 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tabela com as propriedades termofísicas do modelo de validação.
+Tabela com as propriedades termofísicas do modelo de validação
+\change_inserted 1908091853 1651599607
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Tabela com as propriedades termofísicas do modelo de validação"
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -829,18 +1045,47 @@ k
 \end_layout
 
 \begin_layout Standard
-O erro do simulador foi 0.69% para 50,0 segundos, e 0,88% para 100,0 segundos.
+O erro do simulador foi
+\change_inserted 1908091853 1651599695
+ de
+\change_unchanged
+ 0.69% para 50,0 segundos, e 0,88% para 100,0 segundos.
  O mínimo de iteração para cada variação de tempo foi de 800 iterações.
  
 \end_layout
 
 \begin_layout Standard
 É importante mencionar que o número de iterações deve ser alta, pois o simulador
- resolve o método BTCS forma iterativa, e só consegue 'avançar' a influência
- da temperatura em uma célula por iteração.
+ resolve o método BTCS 
+\change_inserted 1908091853 1651601012
+de 
+\change_unchanged
+forma iterativa, e só consegue 'avançar' a influência da temperatura em
+ uma célula por iteração.
  O número mínimo de iterações para o simulador deve ser maior que o número
- de células na vertical ( número de células na vertical é maior que na horizonta
-l).
+ de células na vertical (
+\change_deleted 1908091853 1651601022
+ 
+\change_unchanged
+número de células na vertical é maior que na horizontal).
+\change_inserted 1908091853 1651601027
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651601039
+você deve configurar o simulador para garantir este mínimo!
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -913,7 +1158,7 @@ literal "false"
 
 \end_inset
 
-.
+
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Tabela-com-propriedades-injecao-1"
@@ -1132,7 +1377,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tabela com propriedades termofísicas do arenito com água.
+Tabela com propriedades termofísicas do arenito com água
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Tabela-com-propriedades-injecao-2"
@@ -1277,7 +1522,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/modelo_guilherme.png
+	filename ../imagens/modelo_guilherme.png
 	lyxscale 120
 	scale 120
 
@@ -1290,7 +1535,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultados da simulação com renderização 3D.
+Resultados da simulação com renderização 3D
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-guilherme"
@@ -1345,7 +1590,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/modelo_guilherme_graficos.png
+	filename ../imagens/modelo_guilherme_graficos.png
 
 \end_inset
 
@@ -1356,7 +1601,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Gráficos da simulação para o tempo de 3.600 segundos.
+Gráficos da simulação para o tempo de 3.600 segundos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-guilherme-1"
@@ -1454,7 +1699,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/five_spot_1.png
+	filename ../imagens/five_spot_1.png
 	lyxscale 110
 	width 100text%
 
@@ -1471,7 +1716,7 @@ Resultados da simulação do primeiro modelo
 \shape italic
 five-spot
 \shape default
- após 3.600 segundos.
+ após 3.600 segundos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-five-spot-1"
@@ -1518,7 +1763,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/five_spot_graficos_1.png
+	filename ../imagens/five_spot_graficos_1.png
 	width 100text%
 
 \end_inset
@@ -1534,7 +1779,7 @@ Gráficos da simulação do primeiro modelo
 \shape italic
 five-spot
 \shape default
-.
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-five-spot-graficos-1"
@@ -1609,9 +1854,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/five_spot_2.png
+	filename ../imagens/five_spot_2.png
 	lyxscale 110
-	width 100text%
+	width 80text%
 
 \end_inset
 
@@ -1626,7 +1871,7 @@ Resultados da simulação do segundo modelo
 \shape italic
 five-spot
 \shape default
- após 460.800 segundos.
+ após 460.800 segundos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-five-spot-2"
@@ -1676,7 +1921,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/five_spot_graficos_2.png
+	filename ../imagens/five_spot_graficos_2.png
 	width 100text%
 
 \end_inset
@@ -1692,7 +1937,7 @@ Gráficos da simulação do segundo modelo
 \shape italic
 five-spot
 \shape default
-.
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-five-spot-graficos-2"
@@ -2025,7 +2270,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Modelo 1 de injeção térmica em reservatório.
+Modelo 1 de injeção térmica em reservatório
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Teste_reservatorio_sem_agua"
@@ -2094,7 +2339,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Modelo 1 de injeção térmica em reservatório após 4.000 segundos.
+Modelo 1 de injeção térmica em reservatório após 4.000 segundos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Teste_reservatorio_sem_agua-2"
@@ -2161,7 +2406,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Graficos mostrando a variação de temperatura na região próxima ao poço.
+Graficos mostrando a variação de temperatura na região próxima ao poço
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Teste_reservatorio_sem_agua-3"
@@ -2249,7 +2494,7 @@ status open
 \begin_layout Plain Layout
 Tempo inicial da simulação.
  Na esquerda, o cinza representa o poço, azul a água e o amarelo, arenito.
- Na direita, é mostrado as temperaturas.
+ Na direita, é mostrado as temperaturas
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:injecao-termica-com-agua-1"
@@ -2312,7 +2557,7 @@ status open
 
 \begin_layout Plain Layout
 Evolução da simulação.
- Tempo de 610 segundos.
+ Tempo de 610 segundos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:injecao-termica-com-agua-2"
@@ -2372,7 +2617,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tempo final de 7.180 segundos.
+Tempo final de 7.180 segundos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:injecao-termica-com-agua-3"
@@ -2428,7 +2673,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Gráficos do tempo final de 7.180 segundos.
+Gráficos do tempo final de 7.180 segundos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:injecao-termica-com-agua-graficos"
@@ -2556,7 +2801,7 @@ notebook
 \shape italic
 heatpipe,
 \shape default
- que é a barra de cobre que cruza a GPU e CPU, e resfria na ventoinha.
+ que é a barra de cobre que cruza a GPU e CPU, e resfria na ventoinha
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Teste_notebook"
@@ -2759,7 +3004,7 @@ status open
 
 \begin_layout Plain Layout
 Simulação do sistema de resfriamento do notebook após chegar ao período
- permanente.
+ permanente
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Teste_notebook2"
@@ -2823,7 +3068,7 @@ notebook
 \shape italic
 heatpipe,
 \shape default
- que é a barra de cobre que cruza a GPU e CPU, e resfria na ventoinha.
+ que é a barra de cobre que cruza a GPU e CPU, e resfria na ventoinha
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Teste_notebook3"

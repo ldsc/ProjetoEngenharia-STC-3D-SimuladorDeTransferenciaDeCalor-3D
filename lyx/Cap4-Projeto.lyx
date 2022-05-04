@@ -96,11 +96,12 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
@@ -171,20 +172,241 @@ name "sec:Projeto-do-sistema"
 \end_inset
 
 
+\change_inserted 1908091853 1651581917
+
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted 1908091853 1651582412
+O paradigma de programação selecionado foi o orientado o objeto.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651582182
+A linguagem de programação selecionada foi C++ pelos seguintes motivos:
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1651582312
+Linguagem de programação de alto desempenho, adequada para cálculos numéricos
+ intensivos.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1651582324
+Amplo suporte a orientação a objeto e diversos vínculos com UML.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1651582227
+Dezenas de bibliotecas de suporte prontas, incluindo interface gráfica amigável
+ (biblioteca Qt), gráficos (biblioteca QCustomPlot) e bibliotecas para gerar
+ saídas em pdf
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651582147
+coloque o nome
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1651582247
+Programação de alto nível com vários graus de abstração.
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1651582352
+Diversos ambientes de desenvolvimento - IDEs, compiladores, debugers, profillers
+ gratuítos disponíveis, facilitando o uso por alunos.
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 1908091853 1651582382
 O 
 \shape italic
 software
 \shape default
- desenvolvido foi implementado com a linguagem C++, sob o paradigma de orientaçã
-o ao objeto.
+ desenvolvido foi implementado com a linguagem C++, sob o
+\change_inserted 1908091853 1651582382
+O
+\change_unchanged
+ paradigma de 
+\change_inserted 1908091853 1651582394
+programação selecionado foi o 
+\change_unchanged
+orienta
+\change_inserted 1908091853 1651582396
+do
+\change_deleted 1908091853 1651582395
+ção
+\change_unchanged
+ 
+\change_deleted 1908091853 1651582397
+a
+\change_unchanged
+o objeto
+\change_inserted 1908091853 1651582077
+.
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 1908091853 1651581901
+.
  
 \end_layout
 
 \begin_layout Standard
-Inicialmente, foi utilizado a biblioteca 
+
+\change_inserted 1908091853 1651582677
+O software foi desenvolvido utilizando o padrão apresentado pelo Prof.
+ André Bueno na disciplina de programação e ilustrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Etapas para o desenvolvimento do software"
+
+\end_inset
+
+.
+ Note que o 
+\begin_inset Quotes eld
+\end_inset
+
+Ciclo de Concepção e Análise
+\begin_inset Quotes erd
+\end_inset
+
+ é composto pelo que foi apresentado nos capítulos anteriores e neste capítulo.
+ Os 
+\begin_inset Quotes eld
+\end_inset
+
+Ciclos de Planejamento/Detalhamento
+\begin_inset Quotes erd
+\end_inset
+
+ e 
+\begin_inset Quotes eld
+\end_inset
+
+Ciclo Construção
+\begin_inset Quotes erd
+\end_inset
+
+, envolvem a construção das diferentes versões do software.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651582718
+Iremos apresentar a seguir breves informações sobre as versões desenvolvidas
+ em cada ciclo de Planejamento/Detalhamento/Construção.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651582462
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\change_inserted 1908091853 1651582462
+\begin_inset Graphics
+	filename /home/andreduartebueno/workdir/Projeto-TCC-SimuladorDifusaoTermica-Nicholas-Bueno-Guilherme/imagens/EngenhariaSoftware-Geral.png
+	lyxscale 40
+	width 100text%
+	height 80text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651582462
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651582480
+Etapas para o desenvolvimento do software
+\shape italic
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Etapas para o desenvolvimento do software"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted 1908091853 1651582760
+Versão 0.1 - Uso modo terminal e biblioteca SFML para saída gráfica
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 1908091853 1651582771
+Inicialmente
+\change_inserted 1908091853 1651582773
+Na primeira versão 
+\change_deleted 1908091853 1651582774
+,
+\change_unchanged
+ foi utilizad
+\change_deleted 1908091853 1651581711
+o
+\change_inserted 1908091853 1651582822
+o um sistema de entrada de dados via terminal e saída de dados gráfica.
+
+\change_unchanged
+ 
+\change_deleted 1908091853 1651582828
+a
+\change_inserted 1908091853 1651582828
+A
+\change_unchanged
+ biblioteca 
 \shape italic
 SFML
 \begin_inset Foot
@@ -208,9 +430,25 @@ target "https://www.sfml-dev.org/"
 \end_inset
 
  
+\change_inserted 1908091853 1651582838
+
 \shape default
-para a criação de janelas para o usuário, e utilizado o ambiente de desenvolvime
-nto 
+foi utilizada 
+\change_unchanged
+para a criação de janelas para o usuário
+\change_deleted 1908091853 1651582843
+,
+\change_inserted 1908091853 1651582843
+.
+
+\change_unchanged
+ 
+\change_deleted 1908091853 1651582848
+e utilizado o 
+\change_inserted 1908091853 1651582854
+Esta versão foi desenvolvida usando 
+\change_unchanged
+ambiente de desenvolvimento 
 \shape italic
 Visual Studio
 \shape default
@@ -220,11 +458,28 @@ Windows 10.
 \end_layout
 
 \begin_layout Standard
-Inicialmente, foi desenvolvido um 
+
+\change_deleted 1908091853 1651582794
+Inicialmente,
+\change_unchanged
+ 
+\change_deleted 1908091853 1651582864
+foi desenvolvido um
+\change_inserted 1908091853 1651582866
+note que é um
+\change_unchanged
+ 
 \shape italic
 software
 \shape default
- simples, com uma mistura de janela-terminal mostrado na Figura 
+ simples, com uma mistura de janela-terminal
+\change_inserted 1908091853 1651582876
+.
+
+\change_unchanged
+ 
+\change_deleted 1908091853 1651582878
+mostrado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Versão-0.1,-simples"
@@ -235,9 +490,25 @@ noprefix "false"
 \end_inset
 
 .
+
+\change_unchanged
  O usuário podia desenhar e simular, mas não tinha muita liberdade para
  escolher e adicionar materiais.
  
+\change_inserted 1908091853 1651582887
+Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Versão-0.1,-simples"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\change_unchanged
+
 \begin_inset Float figure
 placement H
 wide false
@@ -249,7 +520,7 @@ status open
 \begin_inset Graphics
 	filename ../imagens/v1.0.png
 	lyxscale 60
-	width 80text%
+	width 100text%
 
 \end_inset
 
@@ -282,7 +553,19 @@ name "fig:Versão-0.1,-simples"
 
 \end_layout
 
+\begin_layout Subsection
+
+\change_inserted 1908091853 1651582960
+Versão 0.2 - Adição de visualização para os tipos de materiais
+\end_layout
+
 \begin_layout Standard
+
+\change_inserted 1908091853 1651583005
+Nesta versão foram implementadas as seguintes melhorias:
+\end_layout
+
+\begin_layout Itemize
 Conforme a evolução pedia, foi criada uma segunda janela, a qual replica
  o desenho com as cores do material escolhido, como mostrado na Figura 
 \begin_inset CommandInset ref
@@ -295,6 +578,24 @@ noprefix "false"
 \end_inset
 
 .
+\change_inserted 1908091853 1651583005
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651582987
+fale das melhorias
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -309,7 +610,7 @@ status open
 \begin_inset Graphics
 	filename ../imagens/v1.1.png
 	lyxscale 60
-	width 80text%
+	width 100text%
 
 \end_inset
 
@@ -320,7 +621,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Versão 0.2, simples, mas contendo uma segunda janela dos materiais.
+Versão 0.2, simples, mas contendo uma segunda janela dos materiais
+\change_deleted 1908091853 1651584022
+.
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Versão-0.2,-simples,"
@@ -340,7 +645,82 @@ name "fig:Versão-0.2,-simples,"
 
 \end_layout
 
+\begin_layout Subsection
+
+\change_inserted 1908091853 1651597306
+Versão 0.3 - Adição de atalhos na tela
+\end_layout
+
 \begin_layout Standard
+
+\change_inserted 1908091853 1651583132
+Esta foi a última versão montada utilizando  a biblioteca 
+\shape italic
+SFML
+\shape default
+.
+ Foi uma versão importantíssima para o aprendizado, pois o usuário não desenhava
+ diretamente no 
+\shape italic
+software
+\shape default
+, mas era enviado uma lista de propriedades do desenho para o 
+\shape italic
+grid
+\shape default
+ e, quando o desenho era atualizado, a biblioteca utilizava os valores do
+ 
+\shape italic
+grid
+\shape default
+.
+ Isso permitiu juntar as duas janelas.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651583102
+Foram implementadas as seguintes melhorias:
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1651583175
+Adição de instruções de uso incluindo teclas de atalho.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651583143
+fale das melhorias colocando itens
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651583115
+Esta versão é ilustrada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Versão-0.3,-completa"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 1908091853 1651583131
 Por fim, foi montada a versão final utilizando essa biblioteca, mostrado
  na Figura 
 \begin_inset CommandInset ref
@@ -383,7 +763,7 @@ status open
 \begin_inset Graphics
 	filename ../imagens/v1.2.png
 	lyxscale 80
-	width 80text%
+	width 100text%
 
 \end_inset
 
@@ -394,7 +774,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Versão 0.3, completa e complexa, mas muito lento.
+Versão 0.3, completa e complexa, mas muito lento
+\change_deleted 1908091853 1651584026
+.
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Versão-0.3,-completa"
@@ -414,17 +798,92 @@ name "fig:Versão-0.3,-completa"
 
 \end_layout
 
-\begin_layout Standard
-Durante o desenvolvimento das versões anteriores, foi citada uma segunda
- biblioteca gráfica chamada 
-\shape italic
-Qt
-\shape default
-, mais rápida e completa que a anterior.
- Então surgiu essa necessidade de mudança.
+\begin_layout Subsection
+
+\change_inserted 1908091853 1651583225
+Versão 0.4 - Mudança para biblioteca Qt
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted 1908091853 1651583215
+E
+\change_unchanged
+Durante o desenvolvimento das versões anteriores
+\change_inserted 1908091853 1651583309
+ foram identificados programas como a dificuldade de lidar com mudanças
+ na interface quando se usa a biblioteca 
+\shape italic
+SFML.
+ 
+\emph on
+Também foi identificado problema de desempenho.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651583330
+Então surgiu essa necessidade de mudança, e a 
+\change_deleted 1908091853 1651583329
+, foi citada uma segunda 
+\change_unchanged
+biblioteca gráfica 
+\change_deleted 1908091853 1651583333
+chamada 
+\change_unchanged
+
+\shape italic
+Qt
+\shape default
+,
+\change_inserted 1908091853 1651583340
+foi escolhida por ser:
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1651583355
+mais completa.
+\end_layout
+
+\begin_layout Itemize
+
+\change_deleted 1908091853 1651583340
+ 
+\change_unchanged
+mais rápida
+\change_inserted 1908091853 1651583358
+.
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1651583368
+de amplo uso em programas de engenharia.
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1651583384
+com versões livres.
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1651583405
+multiplataforma
+\change_deleted 1908091853 1651583414
+ e completa que a anterior.
+ Então surgiu essa necessidade de mudança
+\change_unchanged
+.
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 1908091853 1651583847
 Como o 
 \shape italic
 software
@@ -468,11 +927,21 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Versão 1.0, inicial e incompleta, mas utilizando a biblioteca 
+Versão 
+\change_deleted 1908091853 1651583648
+1.0
+\change_inserted 1908091853 1651583649
+0.4
+\change_unchanged
+, inicial e incompleta, mas utilizando a biblioteca 
 \shape italic
 Qt
+\change_deleted 1908091853 1651583653
+
 \shape default
 .
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Versão-1.0,-inicial"
@@ -558,6 +1027,133 @@ name "fig:Qt-Creator"
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted 1908091853 1651583865
+Como o 
+\shape italic
+software
+\shape default
+ foi todo programado utilizando o paradigma da orientação a objeto, esta
+ migração foi muito rápida.
+ Tivemos de modificar, quase que somente, a classe da janela.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651583904
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651583865
+Foram implementadas as seguintes melhorias:
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1651583865
+Adição na interface gráfica da entrada de dados da temperatura.
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1651583865
+Botão para selecionar o tipo de material.
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1651583865
+Definição de 4 áreas para saída gráfica.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651583865
+fale das melhorias colocando itens
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651583865
+A versão 0.4 do software é apresentada  na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Versão-1.0,-inicial"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\change_inserted 1908091853 1651583865
+\begin_inset Graphics
+	filename ../imagens/v2.0.png
+	lyxscale 40
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651583865
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651583865
+Versão 0.4, inicial e incompleta, mas utilizando a biblioteca 
+\shape italic
+Qt
+\shape default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Versão-1.0,-inicial"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted 1908091853 1651583984
+Versão 0.5 - Melhorias na interface gráfica - usabilidade
+\end_layout
+
+\begin_layout Standard
 A curva de evolução do 
 \shape italic
 software
@@ -577,11 +1173,49 @@ noprefix "false"
 
 \end_inset
 
-, com duas áreas que apresentam os cortes desenhados, 4 gráficos com valores
- da temperatura ao longo do tempo ou espaço.
- Na região do canto inferior esquerdo, mostram opções para a simulação ou
+
+\change_inserted 1908091853 1651583899
+.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651583911
+Foram implementadas as seguintes melhorias:
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1651583936
+Duas áreas que apresentam os cortes desenhados.
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1651583937
+Quatro gráficos com valores da temperatura ao longo do tempo ou espaço.
+ 
+\end_layout
+
+\begin_layout Itemize
+, 
+\change_deleted 1908091853 1651583925
+com duas áreas que apresentam os cortes desenhados
+\change_unchanged
+, 
+\change_deleted 1908091853 1651583936
+4 gráficos com valores da temperatura ao longo do tempo ou espaço.
+ 
+\change_unchanged
+Na região do canto inferior esquerdo, mostram opções para a simulação ou
  criação do objeto.
- Na direita, são mostradas as propriedades termofísicas de vários materiais
+ 
+\change_inserted 1908091853 1651583951
+
+\end_layout
+
+\begin_layout Itemize
+Na direita, são mostradas as propriedades termofísicas de vários materiais
  como função da temperatura.
 \begin_inset Float figure
 placement H
@@ -611,12 +1245,42 @@ name "fig:Versão-1.2,-final."
 
 \end_inset
 
-Versão 1.1, final.
- Na direita é apresentado a visualização 3D do objeto desenhado.
+Versão 
+\change_deleted 1908091853 1651584003
+1.1
+\change_inserted 1908091853 1651584004
+0.5
+\change_unchanged
+, final.
+ Na direita é apresentado a visualização 3D do objeto desenhado
+\change_deleted 1908091853 1651584011
+.
+\change_unchanged
+
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1651597360
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651597379
+se ocorreram novas mudanças até o final inclua uma versão 0.6 (ou chame de
+ 1.0).
+\change_unchanged
 
 \end_layout
 
@@ -634,8 +1298,14 @@ O diagrama de componentes mostra as relações entre todos os componentes
  do 
 \shape italic
 software
+\change_inserted 1908091853 1651584050
+
 \shape default
-, apresentado na Figura 
+ e é
+\change_deleted 1908091853 1651584049
+,
+\change_unchanged
+ apresentado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Diagrama-de-componentes"
@@ -656,7 +1326,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../imagens/Diagrama de componentes.png
-	lyxscale 25
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -689,6 +1359,25 @@ name "fig:Diagrama-de-componentes"
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted 1908091853 1651584117
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651584157
+veja se dá para colocar main, mainiwindow, qcustom plot e render dentro
+ de um componente maior chamado interfaceGrafica e os demais num componente
+ maior chamado simuladorTemperatura
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 Começando pela esquerda na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -807,7 +1496,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de implementação.
+Diagrama de implementação
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Diagrama-de-implementação"

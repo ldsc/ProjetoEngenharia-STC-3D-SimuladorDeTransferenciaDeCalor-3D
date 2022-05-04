@@ -565,7 +565,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da função main.}, label={main-
+lstinputlisting[ caption={Arquivo de implementação da função main}, label={main-
 cpp}] {../listagens/main.cpp}
 \end_layout
 
@@ -602,7 +602,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da função mainwindow.},
+lstinputlisting[ caption={Arquivo de implementação da função mainwindow},
  label={mainwindow-h}] {../listagens/mainwindow.h}
 \end_layout
 
@@ -635,7 +635,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da função mainwindow.},
+lstinputlisting[ caption={Arquivo de implementação da função mainwindow},
  label={mainwindow-cpp}] {../listagens/mainwindow.cpp}
 \end_layout
 
@@ -672,7 +672,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da classe CRender3D.},
+lstinputlisting[ caption={Arquivo de implementação da classe CRender3D},
  label={CRender3D-h}] {../listagens/CRender3D.h}
 \end_layout
 
@@ -712,7 +712,7 @@ lstinputlisting[ caption={
 
 Arquivo de implementação da função 
 \backslash
-texttt{main()}.}, label={CRender3D-cpp}] {../listagens/CRender3D.cpp}
+texttt{main()}}, label={CRender3D-cpp}] {../listagens/CRender3D.cpp}
 \end_layout
 
 \end_inset
@@ -749,7 +749,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CSimuladorTemperatu
-ra.}, label={CSimuladorTemperatura-h}] {../listagens/CSimuladorTemperatura.h}
+ra}, label={CSimuladorTemperatura-h}] {../listagens/CSimuladorTemperatura.h}
 \end_layout
 
 \end_inset
@@ -788,7 +788,7 @@ lstinputlisting[ caption={
 
 Arquivo de implementação da função 
 \backslash
-texttt{main()}.}, label={CSimuladorTemperatura-cpp}] {../listagens/CSimuladorTemper
+texttt{main()}}, label={CSimuladorTemperatura-cpp}] {../listagens/CSimuladorTemper
 atura.cpp}
 \end_layout
 
@@ -825,7 +825,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da classe CGrid.}, label={CGri
+lstinputlisting[ caption={Arquivo de implementação da classe CGrid}, label={CGri
 d-h}] {../listagens/CGrid.h}
 \end_layout
 
@@ -865,7 +865,7 @@ lstinputlisting[ caption={
 
 Arquivo de implementação da função 
 \backslash
-texttt{main()}.}, label={CGrid-cpp}] {../listagens/CGrid.cpp}
+texttt{main()}}, label={CGrid-cpp}] {../listagens/CGrid.cpp}
 \end_layout
 
 \end_inset
@@ -901,7 +901,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da classe CCell.}, label={CCel
+lstinputlisting[ caption={Arquivo de implementação da classe CCell}, label={CCel
 l-h}] {../listagens/CCell.h}
 \end_layout
 
@@ -941,7 +941,7 @@ lstinputlisting[ caption={
 
 Arquivo de implementação da função 
 \backslash
-texttt{main()}.}, label={CCell-cpp}] {../listagens/CCell.cpp}
+texttt{main()}}, label={CCell-cpp}] {../listagens/CCell.cpp}
 \end_layout
 
 \end_inset
@@ -977,7 +977,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da classe CMaterial.},
+lstinputlisting[ caption={Arquivo de implementação da classe CMaterial},
  label={CMaterial-h}] {../listagens/CMaterial.h}
 \end_layout
 
@@ -1017,7 +1017,7 @@ lstinputlisting[ caption={
 
 Arquivo de implementação da função 
 \backslash
-texttt{main()}.}, label={CMaterial-cpp}] {../listagens/CMaterial.cpp}
+texttt{main()}}, label={CMaterial-cpp}] {../listagens/CMaterial.cpp}
 \end_layout
 
 \end_inset
@@ -1049,7 +1049,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da classe CMaterialCorrelacao.
+lstinputlisting[ caption={Arquivo de implementação da classe CMaterialCorrelacao
 }, label={CMaterialCorrelacao-h}] {../listagens/CMaterialCorrelacao.h}
 \end_layout
 
@@ -1089,7 +1089,7 @@ lstinputlisting[ caption={
 
 Arquivo de implementação da função 
 \backslash
-texttt{main()}.}, label={CMaterialCorrelacao-cpp}] {../listagens/CMaterialCorrelaca
+texttt{main()}}, label={CMaterialCorrelacao-cpp}] {../listagens/CMaterialCorrelaca
 o.cpp}
 \end_layout
 
@@ -1127,7 +1127,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CMaterialInterpolac
-ao.}, label={CMaterialInterpolacao-h}] {../listagens/CMaterialInterpolacao.h}
+ao}, label={CMaterialInterpolacao-h}] {../listagens/CMaterialInterpolacao.h}
 \end_layout
 
 \end_inset
@@ -1166,7 +1166,7 @@ lstinputlisting[ caption={
 
 Arquivo de implementação da função 
 \backslash
-texttt{main()}.}, label={CMaterialInterpolacao-cpp}] {../listagens/CMaterialInterpo
+texttt{main()}}, label={CMaterialInterpolacao-cpp}] {../listagens/CMaterialInterpo
 lacao.cpp}
 \end_layout
 
@@ -1203,7 +1203,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da classe CSegmentoReta.},
+lstinputlisting[ caption={Arquivo de implementação da classe CSegmentoReta},
  label={CSegmentoReta-h}] {../listagens/CSegmentoReta.h}
 \end_layout
 
@@ -1243,7 +1243,7 @@ lstinputlisting[ caption={
 
 Arquivo de implementação da função 
 \backslash
-texttt{main()}.}, label={CSegmentoReta-cpp}] {../listagens/CSegmentoReta.cpp}
+texttt{main()}}, label={CSegmentoReta-cpp}] {../listagens/CSegmentoReta.cpp}
 \end_layout
 
 \end_inset
@@ -1279,7 +1279,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da classe CReta.}, label={CRet
+lstinputlisting[ caption={Arquivo de implementação da classe CReta}, label={CRet
 a-h}] {../listagens/CReta.h}
 \end_layout
 
@@ -1319,7 +1319,7 @@ lstinputlisting[ caption={
 
 Arquivo de implementação da função 
 \backslash
-texttt{main()}.}, label={CReta-cpp}] {../listagens/CReta.cpp}
+texttt{main()}}, label={CReta-cpp}] {../listagens/CReta.cpp}
 \end_layout
 
 \end_inset
