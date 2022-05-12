@@ -1555,8 +1555,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-O diagrama de caso de uso geral da Fig.
- 
+O diagrama de caso de uso geral da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-caso-uso-geral"
@@ -1818,8 +1817,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-O caso de uso específico da Fig.
- 
+O caso de uso específico da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-caso-de-uso-especifico"

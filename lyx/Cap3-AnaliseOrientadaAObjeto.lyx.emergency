@@ -1,0 +1,1093 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package auto
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement p
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter - Análise Orientada a Objeto}  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Análise Orientada a Objeto
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Análise orientada a objeto
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:AOO"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Neste capítulo serão apresentados os objetos desenvolvidos no projeto, suas
+ relações, atributos e métodos.
+ Depois de uma breve explicação sobre cada objeto, serão apresentados diagramas
+ UML (Linguagem de Modelagem Unificada), para auxiliar no entendimento do
+ 
+\shape italic
+software
+\shape default
+ e suas relações.
+ Serão apresentados os diagramas de classes, de sequência, de comunidação,
+ de máquina de estado e de atividades.
+\end_layout
+
+\begin_layout Section
+Dicionário das classes
+\end_layout
+
+\begin_layout Standard
+O 
+\shape italic
+software
+\shape default
+ é constituído por 10 classes, onde duas classes de interpolação foram implement
+adas pelo professor André Duarte Bueno no curso de C++.
+ Utilizar esse código pronto, mostra que o simulador está apto a adições
+ de métodos para o cálculo das propriedades termofísicas.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+mainwindow.h:
+\series default
+ Classe responsável pela janela principal.
+ Consegue obter os valores adicionados pelo usuário e enviar para a classe
+ do simulador.
+ Permite ao usuário desenhar o objeto a ser simulado, setar suas propriedades,
+ setar as propriedades numéricas e disparar a simulação.
+ Apresenta os resultados na medida em que os mesmos são realizados, possibilitan
+do parar a simulação para ver resultados parciais.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+CRender3D.h:
+\series default
+ Classe responsável por apresentar o objeto em renderização 3D.
+ É criada a partir da classe mainwindow.h e recebe valores do simulador.
+ Possui toda a álgebra necessária para a renderização.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+CSimuladorTemperatura.h:
+\series default
+ Classe responsável por organizar as células do objeto a ser simulado e
+ por resolver o sistema numérico do problema da difusão térmica.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+CGrid.h:
+\series default
+ Classe responsável por organizar as células do objeto em 
+\shape italic
+grids
+\shape default
+, importante para organizar as células e facilitar a utilização pela classe
+ CSimuladorTemperatura.h.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+CCell.h:
+\series default
+ Classe responsável por armazenar informações da célula, se ela está ativa
+ ou não, se é fonte de calor ou não, qual o tipo de material e qual sua
+ temperatura.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+CMaterial.h:
+\series default
+ Classe virtual responsável por prover os valores das propriedades termofísicas
+ dos materiais.
+ É chamada pelo CSimuladorTemperatura.h e é sobrescrita por CMaterialCorrelacao.h
+ ou CMaterialInterpolacao.h.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+CMaterialCorrelacao.h:
+\series default
+ Classe responsável por calcular os valores das propriedades termofísicas
+ como função da temperatura, a propriedade é determinada a partir de correlações
+ lidas do disco.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+CMaterialInterpolacao.h:
+\series default
+ Classe responsável por calcular os valores das propriedades termofísicas
+ como função da temperatura, a propriedade é determinada utilizando método
+ de interpolação linear a partir de dados experimentais armazenados em disco.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+CReta.h:
+\series default
+ Representa uma reta, dado um valor de x calcula y.
+ Usada no calculo da interpolação linear.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+CSegmentoReta.h:
+\series default
+ Representa um segmento de reta com intervalos definidos.
+ .
+\end_layout
+
+\begin_layout Standard
+Uma classe externa foi utilizada no simulador:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+qcustomplot.h:
+\series default
+ Classe responsável por gerar gráficos apresentados pelo mainwindow.h, obtido
+ em (
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.qcustomplot.com/"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+Também foram utilizadas diversas classes de Qt.
+\end_layout
+
+\begin_layout Standard
+O diagrama de classes é apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-classes"
+
+\end_inset
+
+.
+ Ele tem como objetivo apresentar todas as classes, seus atributos, métodos,
+ heranças e relações entre as classes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/diagrama-de-classes.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+coloque no apêndice 
+\begin_inset Quotes eld
+\end_inset
+
+Diagramas UML
+\begin_inset Quotes erd
+\end_inset
+
+ uma versão completa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de classes
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-classes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrama de sequência
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Diagrama de sequência
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:diagrama de sequência"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+\emph on
+O diagrama de sequência enfatiza a troca de eventos e mensagens e sua ordem
+ temporal, representando um cenário de uso do software.
+ Contém informações sobre o fluxo de controle do software.
+ Costuma ser montado a partir de um diagrama de caso de uso e estabelece
+ o relacionamento dos atores (usuários e sistemas externos) com alguns objetos
+ do sistema.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Monte 6 diagramas de sequência
+\end_layout
+
+\begin_layout Plain Layout
+O primeiro bem geral, ilustrando os objetos e seus relacionamentos mais
+ básicos
+\end_layout
+
+\begin_layout Plain Layout
+O segundo mostrando a adição de um novo material, apenas esta parte e os
+ objetos relacionados.
+\end_layout
+
+\begin_layout Plain Layout
+O terceiro mostrando em detalhes uma sequência em que adiciona 3 objetos
+ no gráfico, com temperaturas iniciais diferentes e materiais diferentes.
+\end_layout
+
+\begin_layout Plain Layout
+O quarto analisando resultados.
+\end_layout
+
+\begin_layout Plain Layout
+O quinto disparando a simulação, parando no meio e fazendo alterações.
+\end_layout
+
+\begin_layout Plain Layout
+O sexto mostrando como os objetos numéricos se relacionam durante a simulação.
+\end_layout
+
+\begin_layout Plain Layout
+Enfim, os diagramas devem mostrar os principais cenários de uso do software.
+ E cada um só mostra os objetos realmente utilizados.
+ CGrid e CCell só vão aparecer no de
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\shape italic
+\emph on
+Diagrama de sequência - cenário geral
+\end_layout
+
+\begin_layout Standard
+A seguir é apresentado o diagrama de sequência geral na Fig
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+em todo documento troque Fig.
+ por Figura, troque Tab.
+ por Tabela.
+ é o padrão abnt
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-sequencia-geral"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, conforme o exemplo do caso de uso da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-caso-uso-geral"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+este diagrama deve ser bem geral, mostrando a sequência sem entrar nos detalhes
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Corrigir na figura abaixo
+\end_layout
+
+\begin_layout Plain Layout
+- Escolher temperatura -> Definir temperatura inicial
+\end_layout
+
+\begin_layout Plain Layout
+- Para cada parte do objeto definir tipo de material e desenhar
+\end_layout
+
+\begin_layout Plain Layout
+- Definir propriedades físicas
+\end_layout
+
+\begin_layout Plain Layout
+- Definir propriedades numéricas da simulação
+\end_layout
+
+\begin_layout Plain Layout
+- ...enfim, coloque na ordem exata em que faz a simulação padrão.
+\end_layout
+
+\begin_layout Plain Layout
+.
+\end_layout
+
+\begin_layout Plain Layout
+.Quando chama Executar o método numérico tem implicações internas que podem
+ ser mostradas, da forma como esta CGrid e CCell podem ser retirados do
+ diagrama.
+ Ou seja, ou elimina CCGrid e CCell ou inclui as chamadas a métodos destes
+ objetos.
+ Pode eliminar aqui e colocar no segundo/terceiro diagrama de sequência
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/Diagrama de sequencia geral.png
+	lyxscale 40
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de sequência
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-sequencia-geral"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\shape italic
+\emph on
+Diagrama de sequência - adicionando novo material/correlação
+\end_layout
+
+\begin_layout Standard
+Uma atividade corriqueira é adicionar ao simulador um novo material.
+ Neste caso os dados do material são salvos em um arquivo de disco, em formato
+ pré-definido e então lidos pelo simulador.
+ .
+ O diagrama de sequência da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-sequencia-especifico"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ mostra este cenário.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+na figura abaixo deixe apenas os itens relacionados a adição de novo material,
+ não entram CGrid e CCell
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/Diagrama de sequencia especifica.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de sequência
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-sequencia-especifico"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Coloque mais diagramas de sequência com cenários específicos, por exemplo:
+\end_layout
+
+\begin_layout Plain Layout
+- Diagrama de sequência que mostra a parte numérica, quais objetos numéricos
+ chamam quais durante a simulação (apenas a parte da simulação em sí, não
+ entra a entrada de dados nem a análise dos resultados).
+\end_layout
+
+\begin_layout Plain Layout
+- Diagrama de sequência para análise dos resultados.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\shape italic
+\emph on
+Diagrama de sequência - adicionando objetos no gráfico
+\end_layout
+
+\begin_layout Standard
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+adicionar no diagrama só os objetos efetivamente utilizados
+\end_layout
+
+\end_inset
+
+
+\shape italic
+\emph on
+Diagrama de sequência - sequência numérica da simulação
+\end_layout
+
+\begin_layout Standard
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+adicionar no diagrama só os objetos efetivamente utilizados
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\shape italic
+\emph on
+Diagrama de sequência - análise de resultados
+\end_layout
+
+\begin_layout Standard
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+adicionar no diagrama só os objetos efetivamente utilizados
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrama de comunicação
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+comunicação
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Diagrama-de-Comunicação"
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Diagrama de colaboração
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Diagrama-de-colaboração:"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O diagrama de comunicação tem como objetivo apresentar as interações dos
+ objetos, juntamente com sua sequência de processos.
+\end_layout
+
+\begin_layout Standard
+O diagrama de comunicação do caso de uso geral é apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-comunicação"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+atualizar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/Diagrama-de-comunicacao.png
+	lyxscale 30
+	width 85text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de comunicação
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-comunicação"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrama de máquina de estado
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+estado
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Diagrama de máquina de estado
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:diagrama de estados"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O diagrama de máquina de estado descreve os estados de uma classe desde
+ o momento de sua criação, até sua destruição.
+ A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-maquina-de-estado"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ mostra a máquina de estado para a classe CSimuladorTemperatura.
+\end_layout
+
+\begin_layout Standard
+Inicialmente, os dados são recebidos pela classe CSimuladorTemperatura,
+ seus atributos são atualizados, e é iniciado o método BTCS.
+ Conforme a opção de paralelismo, ele pode seguir para uma dentre as três
+ sequências, chegando na comparação com a iteração anterior.
+\end_layout
+
+\begin_layout Standard
+Como o método resolve os sistemas de equações de maneira iterativa, é necessário
+ a comparação entre os valores calculados, com a iteração anterior, para
+ avaliar se os valores convergiram.
+ Se não convergiu, ele retorna para os cálculos, se convergiu, ele atualiza
+ as temperaturas nos 
+\shape italic
+grids
+\shape default
+, e finaliza suas ações.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/diagrama-de-maquina-de-estado.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de máquina de estado para a classe CSimuladorTemperatura
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-maquina-de-estado"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Você deve montar diagramas de máquina de estado para classes cujo comportamento
+ possa mudar em função do estado do objeto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrama de atividades
+\end_layout
+
+\begin_layout Standard
+No diagrama de atividades apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-atividades"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, é mostrado em detalhes uma atividade específica.
+ Para o presente caso, será apresentado o diagrama de atividades do algoritmo
+ de renderização da classe CRender3D.h, devido à complexidade de renderização
+ 3D.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Diagrama de máquina de estado esta relacionado ao objeto como um todo;
+\end_layout
+
+\begin_layout Plain Layout
+Diagrama de atividades é a descrição de um método/função específica.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Inicialmente, essa classe recebe os dados do simulador, as posições e os
+ atributos das células.
+ Com isso, são criadas matrizes com os pontos de triângulos para cada respectivo
+ ponto, se a superfície desse objeto for possível de se observar.
+ Ou seja, se existir uma superfície em contato com essa outra superfície,
+ nenhuma das duas serão criadas, pois estarão dentro do objeto.
+\end_layout
+
+\begin_layout Standard
+A partir desse ponto, são obtidos os valores dos ângulos e calculado a matriz
+ rotacionada dos pontos dos triângulos e, em seguida, obtidas suas normas.
+ Se positivo, esse valor é guardado em uma matriz, a qual é ordenada em
+ ordem crescente.
+\end_layout
+
+\begin_layout Standard
+Com todos os valores calculados e ordenados, a classe renderiza na tela
+ o objeto 3D.
+ Conforme condições do usuário, o objeto pode concluir suas atividades,
+ ou calcular novos valores para outra renderização.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/Diagrama de atividades.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de atividades para o algoritmo de renderização::CRender3D
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-atividades"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Você deve montar diagramas de atividade para métodos cujos cálculos ou fluxogram
+a sejam complexos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -222,14 +222,17 @@ debug/moc_CRender3D.cpp: CRender3D.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qstringlist.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qalgorithms.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qstringmatcher.h \
-		C:/Qt/6.1.3/mingw81_64/include/QtGui/QPainter \
-		C:/Qt/6.1.3/mingw81_64/include/QtGui/qpainter.h \
+		C:/Qt/6.1.3/mingw81_64/include/QtGui/QVector3D \
+		C:/Qt/6.1.3/mingw81_64/include/QtGui/qvectornd.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qtguiglobal.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qtgui-config.h \
+		C:/Qt/6.1.3/mingw81_64/include/QtCore/qpoint.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qrect.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qmargins.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qsize.h \
-		C:/Qt/6.1.3/mingw81_64/include/QtCore/qpoint.h \
+		C:/Qt/6.1.3/mingw81_64/include/QtCore/qmath.h \
+		C:/Qt/6.1.3/mingw81_64/include/QtGui/QPainter \
+		C:/Qt/6.1.3/mingw81_64/include/QtGui/qpainter.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qscopedpointer.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qpixmap.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qpaintdevice.h \
@@ -254,7 +257,6 @@ debug/moc_CRender3D.cpp: CRender3D.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qmetacontainer.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qcontainerinfo.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qtaggedpointer.h \
-		C:/Qt/6.1.3/mingw81_64/include/QtCore/qmath.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qobject_impl.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qproperty.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qpropertyprivate.h \
@@ -295,7 +297,6 @@ debug/moc_CRender3D.cpp: CRender3D.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qeventpoint.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qvector2d.h \
-		C:/Qt/6.1.3/mingw81_64/include/QtGui/qvectornd.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qpointingdevice.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qinputdevice.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qscreen.h \
@@ -496,6 +497,7 @@ debug/moc_mainwindow.cpp: mainwindow.h \
 		CRender3D.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/QVector \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qvector.h \
+		C:/Qt/6.1.3/mingw81_64/include/QtGui/QVector3D \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/QPaintEvent \
 		CSimuladorTemperatura.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/QPoint \
@@ -805,7 +807,6 @@ debug/moc_mainwindow.cpp: mainwindow.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/qgraphicssceneevent.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/qgraphicstransform.h \
-		C:/Qt/6.1.3/mingw81_64/include/QtGui/QVector3D \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/QMatrix4x4 \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/qgraphicsview.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/qgroupbox.h \
@@ -2387,14 +2388,17 @@ debug/CRender3D.o: CRender3D.cpp CRender3D.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qstringlist.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qalgorithms.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qstringmatcher.h \
-		C:/Qt/6.1.3/mingw81_64/include/QtGui/QPainter \
-		C:/Qt/6.1.3/mingw81_64/include/QtGui/qpainter.h \
+		C:/Qt/6.1.3/mingw81_64/include/QtGui/QVector3D \
+		C:/Qt/6.1.3/mingw81_64/include/QtGui/qvectornd.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qtguiglobal.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qtgui-config.h \
+		C:/Qt/6.1.3/mingw81_64/include/QtCore/qpoint.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qrect.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qmargins.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qsize.h \
-		C:/Qt/6.1.3/mingw81_64/include/QtCore/qpoint.h \
+		C:/Qt/6.1.3/mingw81_64/include/QtCore/qmath.h \
+		C:/Qt/6.1.3/mingw81_64/include/QtGui/QPainter \
+		C:/Qt/6.1.3/mingw81_64/include/QtGui/qpainter.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qscopedpointer.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qpixmap.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qpaintdevice.h \
@@ -2419,7 +2423,6 @@ debug/CRender3D.o: CRender3D.cpp CRender3D.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qmetacontainer.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qcontainerinfo.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qtaggedpointer.h \
-		C:/Qt/6.1.3/mingw81_64/include/QtCore/qmath.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qobject_impl.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qproperty.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qpropertyprivate.h \
@@ -2460,7 +2463,6 @@ debug/CRender3D.o: CRender3D.cpp CRender3D.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qeventpoint.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qvector2d.h \
-		C:/Qt/6.1.3/mingw81_64/include/QtGui/qvectornd.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qpointingdevice.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qinputdevice.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qscreen.h \
@@ -2773,6 +2775,7 @@ debug/main.o: main.cpp mainwindow.h \
 		CRender3D.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/QVector \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qvector.h \
+		C:/Qt/6.1.3/mingw81_64/include/QtGui/QVector3D \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/QPaintEvent \
 		CSimuladorTemperatura.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/QPoint \
@@ -3082,7 +3085,6 @@ debug/main.o: main.cpp mainwindow.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/qgraphicssceneevent.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/qgraphicstransform.h \
-		C:/Qt/6.1.3/mingw81_64/include/QtGui/QVector3D \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/QMatrix4x4 \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/qgraphicsview.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/qgroupbox.h \
@@ -3317,6 +3319,7 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		CRender3D.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/QVector \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qvector.h \
+		C:/Qt/6.1.3/mingw81_64/include/QtGui/QVector3D \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/QPaintEvent \
 		CSimuladorTemperatura.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/QPoint \
@@ -3626,7 +3629,6 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/qgraphicssceneevent.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/qgraphicstransform.h \
-		C:/Qt/6.1.3/mingw81_64/include/QtGui/QVector3D \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/QMatrix4x4 \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/qgraphicsview.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/qgroupbox.h \

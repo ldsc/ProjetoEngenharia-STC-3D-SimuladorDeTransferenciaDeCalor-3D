@@ -180,9 +180,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 19: _t->on_gridDelGrid_clicked(); break;
         case 20: _t->on_buttonEraser_clicked(); break;
         case 21: _t->on_button3D_clicked(); break;
-        //case 22: _t->on_actionConfigurar_simula_o_triggered(); break;
-        case 23: _t->on_actionAbout_triggered(); break;
-        //case 24: _t->on_actionConfig_triggered(); break;
+        case 22: _t->on_actionAbout_triggered(); break;
         default: ;
         }
     }

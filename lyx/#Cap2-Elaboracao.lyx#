@@ -102,6 +102,8 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -2128146698 "nicholas"
+\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
@@ -159,6 +161,13 @@ software
 
 \begin_layout Section
 Análise de domínio
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Análise-de-domínio"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -198,7 +207,7 @@ Transferência de calor é uma das áreas clássicas de fenomenologia da física
 
 \begin_layout Standard
 A condução só pode ocorrer em meio material (fluidos ou sólidos), e sem
- que haja moviemento do próprio meio, característica da convecção (
+ que haja movimento do próprio meio, característica da convecção (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Nussenzveig2014"
@@ -257,11 +266,177 @@ softwares
 
 \end_deeper
 \begin_layout Section
-Formulação
+Formulação modelos teóricos
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Formulação-modelos-teóricos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se a seguir os termos e unidades utilizados, a formulação teórica,
+ condições de contorno, demonstrações e considerações sobre condutividade
+ térmica variável.
 \end_layout
 
 \begin_layout Subsection
+Termos e Unidades
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Termos-e-Unidades"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os principais termos e suas unidades utilizadas neste projeto estão listadas
+ abaixo:
+\end_layout
+
+\begin_layout Itemize
+Dados relativos ao material:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $c_{p}$
+\end_inset
+
+ - calor específico a pressão constante 
+\begin_inset Formula $\left[J/kg\cdot K\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k$
+\end_inset
+
+ - condutividade térmica 
+\begin_inset Formula $\left[W/m\cdot K\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\rho$
+\end_inset
+
+ - massa específica 
+\begin_inset Formula $\left[kg/m^{3}\right]$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Dados relativos ao objeto
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\Delta x,\Delta y$
+\end_inset
+
+ - distância entre os centros dos blocos, valor inicial: 1px=0.0026 m 
+\begin_inset Formula $[m]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Delta z$
+\end_inset
+
+ - distância entre perfis, valor inicial: 0.05 m 
+\begin_inset Formula $[m]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $T$
+\end_inset
+
+ - temperatura no nodo 
+\begin_inset Formula $[K]$
+\end_inset
+
+;
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Variáveis usadas na simulação:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $i$
+\end_inset
+
+ - posição do nodo em relação ao eixo x;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k$
+\end_inset
+
+ - posição do nodo em relação ao eixo y;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $g$
+\end_inset
+
+ - qual 
+\shape italic
+grid
+\shape default
+/perfil está sendo analisado;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $t$
+\end_inset
+
+ - tempo atual;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n$
+\end_inset
+
+ - índice do passo de tempo;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\nu$
+\end_inset
+
+ - número da iteração.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
 Formulação teórica
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Formulação-teórica"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -342,7 +517,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tipos de malha, (a) bloco-centrado e (b) ponto-distribuído.
+Tipos de malha, (a) bloco-centrado e (b) ponto-distribuído
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Tipos-de-malha"
@@ -549,13 +724,16 @@ Multiplicando pelo múltiplo comum:
 
 \begin_layout Standard
 Como a equação acima é complexa para ser reorganizada e resolvida por equações
- matriciais, será utilizado aproximações para resolver esse problema, com
- ideia similar ao Método do Ponto Fixo (MPF).
- Ou seja, será isolado uma das temperaturas para calcular a iteração 
+ matriciais, será utilizado aproximações para resolver esse problema, ideia
+ similar ao Método do Ponto Fixo (MPF).
+ As condições de parada são: diferença entre iterações menor que 0,5ºC,
+ máximo de iterações igual a 1.000, e mínimo de 800 iterações.
+ Para resolver o sistema de equações, será isolado uma das temperaturas
+ para calcular a iteração 
 \begin_inset Formula $\nu+1$
 \end_inset
 
-, será utilizado:
+:
 \end_layout
 
 \begin_layout Standard
@@ -713,7 +891,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Representação de condutividade térmica em série.
+Representação de condutividade térmica em série
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Representação-de-condutividade"
@@ -818,6 +996,7 @@ status open
 
 \begin_layout Plain Layout
 \align center
+computacionais
 \begin_inset Graphics
 	filename ../imagens/malha.png
 	lyxscale 70
@@ -833,7 +1012,7 @@ status open
 
 \begin_layout Plain Layout
 Malha utilizada para calcular a temperatura de um ponto, onde cada ponto
- é o centro dos blocos.
+ é o centro dos blocos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Malha-utilizada-para"
@@ -860,6 +1039,13 @@ A seguir, é resolvida a última etapa da modelagem do problema, a modelagem
 
 \begin_layout Subsection
 Condição de fronteira
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Condição-de-fronteira"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -908,7 +1094,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Análise da fronteira de Neumann.
+Análise da fronteira de Neumann
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:FronteiraNeumann"
@@ -1038,7 +1224,14 @@ noprefix "false"
 \end_layout
 
 \begin_layout Subsection
-Demonstrações
+Demonstrações matemáticas
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Demonstrações"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1312,6 +1505,13 @@ literal "false"
 
 \begin_layout Subsection
 Condutividade térmica variável
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Condutividade-térmica-variável"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1387,30 +1587,318 @@ O terceiro caso, é o cálculo pela interpolação e, como o nome diz, calcula
  em laboratório.
 \end_layout
 
-\begin_layout Subsection
-Paralelismos/
-\shape italic
-multi-thread
+\begin_layout Section
+Formulação modelos computacionais
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Formulação-modelos-computacionais"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Os chips de processadores atuais, são constituídos por vários processadores
+Apresenta-se a seguir considerações sobre o que é processamento paralelo,
+ paralelismos usando múltiplas 
+\emph on
+threads
+\emph default
+ e informações sobre renderização 3D.
+\end_layout
+
+\begin_layout Subsection
+
+\color blue
+O que é processamento paralelo?
+\color inherit
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:O-que-é-processamento-paralelo"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O processamento paralelo consiste em dividir uma tarefa em suas partes independe
+ntes e na execução de cada uma dessas partes em diferentes processadores
+ ou núcleos.
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Processamento serial1"
+
+\end_inset
+
+ mostra um processamento serial e a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Processamento paralelo"
+
+\end_inset
+
+ sua versão paralelizada.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Note que as tarefas precisam ser divididas e enviadas para os diferentes
+ processadores.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note que os processadores podem estar numa mesma máquina, em um cluster
+ ou em máquinas distribuídas.
+\end_layout
+
+\begin_layout Standard
+Para poder aproveitar o poder de processamento dos novos processadores é
+ preciso que os programas sejam desenvolvidos utilizando processamento paralelo.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/OqueeProcessamentoParalelo-SerialProblem-refazer.png
+	lyxscale 25
+	width 100text%
+	height 90theight%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+RefazerFiguras
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Processamento serial
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Processamento serial1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/OqueeProcessamentoParalelo-parallelProblem.png
+	lyxscale 25
+	width 100text%
+	height 70theight%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+RefazerFiguras
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Processamento paralelo
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Processamento paralelo"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note que no processamento paralelo o acoplamento é mais forte, exigindo
+ sistemas de comunicação mais velozes (como barramentos e/ou 
+\emph on
+switches 
+\emph default
+de alta velocidade).
+ O controle dos recursos do sistema é mais refinado.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Vantagens: 
+\series default
+\color inherit
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Melhor uso dos recursos disponibilizados; Maior velocidade na realização
+ das tarefas; Maior confiabilidade.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Desvantagens: 
+\series default
+\color inherit
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O controle dos recursos é de responsabilidade do programador.
+\change_inserted 1908091853 1651600440
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+
+\shape italic
+Processamento paralelo com múltiplas-threads - multi-thread
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:3.3.1 Processamento paralelo com múltiplas-threads - multi-thread"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os chips dos processadores atuais são constituídos por vários processadores
  menores, o que permite que um mesmo processador consiga realizar tarefas
- distintas.
+ (distintas ou iguais) nos processadores menores.
  A ideia é separar tarefas distintas, para que um processador não fique
  envolvido em uma única tarefa.
+
+\change_deleted -2128146698 1651662197
  
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
-Uma analogia para melhorar a explicação é a dos estudantes.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Uma analogia para melhorar a explicação sobre processamento concorrente
+ é a dos estudantes que tem um comjunto diferente de tarefas a serem executadas.
  Uma sala cheia de estudantes, recebe uma tarefa de resolver uma lista de
  exercícios.
  Se todos os exercícios forem resolvidas por um único aluno, levará muito
  tempo para terminar a tarefa (caso sem paralelismo).
  Se os alunos dividirem as tarefas entre si, ela será resolvida muito mais
  rapidamente.
+\end_layout
+
+\end_inset
+
  
+\change_inserted 1908091853 1651600283
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1651600296
+no exemplo que você deu as tarefas não são iguais.
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+Uma analogia para melhorar a explicação sobre processamento paralelo é a
+ da aplicação de um filtro sobre uma imagem bidimensional.
+ O filtro a ser aplicado é exatamente o mesmo em toda imagem(mesmo algoritmo),
+ sendo possível dividir a imagem em partes e entregar cada parte para um
+ processador(
+\emph on
+thread
+\emph default
+) diferente executar.
 \end_layout
 
 \begin_layout Standard
@@ -1427,14 +1915,30 @@ thread
 \end_layout
 
 \begin_layout Enumerate
-Paralelismo por grid: cada thread resolve uma camada do objeto.
+Paralelismo por 
+\shape italic
+grid
+\shape default
+: cada 
+\shape italic
+thread
+\shape default
+ resolve uma camada do objeto.
  Possuí certa otimização em relação ao anterior, mas, se só existir objeto
  em uma camada, outras threads ficam ociosas.
 \end_layout
 
 \begin_layout Enumerate
-Paralelismo total: todas as threads do processador resolvem os cálculos
- de todo o objeto 3D, intercalando a posição com base no número da thread.
+Paralelismo total: todas as 
+\emph on
+threads 
+\emph default
+do processador resolvem os cálculos de todo o objeto 3D, intercalando a
+ posição com base no número da 
+\shape italic
+thread
+\shape default
+.
 \end_layout
 
 \begin_layout Standard
@@ -1472,7 +1976,11 @@ status open
 
 \begin_layout Plain Layout
 Ilustração dos três casos de paralelismo implementados para duas camadas
- com 9 células cada, e um processador com duas threads.
+ com 9 células cada, e um processador com duas 
+\shape italic
+thread
+\shape default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Figura-threads"
@@ -1527,7 +2035,11 @@ for(int i = NUM_THREAD; i < size; i+=MAX_THREADS)
 \end_layout
 
 \begin_layout Standard
-Esse algoritmo diz que a thread 
+Esse algoritmo diz que a 
+\shape italic
+thread
+\shape default
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1548,7 +2060,11 @@ i
 \begin_inset Quotes eld
 \end_inset
 
-i + números de threads
+i + números de 
+\shape italic
+thread
+\shape default
+
 \begin_inset Quotes erd
 \end_inset
 
@@ -1557,6 +2073,17 @@ i + números de threads
 
 \begin_layout Subsection
 Renderização 3D
+\change_inserted 1908091853 1651600862
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Renderização-3D"
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -1603,8 +2130,7 @@ status open
 (a) Observador alinhado com uma das faces do cubo.
  (b) observador não está alinhado e não foram removidas arestas ocultas.
  O cérebro consegue interpretar que é um objeto 3D, mas fica confuso entre
- os casos (c) e (d).
- 
+ os casos (c) e (d) 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig_cubos_3D"
@@ -1639,7 +2165,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Portanto, tendo definitos os pontos das arestas, seus respectivos vetores
+Portanto, tendo definidos os pontos das arestas, seus respectivos vetores
  são multiplicados pela matriz de rotação 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1771,7 +2297,7 @@ status open
 \begin_inset Formula $\beta$
 \end_inset
 
- estão com valor de 0.1 radianos.
+ estão com valor de 0.1 radianos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig_cubos_3D_screen"
@@ -1843,7 +2369,7 @@ noprefix "false"
 
 \end_inset
 
-, mas agora renderizando a partir de triângulos.
+, mas agora renderizando a partir de triângulos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig_cubos_3D_triangles"
@@ -2000,7 +2526,7 @@ status open
 
 \begin_layout Plain Layout
 (a) mostra um caso onde a normal é na direção do leitor e (b) mostra um
- caso onde a normal é para dentro da folha.
+ caso onde a normal é para dentro da folha
 \begin_inset CommandInset label
 LatexCommand label
 name "fig_normal"
@@ -2066,6 +2592,17 @@ noprefix "false"
 
 \begin_layout Section
 Identificação de pacotes
+\change_inserted 1908091853 1651600888
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Identificação-de-pacotes"
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -2115,17 +2652,24 @@ qcustomplot
 
 \begin_layout Section
 Diagrama de pacotes
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Diagrama-de-pacotes"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Abaixo é apresentado o diagrama de pacotes (Figura 
+O diagrama de pacotes é apresentado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Diagrama-de-Pacotes"
 
 \end_inset
 
-).
+.
 \end_layout
 
 \begin_layout Standard

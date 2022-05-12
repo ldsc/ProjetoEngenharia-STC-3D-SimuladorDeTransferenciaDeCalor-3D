@@ -97,12 +97,11 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
@@ -995,11 +994,9 @@ status open
 
 \begin_layout Plain Layout
 \align center
-computacionais
 \begin_inset Graphics
 	filename ../imagens/malha.png
 	lyxscale 70
-	scale 70
 
 \end_inset
 
@@ -1598,10 +1595,7 @@ name "sec:Formulação-modelos-computacionais"
 \end_layout
 
 \begin_layout Standard
-Apresenta-se a seguir considerações sobre
-\change_inserted 1908091853 1651600600
- o que é processamento paralelo,
-\change_unchanged
+Apresenta-se a seguir considerações sobre o que é processamento paralelo,
  paralelismos usando múltiplas 
 \emph on
 threads
@@ -1610,13 +1604,7 @@ threads
 \end_layout
 
 \begin_layout Subsection
-
-\change_inserted 1908091853 1651600440
-
-\color blue
 O que é processamento paralelo?
-\color inherit
-
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:O-que-é-processamento-paralelo"
@@ -1627,16 +1615,12 @@ name "sec:O-que-é-processamento-paralelo"
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1651600440
 O processamento paralelo consiste em dividir uma tarefa em suas partes independe
 ntes e na execução de cada uma dessas partes em diferentes processadores
  ou núcleos.
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1651600440
 A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1657,8 +1641,6 @@ reference "cap:Processamento paralelo"
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1651600440
 Note que as tarefas precisam ser divididas e enviadas para os diferentes
  processadores.
 \end_layout
@@ -1669,15 +1651,11 @@ Note que as tarefas precisam ser divididas e enviadas para os diferentes
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1651600440
 Note que os processadores podem estar numa mesma máquina, em um cluster
  ou em máquinas distribuídas.
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1651600440
 Para poder aproveitar o poder de processamento dos novos processadores é
  preciso que os programas sejam desenvolvidos utilizando processamento paralelo.
 \begin_inset Separator latexpar
@@ -1688,22 +1666,18 @@ Para poder aproveitar o poder de processamento dos novos processadores é
 
 \begin_layout Standard
 \align center
-
-\change_inserted 1908091853 1651600440
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
 \align center
-
-\change_inserted 1908091853 1651600440
 \begin_inset Graphics
-	filename ../imagens/OqueeProcessamentoParalelo-SerialProblem-refazer.png
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/processamento_paralelo_serie.png
 	lyxscale 25
 	width 100text%
-	height 90theight%
 
 \end_inset
 
@@ -1712,8 +1686,6 @@ status open
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1651600440
 RefazerFiguras
 \end_layout
 
@@ -1723,8 +1695,6 @@ RefazerFiguras
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1651600440
 Processamento serial
 \begin_inset CommandInset label
 LatexCommand label
@@ -1747,22 +1717,18 @@ name "cap:Processamento serial1"
 
 \begin_layout Standard
 \align center
-
-\change_inserted 1908091853 1651600440
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
 \align center
-
-\change_inserted 1908091853 1651600440
 \begin_inset Graphics
-	filename ../imagens/OqueeProcessamentoParalelo-parallelProblem.png
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/processamento_paralelo_paralelo.png
 	lyxscale 25
 	width 100text%
-	height 70theight%
 
 \end_inset
 
@@ -1771,8 +1737,6 @@ status open
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1651600440
 RefazerFiguras
 \end_layout
 
@@ -1782,8 +1746,6 @@ RefazerFiguras
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1651600440
 Processamento paralelo
 \begin_inset CommandInset label
 LatexCommand label
@@ -1805,8 +1767,6 @@ name "cap:Processamento paralelo"
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1651600440
 Note que no processamento paralelo o acoplamento é mais forte, exigindo
  sistemas de comunicação mais velozes (como barramentos e/ou 
 \emph on
@@ -1818,13 +1778,9 @@ de alta velocidade).
 
 \begin_layout Itemize
 
-\change_inserted 1908091853 1651600440
-
 \series bold
-\color blue
 Vantagens: 
 \series default
-\color inherit
 
 \begin_inset Separator latexpar
 \end_inset
@@ -1834,8 +1790,6 @@ Vantagens:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_inserted 1908091853 1651600440
 Melhor uso dos recursos disponibilizados; Maior velocidade na realização
  das tarefas; Maior confiabilidade.
 \end_layout
@@ -1843,13 +1797,9 @@ Melhor uso dos recursos disponibilizados; Maior velocidade na realização
 \end_deeper
 \begin_layout Itemize
 
-\change_inserted 1908091853 1651600440
-
 \series bold
-\color blue
 Desvantagens: 
 \series default
-\color inherit
 
 \begin_inset Separator latexpar
 \end_inset
@@ -1859,8 +1809,6 @@ Desvantagens:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_inserted 1908091853 1651600440
 O controle dos recursos é de responsabilidade do programador.
 \end_layout
 
@@ -1879,69 +1827,44 @@ name "subsec:3.3.1 Processamento paralelo com múltiplas-threads - multi-thread"
 \end_layout
 
 \begin_layout Standard
-Os chips d
-\change_deleted 1908091853 1651600230
-e
-\change_inserted 1908091853 1651600231
-os
-\change_unchanged
- processadores atuais
-\change_deleted 1908091853 1651600236
-,
-\change_unchanged
- são constituídos por vários processadores menores, o que permite que um
- mesmo processador consiga realizar tarefas 
-\change_inserted 1908091853 1651600640
-(
-\change_unchanged
-distintas
-\change_inserted 1908091853 1651600653
- ou iguais) nos processadores menores
-\change_unchanged
-.
+Os chips dos processadores atuais são constituídos por vários processadores
+ menores, o que permite que um mesmo processador consiga realizar tarefas
+ (distintas ou iguais) nos processadores menores.
  A ideia é separar tarefas distintas, para que um processador não fique
  envolvido em uma única tarefa.
- 
 \end_layout
 
 \begin_layout Standard
-Uma analogia para melhorar a explicação 
-\change_inserted 1908091853 1651600707
-sobre processamento concorrente 
-\change_unchanged
-é a dos estudantes
-\change_inserted 1908091853 1651600698
- que tem um comjunto diferente de tarefas a serem executadas
-\change_unchanged
-.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Uma analogia para melhorar a explicação sobre processamento concorrente
+ é a dos estudantes que tem um comjunto diferente de tarefas a serem executadas.
  Uma sala cheia de estudantes, recebe uma tarefa de resolver uma lista de
  exercícios.
  Se todos os exercícios forem resolvidas por um único aluno, levará muito
  tempo para terminar a tarefa (caso sem paralelismo).
  Se os alunos dividirem as tarefas entre si, ela será resolvida muito mais
  rapidamente.
- 
-\change_inserted 1908091853 1651600283
+\end_layout
 
+\end_inset
+
+ 
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1651600296
 no exemplo que você deu as tarefas não são iguais.
 \end_layout
 
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1651600815
 Uma analogia para melhorar a explicação sobre processamento paralelo é a
  da aplicação de um filtro sobre uma imagem bidimensional.
  O filtro a ser aplicado é exatamente o mesmo em toda imagem(mesmo algoritmo),
@@ -2125,16 +2048,12 @@ thread
 
 \begin_layout Subsection
 Renderização 3D
-\change_inserted 1908091853 1651600862
-
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Renderização-3D"
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -2410,8 +2329,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mesmo desenho da Fig.
- 
+Mesmo desenho da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_cubos_3D_screen"
@@ -2644,16 +2562,12 @@ noprefix "false"
 
 \begin_layout Section
 Identificação de pacotes
-\change_inserted 1908091853 1651600888
-
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Identificação-de-pacotes"
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
