@@ -410,8 +410,10 @@ void MainWindow::on_actionSave_triggered()
 {
     QDir dir; QString path = dir.absolutePath();
     QString file_name = QFileDialog::getSaveFileName(this, "Save a file", path+"//save", tr("Dados (*.dat)"));
-    std::string txt = simulador->saveGrid(file_name.toStdString());
-    ui->textBrowser_3->setText(QString::fromStdString(txt));
+    if (!file_name.isEmpty()){
+        std::string txt = simulador->saveGrid(file_name.toStdString());
+        ui->textBrowser_3->setText(QString::fromStdString(txt));
+    }
 }
 
 
@@ -419,8 +421,10 @@ void MainWindow::on_actionOpen_triggered()
 {
     QDir dir; QString path = dir.absolutePath();
     QString file_name = QFileDialog::getOpenFileName(this, "Open a file", path+"//save", tr("Dados (*.dat)"));
-    std::string txt = simulador->openGrid(file_name.toStdString());
-    ui->textBrowser_3->setText(QString::fromStdString(txt));
+    if (!file_name.isEmpty()){
+        std::string txt = simulador->openGrid(file_name.toStdString());
+        ui->textBrowser_3->setText(QString::fromStdString(txt));
+    }
 }
 
 void MainWindow::on_actionNew_triggered()
@@ -433,17 +437,22 @@ void MainWindow::on_actionNew_triggered()
 void MainWindow::on_actionExport_pdf_triggered()
 {
     QString file_name = QFileDialog::getSaveFileName(this, "Save report as", "C://Users", tr("Dados (*.pdf)"));
-    QString txt = save_pdf(file_name);
-    ui->textBrowser_3->setText(txt);
+    if (!file_name.isEmpty()){
+        QString txt = save_pdf(file_name);
+        ui->textBrowser_3->setText(txt);
+    }
 }
 
 void MainWindow::on_actionImport_material_triggered() {
-    QString file_name = QFileDialog::getOpenFileName(this, "Open a file", "C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//materiais", tr("Dados (*.constante, *.correlacao, *.interpolacao)"));
-    std::string name = simulador->openMaterial(file_name.toStdString());
-    ui->textBrowser_3->setText(QString::fromStdString("Material "+name+" carregado!"));
-    ui->material_comboBox->addItem(QString::fromStdString(name));
+    QString file_name = QFileDialog::getOpenFileName(this, QObject::tr("Open a file"), dir.absolutePath()+"//materiais", QObject::tr("*.constante;; *.correlacao;; *.interpolacao"));
+    std::cout<<file_name.toStdString();
+    if (!file_name.isEmpty()){
+        simulador->openMaterial(file_name);
+        //ui->textBrowser_3->setText(QString::fromStdString("Material "+name+" carregado!"));
+        //ui->material_comboBox->addItem(QString::fromStdString(name));
 
-    createWidgetProps();
+        createWidgetProps();
+    }
 }
 
 void MainWindow::on_buttonCircle_clicked()
@@ -621,4 +630,5 @@ void MainWindow::on_actionAbout_triggered()
     QString msg = "Simulador de Difusão Térmica. \nVersão 1.0.\nCriado por: Nicholas de Almeida Pinto\n09/03/2022";
     msgBox->setText(msg);
     int ret = msgBox->exec();
+    Q_UNUSED(ret);
 }

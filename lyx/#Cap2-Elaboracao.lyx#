@@ -102,8 +102,6 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -2128146698 "nicholas"
-\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
@@ -778,8 +776,16 @@ Onde
 
 \begin_layout Standard
 Agora, é necessário definir o cálculo das condutividades térmicas nas fronteiras.
- Para isso, será feito um análogo com a permeabilidade de rochas em série
- 
+ Para solucionar esse problema, pode-se resolver pela taxa de condução (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HALLIDAY_2009"
+literal "false"
+
+\end_inset
+
+), esse modelo de solução é similar ao cálculo da permeabilidade de rochas
+ em série 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rosa2006"
@@ -787,7 +793,26 @@ literal "false"
 
 \end_inset
 
-, mas utilizando as equações de calor:
+.
+ Também pode-se utilizar da analogia com a resistência elétrica (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Nussenzveig2014"
+literal "false"
+
+\end_inset
+
+), (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "incropera2008fundamentos"
+literal "false"
+
+\end_inset
+
+).
+ Para o presente trabalho, será demonstrado a condutividade térmica equivalente
+ pela taxa de condução térmica:
 \end_layout
 
 \begin_layout Standard
@@ -806,23 +831,7 @@ Onde
 \begin_inset Formula $q_{x}$
 \end_inset
 
- é a vazão, 
-\begin_inset Formula $k$
-\end_inset
-
- a permeabilidade, 
-\begin_inset Formula $A$
-\end_inset
-
- a área, 
-\begin_inset Formula $L$
-\end_inset
-
- o comprimento e 
-\begin_inset Formula $\Delta T$
-\end_inset
-
- a diferença de temperatura.
+ é a taxa de condução térmica.
 \end_layout
 
 \begin_layout Standard
@@ -851,10 +860,8 @@ noprefix "false"
 
 \end_inset
 
- mostra um caso de condutividades térmicas em série.
- Em um sistema onde não há fontes de calor, a taxa de calor (q) que entra
- no sistema, é igual a que sai.
- E a diferença de temperatura entre a esquerda (0) e a direita (2), é soma
+ mostra o caso de condutividades térmicas em série.
+ A diferença de temperatura entre a esquerda (0) e a direita (2), é a soma
  das diferenças nesse meio, ou seja:
 \end_layout
 
@@ -927,7 +934,9 @@ Logo,
 \end_layout
 
 \begin_layout Standard
-Onde as taxas de transferência de calor são:
+Como não há fontes de calor, a taxa de calor (q) que entra no sistema, é
+ igual ao que sai.
+ O comprimento total do sistema é 2L, então:
 \end_layout
 
 \begin_layout Standard
@@ -963,12 +972,29 @@ Ou, simplesmente:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-k_{r}=\frac{2k_{1}k_{2}}{k_{1}+k_{2}}
+k_{r}=\frac{2k_{1}k_{2}}{k_{1}+k_{2}}\label{eq:condutividade-termica-equivalente}
 \end{equation}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+A Equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:condutividade-termica-equivalente"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ mostra a condutividade térmica equivalente em série, para materiais com
+ mesmo comprimento.
+ Essa solução, com a condição de comprimento igual, é a mesma apresentada
+ nas referências anteriores.
 \end_layout
 
 \begin_layout Standard
@@ -996,11 +1022,9 @@ status open
 
 \begin_layout Plain Layout
 \align center
-computacionais
 \begin_inset Graphics
 	filename ../imagens/malha.png
 	lyxscale 70
-	scale 70
 
 \end_inset
 
@@ -1608,11 +1632,7 @@ threads
 \end_layout
 
 \begin_layout Subsection
-
-\color blue
 O que é processamento paralelo?
-\color inherit
-
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:O-que-é-processamento-paralelo"
@@ -1675,6 +1695,7 @@ Para poder aproveitar o poder de processamento dos novos processadores é
 \begin_layout Standard
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1682,10 +1703,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../imagens/OqueeProcessamentoParalelo-SerialProblem-refazer.png
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/processamento_paralelo_serie.png
 	lyxscale 25
 	width 100text%
-	height 90theight%
 
 \end_inset
 
@@ -1726,6 +1746,7 @@ name "cap:Processamento serial1"
 \begin_layout Standard
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1733,10 +1754,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../imagens/OqueeProcessamentoParalelo-parallelProblem.png
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/processamento_paralelo_paralelo.png
 	lyxscale 25
 	width 100text%
-	height 70theight%
 
 \end_inset
 
@@ -1787,10 +1807,8 @@ de alta velocidade).
 \begin_layout Itemize
 
 \series bold
-\color blue
 Vantagens: 
 \series default
-\color inherit
 
 \begin_inset Separator latexpar
 \end_inset
@@ -1808,10 +1826,8 @@ Melhor uso dos recursos disponibilizados; Maior velocidade na realização
 \begin_layout Itemize
 
 \series bold
-\color blue
 Desvantagens: 
 \series default
-\color inherit
 
 \begin_inset Separator latexpar
 \end_inset
@@ -1822,8 +1838,6 @@ Desvantagens:
 \begin_deeper
 \begin_layout Itemize
 O controle dos recursos é de responsabilidade do programador.
-\change_inserted 1908091853 1651600440
-
 \end_layout
 
 \end_deeper
@@ -1846,11 +1860,6 @@ Os chips dos processadores atuais são constituídos por vários processadores
  (distintas ou iguais) nos processadores menores.
  A ideia é separar tarefas distintas, para que um processador não fique
  envolvido em uma única tarefa.
-
-\change_deleted -2128146698 1651662197
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -1871,21 +1880,15 @@ Uma analogia para melhorar a explicação sobre processamento concorrente
 \end_inset
 
  
-\change_inserted 1908091853 1651600283
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1651600296
 no exemplo que você deu as tarefas não são iguais.
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -2073,16 +2076,12 @@ thread
 
 \begin_layout Subsection
 Renderização 3D
-\change_inserted 1908091853 1651600862
-
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Renderização-3D"
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -2358,8 +2357,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mesmo desenho da Fig.
- 
+Mesmo desenho da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_cubos_3D_screen"
@@ -2592,16 +2590,12 @@ noprefix "false"
 
 \begin_layout Section
 Identificação de pacotes
-\change_inserted 1908091853 1651600888
-
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Identificação-de-pacotes"
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 

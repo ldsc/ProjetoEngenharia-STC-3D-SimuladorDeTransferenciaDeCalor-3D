@@ -95,8 +95,6 @@ private slots:
     void on_gridDelGrid_clicked();
     void on_buttonEraser_clicked();
     void on_button3D_clicked();
-    void on_actionConfigurar_simula_o_triggered();
     void on_actionAbout_triggered();
-    void on_actionConfig_triggered();
 };
 #endif

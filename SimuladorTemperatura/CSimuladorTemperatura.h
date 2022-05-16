@@ -23,7 +23,7 @@ private:
     bool materialPropertiesStatus = true;
     int NGRIDS = 1;
     double MIN_ERRO = 0.1;
-    int MAX_ITERATION = 1000;//, MIN_ITERATION = 800;
+    int MAX_ITERATION = 1000;
     double delta_x = 2.6e-4, delta_t = 5.0e-1, delta_z = 0.05;
 
     double Tmax = 400, Tmin = 300;
@@ -58,7 +58,7 @@ public:
 
     std::string saveGrid(std::string nameFile);
     std::string openGrid(std::string nameFile);
-    std::string openMaterial(std::string nameFile);
+    void openMaterial(QString nameFile);
 
     /// --------- FUNCOES SET ---------
     void setActualTemperature(double newTemperature);

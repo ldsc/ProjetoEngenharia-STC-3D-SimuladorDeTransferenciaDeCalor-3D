@@ -49,22 +49,14 @@ void CSimuladorTemperatura::delGrid(int _grid){
     grid.erase(grid.begin()+_grid);
 }
 
-std::string CSimuladorTemperatura::openMaterial(std::string nameFile){
-    std::ifstream file(nameFile);
+void CSimuladorTemperatura::openMaterial(QString nameFile){
+    QFileInfo fi(nameFile);
 
-    std::string type;
-    std::string name;
-    std::getline(file, type);
-    std::getline(file, name);
-    std::cout<<name<<std::endl;
+    std::string matName = fi.fileName().toStdString();
+    std::string type = fi.suffix().toStdString();
 
-    file.close();
-    if (type == "correlacao")
-        materiais[name] = new CMaterialCorrelacao(nameFile);
-    else
-        materiais[name] = new CMaterialInterpolacao(nameFile);
-    name_materiais.push_back(name);
-    return name;
+    materiais[matName] = chooseMaterialType(matName, type);
+    name_materiais.push_back(matName);
 }
 
 
