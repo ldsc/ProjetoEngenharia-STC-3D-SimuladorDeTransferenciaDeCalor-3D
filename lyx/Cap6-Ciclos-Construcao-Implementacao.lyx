@@ -112,7 +112,17 @@
 \begin_body
 
 \begin_layout Chapter
-Implementação
+Ciclos Construção
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Ciclo construção
+\end_layout
+
+\end_inset
+
+ - Implementação
 \begin_inset Index idx
 status open
 
@@ -142,7 +152,7 @@ status open
 \backslash
 lhead{
 \backslash
-thechapter - Implementação} 
+thechapter - Implementação}
 \end_layout
 
 \end_inset
@@ -153,27 +163,6 @@ thechapter - Implementação}
 \begin_layout Standard
 Neste capítulo, são apresentados os códigos fonte implementados.
  
-\end_layout
-
-\begin_layout Section
-Código fonte
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Codigo-fonte"
-
-\end_inset
-
-
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Código fonte
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -532,6 +521,121 @@ color{mymauve}},
 \begin_layout Plain Layout
 
 }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Versão 0.3 - Código fonte - SFML
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Versão 0.3 codigo-fonte"
+
+\end_inset
+
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Versão 0.3 código fonte
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como visto na seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec: CicloDesenvolvimento-v0.3"
+
+\end_inset
+
+, a versão 0.3 foi a última desenvolvida utilizando a biblioteca 
+\shape italic
+SFML
+\shape default
+, apresenta-se a seguir o código da última versão usando 
+\shape italic
+SFML.
+\end_layout
+
+\begin_layout Standard
+Apresenta-se apenas a parte de interface gráfica na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{SFML-main-cpp}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Nicholas, coloque apenas o arquivo que gera a interface em SFML pois o restante
+ como vc disse é igual
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da janela usando a biblioteca
+ SFML}, label={SFML-main-cpp}] {../listagens/main.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Versão 0.5 - Código fonte - Qt
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Versão 0.5 codigo-fonte"
+
+\end_inset
+
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Versão 0.5 código fonte
 \end_layout
 
 \end_inset

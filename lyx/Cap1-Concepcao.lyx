@@ -120,7 +120,13 @@ lhead{
 \backslash
 thechapter
 \backslash
-space - Especificação}
+space - 
+\change_deleted 1908091853 1653210927
+Especificação
+\change_inserted 1908091853 1653210930
+Concepção
+\change_unchanged
+}
 \end_layout
 
 \end_inset
@@ -129,16 +135,18 @@ space - Especificação}
 \end_layout
 
 \begin_layout Chapter
-Especificação
-\change_inserted 1908091853 1653176797
 
+\change_deleted 1908091853 1653210753
+Especificação
+\change_inserted 1908091853 1653210754
+Concepção
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653176797
-Especificação
+\change_inserted 1908091853 1653210762
+Concepção
 \change_unchanged
 
 \end_layout
@@ -158,6 +166,8 @@ Concepção
 \end_inset
 
 
+\change_deleted 1908091853 1653210768
+
 \begin_inset Index idx
 status collapsed
 
@@ -168,11 +178,17 @@ especificação
 \end_inset
 
 
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
 Apresenta-se neste capítulo do projeto de engenharia a concepção, a especificaçã
-o do sistema a ser modelado e desenvolvido.
+o
+\change_inserted 1908091853 1653210954
+, requisitos e casos de uso
+\change_unchanged
+ do sistema a ser modelado e desenvolvido.
 \end_layout
 
 \begin_layout Section
@@ -332,6 +348,17 @@ Simulador de transferência de calor em objetos 3D com superfícies complexas,
 
 \begin_layout Section
 Especificação
+\change_inserted 1908091853 1653210790
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Especificação"
+
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Index idx
 status collapsed
 
@@ -527,6 +554,18 @@ esta parte abaixo vai lá para elaboração onde define as equações
 
 \change_unchanged
 
+\end_layout
+
+\begin_layout Section
+
+\change_inserted 1908091853 1653210799
+Requisitos 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1653210817
+Apresenta-se a seguir os requisitos funcionais e não funcionais.
 \end_layout
 
 \begin_layout Subsection

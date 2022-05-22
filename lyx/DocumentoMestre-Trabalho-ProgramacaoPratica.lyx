@@ -149,7 +149,7 @@ filename "Cap0-Introducao-Escopo-Objetivos.lyx"
 \align block
 \begin_inset CommandInset include
 LatexCommand include
-filename "Cap1-Especificacao.lyx"
+filename "Cap1-Concepcao.lyx"
 
 \end_inset
 
@@ -185,14 +185,14 @@ filename "Cap4-Projeto.lyx"
 
 \begin_inset CommandInset include
 LatexCommand include
-filename "Cap5-CiclosDesenvolvimento.lyx"
+filename "Cap5-Ciclos-Planejamento-Detalhamento.lyx"
 
 \end_inset
 
 
 \begin_inset CommandInset include
 LatexCommand include
-filename "Cap6-Implementacao.lyx"
+filename "Cap6-Ciclos-Construcao-Implementacao.lyx"
 
 \end_inset
 

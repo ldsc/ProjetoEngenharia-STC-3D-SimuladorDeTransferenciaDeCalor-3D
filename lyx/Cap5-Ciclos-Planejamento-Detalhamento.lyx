@@ -108,7 +108,7 @@
 
 \begin_layout Chapter
 
-\change_inserted 1908091853 1653177043
+\change_inserted 1908091853 1653211283
 Ciclos de Planejamento/Detalhamento
 \begin_inset Index idx
 status open
@@ -123,27 +123,15 @@ Ciclos de Planejamento/Detalhamento
 
 \end_inset
 
- e Construção
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 1908091853 1653177047
-Ciclo construção
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
+ 
 \begin_inset CommandInset label
 LatexCommand label
-name "chap: Ciclos de Planejamento/Detalhamento e  Construção"
+name "chap: Ciclos de Planejamento/Detalhamento"
 
 \end_inset
 
+
+\change_unchanged
 
 \end_layout
 
@@ -355,6 +343,17 @@ name "fig:Versão-0.2,-simples,"
 
 \begin_layout Section
 Versão 0.3 - Adição de atalhos na tela
+\change_inserted 1908091853 1653210417
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec: CicloDesenvolvimento-v0.3"
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard

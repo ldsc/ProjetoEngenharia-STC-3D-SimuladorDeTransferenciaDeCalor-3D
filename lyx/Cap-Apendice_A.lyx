@@ -195,12 +195,6 @@ name "fig: Principais disciplinas do curso relacionadas a Transferência de Calo
 \begin_layout Standard
 
 \change_inserted 1908091853 1653178346
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted 1908091853 1653178346
 A título ilustrativo um resumo das ementas de algumas destas disciplinas
  é apresentado a seguir:
 \begin_inset Note Note
@@ -364,19 +358,16 @@ MAT01207 : Cálculo Numérico: I.
 
 \begin_layout Itemize
 
-\change_inserted 1908091853 1653178346
-MAT01207 : Cálculo Numérico: I.
- Sistemas Numéricos e Erros.
- II.
- Zeros de Funções Reais.
- III.
- Matrizes e Resolução Numérica de Sistemas de Equações Lineares.
- IV.
- Interpolação.
- V.
- Integração Numérica.
- VI.
- Resolução Numérica de Equações Diferenciais Ordinárias.
+\change_inserted 1908091853 1653212110
+LEP01366 : Técnicas de Modelamento Numérico I: 1- Equações em diferenças.
+ 2- Métodos de diferenças finitas para equações diferenciais ordinárias.
+ 3- Métodos de diferenças finitas para equações diferenciais parciais.
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653212167
+LEP01366 : Técnicas de Modelamento Numérico II.
 \end_layout
 
 \end_deeper
