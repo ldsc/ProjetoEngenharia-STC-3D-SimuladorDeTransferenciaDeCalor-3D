@@ -114,6 +114,24 @@
 
 \begin_layout Chapter
 Teste
+\change_inserted 1908091853 1653177090
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653177090
+Teste
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "chap:Teste"
@@ -147,7 +165,11 @@ thechapter - Teste}
 
 \begin_layout Standard
 Neste capítulo serão apresentados os testes e resultados do simulador.
+
+\change_deleted 1908091853 1651601153
  
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -247,6 +269,24 @@ uma aplicação real na tecnologia
 
 \begin_layout Section
 Validação do simulador
+\change_inserted 1908091853 1653177095
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653177095
+Validação do simulador
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -419,10 +459,474 @@ ref{validacao}
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Mudei abaixo o nome para stylePython e a linguagem para python.
+\change_inserted 1908091853 1653173004
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+
+\backslash
+lstdefinestyle{stylePython}{
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+% tipo de bordas
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+frame=lines,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+% tamanho da fonte e tipo de fonte
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+basicstyle=
+\backslash
+small
+\backslash
+ttfamily,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+% linguagem
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+language=Python,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+% numeração
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+numbers=left, 
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+numberstyle=
+\backslash
+tiny, 
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+stepnumber=1, 
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+numbersep=1pt, 
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+firstnumber=1, 
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+% formatação
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+breakatwhitespace=false,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+breaklines=true,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+extendedchars=true,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+% cores
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+backgroundcolor=
+\backslash
+color{white},
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+commentstyle=
+\backslash
+color{lightgray}, 
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+keywordstyle=
+\backslash
+color{blue},
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+morekeywords={*,...}, 
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+stringstyle=
+\backslash
+color{mygreen1},
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+% Palavras chave BLUE ABAIXO AS ENFASES SAO PARA PALAVRAS CHAVES DE C++
+ TROQUE PELAS DO PYHON
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+emph={ bool, char, char8_t, char16_t, char32_t, wchar_t,short, int, long,
+ long long, float, double, long double, void, const, extern, mutable, register,
+ signed, static, typedef, unsigned, volatile, using, typename, auto, constexpr,
+ decltype, class, enum, struct, union, const_cast, dynamic_cast, reinterpret_cas
+t, static_cast, try, throw, catch, noexcept, delete, new, nullptr, static,
+ const, friend, virtual, operator, namespace, sizeof, template, typename,
+ concept, class,  delete, friend, explicit, this, typeid, private, protected,
+ public, alignas, alignof, asm, concept, consteval, constexpr, constinit
+ export, extern, inline, static_assert, requires, template, typename, mutable,
+  volatile, co_await, co_return, co_yield, atomic_cancel, atomic_commit,
+ atomic_noexcept, import, module, synchronized,co_await, co_return, co_yield,
+ reflexpr }, 
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+emphstyle={
+\backslash
+color{blue}},
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+% Estruturas de controle e de repeticao RED
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+emph={[2] and, and_eq, bitand, bitor, compl, false, not, not_eq, or, or_eq,
+ true, xor, xor_eq, break, case, continue, default, do, else, for, goto,
+ if, return, switch, while  } ,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+emphstyle={[2]
+\backslash
+color{red}},
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+% Arquivos de inclusao mymauve (note que alguns poderao aparecer com outra
+ cor, ocorre quando nome arquivo igual ao nome da classe)
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+emph={[3] algorithm , atomic ,backward ,bits ,bitset ,cassert ,ccomplex
+ ,cctype ,cerrno ,cfenv ,cfloat ,chrono ,cinttypes ,ciso646 ,climits ,clocale
+ ,cmath ,complex ,csetjmp ,csignal ,cstdalign ,cstdarg ,cstdbool ,cstddef
+ ,cstdint ,cstdio ,cstdlib ,cstring ,ctgmath ,ctime ,cwchar ,cwctype ,debug
+ ,decimal ,exception ,ext ,filesystem, fstream ,functional  ,initializer_list
+ ,iomanip ,ios ,iosfwd ,iostream ,istream ,iterator ,limits ,locale ,numeric
+ ,ostream ,profile ,random ,ratio ,regex ,scoped_allocator ,sstream ,stack
+ ,stdexcept  ,streambuf ,system_error ,tr1 ,tr2 ,typeindex ,typeinfo ,type_trait
+s ,utility ,x86_64-redhat-linux ,complex } , 
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+emphstyle={[3]
+\backslash
+color{green}},
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+% Strings VERDE2
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+emph={[4] string, string_view, wstring, u16string,u32string } ,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+emphstyle={[4]
+\backslash
+color{mygreen2}
+\backslash
+bfseries},
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+% Containers purple
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+emph={[5]  array, vector, deque, forward_list, list, set, multiset, map,
+ multimap, unordered_set, unordered_multiset, unordered_map, unordered_multimap
+ , pair, tuple, basic_string },
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+emphstyle={[5]
+\backslash
+color{brown}
+\backslash
+bfseries},
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+%Algoritmos genericos VERMELHO2
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+emph={[6]  accumulate, find, max, adjacent_find, find_if, max_element, binary_se
+arch, min, count, find_first_of, for_each, min_element, count_if, includes,
+ mismatch, equal, lexicographical_compare, nth_element, equal_range, lower_bound
+, mismatch, search, search_n, find_end, upper_bound, copy, remove_if, copy_backw
+ard, replace, fill, replace_copy, fill_n, replace_copy_if, generate, replace_if,
+ generate_n, reverse, inplace_merge, reverse_copy, iter_swap, rotate,  make_heap
+, rotate_copy, merge, set_difference, nth_element, next_permutation, set_interse
+ction, set_symmetric_difference, partial_sort, set_union, partial_sort_copy,
+ sort, partition, sort_heap, prev_permutation, stable_partition, push_heap,
+ stable_sort, pop_heap, swap, random_shuffle, swap_ranges, remove, transform,
+ unique, unique_copy, remove_copy, remove_copy_if, all_of, any_of, none_of,
+ find_if_not, copy_if, copy_n, move, move_backward, suffle, is_partitioned,
+ partition_copy, partition_point, is_sorted, is_sorted_until, is_heap, is_heap_u
+ntil, minmax, minmax_element, is_permutation, iota, uninitialized_copy_n,
+ for_each_n, sample, clamp, reduce, exclusive_scan, inclusive_scan, transform_re
+duce, transform_exclusive_scan, transform_inclusive_scan, uninitialized_move,
+ uninitialized_move_n, uninitialized_default_construct, uninitialized_default_co
+nstruct_n, uninitialized_value_construct, uninitialized_value_construct_n,
+ destroy, destroy_at, destroy_n, shift_left, shift_right, compare_3way,
+ lexicographical_compare_3way } ,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+emphstyle={[6]
+\backslash
+color{olive}},
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+% Processamento Paralelo Orange/laranja
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+emph={[7] thread, yield, get_id, sleep_for, sleep_until, thread_local, memory,
+ mutex, parallel, mutex, timed_mutex, recursive_mutex, shared_mutex, shared_time
+d_mutex, lock_guard, scoped_lock, unique_lock, shared_lock, defer_lock_t,
+ try_to_lock_t, adopt_lock_t, try_lock, lock, once_flag, call_once, condition_va
+riable, condition_variable_any, notify_all_at_thread_exit, cv_status, promise,
+ packaged_task, future, shared_future, async, launch, future_status, future_erro
+r, future_category, future_errc, hardware_destructive_interference_size,
+ hardware_constructive_interference_size  } ,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+emphstyle={[7]
+\backslash
+color{mymauve}},
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653173004
+
+}
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -562,216 +1066,7 @@ morekeywords={*,...},
 
 stringstyle=
 \backslash
-color{mygreen1},
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\begin_layout Plain Layout
-
-% Palavras chave BLUE ABAIXO AS ENFASES SAO PARA PALAVRAS CHAVES DE C++
- TROQUE PELAS DO PYHON
-\end_layout
-
-\begin_layout Plain Layout
-
-emph={ bool, char, char8_t, char16_t, char32_t, wchar_t,short, int, long,
- long long, float, double, long double, void, const, extern, mutable, register,
- signed, static, typedef, unsigned, volatile, using, typename, auto, constexpr,
- decltype, class, enum, struct, union, const_cast, dynamic_cast, reinterpret_cas
-t, static_cast, try, throw, catch, noexcept, delete, new, nullptr, static,
- const, friend, virtual, operator, namespace, sizeof, template, typename,
- concept, class,  delete, friend, explicit, this, typeid, private, protected,
- public, alignas, alignof, asm, concept, consteval, constexpr, constinit
- export, extern, inline, static_assert, requires, template, typename, mutable,
-  volatile, co_await, co_return, co_yield, atomic_cancel, atomic_commit,
- atomic_noexcept, import, module, synchronized,co_await, co_return, co_yield,
- reflexpr }, 
-\end_layout
-
-\begin_layout Plain Layout
-
-emphstyle={
-\backslash
-color{blue}},
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\begin_layout Plain Layout
-
-% Estruturas de controle e de repeticao RED
-\end_layout
-
-\begin_layout Plain Layout
-
-emph={[2] and, and_eq, bitand, bitor, compl, false, not, not_eq, or, or_eq,
- true, xor, xor_eq, break, case, continue, default, do, else, for, goto,
- if, return, switch, while  } ,
-\end_layout
-
-\begin_layout Plain Layout
-
-emphstyle={[2]
-\backslash
-color{red}},
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\begin_layout Plain Layout
-
-% Arquivos de inclusao mymauve (note que alguns poderao aparecer com outra
- cor, ocorre quando nome arquivo igual ao nome da classe)
-\end_layout
-
-\begin_layout Plain Layout
-
-emph={[3] algorithm , atomic ,backward ,bits ,bitset ,cassert ,ccomplex
- ,cctype ,cerrno ,cfenv ,cfloat ,chrono ,cinttypes ,ciso646 ,climits ,clocale
- ,cmath ,complex ,csetjmp ,csignal ,cstdalign ,cstdarg ,cstdbool ,cstddef
- ,cstdint ,cstdio ,cstdlib ,cstring ,ctgmath ,ctime ,cwchar ,cwctype ,debug
- ,decimal ,exception ,ext ,filesystem, fstream ,functional  ,initializer_list
- ,iomanip ,ios ,iosfwd ,iostream ,istream ,iterator ,limits ,locale ,numeric
- ,ostream ,profile ,random ,ratio ,regex ,scoped_allocator ,sstream ,stack
- ,stdexcept  ,streambuf ,system_error ,tr1 ,tr2 ,typeindex ,typeinfo ,type_trait
-s ,utility ,x86_64-redhat-linux ,complex } , 
-\end_layout
-
-\begin_layout Plain Layout
-
-emphstyle={[3]
-\backslash
-color{green}},
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\begin_layout Plain Layout
-
-% Strings VERDE2
-\end_layout
-
-\begin_layout Plain Layout
-
-emph={[4] string, string_view, wstring, u16string,u32string } ,
-\end_layout
-
-\begin_layout Plain Layout
-
-emphstyle={[4]
-\backslash
-color{mygreen2}
-\backslash
-bfseries},
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\begin_layout Plain Layout
-
-% Containers purple
-\end_layout
-
-\begin_layout Plain Layout
-
-emph={[5]  array, vector, deque, forward_list, list, set, multiset, map,
- multimap, unordered_set, unordered_multiset, unordered_map, unordered_multimap
- , pair, tuple, basic_string },
-\end_layout
-
-\begin_layout Plain Layout
-
-emphstyle={[5]
-\backslash
-color{brown}
-\backslash
-bfseries},
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\begin_layout Plain Layout
-
-%Algoritmos genericos VERMELHO2
-\end_layout
-
-\begin_layout Plain Layout
-
-emph={[6]  accumulate, find, max, adjacent_find, find_if, max_element, binary_se
-arch, min, count, find_first_of, for_each, min_element, count_if, includes,
- mismatch, equal, lexicographical_compare, nth_element, equal_range, lower_bound
-, mismatch, search, search_n, find_end, upper_bound, copy, remove_if, copy_backw
-ard, replace, fill, replace_copy, fill_n, replace_copy_if, generate, replace_if,
- generate_n, reverse, inplace_merge, reverse_copy, iter_swap, rotate,  make_heap
-, rotate_copy, merge, set_difference, nth_element, next_permutation, set_interse
-ction, set_symmetric_difference, partial_sort, set_union, partial_sort_copy,
- sort, partition, sort_heap, prev_permutation, stable_partition, push_heap,
- stable_sort, pop_heap, swap, random_shuffle, swap_ranges, remove, transform,
- unique, unique_copy, remove_copy, remove_copy_if, all_of, any_of, none_of,
- find_if_not, copy_if, copy_n, move, move_backward, suffle, is_partitioned,
- partition_copy, partition_point, is_sorted, is_sorted_until, is_heap, is_heap_u
-ntil, minmax, minmax_element, is_permutation, iota, uninitialized_copy_n,
- for_each_n, sample, clamp, reduce, exclusive_scan, inclusive_scan, transform_re
-duce, transform_exclusive_scan, transform_inclusive_scan, uninitialized_move,
- uninitialized_move_n, uninitialized_default_construct, uninitialized_default_co
-nstruct_n, uninitialized_value_construct, uninitialized_value_construct_n,
- destroy, destroy_at, destroy_n, shift_left, shift_right, compare_3way,
- lexicographical_compare_3way } ,
-\end_layout
-
-\begin_layout Plain Layout
-
-emphstyle={[6]
-\backslash
-color{olive}},
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\begin_layout Plain Layout
-
-% Processamento Paralelo Orange/laranja
-\end_layout
-
-\begin_layout Plain Layout
-
-emph={[7] thread, yield, get_id, sleep_for, sleep_until, thread_local, memory,
- mutex, parallel, mutex, timed_mutex, recursive_mutex, shared_mutex, shared_time
-d_mutex, lock_guard, scoped_lock, unique_lock, shared_lock, defer_lock_t,
- try_to_lock_t, adopt_lock_t, try_lock, lock, once_flag, call_once, condition_va
-riable, condition_variable_any, notify_all_at_thread_exit, cv_status, promise,
- packaged_task, future, shared_future, async, launch, future_status, future_erro
-r, future_category, future_errc, hardware_destructive_interference_size,
- hardware_constructive_interference_size  } ,
-\end_layout
-
-\begin_layout Plain Layout
-
-emphstyle={[7]
-\backslash
-color{mymauve}},
+color{mygreen1}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1101,7 +1396,25 @@ Modelo_validacao.dat
 \end_layout
 
 \begin_layout Section
-Injeção de calor em reservatório - comparação com outro simulador
+Injeção de calor em reservatório
+\change_inserted 1908091853 1653177105
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653177105
+Injeção de calor em reservatório
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ - comparação com outro simulador
 \end_layout
 
 \begin_layout Standard
@@ -1641,6 +1954,24 @@ Modelo_guilherme.dat
 
 \begin_layout Section
 Injeção de calor em reservatório - modelo five-spot
+\change_inserted 1908091853 1653177118
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653177118
+modelo five-spot
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -1921,7 +2252,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../imagens/five_spot_graficos_2.png
+	filename ../imagens/five_spot_graficos_2b.png
 	width 100text%
 
 \end_inset
@@ -2714,6 +3045,24 @@ Modelo_reservatorio_com_agua.dat
 
 \begin_layout Section
 Resfriamento de processadores
+\change_inserted 1908091853 1653177131
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653177131
+Resfriamento de processadores
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard

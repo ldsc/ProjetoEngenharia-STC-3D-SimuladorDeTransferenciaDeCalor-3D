@@ -113,6 +113,16 @@
 
 \begin_layout Chapter
 Implementação
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Implementação
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "chap:Implementação"
@@ -155,10 +165,10 @@ name "sec:Codigo-fonte"
 
 
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Implementação
+Código fonte
 \end_layout
 
 \end_inset
@@ -602,7 +612,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da função mainwindow},
+lstinputlisting[ caption={Arquivo de implementação da classe MainWindow},
  label={mainwindow-h}] {../listagens/mainwindow.h}
 \end_layout
 
@@ -635,7 +645,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da função mainwindow},
+lstinputlisting[ caption={Arquivo de implementação da classe MainWindow},
  label={mainwindow-cpp}] {../listagens/mainwindow.cpp}
 \end_layout
 

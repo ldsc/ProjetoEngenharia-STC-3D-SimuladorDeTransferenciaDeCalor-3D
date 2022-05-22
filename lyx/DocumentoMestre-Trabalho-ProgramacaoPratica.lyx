@@ -127,6 +127,17 @@
 \align block
 \begin_inset CommandInset include
 LatexCommand include
+filename "Cap0-Capa.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset CommandInset include
+LatexCommand include
 filename "Cap0-Introducao-Escopo-Objetivos.lyx"
 
 \end_inset
@@ -174,6 +185,13 @@ filename "Cap4-Projeto.lyx"
 
 \begin_inset CommandInset include
 LatexCommand include
+filename "Cap5-CiclosDesenvolvimento.lyx"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand include
 filename "Cap6-Implementacao.lyx"
 
 \end_inset
@@ -197,6 +215,17 @@ filename "Cap7-Teste.lyx"
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap8-Documentacao.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap9-Documentacao-ManualUsuario.lyx"
 
 \end_inset
 
@@ -286,6 +315,10 @@ options "abntex2-alf"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\align block
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap-Apendice_A.lyx"
@@ -297,9 +330,19 @@ filename "Cap-Apendice_A.lyx"
 
 \begin_layout Standard
 \align block
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align block
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap-Apendice_B.lyx"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 

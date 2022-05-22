@@ -109,61 +109,39 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
 
 \begin_layout Chapter
-Como adicionar materiais
+
+\change_inserted 1908091853 1653178376
+Disciplinas Relacionadas a Transferência de Calor
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
 
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{Apêndice 
-\backslash
-thechapter: Como utilizar o software}
-\backslash
-rhead{
-\backslash
-thepage}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Para adicionar qualquer material ao simulador, é necessário clicar em Arquivo->I
-mport material, e escolher o arquivo desejado.
- É importante lembrar que os arquivos devem ter o formato que será ensinado
- abaixo, e a extensão do arquivo deve ser '.constante', '.correlacao' ou '.interpol
-acao', conforme o modelo escolhido.
- a Figura 
+\change_inserted 1908091853 1653178346
+A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Como-adicionar-um"
-plural "false"
-caps "false"
-noprefix "false"
+reference "fig: Principais disciplinas do curso relacionadas a Transferência de Calor"
 
 \end_inset
 
- ilustra o local onde deve ser clicado para adicionar o material.
+ ilustra o relacionamento das disciplinas do Curso de Engenharia de Petróleo
+ da UENF que tem uma ligação mais direta com a transferência de calor.
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted 1908091853 1653178346
 \begin_inset Float figure
 placement H
 wide false
@@ -172,10 +150,14 @@ status open
 
 \begin_layout Plain Layout
 \align center
+
+\change_inserted 1908091853 1653178346
 \begin_inset Graphics
-	filename ../imagens/importar_material.png
-	lyxscale 30
+	filename ../imagens/GradeCurso/Grade-CursoEngenhariaDePetroleo-DisciplinasRelacionadasATranscal.png
+	lyxscale 25
 	width 100text%
+	height 85theight%
+	keepAspectRatio
 
 \end_inset
 
@@ -183,15 +165,17 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+
+\change_inserted 1908091853 1653178346
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Como adicionar um material no simulador.
- Primeiro seleciona Arquivo, Import material.
- Uma janela será aberta, para o usuário escolher o material.
+
+\change_inserted 1908091853 1653178346
+Principais disciplinas do curso relacionadas a Transferência de Calor
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Como-adicionar-um"
+name "fig: Principais disciplinas do curso relacionadas a Transferência de Calor"
 
 \end_inset
 
@@ -203,82 +187,29 @@ name "fig:Como-adicionar-um"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Section
-Método da correlação ou constante
+\begin_layout Standard
+
+\change_inserted 1908091853 1653178346
+
 \end_layout
 
 \begin_layout Standard
-Para adicionar um material que utilize métodos de correlação ou possuí proprieda
-des termofísicas constantes, deverá ser criado um arquivo com extensão '.correlac
-ao' ou '.constante', respectivamente.
-\end_layout
 
-\begin_layout Standard
-O molde do arquivo é apresentado abaixo:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
+\change_inserted 1908091853 1653178346
+A título ilustrativo um resumo das ementas de algumas destas disciplinas
+ é apresentado a seguir:
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
 
-\color gray
-RGBA:
-\color inherit
- 236 217 122 255
-\end_layout
-
-\begin_layout Plain Layout
-
-\color gray
-Cp:
-\color inherit
- 2753
-\end_layout
-
-\begin_layout Plain Layout
-
-\color gray
-rho:
-\color inherit
- 747.3
-\end_layout
-
-\begin_layout Plain Layout
-/// k=C0+C1*T-C2*T^2
-\end_layout
-
-\begin_layout Plain Layout
-
-\color gray
-k:
-\color inherit
- 76.64 0.2633 0.0002
+\change_inserted 1908091853 1653178346
+esta figura e a lista de ementas abaixo podem ir para um apêndice;
 \end_layout
 
 \end_inset
@@ -286,124 +217,233 @@ k:
 
 \end_layout
 
-\begin_layout Standard
-Onde a primeira linha contém o RGBA do material, a segunda linha contém
- o valor de Cp, seguindo por rho.
- Na quarta linha tem um comentário mostrando a equação da correlação utilizada,
- e na última linha, devem ser inseridos os valores de C0, C1 e C2, respectivamen
-te.
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653178346
+Matemática:
 \end_layout
 
-\begin_layout Section
-Método de interpolação
+\begin_deeper
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653178346
+MAT01101 : Cálculo Diferencial e Integral I : 1- Funções.
+ 2- Derivada.
+ 3- Integral.
 \end_layout
 
-\begin_layout Standard
-Para adicionar um material que utilize métodos de interpolação, deverá ser
- criado um arquivo com extensão '.interpolacao'.
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653178346
+MAT01203 : Cálculo Diferencial e Integral II : 1- Algumas superfícies especiais.
+ 2- Funções vetoriais de uma variável real.
+ 3- Funções reais de várias variáveis reais.
+ 4- Derivadas parciais e diferenciabilidade.
+ 5- Máximos e mínimos.
+ 
 \end_layout
 
-\begin_layout Standard
-O molde do arquivo é apresentado abaixo:
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653178346
+MAT01109 : Cálculo Diferencial e Integral III : 1- Integrais dupla e tripla.
+ 2- Tópicos em análise vetorial.
+ 3- Integral de linha.
+ 4- Integral de superfície.
+ 5- Teoremas fundamentais.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
+\begin_layout Itemize
 
-\begin_layout Plain Layout
-
-\color gray
-RGBA:
-\color inherit
- 255 128 0 30 
+\change_inserted 1908091853 1653178346
+MAT01204 : Álgebra Linear: 1- Vetores em Rn.
+ 2- Sistema linear de equações.
+ 3- Espaços vetoriais.
+ 4- Transformações lineares.
+ 5- Autovalores e autovetores.
+ 
 \end_layout
 
-\begin_layout Plain Layout
+\end_deeper
+\begin_layout Itemize
 
-\color gray
-rho:
-\color inherit
- 7.262 
+\change_inserted 1908091853 1653178346
+Física:
 \end_layout
 
-\begin_layout Plain Layout
+\begin_deeper
+\begin_layout Itemize
 
-\color gray
-Cp:
-\color inherit
- 7.925 
+\change_inserted 1908091853 1653178346
+FIS01202 : Física Geral I: 1- Sistemas de medidas; 2- Movimento em uma dimensão;
+ 3- Movimento em duas e três dimensões; 4- Leis de Newton; 5- Aplicações
+ das Leis de Newton; 6- Trabalho e energia; 7- Conservação de energia; 8-
+ Sistemas de partículas e conservação da quantidade de movimento linear;
+ 9- Rotação; 10- Conservação da quantidade de movimento angular; 11- Equilíbrio
+ estático e elasticidade; 12- Gravitação; 13- Fluídos.
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Itemize
 
-\color gray
--T---k: 
+\change_inserted 1908091853 1653178346
+FIS01103 : Física Geral II: 1- Lei Zero da Termodinâmica; 2- Primeira e
+ Segunda Lei da Termodinâmica; 3- Teoria Cinética dos Gases; 4- Propriedades
+ Térmicas e Processos Térmicos; 5- Carga; 6- Lei de Coulomb; 7- Campo Elétrico;
+ 8- Lei de Gauss; 9- Capacitores e Potencial Elétrico; 10- Campo Magnético;
+ 11- Lei de Biot-Savart; 12- Lei de Ampère; 13- Indutores; 14- Leis de Maxwell.
 \end_layout
 
-\begin_layout Plain Layout
-100 0.2 
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653178346
+FIS01205 : Física Geral III: 1- Oscilações; 2- Ondas mecânicas; 3- Ondas
+ Eletromagnéticas; 4- Propriedades da luz; 5- Interferência; 6- Difração;
+ 7- Fótons, Ondas de Matéria; 8- Tópicos Especiais: Ótica Geométrica, Relativida
+de.
 \end_layout
 
-\begin_layout Plain Layout
-200 0.4 
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653178346
+FIS01212 : Termodinâmica para Engenharia: 1- Conceitos.
+ 2- Definições e Princípios Básico da Termodinâmica.
+ 3- Propriedades de Substâncias Puras.
+ 4- Leis da Termodinâmica.
+ 5- Ciclos Motores e de Refrigeração.
+ 6- Relações Termodinâmicas.
+ 7- Sistemas Termodinâmicos.
+ 8- Misturas e Soluções de Gases Perfeitos.
+ 9- Equilíbrio Químico.
 \end_layout
 
-\begin_layout Plain Layout
-300 0.5 
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653178346
+LEP01344 : Mecânica dos Fluidos: 1- Estática dos fluidos.
+ 2- Determinação experimental de propriedades dos fluidos.
+ 3- Aplicações da Cinemática dos Fluidos.
+ 4- Aplicações da Dinâmica dos fluidos.
+ 5- Escoamento em condutos.
+ 6- Análise dimensional, semelhança e modelos.
 \end_layout
 
-\begin_layout Plain Layout
-400 0.55 
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653178346
+LEP1852 : Transferência de Calor: 1- Introdução á Transferência de Calor.
+ 2- Condução Unidimensional em Regime Permanente.
+ 3- Fundamentos da convecção e da Radiação.
+ 4- Trocadores de Calor.
+ [optativa].
 \end_layout
 
-\begin_layout Plain Layout
-500 0.6 
+\end_deeper
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653178346
+Modelagem numérica:
 \end_layout
 
-\begin_layout Plain Layout
-600 0.65 
+\begin_deeper
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653178346
+MAT01207 : Cálculo Numérico: I.
+ Sistemas Numéricos e Erros.
+ II.
+ Zeros de Funções Reais.
+ III.
+ Matrizes e Resolução Numérica de Sistemas de Equações Lineares.
+ IV.
+ Interpolação.
+ V.
+ Integração Numérica.
+ VI.
+ Resolução Numérica de Equações Diferenciais Ordinárias.
 \end_layout
 
-\begin_layout Plain Layout
-700 0.7 
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653178346
+MAT01207 : Cálculo Numérico: I.
+ Sistemas Numéricos e Erros.
+ II.
+ Zeros de Funções Reais.
+ III.
+ Matrizes e Resolução Numérica de Sistemas de Equações Lineares.
+ IV.
+ Interpolação.
+ V.
+ Integração Numérica.
+ VI.
+ Resolução Numérica de Equações Diferenciais Ordinárias.
 \end_layout
 
-\begin_layout Plain Layout
-800 0.75 
+\end_deeper
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653178346
+Modelagem computacional:
 \end_layout
 
-\begin_layout Plain Layout
-900 0.8 
+\begin_deeper
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653178346
+MAT01102 : Fundamentos da Ciência da Computação : 1.
+ Introdução à Computação.
+ 2.
+ Introdução à Programação.
+ Algoritmos.
+ 3.
+ Programação.
+ 4.
+ Uso de Programas Aplicativos.
 \end_layout
 
-\end_inset
+\begin_layout Itemize
 
-
+\change_inserted 1908091853 1653178346
+LEP01447 : Programação Orientada a Objeto em C++ : 1- Filosofia, modelagem
+ e conceitos.
+ Diagramas usando a modelagem UML.
+ 2- Etapas de desenvolvimento de um programa.
+ 3- Sintaxe e conceitos de C++, tipos, classes, objetos, atributos, métodos.
+ 4- Herança, polimorfismo, sobrecarga de função e de operadores.
+ 5- Entrada/saída e as classes string e complex.
+ 6- Introdução a STL, containers, iteradores, funções genéricas.
 \end_layout
 
-\begin_layout Standard
-Onde a primeira linha contém o RGBA do material, nas linhas abaixo contém
- rho e Cp.
- Abaixo da linha com T e k, são inseridos os valores da temperatura, e a
- respectiva condutividade térmica (k).
- O usuário pode adicionar quantas linhas desejar.
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653178346
+LEP01579 : Programação Paralela e Concorrente I: 1- Introdução ao processamento
+ paralelo e concorrente; 2 - Processamento paralelo com múltiplos processos;
+ 3- Processamento paralelo usando Boost.Interprocess; 4- Introdução ao processame
+nto paralelo com múltiplas threads de C; 5- Processamento paralelo com múltiplas
+ threads de C++11/14/17/20; 7- Introdução ao processamento paralelo em um
+ cluster de computadores; [optativa].
 \end_layout
 
+\end_deeper
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653178346
+Aplicação:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\change_inserted 1908091853 1653178346
+LEP01446 : Programação Prática: Desenvolvimento de um programa de engenharia
+ utilizando a sequência padrão: Especificação do sistema, elaboração, desenvolvi
+mento da análise orientada a objeto (diagramas usando UML), desenvolvimento
+ do projeto do sistema, desenvolvimento do projeto orientado a objeto, implement
+ação do programa usando C++, testes do funcionamento do programa; manutenção
+ e documentação do programa desenvolvido.
+\end_layout
+
+\end_deeper
 \end_body
 \end_document

@@ -96,30 +96,41 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
 
 \begin_layout Chapter
-Projeto 
-\begin_inset CommandInset label
-LatexCommand label
-name "chap:Projeto-do-Sistema"
+Projeto
+\change_inserted 1908091853 1653176996
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653176996
+Projeto
+\change_unchanged
+
+\end_layout
 
 \end_inset
 
 
-\begin_inset Note Note
-status open
+\change_deleted 1908091853 1653176994
+ 
+\change_unchanged
 
-\begin_layout Plain Layout
-deixar apenas o que for pertinente ao módulo experimental a ser desenvolvido.
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Projeto-do-Sistema"
 
 \end_inset
 
@@ -149,7 +160,11 @@ Neste capítulo são apresentadas questões relacionadas ao desenvolvimento
  do projeto, como ambiente de desenvolvimento e bibliotecas gráficas, comentados
  juntamente com a evolução de versões.
  Também são apresentados os diagramas de componentes e de implantação.
+
+\change_deleted 1908091853 1653176087
  
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section
@@ -211,12 +226,30 @@ Programação de alto nível com vários graus de abstração.
 \end_layout
 
 \begin_layout Itemize
-Diversos ambientes de desenvolvimento - IDEs, compiladores, debugers, profillers
- gratuítos disponíveis, facilitando o uso por alunos.
+Diversos ambientes de desenvolvimento - IDEs, compiladores, debugers, profillers.
+
+\change_deleted 1908091853 1653176087
+ 
+\change_unchanged
+
+\end_layout
+
+\begin_layout Itemize
+Compiladores e ferramentas gratuítas disponíveis, facilitando o uso por
+ alunos.
 \end_layout
 
 \begin_layout Standard
-O paradigma de programação selecionado foi o orientado o objeto.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+repete
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -259,688 +292,45 @@ Ciclo Construção
 
 \begin_layout Standard
 Iremos apresentar a seguir breves informações sobre as versões desenvolvidas
- em cada ciclo de Planejamento/Detalhamento/Construção.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/EngenhariaSoftware-Geral.png
-	lyxscale 40
-	width 100text%
-	height 80text%
-
+ em cada ciclo de 
+\begin_inset Quotes eld
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Etapas para o desenvolvimento do software
-\shape italic
-
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Etapas para o desenvolvimento do software"
-
+Ciclos de Planejamento/Detalhamento
+\begin_inset Quotes erd
 \end_inset
 
-
-\end_layout
-
+ e 
+\begin_inset Quotes eld
 \end_inset
 
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Versão 0.1 - Uso modo terminal e biblioteca SFML para saída gráfica
-\end_layout
-
-\begin_layout Standard
-Na primeira versão foi utilizado um sistema de entrada de dados via terminal
- e saída de dados gráfica.
- A biblioteca 
-\shape italic
-SFML
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-
-\shape italic
-Simple and Fast Multimedia Library
-\shape default
- é uma biblioteca de interface gráfica multi-linguagem, ver em <
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.sfml-dev.org/"
-
-\end_inset
-
->.
-\end_layout
-
-\end_inset
-
- 
-\shape default
-foi utilizada para a criação de janelas para o usuário.
- Esta versão foi desenvolvida usando ambiente de desenvolvimento 
-\shape italic
-Visual Studio
-\shape default
-, tudo isso no sistema operacional 
-\shape italic
-Windows 10.
-\end_layout
-
-\begin_layout Standard
-Note que é um 
-\shape italic
-software
-\shape default
- simples, com uma mistura de janela-terminal.
- O usuário podia desenhar e simular, mas não tinha muita liberdade para
- escolher e adicionar materiais.
- Veja Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Versão-0.1,-simples"
-plural "false"
-caps "false"
-noprefix "false"
-
+Ciclo Construção
+\begin_inset Quotes erd
 \end_inset
 
 .
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../imagens/v1.0.png
-	lyxscale 60
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Versão 0.1, simples e utilizando a biblioteca 
-\shape italic
-SFML
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Versão-0.1,-simples"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Versão 0.2 - Adição de visualização para os tipos de materiais
-\end_layout
-
-\begin_layout Standard
-Nesta versão foram implementadas as seguintes melhorias:
-\end_layout
-
-\begin_layout Itemize
-Criada uma segunda janela, a qual replica o desenho com as cores do material
- escolhido.
-\end_layout
-
-\begin_layout Itemize
-Opção de navegação entre perfis, tornando o simulador tridimensional.
-\end_layout
-
-\begin_layout Itemize
-Opção de escolher paralelismo por 
-\shape italic
-grids
-\shape default
- ou sem paralelismo.
-\end_layout
-
-\begin_layout Itemize
-Foram realizadas otimizações e organizações de código.
-\end_layout
-
-\begin_layout Itemize
-Adição da opção da temperatura ser uma fonte/sumidouro de calor (temperatura
- constante no ponto analisado).
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-fale das melhorias
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Veja Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Versão-0.2,-simples,"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../imagens/v1.1.png
-	lyxscale 60
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Versão 0.2, simples, mas contendo uma segunda janela dos materiais
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Versão-0.2,-simples,"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Versão 0.3 - Adição de atalhos na tela
-\end_layout
-
-\begin_layout Standard
-Esta foi a última versão montada utilizando a biblioteca 
-\shape italic
-SFML
-\shape default
-.
- Foi uma versão importantíssima para o aprendizado, pois o usuário não desenhava
- diretamente no 
-\shape italic
-software
-\shape default
-, mas era enviado uma lista de propriedades do desenho para o 
-\shape italic
-grid
-\shape default
- e, quando o desenho era atualizado, a biblioteca utilizava os valores do
- 
-\shape italic
-grid
-\shape default
-.
- Isso permitiu juntar as duas janelas.
-\end_layout
-
-\begin_layout Standard
-Foram implementadas as seguintes melhorias:
-\end_layout
-
-\begin_layout Itemize
-Adição de instruções de uso incluindo teclas de atalho.
-\end_layout
-
-\begin_layout Itemize
-Junção das três janelas anteriores (terminal, janela de desenho e janela
- de materiais) em uma única janela.
-\end_layout
-
-\begin_layout Itemize
-Implementado a opção do material variar com a temperatura, em versão básica
- de teste.
- Essa melhoria se desdobrou na opção de escolher materiais com condutividade
- térmica calculada por valor constante, correlação ou interpolação.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-fale das melhorias colocando itens
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Esta versão é ilustrada na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Versão-0.3,-completa"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../imagens/v1.2.png
-	lyxscale 80
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Versão 0.3, completa e complexa, mas muito lento
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Versão-0.3,-completa"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Versão 0.4 - Mudança para biblioteca Qt
-\end_layout
-
-\begin_layout Standard
-Durante o desenvolvimento das versões anteriores, foram identificados problemas
- com a dificuldade de lidar com mudanças na interface, quando se usa a bibliotec
-a 
-\shape italic
-SFML.
- 
-\emph on
-Também foi identificado problema de desempenho.
-\end_layout
-
-\begin_layout Standard
-Então surgiu essa necessidade de mudança, e a biblioteca gráfica 
-\shape italic
-Qt
-\shape default
-,foi escolhida por ser:
-\end_layout
-
-\begin_layout Itemize
-mais completa.
-\end_layout
-
-\begin_layout Itemize
-mais rápida.
-\end_layout
-
-\begin_layout Itemize
-de amplo uso em programas de engenharia.
-\end_layout
-
-\begin_layout Itemize
-com versões livres.
-\end_layout
-
-\begin_layout Itemize
-multiplataforma.
-\end_layout
-
-\begin_layout Standard
-Para utilizar as ferramentas fornecidas por essa biblioteca, foi migrado
- do editor de texto 
-\shape italic
-Visual Studio 
-\shape default
-para o
-\shape italic
- Qt Creator
-\shape default
-, a Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Qt-Creator"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- apresenta o ambiente de trabalho.
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../imagens/qt_creator.PNG
-	lyxscale 25
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\shape italic
-Qt Creator
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Qt-Creator"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Como o 
-\shape italic
-software
-\shape default
- foi todo programado utilizando o paradigma da orientação a objeto, esta
- migração foi muito rápida.
- Tivemos de modificar, quase que somente, a classe da janela.
-\end_layout
-
-\begin_layout Standard
-Foram implementadas as seguintes melhorias:
-\end_layout
-
-\begin_layout Itemize
-Adição na interface gráfica da entrada de dados da temperatura.
-\end_layout
-
-\begin_layout Itemize
-Botão para selecionar o tipo de material.
-\end_layout
-
-\begin_layout Itemize
-Definição de 4 áreas para saída gráfica.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-fale das melhorias colocando itens
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A versão 0.4 do software é apresentada na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Versão-1.0,-inicial"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../imagens/v2.0.png
-	lyxscale 40
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Versão 0.4, inicial e incompleta, mas utilizando a biblioteca 
-\shape italic
-Qt
-\shape default
-
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Versão-1.0,-inicial"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Versão 0.5 - Melhorias na interface gráfica - usabilidade
-\end_layout
-
-\begin_layout Standard
-A curva de evolução do 
-\shape italic
-software
-\shape default
- dentro do 
-\shape italic
-Qt Creator 
-\shape default
-foi exponencial, permitindo a criação da versão final apresentada na figura
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Versão-1.2,-final."
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Foram implementadas as seguintes melhorias:
-\end_layout
-
-\begin_layout Itemize
-Duas áreas que apresentam os cortes desenhados.
-\end_layout
-
-\begin_layout Itemize
-Quatro gráficos com valores da temperatura ao longo do tempo ou espaço.
-\end_layout
-
-\begin_layout Itemize
-No canto inferior esquerdo, mostram opções para a simulação ou criação do
- objeto.
-\end_layout
-
-\begin_layout Itemize
-Na direita, são mostradas as propriedades termofísicas de vários materiais
- como função da temperatura.
-\end_layout
-
-\begin_layout Itemize
-Janela mostrando o objeto em renderização 3D.
- 
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../imagens/v2.2.PNG
-	lyxscale 25
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Versão-1.2,-final."
-
-\end_inset
-
-Versão 0.5, final.
- Na direita é apresentado a visualização 3D do objeto desenhado
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-se ocorreram novas mudanças até o final inclua uma versão 0.6 (ou chame de
- 1.0).
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
 Diagrama de componentes
+\change_inserted 1908091853 1653177001
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653177001
+Diagrama de componentes
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -1051,10 +441,16 @@ Por fim, os componentes em laranja claro são responsáveis pela simulação
 \begin_layout Section
 Diagrama de Implementação
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Diagrama de execução
+Diagrama de 
+\change_deleted 1908091853 1653177009
+execução
+\change_inserted 1908091853 1653177019
+implantação-execução
+\change_unchanged
+
 \end_layout
 
 \end_inset

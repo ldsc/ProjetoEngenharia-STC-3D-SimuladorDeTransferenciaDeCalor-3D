@@ -83,11 +83,12 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
@@ -147,6 +148,24 @@ software
 
 \begin_layout Section
 Dicionário das classes
+\change_inserted 1908091853 1653176963
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653176963
+Dicionário das classes
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -162,8 +181,24 @@ adas pelo professor André Duarte Bueno no curso de C++.
 
 \begin_layout Enumerate
 
+\change_deleted 1908091853 1653169900
+
 \series bold
-mainwindow.h:
+m
+\change_inserted 1908091853 1653169900
+M
+\change_unchanged
+ain
+\change_deleted 1908091853 1653169901
+w
+\change_inserted 1908091853 1653169902
+W
+\change_unchanged
+indow
+\change_deleted 1908091853 1653169898
+.h
+\change_unchanged
+:
 \series default
  Classe responsável pela janela principal.
  Consegue obter os valores adicionados pelo usuário e enviar para a classe
@@ -177,7 +212,11 @@ do parar a simulação para ver resultados parciais.
 \begin_layout Enumerate
 
 \series bold
-CRender3D.h:
+CRender3D
+\change_deleted 1908091853 1653169905
+.h
+\change_unchanged
+:
 \series default
  Classe responsável por apresentar o objeto em renderização 3D.
  É criada a partir da classe mainwindow.h e recebe valores do simulador.
@@ -187,7 +226,11 @@ CRender3D.h:
 \begin_layout Enumerate
 
 \series bold
-CSimuladorTemperatura.h:
+CSimuladorTemperatura
+\change_deleted 1908091853 1653169876
+.h
+\change_unchanged
+:
 \series default
  Classe responsável por organizar as células do objeto a ser simulado e
  por resolver o sistema numérico do problema da difusão térmica.
@@ -196,20 +239,32 @@ CSimuladorTemperatura.h:
 \begin_layout Enumerate
 
 \series bold
-CGrid.h:
+CGrid
+\change_deleted 1908091853 1653169876
+.h
+\change_unchanged
+:
 \series default
  Classe responsável por organizar as células do objeto em 
 \shape italic
 grids
 \shape default
 , importante para organizar as células e facilitar a utilização pela classe
- CSimuladorTemperatura.h.
+ CSimuladorTemperatura
+\change_deleted 1908091853 1653169881
+.h
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Enumerate
 
 \series bold
-CCell.h:
+CCell
+\change_deleted 1908091853 1653169882
+.h
+\change_unchanged
+:
 \series default
  Classe responsável por armazenar informações da célula, se ela está ativa
  ou não, se é fonte de calor ou não, qual o tipo de material e qual sua
@@ -219,18 +274,37 @@ CCell.h:
 \begin_layout Enumerate
 
 \series bold
-CMaterial.h:
+CMaterial
+\change_deleted 1908091853 1653169883
+.h
+\change_unchanged
+:
 \series default
  Classe virtual responsável por prover os valores das propriedades termofísicas
  dos materiais.
- É chamada pelo CSimuladorTemperatura.h e é sobrescrita por CMaterialCorrelacao.h
- ou CMaterialInterpolacao.h.
+ É chamada pelo CSimuladorTemperatura
+\change_deleted 1908091853 1653169886
+.h
+\change_unchanged
+ e é sobrescrita por CMaterialCorrelacao
+\change_deleted 1908091853 1653169887
+.h
+\change_unchanged
+ ou CMaterialInterpolacao
+\change_deleted 1908091853 1653169887
+.h
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Enumerate
 
 \series bold
-CMaterialCorrelacao.h:
+CMaterialCorrelacao
+\change_deleted 1908091853 1653169888
+.h
+\change_unchanged
+:
 \series default
  Classe responsável por calcular os valores das propriedades termofísicas
  como função da temperatura, a propriedade é determinada a partir de correlações
@@ -240,7 +314,11 @@ CMaterialCorrelacao.h:
 \begin_layout Enumerate
 
 \series bold
-CMaterialInterpolacao.h:
+CMaterialInterpolacao
+\change_deleted 1908091853 1653169888
+.h
+\change_unchanged
+:
 \series default
  Classe responsável por calcular os valores das propriedades termofísicas
  como função da temperatura, a propriedade é determinada utilizando método
@@ -250,16 +328,30 @@ CMaterialInterpolacao.h:
 \begin_layout Enumerate
 
 \series bold
-CReta.h:
+CReta
+\change_deleted 1908091853 1653169889
+.h
+\change_unchanged
+:
 \series default
  Representa uma reta, dado um valor de x calcula y.
- Usada no calculo da interpolação linear.
+ Usada no c
+\change_deleted 1908091853 1653169933
+a
+\change_inserted 1908091853 1653169933
+á
+\change_unchanged
+lculo da interpolação linear.
 \end_layout
 
 \begin_layout Enumerate
 
 \series bold
-CSegmentoReta.h:
+CSegmentoReta
+\change_deleted 1908091853 1653169889
+.h
+\change_unchanged
+:
 \series default
  Representa um segmento de reta com intervalos definidos.
  .
@@ -272,10 +364,13 @@ Uma classe externa foi utilizada no simulador:
 \begin_layout Enumerate
 
 \series bold
-qcustomplot.h:
+QCustomPlot:
 \series default
- Classe responsável por gerar gráficos apresentados pelo mainwindow.h, obtido
- em (
+ Classe responsável por gerar gráficos apresentados pelo mainwindow
+\change_deleted 1908091853 1653169890
+.h
+\change_unchanged
+, obtido em (
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.qcustomplot.com/"
@@ -286,7 +381,25 @@ target "https://www.qcustomplot.com/"
 \end_layout
 
 \begin_layout Enumerate
-Também foram utilizadas diversas classes de Qt.
+Também foram utilizadas diversas classes 
+\change_inserted 1908091853 1653169950
+da biblioteca 
+\change_deleted 1908091853 1653169951
+de
+\change_unchanged
+ Qt
+\change_inserted 1908091853 1653169970
+ (
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.qt.io/"
+literal "false"
+
+\end_inset
+
+)
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
@@ -319,8 +432,10 @@ status open
 \end_inset
 
 
+\change_deleted 1908091853 1653169997
+
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 coloque no apêndice 
@@ -336,6 +451,8 @@ Diagramas UML
 
 \end_inset
 
+
+\change_unchanged
 
 \end_layout
 
@@ -549,7 +666,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/diagrama-de-sequencia-geral.png
+	filename ../imagens/diagrama-de-sequencia-geral.png
 	lyxscale 40
 	width 100text%
 
@@ -562,7 +679,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de sequência geral.
+Diagrama de sequência geral
+\change_deleted 1908091853 1653170174
+.
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Diagrama-de-sequencia-geral"
@@ -625,7 +746,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/diagrama-de-sequencia-material.png
+	filename ../imagens/diagrama-de-sequencia-material.png
 	lyxscale 50
 	width 100text%
 
@@ -638,7 +759,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de sequência mostrando a importação de um novo material.
+Diagrama de sequência mostrando a importação de um novo material
+\change_deleted 1908091853 1653170176
+.
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Diagrama-de-sequencia-especifico"
@@ -733,8 +858,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/diagrama-de-sequencia-graficos.png
-	lyxscale 20
+	filename ../imagens/diagrama-de-sequencia-graficos.png
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -773,9 +898,13 @@ name "fig:Diagrama-de-sequência-resultados"
 \begin_layout Section
 Diagrama de comunicação
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
+
+\change_inserted 1908091853 1653176978
+Diagrama de 
+\change_unchanged
 comunicação
 \end_layout
 
@@ -1005,6 +1134,24 @@ Você deve montar diagramas de máquina de estado para classes cujo comportament
 
 \begin_layout Section
 Diagrama de atividades
+\change_inserted 1908091853 1653176985
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653176985
+Diagrama de atividades
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -1020,8 +1167,11 @@ noprefix "false"
 
 , é mostrado em detalhes uma atividade específica.
  Para o presente caso, será apresentado o diagrama de atividades do algoritmo
- de renderização da classe CRender3D.h, devido à complexidade de renderização
- 3D.
+ de renderização da classe CRender3D
+\change_deleted 1908091853 1653169893
+.h
+\change_unchanged
+, devido à complexidade de renderização 3D.
 \begin_inset Note Note
 status open
 
@@ -1084,7 +1234,31 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de atividades para o algoritmo de renderização::CRender3D
+Diagrama de atividades para o algoritmo de renderização
+\change_deleted 1908091853 1653170300
+::
+\change_inserted 1908091853 1653170300
+ 
+\change_unchanged
+CRender3D
+\change_inserted 1908091853 1653170313
+::Renderizacao()
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653170319
+nomeclasse::nomemetodo
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-atividades"

@@ -97,7 +97,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
@@ -120,7 +120,7 @@ lhead{
 \backslash
 thechapter
 \backslash
-space - Especificação}  
+space - Especificação}
 \end_layout
 
 \end_inset
@@ -130,6 +130,24 @@ space - Especificação}
 
 \begin_layout Chapter
 Especificação
+\change_inserted 1908091853 1653176797
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653176797
+Especificação
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Index idx
 status collapsed
 
@@ -513,6 +531,24 @@ esta parte abaixo vai lá para elaboração onde define as equações
 
 \begin_layout Subsection
 Requisitos funcionais
+\change_inserted 1908091853 1653176809
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653176809
+Requisitos funcionais
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -817,6 +853,19 @@ O usuário poderá escolher um ponto de estudo, cuja temperatura será monitorad
 
 \end_inset
 
+
+\change_inserted 1908091853 1653169770
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1653169770
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 
@@ -1178,6 +1227,24 @@ nais usuais como circulo, quadrado, retângulo, elipse.
 
 \begin_layout Subsection
 Requisitos não funcionais
+\change_inserted 1908091853 1653176815
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653176815
+Requisitos não funcionais
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -1514,8 +1581,26 @@ O usuário poderá comparar os valores das propriedades termofísicas em funçã
 
 \begin_layout Section
 Casos de uso
+\change_inserted 1908091853 1653176822
+
 \begin_inset Index idx
-status collapsed
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1908091853 1653176822
+Casos de uso
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_deleted 1908091853 1653176830
+
+\begin_inset Index idx
+status open
 
 \begin_layout Plain Layout
 Casos de uso
@@ -1523,6 +1608,8 @@ Casos de uso
 
 \end_inset
 
+
+\change_unchanged
  
 \begin_inset Note Note
 status open
@@ -1876,7 +1963,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama-de-caso-de-uso-especifico.png
+	filename ../imagens/Diagrama-de-caso-de-uso-especifico.png
 	lyxscale 40
 	width 80text%
 
