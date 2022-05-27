@@ -3,7 +3,6 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
-    up_margin = 100;
     simulador = new CSimuladorTemperatura();
     simulador->resetSize(size_x, size_y);
     ui->setupUi(this);
@@ -82,7 +81,8 @@ void MainWindow::printPosition(){
 
 void MainWindow::printDrawSize(){
     int size = ui->horizontalSliderDrawSize->value();
-    ui->textDrawSize->setText("Tamanho: "+QString::number(size) + " px/ "+QString::number(size*simulador->getDelta_x()) + " cm");
+    simulador->setDelta_x(std::stod(ui->input_dx->text().toStdString()));
+    ui->textDrawSize->setText("Tamanho: "+QString::number(size) + " px/ "+QString::number(size*simulador->getDelta_x()) + " m");
 }
 
 void MainWindow::start_buttons(){
@@ -120,7 +120,9 @@ void MainWindow::start_buttons(){
     ui->textBrowser_12->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_13->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_14->setFrameStyle(QFrame::NoFrame);
-    ui->textBrowser_16->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_17->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_18->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_19->setFrameStyle(QFrame::NoFrame);
     ui->textMousePosition->setFrameStyle(QFrame::NoFrame);
     ui->textDrawSize->setFrameStyle(QFrame::NoFrame);
 
@@ -154,12 +156,15 @@ void MainWindow::start_buttons(){
     ui->input_dt->setText(QString::fromStdString(std::to_string(simulador->getDelta_t())));
     ui->input_dx->setText(QString::fromStdString(std::to_string(simulador->getDelta_x())));
     ui->input_dz->setText(QString::fromStdString(std::to_string(simulador->getDelta_z())));
+    ui->input_min_iter->setText(QString::fromStdString(std::to_string(simulador->MIN_ITER())));
+    ui->input_max_iter->setText(QString::fromStdString(std::to_string(simulador->MAX_ITER())));
+    ui->input_erro->setText(QString::fromStdString(std::to_string(simulador->ERRO_MIN())));
 
     createWidgetProps();
 }
 
 void MainWindow::createWidgetProps(){
-    /// scroll com os materiais para o gr·fico
+    /// scroll com os materiais para o gr√°fico
     std::vector<std::string> materiais = simulador->getMateriais();
     checkboxes = new QWidget(ui->scrollArea);
     layout = new QVBoxLayout(checkboxes);
@@ -226,6 +231,10 @@ void MainWindow::runSimulator(){
     simulador->setDelta_x(std::stod(ui->input_dx->text().toStdString()));
     simulador->setDelta_z(std::stod(ui->input_dz->text().toStdString()));
 
+    simulador->set_MIN_ITER(std::stoi(ui->input_min_iter->text().toStdString()));
+    simulador->set_MAX_ITER(std::stoi(ui->input_max_iter->text().toStdString()));
+    simulador->set_MIN_ERRO(std::stod(ui->input_erro->text().toStdString()));
+
     time_t start_time = std::time(0);
     std::string type = ui->parallel_comboBox->currentText().toStdString();
     if(type == "Sem paralelismo")
@@ -283,11 +292,20 @@ void MainWindow::on_gridUpButton_clicked()
 }
 
 void MainWindow::makePlot1(){
-    temperature.append(simulador->grid[studyGrid]->operator()(studyPoint.x(), studyPoint.y())->temp);
+    double temp = simulador->grid[studyGrid]->operator()(studyPoint.x(), studyPoint.y())->temp;
+    if (minTempPlot == 0){
+        minTempPlot = temp-10;
+        maxTempPlot = temp+10;
+    }
+    else{
+        minTempPlot = minTempPlot > temp-10 ? temp-10:minTempPlot;
+        maxTempPlot = maxTempPlot < temp+10 ? temp+10:maxTempPlot;
+    }
+    temperature.append(temp);
 
     ui->plot1->graph(0)->setData(time,temperature);
     ui->plot1->xAxis->setRange(time[0], time[time.size()-1]+1);
-    ui->plot1->yAxis->setRange(simulador->getTmin()-50, simulador->getTmax()+50);
+    ui->plot1->yAxis->setRange(minTempPlot, maxTempPlot);
     ui->plot1->replot();
     ui->plot1->update();
 }
@@ -390,8 +408,10 @@ void MainWindow::on_actionSave_triggered()
 {
     QDir dir; QString path = dir.absolutePath();
     QString file_name = QFileDialog::getSaveFileName(this, "Save a file", path+"//save", tr("Dados (*.dat)"));
-    std::string txt = simulador->saveGrid(file_name.toStdString());
-    ui->textBrowser_3->setText(QString::fromStdString(txt));
+    if (!file_name.isEmpty()){
+        std::string txt = simulador->saveGrid(file_name.toStdString());
+        ui->textBrowser_3->setText(QString::fromStdString(txt));
+    }
 }
 
 
@@ -399,8 +419,10 @@ void MainWindow::on_actionOpen_triggered()
 {
     QDir dir; QString path = dir.absolutePath();
     QString file_name = QFileDialog::getOpenFileName(this, "Open a file", path+"//save", tr("Dados (*.dat)"));
-    std::string txt = simulador->openGrid(file_name.toStdString());
-    ui->textBrowser_3->setText(QString::fromStdString(txt));
+    if (!file_name.isEmpty()){
+        std::string txt = simulador->openGrid(file_name.toStdString());
+        ui->textBrowser_3->setText(QString::fromStdString(txt));
+    }
 }
 
 void MainWindow::on_actionNew_triggered()
@@ -413,17 +435,20 @@ void MainWindow::on_actionNew_triggered()
 void MainWindow::on_actionExport_pdf_triggered()
 {
     QString file_name = QFileDialog::getSaveFileName(this, "Save report as", "C://Users", tr("Dados (*.pdf)"));
-    QString txt = save_pdf(file_name);
-    ui->textBrowser_3->setText(txt);
+    if (!file_name.isEmpty()){
+        QString txt = save_pdf(file_name);
+        ui->textBrowser_3->setText(txt);
+    }
 }
 
 void MainWindow::on_actionImport_material_triggered() {
-    QString file_name = QFileDialog::getOpenFileName(this, "Open a file", "C://Users//nicholas//Desktop//ProjetoEngenharia//Projeto-TCC-SimuladorDifusaoTermica//SimuladorTemperatura//materiais", tr("Dados (*.constante, *.correlacao, *.interpolacao)"));
-    std::string name = simulador->openMaterial(file_name.toStdString());
-    ui->textBrowser_3->setText(QString::fromStdString("Material "+name+" carregado!"));
-    ui->material_comboBox->addItem(QString::fromStdString(name));
+    QString file_name = QFileDialog::getOpenFileName(this, QObject::tr("Open a file"), dir.absolutePath()+"//materiais", QObject::tr("*.constante;; *.correlacao;; *.interpolacao"));
+    std::cout<<file_name.toStdString();
+    if (!file_name.isEmpty()){
+        simulador->openMaterial(file_name);
 
-    createWidgetProps();
+        createWidgetProps();
+    }
 }
 
 void MainWindow::on_buttonCircle_clicked()
@@ -485,7 +510,7 @@ QString MainWindow::save_pdf(QString file_name){
     pdf.setOutputFileName(file_name);
 
     QPainter painterPDF(this);
-    if (!painterPDF.begin(&pdf))        //Se n„o conseguir abrir o arquivo PDF ele n„o executa o resto.
+    if (!painterPDF.begin(&pdf))        //Se n√£o conseguir abrir o arquivo PDF ele n√£o executa o resto.
         return "Erro ao abrir PDF";
 
 
@@ -501,10 +526,10 @@ QString MainWindow::save_pdf(QString file_name){
 
 
 
-    painterPDF.drawText(400,140, "==> PROPRIEDADES DA SIMULA«√O <==");
-    painterPDF.drawText(400,160, "Temperatura m·xima: " + QString::number(simulador->getTmax())+" K");
-    painterPDF.drawText(400,180, "Temperatura mÌnima: " + QString::number(simulador->getTmin())+" K");
-    painterPDF.drawText(400,200, "Tempo m·ximo: " + QString::number(time[time.size()-1])+" s");
+    painterPDF.drawText(400,140, "==> PROPRIEDADES DA SIMULA√á√ÉO <==");
+    painterPDF.drawText(400,160, "Temperatura m√°xima: " + QString::number(simulador->getTmax())+" K");
+    painterPDF.drawText(400,180, "Temperatura m√≠nima: " + QString::number(simulador->getTmin())+" K");
+    painterPDF.drawText(400,200, "Tempo m√°ximo: " + QString::number(time[time.size()-1])+" s");
 
     painterPDF.drawText(400,240, "Tipo de paralelismo: " + ui->parallel_comboBox->currentText());
     painterPDF.drawText(400,260, "Coordenada do ponto de estudo (x,y,z): " + QString::number(studyPoint.x()*simulador->getDelta_x())+","+QString::number(studyPoint.y()*simulador->getDelta_x())+","+QString::number(studyGrid*simulador->getDelta_z()));
@@ -595,3 +620,23 @@ void MainWindow::on_button3D_clicked(){
     //CRender3D *newWindow = new CRender3D();
     newWindow->show();
 }
+void MainWindow::on_actionAbout_triggered()
+{
+    QMessageBox *msgBox = new QMessageBox(this);
+    QString msg = "Simulador de Difus√£o T√©rmica. \nVers√£o 1.0.\nCriado por: Nicholas de Almeida Pinto\n09/03/2022";
+    msgBox->setText(msg);
+    int ret = msgBox->exec();
+    Q_UNUSED(ret);
+}
+
+void MainWindow::on_actionRun_triggered()
+{
+    runSimulator();
+}
+
+
+void MainWindow::on_action3D_window_triggered()
+{
+    on_button3D_clicked();
+}
+

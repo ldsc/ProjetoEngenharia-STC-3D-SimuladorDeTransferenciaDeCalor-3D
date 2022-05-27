@@ -102,35 +102,26 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
 
 \begin_layout Chapter
 Teste
-\change_inserted 1908091853 1653177090
-
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653177090
 Teste
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \begin_inset CommandInset label
 LatexCommand label
@@ -152,10 +143,6 @@ status open
 lhead{
 \backslash
 thechapter - Teste}
-\change_deleted 1908091853 1651601147
- 
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -165,44 +152,22 @@ thechapter - Teste}
 
 \begin_layout Standard
 Neste capítulo serão apresentados os testes e resultados do simulador.
-
-\change_deleted 1908091853 1651601153
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-Inicialmente, o simulador será validado 
-\change_inserted 1908091853 1651598738
-comparando 
-\change_deleted 1908091853 1651598743
-com 
-\change_inserted 1908091853 1651598743
-um
-\change_unchanged
-a solução analítica unidimensional
-\change_inserted 1908091853 1651598759
- conhecida com o resultado obtido pelo simulador
-\change_unchanged
-.
+Inicialmente, o simulador será validado comparando uma solução analítica
+ unidimensional conhecida com o resultado obtido pelo simulador.
  A seguir, serão apresentados resultados aplicados à indústria do petróleo,
- como
-\change_inserted 1908091853 1651599305
-:
+ como:
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1651599375
 os testes não devem estar no mesmo diretório do src; eu criei o diretorio
  test, copiar para lá uma cópia do executável (ou link para o executável),
  mover para lá o diretório com os materiais.
  A vantagem é ficar separado dos códigos.
  Os resultados dos testes devem estar lá
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -211,13 +176,7 @@ os testes não devem estar no mesmo diretório do src; eu criei o diretorio
 \end_layout
 
 \begin_layout Itemize
-
-\change_deleted 1908091853 1651598771
- 
-\change_unchanged
-injeção térmica em reservatórios, 
-\change_inserted 1908091853 1651598776
-
+injeção térmica em reservatórios,
 \end_layout
 
 \begin_layout Itemize
@@ -226,8 +185,6 @@ simulação reduzida de
 five-spot
 \shape default
  
-\change_inserted 1908091853 1651599111
-
 \shape italic
 ,
 \shape default
@@ -236,18 +193,12 @@ five-spot
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1651598821
 adicione mais uns dois exemplos aplicados a petróleo.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1651598896
 veja https://pt.slideshare.net/sayonarasilva125/apostila-transmisso-calor-petrobra
 s
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -256,48 +207,26 @@ s
 \end_layout
 
 \begin_layout Itemize
-
-\change_deleted 1908091853 1651598781
-e, por fim, 
-\change_unchanged
-uma aplicação real na tecnologia
-\change_inserted 1908091853 1651598795
-, resfriamento de processadores
-\change_unchanged
-.
+uma aplicação real na tecnologia, resfriamento de processadores.
 \end_layout
 
 \begin_layout Section
 Validação do simulador
-\change_inserted 1908091853 1653177095
-
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653177095
 Validação do simulador
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
 Para validar os resultados do simulador, foi comparado os resultados do
- simulador, com a solução proposta 
-\change_deleted 1908091853 1651599128
-no
-\change_inserted 1908091853 1651599128
-por
-\change_unchanged
- 
+ simulador, com a solução proposta por 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "incropera2008fundamentos"
@@ -349,8 +278,6 @@ função erro de Gauss
 \begin_layout Standard
 As soluções horizontais e verticais do simulador são salvas em uma pasta
  em arquivos '.txt'
-\change_inserted 1908091853 1651599166
-
 \begin_inset Note Note
 status open
 
@@ -360,8 +287,6 @@ status open
 
 \end_inset
 
-
-\change_unchanged
 , com o respectivo tempo no nome do arquivo.
  A Figura 
 \begin_inset CommandInset ref
@@ -374,6 +299,8 @@ noprefix "false"
 \end_inset
 
  mostra a aplicação do problema no simulador.
+ Como só há condução de temperatura em uma única direção, será considerado
+ que a reta vertical preta de estudo é o cenário unidimensional.
 \begin_inset Float figure
 placement H
 wide false
@@ -397,7 +324,7 @@ status open
 
 \begin_layout Plain Layout
 Aplicação do problema unidimensional no simulador.
- (a) é no tempo inicial e (b) depois de 100 segundos.
+ (a) é no tempo inicial e (b) depois de 100 segundos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Aplicação-do-problema-unidimensional"
@@ -429,32 +356,20 @@ noprefix "false"
 
 \end_inset
 
-, foi programado um código em python apresentado 
-\change_deleted 1908091853 1651599445
-abaixo
-\change_inserted 1908091853 1651599457
-na listatam 
+, foi programado um código em python apresentado na listagem 
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1651599454
-
 
 \backslash
 ref{validacao}
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
 .
-\change_deleted 1908091853 1651599456
-:
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -463,19 +378,13 @@ status collapsed
 
 \begin_layout Plain Layout
 Mudei abaixo o nome para stylePython e a linguagem para python.
-\change_inserted 1908091853 1653173004
-
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 
 \backslash
@@ -484,28 +393,20 @@ lstdefinestyle{stylePython}{
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 % tipo de bordas
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 frame=lines,
 \end_layout
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 % tamanho da fonte e tipo de fonte
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 basicstyle=
 \backslash
@@ -516,35 +417,25 @@ ttfamily,
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 % linguagem
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 language=Python,
 \end_layout
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 % numeração
 \end_layout
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 numbers=left, 
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 numberstyle=
 \backslash
@@ -553,63 +444,45 @@ tiny,
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 stepnumber=1, 
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 numbersep=1pt, 
 \end_layout
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 firstnumber=1, 
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 % formatação
 \end_layout
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 breakatwhitespace=false,
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 breaklines=true,
 \end_layout
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 extendedchars=true,
 \end_layout
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 % cores
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 backgroundcolor=
 \backslash
@@ -618,16 +491,12 @@ color{white},
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 commentstyle=
 \backslash
 color{lightgray}, 
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 keywordstyle=
 \backslash
@@ -636,14 +505,10 @@ color{blue},
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 morekeywords={*,...}, 
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 stringstyle=
 \backslash
@@ -652,22 +517,16 @@ color{mygreen1},
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 %
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 % Palavras chave BLUE ABAIXO AS ENFASES SAO PARA PALAVRAS CHAVES DE C++
  TROQUE PELAS DO PYHON
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 emph={ bool, char, char8_t, char16_t, char32_t, wchar_t,short, int, long,
  long long, float, double, long double, void, const, extern, mutable, register,
@@ -685,8 +544,6 @@ t, static_cast, try, throw, catch, noexcept, delete, new, nullptr, static,
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 emphstyle={
 \backslash
 color{blue}},
@@ -694,21 +551,15 @@ color{blue}},
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 %
 \end_layout
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 % Estruturas de controle e de repeticao RED
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 emph={[2] and, and_eq, bitand, bitor, compl, false, not, not_eq, or, or_eq,
  true, xor, xor_eq, break, case, continue, default, do, else, for, goto,
@@ -717,8 +568,6 @@ emph={[2] and, and_eq, bitand, bitor, compl, false, not, not_eq, or, or_eq,
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 emphstyle={[2]
 \backslash
 color{red}},
@@ -726,22 +575,16 @@ color{red}},
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 %
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 % Arquivos de inclusao mymauve (note que alguns poderao aparecer com outra
  cor, ocorre quando nome arquivo igual ao nome da classe)
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 emph={[3] algorithm , atomic ,backward ,bits ,bitset ,cassert ,ccomplex
  ,cctype ,cerrno ,cfenv ,cfloat ,chrono ,cinttypes ,ciso646 ,climits ,clocale
@@ -756,8 +599,6 @@ s ,utility ,x86_64-redhat-linux ,complex } ,
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 emphstyle={[3]
 \backslash
 color{green}},
@@ -765,28 +606,20 @@ color{green}},
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 %
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 % Strings VERDE2
 \end_layout
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 emph={[4] string, string_view, wstring, u16string,u32string } ,
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 emphstyle={[4]
 \backslash
@@ -797,21 +630,15 @@ bfseries},
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 %
 \end_layout
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 % Containers purple
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 emph={[5]  array, vector, deque, forward_list, list, set, multiset, map,
  multimap, unordered_set, unordered_multiset, unordered_map, unordered_multimap
@@ -819,8 +646,6 @@ emph={[5]  array, vector, deque, forward_list, list, set, multiset, map,
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 emphstyle={[5]
 \backslash
@@ -831,21 +656,15 @@ bfseries},
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 %
 \end_layout
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 %Algoritmos genericos VERMELHO2
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 emph={[6]  accumulate, find, max, adjacent_find, find_if, max_element, binary_se
 arch, min, count, find_first_of, for_each, min_element, count_if, includes,
@@ -871,8 +690,6 @@ nstruct_n, uninitialized_value_construct, uninitialized_value_construct_n,
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 emphstyle={[6]
 \backslash
 color{olive}},
@@ -880,21 +697,15 @@ color{olive}},
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 %
 \end_layout
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 % Processamento Paralelo Orange/laranja
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653173004
 
 emph={[7] thread, yield, get_id, sleep_for, sleep_until, thread_local, memory,
  mutex, parallel, mutex, timed_mutex, recursive_mutex, shared_mutex, shared_time
@@ -908,8 +719,6 @@ r, future_category, future_errc, hardware_destructive_interference_size,
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 emphstyle={[7]
 \backslash
 color{mymauve}},
@@ -917,15 +726,11 @@ color{mymauve}},
 
 \begin_layout Plain Layout
 
-\change_inserted 1908091853 1653173004
-
 }
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1099,25 +904,8 @@ lstinputlisting[ caption={Arquivo de implementação da validação em Python},
 \end_layout
 
 \begin_layout Standard
-Como resultado 
-\change_deleted 1908091853 1651599470
-do código acima,
-\change_unchanged
- é apresentado um gráfico
-\change_inserted 1908091853 1651599489
- com
-\change_unchanged
- 
-\change_inserted 1908091853 1651599493
-duas soluções, para os tempos de 
-\change_deleted 1908091853 1651599494
-comparando dois tempos: 
-\change_inserted 1908091853 1651599494
- 
-\change_unchanged
-50 e 100 segundos.
-
-\change_inserted 1908091853 1651599584
+Como resultado é apresentado um gráfico com duas soluções, para os tempos
+ de 50 e 100 segundos.
  Veja Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1128,8 +916,6 @@ reference "fig:Comparação da solução da equação de calor com o resultado d
 .
  Observe que para os dois tempos a solução numérica, obtida com o simulador
  desenvolvido, esta de acordo com a solução teórica.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -1143,7 +929,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../imagens/validacao.png
-	lyxscale 70
+	lyxscale 110
 	width 100text%
 
 \end_inset
@@ -1156,16 +942,12 @@ status open
 
 \begin_layout Plain Layout
 Comparação da solução da equação de calor com o resultado do simulador
-\change_inserted 1908091853 1651599521
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Comparação da solução da equação de calor com o resultado do simulador"
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1181,25 +963,13 @@ name "fig:Comparação da solução da equação de calor com o resultado do sim
 
 \begin_layout Standard
 Os dados da simulação foram obtidos utilizando um material com propriedades
- termofísicas constantes apresentadas na 
-\change_deleted 1908091853 1651599596
-t
-\change_inserted 1908091853 1651599596
-T
-\change_unchanged
-abela 
-\change_deleted 1908091853 1651599613
-abaixo
-\change_inserted 1908091853 1651599613
-
+ termofísicas constantes apresentadas na Tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Tabela com as propriedades termofísicas do modelo de validação"
 
 \end_inset
 
-
-\change_unchanged
 :
 \end_layout
 
@@ -1216,16 +986,12 @@ status open
 
 \begin_layout Plain Layout
 Tabela com as propriedades termofísicas do modelo de validação
-\change_inserted 1908091853 1651599607
-
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Tabela com as propriedades termofísicas do modelo de validação"
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1340,46 +1106,26 @@ k
 \end_layout
 
 \begin_layout Standard
-O erro do simulador foi
-\change_inserted 1908091853 1651599695
- de
-\change_unchanged
- 0.69% para 50,0 segundos, e 0,88% para 100,0 segundos.
+O erro do simulador foi de 0.69% para 50,0 segundos, e 0,88% para 100,0 segundos.
  O mínimo de iteração para cada variação de tempo foi de 800 iterações.
- 
 \end_layout
 
 \begin_layout Standard
 É importante mencionar que o número de iterações deve ser alta, pois o simulador
- resolve o método BTCS 
-\change_inserted 1908091853 1651601012
-de 
-\change_unchanged
-forma iterativa, e só consegue 'avançar' a influência da temperatura em
- uma célula por iteração.
+ resolve o método BTCS de forma iterativa, e só consegue 'avançar' a influência
+ da temperatura em uma célula por iteração.
  O número mínimo de iterações para o simulador deve ser maior que o número
- de células na vertical (
-\change_deleted 1908091853 1651601022
- 
-\change_unchanged
-número de células na vertical é maior que na horizontal).
-\change_inserted 1908091853 1651601027
-
+ de células na vertical (número de células na vertical é maior que na horizontal
+).
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1651601039
 você deve configurar o simulador para garantir este mínimo!
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1397,23 +1143,15 @@ Modelo_validacao.dat
 
 \begin_layout Section
 Injeção de calor em reservatório
-\change_inserted 1908091853 1653177105
-
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653177105
 Injeção de calor em reservatório
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
  - comparação com outro simulador
 \end_layout
 
@@ -1429,7 +1167,6 @@ literal "false"
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -1954,23 +1691,15 @@ Modelo_guilherme.dat
 
 \begin_layout Section
 Injeção de calor em reservatório - modelo five-spot
-\change_inserted 1908091853 1653177118
-
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653177118
 modelo five-spot
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1983,7 +1712,6 @@ five-spot,
  caracterizado pela presença de 5 poços em um reservatório, com 4 injetores,
  e 1 central produtor.
  Para a primeira simulação, os 5 poços serão injetores de calor.
- 
 \end_layout
 
 \begin_layout Standard
@@ -3045,23 +2773,15 @@ Modelo_reservatorio_com_agua.dat
 
 \begin_layout Section
 Resfriamento de processadores
-\change_inserted 1908091853 1653177131
-
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653177131
 Resfriamento de processadores
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 

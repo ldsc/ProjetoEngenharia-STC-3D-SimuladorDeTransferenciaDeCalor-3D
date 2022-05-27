@@ -109,25 +109,20 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
 
 \begin_layout Chapter
-
-\change_inserted 1908091853 1653178376
 Disciplinas Relacionadas a Transferência de Calor
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1653178346
 A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -140,8 +135,6 @@ reference "fig: Principais disciplinas do curso relacionadas a Transferência de
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1653178346
 \begin_inset Float figure
 placement H
 wide false
@@ -150,8 +143,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-
-\change_inserted 1908091853 1653178346
 \begin_inset Graphics
 	filename ../imagens/GradeCurso/Grade-CursoEngenhariaDePetroleo-DisciplinasRelacionadasATranscal.png
 	lyxscale 25
@@ -165,13 +156,9 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653178346
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653178346
 Principais disciplinas do curso relacionadas a Transferência de Calor
 \begin_inset CommandInset label
 LatexCommand label
@@ -193,16 +180,12 @@ name "fig: Principais disciplinas do curso relacionadas a Transferência de Calo
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1653178346
 A título ilustrativo um resumo das ementas de algumas destas disciplinas
  é apresentado a seguir:
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653178346
 esta figura e a lista de ementas abaixo podem ir para um apêndice;
 \end_layout
 
@@ -212,34 +195,25 @@ esta figura e a lista de ementas abaixo podem ir para um apêndice;
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 Matemática:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 MAT01101 : Cálculo Diferencial e Integral I : 1- Funções.
  2- Derivada.
  3- Integral.
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 MAT01203 : Cálculo Diferencial e Integral II : 1- Algumas superfícies especiais.
  2- Funções vetoriais de uma variável real.
  3- Funções reais de várias variáveis reais.
  4- Derivadas parciais e diferenciabilidade.
  5- Máximos e mínimos.
- 
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 MAT01109 : Cálculo Diferencial e Integral III : 1- Integrais dupla e tripla.
  2- Tópicos em análise vetorial.
  3- Integral de linha.
@@ -248,27 +222,20 @@ MAT01109 : Cálculo Diferencial e Integral III : 1- Integrais dupla e tripla.
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 MAT01204 : Álgebra Linear: 1- Vetores em Rn.
  2- Sistema linear de equações.
  3- Espaços vetoriais.
  4- Transformações lineares.
  5- Autovalores e autovetores.
- 
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 Física:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 FIS01202 : Física Geral I: 1- Sistemas de medidas; 2- Movimento em uma dimensão;
  3- Movimento em duas e três dimensões; 4- Leis de Newton; 5- Aplicações
  das Leis de Newton; 6- Trabalho e energia; 7- Conservação de energia; 8-
@@ -278,8 +245,6 @@ FIS01202 : Física Geral I: 1- Sistemas de medidas; 2- Movimento em uma dimensã
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 FIS01103 : Física Geral II: 1- Lei Zero da Termodinâmica; 2- Primeira e
  Segunda Lei da Termodinâmica; 3- Teoria Cinética dos Gases; 4- Propriedades
  Térmicas e Processos Térmicos; 5- Carga; 6- Lei de Coulomb; 7- Campo Elétrico;
@@ -288,8 +253,6 @@ FIS01103 : Física Geral II: 1- Lei Zero da Termodinâmica; 2- Primeira e
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 FIS01205 : Física Geral III: 1- Oscilações; 2- Ondas mecânicas; 3- Ondas
  Eletromagnéticas; 4- Propriedades da luz; 5- Interferência; 6- Difração;
  7- Fótons, Ondas de Matéria; 8- Tópicos Especiais: Ótica Geométrica, Relativida
@@ -297,8 +260,6 @@ de.
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 FIS01212 : Termodinâmica para Engenharia: 1- Conceitos.
  2- Definições e Princípios Básico da Termodinâmica.
  3- Propriedades de Substâncias Puras.
@@ -311,8 +272,6 @@ FIS01212 : Termodinâmica para Engenharia: 1- Conceitos.
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 LEP01344 : Mecânica dos Fluidos: 1- Estática dos fluidos.
  2- Determinação experimental de propriedades dos fluidos.
  3- Aplicações da Cinemática dos Fluidos.
@@ -322,8 +281,6 @@ LEP01344 : Mecânica dos Fluidos: 1- Estática dos fluidos.
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 LEP1852 : Transferência de Calor: 1- Introdução á Transferência de Calor.
  2- Condução Unidimensional em Regime Permanente.
  3- Fundamentos da convecção e da Radiação.
@@ -333,15 +290,11 @@ LEP1852 : Transferência de Calor: 1- Introdução á Transferência de Calor.
 
 \end_deeper
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 Modelagem numérica:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 MAT01207 : Cálculo Numérico: I.
  Sistemas Numéricos e Erros.
  II.
@@ -357,30 +310,22 @@ MAT01207 : Cálculo Numérico: I.
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653212110
 LEP01366 : Técnicas de Modelamento Numérico I: 1- Equações em diferenças.
  2- Métodos de diferenças finitas para equações diferenciais ordinárias.
  3- Métodos de diferenças finitas para equações diferenciais parciais.
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653212167
 LEP01366 : Técnicas de Modelamento Numérico II.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 Modelagem computacional:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 MAT01102 : Fundamentos da Ciência da Computação : 1.
  Introdução à Computação.
  2.
@@ -393,8 +338,6 @@ MAT01102 : Fundamentos da Ciência da Computação : 1.
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 LEP01447 : Programação Orientada a Objeto em C++ : 1- Filosofia, modelagem
  e conceitos.
  Diagramas usando a modelagem UML.
@@ -406,8 +349,6 @@ LEP01447 : Programação Orientada a Objeto em C++ : 1- Filosofia, modelagem
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 LEP01579 : Programação Paralela e Concorrente I: 1- Introdução ao processamento
  paralelo e concorrente; 2 - Processamento paralelo com múltiplos processos;
  3- Processamento paralelo usando Boost.Interprocess; 4- Introdução ao processame
@@ -418,15 +359,11 @@ nto paralelo com múltiplas threads de C; 5- Processamento paralelo com múltipl
 
 \end_deeper
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 Aplicação:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653178346
 LEP01446 : Programação Prática: Desenvolvimento de um programa de engenharia
  utilizando a sequência padrão: Especificação do sistema, elaboração, desenvolvi
 mento da análise orientada a objeto (diagramas usando UML), desenvolvimento

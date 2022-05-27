@@ -35,6 +35,8 @@ CMaterial* CSimuladorTemperatura::chooseMaterialType(std::string name, std::stri
         return new CMaterialCorrelacao(name);
     else if (type == "interpolacao")
         return new CMaterialInterpolacao(name);
+    else  // COLOQUEI ESTE ELSE PARA COMPLETAR AS POSSIBILIDADES E ELIMINAR MSG WARNING
+        return new CMaterialInterpolacao(name);
 }
 
 void CSimuladorTemperatura::addGrid(){
@@ -47,22 +49,14 @@ void CSimuladorTemperatura::delGrid(int _grid){
     grid.erase(grid.begin()+_grid);
 }
 
-std::string CSimuladorTemperatura::openMaterial(std::string nameFile){
-    std::ifstream file(nameFile);
+void CSimuladorTemperatura::openMaterial(QString nameFile){
+    QFileInfo fi(nameFile);
 
-    std::string type;
-    std::string name;
-    std::getline(file, type);
-    std::getline(file, name);
-    std::cout<<name<<std::endl;
+    std::string matName = fi.fileName().toStdString();
+    std::string type = fi.suffix().toStdString();
 
-    file.close();
-    if (type == "correlacao")
-        materiais[name] = new CMaterialCorrelacao(nameFile);
-    else
-        materiais[name] = new CMaterialInterpolacao(nameFile);
-    name_materiais.push_back(name);
-    return name;
+    materiais[matName] = chooseMaterialType(matName, type);
+    name_materiais.push_back(matName);
 }
 
 
@@ -96,9 +90,10 @@ void CSimuladorTemperatura::run_paralelismo_total() {
 }
 
 void CSimuladorTemperatura::solverByGrid(int g) {
-    double erro = 1, _erro;
+    double erro, _erro;
     int iter = 0;
-    while (erro < MIN_ERRO || iter <= MAX_ITERATION) {
+    while (iter <= MAX_ITERATION) {
+        erro = 0.0;
         grid[g]->updateIteration(); /// atualizo temp_nu para calcular o erro da iteracao
         for (int i = 0; i < grid[g]->getWidth(); i++)
             for (int k = 0; k < grid[g]->getHeight(); k++)
@@ -106,15 +101,18 @@ void CSimuladorTemperatura::solverByGrid(int g) {
         _erro = grid[g]->maxErroIteration();
         erro = erro < _erro ? _erro : erro;
         iter++;
+        if (erro < MIN_ERRO && iter >= MIN_ITERATION)
+            break;
     }
     grid[g]->updateSolver();
 }
 
 void CSimuladorTemperatura::solverByThread(int thread_num) {
-    double erro = 0, _erro;
+    double erro, _erro;
     int iter = 0;
     int x, y;
     do {
+        erro = 0.0;
         for (int g = 0; g < NGRIDS; g++) {
             for (int i = thread_num; i < grid[g]->getSize(); i+=MAX_THREADS) {
                 x = i % grid[g]->getWidth();
@@ -126,7 +124,7 @@ void CSimuladorTemperatura::solverByThread(int thread_num) {
             }
         }
         iter++;
-        if (erro < MIN_ERRO && iter > MIN_ITERATION)
+        if (erro < MIN_ERRO && iter >= MIN_ITERATION)
             break;
     } while (iter < MAX_ITERATION);
     std::cout<<"iteracoes: " << iter << " - erro: " << erro << std::endl;
@@ -137,57 +135,68 @@ double CSimuladorTemperatura::calculatePointIteration(int x, int y, int g) {
         return 0.0;
     if ((*grid[g])(x, y)->source)
         return 0.0;
-    float n_x = 0;
-    float n_z = 0;
-    double inf = .0, sup = .0, esq = .0, dir = .0, cima = .0, baixo =.0;
-    double thermalConstant;
 
+    float T_esq = .0, T_dir = .0, T_sup = .0, T_inf = .0, T_cim = .0, T_bai = .0;
+    float k_esq = .0, k_dir = .0, k_sup = .0, k_inf = .0, k_cim = .0, k_bai = .0;
+    float C1, C2;
+
+    float k1;
+    float k2 = (*grid[g])(x, y)->material->getK((*grid[g])(x, y)->temp_nup1);
+
+    float temp_iter_anterior = (*grid[g])(x, y)->temp_nup1;
     if (y - 1 > 0) {
         if ((*grid[g])(x, y - 1)->active) {
-            n_x++;
-            inf = (*grid[g])(x, y - 1)->temp_nup1*delta_z*delta_z;
+            k1 = (*grid[g])(x, y - 1)->material->getK((*grid[g])(x, y - 1)->temp_nup1);
+            k_inf = 2*k1*k2/(k1+k2);
+            T_inf = (*grid[g])(x, y - 1)->temp_nup1;
         }
     }
 
     if (y + 1 < grid[g]->getHeight()) {
         if ((*grid[g])(x, y + 1)->active) {
-            n_x++;
-            sup = (*grid[g])(x, y + 1)->temp_nup1 * delta_z*delta_z;
+            k1 = (*grid[g])(x, y + 1)->material->getK((*grid[g])(x, y + 1)->temp_nup1);
+            k_sup = 2*k1*k2/(k1+k2);
+            T_sup = (*grid[g])(x, y + 1)->temp_nup1;
         }
     }
 
     if (x - 1 > 0) {
         if ((*grid[g])(x - 1, y)->active) {
-            n_x++;
-            esq = (*grid[g])(x - 1, y)->temp_nup1 * delta_z* delta_z;
+            k1 = (*grid[g])(x - 1, y)->material->getK((*grid[g])(x - 1, y)->temp_nup1);
+            k_esq = 2*k1*k2/(k1+k2);
+            T_esq = (*grid[g])(x - 1, y)->temp_nup1;
         }
     }
 
     if (x + 1 < grid[g]->getWidth()) {
         if ((*grid[g])(x + 1, y)->active) {
-            n_x++;
-            dir = (*grid[g])(x + 1, y)->temp_nup1 * delta_z* delta_z;
+            k1 = (*grid[g])(x + 1, y)->material->getK((*grid[g])(x + 1, y)->temp_nup1);
+            k_dir = 2*k1*k2/(k1+k2);
+            T_dir = (*grid[g])(x + 1, y)->temp_nup1;
         }
     }
 
     if ( g < NGRIDS-1) {
         if (grid[g + 1]->operator()(x, y)->active) {
-            n_z++;
-            cima = (*grid[g + 1])(x, y)->temp_nup1*delta_x*delta_x;
+            k1 = (*grid[g + 1])(x, y)->material->getK((*grid[g + 1])(x, y)->temp_nup1);
+            k_cim = 2*k1*k2/(k1+k2);
+            T_cim = (*grid[g + 1])(x, y)->temp_nup1;
         }
     }
 
     if (g > 0) {
         if (grid[g - 1]->operator()(x, y)->active) {
-            n_z++;
-            baixo = (*grid[g - 1])(x, y)->temp_nup1 * delta_x*delta_x;
+            k1 = (*grid[g - 1])(x, y)->material->getK((*grid[g - 1])(x, y)->temp_nup1);
+            k_bai = 2*k1*k2/(k1+k2);
+            T_bai = (*grid[g - 1])(x, y)->temp_nup1;
         }
     }
 
-    thermalConstant = (*grid[g])(x, y)->material->getThermalConst((*grid[g])(x, y)->temp_nup1);
+    C2 = (delta_z*delta_z*delta_x*delta_x/delta_t) * (*grid[g])(x, y)->material->getCp() * (*grid[g])(x, y)->material->getRho();
+    C1 = 1/(C2 + delta_z*delta_z*(k_esq+k_dir) + delta_z*delta_z*(k_sup+k_inf) + delta_x*delta_x*(k_cim+k_bai));
+    (*grid[g])(x, y)->temp_nup1 = C1*(C2*(*grid[g])(x, y)->temp + delta_z*delta_z*(k_esq*T_esq+k_dir*T_dir) + delta_z*delta_z*(k_sup*T_sup+k_inf*T_inf) + delta_x*delta_x*(k_cim*T_cim+k_bai*T_bai));
 
-    (*grid[g])(x, y)->temp_nup1 = (thermalConstant * (*grid[g])(x, y)->temp*delta_x*delta_x*delta_z*delta_z/delta_t + inf + sup + esq + dir + cima + baixo) / (n_x*delta_z*delta_z + n_z*delta_x*delta_x + thermalConstant*delta_x*delta_x*delta_z*delta_z/delta_t);
-    return (*grid[g])(x, y)->temp_nup1 - (*grid[g])(x, y)->temp_nu;
+    return abs((*grid[g])(x, y)->temp_nup1 - temp_iter_anterior);
 }
 
 std::string CSimuladorTemperatura::saveGrid(std::string nameFile) {

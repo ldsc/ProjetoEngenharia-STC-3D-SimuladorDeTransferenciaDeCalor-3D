@@ -13,8 +13,8 @@ CMaterialInterpolacao::CMaterialInterpolacao(std::string fileName){
         file >> str_temp; file >> r; file >> g; file >> b; file >> alpha;
         color = QColor(r, g, b, alpha);
 
-        file >> str_temp; file >> rho;
         file >> str_temp; file >> cp;
+        file >> str_temp; file >> rho;
 
         file >> str_temp; /// texto
 

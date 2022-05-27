@@ -48,8 +48,8 @@ private:
     int parallelType = 2;
     int size_x = 300, size_y = 480;
     int currentGrid = 0;
-    int space_between_draws = 50;
-    int left_margin = 20, up_margin = 140;
+    int space_between_draws = 60;
+    int left_margin = 20, up_margin = 65;
     bool runningSimulator = false;
     bool eraserActivated = false;
     QPoint studyPoint = QPoint(0,0);
@@ -96,5 +96,7 @@ private slots:
     void on_buttonEraser_clicked();
     void on_button3D_clicked();
     void on_actionAbout_triggered();
+    void on_actionRun_triggered();
+    void on_action3D_window_triggered();
 };
 #endif

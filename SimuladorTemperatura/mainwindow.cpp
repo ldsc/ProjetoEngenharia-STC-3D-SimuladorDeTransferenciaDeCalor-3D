@@ -3,7 +3,6 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
-    up_margin = 100;
     simulador = new CSimuladorTemperatura();
     simulador->resetSize(size_x, size_y);
     ui->setupUi(this);
@@ -121,10 +120,9 @@ void MainWindow::start_buttons(){
     ui->textBrowser_12->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_13->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_14->setFrameStyle(QFrame::NoFrame);
-    //ui->textBrowser_15->setFrameStyle(QFrame::NoFrame);
-    ui->textBrowser_16->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_17->setFrameStyle(QFrame::NoFrame);
     ui->textBrowser_18->setFrameStyle(QFrame::NoFrame);
+    ui->textBrowser_19->setFrameStyle(QFrame::NoFrame);
     ui->textMousePosition->setFrameStyle(QFrame::NoFrame);
     ui->textDrawSize->setFrameStyle(QFrame::NoFrame);
 
@@ -158,7 +156,7 @@ void MainWindow::start_buttons(){
     ui->input_dt->setText(QString::fromStdString(std::to_string(simulador->getDelta_t())));
     ui->input_dx->setText(QString::fromStdString(std::to_string(simulador->getDelta_x())));
     ui->input_dz->setText(QString::fromStdString(std::to_string(simulador->getDelta_z())));
-    //ui->input_min_iter->setText(QString::fromStdString(std::to_string(simulador->MIN_ITER())));
+    ui->input_min_iter->setText(QString::fromStdString(std::to_string(simulador->MIN_ITER())));
     ui->input_max_iter->setText(QString::fromStdString(std::to_string(simulador->MAX_ITER())));
     ui->input_erro->setText(QString::fromStdString(std::to_string(simulador->ERRO_MIN())));
 
@@ -233,7 +231,7 @@ void MainWindow::runSimulator(){
     simulador->setDelta_x(std::stod(ui->input_dx->text().toStdString()));
     simulador->setDelta_z(std::stod(ui->input_dz->text().toStdString()));
 
-    //simulador->set_MIN_ITER(std::stoi(ui->input_min_iter->text().toStdString()));
+    simulador->set_MIN_ITER(std::stoi(ui->input_min_iter->text().toStdString()));
     simulador->set_MAX_ITER(std::stoi(ui->input_max_iter->text().toStdString()));
     simulador->set_MIN_ERRO(std::stod(ui->input_erro->text().toStdString()));
 
@@ -448,8 +446,6 @@ void MainWindow::on_actionImport_material_triggered() {
     std::cout<<file_name.toStdString();
     if (!file_name.isEmpty()){
         simulador->openMaterial(file_name);
-        //ui->textBrowser_3->setText(QString::fromStdString("Material "+name+" carregado!"));
-        //ui->material_comboBox->addItem(QString::fromStdString(name));
 
         createWidgetProps();
     }
@@ -632,3 +628,15 @@ void MainWindow::on_actionAbout_triggered()
     int ret = msgBox->exec();
     Q_UNUSED(ret);
 }
+
+void MainWindow::on_actionRun_triggered()
+{
+    runSimulator();
+}
+
+
+void MainWindow::on_action3D_window_triggered()
+{
+    on_button3D_clicked();
+}
+

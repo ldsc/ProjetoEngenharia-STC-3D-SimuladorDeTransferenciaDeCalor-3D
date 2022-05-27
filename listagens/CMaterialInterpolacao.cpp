@@ -1,4 +1,5 @@
 #include "CMaterialInterpolacao.h"
+#include<iostream>
 
 CMaterialInterpolacao::CMaterialInterpolacao(std::string fileName){
     std::string str_temp;
@@ -12,8 +13,8 @@ CMaterialInterpolacao::CMaterialInterpolacao(std::string fileName){
         file >> str_temp; file >> r; file >> g; file >> b; file >> alpha;
         color = QColor(r, g, b, alpha);
 
-        file >> str_temp; file >> rho;
         file >> str_temp; file >> cp;
+        file >> str_temp; file >> rho;
 
         file >> str_temp; /// texto
 
@@ -43,7 +44,8 @@ double CMaterialInterpolacao::getK(double T){
     else if(T >= xmax)
       return retaInterpolacao[retaInterpolacao.size()-1].Fx(T);
     // chute inicial, et = Estimativa do Trecho de reta que atende valor de x.
-    int et = (T - xmin) / edx;
+    //int et = (T - xmin) / edx; // verificar mudança para size_t, msg warning
+    size_t et = (T - xmin) / edx;
     while(true){  // procura pelo trecho de reta que contempla x.
       if( T < retaInterpolacao[et].Xmin() and et > 1 )
         et--;

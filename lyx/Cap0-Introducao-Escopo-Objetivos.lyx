@@ -96,12 +96,11 @@
 \papercolumns 1
 \papersides 2
 \paperpagestyle fancy
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -2128146698 "nicholas"
 \author 1908091853 "andreduartebueno"
 \end_header
 
@@ -162,23 +161,15 @@ today}
 
 \begin_layout Section
 Escopo do problema
-\change_inserted 1908091853 1653176771
-
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653176771
 Escopo do problema
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \begin_inset CommandInset label
 LatexCommand label
@@ -190,30 +181,20 @@ name "sec:Escopo-do-Problema"
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1653172316
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653172322
 Nicholas
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653172336
 fiz uma reorganização na ordem do que você tinha colocado;
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653172373
 e adicionei informações das disciplinas extraídas do sistema academico e
  imagem da grade parte corelacionada a transcal~.
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -223,12 +204,8 @@ e adicionei informações das disciplinas extraídas do sistema academico e
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649763046
 1- fale do macro problema da transferência de calor, da sua aplicação nas
  engenharias e depois exemplos aplicados a petróleo
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -237,32 +214,20 @@ status open
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1653159874
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653159881
 IMPORTÂNCIA
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-Transferência de calor é uma das principais áreas da física
-\change_inserted 1908091853 1653164294
- 
-\change_unchanged
-
+Transferência de calor é uma das principais áreas da física 
 \begin_inset Foot
 status open
 
@@ -279,59 +244,14 @@ target "http://lattes.cnpq.br/documents/11871/24930/TabeladeAreasdoConhecimento.
 
 \end_inset
 
-
-\change_inserted 1908091853 1653164308
- e da engenharia
-\change_unchanged
-.
- Seu comportamento foi especulado desde os primeiros filósofos
-\change_inserted 1908091853 1653163137
-, Aristóteles formula a teoria da matéria ser constituída por quatro elementos:
- o ar, a água, a terra e o fogo.
-\change_deleted 1908091853 1653163152
-,
-\change_unchanged
- 
-\change_deleted 1908091853 1653163152
-c
-\change_inserted 1908091853 1653163169
-Os estudos de transferência de calor
-\change_deleted 1908091853 1653163171
-om 
-\change_inserted 1908091853 1653163172
- tiveram 
-\change_deleted 1908091853 1653163171
-a
-\change_unchanged
- grande ascensão no período de 1600 e 1800, 
-\change_inserted 1908091853 1653159590
-sendo, 
-\change_unchanged
-posteriormente, dominado
-\change_inserted 1908091853 1653163181
-s
-\change_unchanged
-.
- 
-\change_inserted 1908091853 1653163192
-Estes estudos 
-\change_deleted 1908091853 1653163193
-C
-\change_inserted 1908091853 1653163194
-c
-\change_unchanged
-ont
-\change_inserted 1908091853 1653163196
-aram
-\change_deleted 1908091853 1653163764
-ou
-\change_unchanged
- com a contribuição científica de diversos grandes nomes da física, como
- Newton e Fourier
-\change_inserted 1908091853 1653159075
-, 
-\change_unchanged
-
+ e da engenharia.
+ Seu comportamento foi especulado desde os primeiros filósofos, Aristóteles
+ formula a teoria da matéria ser constituída por quatro elementos: o ar,
+ a água, a terra e o fogo.
+ Os estudos de transferência de calor tiveram grande ascensão no período
+ de 1600 e 1800, sendo, posteriormente, dominados.
+ Estes estudos contaram com a contribuição científica de diversos grandes
+ nomes da física, como Newton e Fourier, 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Fourier1822"
@@ -345,68 +265,36 @@ literal "false"
 \begin_layout Standard
 Qualquer definição de engenharia irá falar da transformação dos materiais
  usando energia.
-
-\change_deleted 1908091853 1653163783
- 
-\change_inserted 1908091853 1653163448
-
 \end_layout
 
 \begin_layout Quotation
-
-\change_inserted 1908091853 1653163473
 "Aplicação da ciência e matemática através da qual as propriedades da matéria
  e as fontes de energia são tornadas úteis às pessoas (Dic.
  Merriam-Webster, 2001)."
 \end_layout
 
 \begin_layout Standard
-É por isso que todos os cursos de engenharia incluem, 
-\change_inserted 1908091853 1653164441
-no seu ciclo básico um conjunto de disciplinas de matemática, física e química
- que possibilitam o entendimento dos problemas associados a temperatura,
- o efeito da temperatura nos materiais e nos fenômenos estudados.
- 
-\change_deleted 1908091853 1653164407
-e
-\change_inserted 1908091853 1653164438
-E
-\change_unchanged
-ntre as suas disciplinas obrigatórias, 
-\change_inserted 1908091853 1653164438
-podemos citar 
-\change_unchanged
-as disciplinas de materiais, 
-\change_inserted 1908091853 1653164438
-física, termodinâmica
+É por isso que todos os cursos de engenharia incluem, no seu ciclo básico
+ um conjunto de disciplinas de matemática, física e química que possibilitam
+ o entendimento dos problemas associados a temperatura, o efeito da temperatura
+ nos materiais e nos fenômenos estudados.
+ Entre as suas disciplinas obrigatórias, podemos citar as disciplinas de
+ materiais, física, termodinâmica
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653163823
 opcional em alguns cursos de engenharia
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-, 
-\change_unchanged
-transferência de calor, algoritmos/programação e cálculo numérico.
- São disciplinas necessárias para garantir os conhecimentos mínimos 
-\change_deleted 1908091853 1653159641
-necessários
-\change_unchanged
- para lidar com o desenvolvimento de novos produtos.
-\change_inserted 1908091853 1653164438
-
+, transferência de calor, algoritmos/programação e cálculo numérico.
+ São disciplinas necessárias para garantir os conhecimentos mínimos para
+ lidar com o desenvolvimento de novos produtos.
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1653164257
 Muitos destes conceitos são apresentados para casos simplificados, unidimensiona
 is e para funções bem comportadas.
  Isto permite ao aluno encontrar as soluções, plotar gráficos e analisar
@@ -414,159 +302,92 @@ is e para funções bem comportadas.
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1653164257
 Na prática, soluções analíticas para a condução de calor em regime transiente
  são obtidas para casos unidimensionais, com condições de contorno e iniciais
  bem definidas, e com propriedades dos materiais constantes.
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1653164257
-Para resolver problemas com objetos em duas ou três dimensões  com geometria
+Para resolver problemas com objetos em duas ou três dimensões com geometria
  complexa e em regime transiente é necessário, na maior parte dos casos,
  a utilização da modelagem numérica computacional.
  A mesma demanda conhecimentos associados ao cálculo numérico, algoritmos,
  modelagem computacional e desenvolvimento de software.
  Por isso os cursos de engenharia incluem também disciplinas vinculadas
  às ciências da computação.
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1653163851
-Na indústria do petróleo 
-\change_deleted 1908091853 1653163854
-O
-\change_inserted 1908091853 1653163854
-os
-\change_unchanged
- conhecimento
-\change_inserted 1908091853 1653163855
-s
-\change_unchanged
- dos fenômenos da transferência de calor 
-\change_deleted 1908091853 1653163859
-é
-\change_inserted 1908091853 1653163860
-são
-\change_unchanged
- fundamenta
-\change_inserted 1908091853 1653163862
-is
-\change_deleted 1908091853 1653163862
-l
-\change_unchanged
- 
-\change_deleted 1908091853 1653163849
-na indústria do petróleo
-\change_unchanged
-, seja na etapa de exploração ou na etapa de produção.
-
-\change_deleted -2128146698 1649858312
- 
-\change_inserted 1908091853 1649761815
-
+Na indústria do petróleo os conhecimentos dos fenômenos da transferência
+ de calor são fundamentais , seja na etapa de exploração ou na etapa de
+ produção.
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1649761948
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762006
 Nicholas, porque não coloca aqui um beve histórico da geração do petróleo
  dizendo que o tipo de petróleo depende das transferências de calor envolvidas,
  temperaturas na geração.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762017
 A seguir fala da maturação em diferentes temperaturas;
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762044
 Depois fala que na perfuração uma broca em atrito com a rocha vai gerar
  muito calor e que o fluido de perfuração é usado para resfriar a broca;
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762067
 Que o processo de cimentação envolve reações químicas que geram calor.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762126
 Que o óleo encontrado no reservatório esta a uma temperatura diferente e
  que seu escoamento gera mecanismos de transferência de calor na coluna
  de produção.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762162
 QUe o óleo chega na plataforma sobre condições de temperatura diferentes,
  que vai passar por processos de separação.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762201
 Que o óleo será bombeado, escoado até um navio plataforma ou unidade e que
  isto envolve mecanismos de transferência de calor.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762260
 QUe os equipamentos de uma plataforma, como bombas, geram calor e irão precisar
  de mecanismos de resfriamento, como dissipadores.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762300
 Que reservatórios maduros perdem sua capacidade de produzir óleo e passam
  a ser usados mecanismos de recuperação avançada, incluindo métodos térmicos,
  combustão in situ.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762375
 depois eu vi que colocou alguns destes exemplos abaixo, acho que fica melhor
  se ordenar desta forma temporal, da geração do óleo, a perguração do poço,
  completação, produção, estimulação, eor.
- 
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762462
 Poderia colocar uma figura subdividida em 4 ítens que envolvem transferência
  de calor.
  Ex: um poço, uma tubulação, um trocador de calor, ..Dai neste texto você
  cita a figura.
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 Na exploração é buscado um óleo maturado sob temperaturas entre 65ºC e 165ºC,
  pois acima de 180ºC, é propiciado a formação de gases leves, e acima de
  210ºC, a formação de grafite, 
@@ -619,13 +440,9 @@ literal "false"
 Desta forma, torna-se clara a importância do estudo da condução ou difusão
  de calor em regime transiente, em objetos 3D com geometria complexa, e
  constituído por diversos materiais com propriedades físicas variáveis.
-\change_inserted 1908091853 1653164009
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1653164053
 Conforme a complexidade do problema for evoluindo, os cálculos exigem cada
  vez mais poder de processamento dos computadores, os quais, atualmente,
  possuem diversos núcleos lógicos capazes de resolverem cálculos independentemen
@@ -637,8 +454,6 @@ te, acelerando as simulações.
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653164009
 threads são mecanismos de alto nível; classes prontas
 \end_layout
 
@@ -652,8 +467,6 @@ threads são mecanismos de alto nível; classes prontas
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653159900
 ENSINO
 \end_layout
 
@@ -677,68 +490,13 @@ A seguir, precisa explicar que para problemas práticos de engenharia é normal
 \end_inset
 
 
-\change_deleted 1908091853 1653164250
-Os cursos de engenharia incluem no seu ciclo básico um conjunto de disciplinas
- de matemática, física e química que possibilitam o entendimento básico
- dos problemas associados a temperatura.
- O efeito da temperatura nos materiais e nos fenômenos estudados.
- Muitos destes conceitos são apresentados para casos simplificados, unidimension
-ais e para funções bem comportadas.
- Isto permite ao aluno encontrar as soluções, plotar gráficos e analisar
- o comportamento dos sistemas em estudo.
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted 1908091853 1653164250
-Na prática, soluções analíticas para a condução de calor em regime transiente
- são obtidas para casos unidimensionais, com condições de contorno e iniciais
- bem definidas, e com propriedades dos materiais constantes.
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted 1908091853 1653164250
-Para resolver problemas com objetos em duas ou três dimensões e com geometria
- complexa, em regime transiente é necessário, na maior parte dos casos,
- a utilização da modelagem numérica computacional.
-\change_inserted 1908091853 1653163973
-
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted 1908091853 1653164001
-Conforme a complexidade do problema for evoluindo, a modelagem numérica
- exige cada vez mais poder de processamento dos computadores, os quais,
- atualmente, possuem diversos núcleos lógicos capazes de resolverem cálculos
- numéricos independentemente, acelerando as simulações.
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted 1908091853 1653178340
-Para permitir as divisões das tarefas para os processadores, é utilizada
- uma linguagem de programação de baixo nível, com comandos mais próximos
- da linguagem da máquina.
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted 1908091853 1653166277
-Modelagem numérica computacional
-\change_inserted 1908091853 1653166335
 Neste trabalho utilizaremos métodos de interpolação, solução de matrizes.
- M
-\change_deleted 1908091853 1653166335
-utilização de m
-\change_unchanged
-étodos iterativos para aproximar as soluções das equações matriciais, tornando
- desnecessário os processos de inversão de matriz
-\change_deleted 1908091853 1653160565
-,
-\change_unchanged
- e multiplicação de matriz, etapas normais para o método BTCS (
+ Métodos iterativos para aproximar as soluções das equações matriciais,
+ tornando desnecessário os processos de inversão de matriz e multiplicação
+ de matriz, etapas normais para o método BTCS (
 \shape italic
 Backward Time, Centered Space
 \shape default
@@ -747,57 +505,17 @@ Backward Time, Centered Space
  genéricas, seria impossível resolver o problema por inversão de matriz,
  pois grandes regiões da matriz teriam valores nulos, consequentemente,
  seus determinantes seriam zero e impossível de inverter.
-\change_inserted 1908091853 1653160799
-
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted 1908091853 1653166312
-Disciplina Fundamentos de Ciências da Computação: utilização de lógicas
- e algoritmos para acelerar as soluções das simulações.
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted 1908091853 1653166312
-Disciplina Programação Orientada a Objeto com C++: por meio do paradigma
- orientado ao objeto com C++, é possível dividir cada atividade do 
-\shape italic
-software
-\shape default
- em classes, auxiliando na organização e suporte, e diminuindo a complexidade
- de implementação.
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted 1908091853 1653166312
-Disciplina Programação Prática - Projeto de Engenharia: em um parágrafo
- cite o que usa em Transferência de calor
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-Disciplina optativa 
-\change_deleted 1908091853 1653167216
-Processamento Paralelo
-\change_inserted 1908091853 1653167216
-Programação Paralela e Concorrente I
-\change_deleted 1908091853 1653167218
-:
-\change_inserted 1908091853 1653167218
-,
-\change_unchanged
- divisão dos cálculos da modelagem em operações que podem ser resolvidas
- independentemente e separadamente, e direcionar cada operação para um núcleo
- do processador, este processo é chamado de 
+Disciplina optativa Programação Paralela e Concorrente I, divisão dos cálculos
+ da modelagem em operações que podem ser resolvidas independentemente e
+ separadamente, e direcionar cada operação para um núcleo do processador,
+ este processo é chamado de 
 \shape italic
 multithreading,
 \shape default
  e que acelera em muitas vezes a velocidade das simulações.
- 
 \end_layout
 
 \begin_layout Standard
@@ -808,47 +526,31 @@ softwares
 \shape default
  livres, que abordem álgebra, modelagem numérica, programação orientada
  ao objeto, além do problema físico em si.
-\change_inserted 1908091853 1649764326
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649764371
 deixe mais claro que o objetivo é desenvolver um simulador computacional
  a ser usado no ensino de conceitos de transferência de calor por condução
  em engenharia com aplicações em engenharia de petróleo
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
 \begin_layout Section
 Objetivos
-\change_inserted 1908091853 1653176781
-
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653176781
 Objetivos
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \begin_inset CommandInset label
 LatexCommand label
@@ -876,11 +578,7 @@ A finalidade deste projeto de engenharia é desenvolver um
 software
 \shape default
  capaz de resolver problemas de condução de calor em objetos 3D, constituídos
- por 
-\change_deleted 1908091853 1653167253
-por
-\change_unchanged
- qualquer materiais com condutividade térmica dependente da temperatura.
+ por qualquer materiais com condutividade térmica dependente da temperatura.
  O software terá interface de usuário amigável e renderização 3D, permitindo
  a visualização do problema.
 \end_layout
@@ -918,24 +616,16 @@ Transferência de calor: entender as equações físicas, como o calor é propag
  em objetos com diversos formas e composto de diferentes materiais, com
  propriedades termofísicas dependentes da temperatura.
  
-\change_inserted 1908091853 1649764094
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649764166
 Fale das possíveis aplicações, tipos de condições iniciais e condições de
  contorno
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -950,24 +640,16 @@ Modelagem numérica: solução da equação diferencial da condução ou difusã
  Por meio da utilização e combinação dessas ferramentas, é possível resolver
  qualquer problema de condução de calor, especialmente a solução simultânea
  de casos isolados, e objetos com grandes regiões vazias.
-\change_inserted 1908091853 1649764179
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649764225
 O uso destas ferramentas BTCS e Neumann permite aplicações como...
  importante deixar claro o que pode resolver e o que não vai resolver
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -988,23 +670,15 @@ Interface do usuário: com integração total ao simulador, a interface gráfica
  simulação.
  E com a implementação de renderização 3D, é possível visualizar o objeto
  por diferentes ângulos.
-\change_inserted 1908091853 1653169297
-
 \end_layout
 
 \begin_layout Section
-
-\change_inserted 1908091853 1653176787
 Metodologia utilizada
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653176787
 Metodologia utilizada
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -1013,8 +687,6 @@ Metodologia utilizada
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1653170631
 O software a ser desenvolvido utiliza a metodologia de engenharia de software
  apresentada pelo Prof.
  André Bueno na disciplina de programação e ilustrado na Figura 
@@ -1056,39 +728,25 @@ Ciclo Construção
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1653170651
 Esta metodologia é utilizada nas disciplinas:
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653169397
 LEP01447 : Programação Orientada a Objeto em C++
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 1908091853 1653169463
 LEP01446 : Programação Prática
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1653169488
 \begin_inset Float figure
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
-
-\change_inserted 1908091853 1653169528
 \begin_inset Graphics
 	filename ../imagens/EngenhariaSoftware-Geral.png
 	lyxscale 25
@@ -1102,13 +760,9 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653169488
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653176478
 Etapas para o desenvolvimento do software
 \shape italic
  - projeto de engenharia
@@ -1119,25 +773,15 @@ name "fig:Etapas para o desenvolvimento do software"
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
 
-\change_unchanged
-
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 

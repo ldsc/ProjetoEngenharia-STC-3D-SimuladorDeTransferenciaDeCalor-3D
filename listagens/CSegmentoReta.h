@@ -12,7 +12,7 @@ class CSegmentoReta : public CReta
 private:
    double xmin = 0.0; ///< Inicio do segmento de reta.
    double xmax = 0.0; ///< Fim do segmento de reta.
-   bool ok = false;     ///< Se verdadeiro, x usado esta dentro intervalo válido (xmin->xmax) 
+   bool ok = false;     ///< Se verdadeiro, x usado esta dentro intervalo valido (xmin->xmax) 
 
 public:
   /// Construtor default.
@@ -20,13 +20,12 @@ public:
   
   /// Construtor sobrecarregado, recebe pontos (x1,y1), (x2,y2).
   CSegmentoReta (double x1, double y1, double x2, double y2)
-    :CReta(x1,y1,x2,y2),xmin{x1},xmax{x2} {}
+    :CReta(x1,y1,x2,y2),xmin{x1},xmax{x2} { TestarIntervalo(x1); }
     
   /// Construtor copia.
-  CSegmentoReta (const CSegmentoReta& retaInterpolacao )  { 
-    xmin = retaInterpolacao.xmin;  xmax = retaInterpolacao.xmax;   ok = retaInterpolacao.ok;
-    x = retaInterpolacao.x;     y = retaInterpolacao.y;		
-    a = retaInterpolacao.a;	b = retaInterpolacao.b;
+  CSegmentoReta (const CSegmentoReta& segmento )  :CReta() {
+    x = segmento.x;     y = segmento.y; a = segmento.a; b = segmento.b;
+    xmin = segmento.xmin;  xmax = segmento.xmax;   ok = segmento.ok;
   }
 
   // Metodos Get/Set
@@ -51,18 +50,18 @@ public:
   double operator()(double _x) { return Fx(_x); }
 
   /// Sobrecarga operador <<, permite uso cout << reta;
-  friend std::ostream& operator<<( std::ostream& os, const CSegmentoReta& retaInterpolacao )  {
+  friend std::ostream& operator<<( std::ostream& os, const CSegmentoReta& segmento )  {
     os.precision(10); 
-    os<< retaInterpolacao.xmin << " -> " << retaInterpolacao.xmax 
-      << " : y = "<< std::setw(15) << std::setprecision(10) << retaInterpolacao.a << " + "
-      << std::setw(15) << std::setprecision(10) << retaInterpolacao.b << "*x ";
+    os<< segmento.xmin << " -> " << segmento.xmax
+      << " : y = "<< std::setw(15) << std::setprecision(10) << segmento.a << " + "
+      << std::setw(15) << std::setprecision(10) << segmento.b << "*x ";
     return os;
   }
   
   /// Sobrecarga operador >>, permite uso cin >> reta;
-  friend std::istream& operator>>( std::istream& in, CSegmentoReta& retaInterpolacao  )  {
-   in >> retaInterpolacao.xmin >> retaInterpolacao.xmax 
-      >> retaInterpolacao.a >> retaInterpolacao.b;
+  friend std::istream& operator>>( std::istream& in, CSegmentoReta& segmento  )  {
+   in >> segmento.xmin >> segmento.xmax
+      >> segmento.a >> segmento.b;
    return in;
   }
 

@@ -285,8 +285,6 @@ QColor CRender3D::getRGB(double x, double min, double max){
 }
 
 void CRender3D::timerEvent(QTimerEvent *e){
-    //angle_x-=0.05;
-    //angle_y+=0.05;
     update();
     Q_UNUSED(e);
 }

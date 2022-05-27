@@ -16,14 +16,14 @@
 
 class CSimuladorTemperatura {
 private:
-    //int parallel = 0;
     QDir dir;
-    int MAX_THREADS = omp_get_max_threads()-4;
+    int MAX_THREADS = omp_get_max_threads()-1;
     int width, height;
     bool materialPropertiesStatus = true;
     int NGRIDS = 1;
-    const double MIN_ERRO = 0.05;
-    const int MAX_ITERATION = 500, MIN_ITERATION = 50;
+    double MIN_ERRO = 0.01;
+    int MAX_ITERATION = 1000;
+    int MIN_ITERATION = 100;
     double delta_x = 2.6e-4, delta_t = 5.0e-1, delta_z = 0.05;
 
     double Tmax = 400, Tmin = 300;
@@ -58,7 +58,7 @@ public:
 
     std::string saveGrid(std::string nameFile);
     std::string openGrid(std::string nameFile);
-    std::string openMaterial(std::string nameFile);
+    void openMaterial(QString nameFile);
 
     /// --------- FUNCOES SET ---------
     void setActualTemperature(double newTemperature);
@@ -85,6 +85,14 @@ public:
     double getDelta_x() { return delta_x; }
     double getDelta_z() { return delta_z; }
     double getTime() { return actual_time; }
+
+    int MIN_ITER(){return MIN_ITERATION;}
+    int MAX_ITER(){return MAX_ITERATION;}
+    double ERRO_MIN(){return MIN_ERRO;}
+
+    void set_MIN_ITER(int MIN){MIN_ITERATION=MIN;}
+    void set_MAX_ITER(int MAX){MAX_ITERATION=MAX;}
+    void set_MIN_ERRO(double ERRO){MIN_ERRO=ERRO;}
 
     CMaterial* getMaterial(std::string mat) { return materiais[mat]; }
 

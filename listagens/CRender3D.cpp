@@ -10,7 +10,7 @@ CRender3D::CRender3D(QWidget *parent)
     mImage = new QImage(size_x, size_y,QImage::Format_ARGB32_Premultiplied);
     timerId = startTimer(0);
 
-    QVector3D point(0,0,0);
+    QVector3D point(0.,0.,0.);
     cube.push_back(createCube(point));
 
     createTriangles();
@@ -285,8 +285,6 @@ QColor CRender3D::getRGB(double x, double min, double max){
 }
 
 void CRender3D::timerEvent(QTimerEvent *e){
-    //angle_x-=0.05;
-    //angle_y+=0.05;
     update();
     Q_UNUSED(e);
 }

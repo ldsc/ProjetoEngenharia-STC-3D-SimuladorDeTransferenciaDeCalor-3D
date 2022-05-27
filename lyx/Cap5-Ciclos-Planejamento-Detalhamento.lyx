@@ -96,29 +96,22 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
 
 \begin_layout Chapter
-
-\change_inserted 1908091853 1653211283
 Ciclos de Planejamento/Detalhamento
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653177037
 Ciclos de Planejamento/Detalhamento
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -130,8 +123,6 @@ name "chap: Ciclos de Planejamento/Detalhamento"
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -343,16 +334,12 @@ name "fig:Versão-0.2,-simples,"
 
 \begin_layout Section
 Versão 0.3 - Adição de atalhos na tela
-\change_inserted 1908091853 1653210417
-
 \begin_inset CommandInset label
 LatexCommand label
 name "sec: CicloDesenvolvimento-v0.3"
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -447,13 +434,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Versão 0.3, completa e complexa, mas muito lent
-\change_deleted 1908091853 1653170812
-o
-\change_inserted 1908091853 1653170812
-a
-\change_unchanged
-
+Versão 0.3, completa e complexa, mas muito lenta
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Versão-0.3,-completa"
@@ -489,15 +470,9 @@ Também foi identificado problema de desempenho.
 \end_layout
 
 \begin_layout Standard
-Então surgiu essa necessidade de mudança
-\change_deleted 1908091853 1653170828
-,
-\change_unchanged
- e a biblioteca gráfica 
+Então surgiu essa necessidade de mudança e a biblioteca gráfica 
 \shape italic
 Qt
-\change_inserted 1908091853 1653170853
-
 \shape default
  (
 \begin_inset CommandInset href
@@ -507,13 +482,7 @@ literal "false"
 
 \end_inset
 
-)
-\change_unchanged
-,
-\change_inserted 1908091853 1653170833
- 
-\change_unchanged
-foi escolhida por ser:
+), foi escolhida por ser:
 \end_layout
 
 \begin_layout Itemize
@@ -556,13 +525,9 @@ noprefix "false"
 
 \end_inset
 
- apresenta o ambiente de trabalho
-\change_inserted 1908091853 1653170874
- do 
+ apresenta o ambiente de trabalho do 
 \shape italic
 Qt Creator
-\change_unchanged
-
 \shape default
 .
 \begin_inset Float figure
@@ -764,7 +729,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../imagens/v2.2.png
+	filename ../imagens/v2.3.png
 	lyxscale 75
 	width 100text%
 

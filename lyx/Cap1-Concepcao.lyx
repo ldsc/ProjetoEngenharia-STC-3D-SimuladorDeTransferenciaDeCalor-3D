@@ -97,13 +97,11 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -2128146698 "nicholas"
-\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
@@ -120,13 +118,7 @@ lhead{
 \backslash
 thechapter
 \backslash
-space - 
-\change_deleted 1908091853 1653210927
-Especificação
-\change_inserted 1908091853 1653210930
-Concepção
-\change_unchanged
-}
+space - Concepção}
 \end_layout
 
 \end_inset
@@ -135,26 +127,16 @@ Concepção
 \end_layout
 
 \begin_layout Chapter
-
-\change_deleted 1908091853 1653210753
-Especificação
-\change_inserted 1908091853 1653210754
 Concepção
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653210762
 Concepção
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \begin_inset Index idx
 status collapsed
@@ -165,30 +147,12 @@ Concepção
 
 \end_inset
 
-
-\change_deleted 1908091853 1653210768
-
-\begin_inset Index idx
-status collapsed
-
-\begin_layout Plain Layout
-especificação
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 
 \end_layout
 
 \begin_layout Standard
 Apresenta-se neste capítulo do projeto de engenharia a concepção, a especificaçã
-o
-\change_inserted 1908091853 1653210954
-, requisitos e casos de uso
-\change_unchanged
- do sistema a ser modelado e desenvolvido.
+o, requisitos e casos de uso do sistema a ser modelado e desenvolvido.
 \end_layout
 
 \begin_layout Section
@@ -201,9 +165,10 @@ O
 software
 \shape default
  denominado 
-\emph on
-Simulador de Difusão Térmica 3D (SDT-3D)
-\emph default
+\shape italic
+Simulador de Condução de Calor em Objetos 3D com Geometria Complexa e Interface
+ Gráfica Amigável
+\shape default
 , será desenvolvido utilizando o paradigma da orientação a objeto usando
  a linguagem de alto desempenho C++, o mesmo será capaz de simular a condução
  de calor em objetos tridimensionais, com formas e superfícies complexas
@@ -265,9 +230,8 @@ Nome
 \begin_inset Text
 
 \begin_layout Plain Layout
-Simulador de difusão térmica 3D - 
-\emph on
-SDT-3D
+Simulador de Condução de Calor em Objetos 3D com Geometria Complexa e Interface
+ Gráfica Amigável
 \end_layout
 
 \end_inset
@@ -348,16 +312,12 @@ Simulador de transferência de calor em objetos 3D com superfícies complexas,
 
 \begin_layout Section
 Especificação
-\change_inserted 1908091853 1653210790
-
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Especificação"
 
 \end_inset
 
-
-\change_unchanged
 
 \begin_inset Index idx
 status collapsed
@@ -380,21 +340,11 @@ software
  objetos tridimensionais, por meio de perfis 2D.
  Para cada objeto a ser incluído na simulação o usuário escolhe, a partir
  de um banco de dados, as propriedades do material.
-
-\change_deleted -2128146698 1650279315
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
 A simulação é governada pela equação da difusão térmica, a qual é modelada
  por diferenças finitas, pelo método BTCS, com fronteiras adiabáticas.
-
-\change_deleted -2128146698 1650279315
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -412,35 +362,20 @@ a temperatura inicial do objeto.
 
 \begin_layout Itemize
 para cada plano 2D a posição do objeto e suas dimensões
-\change_deleted -2128146698 1650279315
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Itemize
 cada camada do objeto poderá ser construída a partir de um banco de objetos
  geométricos simples, incluindo circulo, elipse, retângulo, quadrado.
-\change_inserted 1908091853 1649768601
-
-\end_layout
-
-\begin_layout Itemize
-
-\change_inserted 1908091853 1649768604
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649768742
 possibilidade de carregar imagens 3D com objetos preliminarmente rotulados;
  neste caso teremos um arquivo com a imagem 3D e um segundo arquivo correlaciona
 ndo o rótulo do objeto com o tipo de material [Nicholas, os comentários
  com sugestões para melhorias futuras não devem ser apagados; assim a gente
  não esquece]
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -449,10 +384,6 @@ ndo o rótulo do objeto com o tipo de material [Nicholas, os comentários
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted 1908091853 1649767737
- 
-\change_unchanged
 O usuário terá a liberdade para utilizar um dentre três métodos para obter
  as propriedades dos materiais: propriedades constantes, correlação e interpolaç
 ão.
@@ -464,15 +395,6 @@ Após os desenhos pelo usuário do sistema a ser simulado é necessário definir
 
 \begin_layout Itemize
 um ponto de monitoramento da temperatura.
-
-\change_deleted -2128146698 1650279356
- 
-\change_unchanged
-
-\end_layout
-
-\begin_layout Itemize
-tipo de condição de contorno?
 \end_layout
 
 \begin_layout Itemize
@@ -486,12 +408,8 @@ Finalmente é disparada a simulação em si.
  for menor que o valor aceitável definido pelo usuário.
  Finalizado um passo de tempo, a janela gráfica que tem a solução, distribuição
  de temperaturas, será atualizada.
- O simulador também irá plotar 
-\change_deleted -2128146698 1650279356
- 
-\change_unchanged
-gráficos com os novos valores calculados (eixo x e y para o ponto de monitoramen
-to selecionado pelo usuário).
+ O simulador também irá plotar gráficos com os novos valores calculados
+ (eixo x e y para o ponto de monitoramento selecionado pelo usuário).
 \end_layout
 
 \begin_layout Standard
@@ -508,19 +426,15 @@ possibilidade de alterar, a qualquer momento, o ponto de monitoramento.
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1649768762
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649768776
 O 
 \shape italic
 software
 \shape default
- será programado com o paradigma da orientação  a objeto, utilizando a linguagem
+ será programado com o paradigma da orientação a objeto, utilizando a linguagem
  C++ e as bibliotecas 
 \shape italic
 Qt
@@ -531,8 +445,6 @@ qcustomplot
 \shape default
 para gerar os gráficos.
  [estas definições a gente costuma tomar mais lá na frente]
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -542,51 +454,33 @@ para gerar os gráficos.
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649768351
 esta parte abaixo vai lá para elaboração onde define as equações
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
-
-\change_inserted 1908091853 1653210799
-Requisitos 
+Requisitos
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1653210817
 Apresenta-se a seguir os requisitos funcionais e não funcionais.
 \end_layout
 
 \begin_layout Subsection
 Requisitos funcionais
-\change_inserted 1908091853 1653176809
-
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653176809
 Requisitos funcionais
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -893,18 +787,12 @@ O usuário poderá escolher um ponto de estudo, cuja temperatura será monitorad
 \end_inset
 
 
-\change_inserted 1908091853 1653169770
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1653169770
 \begin_inset VSpace bigskip
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1266,23 +1154,15 @@ nais usuais como circulo, quadrado, retângulo, elipse.
 
 \begin_layout Subsection
 Requisitos não funcionais
-\change_inserted 1908091853 1653176815
-
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653176815
 Requisitos não funcionais
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1620,24 +1500,6 @@ O usuário poderá comparar os valores das propriedades termofísicas em funçã
 
 \begin_layout Section
 Casos de uso
-\change_inserted 1908091853 1653176822
-
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 1908091853 1653176822
-Casos de uso
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_deleted 1908091853 1653176830
-
 \begin_inset Index idx
 status open
 
@@ -1647,8 +1509,6 @@ Casos de uso
 
 \end_inset
 
-
-\change_unchanged
  
 \begin_inset Note Note
 status open
@@ -1672,7 +1532,7 @@ Diagrama de caso de uso geral
 status open
 
 \begin_layout Plain Layout
- do software
+do software
 \end_layout
 
 \end_inset
@@ -1867,40 +1727,24 @@ status open
 \end_inset
 
 
-\change_inserted 1908091853 1649769705
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649769729
 quando fala em temperatura esta falando em temperatura inicial, deixe isso
  claro;
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649769748
-troque escolher 
-\change_unchanged
-alumínio
-\change_inserted 1908091853 1649769748
- por escolher tipo de material e tipo de interpolação;
+troque escolher alumínio por escolher tipo de material e tipo de interpolação;
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649769771
 troque desenho de superfície por desenho do objeto em camadas 2D;
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1972,23 +1816,15 @@ você pode fazer o vínculo com os requisitos, ex, (RF-05)
 \begin_layout Standard
 O usuário terá a liberdade de comparar seu material com outros padrões do
  simulador
-\change_inserted 1908091853 1649769966
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649769976
 verifique se adicionou este RNF lá em cima
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 , e escolhê-lo para o desenho do objeto.
 \end_layout
 
@@ -2009,23 +1845,15 @@ status open
 \end_inset
 
 
-\change_inserted 1908091853 1649770005
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649770042
 o primeiro item 
 \begin_inset Quotes eld
 \end_inset
 
-carregar 
-\change_unchanged
-alumínio
-\change_inserted 1908091853 1649770042
- interpolação é confuso; coloque 
+carregar alumínio interpolação é confuso; coloque 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2037,8 +1865,6 @@ adicionar novo material e interpolação
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649770105
 também troque escolher aluminio com interpolação por 
 \begin_inset Quotes eld
 \end_inset
@@ -2051,44 +1877,30 @@ escolher tipo material e tipo de interpolação
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649770143
 note que neste diagrama faz exatamente o mesmo do anterior, o que muda é
  a adição de novo material na base de dados.
  poderia deixar só o que é diferente.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649770157
 Usuário vai para laboratório e mede propriedades;
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649770170
 Usuário salva propriedades em arquivo txt com formato pré-definido;
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649770191
 Usuário importa o novo material e interpolação para dentro do software.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649770215
 As informações do novo material e dados interpolação são salvos no diretório
  dos materiais.
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -2119,26 +1931,18 @@ name "cap:Diagrama-de-caso-de-uso-especifico"
 \end_inset
 
 
-\change_inserted 1908091853 1649770239
-
 \end_layout
 
 \end_inset
 
 
-\change_inserted 1908091853 1649770241
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1649770245
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649770311
 monte um diagrama de caso de uso em que o desenho dos objetos já foi feito
  em outro software e você irá importa uma imagem 3D com os objetos rotulados
  e um arquivo auxiliar que lista os rótulos e o tipo de material e interpolação
@@ -2146,8 +1950,6 @@ monte um diagrama de caso de uso em que o desenho dos objetos já foi feito
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649770415
 Pense na situação em que a imagem 3D de uma rocha foi obtida usando microtomogra
 fia.
  QUe a mesma foi segmentada e identificados os materiais(minerais).
@@ -2158,47 +1960,31 @@ fia.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649770442
-e vai ter um arquivo dizendo 
+e vai ter um arquivo dizendo
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649770456
 Objeto 1 = tipo material e tipo interpolação.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649770460
 Objeto 2 = tipo material e tipo interpolação.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649770464
 Objeto 3 = tipo material e tipo interpolação.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649770481
 Faça isso mesmo que não possamos implementar isso a tempo.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649770491
 Nas conclusões colocamos como TRABALHOS FUTUROS
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 

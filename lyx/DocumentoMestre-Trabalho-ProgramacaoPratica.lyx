@@ -9,6 +9,7 @@
 \usepackage {graphicx}
 \usepackage {longtable}
 \usepackage {indentfirst}
+\usepackage [latin1]{inputenc}
 \renewenvironment{center}{\par\centering}{\par}
 
 % Comentar linhas abaixo se não estiver usando pacote abntex
@@ -30,6 +31,7 @@
 % Informa que vai usar o pacote listings, 
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
+\documentclass [opções]{abnt}
 \end_preamble
 \options normaltoc, sumarioincompleto
 \use_default_options false

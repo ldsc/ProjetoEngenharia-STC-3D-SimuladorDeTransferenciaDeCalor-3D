@@ -159,6 +159,16 @@ software
 
 \begin_layout Section
 Análise de domínio
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Análise de domínio
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Análise-de-domínio"
@@ -231,7 +241,7 @@ Métodos numéricos são algoritmos desenvolvidos com ajuda da matemática para
 
 \end_deeper
 \begin_layout Enumerate
-Programação orientada ao objeto com C++:
+Programação:
 \end_layout
 
 \begin_deeper
@@ -243,7 +253,15 @@ softwares
 \shape default
  devido à portabilidade, organização e delimitação de assuntos.
  C++ é uma das linguagens mais utilizadas atualmente, por ser mais rápida
- com muito suporte e por permitir a orientação ao objeto.
+ com muito suporte, por permitir a orientação ao objeto e disponibilizar
+ muitas bibliotecas prontas (como Qt, QCustomPlot).
+ Os computadores atuais disponibilizam diversos núcleos de processsamento,
+ possibilitando o uso de recursos de programação paralela e ou concorrente.
+ C++ fornece a abstração de 
+\emph on
+threads 
+\emph default
+que possibilitamm, de forma simplificada, o uso de processamento paralelo.
 \end_layout
 
 \end_deeper
@@ -265,6 +283,16 @@ softwares
 \end_deeper
 \begin_layout Section
 Formulação modelos teóricos
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Formulação modelos teóricos
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Formulação-modelos-teóricos"
@@ -282,6 +310,16 @@ Apresenta-se a seguir os termos e unidades utilizados, a formulação teórica,
 
 \begin_layout Subsection
 Termos e Unidades
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Termos e Unidades
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Termos-e-Unidades"
@@ -428,6 +466,16 @@ grid
 \end_deeper
 \begin_layout Subsection
 Formulação teórica
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Formulação teórica
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Formulação-teórica"
@@ -553,7 +601,15 @@ noprefix "false"
 
 \begin_layout Standard
 Com esses conceitos em mente, a equação geral é modelada por diferenças
- finitas, mantendo a condutividade térmica dentro da derivada espacial.
+ finitas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HOFFMAN"
+literal "false"
+
+\end_inset
+
+, mantendo a condutividade térmica dentro da derivada espacial.
  Inicialmente, será modelado somente a derivada externa:
 \end_layout
 
@@ -1025,6 +1081,7 @@ status open
 \begin_inset Graphics
 	filename ../imagens/malha.png
 	lyxscale 70
+	width 100text%
 
 \end_inset
 
@@ -1063,6 +1120,16 @@ A seguir, é resolvida a última etapa da modelagem do problema, a modelagem
 
 \begin_layout Subsection
 Condição de fronteira
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Condição de fronteira
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Condição-de-fronteira"
@@ -1249,6 +1316,16 @@ noprefix "false"
 
 \begin_layout Subsection
 Demonstrações matemáticas
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Demonstrações matemáticas
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Demonstrações"
@@ -1529,6 +1606,16 @@ literal "false"
 
 \begin_layout Subsection
 Condutividade térmica variável
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Condutividade térmica variável
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Condutividade-térmica-variável"
@@ -1613,6 +1700,16 @@ O terceiro caso, é o cálculo pela interpolação e, como o nome diz, calcula
 
 \begin_layout Section
 Formulação modelos computacionais
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Formulação modelos computacionais
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Formulação-modelos-computacionais"
@@ -1632,7 +1729,17 @@ threads
 \end_layout
 
 \begin_layout Subsection
-O que é processamento paralelo?
+O que é processamento paralelo
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+processamento paralelo
+\end_layout
+
+\end_inset
+
+?
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:O-que-é-processamento-paralelo"
@@ -1703,8 +1810,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/processamento_paralelo_serie.png
-	lyxscale 25
+	filename ../imagens/ppt/processamento_paralelo_serie.png
 	width 100text%
 
 \end_inset
@@ -1754,8 +1860,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/ppt/processamento_paralelo_paralelo.png
-	lyxscale 25
+	filename ../imagens/ppt/processamento_paralelo_paralelo.png
 	width 100text%
 
 \end_inset
@@ -1844,7 +1949,19 @@ O controle dos recursos é de responsabilidade do programador.
 \begin_layout Subsection
 
 \shape italic
-Processamento paralelo com múltiplas-threads - multi-thread
+Processamento paralelo com múltiplas-threads
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+
+\shape italic
+múltiplas-threads
+\end_layout
+
+\end_inset
+
+ - multi-thread
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:3.3.1 Processamento paralelo com múltiplas-threads - multi-thread"
@@ -2076,6 +2193,16 @@ thread
 
 \begin_layout Subsection
 Renderização 3D
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Renderização 3D
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Renderização-3D"
@@ -2590,6 +2717,16 @@ noprefix "false"
 
 \begin_layout Section
 Identificação de pacotes
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Identificação de pacotes
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Identificação-de-pacotes"
@@ -2646,6 +2783,16 @@ qcustomplot
 
 \begin_layout Section
 Diagrama de pacotes
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Diagrama de pacotes
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Diagrama-de-pacotes"

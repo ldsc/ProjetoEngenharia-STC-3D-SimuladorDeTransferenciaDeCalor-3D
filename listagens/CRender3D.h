@@ -3,13 +3,17 @@
 
 #include <math.h>
 #include <QVector>
+#include <QVector3D>
 #include <QPainter>
 #include <algorithm>
 #include <QMainWindow>
 #include <QPaintEvent>
 #include <QMouseEvent>
-
+//Permite acesso direto a pi; veja https://en.cppreference.com/w/cpp/numeric/constants
+//#include <numbers> // C++20
+//using namespace std::numbers; //ou numbers::pi
 #include "CSimuladorTemperatura.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class CRender3D; }
@@ -52,7 +56,7 @@ private:
     int size_x, size_y;
     int margin_x = 250;
     int margin_y = 250;
-    double angle_x = 0.0;
+    double angle_x = 0.0; // para efeito de imagens um float atende e sobra
     double angle_y = 0.0;
     double angle_z = 0.0;
     double distance = 1.0;

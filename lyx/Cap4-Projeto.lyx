@@ -101,32 +101,21 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
 
 \begin_layout Chapter
 Projeto
-\change_inserted 1908091853 1653176996
-
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653176996
 Projeto
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_deleted 1908091853 1653176994
- 
-\change_unchanged
 
 \begin_inset CommandInset label
 LatexCommand label
@@ -160,11 +149,6 @@ Neste capítulo são apresentadas questões relacionadas ao desenvolvimento
  do projeto, como ambiente de desenvolvimento e bibliotecas gráficas, comentados
  juntamente com a evolução de versões.
  Também são apresentados os diagramas de componentes e de implantação.
-
-\change_deleted 1908091853 1653176087
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
@@ -227,11 +211,6 @@ Programação de alto nível com vários graus de abstração.
 
 \begin_layout Itemize
 Diversos ambientes de desenvolvimento - IDEs, compiladores, debugers, profillers.
-
-\change_deleted 1908091853 1653176087
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Itemize
@@ -253,90 +232,20 @@ repete
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted 1908091853 1653211162
-O software foi desenvolvido utilizando o padrão apresentado pelo Prof.
- André Bueno na disciplina de programação e ilustrado na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Etapas para o desenvolvimento do software"
-
-\end_inset
-
-.
- Note que o 
-\begin_inset Quotes eld
-\end_inset
-
-Ciclo de Concepção e Análise
-\begin_inset Quotes erd
-\end_inset
-
- é composto pelo que foi apresentado nos capítulos anteriores e neste capítulo.
- Os 
-\begin_inset Quotes eld
-\end_inset
-
-Ciclos de Planejamento/Detalhamento
-\begin_inset Quotes erd
-\end_inset
-
- e 
-\begin_inset Quotes eld
-\end_inset
-
-Ciclo Construção
-\begin_inset Quotes erd
-\end_inset
-
-, envolvem a construção das diferentes versões do software.
-\end_layout
-
-\begin_layout Standard
-Iremos apresentar a seguir 
-\change_deleted 1908091853 1653211121
-breves informações sobre as versões desenvolvidas em cada ciclo de 
-\begin_inset Quotes eld
-\end_inset
-
-Ciclos de Planejamento/Detalhamento
-\begin_inset Quotes erd
-\end_inset
-
- e 
-\begin_inset Quotes eld
-\end_inset
-
-Ciclo Construção
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_inserted 1908091853 1653211132
-os diagramas de componentes e de implementação
-\change_unchanged
-.
+Iremos apresentar a seguir os diagramas de componentes e de implementação.
 \end_layout
 
 \begin_layout Section
 Diagrama de componentes
-\change_inserted 1908091853 1653177001
-
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1653177001
 Diagrama de componentes
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -366,8 +275,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../imagens/Diagrama de componentes.png
-	lyxscale 50
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama de componentes.png
+	lyxscale 10
 	width 100text%
 
 \end_inset
@@ -446,24 +355,12 @@ Por fim, os componentes em laranja claro são responsáveis pela simulação
 \end_layout
 
 \begin_layout Section
-Diagrama de 
-\change_deleted 1908091853 1653212436
-I
-\change_inserted 1908091853 1653212436
-i
-\change_unchanged
-mplementação
+Diagrama de implementação
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-Diagrama de 
-\change_deleted 1908091853 1653177009
-execução
-\change_inserted 1908091853 1653177019
-implantação-execução
-\change_unchanged
-
+Diagrama de implantação-execução
 \end_layout
 
 \end_inset
@@ -559,13 +456,9 @@ name "fig:Diagrama-de-implementação"
 \end_inset
 
 
-\change_inserted 1908091853 1653211164
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1653211178
 O software foi desenvolvido utilizando o padrão apresentado pelo Prof.
  André Bueno na disciplina de programação e ilustrado na Figura 
 \begin_inset CommandInset ref
