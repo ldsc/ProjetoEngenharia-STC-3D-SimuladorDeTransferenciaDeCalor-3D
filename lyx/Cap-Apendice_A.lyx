@@ -123,6 +123,24 @@ Disciplinas Relacionadas a Transferência de Calor
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{Apêndice 
+\backslash
+thechapter: Disciplinas Relacionadas a Transferência de Calor}
+\backslash
+rhead{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
 A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref

@@ -95,7 +95,7 @@
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 2
-\paperpagestyle fancy
+\paperpagestyle default
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -951,7 +951,7 @@ MACAÉ - RJ
 \begin_inset Newline newline
 \end_inset
 
-Abril - 2022
+Junho - 2022
 \end_layout
 
 \begin_layout Standard
@@ -1570,10 +1570,60 @@ LatexCommand tableofcontents
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{Lista de Figuras} 
+\backslash
+chead{} 
+\backslash
+rhead{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset FloatList figure
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{Lista de Tabelas} 
+\backslash
+chead{} 
+\backslash
+rhead{}
+\end_layout
 
 \end_inset
 

@@ -441,28 +441,6 @@ Como adicionar materiais
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{Apêndice 
-\backslash
-thechapter: Como utilizar o software}
-\backslash
-rhead{
-\backslash
-thepage}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Apresenta-se neste apêndice instruções para adição de novos materiais.
 \end_layout
 
@@ -538,7 +516,7 @@ status open
 \begin_layout Plain Layout
 Como adicionar um material no simulador.
  Primeiro seleciona Arquivo, Import material.
- Uma janela será aberta, para o usuário escolher o material.
+ Uma janela será aberta, para o usuário escolher o material
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Como-adicionar-um"

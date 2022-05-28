@@ -9,7 +9,6 @@
 \usepackage {graphicx}
 \usepackage {longtable}
 \usepackage {indentfirst}
-\usepackage [latin1]{inputenc}
 \renewenvironment{center}{\par\centering}{\par}
 
 % Comentar linhas abaixo se não estiver usando pacote abntex
@@ -31,7 +30,6 @@
 % Informa que vai usar o pacote listings, 
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
-\documentclass [opções]{abnt}
 \end_preamble
 \options normaltoc, sumarioincompleto
 \use_default_options false
@@ -85,8 +83,8 @@
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
+\cite_engine natbib
+\cite_engine_type authoryear
 \biblio_style plain
 \use_bibtopic false
 \use_indices false
@@ -115,7 +113,7 @@
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 1
-\paperpagestyle fancy
+\paperpagestyle default
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -260,6 +258,12 @@ Conclusões e sugestões para trabalhos futuros:
 \begin_layout Standard
 \noindent
 \align block
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align block
 \begin_inset ERT
 status open
 
@@ -272,6 +276,11 @@ lhead{Referências}
 chead{} 
 \backslash
 rhead{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -308,11 +317,32 @@ Com o tempo os documentos crescem e estes abaixo/acima ficam perdidos, por
 \end_inset
 
 
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{Referências} 
+\backslash
+chead{} 
+\backslash
+rhead{}
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "bibliografia"
-options "abntex2-alf"
+options "plain"
 
 \end_inset
 
@@ -320,6 +350,7 @@ options "abntex2-alf"
 \end_layout
 
 \begin_layout Standard
+\start_of_appendix
 \align block
 \begin_inset CommandInset include
 LatexCommand include

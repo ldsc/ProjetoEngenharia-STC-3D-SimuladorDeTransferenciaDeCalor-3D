@@ -71,9 +71,9 @@
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
-\biblio_style plain
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -228,7 +228,7 @@ Validação do simulador
 Para validar os resultados do simulador, foi comparado os resultados do
  simulador, com a solução proposta por 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "incropera2008fundamentos"
 literal "false"
 
@@ -1152,21 +1152,21 @@ Injeção de calor em reservatório
 
 \end_inset
 
- - comparação com outro simulador
+
 \end_layout
 
 \begin_layout Standard
-Como segundo teste do simulador, será comparado o resultado do simulador
- com o simulador desenvolvido no Trabalho de Conclusão de Curso do Guilherme
- 
+Agora, será realizada uma simulação com as mesmas condições apresentadas
+ nos resultados do Trabalho de Conclusão de Curso 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Lima2020"
-literal "false"
+literal "true"
 
 \end_inset
 
-.
+, onde também foi desenvolvido um simulador de condução de temperatura,
+ mas específico para misturas de materiais.
 \end_layout
 
 \begin_layout Standard
@@ -1202,9 +1202,9 @@ status open
 \begin_layout Plain Layout
 Tabela com propriedades termofísicas 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Dong_2015"
-literal "false"
+literal "true"
 
 \end_inset
 
@@ -2525,7 +2525,7 @@ noprefix "false"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -2637,7 +2637,7 @@ name "fig:injecao-termica-com-agua-2"
 \end_layout
 
 \begin_layout Standard
-Avançando mais no tempo, chegando a 7.180 segundos, é possível perber que
+Avançando mais no tempo, chegando a 7.180 segundos, é possível perceber que
  a região dos 
 \shape italic
 fingers 

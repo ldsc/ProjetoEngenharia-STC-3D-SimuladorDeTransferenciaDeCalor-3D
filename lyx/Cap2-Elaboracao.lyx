@@ -66,9 +66,9 @@
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
-\biblio_style apalike
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -184,15 +184,15 @@ A análise de domínio, como parte da elaboração, tem o objetivo de entender
 \shape italic
 software
 \shape default
- é construído (
+ é construído 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Bueno2003"
-literal "false"
+literal "true"
 
 \end_inset
 
-).
+.
  
 \end_layout
 
@@ -215,15 +215,15 @@ Transferência de calor é uma das áreas clássicas de fenomenologia da física
 
 \begin_layout Standard
 A condução só pode ocorrer em meio material (fluidos ou sólidos), e sem
- que haja movimento do próprio meio, característica da convecção (
+ que haja movimento do próprio meio, característica da convecção 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Nussenzveig2014"
-literal "false"
+literal "true"
 
 \end_inset
 
-).
+.
 \end_layout
 
 \end_deeper
@@ -255,13 +255,13 @@ softwares
  C++ é uma das linguagens mais utilizadas atualmente, por ser mais rápida
  com muito suporte, por permitir a orientação ao objeto e disponibilizar
  muitas bibliotecas prontas (como Qt, QCustomPlot).
- Os computadores atuais disponibilizam diversos núcleos de processsamento,
+ Os computadores atuais disponibilizam diversos núcleos de processamento,
  possibilitando o uso de recursos de programação paralela e ou concorrente.
  C++ fornece a abstração de 
 \emph on
 threads 
 \emph default
-que possibilitamm, de forma simplificada, o uso de processamento paralelo.
+que possibilitam, de forma simplificada, o uso de processamento paralelo.
 \end_layout
 
 \end_deeper
@@ -488,15 +488,15 @@ name "subsec:Formulação-teórica"
 \begin_layout Standard
 A taxa de transferência de calor foi modelado empiricamente por Jean B.
  J.
- Fourier em 1822 (
+ Fourier em 1822 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Fourier1822"
-literal "false"
+literal "true"
 
 \end_inset
 
-).
+.
  Posteriormente a teoria foi aprimorada até chegar na equação geral da difusão
  de calor Eq.
  (
@@ -513,9 +513,9 @@ noprefix "false"
  O desenvolvimento teórico para chegar nesta equação, pode ser acompanhado
  detalhadamente no 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "incropera2008fundamentos"
-literal "false"
+literal "true"
 
 \end_inset
 
@@ -524,7 +524,7 @@ literal "false"
 
 \begin_layout Standard
 Portanto, a seguir é apresentada a equação geral da difusão de calor em
- meios tridimensionais em coordenadas cartesianascartesianos:
+ meios tridimensionais em coordenadas cartesianas:
 \end_layout
 
 \begin_layout Standard
@@ -603,9 +603,9 @@ noprefix "false"
 Com esses conceitos em mente, a equação geral é modelada por diferenças
  finitas 
 \begin_inset CommandInset citation
-LatexCommand cite
-key "HOFFMAN"
-literal "false"
+LatexCommand citep
+key "HOFFMAN2001"
+literal "true"
 
 \end_inset
 
@@ -778,15 +778,15 @@ Multiplicando pelo múltiplo comum:
 
 \begin_layout Standard
 Como a equação acima é complexa para ser reorganizada e resolvida por equações
- matriciais, será utilizado o método iterativo de Gauss-Jacobi (
+ matriciais, será utilizado o método iterativo de Gauss-Jacobi 
 \begin_inset CommandInset citation
-LatexCommand cite
-key "RUGGIERO"
+LatexCommand citet
+key "RUGGIERO,RUGGIERO1996"
 literal "false"
 
 \end_inset
 
-).
+.
  As condições de parada são: diferença entre iterações menor que 0,5ºC,
  máximo de iterações igual a 1.000, e mínimo de 800 iterações.
  Para resolver o sistema de equações, será isolado uma das temperaturas
@@ -839,41 +839,41 @@ Onde
 
 \begin_layout Standard
 Agora, é necessário definir o cálculo das condutividades térmicas nas fronteiras.
- Para solucionar esse problema, pode-se resolver pela taxa de condução (
+ Para solucionar esse problema, pode-se resolver pela taxa de condução 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "HALLIDAY_2009"
-literal "false"
+literal "true"
 
 \end_inset
 
-), esse modelo de solução é similar ao cálculo da permeabilidade de rochas
+, esse modelo de solução é similar ao cálculo da permeabilidade de rochas
  em série 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Rosa2006"
-literal "false"
+literal "true"
 
 \end_inset
 
 .
- Também pode-se utilizar da analogia com a resistência elétrica (
+ Também pode-se utilizar da analogia com a resistência elétrica 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Nussenzveig2014"
-literal "false"
+literal "true"
 
 \end_inset
 
-), (
+, 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "incropera2008fundamentos"
-literal "false"
+literal "true"
 
 \end_inset
 
-).
+.
  Para o presente trabalho, será demonstrado a condutividade térmica equivalente
  pela taxa de condução térmica:
 \end_layout
@@ -1602,9 +1602,9 @@ noprefix "false"
 ) representa o método implícito BTCS para um sistema homogêneo bidimensional,
  conforme 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "incropera2008fundamentos"
-literal "false"
+literal "true"
 
 \end_inset
 
@@ -1669,9 +1669,9 @@ handbook Thermophysical Properties
 \shape default
 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "thermophysical2008"
-literal "false"
+literal "true"
 
 \end_inset
 
@@ -1793,7 +1793,10 @@ Note que as tarefas precisam ser divididas e enviadas para os diferentes
 \end_layout
 
 \begin_layout Standard
-Note que os processadores podem estar numa mesma máquina, em um cluster
+Note que os processadores podem estar numa mesma máquina, em um 
+\shape italic
+cluster
+\shape default
  ou em máquinas distribuídas.
 \end_layout
 
@@ -2052,7 +2055,11 @@ thread
 \shape default
  resolve uma camada do objeto.
  Possuí certa otimização em relação ao anterior, mas, se só existir objeto
- em uma camada, outras threads ficam ociosas.
+ em uma camada, outras 
+\shape italic
+threads
+\shape default
+ ficam ociosas.
 \end_layout
 
 \begin_layout Enumerate
@@ -2301,7 +2308,7 @@ noprefix "false"
 Portanto, tendo definidos os pontos das arestas, seus respectivos vetores
  são multiplicados pela matriz de rotação 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Herter1993"
 literal "false"
 
