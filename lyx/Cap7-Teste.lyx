@@ -73,7 +73,7 @@
 \use_package undertilde 1
 \cite_engine natbib
 \cite_engine_type authoryear
-\biblio_style plainnat
+\biblio_style abntex2-alf
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -133,6 +133,10 @@ name "chap:Teste"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -143,6 +147,11 @@ status open
 lhead{
 \backslash
 thechapter - Teste}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1189,6 +1198,14 @@ noprefix "false"
 
 \end_inset
 
+, esses valores foram obtidos em 
+\begin_inset CommandInset citation
+LatexCommand citep*
+key "Dong_2015"
+literal "false"
+
+\end_inset
+
 .
 \begin_inset Float table
 placement H
@@ -1201,14 +1218,6 @@ status open
 
 \begin_layout Plain Layout
 Tabela com propriedades termofísicas 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Dong_2015"
-literal "true"
-
-\end_inset
-
-
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Tabela-com-propriedades-injecao-1"

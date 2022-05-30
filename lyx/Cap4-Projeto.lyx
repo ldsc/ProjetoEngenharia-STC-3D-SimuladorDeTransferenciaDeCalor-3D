@@ -96,7 +96,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
@@ -127,6 +127,10 @@ name "chap:Projeto-do-Sistema"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -137,6 +141,11 @@ status open
 lhead{
 \backslash
 thechapter - Projeto} 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

@@ -107,6 +107,10 @@
 \begin_body
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -119,6 +123,11 @@ lhead{
 thechapter
 \backslash
 space - Elaboração}  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -780,8 +789,8 @@ Multiplicando pelo múltiplo comum:
 Como a equação acima é complexa para ser reorganizada e resolvida por equações
  matriciais, será utilizado o método iterativo de Gauss-Jacobi 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "RUGGIERO,RUGGIERO1996"
+LatexCommand citep
+key "RUGGIERO1996"
 literal "false"
 
 \end_inset

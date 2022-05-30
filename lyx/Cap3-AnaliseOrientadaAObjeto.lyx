@@ -93,6 +93,10 @@
 \begin_body
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -103,6 +107,11 @@ status open
 lhead{
 \backslash
 thechapter - Análise Orientada a Objeto}  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

@@ -1610,6 +1610,11 @@ rhead{}
 
 \begin_layout Standard
 \align block
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align block
 \begin_inset ERT
 status open
 
@@ -1622,6 +1627,11 @@ lhead{Lista de Tabelas}
 chead{} 
 \backslash
 rhead{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

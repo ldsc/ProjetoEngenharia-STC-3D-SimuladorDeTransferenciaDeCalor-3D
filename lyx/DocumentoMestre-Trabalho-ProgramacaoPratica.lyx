@@ -321,6 +321,12 @@ Com o tempo os documentos crescem e estes abaixo/acima ficam perdidos, por
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align block
 \begin_inset ERT
 status open
 
@@ -338,11 +344,16 @@ rhead{}
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "bibliografia"
-options "plain"
+options "abntex2-alf"
 
 \end_inset
 

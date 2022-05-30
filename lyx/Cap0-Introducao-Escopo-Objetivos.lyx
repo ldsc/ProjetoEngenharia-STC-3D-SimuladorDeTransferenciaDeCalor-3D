@@ -126,11 +126,27 @@ status open
 \backslash
 lhead{
 \backslash
+pagenumbering{arabic}
+\backslash
+chead{} 
+\backslash
+rhead{}}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+lhead{
+\backslash
 thechapter
 \backslash
 space - Introdução}
-\backslash
-pagenumbering{arabic}
 \end_layout
 
 \end_inset

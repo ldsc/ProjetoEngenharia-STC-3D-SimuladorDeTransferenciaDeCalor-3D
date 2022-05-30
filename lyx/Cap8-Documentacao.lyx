@@ -120,6 +120,10 @@ Documentação
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -130,6 +134,11 @@ status open
 lhead{
 \backslash
 thechapter - Documentação} 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
