@@ -24,6 +24,7 @@
 % Informa que vai usar o pacote listings, 
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
+\appendix
 \end_preamble
 \options normaltoc, sumarioincompleto
 \use_default_options false
@@ -123,6 +124,24 @@ Disciplinas Relacionadas a Transferência de Calor
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lfoot{
+\backslash
+pagenumbering{roman}
+\backslash
+chead{} 
+\backslash
+rhead{}}
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -148,11 +167,10 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../imagens/GradeCurso/Grade-CursoEngenhariaDePetroleo-DisciplinasRelacionadasATranscal.png
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/GradeCurso/Grade-CursoEngenhariaDePetroleo-DisciplinasRelacionadasATranscal-incluireservatorio.png
 	lyxscale 25
 	width 100text%
 	height 85theight%
-	keepAspectRatio
 
 \end_inset
 

@@ -448,6 +448,9 @@ void MainWindow::on_actionImport_material_triggered() {
         simulador->openMaterial(file_name);
 
         createWidgetProps();
+        std::vector<std::string> materiais = simulador->getMateriais();
+        int i = materiais.size()-1;
+        ui->material_comboBox->addItem(QString::fromStdString(materiais[i]));
     }
 }
 

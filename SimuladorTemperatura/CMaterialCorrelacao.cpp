@@ -6,6 +6,7 @@ CMaterialCorrelacao::CMaterialCorrelacao(std::string fileName){
     name = fileName;
 
     QDir dir; std::string path = dir.absolutePath().toStdString();
+
     std::ifstream file(path+"/materiais//"+fileName);
     if (file.is_open()){
         file >> str_temp; file >> r; file >> g; file >> b; file >> alpha;

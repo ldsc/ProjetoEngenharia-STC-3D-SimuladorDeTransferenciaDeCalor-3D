@@ -29,7 +29,7 @@ void CSimuladorTemperatura::createListOfMaterials() {
 }
 
 CMaterial* CSimuladorTemperatura::chooseMaterialType(std::string name, std::string type){
-    std::ifstream file(dir.absolutePath().toStdString()+"/materiais//"+name);
+    //std::ifstream file(dir.absolutePath().toStdString()+"/materiais//"+name);
 
     if (type == "correlacao" || type == "constante")
         return new CMaterialCorrelacao(name);

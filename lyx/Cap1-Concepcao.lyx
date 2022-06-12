@@ -1016,7 +1016,7 @@ O usuário poderá comparar as propriedades termofísicas dos materiais.
 \begin_layout Plain Layout
 
 \series bold
-RF-12
+RF-13
 \end_layout
 
 \end_inset
@@ -1056,7 +1056,7 @@ O usuário poderá acompanhar a evolução da temperatura em uma superfície
 \begin_layout Plain Layout
 
 \series bold
-RF-13
+RF-14
 \end_layout
 
 \end_inset
@@ -1095,7 +1095,7 @@ O usuário poderá visualizar o objeto 3D desenhado em uma janela específica.
 \begin_layout Plain Layout
 
 \series bold
-RF-14
+RF-15
 \end_layout
 
 \end_inset
@@ -1138,7 +1138,7 @@ O usuário pode definir as propriedades físicas da simulação, como intervalo
 \begin_layout Plain Layout
 
 \series bold
-RF-15
+RF-16
 \end_layout
 
 \end_inset
@@ -1427,7 +1427,7 @@ A interface gráfica deve ser desenvolvida pela biblioteca multiplataforma
 \begin_layout Plain Layout
 
 \series bold
-RNF-05
+RNF-07
 \end_layout
 
 \end_inset
@@ -1483,7 +1483,7 @@ Link
 \begin_layout Plain Layout
 
 \series bold
-RNF-06
+RNF-08
 \end_layout
 
 \end_inset

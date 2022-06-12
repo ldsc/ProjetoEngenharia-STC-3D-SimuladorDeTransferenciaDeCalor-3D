@@ -107,6 +107,10 @@
 \begin_body
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -119,6 +123,11 @@ lhead{
 thechapter
 \backslash
 space - Elaboração}  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -184,15 +193,15 @@ A análise de domínio, como parte da elaboração, tem o objetivo de entender
 \shape italic
 software
 \shape default
- é construído (
+ é construído 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Bueno2003"
 literal "true"
 
 \end_inset
 
-).
+.
  
 \end_layout
 
@@ -215,15 +224,15 @@ Transferência de calor é uma das áreas clássicas de fenomenologia da física
 
 \begin_layout Standard
 A condução só pode ocorrer em meio material (fluidos ou sólidos), e sem
- que haja movimento do próprio meio, característica da convecção (
+ que haja movimento do próprio meio, característica da convecção 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Nussenzveig2014"
-literal "false"
+literal "true"
 
 \end_inset
 
-).
+.
 \end_layout
 
 \end_deeper
@@ -492,7 +501,7 @@ A taxa de transferência de calor foi modelado empiricamente por Jean B.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Fourier1822"
-literal "false"
+literal "true"
 
 \end_inset
 
@@ -515,7 +524,7 @@ noprefix "false"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "incropera2008fundamentos"
-literal "false"
+literal "true"
 
 \end_inset
 
@@ -603,9 +612,9 @@ noprefix "false"
 Com esses conceitos em mente, a equação geral é modelada por diferenças
  finitas 
 \begin_inset CommandInset citation
-LatexCommand cite
-key "HOFFMAN"
-literal "false"
+LatexCommand citep
+key "HOFFMAN2001"
+literal "true"
 
 \end_inset
 
@@ -702,7 +711,7 @@ A derivada temporal é atrasada no tempo:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{\partial T}{\partial t}=\frac{T_{i,j,k}^{n}-T_{i,j,k}^{n-1}}{\Delta t}
+\frac{\partial T}{\partial t}=\frac{T_{i,j,k}^{n+1}-T_{i,j,k}^{n}}{\Delta t}
 \end{equation}
 
 \end_inset
@@ -718,10 +727,10 @@ Substituindo as diferenças finitas na equação geral:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\frac{k_{i-\frac{1}{2},j,k}T_{i-1,j,k}-\left(k_{i-\frac{1}{2},j,k}+k_{i+\frac{1}{2},j,k}\right)T_{i,j,k}+k_{i+\frac{1}{2},j,k}T_{i+1,j,k}}{\Delta x^{2}}+\\
-\frac{k_{i,j-\frac{1}{2},k}T_{i,j-1,k}-\left(k_{i,j-\frac{1}{2},k}+k_{i,j+\frac{1}{2},k}\right)T_{i,j,k}+k_{i,j+\frac{1}{2},k}T_{i,j+1,k}}{\Delta y^{2}}+\\
-\frac{k_{i,j,k-\frac{1}{2}}T_{i,j,k-1}-\left(k_{i,j,k-\frac{1}{2}}+k_{i,j,k+\frac{1}{2}}\right)T_{i,j,k}+k_{i,j,k+\frac{1}{2}}T_{i,j,k+1}}{\Delta z^{2}}=\\
-\frac{T_{i,j,k}^{n}-T_{i,j,k}^{n-1}}{\Delta t}
+\frac{k_{i-\frac{1}{2},j,k}^{n+1}T_{i-1,j,k}^{n+1}-\left(k_{i-\frac{1}{2},j,k}^{n+1}+k_{i+\frac{1}{2},j,k}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i+\frac{1}{2},j,k}^{n+1}T_{i+1,j,k}^{n+1}}{\Delta x^{2}}+\\
+\frac{k_{i,j-\frac{1}{2},k}^{n+1}T_{i,j-1,k}^{n+1}-\left(k_{i,j-\frac{1}{2},k}^{n+1}+k_{i,j+\frac{1}{2},k}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i,j+\frac{1}{2},k}^{n+1}T_{i,j+1,k}^{n+1}}{\Delta y^{2}}+\\
+\frac{k_{i,j,k-\frac{1}{2}}^{n+1}T_{i,j,k-1}^{n+1}-\left(k_{i,j,k-\frac{1}{2}}^{n+1}+k_{i,j,k+\frac{1}{2}}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i,j,k+\frac{1}{2}}T_{i,j,k+1}}{\Delta z^{2}}=\\
+\frac{T_{i,j,k}^{n+1}-T_{i,j,k}^{n}}{\Delta t}
 \end{array}
 \end{equation}
 
@@ -744,10 +753,10 @@ Onde a malha é homogênea na superfície, mas não entre os perfis, ou seja,
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\frac{k_{i-\frac{1}{2},j,k}T_{i-1,j,k}-\left(k_{i-\frac{1}{2},j,k}+k_{i+\frac{1}{2},j,k}\right)T_{i,j,k}+k_{i+\frac{1}{2},j,k}T_{i+1,j,k}}{\Delta x^{2}}+\\
-\frac{k_{i,j-\frac{1}{2},k}T_{i,j-1,k}-\left(k_{i,j-\frac{1}{2},k}+k_{i,j+\frac{1}{2},k}\right)T_{i,j,k}+k_{i,j+\frac{1}{2},k}T_{i,j+1,k}}{\Delta x^{2}}+\\
-\frac{k_{i,j,k-\frac{1}{2}}T_{i,j,k-1}-\left(k_{i,j,k-\frac{1}{2}}+k_{i,j,k+\frac{1}{2}}\right)T_{i,j,k}+k_{i,j,k+\frac{1}{2}}T_{i,j,k+1}}{\Delta z^{2}}=\\
-c_{p}\rho\frac{T_{i,j,k}^{n}-T_{i,j,k}^{n-1}}{\Delta t}
+\frac{k_{i-\frac{1}{2},j,k}^{n+1}T_{i-1,j,k}^{n+1}-\left(k_{i-\frac{1}{2},j,k}^{n+1}+k_{i+\frac{1}{2},j,k}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i+\frac{1}{2},j,k}^{n+1}T_{i+1,j,k}^{n+1}}{\Delta x^{2}}+\\
+\frac{k_{i,j-\frac{1}{2},k}^{n+1}T_{i,j-1,k}^{n+1}-\left(k_{i,j-\frac{1}{2},k}^{n+1}+k_{i,j+\frac{1}{2},k}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i,j+\frac{1}{2},k}^{n+1}T_{i,j+1,k}^{n+1}}{\Delta x^{2}}+\\
+\frac{k_{i,j,k-\frac{1}{2}}^{n+1}T_{i,j,k-1}^{n+1}-\left(k_{i,j,k-\frac{1}{2}}^{n+1}+k_{i,j,k+\frac{1}{2}}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i,j,k+\frac{1}{2}}^{n+1}T_{i,j,k+1}^{n+1}}{\Delta z^{2}}=\\
+c_{p}\rho\frac{T_{i,j,k}^{n+1}-T_{i,j,k}^{n}}{\Delta t}
 \end{array}
 \end{equation}
 
@@ -767,7 +776,7 @@ Multiplicando pelo múltiplo comum:
 \Delta z^{2}\left(k_{i-\frac{1}{2},j,k}^{n+1}T_{i-1,j,k}^{n+1}-\left(k_{i-\frac{1}{2},j,k}^{n+1}+k_{i+\frac{1}{2},j,k}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i+\frac{1}{2},j,k}^{n+1}T_{i+1,j,k}^{n+1}\right)+\\
 \Delta z^{2}\left(k_{i,j-\frac{1}{2},k}^{n+1}T_{i,j-1,k}^{n+1}-\left(k_{i,j-\frac{1}{2},k}^{n+1}+k_{i,j+\frac{1}{2},k}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i,j+\frac{1}{2},k}^{n+1}T_{i,j+1,k}^{n+1}\right)+\\
 \Delta x^{2}\left(k_{i,j,k-\frac{1}{2}}^{n+1}T_{i,j,k-1}^{n+1}-\left(k_{i,j,k-\frac{1}{2}}^{n+1}+k_{i,j,k+\frac{1}{2}}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i,j,k+\frac{1}{2}}^{n+1}T_{i,j,k+1}^{n+1}\right)=\\
-\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}T_{i,j,k}^{n}-\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}T_{i,j,k}^{n-1}
+\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}T_{i,j,k}^{n+1}-\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}T_{i,j,k}^{n}
 \end{array}
 \end{equation}
 
@@ -778,15 +787,15 @@ Multiplicando pelo múltiplo comum:
 
 \begin_layout Standard
 Como a equação acima é complexa para ser reorganizada e resolvida por equações
- matriciais, será utilizado o método iterativo de Gauss-Jacobi (
+ matriciais, será utilizado o método iterativo de Gauss-Jacobi 
 \begin_inset CommandInset citation
-LatexCommand cite
-key "RUGGIERO"
+LatexCommand citep
+key "RUGGIERO1996"
 literal "false"
 
 \end_inset
 
-).
+.
  As condições de parada são: diferença entre iterações menor que 0,5ºC,
  máximo de iterações igual a 1.000, e mínimo de 800 iterações.
  Para resolver o sistema de equações, será isolado uma das temperaturas
@@ -801,11 +810,11 @@ literal "false"
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{\nu+1}{T_{i,j}^{n}}=\\
-C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n-1}}+\\
-C_{1}\Delta z^{2}\left(\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n}}\overset{\nu}{T_{i-1,j,k}^{n}}+\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n}}\overset{\nu}{T_{i+1,j,k}^{n}}\right)+\\
-C_{1}\Delta z^{2}\left(\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n}}\overset{\nu}{T_{i,j-1,k}^{n}}+\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n}}\overset{\nu}{T_{i,j+1,k}^{n}}\right)+\\
-C_{1}\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n}}\overset{\nu}{T_{i,j,k-1}^{n}}+\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n}}\overset{\nu}{T_{i,j,k+1}^{n}}\right)
+\overset{\nu+1}{T_{i,j}^{n+1}}=\\
+C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n}}+\\
+A\Delta z^{2}\left(\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}\overset{\nu}{T_{i-1,j,k}^{n+1}}+\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}\overset{\nu}{T_{i+1,j,k}^{n+1}}\right)+\\
+A\Delta z^{2}\left(\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}\overset{\nu}{T_{i,j-1,k}^{n+1}}+\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}\overset{\nu}{T_{i,j+1,k}^{n+1}}\right)+\\
+A\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}\overset{\nu}{T_{i,j,k-1}^{n+1}}+\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}\overset{\nu}{T_{i,j,k+1}^{n+1}}\right)
 \end{array}\label{eq:EquacaoGeralDiscretizada}
 \end{equation}
 
@@ -816,7 +825,7 @@ C_{1}\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n}}\overset{\nu}{T_{
 
 \begin_layout Standard
 Onde 
-\begin_inset Formula $C_{1}$
+\begin_inset Formula $A$
 \end_inset
 
 é definido por:
@@ -826,9 +835,9 @@ Onde
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\frac{1}{C_{1}}=\begin{array}{ccc}
-\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+ & \Delta z^{2}\left(\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n}}+\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n}}\right)+\\
- & \Delta z^{2}\left(\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n}}+\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n}}\right) & +\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n}}+\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n}}\right)
+\frac{1}{A}=\begin{array}{ccc}
+\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+ & \Delta z^{2}\left(\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}+\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}\right)+\\
+ & \Delta z^{2}\left(\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}+\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}\right) & +\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}+\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}\right)
 \end{array}\end{array}
 \end{equation}
 
@@ -843,16 +852,16 @@ Agora, é necessário definir o cálculo das condutividades térmicas nas fronte
 \begin_inset CommandInset citation
 LatexCommand citep
 key "HALLIDAY_2009"
-literal "false"
+literal "true"
 
 \end_inset
 
 , esse modelo de solução é similar ao cálculo da permeabilidade de rochas
  em série 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Rosa2006"
-literal "false"
+literal "true"
 
 \end_inset
 
@@ -861,15 +870,15 @@ literal "false"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Nussenzveig2014"
-literal "false"
+literal "true"
 
 \end_inset
 
 , 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "incropera2008fundamentos"
-literal "false"
+literal "true"
 
 \end_inset
 
@@ -1220,7 +1229,7 @@ Por isso, é importante modelar a condição de contorno, que pode ser modelada
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-k\frac{\partial T}{\partial x}_{i-\frac{1}{2},j,k}=\frac{T_{i,j,k}^{n}-T_{i-1,j,k}^{n}}{\Delta x}=0
+k\frac{\partial T}{\partial x}_{i-\frac{1}{2},j,k}=k_{i-\frac{1}{2},j,k}\frac{T_{i,j,k}^{n+1}-T_{i-1,j,k}^{n+1}}{\Delta x}=0
 \end{equation}
 
 \end_inset
@@ -1250,7 +1259,7 @@ k_{i-\frac{1}{2},j,k} & =0\\
 Resolvendo a linha de baixo:
 \begin_inset Formula 
 \begin{equation}
-\frac{\partial T}{\partial x}_{i-\frac{1}{2},j,k}=\frac{T_{i,j,k}^{n}-T_{i-1,j,k}^{n}}{\Delta x}=0
+\frac{\partial T}{\partial x}_{i-\frac{1}{2},j,k}=\frac{T_{i,j,k}^{n+1}-T_{i-1,j,k}^{n+1}}{\Delta x}=0
 \end{equation}
 
 \end_inset
@@ -1261,7 +1270,7 @@ Resolvendo a linha de baixo:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-T_{i-1,j,k}^{n}=T_{i,j,k}^{n}
+T_{i-1,j,k}^{n+1}=T_{i,j,k}^{n+1}
 \end{equation}
 
 \end_inset
@@ -1277,12 +1286,12 @@ Todas as seis fronteiras são simétricas, então:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-T_{i-1,j,k}^{n}=T_{i,j,k}^{n}\\
-T_{i+1,j,k}^{n}=T_{i,j,k}^{n}\\
-T_{i,j-1,k}^{n}=T_{i,j,k}^{n}\\
-T_{i,j+1,k}^{n}=T_{i,j,k}^{n}\\
-T_{i,j,k-1}^{n}=T_{i,j,k}^{n}\\
-T_{i,j,k+1}^{n}=T_{i,j,k}^{n}
+T_{i-1,j,k}^{n+1}=T_{i,j,k}^{n+1}\\
+T_{i+1,j,k}^{n+1}=T_{i,j,k}^{n+1}\\
+T_{i,j-1,k}^{n+1}=T_{i,j,k}^{n+1}\\
+T_{i,j+1,k}^{n+1}=T_{i,j,k}^{n+1}\\
+T_{i,j,k-1}^{n+1}=T_{i,j,k}^{n+1}\\
+T_{i,j,k+1}^{n+1}=T_{i,j,k}^{n+1}
 \end{array}\label{eq:ModelagemFronteiras}
 \end{equation}
 
@@ -1385,11 +1394,11 @@ noprefix "false"
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{\nu+1}{T_{i,j,k}^{n}}=\\
-C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j,k}^{n-1}}+\\
-C_{1}\Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n}}}\overset{\nu}{T_{i-1,j,k}^{n}}+\cancelto{0}{\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n}}}\overset{\nu}{T_{i+1,j,k}^{n}}\right)+\\
-C_{1}\Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n}}}\overset{\nu}{T_{i,j-1,k}^{n}}+\cancelto{0}{\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n}}}\overset{\nu}{T_{i,j+1,k}^{n}}\right)+\\
-C_{1}\Delta x^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n}}}\overset{\nu}{T_{i,j,k-1}^{n}}+\cancelto{0}{\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n}}}\overset{\nu}{T_{i,j,k+1}^{n}}\right)
+\overset{\nu+1}{T_{i,j,k}^{n+1}}=\\
+A\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j,k}^{n}}+\\
+A\Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}}\overset{\nu}{T_{i-1,j,k}^{n+1}}+\cancelto{0}{\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}}\overset{\nu}{T_{i+1,j,k}^{n+1}}\right)+\\
+A\Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}}\overset{\nu}{T_{i,j-1,k}^{n+1}}+\cancelto{0}{\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}}\overset{\nu}{T_{i,j+1,k}^{n+1}}\right)+\\
+A\Delta x^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}}\overset{\nu}{T_{i,j,k-1}^{n+1}}+\cancelto{0}{\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}}\overset{\nu}{T_{i,j,k+1}^{n+1}}\right)
 \end{array}
 \end{equation}
 
@@ -1402,9 +1411,9 @@ C_{1}\Delta x^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n}}}\ov
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\frac{1}{C_{1}}=\begin{array}{ccc}
-\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+ & \Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n}}}+\cancelto{0}{\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n}}}\right)+\\
- & \Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n}}}+\cancelto{0}{\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n}}}\right) & +\Delta x^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n}}}+\cancelto{0}{\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n}}}\right)
+\frac{1}{A}=\begin{array}{ccc}
+\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+ & \Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}}+\cancelto{0}{\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}}\right)+\\
+ & \Delta z^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}}+\cancelto{0}{\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}}\right) & +\Delta x^{2}\left(\cancelto{0}{\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}}+\cancelto{0}{\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}}\right)
 \end{array}\end{array}
 \end{equation}
 
@@ -1418,7 +1427,7 @@ Resultando em:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{\nu+1}{T_{i,j,k}^{n}}=C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n-1}}\end{array}
+\overset{\nu+1}{T_{i,j,k}^{n+1}}=A\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n}}\end{array}
 \end{equation}
 
 \end_inset
@@ -1430,7 +1439,7 @@ Resultando em:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\frac{1}{C_{1}}=\begin{array}{c}
+\frac{1}{A}=\begin{array}{c}
 \frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\end{array}\end{array}
 \end{equation}
 
@@ -1444,7 +1453,7 @@ Logo:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{\nu+1}{T_{i,j,k}^{n}}=\frac{\Delta t}{\Delta z^{2}\Delta x^{2}c_{p}\rho}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n-1}}\end{array}
+\overset{\nu+1}{T_{i,j,k}^{n+1}}=\frac{\Delta t}{\Delta z^{2}\Delta x^{2}c_{p}\rho}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n}}\end{array}
 \end{equation}
 
 \end_inset
@@ -1453,7 +1462,7 @@ Logo:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{\nu+1}{T_{i,j,k}^{n}}=\overset{\nu}{T_{i,j,k}^{n-1}}\end{array}
+\overset{\nu+1}{T_{i,j,k}^{n+1}}=\overset{\nu}{T_{i,j,k}^{n}}\end{array}
 \end{equation}
 
 \end_inset
@@ -1495,10 +1504,10 @@ noprefix "false"
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{}{T_{i,j,k}^{n}}=\\
-C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j,k}^{n-1}}+\\
-C_{1}\Delta z^{2}\left(k\overset{}{T_{i-1,j,k}^{n}}+k\overset{}{T_{i+1,j,k}^{n}}\right)+\\
-C_{1}\Delta z^{2}\left(k\overset{}{T_{i,j-1,k}^{n}}+k\overset{}{T_{i,j+1,k}^{n}}\right)
+\overset{}{T_{i,j,k}^{n+1}}=\\
+A\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j,k}^{n}}+\\
+A\Delta z^{2}\left(k\overset{}{T_{i-1,j,k}^{n+1}}+k\overset{}{T_{i+1,j,k}^{n+1}}\right)+\\
+A\Delta z^{2}\left(k\overset{}{T_{i,j-1,k}^{n+1}}+k\overset{}{T_{i,j+1,k}^{n+1}}\right)
 \end{array}
 \end{equation}
 
@@ -1511,7 +1520,7 @@ C_{1}\Delta z^{2}\left(k\overset{}{T_{i,j-1,k}^{n}}+k\overset{}{T_{i,j+1,k}^{n}}
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\frac{1}{C_{1}}=\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+\Delta z^{2}\left(k+k\right)+\Delta z^{2}\left(k+k\right)\end{array}
+\frac{1}{A}=\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}+\Delta z^{2}\left(k+k\right)+\Delta z^{2}\left(k+k\right)\end{array}
 \end{equation}
 
 \end_inset
@@ -1524,10 +1533,10 @@ Com alguns ajustes:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{}{\frac{1}{C_{1}}T_{i,j,k}^{n}}=\\
-\frac{\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j,k}^{n-1}}+\\
-k\left(\overset{}{T_{i-1,j,k}^{n}}+\overset{}{T_{i+1,j,k}^{n}}\right)+\\
-k\left(\overset{}{T_{i,j-1,k}^{n}}+\overset{}{T_{i,j+1,k}^{n}}\right)
+\overset{}{\frac{1}{A}T_{i,j,k}^{n+1}}=\\
+\frac{\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j,k}^{n}}+\\
+k\left(\overset{}{T_{i-1,j,k}^{n+1}}+\overset{}{T_{i+1,j,k}^{n+1}}\right)+\\
+k\left(\overset{}{T_{i,j-1,k}^{n+1}}+\overset{}{T_{i,j+1,k}^{n+1}}\right)
 \end{array}
 \end{equation}
 
@@ -1540,7 +1549,7 @@ k\left(\overset{}{T_{i,j-1,k}^{n}}+\overset{}{T_{i,j+1,k}^{n}}\right)
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\frac{1}{C_{1}}=\frac{\Delta x^{2}c_{p}\rho}{\Delta t}+2k+2k\end{array}
+\frac{1}{A}=\frac{\Delta x^{2}c_{p}\rho}{\Delta t}+2k+2k\end{array}
 \end{equation}
 
 \end_inset
@@ -1556,10 +1565,10 @@ Logo:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\left(\frac{\Delta x^{2}c_{p}\rho}{k\Delta t}+2+2\right)\overset{}{T_{i,j,k}^{n}}=\\
-\frac{\Delta x^{2}c_{p}\rho}{k\Delta t}\overset{}{T_{i,j,k}^{n-1}}+\\
-\left(\overset{}{T_{i-1,j,k}^{n}}+\overset{}{T_{i+1,j,k}^{n}}\right)+\\
-\left(\overset{}{T_{i,j-1,k}^{n}}+\overset{}{T_{i,j+1,k}^{n}}\right)
+\left(\frac{\Delta x^{2}c_{p}\rho}{k\Delta t}+2+2\right)\overset{}{T_{i,j,k}^{n+1}}=\\
+\frac{\Delta x^{2}c_{p}\rho}{k\Delta t}\overset{}{T_{i,j,k}^{n}}+\\
+\left(\overset{}{T_{i-1,j,k}^{n+1}}+\overset{}{T_{i+1,j,k}^{n+1}}\right)+\\
+\left(\overset{}{T_{i,j-1,k}^{n+1}}+\overset{}{T_{i,j+1,k}^{n+1}}\right)
 \end{array}
 \end{equation}
 
@@ -1576,9 +1585,9 @@ Chegando na equação:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\frac{c_{p}\rho}{k}\frac{T_{i,j,k}^{n}-T_{i,j,k}^{n-1}}{\Delta t}=\\
-\frac{\overset{}{T_{i-1,j,k}^{n}}-2\overset{}{T_{i,j,k}^{n}}+\overset{}{T_{i+1,j,k}^{n}}}{\Delta x^{2}}+\\
-\frac{\overset{}{T_{i,j-1,k}^{n}}-\overset{}{2T_{i,j,k}^{n}}+\overset{}{T_{i,j+1,k}^{n}}}{\Delta x^{2}}
+\frac{c_{p}\rho}{k}\frac{T_{i,j,k}^{n+1}-T_{i,j,k}^{n}}{\Delta t}=\\
+\frac{\overset{}{T_{i-1,j,k}^{n+1}}-2\overset{}{T_{i,j,k}^{n+1}}+\overset{}{T_{i+1,j,k}^{n+1}}}{\Delta x^{2}}+\\
+\frac{\overset{}{T_{i,j-1,k}^{n+1}}-\overset{}{2T_{i,j,k}^{n+1}}+\overset{}{T_{i,j+1,k}^{n+1}}}{\Delta x^{2}}
 \end{array}\label{eq:MetodoImplicitoBi}
 \end{equation}
 
@@ -1602,9 +1611,9 @@ noprefix "false"
 ) representa o método implícito BTCS para um sistema homogêneo bidimensional,
  conforme 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "incropera2008fundamentos"
-literal "false"
+literal "true"
 
 \end_inset
 
@@ -1669,9 +1678,9 @@ handbook Thermophysical Properties
 \shape default
 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "thermophysical2008"
-literal "false"
+literal "true"
 
 \end_inset
 
@@ -2308,7 +2317,7 @@ noprefix "false"
 Portanto, tendo definidos os pontos das arestas, seus respectivos vetores
  são multiplicados pela matriz de rotação 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Herter1993"
 literal "false"
 
