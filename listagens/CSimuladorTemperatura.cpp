@@ -29,7 +29,7 @@ void CSimuladorTemperatura::createListOfMaterials() {
 }
 
 CMaterial* CSimuladorTemperatura::chooseMaterialType(std::string name, std::string type){
-    std::ifstream file(dir.absolutePath().toStdString()+"/materiais//"+name);
+    //std::ifstream file(dir.absolutePath().toStdString()+"/materiais//"+name);
 
     if (type == "correlacao" || type == "constante")
         return new CMaterialCorrelacao(name);
@@ -61,73 +61,113 @@ void CSimuladorTemperatura::openMaterial(QString nameFile){
 
 
 void CSimuladorTemperatura::run_sem_paralelismo() {
+    double erro, _erro;
+    int iter = 0;
     for (int g = 0; g < NGRIDS; g++){
         grid[g]->startIteration();
-        solverByGrid(g);
+    }
+    while (iter <= MAX_ITERATION) {
+        erro = 0.0;
+        for (int g = 0; g < NGRIDS; g++){
+            grid[g]->updateIteration();
+        }
+         /// atualizo temp_nu para calcular o erro da iteracao
+        for (int i = 0; i < width; i++)
+            for (int k = 0; k < height; k++)
+                for(int g = 0; g < NGRIDS; g++){
+                    _erro = calculatePointIteration(i, k, g);
+                    erro = erro < _erro ? _erro : erro;
+                    }
+        iter++;
+        if (erro < MIN_ERRO && iter >= MIN_ITERATION)
+            break;
+    }
+    for (int g = 0; g < NGRIDS; g++){
+        grid[g]->updateSolver();
     }
 }
 
 void CSimuladorTemperatura::run_paralelismo_por_grid() {
     omp_set_num_threads(NGRIDS);
-    #pragma omp parallel
-    {
-        grid[omp_get_thread_num()]->startIteration();
-        solverByGrid(omp_get_thread_num());
+
+    int iter = 0;
+    double maior_erro = 0.0;
+    QVector<double> erros(NGRIDS);
+
+    for (int g = 0; g < NGRIDS; g++){
+        grid[g]->startIteration();
+    }
+
+    while (iter <= MAX_ITERATION) {
+        for (int g = 0; g < NGRIDS; g++){
+            grid[g]->updateIteration();
+            erros[g] = 0.0;
+        }
+        #pragma omp parallel
+        {
+             /// atualizo temp_nu para calcular o erro da iteracao
+            for (int i = 0; i < width; i++)
+                for (int k = 0; k < height; k++){
+                        int g = omp_get_thread_num();
+                        double _erro = calculatePointIteration(i, k, g);
+                        erros[g] = erros[g] < _erro ? _erro : erros[g];
+                        }
+        } // fim do paralelismo
+        iter++;
+
+        for (int i = 0; i < NGRIDS; i++)
+            maior_erro = maior_erro < erros[i] ? erros[i] : maior_erro;
+
+        if (maior_erro < MIN_ERRO && iter >= MIN_ITERATION)
+            break;
+    }
+    for (int g = 0; g < NGRIDS; g++){
+        grid[g]->updateSolver();
     }
 }
 
 void CSimuladorTemperatura::run_paralelismo_total() {
-    for (int g=0;g<NGRIDS;g++)
+    omp_set_num_threads(MAX_THREADS);
+
+    int iter = 0;
+    double maior_erro = 0.0;
+    QVector<double> erros(MAX_THREADS);
+
+    for (int g = 0; g < NGRIDS; g++)
         grid[g]->startIteration();
 
-    omp_set_num_threads(MAX_THREADS);
-    #pragma omp parallel
-    {
-    solverByThread(omp_get_thread_num());
+    while (iter <= MAX_ITERATION) {
+        for (int g = 0; g < NGRIDS; g++){
+            grid[g]->updateIteration();
+            erros[g] = 0.0;
+        }
+        #pragma omp parallel
+        {
+            int x, y;
+            double _erro;
+            int thread_num = omp_get_thread_num();
+            for (int g = 0; g < NGRIDS; g++) {
+                for (int i = thread_num; i < grid[g]->getSize(); i+=MAX_THREADS) {
+                    x = i % grid[g]->getWidth();
+                    y = i / grid[g]->getWidth();
+
+                    (*grid[g])(x, y)->temp_nu = (*grid[g])(x, y)->temp_nup1;
+                    _erro = calculatePointIteration(x, y, g);
+                    erros[g] = erros[g] < _erro ? _erro : erros[g];
+                }
+            }
+        } // fim do paralelismo
+        iter++;
+
+        for (int i = 0; i < MAX_THREADS; i++)
+            maior_erro = maior_erro < erros[i] ? erros[i] : maior_erro;
+
+        if (maior_erro < MIN_ERRO && iter >= MIN_ITERATION)
+            break;
     }
     for (int g = 0; g < NGRIDS; g++)
         grid[g]->updateSolver();
-}
 
-void CSimuladorTemperatura::solverByGrid(int g) {
-    double erro, _erro;
-    int iter = 0;
-    while (iter <= MAX_ITERATION) {
-        erro = 0.0;
-        grid[g]->updateIteration(); /// atualizo temp_nu para calcular o erro da iteracao
-        for (int i = 0; i < grid[g]->getWidth(); i++)
-            for (int k = 0; k < grid[g]->getHeight(); k++)
-                calculatePointIteration(i, k, g);
-        _erro = grid[g]->maxErroIteration();
-        erro = erro < _erro ? _erro : erro;
-        iter++;
-        if (erro < MIN_ERRO && iter >= MIN_ITERATION)
-            break;
-    }
-    grid[g]->updateSolver();
-}
-
-void CSimuladorTemperatura::solverByThread(int thread_num) {
-    double erro, _erro;
-    int iter = 0;
-    int x, y;
-    do {
-        erro = 0.0;
-        for (int g = 0; g < NGRIDS; g++) {
-            for (int i = thread_num; i < grid[g]->getSize(); i+=MAX_THREADS) {
-                x = i % grid[g]->getWidth();
-                y = i / grid[g]->getWidth();
-
-                (*grid[g])(x, y)->temp_nu = (*grid[g])(x, y)->temp_nup1;
-                _erro = calculatePointIteration(x, y, g);
-                erro = erro < _erro ? _erro : erro;
-            }
-        }
-        iter++;
-        if (erro < MIN_ERRO && iter >= MIN_ITERATION)
-            break;
-    } while (iter < MAX_ITERATION);
-    std::cout<<"iteracoes: " << iter << " - erro: " << erro << std::endl;
 }
 
 double CSimuladorTemperatura::calculatePointIteration(int x, int y, int g) {
