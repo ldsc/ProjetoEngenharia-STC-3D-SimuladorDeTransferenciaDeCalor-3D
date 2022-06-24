@@ -65,9 +65,9 @@
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
-\biblio_style apalike
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -101,848 +101,9 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -2128146698 "nicholas"
-\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Definições de cores usadas; veja http://latexcolor.com/
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-definecolor{brown}{rgb}{0.59, 0.29, 0.0}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-definecolor{lightgray}{rgb}{0.8,0.8,0.8} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-definecolor{myred1}{rgb}{0.75,0.0,0} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-definecolor{myred2}{rgb}{0.9,0.0,0} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-definecolor{mygreen1}{rgb}{0,0.7,0} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-definecolor{mygreen2}{rgb}{0,0.9,0} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-definecolor{myblue1}{rgb}{0,0,0.7} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-definecolor{myblue2}{rgb}{0,0,0.9}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-definecolor{mygray1}{rgb}{0.5,0.5,0.5} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-definecolor{mygray2}{rgb}{0.7,0.7,0.7} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-definecolor{mymauve}{rgb}{0.58,0,0.82}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Definições de informações aplicadas a códigos de C++ embutidos
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstdefinestyle{C++}{
-\end_layout
-
-\begin_layout Plain Layout
-
-% tipo de bordas
-\end_layout
-
-\begin_layout Plain Layout
-
-frame=lines,
-\end_layout
-
-\begin_layout Plain Layout
-
-% tamanho da fonte e tipo de fonte
-\end_layout
-
-\begin_layout Plain Layout
-
-basicstyle=
-\backslash
-small
-\backslash
-ttfamily,
-\end_layout
-
-\begin_layout Plain Layout
-
-% linguagem
-\end_layout
-
-\begin_layout Plain Layout
-
-language=[ISO]C++,
-\end_layout
-
-\begin_layout Plain Layout
-
-% numeração
-\end_layout
-
-\begin_layout Plain Layout
-
-numbers=left, 
-\end_layout
-
-\begin_layout Plain Layout
-
-numberstyle=
-\backslash
-tiny, 
-\end_layout
-
-\begin_layout Plain Layout
-
-stepnumber=1, 
-\end_layout
-
-\begin_layout Plain Layout
-
-numbersep=1pt, 
-\end_layout
-
-\begin_layout Plain Layout
-
-firstnumber=1, 
-\end_layout
-
-\begin_layout Plain Layout
-
-% formatação
-\end_layout
-
-\begin_layout Plain Layout
-
-breakatwhitespace=false,
-\end_layout
-
-\begin_layout Plain Layout
-
-breaklines=true,
-\end_layout
-
-\begin_layout Plain Layout
-
-extendedchars=true,
-\end_layout
-
-\begin_layout Plain Layout
-
-% cores
-\end_layout
-
-\begin_layout Plain Layout
-
-backgroundcolor=
-\backslash
-color{white},
-\end_layout
-
-\begin_layout Plain Layout
-
-commentstyle=
-\backslash
-color{lightgray}, 
-\end_layout
-
-\begin_layout Plain Layout
-
-keywordstyle=
-\backslash
-color{blue},
-\end_layout
-
-\begin_layout Plain Layout
-
-morekeywords={*,...}, 
-\end_layout
-
-\begin_layout Plain Layout
-
-stringstyle=
-\backslash
-color{mygreen1},
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\begin_layout Plain Layout
-
-% Palavras chave BLUE
-\end_layout
-
-\begin_layout Plain Layout
-
-emph={ bool, char, char8_t, char16_t, char32_t, wchar_t,short, int, long,
- long long, float, double, long double, void, const, extern, mutable, register,
- signed, static, typedef, unsigned, volatile, using, typename, auto, constexpr,
- decltype, class, enum, struct, union, const_cast, dynamic_cast, reinterpret_cas
-t, static_cast, try, throw, catch, noexcept, delete, new, nullptr, static,
- const, friend, virtual, operator, namespace, sizeof, template, typename,
- concept, class,  delete, friend, explicit, this, typeid, private, protected,
- public, alignas, alignof, asm, concept, consteval, constexpr, constinit
- export, extern, inline, static_assert, requires, template, typename, mutable,
-  volatile, co_await, co_return, co_yield, atomic_cancel, atomic_commit,
- atomic_noexcept, import, module, synchronized,co_await, co_return, co_yield,
- reflexpr }, 
-\end_layout
-
-\begin_layout Plain Layout
-
-emphstyle={
-\backslash
-color{blue}},
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\begin_layout Plain Layout
-
-% Estruturas de controle e de repeticao RED
-\end_layout
-
-\begin_layout Plain Layout
-
-emph={[2] and, and_eq, bitand, bitor, compl, false, not, not_eq, or, or_eq,
- true, xor, xor_eq, break, case, continue, default, do, else, for, goto,
- if, return, switch, while  } ,
-\end_layout
-
-\begin_layout Plain Layout
-
-emphstyle={[2]
-\backslash
-color{red}},
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\begin_layout Plain Layout
-
-% Arquivos de inclusao mymauve (note que alguns poderao aparecer com outra
- cor, ocorre quando nome arquivo igual ao nome da classe)
-\end_layout
-
-\begin_layout Plain Layout
-
-emph={[3] algorithm , atomic ,backward ,bits ,bitset ,cassert ,ccomplex
- ,cctype ,cerrno ,cfenv ,cfloat ,chrono ,cinttypes ,ciso646 ,climits ,clocale
- ,cmath ,complex ,csetjmp ,csignal ,cstdalign ,cstdarg ,cstdbool ,cstddef
- ,cstdint ,cstdio ,cstdlib ,cstring ,ctgmath ,ctime ,cwchar ,cwctype ,debug
- ,decimal ,exception ,ext ,filesystem, fstream ,functional  ,initializer_list
- ,iomanip ,ios ,iosfwd ,iostream ,istream ,iterator ,limits ,locale ,numeric
- ,ostream ,profile ,random ,ratio ,regex ,scoped_allocator ,sstream ,stack
- ,stdexcept  ,streambuf ,system_error ,tr1 ,tr2 ,typeindex ,typeinfo ,type_trait
-s ,utility ,x86_64-redhat-linux ,complex } , 
-\end_layout
-
-\begin_layout Plain Layout
-
-emphstyle={[3]
-\backslash
-color{green}},
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\begin_layout Plain Layout
-
-% Strings VERDE2
-\end_layout
-
-\begin_layout Plain Layout
-
-emph={[4] string, string_view, wstring, u16string,u32string } ,
-\end_layout
-
-\begin_layout Plain Layout
-
-emphstyle={[4]
-\backslash
-color{mygreen2}
-\backslash
-bfseries},
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\begin_layout Plain Layout
-
-% Containers purple
-\end_layout
-
-\begin_layout Plain Layout
-
-emph={[5]  array, vector, deque, forward_list, list, set, multiset, map,
- multimap, unordered_set, unordered_multiset, unordered_map, unordered_multimap
- , pair, tuple, basic_string },
-\end_layout
-
-\begin_layout Plain Layout
-
-emphstyle={[5]
-\backslash
-color{brown}
-\backslash
-bfseries},
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\begin_layout Plain Layout
-
-%Algoritmos genericos VERMELHO2
-\end_layout
-
-\begin_layout Plain Layout
-
-emph={[6]  accumulate, find, max, adjacent_find, find_if, max_element, binary_se
-arch, min, count, find_first_of, for_each, min_element, count_if, includes,
- mismatch, equal, lexicographical_compare, nth_element, equal_range, lower_bound
-, mismatch, search, search_n, find_end, upper_bound, copy, remove_if, copy_backw
-ard, replace, fill, replace_copy, fill_n, replace_copy_if, generate, replace_if,
- generate_n, reverse, inplace_merge, reverse_copy, iter_swap, rotate,  make_heap
-, rotate_copy, merge, set_difference, nth_element, next_permutation, set_interse
-ction, set_symmetric_difference, partial_sort, set_union, partial_sort_copy,
- sort, partition, sort_heap, prev_permutation, stable_partition, push_heap,
- stable_sort, pop_heap, swap, random_shuffle, swap_ranges, remove, transform,
- unique, unique_copy, remove_copy, remove_copy_if, all_of, any_of, none_of,
- find_if_not, copy_if, copy_n, move, move_backward, suffle, is_partitioned,
- partition_copy, partition_point, is_sorted, is_sorted_until, is_heap, is_heap_u
-ntil, minmax, minmax_element, is_permutation, iota, uninitialized_copy_n,
- for_each_n, sample, clamp, reduce, exclusive_scan, inclusive_scan, transform_re
-duce, transform_exclusive_scan, transform_inclusive_scan, uninitialized_move,
- uninitialized_move_n, uninitialized_default_construct, uninitialized_default_co
-nstruct_n, uninitialized_value_construct, uninitialized_value_construct_n,
- destroy, destroy_at, destroy_n, shift_left, shift_right, compare_3way,
- lexicographical_compare_3way } ,
-\end_layout
-
-\begin_layout Plain Layout
-
-emphstyle={[6]
-\backslash
-color{olive}},
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\begin_layout Plain Layout
-
-% Processamento Paralelo Orange/laranja
-\end_layout
-
-\begin_layout Plain Layout
-
-emph={[7] thread, yield, get_id, sleep_for, sleep_until, thread_local, memory,
- mutex, parallel, mutex, timed_mutex, recursive_mutex, shared_mutex, shared_time
-d_mutex, lock_guard, scoped_lock, unique_lock, shared_lock, defer_lock_t,
- try_to_lock_t, adopt_lock_t, try_lock, lock, once_flag, call_once, condition_va
-riable, condition_variable_any, notify_all_at_thread_exit, cv_status, promise,
- packaged_task, future, shared_future, async, launch, future_status, future_erro
-r, future_category, future_errc, hardware_destructive_interference_size,
- hardware_constructive_interference_size  } ,
-\end_layout
-
-\begin_layout Plain Layout
-
-emphstyle={[7]
-\backslash
-color{mymauve}},
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-O style=iC++ é o C++ sem numeração; pode colocar outra cor de fundo
-\end_layout
-
-\begin_layout Plain Layout
-white
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstdefinestyle{iC++}{ style=C++,
-\end_layout
-
-\begin_layout Plain Layout
-
-numbers=none, 
-\end_layout
-
-\begin_layout Plain Layout
-
-backgroundcolor=
-\backslash
-color{white},
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Define estilo de saida gerada por programa executado
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstdefinestyle{out} {frame=lines,numbers=none, caption=, language=, breaklines=t
-rue, backgroundcolor=
-\backslash
-color{azulclaro}, extendedchars=true, basicstyle=
-\backslash
-footnotesize
-\backslash
-ttfamily}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Define estilo de saida gerada por programa executado em itálico
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstdefinestyle{italico} {frame=lines,numbers=none, caption=, language=,
- breaklines=true, backgroundcolor=
-\backslash
-color[rgb]{1,.87,0}, extendedchars=true, basicstyle=
-\backslash
-footnotesize
-\backslash
-ttfamily}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Define estilo de saida para listagens/scripts do Gnuplot
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstdefinestyle{Gnuplot} {caption=,language=Gnuplot,breaklines=true,backgroundcol
-or=
-\backslash
-color{azulclaro},extendedchars=true,basicstyle=
-\backslash
-footnotesize
-\backslash
-ttfamily}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Define estilo de saida para saída de comandos do terminal (em itálico)
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstdefinestyle{Bash} {caption=,language=bash,numbers=none,breaklines=true,backgr
-oundcolor=
-\backslash
-color[rgb]{1,.87,0},extendedchars=true,basicstyle=
-\backslash
-footnotesize
-\backslash
-ttfamily}
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstdefinestyle{bash} {caption=,language=bash,numbers=none,breaklines=true,backgr
-oundcolor=
-\backslash
-color[rgb]{1,.87,0},extendedchars=true,basicstyle=
-\backslash
-footnotesize
-\backslash
-ttfamily}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Define estilo de saida para arquivos Makefile
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstdefinestyle{make} {caption=,language=make,breaklines=true,backgroundcolor=
-\backslash
-color{azulclaro},extendedchars=true,basicstyle=
-\backslash
-footnotesize
-\backslash
-ttfamily}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Capa
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{empty} 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE
-\begin_inset Newline newline
-\end_inset
-
-LABORATÓRIO DE ENGENHARIA E EXPLORAÇÃO DE PETRÓLEO
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-O título deve ser o mais claro possível, não deixando dúvidas sobre o assunto
- em questão.
- O uso de vírgula ou dois pontos pode deixar o título com mais impacto.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 5cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-SIMULADOR DE DIFUSÃO TÉRMICA 3D
-\begin_inset Newline newline
-\end_inset
-
-TRABALHO DE CONCLUSÃO DE CURSO
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 5cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-Versão 1:
-\begin_inset Newline newline
-\end_inset
-
-Nicholas de Almeida Pinto
-\begin_inset Newline newline
-\end_inset
-
-André Duarte Bueno
-\begin_inset Newline newline
-\end_inset
-
-Guilherme Rodrigues Lima
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 5cm
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-o valor de 4cm pode ser alterado, para que a distribuição fique mais uniforme
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-MACAÉ - RJ
-\begin_inset Newline newline
-\end_inset
-
-Abril - 2022
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
-
-\end_inset
-
-
-\end_layout
 
 \begin_layout Chapter
 Introdução
@@ -965,19 +126,36 @@ status open
 \backslash
 lhead{
 \backslash
-thechapter
-\backslash
-space - Introdução}
-\backslash
 pagenumbering{arabic}
+\backslash
+chead{} 
+\backslash
+rhead{}}
 \end_layout
 
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+lhead{
+\backslash
+thechapter
+\backslash
+space - Introdução}
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -997,8 +175,23 @@ today}
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Escopo do problema
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Escopo do problema
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Escopo-do-Problema"
@@ -1009,25 +202,53 @@ name "sec:Escopo-do-Problema"
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1649763011
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
+Nicholas
+\end_layout
 
-\change_inserted 1908091853 1649763046
-1- fale do macro problema da transferência de calor, da sua aplicação nas
- engenharias e depois exemplos aplicados a petróleo
-\change_unchanged
+\begin_layout Plain Layout
+fiz uma reorganização na ordem do que você tinha colocado;
+\end_layout
 
+\begin_layout Plain Layout
+e adicionei informações das disciplinas extraídas do sistema academico e
+ imagem da grade parte corelacionada a transcal~.
 \end_layout
 
 \end_inset
 
 
-\change_unchanged
-Transferência de calor é uma das principais áreas da física
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+1- fale do macro problema da transferência de calor, da sua aplicação nas
+ engenharias e depois exemplos aplicados a petróleo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+IMPORTÂNCIA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Transferência de calor é uma das principais áreas da Física 
 \begin_inset Foot
 status open
 
@@ -1044,13 +265,16 @@ target "http://lattes.cnpq.br/documents/11871/24930/TabeladeAreasdoConhecimento.
 
 \end_inset
 
-.
- Seu comportamento foi especulado desde os primeiros filósofos, com a grande
- ascensão no período de 1600 e 1800, posteriomente, dominado.
- Contou com a contribuição científica de diversos grandes nomes da física,
- como Newton e Fourier
+ e da Engenharia.
+ Seu comportamento foi especulado desde os primeiros filósofos.
+ Aristóteles formula a teoria da matéria ser constituída por quatro elementos:
+ o ar, a água, a terra e o fogo.
+ Os estudos de transferência de calor tiveram grande ascensão no período
+ de 1600 e 1800, sendo, posteriormente, dominados.
+ Estes estudos contaram com a contribuição científica de diversos grandes
+ nomes da física, como Newton e Fourier 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Fourier1822"
 literal "false"
 
@@ -1060,126 +284,147 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Qualquer definição de engenharia irá falar da transformação dos materiais
- usando energia.
- É por isso que todos os cursos de engenharia incluem, entre as suas disciplinas
- obrigatórias, as disciplinas de materiais, transferência de calor, algoritmos/p
-rogramação e cálculo numérico.
- São disciplinas necessárias para garantir os conhecimentos mínimos necessários
- para lidar com o desenvolvimento de novos produtos.
-\end_layout
-
-\begin_layout Standard
-O conhecimento dos fenômenos da transferência de calor é fundamental na
- indústria do petróleo, seja na etapa de exploração ou na etapa de produção.
-
-\change_deleted -2128146698 1649858312
- 
-\change_inserted 1908091853 1649761815
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted 1908091853 1649761948
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
+Qualquer definição de engenharia irá falar da transformação dos materiais
+ usando energia.
+\end_layout
 
-\change_inserted 1908091853 1649762006
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+"Aplicação da ciência e matemática através da qual as propriedades da matéria
+ e as fontes de energia são tornadas úteis às pessoas (Dic.
+ Merriam-Webster, 2001)."
+\end_layout
+
+\begin_layout Standard
+É por isso que todos os cursos de engenharia incluem, no seu ciclo básico,
+ um conjunto de disciplinas de matemática, física e química que possibilitam
+ o entendimento dos problemas associados a temperatura, o efeito da temperatura
+ nos materiais e nos fenômenos estudados.
+ Entre as suas disciplinas obrigatórias, podemos citar as disciplinas de
+ materiais, física, termodinâmica
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+opcional em alguns cursos de engenharia
+\end_layout
+
+\end_inset
+
+, transferência de calor, algoritmos/programação e cálculo numérico.
+ São disciplinas necessárias para garantir os conhecimentos mínimos para
+ lidar com o desenvolvimento de novos produtos.
+\end_layout
+
+\begin_layout Standard
+Muitos destes conceitos são apresentados para casos simplificados, unidimensiona
+is e para funções bem comportadas.
+ Isto permite ao aluno encontrar as soluções, plotar gráficos e analisar
+ o comportamento dos sistemas em estudo.
+\end_layout
+
+\begin_layout Standard
+Na prática, soluções analíticas para a condução de calor em regime transiente
+ são obtidas para casos unidimensionais, com condições de contorno e iniciais
+ bem definidas, e com propriedades dos materiais constantes.
+\end_layout
+
+\begin_layout Standard
+Para resolver problemas com objetos em duas ou três dimensões com geometria
+ complexa e em regime transiente é necessário, na maior parte dos casos,
+ a utilização da modelagem numérica computacional.
+ A mesma demanda conhecimentos associados ao cálculo numérico, algoritmos,
+ modelagem computacional e desenvolvimento de software.
+ Por isso os cursos de engenharia incluem também disciplinas vinculadas
+ às ciências da computação.
+\end_layout
+
+\begin_layout Standard
+Na indústria do petróleo os conhecimentos dos fenômenos da transferência
+ de calor são fundamentais , seja na etapa de exploração ou na etapa de
+ produção.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Nicholas, porque não coloca aqui um beve histórico da geração do petróleo
  dizendo que o tipo de petróleo depende das transferências de calor envolvidas,
  temperaturas na geração.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762017
 A seguir fala da maturação em diferentes temperaturas;
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762044
 Depois fala que na perfuração uma broca em atrito com a rocha vai gerar
  muito calor e que o fluido de perfuração é usado para resfriar a broca;
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762067
 Que o processo de cimentação envolve reações químicas que geram calor.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762126
 Que o óleo encontrado no reservatório esta a uma temperatura diferente e
  que seu escoamento gera mecanismos de transferência de calor na coluna
  de produção.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762162
 QUe o óleo chega na plataforma sobre condições de temperatura diferentes,
  que vai passar por processos de separação.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762201
 Que o óleo será bombeado, escoado até um navio plataforma ou unidade e que
  isto envolve mecanismos de transferência de calor.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762260
 QUe os equipamentos de uma plataforma, como bombas, geram calor e irão precisar
  de mecanismos de resfriamento, como dissipadores.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762300
 Que reservatórios maduros perdem sua capacidade de produzir óleo e passam
  a ser usados mecanismos de recuperação avançada, incluindo métodos térmicos,
  combustão in situ.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762375
 depois eu vi que colocou alguns destes exemplos abaixo, acho que fica melhor
  se ordenar desta forma temporal, da geração do óleo, a perguração do poço,
  completação, produção, estimulação, eor.
- 
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649762462
 Poderia colocar uma figura subdividida em 4 ítens que envolvem transferência
  de calor.
  Ex: um poço, uma tubulação, um trocador de calor, ..Dai neste texto você
  cita a figura.
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 Na exploração é buscado um óleo maturado sob temperaturas entre 65ºC e 165ºC,
  pois acima de 180ºC, é propiciado a formação de gases leves, e acima de
  210ºC, a formação de grafite, 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Thomas2004"
-literal "false"
+literal "true"
 
 \end_inset
 
@@ -1208,13 +453,13 @@ Na produção, são utilizados trocadores de calor nas plataformas para auxiliar
 Na engenharia de reservatórios, é utilizado vapor de água para aquecer o
  petróleo no reservatório como método de recuperação avançada 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Rosa2006"
-literal "false"
+literal "true"
 
 \end_inset
 
-, com o objetivo de diminuir a viscosidade do óleo, e facilitar seu escoamento.
+, com o objetivo de diminuir a viscosidade do óleo e facilitar seu escoamento.
 \end_layout
 
 \begin_layout Standard
@@ -1224,8 +469,32 @@ Desta forma, torna-se clara a importância do estudo da condução ou difusão
 \end_layout
 
 \begin_layout Standard
+Conforme a complexidade do problema for evoluindo, os cálculos exigem cada
+ vez mais poder de processamento dos computadores, os quais, atualmente,
+ possuem diversos núcleos lógicos capazes de resolverem cálculos independentemen
+te, acelerando as simulações.
+ Para permitir as divisões das tarefas para os processadores, é utilizada
+ uma linguagem de programação com capacidade de programação paralela ou
+ concorrente.
 \begin_inset Note Note
 status open
+
+\begin_layout Plain Layout
+threads são mecanismos de alto nível; classes prontas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ENSINO
+\end_layout
 
 \begin_layout Plain Layout
 2.
@@ -1246,137 +515,43 @@ A seguir, precisa explicar que para problemas práticos de engenharia é normal
 
 \end_inset
 
-Os cursos de engenharia incluem no seu ciclo básico um conjunto de disciplinas
- de matemática, física e química que possibilitam o entendimento básico
- dos problemas associados a temperatura.
- O efeito da temperatura nos materiais e nos fenômenos estudados.
- Muitos destes conceitos são apresentados para casos simplificados, unidimension
-ais e para funções bem comportadas.
- Isto permite ao aluno encontrar as soluções, plotar gráficos e análisar
- o comportamento dos sistemas em estudo.
-\end_layout
 
-\begin_layout Itemize
-Matemática:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Disciplina Cálculo I: a análise de gráficos da temperatura com o tempo,
- permite a classificação do regime como transiente, permanente, infinito,
- etc.
-\end_layout
-
-\begin_layout Itemize
-Disciplina Cálculo II: são utilizadas equações diferenciais para descrever
- a transferência e conservação de energia.
-\end_layout
-
-\begin_layout Itemize
-Disciplina Cálculo III: transformadas de Fourier podem ser utilizadas para
- obter uma solução da equação geral.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Física
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Disciplina Física I: em um parágrafo cite o que usa em Transferência de
- calor
-\end_layout
-
-\begin_layout Itemize
-Disciplina Física II: em um parágrafo cite o que usa em Transferência de
- calor
-\end_layout
-
-\begin_layout Itemize
-Disciplina Física III: em um parágrafo cite o que usa em Transferência de
- calor
-\end_layout
-
-\begin_layout Itemize
-Disciplina Termodinâmica:
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-Na prática, soluções analíticas para a condução de calor em regime transiente
- são obtidas para casos unidimensionais, com condições de contorno e iniciais
- bem definidas, e com propriedades dos materiais constantes.
 \end_layout
 
 \begin_layout Standard
-Para resolver problemas com objetos em duas ou três dimensões e com geometriz
- complexa, em regime transiente é necessário, na maior parte dos casos,
- a utilização da modelagem numérica computacional.
-\end_layout
-
-\begin_layout Standard
-Conforme a complexidade do problema for evoluindo, a modelagem numérica
- exige cada vez mais poder de processamento dos computadores, os quais,
- atualmente, possuem diversos núcleos lógicos capazes de resolverem cálculos
- numéricos independentemente, acelerando as simulações.
-\end_layout
-
-\begin_layout Standard
-Para permitir as divisões das tarefas para os processadores, é utilizada
- uma linguagem de programação de baixo nível, com comandos mais próximos
- da linguagem da máquina.
-\end_layout
-
-\begin_layout Itemize
-Modelagem numérica computacional
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Disciplina Cálculo numérico: utilização de métodos iterativos para aproximar
- as soluções das equações matriciais, tornando desnecessário os processos
- de inversão de matriz, e multiplicação de matriz, etapas normais para o
- método BTCS.
+Neste trabalho foi utilizado o método BTCS (
+\shape italic
+Backward Time, Centered Space
+\shape default
+) para modelar a Equação do Calor.
+ Para resolver o sistema implícito, foi utilizado o método iterativo de
+ Gauss-Jacobi, e com condições de contorno de Neumann.
+ A partir disto, foi a Neste trabalho utilizaremos métodos de interpolação,
+ solução de matrizes.
+ Métodos iterativos para aproximar as soluções das equações matriciais,
+ tornando desnecessário os processos de inversão de matriz e multiplicação
+ de matriz, etapas normais para o método BTCS (
+\shape italic
+Backward Time, Centered Space
+\shape default
+).
  Em especial no simulador desenvolvido, como é permitido objetos com formas
  genéricas, seria impossível resolver o problema por inversão de matriz,
  pois grandes regiões da matriz teriam valores nulos, consequentemente,
  seus determinantes seriam zero e impossível de inverter.
 \end_layout
 
-\begin_layout Itemize
-Disciplina Fundamentos de Ciências da Computação: utilização de lógicas
- e algoritmos para acelerar as soluções das simulações.
-\end_layout
-
-\begin_layout Itemize
-Disciplina Programação Orientada a Objeto com C++: por meio do paradigma
- orientado ao objeto com C++, é possível dividir cada atividade do 
-\shape italic
-software
-\shape default
- em classes, auxiliando na organização e suporte, e diminuindo a complexidade
- de implementação.
-\end_layout
-
-\begin_layout Itemize
-Disciplina Programação Prática - Projeto de Engenharia: em um parágrafo
- cite o que usa em Transferência de calor
-\end_layout
-
-\begin_layout Itemize
-Disciplina optativa Processamento Paralelo: divisão dos cálculos da modelagem
- em operações que podem ser resolvidas independentemente e separadamente,
- e direcionar cada operação para um núcleo do processador, este processo
- é chamado de 
+\begin_layout Standard
+Disciplina optativa Programação Paralela e Concorrente I, divisão dos cálculos
+ da modelagem em operações que podem ser resolvidas independentemente e
+ separadamente, e direcionar cada operação para um núcleo do processador,
+ este processo é chamado de 
 \shape italic
 multithreading,
 \shape default
  e que acelera em muitas vezes a velocidade das simulações.
- 
 \end_layout
 
-\end_deeper
 \begin_layout Standard
 Por fim, o ensino de engenharia pode ser aperfeiçoado com a utilização de
  
@@ -1385,30 +560,32 @@ softwares
 \shape default
  livres, que abordem álgebra, modelagem numérica, programação orientada
  ao objeto, além do problema físico em si.
-\change_inserted 1908091853 1649764326
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649764371
 deixe mais claro que o objetivo é desenvolver um simulador computacional
  a ser usado no ensino de conceitos de transferência de calor por condução
  em engenharia com aplicações em engenharia de petróleo
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
 Objetivos
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Objetivos
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Objetivos"
@@ -1419,7 +596,7 @@ name "sec:Objetivos"
 \end_layout
 
 \begin_layout Standard
-O objetivo deste projeto de engenharia é desenvolver um programa educacional
+O objetivo deste projeto de engenharia foi desenvolver um programa educacional
  que simula o processo de condução tridimensional de calor, no regime transiente
 , utilizando métodos numéricos, programação orientada ao objeto com a linguagem
  C++, mecanismos de paralelismos e 
@@ -1430,12 +607,12 @@ multithreading,
 \end_layout
 
 \begin_layout Standard
-A finalidade deste projeto de engenharia é desenvolver um 
+A finalidade deste projeto de engenharia foi desenvolver um 
 \shape italic
 software
 \shape default
  capaz de resolver problemas de condução de calor em objetos 3D, constituídos
- por por qualquer materiais com condutividade térmica dependente da temperatura.
+ por qualquer materiais com condutividade térmica dependente da temperatura.
  O software terá interface de usuário amigável e renderização 3D, permitindo
  a visualização do problema.
 \end_layout
@@ -1445,7 +622,7 @@ Os principais tópicos envolvidos neste projeto são o desenvolvimento de:
 \end_layout
 
 \begin_layout Itemize
-Banco de dados de propriedades térmicas: A partir da literatura, definir
+Banco de dados de propriedades termofísicas: a partir da literatura, definir
  padrões para as curvas de propriedades térmicas em função da temperatura
  e então montar uma estrutura de diretórios com propriedades de materiais
  conhecidos, normalmente utilizados em engenharia de petróleo.
@@ -1469,72 +646,54 @@ software
 \end_layout
 
 \begin_layout Itemize
-Transferência de calor: entender as equações físicas, como o calor é propagado
- em objetos com diversos formas e composto de diferentes materiais, com
+Transferência de calor: entender as equações físicas, como o calor é transferido
+ em objetos com diversos formatos e composto por diferentes materiais, com
  propriedades termofísicas dependentes da temperatura.
  
-\change_inserted 1908091853 1649764094
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649764166
 Fale das possíveis aplicações, tipos de condições iniciais e condições de
  contorno
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
 \begin_layout Itemize
 Modelagem numérica: solução da equação diferencial da condução ou difusão
- de calor por meio de diferenças finitas, com o método implícito BTCS (
-\shape italic
-Backward Time, Centered Space
-\shape default
-), e com condições de contorno de Neumann que podem ser aplicadas em todo
- o sistema, permitindo geometrias 3D complexas.
+ de calor por meio de diferenças finitas, com o método implícito BTCS, e
+ com condições de contorno de Neumann que podem ser aplicadas em todo o
+ sistema, permitindo geometrias 3D complexas.
  Além disso, devido à complexidade de encontrar uma solução utilizando sistemas
  matriciais, é utilizado um método iterativo para obter o resultado aproximado
  do problema.
  Por meio da utilização e combinação dessas ferramentas, é possível resolver
- qualquer problema de condução de calor, especialmente a solução simultanea
- de casos isolados, e objetos com grandes regiões vazias.
-\change_inserted 1908091853 1649764179
-
+ qualquer problema de condução de calor, especialmente a solução simultânea
+ de casos isolados, e objetos com grandes regiões vazias (como porcas ou
+ tubos).
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1649764225
 O uso destas ferramentas BTCS e Neumann permite aplicações como...
  importante deixar claro o que pode resolver e o que não vai resolver
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Itemize
 Programação em C++: por meio da orientação o objeto em C++, o problema pode
- ser dividido em classes, paradigma este que melhora o controle e organização
+ ser dividido em classes, paradigma este que melhorou o controle e organização
  do das etapas de desenvolvimento do software, além de facilitar futuras
  adaptações e incrementos no simulador.
- Além disso, essa linguagem possui bibliotecas que auxiliam a utilização
+ Além disto, esta linguagem possui bibliotecas que auxiliam a utilização
  de paralelismos e 
 \shape italic
 multithreading.
@@ -1546,6 +705,119 @@ Interface do usuário: com integração total ao simulador, a interface gráfica
  simulação.
  E com a implementação de renderização 3D, é possível visualizar o objeto
  por diferentes ângulos.
+\end_layout
+
+\begin_layout Section
+Metodologia utilizada
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Metodologia utilizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O software a ser desenvolvido utiliza a metodologia de engenharia de software
+ apresentada pelo Prof.
+ André Bueno na disciplina de programação e ilustrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Etapas para o desenvolvimento do software"
+
+\end_inset
+
+.
+ Note que o 
+\begin_inset Quotes eld
+\end_inset
+
+Ciclo de Concepção e Análise
+\begin_inset Quotes erd
+\end_inset
+
+ é composto por diversas partes representadas neste trabalho em diferentes
+ capítulos.
+ Os 
+\begin_inset Quotes eld
+\end_inset
+
+Ciclos de Planejamento/Detalhamento
+\begin_inset Quotes erd
+\end_inset
+
+ e 
+\begin_inset Quotes eld
+\end_inset
+
+Ciclo Construção
+\begin_inset Quotes erd
+\end_inset
+
+, envolvem a construção das diferentes versões do software e serão brevemente
+ descritos no capítulo de Projeto.
+\end_layout
+
+\begin_layout Standard
+Esta metodologia é utilizada nas disciplinas:
+\end_layout
+
+\begin_layout Itemize
+LEP01447 : Programação Orientada a Objeto em C++
+\end_layout
+
+\begin_layout Itemize
+LEP01446 : Programação Prática
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/EngenhariaSoftware-Geral.png
+	lyxscale 25
+	width 100text%
+	height 85theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Etapas para o desenvolvimento do software
+\shape italic
+ - projeto de engenharia
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Etapas para o desenvolvimento do software"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

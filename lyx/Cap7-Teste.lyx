@@ -112,7 +112,7 @@
 \begin_body
 
 \begin_layout Chapter
-Teste
+Resultados
 \begin_inset Index idx
 status open
 
@@ -125,7 +125,7 @@ Teste
 
 \begin_inset CommandInset label
 LatexCommand label
-name "chap:Teste"
+name "chap:Resultados"
 
 \end_inset
 
@@ -318,22 +318,11 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/validacao_temperaturas.png
-	lyxscale 70
-	scale 80
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Aplicação do problema unidimensional no simulador.
- (a) é no tempo inicial e (b) depois de 100 segundos
+Aplicação do problema unidimensional no simulador: (a) tempo inicial e (b)
+ após 100 segundos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Aplicação-do-problema-unidimensional"
@@ -346,6 +335,19 @@ name "fig:Aplicação-do-problema-unidimensional"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/validacao_temperaturas.png
+	lyxscale 70
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -936,17 +938,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/validacao.png
-	lyxscale 110
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -963,6 +954,19 @@ name "fig:Comparação da solução da equação de calor com o resultado do sim
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/validacao.png
+	lyxscale 110
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -1116,7 +1120,7 @@ k
 
 \begin_layout Standard
 O erro do simulador foi de 0.69% para 50,0 segundos, e 0,88% para 100,0 segundos.
- O mínimo de iteração para cada variação de tempo foi de 800 iterações.
+ O mínimo de iteração para cada mudança de tempo foi de 800 iterações.
 \end_layout
 
 \begin_layout Standard
@@ -1217,7 +1221,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tabela com propriedades termofísicas 
+Tabela com propriedades termofísicas do arenito e da água 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Tabela-com-propriedades-injecao-1"
@@ -1378,11 +1382,18 @@ Arenito
 
 \begin_layout Standard
 Como o simulador não consegue tratar mistura de materiais, será utilizado
- o desenvolvimento utilizado pelo trabalho do Guilherme, considerando porosidade
- de 0,20.
+ o desenvolvimento utilizado por 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lima2020"
+literal "true"
+
+\end_inset
+
+, considerando porosidade de 0,20.
  Como não é apresentado uma equação para calcular densidade e a capacidade
  térmica da mistura isoladamente, será utilizado o mesmo modelo para a condutivi
-dade térmica ( Eq.
+dade térmica (Eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1580,21 +1591,11 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/modelo_guilherme.png
-	lyxscale 120
-	scale 120
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultados da simulação com renderização 3D
+Resultados da simulação com renderização 3D: (a) tempo inicial, (b) após
+ 1 hora e (c) a renderização 3D
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-guilherme"
@@ -1607,6 +1608,19 @@ name "fig:resultado-modelo-guilherme"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/modelo_guilherme.png
+	lyxscale 120
+	scale 120
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -1648,19 +1662,12 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/modelo_guilherme_graficos.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Gráficos da simulação para o tempo de 3.600 segundos
+Gráficos da simulação para o tempo de 1 hora definidos pelo ponto de estudo:
+ (a) é a temperatura ao longo do tempo, (b) é a temperatura ao longo da
+ horizontal e (c) a temperatura ao longo da vertical
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-guilherme-1"
@@ -1673,6 +1680,17 @@ name "fig:resultado-modelo-guilherme-1"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/modelo_guilherme_graficos.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -1766,17 +1784,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/five_spot_1.png
-	lyxscale 110
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1784,7 +1791,7 @@ Resultados da simulação do primeiro modelo
 \shape italic
 five-spot
 \shape default
- após 3.600 segundos
+ após 1 hora: (a) tempo inicial e (b) após 1 hora
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-five-spot-1"
@@ -1797,6 +1804,19 @@ name "fig:resultado-modelo-five-spot-1"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/five_spot_1.png
+	lyxscale 110
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -1830,16 +1850,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/five_spot_graficos_1.png
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1847,7 +1857,8 @@ Gráficos da simulação do primeiro modelo
 \shape italic
 five-spot
 \shape default
-
+: (a) temperatura ao longo da horizontal de estudo, e (b) a temperatura
+ ao longo da vertical
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-five-spot-graficos-1"
@@ -1860,6 +1871,18 @@ name "fig:resultado-modelo-five-spot-graficos-1"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/five_spot_graficos_1.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -1893,7 +1916,7 @@ com o poço central produtor.
 Como é um sistema isolado, com fonte e sumidouro, após um longo período
  de tempo, é atingido regime permanente, onde a temperatura atingirá um
  equilíbrio, e não varia com o tempo.
- Na simulação, foi alcançado um regime próximo ao permanente, no temop 460.800
+ Na simulação, foi alcançado um regime próximo ao permanente, no tempo 460.800
  segundos, ou 128 horas.
 \end_layout
 
@@ -1921,17 +1944,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/five_spot_2.png
-	lyxscale 110
-	width 80text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1939,7 +1951,8 @@ Resultados da simulação do segundo modelo
 \shape italic
 five-spot
 \shape default
- após 460.800 segundos
+ após 128 horas: (a) tempo inicial, (b) após 128 horas e (c) renderização
+ 3D
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-five-spot-2"
@@ -1952,6 +1965,19 @@ name "fig:resultado-modelo-five-spot-2"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/five_spot_2.png
+	lyxscale 110
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -1988,16 +2014,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/five_spot_graficos_2b.png
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2005,7 +2021,8 @@ Gráficos da simulação do segundo modelo
 \shape italic
 five-spot
 \shape default
-
+: (a) temperatura ao longo da horizontal, (b) ao longo da vertical e (c)
+ ao longo do tempo
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-five-spot-graficos-2"
@@ -2018,6 +2035,18 @@ name "fig:resultado-modelo-five-spot-graficos-2"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/five_spot_graficos_2b.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -2310,9 +2339,9 @@ k
 \end_layout
 
 \begin_layout Standard
-Esse caso pode ser interpretado como uma fotografia da região próxima ao
- poço, sobre um poço com temperatura elevada que busca aquecer o reservatório,
- diminuindo assim a viscosidade do óleo e facilitando sua produção.
+Esse caso pode ser interpretado como um poço com temperatura elevada que
+ busca aquecer o reservatório, diminuindo assim a viscosidade do óleo e
+ facilitando sua produção.
 \end_layout
 
 \begin_layout Standard
@@ -2324,21 +2353,11 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/reservatorio_modelo2.PNG
-	lyxscale 80
-	width 95text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Modelo 1 de injeção térmica em reservatório
+Modelo 1 de injeção térmica em reservatório: esquerda mostra a distribuição
+ dos materiais, e a direita mostra a temperatura
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Teste_reservatorio_sem_agua"
@@ -2351,6 +2370,19 @@ name "fig:Teste_reservatorio_sem_agua"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/reservatorio_modelo2.PNG
+	lyxscale 80
+	width 95text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -2393,17 +2425,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/reservatorio_modelo2_resultado.PNG
-	lyxscale 80
-	width 95text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2420,6 +2441,19 @@ name "fig:Teste_reservatorio_sem_agua-2"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/reservatorio_modelo2_resultado.PNG
+	lyxscale 80
+	width 95text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -2460,17 +2494,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/reservatorio_modelo2_graficos.PNG
-	lyxscale 50
-	width 85text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2487,6 +2510,19 @@ name "fig:Teste_reservatorio_sem_agua-3"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/reservatorio_modelo2_graficos.PNG
+	lyxscale 50
+	width 85text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -2546,17 +2582,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/reservatorio_t0.PNG
-	lyxscale 105
-	width 95text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2575,6 +2600,19 @@ name "fig:injecao-termica-com-agua-1"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/reservatorio_t0.PNG
+	lyxscale 105
+	width 95text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -2610,17 +2648,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/reservatorio_t610.PNG
-	lyxscale 105
-	width 95text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2638,6 +2665,19 @@ name "fig:injecao-termica-com-agua-2"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/reservatorio_t610.PNG
+	lyxscale 105
+	width 95text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -2671,17 +2711,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/reservatorio_tfinal.PNG
-	lyxscale 85
-	width 95text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2698,6 +2727,19 @@ name "fig:injecao-termica-com-agua-3"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/reservatorio_tfinal.PNG
+	lyxscale 85
+	width 95text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -2727,17 +2769,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/reservatorio_tfinal_graficos.PNG
-	lyxscale 85
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2754,6 +2785,19 @@ name "fig:injecao-termica-com-agua-graficos"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/reservatorio_tfinal_graficos.PNG
+	lyxscale 85
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -2857,17 +2901,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/notebook.jpeg
-	lyxscale 40
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2892,6 +2925,19 @@ name "fig:Teste_notebook"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/notebook.jpeg
+	lyxscale 40
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -3067,17 +3113,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/resultado_temp_notebook.PNG
-	lyxscale 50
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -3095,6 +3130,19 @@ name "fig:Teste_notebook2"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/resultado_temp_notebook.PNG
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -3124,17 +3172,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/teste_graficos_notebook.PNG
-	lyxscale 50
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -3159,6 +3196,19 @@ name "fig:Teste_notebook3"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/teste_graficos_notebook.PNG
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset

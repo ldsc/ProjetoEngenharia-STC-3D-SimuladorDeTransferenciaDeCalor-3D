@@ -265,16 +265,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/doxygen.PNG
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -293,6 +283,18 @@ name "fig:Logo-e-documentação"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/doxygen.PNG
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -324,16 +326,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/doxygen_classe.PNG
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -352,6 +344,18 @@ name "fig:Logo-e-documentação-2"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/doxygen_classe.PNG
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset

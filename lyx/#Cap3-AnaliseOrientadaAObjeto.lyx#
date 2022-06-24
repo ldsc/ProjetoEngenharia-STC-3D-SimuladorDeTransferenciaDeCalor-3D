@@ -93,6 +93,10 @@
 \begin_body
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -103,6 +107,11 @@ status open
 lhead{
 \backslash
 thechapter - Análise Orientada a Objeto}  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -132,21 +141,31 @@ name "sec:AOO"
 \end_layout
 
 \begin_layout Standard
-Neste capítulo serão apresentados os objetos desenvolvidos no projeto, suas
+Neste capítulo são apresentados os objetos desenvolvidos no projeto, suas
  relações, atributos e métodos.
- Depois de uma breve explicação sobre cada objeto, serão apresentados diagramas
- UML (Linguagem de Modelagem Unificada), para auxiliar no entendimento do
+ Depois de uma breve explicação sobre cada objeto, são apresentados os diagramas
+ UML (Linguagem de Modelagem Unificada)0 para auxiliar no entendimento do
  
 \shape italic
 software
 \shape default
  e suas relações.
- Serão apresentados os diagramas de classes, de sequência, de comunidação,
+ Serão apresentados os diagramas de classes, de sequência, de comunicação,
  de máquina de estado e de atividades.
 \end_layout
 
 \begin_layout Section
 Dicionário das classes
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Dicionário das classes
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -163,13 +182,13 @@ adas pelo professor André Duarte Bueno no curso de C++.
 \begin_layout Enumerate
 
 \series bold
-mainwindow.h:
+MainWindow:
 \series default
  Classe responsável pela janela principal.
  Consegue obter os valores adicionados pelo usuário e enviar para a classe
  do simulador.
- Permite ao usuário desenhar o objeto a ser simulado, setar suas propriedades,
- setar as propriedades numéricas e disparar a simulação.
+ Permite ao usuário desenhar o objeto a ser simulado, definir suas propriedades
+ termofísicas e numéricas, e disparar a simulação.
  Apresenta os resultados na medida em que os mesmos são realizados, possibilitan
 do parar a simulação para ver resultados parciais.
 \end_layout
@@ -177,7 +196,7 @@ do parar a simulação para ver resultados parciais.
 \begin_layout Enumerate
 
 \series bold
-CRender3D.h:
+CRender3D:
 \series default
  Classe responsável por apresentar o objeto em renderização 3D.
  É criada a partir da classe mainwindow.h e recebe valores do simulador.
@@ -187,7 +206,7 @@ CRender3D.h:
 \begin_layout Enumerate
 
 \series bold
-CSimuladorTemperatura.h:
+CSimuladorTemperatura:
 \series default
  Classe responsável por organizar as células do objeto a ser simulado e
  por resolver o sistema numérico do problema da difusão térmica.
@@ -196,20 +215,20 @@ CSimuladorTemperatura.h:
 \begin_layout Enumerate
 
 \series bold
-CGrid.h:
+CGrid:
 \series default
  Classe responsável por organizar as células do objeto em 
 \shape italic
 grids
 \shape default
 , importante para organizar as células e facilitar a utilização pela classe
- CSimuladorTemperatura.h.
+ CSimuladorTemperatura.
 \end_layout
 
 \begin_layout Enumerate
 
 \series bold
-CCell.h:
+CCell:
 \series default
  Classe responsável por armazenar informações da célula, se ela está ativa
  ou não, se é fonte de calor ou não, qual o tipo de material e qual sua
@@ -219,47 +238,48 @@ CCell.h:
 \begin_layout Enumerate
 
 \series bold
-CMaterial.h:
+CMaterial:
 \series default
  Classe virtual responsável por prover os valores das propriedades termofísicas
  dos materiais.
- É chamada pelo CSimuladorTemperatura.h e é sobrescrita por CMaterialCorrelacao.h
- ou CMaterialInterpolacao.h.
+ É chamada pelo CSimuladorTemperatura e é sobrescrita por CMaterialCorrelacao
+ ou CMaterialInterpolacao.
 \end_layout
 
 \begin_layout Enumerate
 
 \series bold
-CMaterialCorrelacao.h:
+CMaterialCorrelacao:
 \series default
- Classe responsável por calcular os valores das propriedades termofísicas
- como função da temperatura, a propriedade é determinada a partir de correlações
- lidas do disco.
+ Classe responsável por calcular os valores da condutividade térmica em
+ função da temperatura.
+ A propriedade é determinada a partir de correlações lidas do disco.
 \end_layout
 
 \begin_layout Enumerate
 
 \series bold
-CMaterialInterpolacao.h:
+CMaterialInterpolacao:
 \series default
- Classe responsável por calcular os valores das propriedades termofísicas
- como função da temperatura, a propriedade é determinada utilizando método
- de interpolação linear a partir de dados experimentais armazenados em disco.
+ Classe responsável por calcular os valores da condutividade térmica em
+ função da temperatura.
+ A propriedade é determinada utilizando método de interpolação linear a
+ partir de dados experimentais armazenados em disco.
 \end_layout
 
 \begin_layout Enumerate
 
 \series bold
-CReta.h:
+CReta:
 \series default
  Representa uma reta, dado um valor de x calcula y.
- Usada no calculo da interpolação linear.
+ Usada no cálculo da interpolação linear.
 \end_layout
 
 \begin_layout Enumerate
 
 \series bold
-CSegmentoReta.h:
+CSegmentoReta:
 \series default
  Representa um segmento de reta com intervalos definidos.
  .
@@ -272,9 +292,9 @@ Uma classe externa foi utilizada no simulador:
 \begin_layout Enumerate
 
 \series bold
-qcustomplot.h:
+QCustomPlot:
 \series default
- Classe responsável por gerar gráficos apresentados pelo mainwindow.h, obtido
+ Classe responsável por gerar gráficos apresentados pelo mainwindow, obtido
  em (
 \begin_inset CommandInset href
 LatexCommand href
@@ -286,7 +306,15 @@ target "https://www.qcustomplot.com/"
 \end_layout
 
 \begin_layout Enumerate
-Também foram utilizadas diversas classes de Qt.
+Também foram utilizadas diversas classes da biblioteca Qt (
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.qt.io/"
+literal "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -315,24 +343,6 @@ status open
 	filename ../imagens/diagrama-de-classes.png
 	lyxscale 30
 	width 100text%
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-coloque no apêndice 
-\begin_inset Quotes eld
-\end_inset
-
-Diagramas UML
-\begin_inset Quotes erd
-\end_inset
-
- uma versão completa
-\end_layout
 
 \end_inset
 
@@ -450,9 +460,9 @@ Diagrama de sequência - cenário geral
 \end_layout
 
 \begin_layout Standard
-A seguir é apresentado o diagrama de sequência geral na Fig
+A seguir, é apresentado o diagrama de sequência geral na Figura
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 em todo documento troque Fig.
@@ -463,7 +473,6 @@ em todo documento troque Fig.
 
 \end_inset
 
-.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -550,7 +559,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/diagrama-de-sequencia-geral.png
+	filename ../imagens/diagrama-de-sequencia-geral.png
 	lyxscale 40
 	width 100text%
 
@@ -563,7 +572,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de sequência
+Diagrama de sequência geral
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Diagrama-de-sequencia-geral"
@@ -626,7 +635,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/diagrama-de-sequencia-material.png
+	filename ../imagens/diagrama-de-sequencia-material.png
 	lyxscale 50
 	width 100text%
 
@@ -639,7 +648,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de sequência
+Diagrama de sequência mostrando a importação de um novo material
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Diagrama-de-sequencia-especifico"
@@ -702,10 +711,19 @@ adicionar no diagrama só os objetos efetivamente utilizados
 A análise de resultados é a etapa final da simulação, e é realizada por
  meio dos gráficos.
  A sequência de atualização é mostrada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-sequência-resultados"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-.
 \begin_inset Note Note
 status open
 
@@ -723,9 +741,10 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/diagrama-de-sequencia-graficos.png
-	lyxscale 20
+	filename ../imagens/diagrama-de-sequencia-graficos.png
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -761,34 +780,13 @@ name "fig:Diagrama-de-sequência-resultados"
 
 \end_layout
 
-\begin_layout Subsection
-
-\shape italic
-\emph on
-Diagrama de sequência - análise de resultados
-\end_layout
-
-\begin_layout Standard
-.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-adicionar no diagrama só os objetos efetivamente utilizados
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Diagrama de comunicação
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-comunicação
+Diagrama de comunicação
 \end_layout
 
 \end_inset
@@ -1017,6 +1015,16 @@ Você deve montar diagramas de máquina de estado para classes cujo comportament
 
 \begin_layout Section
 Diagrama de atividades
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Diagrama de atividades
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1032,7 +1040,7 @@ noprefix "false"
 
 , é mostrado em detalhes uma atividade específica.
  Para o presente caso, será apresentado o diagrama de atividades do algoritmo
- de renderização da classe CRender3D.h, devido à complexidade de renderização
+ de renderização da classe CRender3D, devido à complexidade de renderização
  3D.
 \begin_inset Note Note
 status open
@@ -1096,7 +1104,18 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de atividades para o algoritmo de renderização::CRender3D
+Diagrama de atividades para o algoritmo de renderização CRender3D::Renderizacao(
+)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+nomeclasse::nomemetodo
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-atividades"

@@ -201,6 +201,24 @@ Backward Time Centered Space
 \end_layout
 
 \begin_layout Standard
+A Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Características-básicas-do"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ apresenta as características básicas do 
+\shape italic
+software 
+\shape default
+desenvolvido.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
@@ -213,6 +231,13 @@ status open
 
 \begin_layout Plain Layout
 Características básicas do programa
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Características-básicas-do"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -375,7 +400,7 @@ para cada plano 2D a posição do objeto e suas dimensões
 
 \begin_layout Itemize
 cada camada do objeto poderá ser construída a partir de um banco de objetos
- geométricos simples, incluindo circulo, elipse, retângulo, quadrado.
+ geométricos simples: círculo ou quadrado.
 \begin_inset Note Note
 status open
 
@@ -394,8 +419,8 @@ ndo o rótulo do objeto com o tipo de material [Nicholas, os comentários
 
 \begin_layout Standard
 O usuário terá a liberdade para utilizar um dentre três métodos para obter
- as propriedades dos materiais: propriedades constantes, correlação e interpolaç
-ão.
+ a condutividade térmica do material a partir da temperatura: constantes,
+ correlação ou interpolação.
 \end_layout
 
 \begin_layout Standard
@@ -618,8 +643,7 @@ RF-03
 \begin_inset Text
 
 \begin_layout Plain Layout
-O usuário tem a liberdade de desenhar qualquer escolher a temperatura em
- cada ponto.
+O usuário tem a liberdade de escolher a temperatura em cada ponto.
 \end_layout
 
 \end_inset
@@ -1337,7 +1361,7 @@ RNF-04
 \begin_inset Text
 
 \begin_layout Plain Layout
-A linguagem a ser utilizada é C++.
+A linguagem a ser utilizada é C++
 \begin_inset Foot
 status open
 
@@ -1351,7 +1375,7 @@ Link
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -1560,6 +1584,17 @@ reference "cap:Diagrama-caso-uso-geral"
  mostra o usuário desenhando um objeto com material padrão do simulador,
  escolhendo um ponto de estudo, executando a simulação, analisando os resultados
  e salvando o objeto e os resultados em pdf.
+ As condições do caso de uso são apresentados na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Exemplo-de-um-caso-de-uso"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \begin_inset Float table
 placement H
 wide false
@@ -1728,6 +1763,22 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de caso de uso geral
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-caso-uso-geral"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
 	filename ../imagens/Diagrama-de-caso-de-uso.png
 	lyxscale 40
@@ -1758,22 +1809,8 @@ troque desenho de superfície por desenho do objeto em camadas 2D;
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Diagrama de caso de uso geral
-\begin_inset CommandInset label
-LatexCommand label
-name "cap:Diagrama-caso-uso-geral"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -1846,6 +1883,32 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de caso de uso específico: adição de novo material e interpolação
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+no título no lyx tem de dizer o que faz
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-caso-de-uso-especifico"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
 	filename ../imagens/Diagrama-de-caso-de-uso-especifico.png
 	lyxscale 40
@@ -1854,6 +1917,11 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \begin_inset Note Note
 status open
 
@@ -1906,35 +1974,6 @@ Usuário importa o novo material e interpolação para dentro do software.
 \begin_layout Plain Layout
 As informações do novo material e dados interpolação são salvos no diretório
  dos materiais.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Diagrama de caso de uso específico: adição de novo material e interpolação
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-no título no lyx tem de dizer o que faz
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "cap:Diagrama-de-caso-de-uso-especifico"
-
-\end_inset
-
-
 \end_layout
 
 \end_inset

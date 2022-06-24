@@ -166,18 +166,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/GradeCurso/Grade-CursoEngenhariaDePetroleo-DisciplinasRelacionadasATranscal-incluireservatorio.png
-	lyxscale 25
-	width 100text%
-	height 85theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -194,6 +182,20 @@ name "fig: Principais disciplinas do curso relacionadas a Transferência de Calo
 \end_inset
 
 
+\begin_inset Graphics
+	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/GradeCurso/Grade-CursoEngenhariaDePetroleo-DisciplinasRelacionadasATranscal-incluireservatorio.png
+	lyxscale 25
+	width 100text%
+	height 85theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido por.
 \end_layout
 
 \end_inset

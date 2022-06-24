@@ -195,17 +195,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/v1.0.png
-	lyxscale 60
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -224,6 +213,19 @@ name "fig:Versão-0.1,-simples"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/v1.0.png
+	lyxscale 60
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -298,17 +300,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/v1.1.png
-	lyxscale 60
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -325,6 +316,19 @@ name "fig:Versão-0.2,-simples,"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/v1.1.png
+	lyxscale 60
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -420,17 +424,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/v1.2.png
-	lyxscale 80
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -447,6 +440,19 @@ name "fig:Versão-0.3,-completa"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/v1.2.png
+	lyxscale 80
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -538,17 +544,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/qt_creator.PNG
-	lyxscale 25
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -567,6 +562,19 @@ name "fig:Qt-Creator"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/qt_creator.PNG
+	lyxscale 25
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -630,17 +638,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/v2.0.png
-	lyxscale 40
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -661,6 +658,19 @@ name "fig:Versão-1.0,-inicial"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/v2.0.png
+	lyxscale 40
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -681,8 +691,7 @@ software
 \shape italic
 Qt Creator 
 \shape default
-foi exponencial, permitindo a criação da versão final apresentada na figura
- 
+foi exponencial, chegando à versão final apresentada na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Versão-1.2,-final."
@@ -728,17 +737,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/v2.3.png
-	lyxscale 75
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -755,6 +753,19 @@ Versão 0.5, final.
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/v2.3.png
+	lyxscale 75
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset

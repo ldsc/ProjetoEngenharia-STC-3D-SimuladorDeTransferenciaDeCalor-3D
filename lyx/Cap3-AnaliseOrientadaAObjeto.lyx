@@ -141,10 +141,10 @@ name "sec:AOO"
 \end_layout
 
 \begin_layout Standard
-Neste capítulo serão apresentados os objetos desenvolvidos no projeto, suas
+Neste capítulo são apresentados os objetos desenvolvidos no projeto, suas
  relações, atributos e métodos.
- Depois de uma breve explicação sobre cada objeto, serão apresentados diagramas
- UML (Linguagem de Modelagem Unificada), para auxiliar no entendimento do
+ Depois de uma breve explicação sobre cada objeto, são apresentados os diagramas
+ UML (Linguagem de Modelagem Unificada)0 para auxiliar no entendimento do
  
 \shape italic
 software
@@ -187,8 +187,8 @@ MainWindow:
  Classe responsável pela janela principal.
  Consegue obter os valores adicionados pelo usuário e enviar para a classe
  do simulador.
- Permite ao usuário desenhar o objeto a ser simulado, setar suas propriedades,
- setar as propriedades numéricas e disparar a simulação.
+ Permite ao usuário desenhar o objeto a ser simulado, definir suas propriedades
+ termofísicas e numéricas, e disparar a simulação.
  Apresenta os resultados na medida em que os mesmos são realizados, possibilitan
 do parar a simulação para ver resultados parciais.
 \end_layout
@@ -251,9 +251,9 @@ CMaterial:
 \series bold
 CMaterialCorrelacao:
 \series default
- Classe responsável por calcular os valores das propriedades termofísicas
- como função da temperatura, a propriedade é determinada a partir de correlações
- lidas do disco.
+ Classe responsável por calcular os valores da condutividade térmica em
+ função da temperatura.
+ A propriedade é determinada a partir de correlações lidas do disco.
 \end_layout
 
 \begin_layout Enumerate
@@ -261,9 +261,10 @@ CMaterialCorrelacao:
 \series bold
 CMaterialInterpolacao:
 \series default
- Classe responsável por calcular os valores das propriedades termofísicas
- como função da temperatura, a propriedade é determinada utilizando método
- de interpolação linear a partir de dados experimentais armazenados em disco.
+ Classe responsável por calcular os valores da condutividade térmica em
+ função da temperatura.
+ A propriedade é determinada utilizando método de interpolação linear a
+ partir de dados experimentais armazenados em disco.
 \end_layout
 
 \begin_layout Enumerate
@@ -338,17 +339,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/diagrama-de-classes.png
-	lyxscale 30
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -365,6 +355,19 @@ name "cap:Diagrama-de-classes"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/diagrama-de-classes.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -557,17 +560,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/diagrama-de-sequencia-geral.png
-	lyxscale 40
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -584,6 +576,19 @@ name "fig:Diagrama-de-sequencia-geral"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/diagrama-de-sequencia-geral.png
+	lyxscale 40
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -633,17 +638,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/diagrama-de-sequencia-material.png
-	lyxscale 50
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -660,6 +654,19 @@ name "fig:Diagrama-de-sequencia-especifico"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/diagrama-de-sequencia-material.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -741,17 +748,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/diagrama-de-sequencia-graficos.png
-	lyxscale 50
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -768,6 +764,19 @@ name "fig:Diagrama-de-sequência-resultados"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/diagrama-de-sequencia-graficos.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \begin_layout Plain Layout
@@ -855,17 +864,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/Diagrama-de-comunicacao.png
-	lyxscale 30
-	width 85text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -882,6 +880,19 @@ name "cap:Diagrama-de-comunicação"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/Diagrama-de-comunicacao.png
+	lyxscale 30
+	width 85text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -964,17 +975,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/diagrama-de-maquina-de-estado.png
-	lyxscale 30
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -991,6 +991,19 @@ name "cap:Diagrama-de-maquina-de-estado"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/diagrama-de-maquina-de-estado.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -1089,17 +1102,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/Diagrama de atividades.png
-	lyxscale 30
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1127,6 +1129,19 @@ name "cap:Diagrama-de-atividades"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/Diagrama de atividades.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Produzido pelo autor.
 \end_layout
 
 \end_inset

@@ -507,8 +507,7 @@ literal "true"
 
 .
  Posteriormente a teoria foi aprimorada até chegar na equação geral da difusão
- de calor Eq.
- (
+ de calor Equação (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:equacao-geral"
@@ -729,8 +728,8 @@ Substituindo as diferenças finitas na equação geral:
 \begin{array}{c}
 \frac{k_{i-\frac{1}{2},j,k}^{n+1}T_{i-1,j,k}^{n+1}-\left(k_{i-\frac{1}{2},j,k}^{n+1}+k_{i+\frac{1}{2},j,k}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i+\frac{1}{2},j,k}^{n+1}T_{i+1,j,k}^{n+1}}{\Delta x^{2}}+\\
 \frac{k_{i,j-\frac{1}{2},k}^{n+1}T_{i,j-1,k}^{n+1}-\left(k_{i,j-\frac{1}{2},k}^{n+1}+k_{i,j+\frac{1}{2},k}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i,j+\frac{1}{2},k}^{n+1}T_{i,j+1,k}^{n+1}}{\Delta y^{2}}+\\
-\frac{k_{i,j,k-\frac{1}{2}}^{n+1}T_{i,j,k-1}^{n+1}-\left(k_{i,j,k-\frac{1}{2}}^{n+1}+k_{i,j,k+\frac{1}{2}}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i,j,k+\frac{1}{2}}T_{i,j,k+1}}{\Delta z^{2}}=\\
-\frac{T_{i,j,k}^{n+1}-T_{i,j,k}^{n}}{\Delta t}
+\frac{k_{i,j,k-\frac{1}{2}}^{n+1}T_{i,j,k-1}^{n+1}-\left(k_{i,j,k-\frac{1}{2}}^{n+1}+k_{i,j,k+\frac{1}{2}}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i,j,k+\frac{1}{2}}^{n+1}T_{i,j,k+1}^{n+1}}{\Delta z^{2}}=\\
+c_{p}\rho\frac{T_{i,j,k}^{n+1}-T_{i,j,k}^{n}}{\Delta t}
 \end{array}
 \end{equation}
 
@@ -777,7 +776,7 @@ Multiplicando pelo múltiplo comum:
 \Delta z^{2}\left(k_{i,j-\frac{1}{2},k}^{n+1}T_{i,j-1,k}^{n+1}-\left(k_{i,j-\frac{1}{2},k}^{n+1}+k_{i,j+\frac{1}{2},k}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i,j+\frac{1}{2},k}^{n+1}T_{i,j+1,k}^{n+1}\right)+\\
 \Delta x^{2}\left(k_{i,j,k-\frac{1}{2}}^{n+1}T_{i,j,k-1}^{n+1}-\left(k_{i,j,k-\frac{1}{2}}^{n+1}+k_{i,j,k+\frac{1}{2}}^{n+1}\right)T_{i,j,k}^{n+1}+k_{i,j,k+\frac{1}{2}}^{n+1}T_{i,j,k+1}^{n+1}\right)=\\
 \frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}T_{i,j,k}^{n+1}-\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}T_{i,j,k}^{n}
-\end{array}
+\end{array}\label{eq:equacao-antes-iteracao}
 \end{equation}
 
 \end_inset
@@ -786,8 +785,8 @@ Multiplicando pelo múltiplo comum:
 \end_layout
 
 \begin_layout Standard
-Como a equação acima é complexa para ser reorganizada e resolvida por equações
- matriciais, será utilizado o método iterativo de Gauss-Jacobi 
+Como a equação acima é complexa para ser resolvida por equações matriciais,
+ será utilizado o método iterativo de Gauss-Jacobi 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "RUGGIERO1996"
@@ -796,10 +795,24 @@ literal "false"
 \end_inset
 
 .
- As condições de parada são: diferença entre iterações menor que 0,5ºC,
- máximo de iterações igual a 1.000, e mínimo de 800 iterações.
- Para resolver o sistema de equações, será isolado uma das temperaturas
- para calcular a iteração 
+ As condições das iterações podem ser alteradas pelo usuário, e ele terá
+ a liberdade para definir o erro aceitável (maior diferença de temperatura
+ entre duas iterações), o mínimo de iterações, e o máximo de iterações.
+ ]
+\end_layout
+
+\begin_layout Standard
+Então, para resolver a iterativamente a Equação (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:equacao-antes-iteracao"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), é isolado uma das temperaturas para calcular a iteração 
 \begin_inset Formula $\nu+1$
 \end_inset
 
@@ -810,8 +823,8 @@ literal "false"
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{\nu+1}{T_{i,j}^{n+1}}=\\
-C_{1}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n}}+\\
+\overset{\nu+1}{T_{i,j,k}^{n+1}}=\\
+A\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j,k}^{n}}+\\
 A\Delta z^{2}\left(\overset{\nu}{k_{i-\frac{1}{2},j,k}^{n+1}}\overset{\nu}{T_{i-1,j,k}^{n+1}}+\overset{\nu}{k_{i+\frac{1}{2},j,k}^{n+1}}\overset{\nu}{T_{i+1,j,k}^{n+1}}\right)+\\
 A\Delta z^{2}\left(\overset{\nu}{k_{i,j-\frac{1}{2},k}^{n+1}}\overset{\nu}{T_{i,j-1,k}^{n+1}}+\overset{\nu}{k_{i,j+\frac{1}{2},k}^{n+1}}\overset{\nu}{T_{i,j+1,k}^{n+1}}\right)+\\
 A\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}\overset{\nu}{T_{i,j,k-1}^{n+1}}+\overset{\nu}{k_{i,j,k+\frac{1}{2}}^{n+1}}\overset{\nu}{T_{i,j,k+1}^{n+1}}\right)
@@ -825,10 +838,10 @@ A\Delta x^{2}\left(\overset{\nu}{k_{i,j,k-\frac{1}{2}}^{n+1}}\overset{\nu}{T_{i,
 
 \begin_layout Standard
 Onde 
-\begin_inset Formula $A$
+\begin_inset Formula $1/A$
 \end_inset
 
-é definido por:
+ é definido por:
 \end_layout
 
 \begin_layout Standard
@@ -1427,7 +1440,7 @@ Resultando em:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{\nu+1}{T_{i,j,k}^{n+1}}=A\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n}}\end{array}
+\overset{\nu+1}{T_{i,j,k}^{n+1}}=A\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j,k}^{n}}\end{array}
 \end{equation}
 
 \end_inset
@@ -1453,7 +1466,7 @@ Logo:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{\nu+1}{T_{i,j,k}^{n+1}}=\frac{\Delta t}{\Delta z^{2}\Delta x^{2}c_{p}\rho}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j}^{n}}\end{array}
+\overset{\nu+1}{T_{i,j,k}^{n+1}}=\frac{\Delta t}{\Delta z^{2}\Delta x^{2}c_{p}\rho}\frac{\Delta z^{2}\Delta x^{2}c_{p}\rho}{\Delta t}\overset{}{T_{i,j,k}^{n}}\end{array}
 \end{equation}
 
 \end_inset
@@ -1462,7 +1475,7 @@ Logo:
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-\overset{\nu+1}{T_{i,j,k}^{n+1}}=\overset{\nu}{T_{i,j,k}^{n}}\end{array}
+\overset{\nu+1}{T_{i,j,k}^{n+1}}=\overset{}{T_{i,j,k}^{n}}\end{array}
 \end{equation}
 
 \end_inset
@@ -1488,8 +1501,7 @@ O índice k referente à terceira dimensão continuará aparecendo nas equaçõe
 \end_layout
 
 \begin_layout Standard
-Partindo da Eq.
- (
+Partindo da Equação (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:EquacaoGeralDiscretizada"
@@ -1597,8 +1609,7 @@ Chegando na equação:
 \end_layout
 
 \begin_layout Standard
-A Eq.
- (
+A Equação (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:MetodoImplicitoBi"
@@ -1642,11 +1653,21 @@ name "subsec:Condutividade-térmica-variável"
 \end_layout
 
 \begin_layout Standard
-A condutividade térmica, no programas desenvolvido, pode variar com o espaço,
- pelo objeto ser constituído por mais de um material, com condutividade
- térmica distinta.
- Contudo, pode também variar com a temperatura e, consequentemente, com
- o tempo.
+A condutividade térmica no programas desenvolvido pode variar com o espaço,
+ devido à possibilidade do objeto ser constituído por mais de um material
+ - solução mostrada na Equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:condutividade-termica-equivalente"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Contudo, a condutividade térmica pode também variar com a temperatura,
+ deixando a simulação mais real e complexa.
 \end_layout
 
 \begin_layout Standard
@@ -1943,7 +1964,7 @@ Vantagens:
 \begin_deeper
 \begin_layout Itemize
 Melhor uso dos recursos disponibilizados; Maior velocidade na realização
- das tarefas; Maior confiabilidade.
+ das tarefas.
 \end_layout
 
 \end_deeper
@@ -1961,7 +1982,7 @@ Desvantagens:
 
 \begin_deeper
 \begin_layout Itemize
-O controle dos recursos é de responsabilidade do programador.
+O distribuições dos cálculos é de responsabilidade do programador.
 \end_layout
 
 \end_deeper
@@ -2236,7 +2257,7 @@ name "subsec:Renderização-3D"
 \end_layout
 
 \begin_layout Standard
-Após o usuário desenhar algum objeto no 
+Após o usuário desenhar um objeto no 
 \shape italic
 software
 \shape default
@@ -2315,16 +2336,15 @@ noprefix "false"
 
 \begin_layout Standard
 Portanto, tendo definidos os pontos das arestas, seus respectivos vetores
- são multiplicados pela matriz de rotação 
+ são multiplicados pela matriz de rotação (
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citealp
 key "Herter1993"
 literal "false"
 
 \end_inset
 
- mostrada na Eq.
- 
+) mostrada na Equação (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:matriz_rotacao"
@@ -2334,7 +2354,7 @@ noprefix "false"
 
 \end_inset
 
-, a qual permite rotacionar qualquer ponto a partir dos três ângulos do
+), a qual permite rotacionar qualquer ponto a partir dos três ângulos do
  observador.
  
 \end_layout
@@ -2592,7 +2612,7 @@ Utilizando a Regra da Mão Direita
 \begin_inset Formula $^{\ref{fn:rodape_regra_mao_direita}}$
 \end_inset
 
-, é possível entender a utilidade da equação 
+, é possível entender a utilidade da Equação 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:normal_resumido"
@@ -2602,7 +2622,7 @@ noprefix "false"
 
 \end_inset
 
-: o caso (a) da figura 
+: o caso (a) da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_normal"
@@ -2780,7 +2800,8 @@ s do material.
 \end_layout
 
 \begin_layout Itemize
-Pacote de correlação: mesma função da linha acima, mas para método de correlação.
+Pacote de materiais: organiza as propriedades termofísicas dos materiais,
+ e é dividido em 
 \end_layout
 
 \begin_layout Itemize
@@ -2788,6 +2809,7 @@ Pacote de interface ao usuário: utilização da biblioteca Qt, para criar
  interface gráfica amigável.
  Fornece um ambiente onde o usuário pode enviar comandos para o simulador
  de maneira fácil, e apresenta os resultados.
+ É dividida em janela principal, e janela de renderização 3D.
 \end_layout
 
 \begin_layout Itemize

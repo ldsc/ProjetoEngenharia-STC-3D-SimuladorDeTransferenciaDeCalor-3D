@@ -248,7 +248,7 @@ IMPORTÂNCIA
 \end_layout
 
 \begin_layout Standard
-Transferência de calor é uma das principais áreas da física 
+Transferência de calor é uma das principais áreas da Física 
 \begin_inset Foot
 status open
 
@@ -265,10 +265,10 @@ target "http://lattes.cnpq.br/documents/11871/24930/TabeladeAreasdoConhecimento.
 
 \end_inset
 
- e da engenharia.
- Seu comportamento foi especulado desde os primeiros filósofos, Aristóteles
- formula a teoria da matéria ser constituída por quatro elementos: o ar,
- a água, a terra e o fogo.
+ e da Engenharia.
+ Seu comportamento foi especulado desde os primeiros filósofos.
+ Aristóteles formula a teoria da matéria ser constituída por quatro elementos:
+ o ar, a água, a terra e o fogo.
  Os estudos de transferência de calor tiveram grande ascensão no período
  de 1600 e 1800, sendo, posteriormente, dominados.
  Estes estudos contaram com a contribuição científica de diversos grandes
@@ -284,8 +284,17 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Qualquer definição de engenharia irá falar da transformação dos materiais
  usando energia.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Quotation
@@ -295,7 +304,7 @@ Qualquer definição de engenharia irá falar da transformação dos materiais
 \end_layout
 
 \begin_layout Standard
-É por isso que todos os cursos de engenharia incluem, no seu ciclo básico
+É por isso que todos os cursos de engenharia incluem, no seu ciclo básico,
  um conjunto de disciplinas de matemática, física e química que possibilitam
  o entendimento dos problemas associados a temperatura, o efeito da temperatura
  nos materiais e nos fenômenos estudados.
@@ -510,25 +519,24 @@ A seguir, precisa explicar que para problemas práticos de engenharia é normal
 \end_layout
 
 \begin_layout Standard
-Neste trabalho utilizaremos métodos de interpolação, solução de matrizes.
- Métodos iterativos para aproximar as soluções das equações matriciais,
- tornando desnecessário os processos de inversão de matriz e multiplicação
- de matriz, etapas normais para o método BTCS (
+Neste projeto educacional, foi utilizado o método BTCS (
 \shape italic
 Backward Time, Centered Space
 \shape default
-).
- Em especial no simulador desenvolvido, como é permitido objetos com formas
- genéricas, seria impossível resolver o problema por inversão de matriz,
- pois grandes regiões da matriz teriam valores nulos, consequentemente,
- seus determinantes seriam zero e impossível de inverter.
+) para modelar a Equação do Calor.
+ Para resolver o sistema implícito, foi utilizado o método iterativo de
+ Gauss-Jacobi, e com condições de contorno de Neumann.
+ A condição de contorno é aplicada em todo o sistema, sendo avaliada em
+ cada iteração se a célula computacional está na fronteira do objeto ou
+ não.
+ Isto permite que o usuário posso simular objetos com qualquer formato.
+ 
 \end_layout
 
 \begin_layout Standard
-Disciplina optativa Programação Paralela e Concorrente I, divisão dos cálculos
- da modelagem em operações que podem ser resolvidas independentemente e
- separadamente, e direcionar cada operação para um núcleo do processador,
- este processo é chamado de 
+Além disso, os cálculos da simulação são divididos em operações que podem
+ ser resolvidas independentemente e separadamente, e cada operação é direcionada
+ para um núcleo do processador, processo este chamado de 
 \shape italic
 multithreading,
 \shape default
@@ -579,7 +587,7 @@ name "sec:Objetivos"
 \end_layout
 
 \begin_layout Standard
-O objetivo deste projeto de engenharia é desenvolver um programa educacional
+O objetivo deste projeto de engenharia foi desenvolver um programa educacional
  que simula o processo de condução tridimensional de calor, no regime transiente
 , utilizando métodos numéricos, programação orientada ao objeto com a linguagem
  C++, mecanismos de paralelismos e 
@@ -590,7 +598,7 @@ multithreading,
 \end_layout
 
 \begin_layout Standard
-A finalidade deste projeto de engenharia é desenvolver um 
+A finalidade deste projeto de engenharia foi desenvolver um 
 \shape italic
 software
 \shape default
@@ -605,7 +613,7 @@ Os principais tópicos envolvidos neste projeto são o desenvolvimento de:
 \end_layout
 
 \begin_layout Itemize
-Banco de dados de propriedades térmicas: A partir da literatura, definir
+Banco de dados de propriedades termofísicas: a partir da literatura, definir
  padrões para as curvas de propriedades térmicas em função da temperatura
  e então montar uma estrutura de diretórios com propriedades de materiais
  conhecidos, normalmente utilizados em engenharia de petróleo.
@@ -629,7 +637,7 @@ software
 \end_layout
 
 \begin_layout Itemize
-Transferência de calor: entender as equações físicas, como o calor é propagado
+Transferência de calor: entender as equações físicas, como o calor é transferido
  em objetos com diversos formatos e composto por diferentes materiais, com
  propriedades termofísicas dependentes da temperatura.
  
@@ -656,7 +664,8 @@ Modelagem numérica: solução da equação diferencial da condução ou difusã
  do problema.
  Por meio da utilização e combinação dessas ferramentas, é possível resolver
  qualquer problema de condução de calor, especialmente a solução simultânea
- de casos isolados, e objetos com grandes regiões vazias.
+ de casos isolados, e objetos com grandes regiões vazias (como porcas ou
+ tubos).
 \begin_inset Note Note
 status open
 
@@ -672,10 +681,10 @@ O uso destas ferramentas BTCS e Neumann permite aplicações como...
 
 \begin_layout Itemize
 Programação em C++: por meio da orientação o objeto em C++, o problema pode
- ser dividido em classes, paradigma este que melhora o controle e organização
+ ser dividido em classes, paradigma este que melhorou o controle e organização
  do das etapas de desenvolvimento do software, além de facilitar futuras
  adaptações e incrementos no simulador.
- Além disso, essa linguagem possui bibliotecas que auxiliam a utilização
+ Além disto, esta linguagem possui bibliotecas que auxiliam a utilização
  de paralelismos e 
 \shape italic
 multithreading.
@@ -764,19 +773,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename ../imagens/EngenhariaSoftware-Geral.png
-	lyxscale 25
-	width 100text%
-	height 85theight%
-	keepAspectRatio
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -795,6 +791,21 @@ name "fig:Etapas para o desenvolvimento do software"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../imagens/EngenhariaSoftware-Geral.png
+	lyxscale 25
+	width 100text%
+	height 85theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
 \end_layout
 
 \end_inset

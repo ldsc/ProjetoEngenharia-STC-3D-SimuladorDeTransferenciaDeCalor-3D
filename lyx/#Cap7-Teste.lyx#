@@ -71,9 +71,9 @@
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
-\biblio_style plain
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style abntex2-alf
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -112,7 +112,7 @@
 \begin_body
 
 \begin_layout Chapter
-Teste
+Resultados
 \begin_inset Index idx
 status open
 
@@ -125,7 +125,7 @@ Teste
 
 \begin_inset CommandInset label
 LatexCommand label
-name "chap:Teste"
+name "chap:Resultados"
 
 \end_inset
 
@@ -133,6 +133,10 @@ name "chap:Teste"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -143,6 +147,11 @@ status open
 lhead{
 \backslash
 thechapter - Teste}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -228,7 +237,7 @@ Validação do simulador
 Para validar os resultados do simulador, foi comparado os resultados do
  simulador, com a solução proposta por 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "incropera2008fundamentos"
 literal "false"
 
@@ -323,8 +332,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Aplicação do problema unidimensional no simulador.
- (a) é no tempo inicial e (b) depois de 100 segundos
+Aplicação do problema unidimensional no simulador: (a) tempo inicial e (b)
+ após 100 segundos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Aplicação-do-problema-unidimensional"
@@ -1107,7 +1116,7 @@ k
 
 \begin_layout Standard
 O erro do simulador foi de 0.69% para 50,0 segundos, e 0,88% para 100,0 segundos.
- O mínimo de iteração para cada variação de tempo foi de 800 iterações.
+ O mínimo de iteração para cada mudança de tempo foi de 800 iterações.
 \end_layout
 
 \begin_layout Standard
@@ -1152,20 +1161,21 @@ Injeção de calor em reservatório
 
 \end_inset
 
- - comparação com outro simulador
+
 \end_layout
 
 \begin_layout Standard
-Agora, será realizada uma simulação com as mesmas condições do simulador
- desenvolvido no Trabalho de Conclusão de Curso do Guilherme 
+Agora, será realizada uma simulação com as mesmas condições apresentadas
+ nos resultados do Trabalho de Conclusão de Curso 
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Lima2020"
-literal "false"
+literal "true"
 
 \end_inset
 
-.
+, onde também foi desenvolvido um simulador de condução de temperatura,
+ mas específico para misturas de materiais.
 \end_layout
 
 \begin_layout Standard
@@ -1188,6 +1198,14 @@ noprefix "false"
 
 \end_inset
 
+, esses valores foram obtidos em 
+\begin_inset CommandInset citation
+LatexCommand citep*
+key "Dong_2015"
+literal "false"
+
+\end_inset
+
 .
 \begin_inset Float table
 placement H
@@ -1199,15 +1217,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tabela com propriedades termofísicas 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Dong_2015"
-literal "false"
-
-\end_inset
-
-
+Tabela com propriedades termofísicas do arenito e da água 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Tabela-com-propriedades-injecao-1"
@@ -1368,11 +1378,18 @@ Arenito
 
 \begin_layout Standard
 Como o simulador não consegue tratar mistura de materiais, será utilizado
- o desenvolvimento utilizado pelo trabalho do Guilherme, considerando porosidade
- de 0,20.
+ o desenvolvimento utilizado por 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lima2020"
+literal "true"
+
+\end_inset
+
+, considerando porosidade de 0,20.
  Como não é apresentado uma equação para calcular densidade e a capacidade
  térmica da mistura isoladamente, será utilizado o mesmo modelo para a condutivi
-dade térmica ( Eq.
+dade térmica (Eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1584,7 +1601,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultados da simulação com renderização 3D
+Resultados da simulação com renderização 3D: (a) tempo inicial, (b) após
+ 1 hora e (c) a renderização 3D
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-guilherme"
@@ -1650,14 +1668,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Gráficos da simulação para o tempo de 3.600 segundos
+Gráficos da simulação para o tempo de 1 hora definidos pelo ponto de estudo:
+ (a) é a temperatura ao longo do tempo, (b) é a temperatura ao longo da
+ horizontal e (c) a temperatura ao longo da vertical
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-guilherme-1"
 
 \end_inset
 
-
+ 
 \end_layout
 
 \end_inset
@@ -1774,7 +1794,7 @@ Resultados da simulação do primeiro modelo
 \shape italic
 five-spot
 \shape default
- após 3.600 segundos
+ após 1 hora: (a) tempo inicial e (b) após 1 hora
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-five-spot-1"
@@ -1837,7 +1857,8 @@ Gráficos da simulação do primeiro modelo
 \shape italic
 five-spot
 \shape default
-
+: (a) temperatura ao longo da horizontal de estudo, e (b) a temperatura
+ ao longo da vertical
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-five-spot-graficos-1"
@@ -1883,7 +1904,7 @@ com o poço central produtor.
 Como é um sistema isolado, com fonte e sumidouro, após um longo período
  de tempo, é atingido regime permanente, onde a temperatura atingirá um
  equilíbrio, e não varia com o tempo.
- Na simulação, foi alcançado um regime próximo ao permanente, no temop 460.800
+ Na simulação, foi alcançado um regime próximo ao permanente, no tempo 460.800
  segundos, ou 128 horas.
 \end_layout
 
@@ -1929,7 +1950,7 @@ Resultados da simulação do segundo modelo
 \shape italic
 five-spot
 \shape default
- após 460.800 segundos
+ após 128 horas: 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:resultado-modelo-five-spot-2"
@@ -2524,7 +2545,7 @@ noprefix "false"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard

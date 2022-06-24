@@ -630,7 +630,7 @@ ref{CWindow-cpp}
 
 \end_inset
 
- implementação da classe mainwindow.
+ a implementação da classe mainwindow.
  
 \end_layout
 
@@ -781,6 +781,10 @@ lstinputlisting[ caption={Arquivo de implementação da classe MainWindow},
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -794,7 +798,7 @@ ref{mainwindow-cpp}
 
 \end_inset
 
- implementação da classe mainwindow.
+ a implementação da classe mainwindow.
  
 \end_layout
 
@@ -851,6 +855,10 @@ lstinputlisting[ caption={Arquivo de implementação da classe CRender3D},
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -864,7 +872,7 @@ ref{CRender3D-cpp}
 
 \end_inset
 
- implementação da classe CRender3D.
+ a implementação da classe CRender3D.
  
 \end_layout
 
@@ -927,6 +935,10 @@ ra}, label={CSimuladorTemperatura-h}] {../listagens/CSimuladorTemperatura.h}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -940,7 +952,7 @@ ref{CSimuladorTemperatura-cpp}
 
 \end_inset
 
- implementação da classe CSimuladorTemperatura.
+ a implementação da classe CSimuladorTemperatura.
  
 \end_layout
 
@@ -1004,6 +1016,10 @@ d-h}] {../listagens/CGrid.h}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1017,7 +1033,7 @@ ref{CGrid-cpp}
 
 \end_inset
 
- implementação da classe CGrid.
+ a implementação da classe CGrid.
  
 \end_layout
 
@@ -1080,6 +1096,10 @@ l-h}] {../listagens/CCell.h}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1093,7 +1113,7 @@ ref{CCell-cpp}
 
 \end_inset
 
- implementação da classe CCell.
+ a implementação da classe CCell.
  
 \end_layout
 
@@ -1156,6 +1176,10 @@ lstinputlisting[ caption={Arquivo de implementação da classe CMaterial},
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1169,7 +1193,7 @@ ref{CMaterial-cpp}
 
 \end_inset
 
- implementação da classe CMaterial.
+ a implementação da classe CMaterial.
  
 \end_layout
 
@@ -1195,6 +1219,10 @@ texttt{main()}}, label={CMaterial-cpp}] {../listagens/CMaterial.cpp}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1228,6 +1256,10 @@ lstinputlisting[ caption={Arquivo de implementação da classe CMaterialCorrelac
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1241,7 +1273,7 @@ ref{CMaterialCorrelacao-cpp}
 
 \end_inset
 
- implementação da classe CMaterialCorrelacao.
+ a implementação da classe CMaterialCorrelacao.
  
 \end_layout
 
@@ -1305,6 +1337,10 @@ ao}, label={CMaterialInterpolacao-h}] {../listagens/CMaterialInterpolacao.h}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1318,7 +1354,7 @@ ref{CMaterialInterpolacao-cpp}
 
 \end_inset
 
- implementação da classe CMaterialInterpolacao.
+ a implementação da classe CMaterialInterpolacao.
  
 \end_layout
 
@@ -1382,6 +1418,10 @@ lstinputlisting[ caption={Arquivo de implementação da classe CSegmentoReta},
 
 \end_inset
 
+ 
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1395,7 +1435,7 @@ ref{CSegmentoReta-cpp}
 
 \end_inset
 
- implementação da classe CSegmentoReta.
+ a implementação da classe CSegmentoReta.
  
 \end_layout
 
@@ -1458,6 +1498,10 @@ a-h}] {../listagens/CReta.h}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1471,7 +1515,7 @@ ref{CReta-cpp}
 
 \end_inset
 
- implementação da classe CReta.
+ a implementação da classe CReta.
  
 \end_layout
 
