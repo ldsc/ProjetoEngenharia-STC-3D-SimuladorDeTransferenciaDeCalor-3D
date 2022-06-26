@@ -178,8 +178,8 @@ software
 Simulador de Condução de Calor em Objetos 3D com Geometria Complexa e Interface
  Gráfica Amigável
 \shape default
-, será desenvolvido utilizando o paradigma da orientação a objeto usando
- a linguagem de alto desempenho C++, o mesmo será capaz de simular a condução
+, foi desenvolvido utilizando o paradigma da orientação a objeto usando
+ a linguagem de alto desempenho C++, o mesmo é capaz de simular a condução
  de calor em objetos tridimensionais, com formas e superfícies complexas
  definidas pelo usuário.
  O usuário pode definir quais materiais constituem o objeto, e qual o método
@@ -418,7 +418,7 @@ ndo o rótulo do objeto com o tipo de material [Nicholas, os comentários
 \end_layout
 
 \begin_layout Standard
-O usuário terá a liberdade para utilizar um dentre três métodos para obter
+O usuário tem a liberdade para utilizar um dentre três métodos para obter
  a condutividade térmica do material a partir da temperatura: constantes,
  correlação ou interpolação.
 \end_layout

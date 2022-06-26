@@ -641,7 +641,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de sequência mostrando a importação de um novo material
+Diagrama de sequência da importação de um novo material
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Diagrama-de-sequencia-especifico"
@@ -751,7 +751,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de sequência mostrando a análise de resultados
+Diagrama de sequência da análise de resultados
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Diagrama-de-sequência-resultados"
@@ -1105,8 +1105,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de atividades para o algoritmo de renderização CRender3D::Renderizacao(
-)
+Diagrama de atividades para o algoritmo de renderização CRender3D Renderizacao()
 \begin_inset Note Note
 status open
 

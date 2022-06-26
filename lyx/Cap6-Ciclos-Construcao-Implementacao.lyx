@@ -748,6 +748,11 @@ cpp}] {../listagens/main.cpp}
 \end_layout
 
 \begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -782,6 +787,11 @@ lstinputlisting[ caption={Arquivo de implementação da classe MainWindow},
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
 \end_layout
 
 \begin_layout Standard
@@ -822,6 +832,11 @@ lstinputlisting[ caption={Arquivo de implementação da classe MainWindow},
 \end_layout
 
 \begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -856,6 +871,11 @@ lstinputlisting[ caption={Arquivo de implementação da classe CRender3D},
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
 \end_layout
 
 \begin_layout Standard
@@ -902,6 +922,11 @@ texttt{main()}}, label={CRender3D-cpp}] {../listagens/CRender3D.cpp}
 \end_layout
 
 \begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -936,6 +961,11 @@ ra}, label={CSimuladorTemperatura-h}] {../listagens/CSimuladorTemperatura.h}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
 \end_layout
 
 \begin_layout Standard
@@ -983,6 +1013,11 @@ atura.cpp}
 \end_layout
 
 \begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1017,6 +1052,11 @@ d-h}] {../listagens/CGrid.h}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
 \end_layout
 
 \begin_layout Standard
@@ -1063,6 +1103,11 @@ texttt{main()}}, label={CGrid-cpp}] {../listagens/CGrid.cpp}
 \end_layout
 
 \begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1097,6 +1142,11 @@ l-h}] {../listagens/CCell.h}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
 \end_layout
 
 \begin_layout Standard
@@ -1140,6 +1190,11 @@ texttt{main()}}, label={CCell-cpp}] {../listagens/CCell.cpp}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
 \end_layout
 
 \begin_layout Standard
@@ -1223,6 +1278,11 @@ texttt{main()}}, label={CMaterial-cpp}] {../listagens/CMaterial.cpp}
 \end_layout
 
 \begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1257,6 +1317,11 @@ lstinputlisting[ caption={Arquivo de implementação da classe CMaterialCorrelac
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
 \end_layout
 
 \begin_layout Standard
@@ -1304,6 +1369,11 @@ o.cpp}
 \end_layout
 
 \begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1338,6 +1408,11 @@ ao}, label={CMaterialInterpolacao-h}] {../listagens/CMaterialInterpolacao.h}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
 \end_layout
 
 \begin_layout Standard
@@ -1385,6 +1460,11 @@ lacao.cpp}
 \end_layout
 
 \begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1418,7 +1498,16 @@ lstinputlisting[ caption={Arquivo de implementação da classe CSegmentoReta},
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
@@ -1465,6 +1554,11 @@ texttt{main()}}, label={CSegmentoReta-cpp}] {../listagens/CSegmentoReta.cpp}
 \end_layout
 
 \begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1499,6 +1593,11 @@ a-h}] {../listagens/CReta.h}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
 \end_layout
 
 \begin_layout Standard
@@ -1542,6 +1641,11 @@ texttt{main()}}, label={CReta-cpp}] {../listagens/CReta.cpp}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
 \end_layout
 
 \end_body

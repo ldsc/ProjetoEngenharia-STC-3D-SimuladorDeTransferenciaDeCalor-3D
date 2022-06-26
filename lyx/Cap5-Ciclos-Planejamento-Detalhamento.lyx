@@ -466,8 +466,8 @@ Versão 0.4 - Mudança para biblioteca Qt
 
 \begin_layout Standard
 Durante o desenvolvimento das versões anteriores, foram identificados problemas
- com a dificuldade de lidar com mudanças na interface, quando se usa a bibliotec
-a 
+ sobre a dificuldade de lidar com mudanças na interface, quando se usa a
+ biblioteca 
 \shape italic
 SFML.
  
@@ -488,7 +488,7 @@ literal "false"
 
 \end_inset
 
-), foi escolhida por ser:
+), que foi escolhida por ser:
 \end_layout
 
 \begin_layout Itemize

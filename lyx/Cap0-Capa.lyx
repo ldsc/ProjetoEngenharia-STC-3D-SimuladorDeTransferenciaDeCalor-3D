@@ -817,6 +817,8 @@ status open
 
 
 \backslash
+pagenumbering{arabic}
+\backslash
 thispagestyle{empty} 
 \end_layout
 
@@ -947,7 +949,7 @@ o valor de 4cm pode ser alterado, para que a distribuição fique mais uniforme
 \align center
 
 \size large
-MACAÉ - RJ
+Macaé - RJ
 \begin_inset Newline newline
 \end_inset
 
@@ -1087,7 +1089,7 @@ Co-Orientador: Guilherme Rodrigues Lima, D.Sc.
 \align center
 
 \size large
-MACAÉ - RJ
+Macaé - RJ
 \begin_inset Newline newline
 \end_inset
 
@@ -1239,8 +1241,6 @@ status open
 
 \backslash
 thispagestyle{empty}
-\backslash
-pagenumbering{roman}
 \end_layout
 
 \end_inset
@@ -1384,6 +1384,14 @@ Prof.
 \end_inset
 
 
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset CommandInset line
 LatexCommand rule
 offset "0.5ex"
@@ -1420,6 +1428,14 @@ Prof.
 \end_inset
 
 
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset CommandInset line
 LatexCommand rule
 offset "0.5ex"
@@ -1452,6 +1468,14 @@ baselineskip}
 \align left
 Prof.
  Nivaldo Silveira Ferreira (D.Sc) - LAMET/UENF
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset space ~
 \end_inset
 
@@ -1500,6 +1524,14 @@ Prof.
 \end_inset
 
 
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset CommandInset line
 LatexCommand rule
 offset "0.5ex"
@@ -1539,20 +1571,6 @@ Prof.
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align block
 \begin_inset ERT
 status open
 
@@ -1560,37 +1578,310 @@ status open
 
 
 \backslash
-lhead{Lista de Figuras} 
-\backslash
-chead{} 
-\backslash
-rhead{}
+pagestyle{empty}
 \end_layout
 
+\end_inset
+
+
+\begin_inset VSpace 10cm*
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+\align center
+
+\shape italic
+Dedico este trabalho aos meus pais, Heleno e Ana Lúcia, à minha irmã Gabriela,
+ e aos meus amigos por todo o suporte e incentivo para construir este projeto.
+\shape default
+
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\begin_inset VSpace 1cm*
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+Agradecimentos
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Agradeço aos meus pais, Heleno de Almeida Pinto e Ana Lúcia Santa Rosa de
+ Almeida Pinto por sempre incentivarem meu estudo, apoiando completamente
+ meu ingresso numa universidade pública de alto nível e ir para longe de
+ casa.
+\end_layout
+
+\begin_layout Standard
+Agradeço à minha irmã Gabriela pelas conversas e por ser minha amiga.
+ Aos meus amigos de graduação, em especial ao Lucas Tavares, Kevin, Letícia
+ e Carol, por todos os bons momentos que passei com eles.
+\end_layout
+
+\begin_layout Standard
+Agradeço a todos os professores da graduação, em especial aos professores
+ que foram rigorosos, pois engenharia é um assunto complexo e importante.
+ Em especial aos professores André Bueno, Carlos Pico, Adolfo Puime, Severiano,
+ Yrma, José Ricardo e Nivaldo Silveira.
+ Obrigado!
+\end_layout
+
+\begin_layout Standard
+Ao meu orientador, professor André Duarte Bueno, por ensinar não só sobre
+ a disciplina de C++, mas sobre como ser engenheiro.
+ Também pelas dicas e sugestões para melhorar o trabalho desenvolvido, sempre
+ disposto a ajudar e recomendar um novo desafio.
+\end_layout
+
+\begin_layout Standard
+Ao meu co-orientador, professor Guilherme Rodrigues, por aceitar o desafio
+ do projeto, sugerindo pontos de melhoria, alterações, e correções.
+\end_layout
+
+\begin_layout Standard
+Por fim, agradeço aos professores da banca pela avaliação deste projeto,
+ e pelas sugestões de correção.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset VSpace 1cm*
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset VSpace 16cm*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\shape italic
+\begin_inset Quotes eld
+\end_inset
+
+But for us, it's different.
+ Look again at that dot.
+ That's here.
+ That's home.
+ That's us.
+ On it everyone you love, everyone you know, everyone you ever heard of,
+ every human being who ever was, lived out their lives.
+ The aggregate of our joy and suffering, thousands of confident religions,
+ ideologies, and economic doctrines, every hunter and forager, every hero
+ and coward, every creator and destroyer of civilization, every king and
+ peasant, every young couple in love, every mother and father, hopeful child,
+ inventor and explorer, every teacher of morals, every corrupt politician,
+ every 
+\begin_inset Quotes eld
+\end_inset
+
+superstar
+\begin_inset Quotes erd
+\end_inset
+
+, every 
+\begin_inset Quotes eld
+\end_inset
+
+supreme leader
+\begin_inset Quotes erd
+\end_inset
+
+, every saint and sinner in the history of our species lived there - on
+ a mote of dust suspended in sunbeam.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\shape italic
+Carl Sagan, Pale Blue Dot.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\begin_inset VSpace 1cm*
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+Resumo
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O presente trabalho consiste em um projeto de engenharia, cujo objetivo
+ é de estudar e juntar diversas áreas da engenharia para construir um 
+\shape italic
+software
+\shape default
+ de condução de calor tridimensional, modelado por diferenças finitas e
+ programado em C++.
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A equação da difusão de calor foi discretizada pelo método 
+\shape italic
+Backward Time Centered Space
+\shape default
+ (BTCS), e o sistema de equações foi resolvido pelo método de Gauss-Jacobi.
+ A modelagem foi realizada de tal forma, que é permitido um objeto ser constituí
+do por vários materiais com propriedades termofísicas diferentes, e a condutivid
+ade térmica em função da temperatura pode ser obtida por modelos de correlação
+ ou interpolação linear.
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O programa foi desenvolvido em C++, com o paradigma de orientação ao objeto.
+ Foi utilizado conceitos de paralelismo e multithreading para dividir os
+ cálculos e tornar o simulador mais rápido.
+ Utilizando a bibliteca Qt, foi desenvolvido uma interface gráfica amigável,
+ para facilitar a utilização do software.
+ E também foi programado algoritmos de renderização 3D, para facilitar a
+ visualização dos objetos.
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O software tem um cunho educacional, com o objetivo de auxiliar o ensino
+ de transferência de calor e desenvolver estudos sobre o comportamento da
+ transferência de calor em diversos objetos.
+ Também é importante para mostrar a estrutura e sequencia de um projeto
+ de engenharia, comum no mercado de trabalho.
+ 
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Palavras-chaves:
+\series default
+ Modelagem numérica.
+ Diferenças finitas.
+ BTCS.
+ Gauss-Jacobi.
+ Linguagem C++.
+ Programação orientada ao objeto.
+ Qt Creator.
+ Renderização 3D.
+ Transferência de calor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\begin_inset VSpace 1cm*
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size large
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\size default
+
 \begin_inset FloatList figure
 
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-\align block
-\begin_inset Note Note
-status open
 
-\begin_layout Plain Layout
-\align block
+\size large
 \begin_inset ERT
 status open
 
@@ -1598,17 +1889,15 @@ status open
 
 
 \backslash
-lhead{Lista de Tabelas} 
-\backslash
-chead{} 
-\backslash
-rhead{}
+thispagestyle{empty}
 \end_layout
 
 \end_inset
 
 
-\end_layout
+\size default
+
+\begin_inset FloatList table
 
 \end_inset
 
@@ -1616,7 +1905,25 @@ rhead{}
 \end_layout
 
 \begin_layout Standard
-\begin_inset FloatList table
+
+\size large
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\size default
+
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
 
 \end_inset
 

@@ -179,6 +179,19 @@ depois de colocar no site precisa atualizar este link
 Lá você encontra instruções atualizadas para baixar e instalar.
 \end_layout
 
+\begin_layout Standard
+Para um tutorial de como instalar e utilizar o programa, é possível assistir
+ o vídeo 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.youtube.com/watch?v=65e5s1MiY_c"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsection
 Dependências
 \begin_inset Index idx
@@ -220,8 +233,16 @@ dnf install gcc
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+Ou, é possível utilizar o software Qt Creator:
+\end_layout
+
 \begin_layout Itemize
-Biblioteca Qt disponível em https://www.qt.io/download;
+Biblioteca Qt disponível em https://www.qt.io/download - o 
+\shape italic
+software
+\shape default
+ foi desenvolvido com o Qt na versão 6.1.3.
 \end_layout
 
 \begin_layout Standard
@@ -505,9 +526,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Como adicionar um material no simulador.
- Primeiro seleciona Arquivo, Import material.
- Uma janela será aberta, para o usuário escolher o material
+Adicionar um material no simulador: seleciona Arquivo, Import material,
+ euUma janela será aberta para o usuário escolher o material
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Como-adicionar-um"

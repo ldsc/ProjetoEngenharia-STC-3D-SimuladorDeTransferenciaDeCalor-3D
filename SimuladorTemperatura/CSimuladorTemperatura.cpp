@@ -137,10 +137,11 @@ void CSimuladorTemperatura::run_paralelismo_total() {
         grid[g]->startIteration();
 
     while (iter <= MAX_ITERATION) {
+        maior_erro = 0.0;
         for (int g = 0; g < NGRIDS; g++){
             grid[g]->updateIteration();
-            erros[g] = 0.0;
         }
+
         #pragma omp parallel
         {
             int x, y;
@@ -153,14 +154,16 @@ void CSimuladorTemperatura::run_paralelismo_total() {
 
                     (*grid[g])(x, y)->temp_nu = (*grid[g])(x, y)->temp_nup1;
                     _erro = calculatePointIteration(x, y, g);
-                    erros[g] = erros[g] < _erro ? _erro : erros[g];
+                    erros[thread_num] = erros[thread_num] < _erro ? _erro : erros[thread_num];
                 }
             }
         } // fim do paralelismo
         iter++;
 
-        for (int i = 0; i < MAX_THREADS; i++)
+        for (int i = 0; i < MAX_THREADS; i++){
             maior_erro = maior_erro < erros[i] ? erros[i] : maior_erro;
+            erros[i] = 0.0;
+        }
 
         if (maior_erro < MIN_ERRO && iter >= MIN_ITERATION)
             break;

@@ -53,7 +53,7 @@
 \graphics default
 \default_output_format default
 \output_sync 0
-\bibtex_command default
+\bibtex_command bibtex
 \index_command default
 \paperfontsize 12
 \spacing onehalf
@@ -353,7 +353,7 @@ rhead{}
 LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "bibliografia"
-options "abntex2-alf"
+options "bibtotoc,authordate2"
 
 \end_inset
 

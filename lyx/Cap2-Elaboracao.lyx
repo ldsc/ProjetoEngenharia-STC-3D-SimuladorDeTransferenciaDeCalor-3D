@@ -68,7 +68,7 @@
 \use_package undertilde 1
 \cite_engine natbib
 \cite_engine_type authoryear
-\biblio_style plainnat
+\biblio_style apacite
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -859,6 +859,10 @@ Onde
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Condutividade térmica
 \end_layout
 
 \begin_layout Standard

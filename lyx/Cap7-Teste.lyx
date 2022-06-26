@@ -160,12 +160,12 @@ thechapter - Teste}
 \end_layout
 
 \begin_layout Standard
-Neste capítulo serão apresentados os testes e resultados do simulador.
+Neste capítulo serão apresentados a validação e resultados do simulador.
 \end_layout
 
 \begin_layout Standard
-Inicialmente, o simulador será validado comparando uma solução analítica
- unidimensional conhecida com o resultado obtido pelo simulador.
+Inicialmente, o simulador será validado comparando com a solução analítica
+ unidimensional conhecida.
  A seguir, serão apresentados resultados aplicados à indústria do petróleo,
  como:
 \begin_inset Note Note
@@ -243,7 +243,17 @@ literal "false"
 
 \end_inset
 
- (equação 5.57).
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+(equação 5.57)
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -915,6 +925,11 @@ lstinputlisting[ caption={Arquivo de implementação da validação em Python},
 \end_layout
 
 \begin_layout Standard
+\align center
+Fonte: produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
 Como resultado é apresentado um gráfico com duas soluções, para os tempos
  de 50 e 100 segundos.
  Veja Figura 
@@ -1120,10 +1135,15 @@ k
 
 \begin_layout Standard
 O erro do simulador foi de 0.69% para 50,0 segundos, e 0,88% para 100,0 segundos.
- O mínimo de iteração para cada mudança de tempo foi de 800 iterações.
+ O mínimo de iteração para cada mudança de tempo foi de 800 iterações, e
+ o máximo permitido foi de 1.000 iterações.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 É importante mencionar que o número de iterações deve ser alta, pois o simulador
  resolve o método BTCS de forma iterativa, e só consegue 'avançar' a influência
  da temperatura em uma célula por iteração.
@@ -1135,6 +1155,11 @@ status open
 
 \begin_layout Plain Layout
 você deve configurar o simulador para garantir este mínimo!
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2072,137 +2097,22 @@ Injeção de calor em reservatório - modelo 1
 
 \begin_layout Standard
 A seguir, é apresentado uma simulação para injeção térmica em um reservatório
- de petróleo, onde o poço está injetando calor com condutividade infinita
- e com penetração parcial.
+ de petróleo, onde o poço está injetando calor.
 \end_layout
 
 \begin_layout Standard
-As propriedades termofísicas utilizadas para a rocha são:
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Tabela com as propriedades termofísicas do modelo 1 - Arenito
-\end_layout
+As propriedades termofísicas utilizadas para a rocha são os mesmos apresentados
+ na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Tabela-com-propriedades-injecao-1"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Propriedade
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Valor
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $C_{p}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-920
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-k
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1.6
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\rho$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2.600
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -2497,7 +2407,9 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Graficos mostrando a variação de temperatura na região próxima ao poço
+Graficos mostrando a variação de temperatura na região próxima ao poço.
+ Esquerda é a temperatura ao longo da horizontal, e à direita é ao longo
+ da vertical
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Teste_reservatorio_sem_agua-3"
@@ -2555,6 +2467,21 @@ fingers
 \shape default
  de água quente adentrando no reservatório.
  Caso mais próximo da realidade.
+ Os 
+\shape italic
+fingers
+\shape default
+ serão tratados como arenito com água, mostrado na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Tabela-com-propriedades-injecao-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2652,7 +2579,7 @@ status open
 
 \begin_layout Plain Layout
 Evolução da simulação.
- Tempo de 610 segundos
+ Tempo de 1.200 segundos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:injecao-termica-com-agua-2"
@@ -2686,7 +2613,7 @@ Fonte: Produzido pelo autor.
 \end_layout
 
 \begin_layout Standard
-Avançando mais no tempo, chegando a 7.180 segundos, é possível perceber que
+Avançando mais no tempo, chegando a 4.100 segundos, é possível perceber que
  a região dos 
 \shape italic
 fingers 
@@ -2714,7 +2641,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tempo final de 7.180 segundos
+Tempo final de 4.100 segundos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:injecao-termica-com-agua-3"
@@ -2772,7 +2699,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Gráficos do tempo final de 7.180 segundos
+Gráficos do tempo final de 4.100 segundos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:injecao-termica-com-agua-graficos"
