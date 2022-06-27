@@ -957,6 +957,14 @@ Junho - 2022
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\begin_inset VSpace 1cm*
+\end_inset
+
+
 \begin_inset Newpage newpage
 \end_inset
 
@@ -1877,6 +1885,32 @@ thispagestyle{empty}
 \end_inset
 
 
+\size large
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\begin_inset VSpace 0.1cm*
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1902,11 +1936,34 @@ thispagestyle{empty}
 \end_inset
 
 
+\size large
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\begin_inset VSpace 0.1cm*
+\end_inset
+
 
 \size large
+
 \begin_inset ERT
 status open
 
@@ -1924,6 +1981,21 @@ thispagestyle{empty}
 
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
+
+\end_inset
+
+
+\size large
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
 
 \end_inset
 
