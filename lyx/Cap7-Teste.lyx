@@ -30,6 +30,7 @@
 % Informa que vai usar o pacote listings, 
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
+\renewcommand{\lstlistingname}{Listagem}
 \end_preamble
 \use_default_options false
 \master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
@@ -110,6 +111,17 @@
 \end_header
 
 \begin_body
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\begin_inset VSpace 0.01cm*
+\end_inset
+
+
+\end_layout
 
 \begin_layout Chapter
 Resultados

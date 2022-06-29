@@ -30,6 +30,7 @@
 % Informa que vai usar o pacote listings, 
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
+\renewcommand{\lstlistingname}{Listagem}
 \end_preamble
 \use_default_options false
 \master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
@@ -112,6 +113,14 @@
 \begin_body
 
 \begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset VSpace 0.01cm*
+\end_inset
+
+
 \begin_inset Newpage cleardoublepage
 \end_inset
 
@@ -615,6 +624,10 @@ status open
 \begin_layout Plain Layout
 
 
+\backslash
+renewcommand{
+\backslash
+lstlistingname}{Listagem} 
 \backslash
 lstset{style=C++} 
 \backslash
