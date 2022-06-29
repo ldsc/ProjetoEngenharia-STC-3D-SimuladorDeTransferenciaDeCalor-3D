@@ -333,7 +333,7 @@ name "fig:Imagem da Interface Gráfica"
 
 
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Interface-vFinal2.png
+	filename ../imagens/Interface-vFinal2.png
 	lyxscale 30
 	width 100text%
 

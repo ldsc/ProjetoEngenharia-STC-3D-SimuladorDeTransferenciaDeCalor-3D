@@ -96,11 +96,12 @@
 \papercolumns 1
 \papersides 2
 \paperpagestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
@@ -1062,7 +1063,7 @@ status open
 \align block
 Trabalho de Conclusão de Curso apresentado ao Centro de Ciências e Tecnologia
  da Universidade Estadual do Norte Fluminense, como parte das exigências
- para obtenção do título de Engenheiro de Exploração e Produção de Petróleo.
+ para obtenção do Título de Engenheiro de Exploração e Produção de Petróleo.
 \end_layout
 
 \end_inset
@@ -1309,7 +1310,7 @@ status open
 \align block
 Trabalho de Conclusão de Curso apresentado ao Centro de Ciências e Tecnologia
  da Universidade Estadual do Norte Fluminense, como parte das exigências
- para obtenção do título de Engenheiro de Exploração e Produção de Petróleo.
+ para obtenção do Título de Engenheiro de Exploração e Produção de Petróleo.
 \end_layout
 
 \end_inset
@@ -1644,15 +1645,24 @@ Agradeço aos meus pais, Heleno de Almeida Pinto e Ana Lúcia Santa Rosa de
 
 \begin_layout Standard
 Agradeço à minha irmã Gabriela pelas conversas e por ser minha amiga.
- Aos meus amigos de graduação, em especial ao Lucas Tavares, Kevin, Letícia
- e Carol, por todos os bons momentos que passei com eles.
+ Aos meus amigos de graduação, em especial ao Lucas Tavares, Kevin
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+nomes completos
+\end_layout
+
+\end_inset
+
+, Letícia e Carol, por todos os bons momentos que passei com eles.
 \end_layout
 
 \begin_layout Standard
 Agradeço a todos os professores da graduação, em especial aos professores
  que foram rigorosos, pois engenharia é um assunto complexo e importante.
- Em especial aos professores André Bueno, Carlos Pico, Adolfo Puime, Severiano,
- Yrma, José Ricardo e Nivaldo Silveira.
+ Em especial aos professores André Duarte Bueno, Carlos Pico, Adolfo Puime,
+ Severiano, Yrma, José Ricardo e Nivaldo Silveira.
  Obrigado!
 \end_layout
 
@@ -1775,8 +1785,12 @@ Resumo
 \end_layout
 
 \begin_layout Standard
-O presente trabalho consiste em um projeto de engenharia, cujo objetivo
- é de estudar e juntar diversas áreas da engenharia para construir um 
+O presente trabalho consiste em um projeto de engenharia
+\change_inserted 1908091853 1656522216
+ completo
+\change_unchanged
+, cujo objetivo é estudar e juntar diversas áreas da engenharia para construir
+ um 
 \shape italic
 software
 \shape default
@@ -1793,11 +1807,40 @@ A equação da difusão de calor foi discretizada pelo método
 \shape italic
 Backward Time Centered Space
 \shape default
- (BTCS), e o sistema de equações foi resolvido pelo método de Gauss-Jacobi.
+ (BTCS)
+\change_deleted 1908091853 1656521913
+,
+\change_unchanged
+ e o sistema de equações foi resolvido pelo método de Gauss-Jacobi.
  A modelagem foi realizada de tal forma, que é permitido um objeto ser constituí
-do por vários materiais com propriedades termofísicas diferentes, e a condutivid
-ade térmica em função da temperatura pode ser obtida por modelos de correlação
- ou interpolação linear.
+do por vários materiais com propriedades termofísicas diferentes
+\change_deleted 1908091853 1656522271
+, e
+\change_inserted 1908091853 1656522271
+.
+
+\change_unchanged
+ 
+\change_deleted 1908091853 1656522272
+a
+\change_inserted 1908091853 1656522272
+A
+\change_unchanged
+ condutividade térmica
+\change_inserted 1908091853 1656521936
+,
+\change_unchanged
+ em função da temperatura
+\change_inserted 1908091853 1656521940
+,
+\change_unchanged
+ pode ser 
+\change_deleted 1908091853 1656522278
+obtida
+\change_inserted 1908091853 1656522278
+definida
+\change_unchanged
+ por modelos de correlação ou interpolação linear.
 \begin_inset VSpace 0.5cm
 \end_inset
 
@@ -1805,13 +1848,120 @@ ade térmica em função da temperatura pode ser obtida por modelos de correlaç
 \end_layout
 
 \begin_layout Standard
-O programa foi desenvolvido em C++, com o paradigma de orientação ao objeto.
- Foi utilizado conceitos de paralelismo e multithreading para dividir os
- cálculos e tornar o simulador mais rápido.
- Utilizando a bibliteca Qt, foi desenvolvido uma interface gráfica amigável,
- para facilitar a utilização do software.
- E também foi programado algoritmos de renderização 3D, para facilitar a
- visualização dos objetos.
+O programa foi desenvolvido 
+\change_inserted 1908091853 1656521956
+utilizando a linguagem de programação
+\change_deleted 1908091853 1656521957
+em
+\change_unchanged
+ C++, com o paradigma d
+\change_deleted 1908091853 1656522296
+e
+\change_inserted 1908091853 1656522296
+a
+\change_unchanged
+ 
+\change_inserted 1908091853 1656522308
+Programação 
+\change_deleted 1908091853 1656522311
+o
+\change_inserted 1908091853 1656522311
+O
+\change_unchanged
+rienta
+\change_deleted 1908091853 1656522301
+ção
+\change_inserted 1908091853 1656522301
+da
+\change_unchanged
+ a
+\change_deleted 1908091853 1656522290
+o
+\change_unchanged
+ 
+\change_deleted 1908091853 1656522312
+o
+\change_inserted 1908091853 1656522312
+O
+\change_unchanged
+bjeto
+\change_inserted 1908091853 1656522305
+ - POO
+\change_unchanged
+.
+ Fo
+\change_deleted 1908091853 1656521964
+i
+\change_inserted 1908091853 1656521965
+ram
+\change_unchanged
+ utilizado
+\change_inserted 1908091853 1656521967
+s
+\change_unchanged
+ conceitos de paralelismo e 
+\emph on
+multithreading 
+\emph default
+para dividir os cálculos e tornar o simulador mais rápido.
+ 
+\change_inserted 1908091853 1656522342
+A interface gráfica foi implementada u
+\change_deleted 1908091853 1656522342
+U
+\change_unchanged
+tilizando a bibli
+\change_inserted 1908091853 1656521989
+o
+\change_unchanged
+teca 
+\change_inserted 1908091853 1656521983
+gráfica 
+\change_unchanged
+Qt
+\change_deleted 1908091853 1656522347
+,
+\change_unchanged
+ 
+\change_inserted 1908091853 1656522359
+e o ambiente de desenvolvimento QT-Creator, de forma que 
+\change_unchanged
+foi desenvolvid
+\change_deleted 1908091853 1656522362
+o
+\change_inserted 1908091853 1656522362
+a
+\change_unchanged
+ uma interface gráfica amigável
+\change_deleted 1908091853 1656522366
+,
+\change_unchanged
+ para facilitar a utilização do software
+\change_inserted 1908091853 1656522030
+ em atividades de ensino
+\change_unchanged
+.
+ 
+\change_deleted 1908091853 1656522039
+E também 
+\change_inserted 1908091853 1656522042
+Como complemento, 
+\change_unchanged
+fo
+\change_deleted 1908091853 1656522047
+i
+\change_inserted 1908091853 1656522047
+ram
+\change_unchanged
+ programado
+\change_inserted 1908091853 1656522050
+s
+\change_unchanged
+ algoritmos de renderização 3D, para facilitar a visualização dos objetos
+\change_inserted 1908091853 1656522394
+, e mecanismos para geração de resultados no formato de arquivos pdf
+\change_unchanged
+.
 \begin_inset VSpace 0.5cm
 \end_inset
 
@@ -1821,9 +1971,58 @@ O programa foi desenvolvido em C++, com o paradigma de orientação ao objeto.
 \begin_layout Standard
 O software tem um cunho educacional, com o objetivo de auxiliar o ensino
  de transferência de calor e desenvolver estudos sobre o comportamento da
- transferência de calor em diversos objetos.
- Também é importante para mostrar a estrutura e sequencia de um projeto
- de engenharia, comum no mercado de trabalho.
+ transferência de calor em divers
+\change_deleted 1908091853 1656522077
+os objetos
+\change_inserted 1908091853 1656522087
+as situações educativas aplicadas a engenharia de petróleo
+\change_unchanged
+.
+ 
+\change_inserted 1908091853 1656522408
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1908091853 1656522147
+Este documento mostra
+\change_deleted 1908091853 1656522128
+Também é importante para mostrar 
+\change_inserted 1908091853 1656522128
+ 
+\change_unchanged
+a estrutura e sequ
+\change_deleted 1908091853 1656522152
+e
+\change_inserted 1908091853 1656522414
+ê
+\change_unchanged
+ncia de um projeto de engenharia
+\change_inserted 1908091853 1656522177
+ desenvolvido com metodologias ágeis e sistema de controle de versões (git/githu
+b)
+\change_unchanged
+, comu
+\change_deleted 1908091853 1656522182
+m
+\change_inserted 1908091853 1656522182
+ns
+\change_unchanged
+ no mercado de trabalho.
+
+\change_inserted 1908091853 1656522503
+ O software pode ser obtido neste endereço: 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/NicholasAlmeidaPinto/Projeto-TCC-SimuladorDifusaoTermica"
+literal "false"
+
+\end_inset
+
+.
+
+\change_unchanged
  
 \begin_inset VSpace 0.5cm
 \end_inset
@@ -1836,7 +2035,12 @@ O software tem um cunho educacional, com o objetivo de auxiliar o ensino
 \series bold
 Palavras-chaves:
 \series default
- Modelagem numérica.
+ 
+\change_inserted 1908091853 1656522203
+Transferência de calor.
+ 
+\change_unchanged
+Modelagem numérica.
  Diferenças finitas.
  BTCS.
  Gauss-Jacobi.
@@ -1844,7 +2048,11 @@ Palavras-chaves:
  Programação orientada ao objeto.
  Qt Creator.
  Renderização 3D.
- Transferência de calor.
+ 
+\change_deleted 1908091853 1656522199
+Transferência de calor.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard

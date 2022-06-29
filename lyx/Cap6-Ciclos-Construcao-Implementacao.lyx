@@ -749,7 +749,11 @@ ref{main-cpp}
 
 \end_inset
 
- o arquivo com código da função main.
+ o arquivo com código da função 
+\family typewriter
+main
+\family default
+.
 \end_layout
 
 \begin_layout Standard
@@ -790,7 +794,11 @@ ref{mainwindow-h}
 
 \end_inset
 
- o arquivo de cabeçalho da classe mainwindow.
+ o arquivo de cabeçalho da classe 
+\family typewriter
+mainwindow
+\family default
+.
  
 \end_layout
 
@@ -832,7 +840,11 @@ ref{mainwindow-cpp}
 
 \end_inset
 
- a implementação da classe mainwindow.
+ a implementação da classe 
+\family typewriter
+mainwindow
+\family default
+.
  
 \end_layout
 
@@ -874,7 +886,11 @@ ref{CRender3D-h}
 
 \end_inset
 
- o arquivo de cabeçalho da classe CRender3D.
+ o arquivo de cabeçalho da classe 
+\family typewriter
+CRender3D
+\family default
+.
  
 \end_layout
 
@@ -916,7 +932,11 @@ ref{CRender3D-cpp}
 
 \end_inset
 
- a implementação da classe CRender3D.
+ a implementação da classe 
+\family typewriter
+CRender3D
+\family default
+.
  
 \end_layout
 
@@ -964,7 +984,11 @@ ref{CSimuladorTemperatura-h}
 
 \end_inset
 
- o arquivo de cabeçalho da classe CSimuladorTemperatura.
+ o arquivo de cabeçalho da classe 
+\family typewriter
+CSimuladorTemperatura
+\family default
+.
  
 \end_layout
 
@@ -1006,7 +1030,11 @@ ref{CSimuladorTemperatura-cpp}
 
 \end_inset
 
- a implementação da classe CSimuladorTemperatura.
+ a implementação da classe 
+\family typewriter
+CSimuladorTemperatura
+\family default
+.
  
 \end_layout
 
@@ -1055,7 +1083,11 @@ ref{CGrid-h}
 
 \end_inset
 
- o arquivo de cabeçalho da classe CGrid.
+ o arquivo de cabeçalho da classe 
+\family typewriter
+CGrid
+\family default
+.
  
 \end_layout
 
@@ -1097,7 +1129,11 @@ ref{CGrid-cpp}
 
 \end_inset
 
- a implementação da classe CGrid.
+ a implementação da classe 
+\family typewriter
+CGrid
+\family default
+.
  
 \end_layout
 
@@ -1145,7 +1181,11 @@ ref{CCell-h}
 
 \end_inset
 
- o arquivo de cabeçalho da classe CCell.
+ o arquivo de cabeçalho da classe 
+\family typewriter
+CCell
+\family default
+.
  
 \end_layout
 
@@ -1187,7 +1227,11 @@ ref{CCell-cpp}
 
 \end_inset
 
- a implementação da classe CCell.
+ a implementação da classe 
+\family typewriter
+CCell
+\family default
+.
  
 \end_layout
 
@@ -1235,7 +1279,11 @@ ref{CMaterial-h}
 
 \end_inset
 
- o arquivo de cabeçalho da classe CMaterial.
+ o arquivo de cabeçalho da classe 
+\family typewriter
+CMaterial
+\family default
+.
  
 \end_layout
 
@@ -1272,7 +1320,11 @@ ref{CMaterial-cpp}
 
 \end_inset
 
- a implementação da classe CMaterial.
+ a implementação da classe 
+\family typewriter
+CMaterial
+\family default
+.
  
 \end_layout
 
@@ -1320,7 +1372,11 @@ ref{CMaterialCorrelacao-h}
 
 \end_inset
 
- o arquivo de cabeçalho da classe CMaterialCorrelacao.
+ o arquivo de cabeçalho da classe 
+\family typewriter
+CMaterialCorrelacao
+\family default
+.
  
 \end_layout
 
@@ -1362,7 +1418,11 @@ ref{CMaterialCorrelacao-cpp}
 
 \end_inset
 
- a implementação da classe CMaterialCorrelacao.
+ a implementação da classe 
+\family typewriter
+CMaterialCorrelacao
+\family default
+.
  
 \end_layout
 
@@ -1411,7 +1471,11 @@ ref{CMaterialInterpolacao-h}
 
 \end_inset
 
- o arquivo de cabeçalho da classe CMaterialInterpolacao.
+ o arquivo de cabeçalho da classe 
+\family typewriter
+CMaterialInterpolacao
+\family default
+.
  
 \end_layout
 
@@ -1453,7 +1517,11 @@ ref{CMaterialInterpolacao-cpp}
 
 \end_inset
 
- a implementação da classe CMaterialInterpolacao.
+ a implementação da classe 
+\family typewriter
+CMaterialInterpolacao
+\family default
+.
  
 \end_layout
 
@@ -1502,7 +1570,11 @@ ref{CSegmentoReta-h}
 
 \end_inset
 
- o arquivo de cabeçalho da classe CSegmentoReta.
+ o arquivo de cabeçalho da classe 
+\family typewriter
+CSegmentoReta
+\family default
+.
  
 \end_layout
 
@@ -1548,7 +1620,11 @@ ref{CSegmentoReta-cpp}
 
 \end_inset
 
- a implementação da classe CSegmentoReta.
+ a implementação da classe 
+\family typewriter
+CSegmentoReta
+\family default
+.
  
 \end_layout
 
@@ -1596,7 +1672,11 @@ ref{CReta-h}
 
 \end_inset
 
- o arquivo de cabeçalho da classe CReta.
+ o arquivo de cabeçalho da classe 
+\family typewriter
+CReta
+\family default
+.
  
 \end_layout
 
@@ -1638,7 +1718,11 @@ ref{CReta-cpp}
 
 \end_inset
 
- a implementação da classe CReta.
+ a implementação da classe 
+\family typewriter
+CReta
+\family default
+.
  
 \end_layout
 

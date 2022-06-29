@@ -96,11 +96,12 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
@@ -238,6 +239,16 @@ Compiladores e ferramentas gratuítas disponíveis, facilitando o uso por
  alunos.
 \end_layout
 
+\begin_layout Itemize
+
+\change_inserted 1908091853 1656525156
+Segundo o índice tiobe, esta entre as três linguagens de programação mais
+ usadas nos últimos 20 anos, sendo base conceitual para diversas outras
+ linguagens.
+\change_unchanged
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Note Note
 status open
@@ -311,8 +322,8 @@ name "fig:Diagrama-de-componentes"
 
 
 \begin_inset Graphics
-	filename C:/Users/nicholas/Desktop/ProjetoEngenharia/Projeto-TCC-SimuladorDifusaoTermica/imagens/Diagrama de componentes.png
-	lyxscale 10
+	filename ../imagens/Diagrama de componentes.png
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -464,7 +475,7 @@ name "fig:Diagrama-de-implementação"
 
 \begin_inset Graphics
 	filename ../imagens/Diagrama de implementação.png
-	lyxscale 25
+	lyxscale 50
 	width 100text%
 
 \end_inset
