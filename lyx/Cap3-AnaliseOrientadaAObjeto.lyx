@@ -88,7 +88,6 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
@@ -153,56 +152,17 @@ name "sec:AOO"
 \end_layout
 
 \begin_layout Standard
-Neste capítulo são apresentados 
-\change_deleted 1908091853 1656524406
-o
-\change_inserted 1908091853 1656524406
-a
-\change_unchanged
-s 
-\change_deleted 1908091853 1656524407
-objetos 
-\change_inserted 1908091853 1656524408
-classes 
-\change_unchanged
-desenvolvid
-\change_deleted 1908091853 1656524410
-o
-\change_inserted 1908091853 1656524410
-a
-\change_unchanged
-s no projeto, suas relações, atributos e métodos.
- Depois
-\change_inserted 1908091853 1656524419
-, veremos
-\change_deleted 1908091853 1656524420
- de
-\change_unchanged
- uma breve explicação sobre cada 
-\change_deleted 1908091853 1656524427
-objeto
-\change_inserted 1908091853 1656524428
-classe
-\change_unchanged
-, 
-\change_inserted 1908091853 1656524449
-e 
-\change_unchanged
-são apresentados os diagramas UML (Linguagem de Modelagem Unificada)
-\change_deleted 1908091853 1656524385
-0
-\change_unchanged
- para auxiliar no entendimento do 
+Neste capítulo são apresentados as classes desenvolvidas no projeto, suas
+ relações, atributos e métodos.
+ Depois, veremos uma breve explicação sobre cada classe, e são apresentados
+ os diagramas UML (Linguagem de Modelagem Unificada) para auxiliar no entendimen
+to do 
 \shape italic
 software
 \shape default
  e suas relações.
- Serão apresentados 
-\change_inserted 1908091853 1656524457
-ainda 
-\change_unchanged
-os diagramas de classes, de sequência, de comunicação, de máquina de estado
- e de atividades.
+ Serão apresentados ainda os diagramas de classes, de sequência, de comunicação,
+ de máquina de estado e de atividades.
 \end_layout
 
 \begin_layout Section
@@ -250,11 +210,7 @@ do parar a simulação para ver resultados parciais.
 CRender3D:
 \series default
  Classe responsável por apresentar o objeto em renderização 3D.
- É criada a partir da classe mainwindow
-\change_deleted 1908091853 1656524535
-.h
-\change_unchanged
- e recebe valores do simulador.
+ É criada a partir da classe mainwindow e recebe valores do simulador.
  Possui toda a álgebra necessária para a renderização.
 \end_layout
 
@@ -337,11 +293,6 @@ CReta:
 CSegmentoReta:
 \series default
  Representa um segmento de reta com intervalos definidos.
-
-\change_deleted 1908091853 1656524601
- .
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -947,23 +898,15 @@ name "cap:Diagrama-de-comunicação"
 \end_inset
 
 
-\change_inserted 1908091853 1656524847
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1656524853
 2- Criar material
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1232,17 +1175,11 @@ status open
 \begin_layout Plain Layout
 Você deve montar diagramas de atividade para métodos cujos cálculos ou fluxogram
 a sejam complexos
-\change_inserted 1908091853 1656524981
-
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1908091853 1656525003
 se der inclui um diagrama de atividades para o cálculo da solução do sistema
  de equuaçÕes
-\change_unchanged
-
 \end_layout
 
 \end_inset

@@ -96,12 +96,11 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author 1908091853 "andreduartebueno"
 \end_header
 
 \begin_body
@@ -136,17 +135,10 @@ name "chap: Ciclos de Planejamento/Detalhamento"
 \end_inset
 
 
-\change_inserted 1908091853 1656525283
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1908091853 1656525303
 Apresenta-se neste capítulo as versões do software desenvolvido.
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
@@ -511,11 +503,7 @@ literal "false"
 
 \end_inset
 
-), 
-\change_deleted 1908091853 1656525453
-que
-\change_unchanged
- foi escolhida por ser:
+), foi escolhida por ser:
 \end_layout
 
 \begin_layout Itemize
@@ -744,34 +732,13 @@ Quatro gráficos com valores da temperatura ao longo do tempo ou espaço.
 \end_layout
 
 \begin_layout Itemize
-No canto inferior esquerdo, 
-\change_deleted 1908091853 1656525519
-mostram
-\change_inserted 1908091853 1656525520
-adicionamos
-\change_unchanged
- opções para a simulação ou criação do objeto
-\change_inserted 1908091853 1656525528
- a ser simulado
-\change_unchanged
-.
+No canto inferior esquerdo, adicionamos opções para a simulação ou criação
+ do objeto a ser simulado.
 \end_layout
 
 \begin_layout Itemize
-N
-\change_deleted 1908091853 1656525567
-a
-\change_inserted 1908091853 1656525568
-o lado
-\change_unchanged
- direit
-\change_inserted 1908091853 1656525573
-o, parte inferior,
-\change_deleted 1908091853 1656525570
-a,
-\change_unchanged
- são mostradas as propriedades termofísicas de vários materiais como função
- da temperatura.
+No lado direito, parte inferior, são mostradas as propriedades termofísicas
+ de vários materiais como função da temperatura.
 \end_layout
 
 \begin_layout Itemize
