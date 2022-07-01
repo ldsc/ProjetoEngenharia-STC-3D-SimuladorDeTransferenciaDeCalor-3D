@@ -120,21 +120,10 @@
 \begin_body
 
 \begin_layout Standard
-\begin_inset Newpage cleardoublepage
-\end_inset
+\begin_inset Note Note
+status open
 
-
-\begin_inset VSpace 0.01cm*
-\end_inset
-
-
-\end_layout
-
-\begin_layout Chapter*
-Apêndice A - Disciplinas Relacionadas a Transferência de Calor
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -142,7 +131,49 @@ status open
 
 
 \backslash
-pagestyle{Apêndice A}
+lhead{Apêndice A}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+appendix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Disciplinas Relacionadas a Transferência de Calor
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Apêndice A
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Apêndice A
 \end_layout
 
 \end_inset
