@@ -1146,7 +1146,7 @@ k
 \end_layout
 
 \begin_layout Standard
-O erro do simulador foi de 0.69% para 50,0 segundos, e 0,88% para 100,0 segundos.
+O erro do simulador foi de 0.89% para 50,0 segundos, e 0,69% para 100,0 segundos.
  O mínimo de iteração para cada mudança de tempo foi de 800 iterações, e
  o máximo permitido foi de 1.000 iterações.
 \end_layout
