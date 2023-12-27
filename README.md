@@ -1,13 +1,13 @@
 
 # Table of Contents
 
-    1.  [Título: ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D](#orge880f56)
-1.  [Versão:](#orge2ff4b1)
-2.  [Data:](#orgc58741c)
-3.  [Autor de Contato:](#org39beb3b)
+    1.  [Título: ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D](#org48da97d)
+1.  [Versão:](#orgd0d270b)
+2.  [Data:](#org3a5308f)
+3.  [Autor de Contato:](#orgbb48be4)
 
 
-<a id="orge880f56"></a>
+<a id="org48da97d"></a>
 
 ## Título: ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D
 
@@ -21,30 +21,28 @@
     -   Nota: Também foi o TCC do aluno Nikolas.
 -   Área:
     -   Transferência de calor.
-    -   Autor: Nikolas Almeida Pinto.
+-   Autor:
+    -   Nikolas Almeida Pinto.
     -   Publicação:
         -   [TCC](https://github.com/ldsc/ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D/blob/master/doc/ManualTecnico/TCC-NikolasAlmeidaPinto.pdf)
         -   [Apresentacao](https://github.com/ldsc/ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D/blob/master/doc/ManualTecnico/Apresentacao_Nicholas_TCC2.pptx)
 
--   Área:
-    -   Transferência de calor.
 
-
-<a id="orge2ff4b1"></a>
+<a id="orgd0d270b"></a>
 
 # Versão:
 
 -   1.0.
 
 
-<a id="orgc58741c"></a>
+<a id="org3a5308f"></a>
 
 # Data:
 
 -   2021.
 
 
-<a id="org39beb3b"></a>
+<a id="orgbb48be4"></a>
 
 # Autor de Contato:
 

@@ -9,13 +9,12 @@
   - Nota: Também foi o TCC do aluno Nikolas.
 - Área:
   - Transferência de calor.
-  - Autor: Nikolas Almeida Pinto.
+- Autor:
+  - Nikolas Almeida Pinto.
   - Publicação:
     - [[https://github.com/ldsc/ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D/blob/master/doc/ManualTecnico/TCC-NikolasAlmeidaPinto.pdf][TCC]] 
     - [[https://github.com/ldsc/ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D/blob/master/doc/ManualTecnico/Apresentacao_Nicholas_TCC2.pptx][Apresentacao]]
 
-- Área:
-  - Transferência de calor.
  
 * Versão:
 - 1.0.
